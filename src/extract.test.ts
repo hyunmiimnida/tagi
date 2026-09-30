@@ -32,3 +32,20 @@ test("표현이 조금 다른 같은 프로그램은 중복으로 본다", () =>
   assert.ok(isDuplicate(a as never, b as never));
   assert.ok(!isDuplicate(a as never, { ...b, recruitPeriod: { start: null, end: "2026-11-06" } } as never));
 });
+
+test("AI 없이 다시 수집해도 AI가 추출한 주최·태그는 유지한다", async () => {
+  const { mergePrograms } = await import("./dedupe.ts");
+  const base = {
+    id: "s-1", title: "설명회", organizer: "학생성공처", organizerType: "학교",
+    target: { schools: ["x"], colleges: [], departments: [], grades: [] },
+    recruitPeriod: { start: null, end: "2026-10-05" }, activityPeriod: { start: null, end: null },
+    tags: ["학교"], links: [{ sourceId: "s", url: "u1" }], sources: ["s"], postedAt: null,
+    extractedBy: "rules" as const, collectedAt: "2026-10-01T00:00:00Z",
+  };
+  const saved = { ...base, organizer: "대한항공", organizerType: "기업", tags: ["기업", "박람회·설명회"], extractedBy: "ai" as const };
+  const fresh = { ...base, recruitPeriod: { start: null, end: "2026-10-07" } };
+  const [merged] = mergePrograms([saved], [fresh]);
+  assert.equal(merged.organizer, "대한항공");
+  assert.deepEqual(merged.tags, ["기업", "박람회·설명회"]);
+  assert.equal(merged.recruitPeriod.end, "2026-10-07"); // 출처가 준 날짜는 최신 값
+});

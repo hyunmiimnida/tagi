@@ -9,7 +9,8 @@
         "collector": "career-program-list",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01",
         "enabled": true,
-        "defaultOrganizer": "학생성공처"
+        "defaultOrganizer": "학생성공처",
+        "useAi": true
       },
       {
         "id": "yu-news",

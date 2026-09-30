@@ -44,7 +44,9 @@ export const collectCareerProgramList: Collector = async ({ school, source, fetc
         const program = emptyProgram(school, source, postId, title, link.href);
         if (periods["접수기간"]) program.recruitPeriod = periods["접수기간"];
         if (periods["프로그램일자"]) program.activityPeriod = periods["프로그램일자"];
-        items.set(program.id, { program, writer: null, text: "" });
+        // 상세 페이지는 로그인이 필요해서 목록의 정보만 AI에 넘긴다
+        const text = item.find(".period").map((_, p) => $(p).text().trim()).get().join("\n");
+        items.set(program.id, { program, writer: null, text });
       }
 
       const hasNextPage = $(`.paging a[href*="page=${page + 1}&"]`).length > 0;

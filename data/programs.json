@@ -35,8 +35,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:32.656Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:28.903Z"
   },
   {
     "id": "yu-career-2616",
@@ -74,14 +74,14 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:32.658Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:28.906Z"
   },
   {
     "id": "yu-career-2617",
     "title": "[대한항공] 항공 정비훈련원 기술훈련생 제도 설명회",
-    "organizer": "학생성공처",
-    "organizerType": "학교",
+    "organizer": "대한항공",
+    "organizerType": "기업",
     "target": {
       "schools": [
         "yu"
@@ -99,7 +99,8 @@
       "end": "2026-10-07"
     },
     "tags": [
-      "학교",
+      "기업",
+      "취업·채용",
       "박람회·설명회"
     ],
     "links": [
@@ -112,8 +113,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:32.659Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:28.906Z"
   },
   {
     "id": "yu-career-2621",
@@ -138,9 +139,8 @@
     },
     "tags": [
       "정부부처",
-      "박람회·설명회",
       "취업·채용",
-      "멘토링·컨설팅"
+      "박람회·설명회"
     ],
     "links": [
       {
@@ -157,7 +157,7 @@
       "yu-news"
     ],
     "postedAt": "2026-09-29",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-09-30T15:57:18.984Z"
   },
   {
@@ -183,7 +183,8 @@
     },
     "tags": [
       "학교",
-      "취업·채용"
+      "취업·채용",
+      "교육·특강"
     ],
     "links": [
       {
@@ -195,8 +196,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:32.659Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:28.907Z"
   },
   {
     "id": "yu-career-2622",
@@ -221,7 +222,8 @@
     },
     "tags": [
       "학교",
-      "취업·채용"
+      "취업·채용",
+      "교육·특강"
     ],
     "links": [
       {
@@ -233,8 +235,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:32.660Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:28.907Z"
   },
   {
     "id": "yu-career-2504",
@@ -272,13 +274,13 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:32.660Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:28.907Z"
   },
   {
     "id": "yu-career-2514",
     "title": "2026 영남대학교 해외 취업 희망자 인재 pool 모집",
-    "organizer": "학생성공처",
+    "organizer": "영남대학교",
     "organizerType": "학교",
     "target": {
       "schools": [
@@ -311,8 +313,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:32.660Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:28.908Z"
   },
   {
     "id": "yu-career-2610",
@@ -337,7 +339,8 @@
     },
     "tags": [
       "학교",
-      "취업·채용"
+      "취업·채용",
+      "교육·특강"
     ],
     "links": [
       {
@@ -349,8 +352,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:32.660Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:28.908Z"
   },
   {
     "id": "yu-career-2620",
@@ -387,8 +390,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:32.660Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:28.908Z"
   },
   {
     "id": "yu-career-2588",
@@ -424,8 +427,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:32.660Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:28.908Z"
   },
   {
     "id": "yu-career-2155",
@@ -449,7 +452,8 @@
       "end": "2027-02-28"
     },
     "tags": [
-      "학교"
+      "학교",
+      "취업·채용"
     ],
     "links": [
       {
@@ -461,8 +465,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:32.660Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:28.908Z"
   },
   {
     "id": "yu-career-2312",
@@ -499,8 +503,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:32.661Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:28.909Z"
   },
   {
     "id": "yu-career-2606",
@@ -524,7 +528,9 @@
       "end": "2026-10-01"
     },
     "tags": [
-      "학교"
+      "학교",
+      "취업·채용",
+      "박람회·설명회"
     ],
     "links": [
       {
@@ -536,8 +542,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.881Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.733Z"
   },
   {
     "id": "yu-career-2612",
@@ -561,7 +567,9 @@
       "end": "2026-10-02"
     },
     "tags": [
-      "학교"
+      "학교",
+      "취업·채용",
+      "교육·특강"
     ],
     "links": [
       {
@@ -573,8 +581,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.881Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.734Z"
   },
   {
     "id": "yu-career-2614",
@@ -611,8 +619,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.882Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.734Z"
   },
   {
     "id": "yu-career-2619",
@@ -649,8 +657,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.882Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.734Z"
   },
   {
     "id": "yu-career-2613",
@@ -688,14 +696,14 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.882Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.735Z"
   },
   {
     "id": "yu-career-2615",
     "title": "[코멘토X현대해상] 비수도권 로컬 AI메이커스랩 (2026 미래내일 일경험 지원사업)",
-    "organizer": "학생성공처",
-    "organizerType": "학교",
+    "organizer": "코멘토X현대해상",
+    "organizerType": "기업",
     "target": {
       "schools": [
         "yu"
@@ -713,9 +721,8 @@
       "end": "2026-11-09"
     },
     "tags": [
-      "학교",
-      "인턴·일경험",
-      "멘토링·컨설팅"
+      "기업",
+      "인턴·일경험"
     ],
     "links": [
       {
@@ -727,8 +734,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.882Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.735Z"
   },
   {
     "id": "yu-career-2603",
@@ -766,8 +773,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.883Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.735Z"
   },
   {
     "id": "yu-career-2609",
@@ -805,14 +812,14 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.883Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.735Z"
   },
   {
     "id": "yu-career-2544",
     "title": "[KT] AIVLE SCHOOL (에이블스쿨) 10기 모집 - 지역추천제",
-    "organizer": "학생성공처",
-    "organizerType": "학교",
+    "organizer": "KT",
+    "organizerType": "기업",
     "target": {
       "schools": [
         "yu"
@@ -830,7 +837,8 @@
       "end": "2027-03-05"
     },
     "tags": [
-      "학교"
+      "기업",
+      "교육·특강"
     ],
     "links": [
       {
@@ -842,13 +850,13 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.883Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.736Z"
   },
   {
     "id": "yu-career-2554",
     "title": "[한국폴리텍대학] GMP·제약바이오 QC 기기분석 실무과정 모집",
-    "organizer": "학생성공처",
+    "organizer": "한국폴리텍대학",
     "organizerType": "학교",
     "target": {
       "schools": [
@@ -867,7 +875,8 @@
       "end": "2026-11-04"
     },
     "tags": [
-      "학교"
+      "학교",
+      "교육·특강"
     ],
     "links": [
       {
@@ -879,14 +888,14 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.883Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.736Z"
   },
   {
     "id": "yu-career-2582",
     "title": "[멀티캠퍼스] \"롯데 채용혜택 제공\" 롯데 청년 직무 아카데미 LIFT 교육생 모집",
-    "organizer": "학생성공처",
-    "organizerType": "학교",
+    "organizer": "멀티캠퍼스",
+    "organizerType": "기업",
     "target": {
       "schools": [
         "yu"
@@ -904,7 +913,7 @@
       "end": "2026-11-16"
     },
     "tags": [
-      "학교",
+      "기업",
       "취업·채용",
       "교육·특강"
     ],
@@ -918,14 +927,14 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.883Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.736Z"
   },
   {
     "id": "yu-career-2466",
     "title": "[원전현장인력양성원]취업과정 교육생 모집",
-    "organizer": "학생성공처",
-    "organizerType": "학교",
+    "organizer": "원전현장인력양성원",
+    "organizerType": "공공기관",
     "target": {
       "schools": [
         "yu"
@@ -943,7 +952,7 @@
       "end": "2026-12-04"
     },
     "tags": [
-      "학교",
+      "공공기관",
       "취업·채용",
       "교육·특강"
     ],
@@ -957,14 +966,14 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.883Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.736Z"
   },
   {
     "id": "yu-career-2547",
     "title": "[LG전자] 2026 K-뉴딜 아카데미;Let's Grow with LG전자",
-    "organizer": "학생성공처",
-    "organizerType": "학교",
+    "organizer": "LG전자",
+    "organizerType": "기업",
     "target": {
       "schools": [
         "yu"
@@ -982,7 +991,7 @@
       "end": "2026-11-06"
     },
     "tags": [
-      "학교",
+      "기업",
       "교육·특강"
     ],
     "links": [
@@ -995,14 +1004,14 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.884Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.737Z"
   },
   {
     "id": "yu-career-2527",
     "title": "[알파코] 『iM DiGital Banker Academy』 9기 모집",
-    "organizer": "학생성공처",
-    "organizerType": "학교",
+    "organizer": "알파코",
+    "organizerType": "기업",
     "target": {
       "schools": [
         "yu"
@@ -1020,7 +1029,8 @@
       "end": "2027-02-05"
     },
     "tags": [
-      "학교"
+      "기업",
+      "교육·특강"
     ],
     "links": [
       {
@@ -1032,8 +1042,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.884Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.737Z"
   },
   {
     "id": "yu-career-2499",
@@ -1057,7 +1067,8 @@
       "end": "2026-12-30"
     },
     "tags": [
-      "기업"
+      "기업",
+      "교육·특강"
     ],
     "links": [
       {
@@ -1069,8 +1080,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.884Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.737Z"
   },
   {
     "id": "yu-career-2483",
@@ -1094,7 +1105,8 @@
       "end": "2026-10-30"
     },
     "tags": [
-      "정부부처"
+      "정부부처",
+      "취업·채용"
     ],
     "links": [
       {
@@ -1106,8 +1118,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.884Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.737Z"
   },
   {
     "id": "yu-career-2481",
@@ -1131,7 +1143,8 @@
       "end": "2026-10-30"
     },
     "tags": [
-      "학교"
+      "학교",
+      "교육·특강"
     ],
     "links": [
       {
@@ -1143,8 +1156,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.884Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.737Z"
   },
   {
     "id": "yu-career-2479",
@@ -1181,8 +1194,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.884Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.738Z"
   },
   {
     "id": "yu-career-2472",
@@ -1219,14 +1232,14 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.884Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.738Z"
   },
   {
     "id": "yu-career-2453",
     "title": "[CJ나눔재단] 2026 CJ도너스캠프 대학생봉사단 모집",
     "organizer": "CJ나눔재단",
-    "organizerType": "공공기관",
+    "organizerType": "기업",
     "target": {
       "schools": [
         "yu"
@@ -1244,9 +1257,8 @@
       "end": "2026-12-05"
     },
     "tags": [
-      "공공기관",
-      "봉사",
-      "교육·특강"
+      "기업",
+      "봉사"
     ],
     "links": [
       {
@@ -1258,13 +1270,13 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.885Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.738Z"
   },
   {
     "id": "yu-career-2449",
     "title": "[졸특] 영남대-한국폴리텍대학 영남융합기술캠퍼스 하이테크 과정 모집",
-    "organizer": "학생성공처",
+    "organizer": "영남대-한국폴리텍대학 영남융합기술캠퍼스",
     "organizerType": "학교",
     "target": {
       "schools": [
@@ -1283,7 +1295,8 @@
       "end": "2026-12-31"
     },
     "tags": [
-      "학교"
+      "학교",
+      "교육·특강"
     ],
     "links": [
       {
@@ -1295,8 +1308,8 @@
       "yu-career"
     ],
     "postedAt": null,
-    "extractedBy": "rules",
-    "collectedAt": "2026-09-30T18:10:33.885Z"
+    "extractedBy": "ai",
+    "collectedAt": "2026-09-30T18:31:29.738Z"
   },
   {
     "id": "yu-news-231879233",

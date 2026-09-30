@@ -33,6 +33,14 @@ const union = (a: string[], b: string[]) => [...new Set([...a, ...b])];
 
 // extra의 정보를 base에 합친다. base에 없는 값만 채운다
 function mergeInto(base: Program, extra: Program): void {
+  // AI가 추출한 쪽의 주최·대상·태그를 우선한다
+  if (extra.extractedBy === "ai" && base.extractedBy !== "ai") {
+    base.organizer = extra.organizer ?? base.organizer;
+    base.organizerType = extra.organizerType ?? base.organizerType;
+    base.target = { ...extra.target, schools: union(base.target.schools, extra.target.schools) };
+    base.tags = [];
+    base.extractedBy = "ai";
+  }
   base.organizer ??= extra.organizer;
   base.organizerType ??= extra.organizerType;
   base.recruitPeriod = fillPeriod(base.recruitPeriod, extra.recruitPeriod);
@@ -47,6 +55,21 @@ function mergeInto(base: Program, extra: Program): void {
   }
 }
 
+// AI 없이 다시 수집한 결과가 AI가 추출해 둔 주최·대상·태그를 덮어쓰지 않게 한다
+function keepAiFields(saved: Program, fresh: Program): Program {
+  if (saved.extractedBy !== "ai" || fresh.extractedBy === "ai") return fresh;
+  return {
+    ...fresh,
+    organizer: saved.organizer,
+    organizerType: saved.organizerType,
+    target: saved.target,
+    tags: saved.tags,
+    recruitPeriod: fillPeriod(fresh.recruitPeriod, saved.recruitPeriod),
+    activityPeriod: fillPeriod(fresh.activityPeriod, saved.activityPeriod),
+    extractedBy: "ai",
+  };
+}
+
 export function mergePrograms(existing: Program[], incoming: Program[]): Program[] {
   const result = structuredClone(existing);
 
@@ -56,8 +79,9 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
 
     if (index >= 0) {
       // 이미 저장된 게시물: 최신 내용으로 바꾸되, 합쳐진 항목이면 빈 값만 채운다
-      if (result[index].links.length === 1) result[index] = program;
-      else mergeInto(result[index], program);
+      const saved = result[index];
+      if (saved.links.length === 1) result[index] = keepAiFields(saved, program);
+      else mergeInto(saved, program);
       continue;
     }
 

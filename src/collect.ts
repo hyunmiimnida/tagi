@@ -25,7 +25,13 @@ const categories = await readJson<TagCategory[]>(new URL("tag-categories.json", 
 const existing = await readJson<Program[]>(PROGRAMS_FILE, []);
 // --refresh: 이미 저장된 게시물도 다시 읽어 정보를 새로 추출한다
 const refresh = process.argv.includes("--refresh");
-const knownUrls = new Set(refresh ? [] : existing.flatMap((p) => p.links.map((l) => l.url)));
+const EXCLUDED_FILE = new URL("excluded.json", DATA_DIR);
+const excludedUrls = new Set(await readJson<string[]>(EXCLUDED_FILE, []));
+const knownUrls = new Set(refresh ? [] : [...existing.flatMap((p) => p.links.map((l) => l.url)), ...excludedUrls]);
+// AI로 이미 추출한 게시물 주소. 목록을 매번 다시 읽는 출처도 AI는 새 게시물에만 쓴다
+const aiDoneUrls = new Set(
+  refresh ? [] : existing.filter((p) => p.extractedBy === "ai").flatMap((p) => p.links.map((l) => l.url)),
+);
 
 const incoming: Program[] = [];
 const excluded = new Set<string>(); // 학생 대상이 아니라서 뺀 게시물 id
@@ -55,11 +61,13 @@ for (const school of schools) {
 
       const items = await collector({ school, source, fetchHtml, isKnown: (url) => knownUrls.has(url) });
       for (const item of items) enrich(item, source, categories);
-      const ai = source.useAi ? await enrichWithAi(items, categories) : null;
+      const needAi = items.filter((item) => !aiDoneUrls.has(item.program.links[0].url));
+      const ai = source.useAi ? await enrichWithAi(needAi, categories) : null;
       const aiCount = ai?.done ?? 0;
       // 교원·직원만 대상인 글은 학생용 정보가 아니므로 저장하지 않는다
       const studentItems = items.filter((item) => !ai?.notForStudents.has(item.program.id));
       ai?.notForStudents.forEach((id) => excluded.add(id));
+      for (const item of items) if (excluded.has(item.program.id)) excludedUrls.add(item.program.links[0].url);
       if (ai?.notForStudents.size) console.log(`${label} 학생 대상이 아닌 글 ${ai.notForStudents.size}개 제외`);
       incoming.push(...studentItems.map((item) => item.program));
 
@@ -83,6 +91,7 @@ const merged = mergePrograms(existing, incoming).filter((p) => lastDate(p) >= cu
 
 await mkdir(DATA_DIR, { recursive: true });
 await writeFile(PROGRAMS_FILE, JSON.stringify(merged, null, 2) + "\n");
+await writeFile(EXCLUDED_FILE, JSON.stringify([...excludedUrls].sort(), null, 2) + "\n");
 await writeFile(
   new URL("collect-log.json", DATA_DIR),
   JSON.stringify({ ranAt: new Date().toISOString(), total: merged.length, sources: log }, null, 2) + "\n",
