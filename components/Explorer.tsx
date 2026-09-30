@@ -16,6 +16,14 @@ interface Props {
 
 type Sort = "deadline" | "recent";
 
+// 올라온 날. 게시일 → 접수 시작일 → 처음 수집한 날 순으로 쓴다
+function addedAt(p: Program): string {
+  const firstSeen = (p.firstSeenAt ?? p.collectedAt).slice(0, 10);
+  const start = p.recruitPeriod.start;
+  return p.postedAt ?? (start && start < firstSeen ? start : firstSeen);
+}
+const NEW_DAYS = 3;
+
 // 필터 상태를 주소(?tag=...&q=...)에 담아 뒤로 가기·공유 때도 유지한다
 function readQuery() {
   const params = new URLSearchParams(window.location.search);
@@ -80,7 +88,7 @@ export function Explorer({ programs, categories }: Props) {
       .filter((p) => showClosed || !isClosed(p, today))
       .sort((a, b) => {
         if (sort === "recent") {
-          return (b.postedAt ?? b.collectedAt).localeCompare(a.postedAt ?? a.collectedAt);
+          return addedAt(b).localeCompare(addedAt(a));
         }
         // 마감이 가까운 순. 마감일을 모르는 항목은 최근 게시 순으로 뒤에 둔다
         const x = lastDay(a);
@@ -210,6 +218,7 @@ function ProgramCard({ program, today, hiddenTags }: { program: Program; today: 
   const recruit = formatPeriod(program.recruitPeriod, year);
   const activity = formatPeriod(program.activityPeriod, year);
   const closed = isClosed(program, today);
+  const isNew = daysUntil(today, addedAt(program)) < NEW_DAYS;
 
   return (
     <li>
@@ -217,6 +226,7 @@ function ProgramCard({ program, today, hiddenTags }: { program: Program; today: 
       <article className={`card ${closed ? "closed" : ""}`}>
         <div className="card-top">
           <span className="muted small">
+            {isNew && <span className="new-badge">NEW</span>}
             {program.organizer ?? "주최 미확인"}
             {program.organizerType && ` · ${program.organizerType}`}
           </span>

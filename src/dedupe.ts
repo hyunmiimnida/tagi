@@ -72,6 +72,7 @@ function keepAiFields(saved: Program, fresh: Program): Program {
 
 export function mergePrograms(existing: Program[], incoming: Program[]): Program[] {
   const result = structuredClone(existing);
+  const firstSeen = (p: Program) => p.firstSeenAt ?? p.collectedAt;
 
   for (const program of incoming) {
     const url = program.links[0].url;
@@ -80,14 +81,14 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
     if (index >= 0) {
       // 이미 저장된 게시물: 최신 내용으로 바꾸되, 합쳐진 항목이면 빈 값만 채운다
       const saved = result[index];
-      if (saved.links.length === 1) result[index] = keepAiFields(saved, program);
+      if (saved.links.length === 1) result[index] = { ...keepAiFields(saved, program), firstSeenAt: firstSeen(saved) };
       else mergeInto(saved, program);
       continue;
     }
 
     const duplicate = result.find((p) => !p.sources.includes(program.sources[0]) && isDuplicate(p, program));
     if (duplicate) mergeInto(duplicate, program);
-    else result.push(program);
+    else result.push({ ...program, firstSeenAt: firstSeen(program) });
   }
 
   return result;

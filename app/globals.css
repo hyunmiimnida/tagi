@@ -604,3 +604,16 @@ dd {
     color-scheme: dark;
   }
 }
+
+.new-badge {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 5px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--surface);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  vertical-align: 1px;
+}

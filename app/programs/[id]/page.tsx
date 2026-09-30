@@ -10,9 +10,16 @@ export function generateStaticParams() {
   return getPrograms().map((program) => ({ id: program.id }));
 }
 
+// 링크를 공유했을 때 보이는 제목과 설명
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  return { title: getPrograms().find((p) => p.id === id)?.title };
+  const program = getPrograms().find((p) => p.id === id);
+  if (!program) return {};
+  const recruit = formatPeriod(program.recruitPeriod, new Date().getFullYear());
+  const description = [program.organizer, recruit && `모집 ${recruit}`, program.tags.map((t) => `#${t}`).join(" ")]
+    .filter(Boolean)
+    .join(" · ");
+  return { title: program.title, description, openGraph: { title: program.title, description } };
 }
 
 export default async function ProgramPage({ params }: { params: Promise<{ id: string }> }) {

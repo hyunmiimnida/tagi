@@ -6,8 +6,9 @@ import { UserProvider } from "../lib/user.tsx";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: SITE_NAME,
-  description: "흩어진 대학생 대상 프로그램 정보를 한곳에 모아 태그로 찾아보는 서비스",
+  title: { default: SITE_NAME, template: `%s | ${SITE_NAME}` },
+  description: "학교 공지, 취업, 대외활동 정보를 한곳에 모아 태그로 찾아보는 대학생 정보 서비스",
+  openGraph: { siteName: SITE_NAME, locale: "ko_KR", type: "website" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

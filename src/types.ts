@@ -24,6 +24,7 @@ export interface Program {
   postedAt: string | null; // 원문 게시일
   extractedBy: "rules" | "ai"; // 정보 추출 방법
   collectedAt: string;
+  firstSeenAt?: string; // 처음 수집한 시각 (새로 올라온 항목 표시용)
 }
 
 // 수집기가 돌려주는 값. text는 정보 추출에만 쓰고 저장하지 않는다
