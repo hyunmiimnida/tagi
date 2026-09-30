@@ -49,9 +49,16 @@
 
 1. 출처별 수집기가 새 게시물을 가져온다 (robots.txt 확인, 요청 사이 1초 쉼)
 2. `src/extract.ts`가 규칙으로 주최·기간·태그를 채운다
-3. `useAi` 출처는 Codex CLI가 설치되어 있으면 `src/ai.ts`가 본문을 읽혀 보완한다
+3. `useAi` 출처는 Codex CLI가 있으면 `src/ai.ts`가 게시물 8개씩 묶어 추출한다 (gpt-6.1-sol → 실패 시 gpt-6.0-astra)
+   - AI로 이미 추출한 게시물은 다시 보내지 않는다. 교원·직원 대상 글은 빼고 `data/excluded.json`에 기억한다
+   - AI 없이 수집한 결과(GitHub Actions)는 AI가 채운 주최·대상·태그를 덮어쓰지 않는다
 4. `src/dedupe.ts`가 기존 데이터와 합치고 중복을 제거한다 (원문 링크는 모두 보관)
+   - 제목 유사도 80% 이상은 규칙으로 합치고, 45~80%인 출처 간 쌍은 AI에게 같은 프로그램인지 묻는다
 5. 마지막 일정이 90일 넘게 지난 항목은 지운다
+6. `npm run collect -- --refresh`는 저장된 게시물도 다시 읽고 다시 추출한다 (추출 규칙을 바꿨을 때)
+
+Codex CLI는 PATH에 없어도 `%LOCALAPPDATA%OpenAICodexin*codex.exe`에서 찾는다.
+AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜 연도, 신청/제출 기한 구분, 태그 남발, 주최 유형).
 
 ## 폴더 구조
 
@@ -61,6 +68,8 @@
 - `src/collectors/` — 사이트별 수집기 (`index.ts`에 등록)
 - `data/programs.json` — 수집 결과, `data/collect-log.json` — 마지막 수집 기록
 - `app/` — 화면 (목록 `/`, 상세 `/programs/[id]`, 캘린더 `/calendar`)
+  - 목록 필터는 주소(`?tag=...&q=...&closed=1&sort=recent`)에 저장된다
+  - 상세·캘린더에서 `.ics` 캘린더 파일로 내보낼 수 있다 (`lib/ics.ts`)
 - `components/` — 화면 부품, `lib/` — 필터 규칙·데이터 읽기·로그인 상태
 - `supabase/schema.sql` — 로그인 사용자 데이터 표
 - `.github/workflows/collect.yml` — 하루 1회 자동 수집
