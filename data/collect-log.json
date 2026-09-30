@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-09-30T17:04:56.175Z",
+  "ranAt": "2026-09-30T17:45:08.025Z",
   "total": 63,
   "sources": [
     {
@@ -10,9 +10,9 @@
     },
     {
       "source": "yu-news",
-      "ok": false,
+      "ok": true,
       "count": 0,
-      "message": "fetch failed (Connect Timeout Error (attempted address: www.yu.ac.kr:443, timeout: 10000ms))"
+      "message": ""
     }
   ]
 }
