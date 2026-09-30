@@ -213,7 +213,8 @@ function ProgramCard({ program, today, hiddenTags }: { program: Program; today: 
 
   return (
     <li>
-      <Link href={`/programs/${program.id}`} className={`card ${closed ? "closed" : ""}`}>
+      {/* 카드 전체를 누르면 상세로 가지만, 관심 버튼은 링크 밖에 둔다 */}
+      <article className={`card ${closed ? "closed" : ""}`}>
         <div className="card-top">
           <span className="muted small">
             {program.organizer ?? "주최 미확인"}
@@ -221,7 +222,11 @@ function ProgramCard({ program, today, hiddenTags }: { program: Program; today: 
           </span>
           <FavoriteButton programId={program.id} />
         </div>
-        <h2>{program.title}</h2>
+        <h2>
+          <Link href={`/programs/${program.id}`} className="card-link">
+            {program.title}
+          </Link>
+        </h2>
         <dl>
           <dt>모집</dt>
           <dd>
@@ -245,7 +250,7 @@ function ProgramCard({ program, today, hiddenTags }: { program: Program; today: 
               <span key={tag}>#{tag}</span>
             ))}
         </div>
-      </Link>
+      </article>
     </li>
   );
 }

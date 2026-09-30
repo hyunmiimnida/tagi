@@ -528,3 +528,79 @@ dd {
 .button.primary:hover {
   filter: brightness(1.08);
 }
+
+/* 제목 링크가 카드 전체를 덮도록 늘린다. 관심 버튼은 그 위에 올린다 */
+.card {
+  position: relative;
+}
+
+.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+}
+
+.card .favorite {
+  position: relative;
+  z-index: 1;
+}
+
+.card:has(.card-link:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.card-link:focus-visible {
+  outline: none;
+}
+
+/* 바닥글 */
+.footer {
+  max-width: 960px;
+  margin: 24px auto 0;
+  padding: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+/* 다크 모드 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15171a;
+    --surface: #1f2226;
+    --text: #e6e7e9;
+    --muted: #9aa0a8;
+    --line: #33373d;
+    --accent: #7ea2ff;
+    --accent-soft: #26324d;
+    --warn: #ff9a6b;
+  }
+
+  .button.primary,
+  .chip.selected,
+  .chip .count {
+    color: #10141c;
+  }
+
+  .dday.urgent,
+  .event.deadline {
+    background: #4a2a1e;
+  }
+
+  .notice {
+    background: #3a2c1a;
+  }
+
+  .card.skeleton {
+    background: linear-gradient(90deg, var(--surface) 25%, #2a2e33 50%, var(--surface) 75%);
+    background-size: 200% 100%;
+  }
+
+  select,
+  input {
+    color-scheme: dark;
+  }
+}
