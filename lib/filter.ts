@@ -33,10 +33,21 @@ export function daysUntil(date: string, today: string): number {
   return Math.round((Date.parse(date) - Date.parse(today)) / 86_400_000);
 }
 
-export function formatPeriod(period: { start: string | null; end: string | null }): string | null {
-  if (!period.start && !period.end) return null;
-  if (period.start === period.end) return period.start;
-  return `${period.start ?? ""} ~ ${period.end ?? ""}`.trim();
+const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
+
+// "2026-10-07" → "10.7(수)". 올해가 아니면 연도를 붙인다
+export function formatDate(date: string, currentYear: number): string {
+  const [year, month, day] = date.split("-").map(Number);
+  const weekday = WEEKDAYS[new Date(year, month - 1, day).getDay()];
+  return `${year === currentYear ? "" : `${year}.`}${month}.${day}(${weekday})`;
+}
+
+export function formatPeriod(period: { start: string | null; end: string | null }, currentYear: number): string | null {
+  const { start, end } = period;
+  if (!start && !end) return null;
+  if (!start || start === end) return (start ? "" : "~ ") + formatDate((start ?? end)!, currentYear);
+  if (!end) return `${formatDate(start, currentYear)} ~`;
+  return `${formatDate(start, currentYear)} ~ ${formatDate(end, currentYear)}`;
 }
 
 export function toDateString(date: Date): string {

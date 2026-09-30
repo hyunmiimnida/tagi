@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { daysUntil, formatPeriod, isClosed, lastDay, matchesTags, visibleForSchool } from "../lib/filter.ts";
 import type { FilterCategory } from "../lib/filter.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import type { Program } from "../src/types.ts";
+import { LIST_QUERY_KEY } from "./BackLink.tsx";
 import { FavoriteButton } from "./FavoriteButton.tsx";
 
 interface Props {
@@ -13,30 +14,85 @@ interface Props {
   categories: FilterCategory[];
 }
 
+type Sort = "deadline" | "recent";
+
+// 필터 상태를 주소(?tag=...&q=...)에 담아 뒤로 가기·공유 때도 유지한다
+function readQuery() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    tags: new Set(params.getAll("tag")),
+    keyword: params.get("q") ?? "",
+    showClosed: params.get("closed") === "1",
+    sort: (params.get("sort") === "recent" ? "recent" : "deadline") as Sort,
+  };
+}
+
+function writeQuery(tags: Set<string>, keyword: string, showClosed: boolean, sort: Sort) {
+  const params = new URLSearchParams();
+  for (const tag of tags) params.append("tag", tag);
+  if (keyword) params.set("q", keyword);
+  if (showClosed) params.set("closed", "1");
+  if (sort !== "deadline") params.set("sort", sort);
+  const query = params.toString() ? `?${params}` : "";
+  window.history.replaceState(null, "", query || window.location.pathname);
+  try {
+    sessionStorage.setItem(LIST_QUERY_KEY, query);
+  } catch {
+    // 저장소를 못 쓰면 기억하지 않는다
+  }
+}
+
 export function Explorer({ programs, categories }: Props) {
   const { schoolId } = useUser();
   const today = useToday();
+  const [loaded, setLoaded] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [openCategory, setOpenCategory] = useState<string | null>(null);
   const [showClosed, setShowClosed] = useState(false);
   const [keyword, setKeyword] = useState("");
+  const [sort, setSort] = useState<Sort>("deadline");
+
+  useEffect(() => {
+    const query = readQuery();
+    setSelected(query.tags);
+    setKeyword(query.keyword);
+    setShowClosed(query.showClosed);
+    setSort(query.sort);
+    setLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (loaded) writeQuery(selected, keyword, showClosed, sort);
+  }, [loaded, selected, keyword, showClosed, sort]);
+
+  // 주최 유형 태그는 카드의 주최 줄에 이미 보이므로 카드 태그에서는 뺀다
+  const organizerTags = useMemo(
+    () => new Set(categories.find((c) => c.id === "organizer-type")?.tags ?? []),
+    [categories],
+  );
 
   const visible = useMemo(() => {
     const word = keyword.trim().toLowerCase();
     return programs
       .filter((p) => visibleForSchool(p, schoolId))
       .filter((p) => matchesTags(p.tags, selected, categories))
-      .filter((p) => !word || p.title.toLowerCase().includes(word))
-      .filter((p) => showClosed || !today || !isClosed(p, today))
+      .filter((p) => !word || `${p.title} ${p.organizer ?? ""}`.toLowerCase().includes(word))
+      .filter((p) => showClosed || !isClosed(p, today))
       .sort((a, b) => {
+        if (sort === "recent") {
+          return (b.postedAt ?? b.collectedAt).localeCompare(a.postedAt ?? a.collectedAt);
+        }
         // 마감이 가까운 순. 마감일을 모르는 항목은 최근 게시 순으로 뒤에 둔다
         const x = lastDay(a);
         const y = lastDay(b);
-        if (x && y) return x.localeCompare(y);
+        const xClosed = x !== null && x < today;
+        const yClosed = y !== null && y < today;
+        if (xClosed !== yClosed) return xClosed ? 1 : -1;
+        if (x && y) return xClosed ? y.localeCompare(x) : x.localeCompare(y);
         if (x || y) return x ? -1 : 1;
         return (b.postedAt ?? "").localeCompare(a.postedAt ?? "");
       });
-  }, [programs, categories, schoolId, selected, keyword, showClosed, today]);
+  }, [programs, categories, schoolId, selected, keyword, showClosed, sort, today]);
 
   function toggleTag(tag: string) {
     const next = new Set(selected);
@@ -46,14 +102,15 @@ export function Explorer({ programs, categories }: Props) {
   }
 
   const opened = categories.find((category) => category.id === openCategory);
+  const ready = loaded && today !== "";
 
   return (
     <>
       <section className="filters">
         <input
           type="search"
-          placeholder="제목으로 검색"
-          aria-label="제목으로 검색"
+          placeholder="제목이나 주최 기관으로 검색"
+          aria-label="제목이나 주최 기관으로 검색"
           value={keyword}
           onChange={(event) => setKeyword(event.target.value)}
         />
@@ -72,11 +129,6 @@ export function Explorer({ programs, categories }: Props) {
               </button>
             );
           })}
-          {selected.size > 0 && (
-            <button className="link-button" onClick={() => setSelected(new Set())}>
-              필터 지우기
-            </button>
-          )}
         </div>
         {opened && (
           <div className="chips tag-panel">
@@ -92,21 +144,58 @@ export function Explorer({ programs, categories }: Props) {
             ))}
           </div>
         )}
+        {selected.size > 0 && (
+          <div className="chips">
+            {[...selected].map((tag) => (
+              <button key={tag} className="chip selected" onClick={() => toggleTag(tag)} aria-label={`${tag} 필터 해제`}>
+                #{tag} ✕
+              </button>
+            ))}
+            <button className="link-button" onClick={() => setSelected(new Set())}>
+              모두 지우기
+            </button>
+          </div>
+        )}
         <div className="list-meta">
-          <span>{visible.length}개</span>
-          <label>
-            <input type="checkbox" checked={showClosed} onChange={(event) => setShowClosed(event.target.checked)} />
-            마감된 항목도 보기
-          </label>
+          <span>{ready ? `${visible.length}개` : ""}</span>
+          <div className="list-options">
+            <label>
+              <input type="checkbox" checked={showClosed} onChange={(event) => setShowClosed(event.target.checked)} />
+              마감 포함
+            </label>
+            <select aria-label="정렬" value={sort} onChange={(event) => setSort(event.target.value as Sort)}>
+              <option value="deadline">마감 임박순</option>
+              <option value="recent">최근 등록순</option>
+            </select>
+          </div>
         </div>
       </section>
 
-      {visible.length === 0 ? (
-        <p className="empty">조건에 맞는 정보가 없어요. 필터를 줄여 보세요.</p>
+      {!ready ? (
+        <ul className="cards" aria-busy="true">
+          {Array.from({ length: 6 }, (_, i) => (
+            <li key={i} className="card skeleton" />
+          ))}
+        </ul>
+      ) : visible.length === 0 ? (
+        <div className="empty">
+          <p>조건에 맞는 정보가 없어요.</p>
+          {(selected.size > 0 || keyword) && (
+            <button
+              className="button"
+              onClick={() => {
+                setSelected(new Set());
+                setKeyword("");
+              }}
+            >
+              필터 초기화
+            </button>
+          )}
+        </div>
       ) : (
         <ul className="cards">
           {visible.map((program) => (
-            <ProgramCard key={program.id} program={program} today={today} />
+            <ProgramCard key={program.id} program={program} today={today} hiddenTags={organizerTags} />
           ))}
         </ul>
       )}
@@ -114,15 +203,17 @@ export function Explorer({ programs, categories }: Props) {
   );
 }
 
-function ProgramCard({ program, today }: { program: Program; today: string }) {
+function ProgramCard({ program, today, hiddenTags }: { program: Program; today: string; hiddenTags: Set<string> }) {
+  const year = Number(today.slice(0, 4));
   const end = program.recruitPeriod.end;
-  const left = end && today ? daysUntil(end, today) : null;
-  const recruit = formatPeriod(program.recruitPeriod);
-  const activity = formatPeriod(program.activityPeriod);
+  const left = end ? daysUntil(end, today) : null;
+  const recruit = formatPeriod(program.recruitPeriod, year);
+  const activity = formatPeriod(program.activityPeriod, year);
+  const closed = isClosed(program, today);
 
   return (
     <li>
-      <Link href={`/programs/${program.id}`} className="card">
+      <Link href={`/programs/${program.id}`} className={`card ${closed ? "closed" : ""}`}>
         <div className="card-top">
           <span className="muted small">
             {program.organizer ?? "주최 미확인"}
@@ -134,8 +225,10 @@ function ProgramCard({ program, today }: { program: Program; today: string }) {
         <dl>
           <dt>모집</dt>
           <dd>
-            {recruit ?? "원문에서 확인"}
-            {left !== null && left >= 0 && <span className="dday">{left === 0 ? "오늘 마감" : `D-${left}`}</span>}
+            {recruit ?? <span className="muted">원문에서 확인</span>}
+            {left !== null && left >= 0 && (
+              <span className={`dday ${left <= 3 ? "urgent" : ""}`}>{left === 0 ? "오늘 마감" : `D-${left}`}</span>
+            )}
             {left !== null && left < 0 && <span className="dday closed">마감</span>}
           </dd>
           {activity && (
@@ -146,9 +239,11 @@ function ProgramCard({ program, today }: { program: Program; today: string }) {
           )}
         </dl>
         <div className="tags">
-          {program.tags.map((tag) => (
-            <span key={tag}>#{tag}</span>
-          ))}
+          {program.tags
+            .filter((tag) => !hiddenTags.has(tag))
+            .map((tag) => (
+              <span key={tag}>#{tag}</span>
+            ))}
         </div>
       </Link>
     </li>

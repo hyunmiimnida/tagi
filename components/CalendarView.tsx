@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { toDateString } from "../lib/filter.ts";
+import { downloadIcs } from "../lib/ics.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import type { Program } from "../src/types.ts";
 
@@ -70,6 +71,11 @@ export function CalendarView({ programs }: { programs: Program[] }) {
         {offset !== 0 && (
           <button className="link-button" onClick={() => setOffset(0)}>
             이번 달
+          </button>
+        )}
+        {events.length > 0 && (
+          <button className="button export" onClick={() => downloadIcs(favorites, "관심-일정.ics")}>
+            📅 내 캘린더 앱으로 내보내기
           </button>
         )}
       </div>

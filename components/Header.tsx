@@ -13,7 +13,7 @@ export function Header({ schools }: { schools: { id: string; name: string }[] })
         {SITE_NAME}
       </Link>
       <nav>
-        <Link href="/">목록</Link>
+        <Link href="/" className="nav-home">목록</Link>
         <Link href="/calendar">내 캘린더</Link>
       </nav>
       <div className="header-right">

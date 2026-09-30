@@ -396,3 +396,135 @@ dd {
   background: #fde8e0;
   color: var(--warn);
 }
+
+/* 목록 옵션 */
+.list-meta {
+  align-items: center;
+}
+
+.list-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.list-options label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.list-options select {
+  padding: 4px 8px;
+  font-size: 0.85rem;
+}
+
+/* 불러오는 동안 보이는 빈 카드 */
+.card.skeleton {
+  min-height: 150px;
+  background: linear-gradient(90deg, var(--surface) 25%, #efefec 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card.skeleton {
+    animation: none;
+  }
+}
+
+.dday.urgent {
+  background: #fde8e0;
+  color: var(--warn);
+}
+
+.card.closed {
+  opacity: 0.6;
+}
+
+/* 상세 버튼 줄 */
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.detail-actions .favorite {
+  font-size: 1rem;
+}
+
+.calendar-nav .export {
+  margin-left: auto;
+  font-size: 0.85rem;
+}
+
+/* 휴대폰 */
+@media (max-width: 600px) {
+  .header {
+    gap: 6px 12px;
+    padding: 8px 12px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .header nav {
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  .header-right select,
+  .header-right .button {
+    padding: 4px 6px;
+    font-size: 0.8rem;
+  }
+
+  .header-right select {
+    max-width: 92px;
+  }
+
+  /* 로고를 누르면 목록으로 가므로 휴대폰에서는 "목록" 링크를 숨긴다 */
+  .header nav .nav-home {
+    display: none;
+  }
+
+  main {
+    padding: 12px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar .event b {
+    display: none;
+  }
+
+  .day {
+    min-height: 64px;
+  }
+
+  .calendar-nav {
+    flex-wrap: wrap;
+  }
+}
+
+.button.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button.primary:hover {
+  filter: brightness(1.08);
+}

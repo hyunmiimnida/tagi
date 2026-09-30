@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { FavoriteButton } from "../../../components/FavoriteButton.tsx";
+import { BackLink } from "../../../components/BackLink.tsx";
+import { DetailActions } from "../../../components/DetailActions.tsx";
 import { getPrograms, getSchools, getSourceNames } from "../../../lib/data.ts";
 import { formatPeriod } from "../../../lib/filter.ts";
 
@@ -23,8 +23,9 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
   const sourceNames = getSourceNames();
   const schoolNames = Object.fromEntries(getSchools().map((school) => [school.id, school.name]));
   const { target } = program;
-  const recruit = formatPeriod(program.recruitPeriod);
-  const activity = formatPeriod(program.activityPeriod);
+  const year = new Date().getFullYear();
+  const recruit = formatPeriod(program.recruitPeriod, year);
+  const activity = formatPeriod(program.activityPeriod, year);
   const targetText = [
     target.schools.map((schoolId) => schoolNames[schoolId] ?? schoolId).join(", ") || "모든 학교",
     ...[target.colleges, target.departments, target.grades].filter((list) => list.length > 0).map((list) => list.join(", ")),
@@ -32,11 +33,9 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
 
   return (
     <article className="detail">
-      <Link href="/" className="muted small">
-        ← 목록으로
-      </Link>
+      <BackLink />
       <h1>{program.title}</h1>
-      <FavoriteButton programId={program.id} withLabel />
+      <DetailActions program={program} />
 
       <dl>
         <dt>주최 기관</dt>
@@ -64,7 +63,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
       <h2>원문 링크</h2>
       <p className="muted small">신청과 자세한 내용은 원래 사이트에서 확인하세요.</p>
       {program.links.map((link) => (
-        <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="button wide">
+        <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="button wide primary">
           {sourceNames[link.sourceId] ?? link.sourceId}에서 보기 ↗
         </a>
       ))}
