@@ -32,7 +32,9 @@ export function Header({ schools }: { schools: { id: string; name: string }[] })
           ))}
         </select>
         {!user.loginEnabled ? (
-          <span className="muted small">체험 모드</span>
+          <span className="muted small trial-label" title="로그인이 설정되지 않아 관심 표시가 이 브라우저에만 저장돼요">
+            체험 모드
+          </span>
         ) : user.signedIn ? (
           <button className="button" onClick={user.signOut} title={user.email ?? undefined}>
             로그아웃

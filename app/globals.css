@@ -492,6 +492,15 @@ dd {
     max-width: 92px;
   }
 
+  .trial-label {
+    display: none;
+  }
+
+  .logo img {
+    width: 20px;
+    height: 20px;
+  }
+
   /* 로고를 누르면 목록으로 가므로 휴대폰에서는 "목록" 링크를 숨긴다 */
   .header nav .nav-home {
     display: none;
