@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { toDateString } from "../lib/filter.ts";
+import { daysUntil, formatDate, toDateString } from "../lib/filter.ts";
 import { downloadIcs } from "../lib/ics.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import type { Program } from "../src/types.ts";
@@ -111,6 +111,8 @@ export function CalendarView({ programs }: { programs: Program[] }) {
         ))}
       </div>
 
+      <Agenda events={events} today={today} />
+
       {noDate.length > 0 && (
         <section>
           <h3>일정을 확인하지 못한 관심 항목</h3>
@@ -124,5 +126,34 @@ export function CalendarView({ programs }: { programs: Program[] }) {
         </section>
       )}
     </>
+  );
+}
+
+// 오늘부터 다가오는 일정 목록. 휴대폰에서는 달력 칸이 좁아 이 목록이 더 보기 쉽다
+function Agenda({ events, today }: { events: CalendarEvent[]; today: string }) {
+  const upcoming = events
+    .filter((event) => event.date >= today)
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .slice(0, 20);
+  if (upcoming.length === 0) return null;
+  const year = Number(today.slice(0, 4));
+
+  return (
+    <section className="agenda">
+      <h3>다가오는 일정</h3>
+      <ul>
+        {upcoming.map((event) => {
+          const left = daysUntil(event.date, today);
+          return (
+            <li key={event.program.id + event.kind}>
+              <span className="agenda-date">{formatDate(event.date, year)}</span>
+              <span className={`agenda-kind ${event.kind === "모집 마감" ? "deadline" : ""}`}>{event.kind}</span>
+              <span className="muted small agenda-left">{left === 0 ? "오늘" : `${left}일 후`}</span>
+              <Link href={`/programs/${event.program.id}`}>{event.program.title}</Link>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }

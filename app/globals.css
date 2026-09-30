@@ -632,3 +632,56 @@ dd {
 .chip.empty-tag {
   opacity: 0.45;
 }
+
+.agenda {
+  margin-top: 20px;
+}
+
+.agenda ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.agenda li {
+  display: grid;
+  grid-template-columns: 72px 64px auto 1fr;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.agenda li a {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.agenda li:last-child {
+  border-bottom: 0;
+}
+
+.agenda-kind {
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.agenda-kind.deadline {
+  color: var(--warn);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .agenda li {
+    grid-template-columns: 64px 1fr auto;
+  }
+
+  .agenda li a {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
