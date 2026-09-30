@@ -18,6 +18,7 @@
 - 프로그램 데이터: `data/programs.json` 파일 (git에 저장)
 - 로그인·학교 설정·관심 표시: Supabase (구글·카카오 소셜 로그인). 설정이 없으면 "체험 모드"로 브라우저에만 저장
 - 하루 1회 자동 수집: GitHub Actions가 수집 후 `data/`를 커밋 → Vercel이 자동 재배포
+  - `localOnly` 출처(해외 서버에서 접속 불가)는 GitHub Actions에서 건너뛰고, 내 컴퓨터의 `scripts/collect-local.ps1`(작업 스케줄러)로 수집해 올린다
 - 배포: Vercel
 - HTML 분석: cheerio
 
@@ -63,7 +64,14 @@
 - `components/` — 화면 부품, `lib/` — 필터 규칙·데이터 읽기·로그인 상태
 - `supabase/schema.sql` — 로그인 사용자 데이터 표
 - `.github/workflows/collect.yml` — 하루 1회 자동 수집
-- `docs/설정-안내.md` — GitHub·Vercel·Supabase 연결 방법
+- `scripts/collect-local.ps1` — 내 컴퓨터에서 수집 후 GitHub에 올리기 (PowerShell 5.1 호환을 위해 BOM 포함 UTF-8로 저장)
+- `docs/설정-안내.md` — 연결 상태와 남은 설정 방법
+
+## 배포 정보
+
+- 사이트: https://tagi-ten.vercel.app (main에 push하면 자동 배포)
+- 저장소: https://github.com/hyunmiimnida/tagi
+- Supabase 프로젝트 id: rytvncrksqcrxhsojmpj
 
 ## 명령어
 
