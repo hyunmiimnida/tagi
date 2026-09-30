@@ -102,6 +102,18 @@ export function Explorer({ programs, categories }: Props) {
       });
   }, [programs, categories, schoolId, selected, keyword, showClosed, sort, today]);
 
+  // 태그별 개수: 학교·마감 설정은 반영하고, 다른 카테고리에서 고른 태그도 반영한다
+  const tagCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    const base = programs.filter((p) => visibleForSchool(p, schoolId) && (showClosed || !isClosed(p, today)));
+    for (const category of categories) {
+      const others = categories.filter((c) => c.id !== category.id);
+      const pool = base.filter((p) => matchesTags(p.tags, selected, others));
+      for (const tag of category.tags) counts.set(tag, pool.filter((p) => p.tags.includes(tag)).length);
+    }
+    return counts;
+  }, [programs, categories, schoolId, selected, showClosed, today]);
+
   function toggleTag(tag: string) {
     const next = new Set(selected);
     if (next.has(tag)) next.delete(tag);
@@ -140,16 +152,19 @@ export function Explorer({ programs, categories }: Props) {
         </div>
         {opened && (
           <div className="chips tag-panel">
-            {opened.tags.map((tag) => (
-              <button
-                key={tag}
-                className={`chip ${selected.has(tag) ? "selected" : ""}`}
-                aria-pressed={selected.has(tag)}
-                onClick={() => toggleTag(tag)}
-              >
-                #{tag}
-              </button>
-            ))}
+            {opened.tags.map((tag) => {
+              const count = tagCounts.get(tag) ?? 0;
+              return (
+                <button
+                  key={tag}
+                  className={`chip ${selected.has(tag) ? "selected" : ""} ${count === 0 ? "empty-tag" : ""}`}
+                  aria-pressed={selected.has(tag)}
+                  onClick={() => toggleTag(tag)}
+                >
+                  #{tag} <span className="tag-count">{ready ? count : ""}</span>
+                </button>
+              );
+            })}
           </div>
         )}
         {selected.size > 0 && (

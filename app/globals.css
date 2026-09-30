@@ -617,3 +617,18 @@ dd {
   line-height: 1.5;
   vertical-align: 1px;
 }
+
+.tag-count {
+  margin-left: 2px;
+  color: var(--muted);
+  font-size: 0.8em;
+}
+
+.chip.selected .tag-count {
+  color: inherit;
+  opacity: 0.8;
+}
+
+.chip.empty-tag {
+  opacity: 0.45;
+}
