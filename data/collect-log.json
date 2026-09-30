@@ -1,6 +1,6 @@
 {
-  "ranAt": "2026-09-30T17:49:53.500Z",
-  "total": 63,
+  "ranAt": "2026-09-30T18:17:04.853Z",
+  "total": 62,
   "sources": [
     {
       "source": "yu-career",
@@ -11,8 +11,8 @@
     {
       "source": "yu-news",
       "ok": true,
-      "count": 0,
-      "message": "내 컴퓨터에서만 수집"
+      "count": 30,
+      "message": ""
     }
   ]
 }

@@ -1,5 +1,5 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { enrichWithAi, isAiAvailable } from "./ai.ts";
+import { enrichWithAi } from "./ai.ts";
 import { collectors } from "./collectors/index.ts";
 import { mergePrograms } from "./dedupe.ts";
 import { enrich } from "./extract.ts";
@@ -23,9 +23,12 @@ async function readJson<T>(file: URL, fallback?: T): Promise<T> {
 const schools = await readJson<School[]>(new URL("schools.json", CONFIG_DIR));
 const categories = await readJson<TagCategory[]>(new URL("tag-categories.json", CONFIG_DIR));
 const existing = await readJson<Program[]>(PROGRAMS_FILE, []);
-const knownUrls = new Set(existing.flatMap((p) => p.links.map((l) => l.url)));
+// --refresh: 이미 저장된 게시물도 다시 읽어 정보를 새로 추출한다
+const refresh = process.argv.includes("--refresh");
+const knownUrls = new Set(refresh ? [] : existing.flatMap((p) => p.links.map((l) => l.url)));
 
 const incoming: Program[] = [];
+const excluded = new Set<string>(); // 학생 대상이 아니라서 뺀 게시물 id
 const log: { source: string; ok: boolean; count: number; message: string }[] = [];
 
 for (const school of schools) {
@@ -51,12 +54,14 @@ for (const school of schools) {
       }
 
       const items = await collector({ school, source, fetchHtml, isKnown: (url) => knownUrls.has(url) });
-      let aiCount = 0;
-      for (const item of items) {
-        enrich(item, source, categories);
-        if (source.useAi && isAiAvailable() && (await enrichWithAi(item, categories))) aiCount++;
-        incoming.push(item.program);
-      }
+      for (const item of items) enrich(item, source, categories);
+      const ai = source.useAi ? await enrichWithAi(items, categories) : null;
+      const aiCount = ai?.done ?? 0;
+      // 교원·직원만 대상인 글은 학생용 정보가 아니므로 저장하지 않는다
+      const studentItems = items.filter((item) => !ai?.notForStudents.has(item.program.id));
+      ai?.notForStudents.forEach((id) => excluded.add(id));
+      if (ai?.notForStudents.size) console.log(`${label} 학생 대상이 아닌 글 ${ai.notForStudents.size}개 제외`);
+      incoming.push(...studentItems.map((item) => item.program));
 
       console.log(`${label} ${items.length}개 수집` + (aiCount ? ` (AI 추출 ${aiCount}개)` : ""));
       log.push({ source: source.id, ok: true, count: items.length, message: "" });
@@ -74,7 +79,7 @@ const cutoff = new Date(Date.now() - KEEP_DAYS * 86_400_000).toISOString().slice
 const lastDate = (p: Program) =>
   [p.recruitPeriod.end, p.activityPeriod.end, p.postedAt, p.collectedAt.slice(0, 10)].filter((d) => d !== null).sort().at(-1)!;
 
-const merged = mergePrograms(existing, incoming).filter((p) => lastDate(p) >= cutoff);
+const merged = mergePrograms(existing, incoming).filter((p) => lastDate(p) >= cutoff && !excluded.has(p.id));
 
 await mkdir(DATA_DIR, { recursive: true });
 await writeFile(PROGRAMS_FILE, JSON.stringify(merged, null, 2) + "\n");
