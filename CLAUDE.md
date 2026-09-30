@@ -13,10 +13,11 @@
 
 ## 기술 스택
 
-- 언어: TypeScript (Node.js 24 이상, `.ts` 파일을 바로 실행)
-- 웹: Next.js (화면 기능을 만들 때 추가)
-- 데이터베이스·로그인: Supabase (구글·카카오 소셜 로그인)
-- 하루 1회 자동 수집: GitHub Actions
+- 언어: TypeScript (Node.js 24 이상, 수집기는 `.ts` 파일을 바로 실행)
+- 웹: Next.js (App Router). 화면은 빌드할 때 `data/programs.json`을 읽어 미리 만든다
+- 프로그램 데이터: `data/programs.json` 파일 (git에 저장)
+- 로그인·학교 설정·관심 표시: Supabase (구글·카카오 소셜 로그인). 설정이 없으면 "체험 모드"로 브라우저에만 저장
+- 하루 1회 자동 수집: GitHub Actions가 수집 후 `data/`를 커밋 → Vercel이 자동 재배포
 - 배포: Vercel
 - HTML 분석: cheerio
 
@@ -43,19 +44,36 @@
 - 로그인(소셜 로그인)과 학교 설정
 - 중복 제거: 같은 프로그램은 하나로 합치고 원문 링크는 모두 보관
 
+## 수집 처리 순서 (`src/collect.ts`)
+
+1. 출처별 수집기가 새 게시물을 가져온다 (robots.txt 확인, 요청 사이 1초 쉼)
+2. `src/extract.ts`가 규칙으로 주최·기간·태그를 채운다
+3. `useAi` 출처는 Codex CLI가 설치되어 있으면 `src/ai.ts`가 본문을 읽혀 보완한다
+4. `src/dedupe.ts`가 기존 데이터와 합치고 중복을 제거한다 (원문 링크는 모두 보관)
+5. 마지막 일정이 90일 넘게 지난 항목은 지운다
+
 ## 폴더 구조
 
 - `config/schools.json` — 학교와 출처 사이트 목록
-- `config/tag-categories.json` — 태그 카테고리와 태그 목록
+- `config/tag-categories.json` — 태그 카테고리, 태그, 태그를 붙이는 키워드
 - `src/types.ts` — 공통 데이터 형식
 - `src/collectors/` — 사이트별 수집기 (`index.ts`에 등록)
-- `src/collect.ts` — 수집 실행 프로그램
-- `data/` — 수집 결과 (git에 올리지 않음)
+- `data/programs.json` — 수집 결과, `data/collect-log.json` — 마지막 수집 기록
+- `app/` — 화면 (목록 `/`, 상세 `/programs/[id]`, 캘린더 `/calendar`)
+- `components/` — 화면 부품, `lib/` — 필터 규칙·데이터 읽기·로그인 상태
+- `supabase/schema.sql` — 로그인 사용자 데이터 표
+- `.github/workflows/collect.yml` — 하루 1회 자동 수집
+- `docs/설정-안내.md` — GitHub·Vercel·Supabase 연결 방법
 
 ## 명령어
 
-- `npm run collect` — 수집 실행, 결과는 `data/programs.json`
-- `npm run typecheck` — 코드 오류 검사
+- `npm run dev` — 내 컴퓨터에서 화면 실행 (http://localhost:3000)
+- `npm run collect` — 수집 실행
+- `npm test` — 자동 검사, `npm run typecheck` — 코드 오류 검사, `npm run build` — 배포용 빌드
+
+## 코드 규칙
+
+- import 경로에는 확장자(`.ts`, `.tsx`)를 붙인다 (수집기를 Node.js로 바로 실행하기 때문)
 
 ## Codex CLI 활용 규칙
 
