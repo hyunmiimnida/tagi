@@ -31,8 +31,8 @@ export function Header({ schools }: { schools: { id: string; name: string }[] })
         </select>
         {!user.loginEnabled ? (
           <span className="muted small">체험 모드</span>
-        ) : user.email ? (
-          <button className="button" onClick={user.signOut} title={user.email}>
+        ) : user.signedIn ? (
+          <button className="button" onClick={user.signOut} title={user.email ?? undefined}>
             로그아웃
           </button>
         ) : (

@@ -21,7 +21,8 @@ type ProviderId = (typeof LOGIN_PROVIDERS)[number]["id"];
 interface UserState {
   loginEnabled: boolean; // Supabase가 설정되어 있는지
   ready: boolean;
-  email: string | null;
+  signedIn: boolean;
+  email: string | null; // 카카오는 이메일을 주지 않을 수 있다
   schoolId: string | null;
   favorites: Set<string>;
   loginOpen: boolean;
@@ -139,6 +140,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     () => ({
       loginEnabled: supabase !== null,
       ready,
+      signedIn: userId !== null,
       email,
       schoolId,
       favorites,
@@ -153,7 +155,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         void supabase?.auth.signOut();
       },
     }),
-    [ready, email, schoolId, favorites, loginOpen, setSchool, toggleFavorite],
+    [ready, userId, email, schoolId, favorites, loginOpen, setSchool, toggleFavorite],
   );
 
   return <UserContext value={value}>{children}</UserContext>;

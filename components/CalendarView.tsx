@@ -36,7 +36,7 @@ export function CalendarView({ programs }: { programs: Program[] }) {
 
   if (!today || !user.ready) return null;
 
-  if (user.loginEnabled && !user.email) {
+  if (user.loginEnabled && !user.signedIn) {
     return (
       <div className="empty">
         <p>내 캘린더는 로그인 후 쓸 수 있어요.</p>
