@@ -10,6 +10,8 @@ export function Header({ schools }: { schools: { id: string; name: string }[] })
   return (
     <header className="header">
       <Link href="/" className="logo">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo.svg" alt="" width={24} height={24} />
         {SITE_NAME}
       </Link>
       <nav>

@@ -685,3 +685,13 @@ dd {
     grid-row: 2;
   }
 }
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo img {
+  border-radius: 6px;
+}
