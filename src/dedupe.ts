@@ -22,6 +22,29 @@ export function titleSimilarity(a: string, b: string): number {
 
 const conflicts = (a: string | null, b: string | null) => a !== null && b !== null && a !== b;
 
+const datesCompatible = (a: Program, b: Program) =>
+  !conflicts(a.recruitPeriod.end, b.recruitPeriod.end) && !conflicts(a.activityPeriod.start, b.activityPeriod.start);
+
+// 규칙으로는 판단하기 애매한 출처 간 후보 쌍 (AI가 같은 프로그램인지 판단한다)
+export function findAmbiguousPairs(programs: Program[]): [Program, Program][] {
+  const pairs: [Program, Program][] = [];
+  for (let i = 0; i < programs.length; i++) {
+    for (let j = i + 1; j < programs.length; j++) {
+      const [a, b] = [programs[i], programs[j]];
+      if (a.sources.some((s) => b.sources.includes(s)) || !datesCompatible(a, b)) continue;
+      const similarity = titleSimilarity(a.title, b.title);
+      if (similarity >= 0.45 && similarity < 0.8) pairs.push([a, b]);
+    }
+  }
+  return pairs;
+}
+
+// b를 a에 합치고 b를 목록에서 뺀다
+export function mergePair(programs: Program[], a: Program, b: Program): Program[] {
+  mergeInto(a, b);
+  return programs.filter((p) => p !== b);
+}
+
 export function isDuplicate(a: Program, b: Program): boolean {
   if (conflicts(a.recruitPeriod.end, b.recruitPeriod.end)) return false;
   if (conflicts(a.activityPeriod.start, b.activityPeriod.start)) return false;

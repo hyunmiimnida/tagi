@@ -3,7 +3,7 @@ import { existsSync, readdirSync } from "node:fs";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import type { CollectedItem, TagCategory } from "./types.ts";
+import type { CollectedItem, Program, TagCategory } from "./types.ts";
 
 // AI 정보 추출: Codex CLI가 있으면 게시물 본문을 읽혀서 규칙으로 못 찾은 정보를 보완한다.
 // 게시물 여러 개를 한 번에 보내 비용을 줄인다. 실패하면 규칙 기반 결과를 그대로 쓴다.
@@ -100,7 +100,7 @@ function runCodex(bin: string, model: string, prompt: string, outFile: string): 
 const date = (v: unknown) => (typeof v === "string" && DATE.test(v) ? v : null);
 const strings = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : []);
 
-async function askCodex(bin: string, prompt: string): Promise<{ items?: Record<string, unknown>[] }> {
+async function askCodex(bin: string, prompt: string): Promise<{ items?: Record<string, unknown>[]; same?: unknown }> {
   const dir = await mkdtemp(join(tmpdir(), "codex-"));
   try {
     const outFile = join(dir, "answer.txt");
@@ -146,6 +146,27 @@ function apply(item: CollectedItem, data: Record<string, unknown>, categories: T
   program.tags = [...new Set([...(program.organizerType ? [program.organizerType] : []), ...tags])];
   program.extractedBy = "ai";
   return true;
+}
+
+// 두 게시물이 같은 프로그램인지 AI에게 묻는다. 같다고 답한 쌍의 번호를 돌려준다
+export async function confirmDuplicates(pairs: [Program, Program][]): Promise<number[]> {
+  const bin = findCodex();
+  if (!bin || pairs.length === 0) return [];
+  const describe = (p: Program) =>
+    `${p.title} / 주최 ${p.organizer ?? "모름"} / 모집 ${p.recruitPeriod.start ?? "?"}~${p.recruitPeriod.end ?? "?"} / 활동 ${p.activityPeriod.start ?? "?"}~${p.activityPeriod.end ?? "?"}`;
+  const prompt = `아래 각 쌍이 "같은 프로그램을 다른 사이트에 올린 것"인지 판단해라. 파일을 읽거나 명령을 실행하지 말고 JSON만 답해라.
+같은 회사·같은 사업이라도 회차·기수·대상·일정이 다르면 다른 프로그램이다. 확실하지 않으면 false.
+형식: {"same":[같은 쌍의 번호들]}
+
+${pairs.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join("\n")}`;
+  try {
+    const answer = await askCodex(bin, prompt);
+    const same = (answer as { same?: unknown }).same;
+    return Array.isArray(same) ? same.filter((n): n is number => Number.isInteger(n) && n >= 0 && n < pairs.length) : [];
+  } catch (error) {
+    console.error("  AI 중복 판단 실패:", error instanceof Error ? error.message : error);
+    return [];
+  }
 }
 
 // AI로 추출한 게시물 수와, 학생 대상이 아니라서 뺄 게시물 id를 돌려준다

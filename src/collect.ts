@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { enrichWithAi } from "./ai.ts";
+import { confirmDuplicates, enrichWithAi } from "./ai.ts";
 import { collectors } from "./collectors/index.ts";
-import { mergePrograms } from "./dedupe.ts";
+import { findAmbiguousPairs, mergePair, mergePrograms } from "./dedupe.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
 import type { Program, School, TagCategory } from "./types.ts";
@@ -87,7 +87,17 @@ const cutoff = new Date(Date.now() - KEEP_DAYS * 86_400_000).toISOString().slice
 const lastDate = (p: Program) =>
   [p.recruitPeriod.end, p.activityPeriod.end, p.postedAt, p.collectedAt.slice(0, 10)].filter((d) => d !== null).sort().at(-1)!;
 
-const merged = mergePrograms(existing, incoming).filter((p) => lastDate(p) >= cutoff && !excluded.has(p.id));
+let merged = mergePrograms(existing, incoming).filter((p) => lastDate(p) >= cutoff && !excluded.has(p.id));
+
+// 제목 표현이 달라 규칙으로 판단하기 애매한 중복은 AI에게 묻는다
+const pairs = findAmbiguousPairs(merged);
+for (const index of await confirmDuplicates(pairs)) {
+  const [a, b] = pairs[index];
+  if (merged.includes(a) && merged.includes(b)) {
+    merged = mergePair(merged, a, b);
+    console.log(`중복으로 합침: ${a.title} ← ${b.title}`);
+  }
+}
 
 await mkdir(DATA_DIR, { recursive: true });
 await writeFile(PROGRAMS_FILE, JSON.stringify(merged, null, 2) + "\n");

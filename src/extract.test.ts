@@ -49,3 +49,20 @@ test("AI 없이 다시 수집해도 AI가 추출한 주최·태그는 유지한�
   assert.deepEqual(merged.tags, ["기업", "박람회·설명회"]);
   assert.equal(merged.recruitPeriod.end, "2026-10-07"); // 출처가 준 날짜는 최신 값
 });
+
+test("표현이 많이 다른 출처 간 제목은 AI 판단 후보로 고른다", async () => {
+  const { findAmbiguousPairs } = await import("./dedupe.ts");
+  const make = (id: string, source: string, title: string) => ({
+    id, title, organizer: null, organizerType: null,
+    target: { schools: [], colleges: [], departments: [], grades: [] },
+    recruitPeriod: { start: null, end: "2026-10-10" }, activityPeriod: { start: null, end: null },
+    tags: [], links: [{ sourceId: source, url: id }], sources: [source], postedAt: null,
+    extractedBy: "rules" as const, collectedAt: "2026-10-01T00:00:00Z",
+  });
+  const a = make("a", "s1", "[고용노동부] 2026 미래내일 일경험 사업 참여자 모집");
+  const b = make("b", "s2", "2026 미래내일 일경험 프로그램 안내");
+  const c = make("c", "s2", "2학기 집단상담 프로그램");
+  const pairs = findAmbiguousPairs([a, b, c]);
+  assert.equal(pairs.length, 1);
+  assert.deepEqual(pairs[0].map((p) => p.id), ["a", "b"]);
+});
