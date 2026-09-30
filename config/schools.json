@@ -8,14 +8,17 @@
         "name": "취업정보",
         "collector": "career-program-list",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01",
-        "enabled": true
+        "enabled": true,
+        "defaultOrganizer": "학생성공처"
       },
       {
         "id": "yu-news",
         "name": "영대소식",
         "collector": "news-board",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do",
-        "enabled": false
+        "enabled": true,
+        "pages": 3,
+        "useAi": true
       }
     ]
   }
