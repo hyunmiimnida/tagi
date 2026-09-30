@@ -18,7 +18,8 @@
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do",
         "enabled": true,
         "pages": 3,
-        "useAi": true
+        "useAi": true,
+        "localOnly": true
       }
     ]
   }

@@ -33,6 +33,13 @@ for (const school of schools) {
     const label = `[${school.name} > ${source.name}]`;
     if (!source.enabled) continue;
 
+    // 해외 서버(GitHub Actions)에서 접속할 수 없는 출처는 내 컴퓨터에서만 수집한다
+    if (source.localOnly && process.env.GITHUB_ACTIONS === "true") {
+      console.log(`${label} 내 컴퓨터에서만 수집하는 출처라서 건너뜀`);
+      log.push({ source: source.id, ok: true, count: 0, message: "내 컴퓨터에서만 수집" });
+      continue;
+    }
+
     // 한 출처가 실패해도 나머지 출처는 계속 수집한다
     try {
       const collector = collectors[source.collector];

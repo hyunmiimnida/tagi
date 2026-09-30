@@ -42,6 +42,7 @@ export interface Source {
   pages?: number; // 목록을 몇 쪽까지 볼지
   defaultOrganizer?: string; // 게시물에서 주최를 알 수 없을 때 쓰는 값
   useAi?: boolean; // 본문이 길어 AI 추출이 필요한 출처
+  localOnly?: boolean; // 해외 서버에서 접속이 막혀 내 컴퓨터에서만 수집하는 출처
 }
 
 export interface School {
