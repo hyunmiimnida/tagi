@@ -54,7 +54,9 @@ for (const school of schools) {
       console.log(`${label} ${items.length}개 수집` + (aiCount ? ` (AI 추출 ${aiCount}개)` : ""));
       log.push({ source: source.id, ok: true, count: items.length, message: "" });
     } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
+      // 접속 오류는 실제 원인(cause)까지 기록한다
+      const cause = error instanceof Error && error.cause instanceof Error ? ` (${error.cause.message})` : "";
+      const message = (error instanceof Error ? error.message : String(error)) + cause;
       console.error(`${label} 수집 실패: ${message}`);
       log.push({ source: source.id, ok: false, count: 0, message });
     }
