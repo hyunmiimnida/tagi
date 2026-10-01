@@ -106,23 +106,24 @@ const DAY = 86_400_000;
 //  - 그래도 안 되면 모르는 값으로 둔다. 60일 안쪽은 재게시·추가 안내일 수 있어 그대로 둔다
 const ENDED_BEFORE_POST_DAYS = 60;
 const nextYear = (date: string | null) => (date ? `${Number(date.slice(0, 4)) + 1}${date.slice(4)}` : null);
-export function plausiblePeriod(period: Period, postedAt: string | null): Period {
+// maxDays: 게시일 뒤로 이만큼까지만 믿는다 (모집 마감은 1년을 넘기지 않는다. 활동 기간은 1년 반)
+export function plausiblePeriod(period: Period, postedAt: string | null, maxDays = 545): Period {
   if (!postedAt) return period;
   const posted = Date.parse(postedAt);
   const tooEarly = period.start !== null && Date.parse(period.start) < posted - 365 * DAY;
-  const tooLate = period.end !== null && Date.parse(period.end) > posted + 545 * DAY;
+  const tooLate = period.end !== null && Date.parse(period.end) > posted + maxDays * DAY;
   const endedLongBefore = (p: Period) => p.end !== null && Date.parse(p.end) < posted - ENDED_BEFORE_POST_DAYS * DAY;
   if (endedLongBefore(period)) {
     const shifted = { start: nextYear(period.start), end: nextYear(period.end) };
     const fits = !endedLongBefore(shifted) && Date.parse(shifted.end!) <= posted + 365 * DAY;
-    return fits ? plausiblePeriod(shifted, postedAt) : { start: null, end: null };
+    return fits ? plausiblePeriod(shifted, postedAt, maxDays) : { start: null, end: null };
   }
   return tooEarly || tooLate ? { start: null, end: null } : period;
 }
 
 // 게시일을 아는 글만 검사한다 (게시일이 없는 출처는 기간이 목록에 정리되어 있어 믿을 만하다)
 export function cleanPeriods(program: Program): void {
-  program.recruitPeriod = plausiblePeriod(program.recruitPeriod, program.postedAt);
+  program.recruitPeriod = plausiblePeriod(program.recruitPeriod, program.postedAt, 366);
   program.activityPeriod = plausiblePeriod(program.activityPeriod, program.postedAt);
 }
 

@@ -118,6 +118,10 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `npm run dev` — 내 컴퓨터에서 화면 실행 (http://localhost:3000)
 - `npm run collect` — 수집 실행, `npm run backfill` — 과거 글 쌓기 (위 설명 참고)
 - `npm run check-open-to` — 목록 공고 중 "다른 학교 학생도 지원 가능한지" 확인하지 않은 글만 다시 읽어 AI에게 묻는다 (Codex 필요)
+- `node scripts/audit-quality.ts` — 품질 점검: 중복 줄, 잡음(신청할 것 없는 글) 비율, 마감일 대조 샘플(원문의 날짜 줄을 사람이 보고 대조) → `logs/quality-audit.json`. 출시 기준: 마감일 정확도 90%↑, 잡음 5%↓, 중복 0
+- `node scripts/review-excluded.ts` — "학생 대상 아님"으로 뺀 글을 다시 읽어 AI에게 다시 판단받기 (`--apply`로 되살리기. 되살리기 전에 사람이 목록 확인)
+- `node scripts/save-fixtures.ts` — 수집기 테스트용 HTML 샘플 갱신 (`test/fixtures/`, 학교 사이트 구조가 바뀌었을 때)
+- `node scripts/check-health.ts` — 수집 점검 (3번 연속 실패·3일 넘게 성공 없음). GitHub Actions가 문제를 "수집 점검 필요" 이슈로 올린다
 - `npm test` — 자동 검사, `npm run typecheck` — 코드 오류 검사, `npm run build` — 배포용 빌드
 
 ## 디자인 규칙

@@ -2147,46 +2147,6 @@
     "firstSeenAt": "2026-09-28T00:00:00.000Z"
   },
   {
-    "id": "yu-news-231850867",
-    "title": "정신건강의학과, 가정의학과 파견진료 안내(2026년 2학기)",
-    "organizer": "건강관리센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-09-08",
-      "end": "2026-12-10"
-    },
-    "tags": [
-      "학교",
-      "상담·심리"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231850867"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-28",
-    "extractedBy": "ai",
-    "collectedAt": "2026-09-30T18:11:01.142Z",
-    "firstSeenAt": "2026-09-28T00:00:00.000Z"
-  },
-  {
     "id": "yu-news-231850866",
     "title": "2026년 1학기(26.3~26.8) 진료비, 약값 등 환불 관련 서류제출기한 안내(~9/30)",
     "organizer": "건강관리센터",
@@ -2227,46 +2187,6 @@
     "collectedAt": "2026-09-30T18:11:02.115Z",
     "firstSeenAt": "2026-09-28T00:00:00.000Z",
     "seriesId": "yu-news-226449686"
-  },
-  {
-    "id": "yu-news-231850865",
-    "title": "[건강관리센터] 2026 - 2학기 건강공제회비 추가납부(납부기간 마감)",
-    "organizer": "건강관리센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-09-01",
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231850865"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-28",
-    "extractedBy": "ai",
-    "collectedAt": "2026-09-30T18:11:03.166Z",
-    "firstSeenAt": "2026-09-28T00:00:00.000Z"
   },
   {
     "id": "yu-news-231850864",
@@ -7187,47 +7107,6 @@
     "seriesId": "yu-news-1655882"
   },
   {
-    "id": "yu-news-231569045",
-    "title": "[교육개발센터] 2026학년도 2학기 '찾아가는 교육용 영상 대여 서비스' 안내",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231569045"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-08",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:34:21.422Z",
-    "firstSeenAt": "2026-10-01T03:34:21.422Z"
-  },
-  {
     "id": "yu-news-231554967",
     "title": "[🚨9/8(화) 까지] 발레오모빌리티코리아 주식회사 2026-2학기 국내 현장실습학기제 참여학생 모집안내",
     "organizer": "발레오모빌리티코리아 주식회사",
@@ -8520,49 +8399,6 @@
     "aliases": [
       "yu-news-231681981"
     ]
-  },
-  {
-    "id": "yu-news-231470067",
-    "title": "2026-2학기English Help Desk 이용안내 및 준수사항",
-    "organizer": "한국어국제언어교육원",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-09-07",
-      "end": "2026-12-04"
-    },
-    "tags": [
-      "학교",
-      "멘토링·컨설팅"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231470067"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-01",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:35:18.440Z",
-    "firstSeenAt": "2026-10-01T03:35:18.440Z",
-    "seriesId": "yu-news-7569230"
   },
   {
     "id": "yu-news-231470054",
@@ -10047,48 +9883,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:08.190Z",
     "firstSeenAt": "2026-10-01T03:36:08.190Z"
-  },
-  {
-    "id": "yu-news-231301340",
-    "title": "[홍보] [제2회 대한민국 산업단지 수출박람회] 전시회 개최 안내",
-    "organizer": "다문화통합지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "박람회·설명회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231301340"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-20",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:36:08.938Z",
-    "firstSeenAt": "2026-10-01T03:36:08.938Z"
   },
   {
     "id": "yu-news-231301319",
@@ -14599,52 +14393,6 @@
     "seriesId": "yu-news-228937864"
   },
   {
-    "id": "yu-news-230682791",
-    "title": "[학생상담센터]🌷인터넷스마트폰 과의존 예방교육(영상시청+마일리지 제공!)🌷",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-05-15",
-      "end": "2027-01-31"
-    },
-    "activityPeriod": {
-      "start": "2026-05-15",
-      "end": "2027-01-31"
-    },
-    "tags": [
-      "학교",
-      "상담·심리",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230682791"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-07",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:47.847Z",
-    "firstSeenAt": "2026-10-01T03:39:47.847Z",
-    "seriesId": "yu-news-10339449"
-  },
-  {
     "id": "yu-news-230668706",
     "title": "📢수료증 발급📢 에코업혁신융합대학사업단 「기자재 투어」 및 「에코 에너지 캠프」 참가자 모집",
     "organizer": "에코업혁신융합대학사업단",
@@ -14950,47 +14698,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:58.854Z",
     "firstSeenAt": "2026-10-01T03:39:58.854Z"
-  },
-  {
-    "id": "yu-news-230612549",
-    "title": "[영남대학교박물관]2026년 특별전 '우리 곁의 동물' 개최 안내",
-    "organizer": "영남대학교박물관",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-07-03",
-      "end": "2026-10-02"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230612549"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-03",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:59.778Z",
-    "firstSeenAt": "2026-10-01T03:39:59.778Z"
   },
   {
     "id": "yu-news-230612548",
@@ -17899,6 +17606,10 @@
       {
         "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229937215"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230682791"
       }
     ],
     "sources": [
@@ -17908,7 +17619,10 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:59.914Z",
     "firstSeenAt": "2026-10-01T03:44:59.914Z",
-    "seriesId": "yu-news-10339449"
+    "seriesId": "yu-news-10339449",
+    "aliases": [
+      "yu-news-230682791"
+    ]
   },
   {
     "id": "yu-news-229937213",
@@ -18866,8 +18580,8 @@
       "openTo": null
     },
     "recruitPeriod": {
-      "start": "2026-05-07",
-      "end": "2027-05-05"
+      "start": null,
+      "end": "2026-05-05"
     },
     "activityPeriod": {
       "start": null,
@@ -22055,49 +21769,6 @@
     "firstSeenAt": "2026-10-01T10:53:40.502Z"
   },
   {
-    "id": "kmu-notice-270320",
-    "title": "뮤지컬 <드라큘라> 계명가족 특별할인 안내",
-    "organizer": "음악공연예술대학 행정팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "kmu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-09-03",
-      "end": "2026-10-26"
-    },
-    "activityPeriod": {
-      "start": "2026-10-27",
-      "end": "2026-11-01"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "kmu-notice",
-        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270320&mnu_uid=143"
-      }
-    ],
-    "sources": [
-      "kmu-notice"
-    ],
-    "postedAt": "2026-09-03",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T10:53:42.142Z",
-    "firstSeenAt": "2026-10-01T10:53:42.142Z"
-  },
-  {
     "id": "kmu-notice-270232",
     "title": "2026학년도 가을학기 대학원생 콜로키움 발표자와 토론자 초청",
     "organizer": "여성학연구소",
@@ -23352,48 +23023,6 @@
     "firstSeenAt": "2026-10-01T11:00:50.885Z"
   },
   {
-    "id": "kmu-scholarship-271062",
-    "title": "[교외]2026학년도 2학기 (재)대전청년내일재단 장학생 선발 연장 공고",
-    "organizer": "(재)대전청년내일재단",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "kmu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "kmu-scholarship",
-        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271062&mnu_uid=145"
-      }
-    ],
-    "sources": [
-      "kmu-scholarship"
-    ],
-    "postedAt": "2026-09-29",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T11:05:14.006Z",
-    "firstSeenAt": "2026-10-01T11:05:14.006Z"
-  },
-  {
     "id": "kmu-scholarship-271061",
     "title": "[교외] 2026학년도 하반기 (재)논산시장학회 학업장려비 장학생 선발 공고",
     "organizer": "(재)논산시장학회",
@@ -23799,16 +23428,23 @@
     "links": [
       {
         "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271062&mnu_uid=145"
+      },
+      {
+        "sourceId": "kmu-scholarship",
         "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270444&mnu_uid=145"
       }
     ],
     "sources": [
       "kmu-scholarship"
     ],
-    "postedAt": "2026-09-08",
+    "postedAt": "2026-09-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:24.022Z",
-    "firstSeenAt": "2026-10-01T11:05:24.022Z"
+    "firstSeenAt": "2026-10-01T11:05:24.022Z",
+    "aliases": [
+      "kmu-scholarship-271062"
+    ]
   },
   {
     "id": "kmu-scholarship-270420",
@@ -24864,52 +24500,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:53.729Z",
     "firstSeenAt": "2026-10-01T11:05:53.729Z"
-  },
-  {
-    "id": "kmu-scholarship-269988",
-    "title": "[교외]2026년도 2학기 주거안정장학금 우리 대학 업무처리 및 지급 기준안내",
-    "organizer": "한국장학재단",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "kmu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생"
-      ],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "kmu-scholarship",
-        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=269988&mnu_uid=145"
-      }
-    ],
-    "sources": [
-      "kmu-scholarship"
-    ],
-    "postedAt": "2026-08-21",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T11:05:54.925Z",
-    "firstSeenAt": "2026-10-01T11:05:54.925Z"
   },
   {
     "id": "knu-startup-743",

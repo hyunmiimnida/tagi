@@ -66,3 +66,8 @@ test("재게시를 합치면 합쳐진 글의 id를 남긴다", async () => {
   assert.equal(kept.id, "first");
   assert.deepEqual(kept.aliases, ["second"]);
 });
+
+test("'선발 연장 공고'도 재게시로 본다", async () => {
+  const { repostKey } = await import("./dedupe.ts");
+  assert.equal(repostKey("[교외]2026학년도 2학기 (재)대전청년내일재단 장학생 선발 연장 공고"), repostKey("[교외]2026학년도 2학기 (재)대전청년내일재단 장학생 선발 공고"));
+});
