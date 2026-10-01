@@ -135,3 +135,14 @@ test("AI 없이 수집할 때 신청할 것이 없는 단순 안내 제목을 �
   assert.ok(!looksLikeNoticeOnly("2027년 (재)대산농촌재단 장학생 선발 안내"));
   assert.ok(!looksLikeNoticeOnly("2026학년도 MY 포트폴리오 공모전"));
 });
+
+test("끝나는 날이 게시일보다 한참 앞서면 연도 넘김을 고치거나 모르는 값으로 둔다", async () => {
+  const { plausiblePeriod } = await import("./extract.ts");
+  // 12/30에 올린 "~1/4" 마감을 같은 해로 읽은 경우 → 다음 해로
+  assert.deepEqual(plausiblePeriod({ start: null, end: "2025-01-04" }, "2025-12-30"), { start: null, end: "2026-01-04" });
+  // 1년을 더해도 이미 지난 날 → 모름
+  assert.deepEqual(plausiblePeriod({ start: null, end: "2025-04-24" }, "2026-08-18"), { start: null, end: null });
+  assert.deepEqual(plausiblePeriod({ start: null, end: "1954-06-01" }, "2026-02-20"), { start: null, end: null });
+  // 60일 안쪽은 재게시일 수 있어 그대로
+  assert.deepEqual(plausiblePeriod({ start: null, end: "2026-09-18" }, "2026-09-22"), { start: null, end: "2026-09-18" });
+});

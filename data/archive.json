@@ -2574,12 +2574,12 @@
       "openTo": null
     },
     "recruitPeriod": {
-      "start": "2025-04-04",
-      "end": "2025-04-27"
+      "start": "2026-04-04",
+      "end": "2026-04-27"
     },
     "activityPeriod": {
-      "start": "2025-04-04",
-      "end": "2025-04-27"
+      "start": "2026-04-04",
+      "end": "2026-04-27"
     },
     "tags": [
       "학교",
@@ -8893,8 +8893,8 @@
       "end": null
     },
     "activityPeriod": {
-      "start": "2025-05-11",
-      "end": "2025-05-11"
+      "start": "2026-05-11",
+      "end": "2026-05-11"
     },
     "tags": [
       "학교",
@@ -10696,12 +10696,12 @@
       "grades": []
     },
     "recruitPeriod": {
-      "start": "2025-04-28",
-      "end": "2025-05-12"
+      "start": "2026-04-28",
+      "end": "2026-05-12"
     },
     "activityPeriod": {
-      "start": "2025-07-01",
-      "end": "2025-10-19"
+      "start": "2026-07-01",
+      "end": "2026-10-19"
     },
     "tags": [
       "정부부처",
@@ -17836,7 +17836,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2025-09-10"
+      "end": "2026-09-10"
     },
     "activityPeriod": {
       "start": null,
@@ -18057,7 +18057,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "1954-06-01"
+      "end": null
     },
     "activityPeriod": {
       "start": null,
@@ -25019,7 +25019,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2025-01-04"
+      "end": "2026-01-04"
     },
     "activityPeriod": {
       "start": null,
@@ -25281,8 +25281,8 @@
       "end": null
     },
     "activityPeriod": {
-      "start": "2025-01-05",
-      "end": "2025-01-05"
+      "start": "2026-01-05",
+      "end": "2026-01-05"
     },
     "tags": [
       "학교"
@@ -25322,8 +25322,8 @@
       "end": null
     },
     "activityPeriod": {
-      "start": "2025-01-15",
-      "end": "2025-01-15"
+      "start": "2026-01-15",
+      "end": "2026-01-15"
     },
     "tags": [
       "학교"
@@ -25546,7 +25546,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2025-01-18"
+      "end": "2026-01-18"
     },
     "activityPeriod": {
       "start": null,
@@ -27108,7 +27108,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2025-01-05"
+      "end": "2026-01-05"
     },
     "activityPeriod": {
       "start": null,
@@ -61711,8 +61711,8 @@
       "end": null
     },
     "activityPeriod": {
-      "start": "2024-05-10",
-      "end": "2024-05-31"
+      "start": "2025-05-10",
+      "end": "2025-05-31"
     },
     "tags": [
       "학교",
@@ -66521,11 +66521,11 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2024-04-01"
+      "end": "2025-04-01"
     },
     "activityPeriod": {
-      "start": "2024-04-17",
-      "end": "2024-04-17"
+      "start": "2025-04-17",
+      "end": "2025-04-17"
     },
     "tags": [
       "학교",
@@ -68682,7 +68682,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "1954-06-01"
+      "end": null
     },
     "activityPeriod": {
       "start": null,
@@ -74499,8 +74499,8 @@
       "end": null
     },
     "activityPeriod": {
-      "start": "2024-02-03",
-      "end": "2024-02-20"
+      "start": "2025-02-03",
+      "end": "2025-02-20"
     },
     "tags": [
       "학교"
@@ -74995,8 +74995,8 @@
       "end": null
     },
     "activityPeriod": {
-      "start": "2024-01-06",
-      "end": "2024-01-23"
+      "start": "2025-01-06",
+      "end": "2025-01-23"
     },
     "tags": [
       "학교"
@@ -109090,12 +109090,12 @@
       "grades": []
     },
     "recruitPeriod": {
-      "start": "2023-08-29",
-      "end": "2023-09-21"
+      "start": "2024-08-29",
+      "end": "2024-09-21"
     },
     "activityPeriod": {
-      "start": "2023-09-18",
-      "end": "2023-09-22"
+      "start": "2024-09-18",
+      "end": "2024-09-22"
     },
     "tags": [
       "학교",
@@ -117149,7 +117149,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "1954-06-01"
+      "end": null
     },
     "activityPeriod": {
       "start": null,
@@ -121541,7 +121541,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2023-01-03"
+      "end": "2024-01-03"
     },
     "activityPeriod": {
       "start": null,
@@ -121664,7 +121664,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2023-01-03"
+      "end": "2024-01-03"
     },
     "activityPeriod": {
       "start": null,
@@ -148599,12 +148599,12 @@
       "grades": []
     },
     "recruitPeriod": {
-      "start": "2023-03-20",
-      "end": "2023-03-22"
+      "start": "2024-03-20",
+      "end": "2024-03-22"
     },
     "activityPeriod": {
-      "start": "2023-03-27",
-      "end": "2023-03-31"
+      "start": "2024-03-27",
+      "end": "2024-03-31"
     },
     "tags": [
       "학교",
@@ -159429,7 +159429,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "1954-06-01"
+      "end": null
     },
     "activityPeriod": {
       "start": null,
@@ -162454,7 +162454,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "1954-06-01"
+      "end": null
     },
     "activityPeriod": {
       "start": null,
@@ -168590,8 +168590,8 @@
       "end": null
     },
     "activityPeriod": {
-      "start": "2022-01-17",
-      "end": "2022-01-18"
+      "start": "2023-01-17",
+      "end": "2023-01-18"
     },
     "tags": [
       "학교",
@@ -169101,8 +169101,8 @@
       "end": "2022-12-16"
     },
     "activityPeriod": {
-      "start": "2022-01-10",
-      "end": "2022-01-13"
+      "start": "2023-01-10",
+      "end": "2023-01-13"
     },
     "tags": [
       "학교"
@@ -169612,8 +169612,8 @@
       "end": null
     },
     "activityPeriod": {
-      "start": "2022-01-17",
-      "end": "2022-01-18"
+      "start": "2023-01-17",
+      "end": "2023-01-18"
     },
     "tags": [
       "학교",
@@ -172253,12 +172253,12 @@
       "grades": []
     },
     "recruitPeriod": {
-      "start": "2022-05-30",
-      "end": "2022-06-20"
+      "start": "2023-05-30",
+      "end": "2023-06-20"
     },
     "activityPeriod": {
-      "start": "2022-06-22",
-      "end": "2022-07-02"
+      "start": "2023-06-22",
+      "end": "2023-07-02"
     },
     "tags": [
       "학교",
@@ -199409,8 +199409,8 @@
       "end": null
     },
     "activityPeriod": {
-      "start": "2021-06-21",
-      "end": "2021-06-25"
+      "start": "2022-06-21",
+      "end": "2022-06-25"
     },
     "tags": [
       "학교",
@@ -210874,12 +210874,12 @@
       "grades": []
     },
     "recruitPeriod": {
-      "start": "2021-09-06",
-      "end": "2021-10-08"
+      "start": "2022-09-06",
+      "end": "2022-10-08"
     },
     "activityPeriod": {
-      "start": "2021-09-06",
-      "end": "2021-09-23"
+      "start": "2022-09-06",
+      "end": "2022-09-23"
     },
     "tags": [
       "공공기관",
@@ -211682,7 +211682,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "1954-06-01"
+      "end": null
     },
     "activityPeriod": {
       "start": null,
@@ -213052,12 +213052,12 @@
       "grades": []
     },
     "recruitPeriod": {
-      "start": "2021-09-03",
-      "end": "2021-09-29"
+      "start": "2022-09-03",
+      "end": "2022-09-29"
     },
     "activityPeriod": {
-      "start": "2021-09-30",
-      "end": "2021-10-07"
+      "start": "2022-09-30",
+      "end": "2022-10-07"
     },
     "tags": [
       "학교",
@@ -213655,7 +213655,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "1954-06-01"
+      "end": null
     },
     "activityPeriod": {
       "start": null,
@@ -215573,8 +215573,8 @@
       "excludedStatuses": []
     },
     "recruitPeriod": {
-      "start": "2022-02-16",
-      "end": "2021-01-17"
+      "start": "2023-02-16",
+      "end": "2022-01-17"
     },
     "activityPeriod": {
       "start": null,
@@ -220425,8 +220425,8 @@
       "end": null
     },
     "activityPeriod": {
-      "start": "2021-01-10",
-      "end": "2021-01-10"
+      "start": "2022-01-10",
+      "end": "2022-01-10"
     },
     "tags": [
       "학교",
@@ -220923,8 +220923,8 @@
       "end": "2021-12-31"
     },
     "activityPeriod": {
-      "start": "2021-01-27",
-      "end": "2021-01-27"
+      "start": "2022-01-27",
+      "end": "2022-01-27"
     },
     "tags": [
       "학교",
@@ -237118,12 +237118,12 @@
       "grades": []
     },
     "recruitPeriod": {
-      "start": "2021-05-17",
-      "end": "2021-06-14"
+      "start": "2022-05-17",
+      "end": "2022-06-14"
     },
     "activityPeriod": {
-      "start": "2021-06-16",
-      "end": "2021-06-18"
+      "start": "2022-06-16",
+      "end": "2022-06-18"
     },
     "tags": [
       "공공기관",
@@ -318522,12 +318522,12 @@
       "grades": []
     },
     "recruitPeriod": {
-      "start": "2020-04-16",
-      "end": "2020-04-22"
+      "start": "2021-04-16",
+      "end": "2021-04-22"
     },
     "activityPeriod": {
-      "start": "2020-04-23",
-      "end": "2020-04-29"
+      "start": "2021-04-23",
+      "end": "2021-04-29"
     },
     "tags": [
       "학교",

@@ -101,11 +101,22 @@ export function enrich(item: CollectedItem, source: Source, categories: TagCateg
 // 말이 안 되는 기간은 버린다 (본문에 나온 다른 날짜를 잘못 읽은 경우).
 // 게시일보다 1년 넘게 앞서 시작하거나, 게시일보다 1년 반 넘게 뒤에 끝나는 기간은 모르는 값으로 둔다
 const DAY = 86_400_000;
+// 끝나는 날이 게시일보다 60일 넘게 앞서면(이미 끝난 일을 새로 올릴 리 없음):
+//  - 연도를 하나 더하면 말이 되면 연도 넘김 실수로 보고 고친다 (12/30에 올린 "~1/4"를 같은 해로 읽은 경우)
+//  - 그래도 안 되면 모르는 값으로 둔다. 60일 안쪽은 재게시·추가 안내일 수 있어 그대로 둔다
+const ENDED_BEFORE_POST_DAYS = 60;
+const nextYear = (date: string | null) => (date ? `${Number(date.slice(0, 4)) + 1}${date.slice(4)}` : null);
 export function plausiblePeriod(period: Period, postedAt: string | null): Period {
   if (!postedAt) return period;
   const posted = Date.parse(postedAt);
   const tooEarly = period.start !== null && Date.parse(period.start) < posted - 365 * DAY;
   const tooLate = period.end !== null && Date.parse(period.end) > posted + 545 * DAY;
+  const endedLongBefore = (p: Period) => p.end !== null && Date.parse(p.end) < posted - ENDED_BEFORE_POST_DAYS * DAY;
+  if (endedLongBefore(period)) {
+    const shifted = { start: nextYear(period.start), end: nextYear(period.end) };
+    const fits = !endedLongBefore(shifted) && Date.parse(shifted.end!) <= posted + 365 * DAY;
+    return fits ? plausiblePeriod(shifted, postedAt) : { start: null, end: null };
+  }
   return tooEarly || tooLate ? { start: null, end: null } : period;
 }
 
