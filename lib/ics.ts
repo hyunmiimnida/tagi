@@ -13,7 +13,8 @@ function nextDay(date: string): string {
 
 const escape = (text: string) => text.replace(/[\\;,]/g, (c) => `\\${c}`).replace(/\n/g, "\\n");
 
-function event(uid: string, summary: string, start: string, end: string, url: string): string[] {
+// remind: 마감 하루 전 오전 9시에 캘린더 앱이 알림을 띄운다 (하루 종일 일정은 0시에 시작하므로 15시간 전)
+function event(uid: string, summary: string, start: string, end: string, url: string, remind = false): string[] {
   return [
     "BEGIN:VEVENT",
     `UID:${uid}@campus-moa`,
@@ -23,6 +24,7 @@ function event(uid: string, summary: string, start: string, end: string, url: st
     `SUMMARY:${escape(summary)}`,
     `URL:${url}`,
     `DESCRIPTION:${escape(`원문: ${url}`)}`,
+    ...(remind ? ["BEGIN:VALARM", "ACTION:DISPLAY", `DESCRIPTION:${escape(`내일 마감: ${summary}`)}`, "TRIGGER:-PT15H", "END:VALARM"] : []),
     "END:VEVENT",
   ];
 }
@@ -50,7 +52,7 @@ export function buildIcs(programs: Program[], origin: string): string {
   for (const program of programs) {
     const url = `${origin}/programs/${program.id}`;
     const { recruitPeriod: recruit, activityPeriod: activity } = program;
-    if (recruit.end) lines.push(...event(`${program.id}-deadline`, `[마감] ${program.title}`, recruit.end, recruit.end, url));
+    if (recruit.end) lines.push(...event(`${program.id}-deadline`, `[마감] ${program.title}`, recruit.end, recruit.end, url, true));
     if (activity.start) {
       lines.push(...event(`${program.id}-activity`, program.title, activity.start, activity.end ?? activity.start, url));
     }
