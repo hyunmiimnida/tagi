@@ -4,7 +4,7 @@ import { BottomNav } from "../components/BottomNav.tsx";
 import { Header } from "../components/Header.tsx";
 import { PwaSetup } from "../components/InstallCard.tsx";
 import { LoginSheet } from "../components/LoginSheet.tsx";
-import { describeSources, getLastCollected } from "../lib/data.ts";
+import { describeSources, getCollectedBySchool } from "../lib/data.ts";
 import { SITE_NAME, SITE_URL } from "../lib/filter.ts";
 import { UserProvider } from "../lib/user.tsx";
 import "./globals.css";
@@ -27,7 +27,7 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const lastCollected = getLastCollected();
+  const collected = getCollectedBySchool();
   return (
     <html lang="ko">
       <head>
@@ -42,10 +42,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Header />
           <main>{children}</main>
           <footer className="footer">
-            <p>
-              {lastCollected && `${lastCollected} 기준 · `}
-              {describeSources()}에서 매일 모아요
-            </p>
+            <p>{describeSources()}에서 매일 모아요</p>
+            {/* 학교마다 출처 중 가장 오래전에 성공한 시각. 한 곳이라도 수집이 멈추면 드러난다 */}
+            {collected.length > 0 && (
+              <p>마지막 수집: {collected.map(({ school, at }) => `${school} ${at}`).join(" · ")}</p>
+            )}
             <p>일정과 자격은 자동으로 정리한 정보라 틀릴 수 있어요. 신청 전에 꼭 원문을 확인하세요.</p>
             <p className="footer-links">
               <Link href="/terms">이용약관</Link>

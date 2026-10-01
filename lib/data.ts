@@ -136,21 +136,41 @@ export function describeSources(): string {
   return `${schools.map((school) => school.name).join("·")} 공지 ${count}곳`;
 }
 
+// 학교별 마지막 수집 시각. 학교 출처 중 가장 오래전에 성공한 시각을 보여 준다 (한 곳이라도 멈추면 드러나게)
+export function getCollectedBySchool(): { school: string; at: string }[] {
+  try {
+    const log = readJson<{ sources: { source: string; lastSuccessAt?: string }[] }>("data/collect-log.json");
+    const last = new Map(log.sources.map((s) => [s.source, s.lastSuccessAt]));
+    return readSchools().flatMap((school) => {
+      const times = school.sources.filter((s) => s.enabled).map((s) => last.get(s.id));
+      if (times.length === 0 || times.some((t) => !t)) return [];
+      const oldest = (times as string[]).sort()[0];
+      return [{ school: school.shortName, at: formatKoreanTime(oldest) }];
+    });
+  } catch {
+    return [];
+  }
+}
+
 // 마지막 수집 시각을 "10.1 06:00" 형식(한국 시간)으로
 export function getLastCollected(): string | null {
   try {
     const { ranAt } = readJson<{ ranAt: string }>("data/collect-log.json");
-    const parts = new Intl.DateTimeFormat("ko-KR", {
-      timeZone: "Asia/Seoul",
-      month: "numeric",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-    }).formatToParts(new Date(ranAt));
-    const get = (type: string) => parts.find((p) => p.type === type)?.value ?? "";
-    return `${get("month")}.${get("day")} ${get("hour")}:${get("minute")}`;
+    return formatKoreanTime(ranAt);
   } catch {
     return null;
   }
+}
+
+function formatKoreanTime(iso: string): string {
+  const parts = new Intl.DateTimeFormat("ko-KR", {
+    timeZone: "Asia/Seoul",
+    month: "numeric",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).formatToParts(new Date(iso));
+  const get = (type: string) => parts.find((p) => p.type === type)?.value ?? "";
+  return `${get("month")}.${get("day")} ${get("hour")}:${get("minute")}`;
 }
