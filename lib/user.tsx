@@ -9,7 +9,7 @@ import { toDateString } from "./filter.ts";
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-const supabase = url && key ? createClient(url, key) : null;
+export const supabase = url && key ? createClient(url, key) : null;
 
 export const LOGIN_PROVIDERS = [
   { id: "kakao", name: "카카오" },
@@ -22,6 +22,7 @@ interface UserState {
   loginEnabled: boolean; // Supabase가 설정되어 있는지
   ready: boolean;
   signedIn: boolean;
+  userId: string | null;
   email: string | null; // 카카오는 이메일을 주지 않을 수 있다
   schoolId: string | null;
   favorites: Set<string>;
@@ -141,6 +142,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       loginEnabled: supabase !== null,
       ready,
       signedIn: userId !== null,
+      userId,
       email,
       schoolId,
       favorites,

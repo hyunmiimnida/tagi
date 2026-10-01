@@ -1,11 +1,17 @@
 import { notFound } from "next/navigation";
 import { BackLink } from "../../../components/BackLink.tsx";
+import { Comments } from "../../../components/Comments.tsx";
 import { DetailActions } from "../../../components/DetailActions.tsx";
 import { ExternalIcon } from "../../../components/Icons.tsx";
-import { getPrograms, getSchools, getSourceNames } from "../../../lib/data.ts";
-import { formatPeriod } from "../../../lib/filter.ts";
+import { getPastRounds, getPrograms, getSchools, getSourceNames } from "../../../lib/data.ts";
+import { formatDate, formatPeriod } from "../../../lib/filter.ts";
+import type { Program } from "../../../src/types.ts";
 
 export const dynamicParams = false;
+
+// 지난 회차의 연도: 모집 시작 → 게시일 → 활동 시작
+const roundYear = (p: Program) =>
+  Number((p.recruitPeriod.start ?? p.postedAt ?? p.activityPeriod.start ?? p.collectedAt).slice(0, 4));
 
 export function generateStaticParams() {
   return getPrograms().map((program) => ({ id: program.id }));
@@ -28,6 +34,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
   const program = getPrograms().find((p) => p.id === id);
   if (!program) notFound();
 
+  const pastRounds = getPastRounds(program);
   const sourceNames = getSourceNames();
   const schoolNames = Object.fromEntries(getSchools().map((school) => [school.id, school.name]));
   const { target } = program;
@@ -80,6 +87,36 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
       {(!recruit || !activity) && (
         <p className="notice">일부 일정은 자동으로 찾지 못했어요. 신청 전에 원문에서 꼭 확인해 주세요.</p>
       )}
+
+      {pastRounds.length > 0 && (
+        <section className="card history">
+          <h2 className="card-title">지난 공고</h2>
+          <p className="card-sub">해마다 열리는 프로그램이에요. 지난 회차 일정을 보면 준비 시기를 가늠할 수 있어요.</p>
+          <ul className="history-list">
+            {pastRounds.map((round) => {
+              const year = roundYear(round);
+              const recruitText = formatPeriod(round.recruitPeriod, year);
+              const period = recruitText
+                ? `모집 ${recruitText}`
+                : round.postedAt && `게시 ${formatDate(round.postedAt, year)}`;
+              return (
+                <li key={round.id}>
+                  <a href={round.links[0].url} target="_blank" rel="noopener noreferrer">
+                    <span className="history-year">{year}</span>
+                    <span>
+                      <span className="history-title">{round.title}</span>
+                      {period && <span className="history-period">{period}</span>}
+                    </span>
+                    <ExternalIcon size={16} />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+
+      {pastRounds.length > 0 && program.seriesId && <Comments seriesId={program.seriesId} />}
 
       <div className="cta">
         {program.links.map((link, index) => (

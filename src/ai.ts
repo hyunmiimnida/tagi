@@ -172,6 +172,34 @@ ${pairs.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join
   }
 }
 
+// 두 공고가 "같은 프로그램이 다른 해·학기·회차에 다시 열린 것"인지 묻는다. 쌍마다 true/false, 실패하면 null
+export async function confirmSameSeries(pairs: [Program, Program][]): Promise<boolean[] | null> {
+  const bin = findCodex();
+  if (!bin) return null;
+  const describe = (p: Program) => `${p.title} / 주최 ${p.organizer ?? "모름"} / 게시 ${p.postedAt ?? "?"}`;
+  const answers: boolean[] = [];
+  for (let start = 0; start < pairs.length; start += 60) {
+    const batch = pairs.slice(start, start + 60);
+    const prompt = `아래 각 쌍이 "같은 프로그램이 다른 해·학기·회차에 다시 열린 것"인지 판단해라. 파일을 읽거나 명령을 실행하지 말고 JSON만 답해라.
+같은 프로그램: 이름과 목적이 같고 연도·학기·기수·회차만 다름 (예: 2025 하계 해외탐방 ↔ 2026 하계 해외탐방).
+다른 프로그램: 같은 부서·같은 종류라도 주제·대상·이름이 다름 (예: 취업 특강 A ↔ 취업 특강 B, 공모전 ↔ 시상식).
+확실하지 않으면 다른 프로그램으로 본다.
+형식: {"same":[같은 쌍의 번호들]}
+
+${batch.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join("\n")}`;
+    try {
+      const same = (await askCodex(bin, prompt)).same;
+      const set = new Set(Array.isArray(same) ? same : []);
+      batch.forEach((_, i) => answers.push(set.has(i)));
+      console.log(`  AI 반복 프로그램 판단 ${Math.min(start + 60, pairs.length)}/${pairs.length}`);
+    } catch (error) {
+      console.error("  AI 반복 프로그램 판단 실패:", error instanceof Error ? error.message : error);
+      return null;
+    }
+  }
+  return answers;
+}
+
 // 과거 글 1차 거르기: 제목만 보고 "학생이 신청·참여하는 공고"인 글의 번호를 돌려준다. 실패하면 null
 export async function pickProgramTitles(titles: string[]): Promise<number[] | null> {
   const bin = findCodex();

@@ -12,6 +12,7 @@ import { archivers } from "./collectors/index.ts";
 import { mergePrograms } from "./dedupe.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
+import { assignSeries } from "./series.ts";
 import type { ArchivePost, CollectContext, CollectedItem, Program, School, TagCategory } from "./types.ts";
 
 // 과거 글 수집 (내 컴퓨터에서 한 번 실행, 몇 시간 걸린다. 끊겨도 다시 실행하면 이어서 한다)
@@ -146,6 +147,7 @@ async function save() {
   const { current, old } = splitByAge(results);
   const programs = mergePrograms(await readJson<Program[]>(PROGRAMS_FILE, []), current);
   const archive = mergeArchive(await readJson<Program[]>(ARCHIVE_FILE, []), old);
+  console.log(`반복 프로그램 묶음 ${await assignSeries(programs, archive)}개`);
   await writeJson(PROGRAMS_FILE, programs);
   await writeJson(ARCHIVE_FILE, archive);
   console.log(`목록 ${programs.length}개, 보관함 ${archive.length}개로 저장`);

@@ -1080,6 +1080,167 @@ main {
   font-weight: 500;
 }
 
+/* 지난 공고·후기 카드 */
+.detail .card + .card,
+.notice + .card {
+  margin-top: 12px;
+}
+
+.card-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.card-sub {
+  margin-top: 4px;
+  color: var(--text-3);
+  font-size: 0.875rem;
+}
+
+.history {
+  padding: 20px 20px 8px;
+}
+
+.history-list {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history-list li + li {
+  border-top: 1px solid var(--line);
+}
+
+.history-list a {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 0;
+}
+
+.history-year {
+  color: var(--accent);
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.history-title {
+  display: block;
+  overflow: hidden;
+  color: var(--text);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.history-period {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+}
+
+.history-list svg {
+  color: var(--text-3);
+}
+
+.comments {
+  padding: 20px;
+}
+
+.comment-form {
+  margin-top: 14px;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.comment-form textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.comment-form-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+}
+
+.button.small {
+  min-height: 38px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-size: 0.9375rem;
+}
+
+.button:disabled {
+  opacity: 0.4;
+}
+
+.comments > .button {
+  margin-top: 14px;
+}
+
+.comment-empty {
+  margin-top: 14px;
+  color: var(--text-3);
+  font-size: 0.875rem;
+}
+
+.comment-list {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.comment-list li {
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.comment-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+}
+
+.comment-meta strong {
+  color: var(--text-2);
+  font-weight: 700;
+}
+
+.comment-meta .text-button {
+  margin-left: auto;
+}
+
+.comment-list p {
+  margin-top: 4px;
+  color: var(--text);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 .cta {
   display: grid;
   gap: 8px;

@@ -25,6 +25,7 @@ export interface Program {
   extractedBy: "rules" | "ai"; // 정보 추출 방법
   collectedAt: string;
   firstSeenAt?: string; // 처음 수집한 시각 (새로 올라온 항목 표시용)
+  seriesId?: string; // 해마다·학기마다 반복되는 같은 프로그램의 묶음 id (src/series.ts)
 }
 
 // 수집기가 돌려주는 값. text는 정보 추출에만 쓰고 저장하지 않는다

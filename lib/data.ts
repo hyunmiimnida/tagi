@@ -32,6 +32,37 @@ export function getPrograms(): ProgramView[] {
   return readJson<Program[]>("data/programs.json").map((program) => toView(program, schools));
 }
 
+// 보관함(마지막 일정이 오래 지난 공고). 반복 프로그램의 지난 회차를 보여 줄 때만 쓴다
+let archiveCache: Program[] | null = null;
+function getArchive(): Program[] {
+  try {
+    archiveCache ??= readJson<Program[]>("data/archive.json");
+  } catch {
+    archiveCache = [];
+  }
+  return archiveCache;
+}
+
+const roundStart = (p: Program) => p.recruitPeriod.start ?? p.postedAt ?? p.activityPeriod.start ?? p.collectedAt.slice(0, 10);
+const NEAR_MS = 30 * 86_400_000; // 한 달 안에 다시 올린 글(재게시·기간연장)은 같은 회차로 친다
+
+// 같은 반복 프로그램의 지난 회차들 (최근 순)
+export function getPastRounds(program: Program): Program[] {
+  if (!program.seriesId) return [];
+  const mine = roundStart(program);
+  const near = (a: string, b: string) => Math.abs(Date.parse(a) - Date.parse(b)) < NEAR_MS;
+  const members = [...readJson<Program[]>("data/programs.json"), ...getArchive()]
+    .filter((p) => p.seriesId === program.seriesId && p.id !== program.id && roundStart(p) < mine)
+    .sort((a, b) => roundStart(b).localeCompare(roundStart(a)));
+
+  const rounds: Program[] = [];
+  for (const p of members) {
+    if (near(roundStart(p), mine) || rounds.some((r) => near(roundStart(r), roundStart(p)))) continue;
+    rounds.push(p);
+  }
+  return rounds;
+}
+
 export const getCategories = (): FilterCategory[] =>
   readJson<TagCategory[]>("config/tag-categories.json").map(({ id, name, tags }) => ({
     id,

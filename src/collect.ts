@@ -14,6 +14,7 @@ import { collectors } from "./collectors/index.ts";
 import { findAmbiguousPairs, mergePair, mergePrograms } from "./dedupe.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
+import { assignSeries } from "./series.ts";
 import type { Program, School, TagCategory } from "./types.ts";
 
 const CONFIG_DIR = new URL("../config/", import.meta.url);
@@ -94,9 +95,14 @@ for (const index of await confirmDuplicates(pairs)) {
   }
 }
 
+// 해마다 반복되는 프로그램을 지난 공고와 묶는다
+const archive = mergeArchive(archived, old);
+const seriesCount = await assignSeries(merged, archive);
+console.log(`반복 프로그램 묶음 ${seriesCount}개`);
+
 await mkdir(DATA_DIR, { recursive: true });
 await writeJson(PROGRAMS_FILE, merged);
-if (old.length > 0) await writeJson(ARCHIVE_FILE, mergeArchive(await readJson<Program[]>(ARCHIVE_FILE, []), old));
+await writeJson(ARCHIVE_FILE, archive);
 await writeJson(EXCLUDED_FILE, [...excludedUrls].sort());
 await writeJson(new URL("collect-log.json", DATA_DIR), { ranAt: new Date().toISOString(), total: merged.length, sources: log });
 console.log(`새로 수집 ${incoming.length}개, 전체 ${merged.length}개를 data/programs.json에 저장`);
