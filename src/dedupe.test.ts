@@ -33,3 +33,13 @@ test("어느 한쪽이라도 다른 학교 학생에게 열려 있으면 열린 
   assert.equal(merged.target.openTo, "전국 대학생");
   assert.deepEqual(merged.target.schools, []);
 });
+
+test("같은 글을 다시 추출해도 이미 확인한 모집 대상과 예전 id는 남긴다", async () => {
+  const { mergePrograms } = await import("./dedupe.ts");
+  const saved = { ...program("a", "전국 대학생"), aliases: ["old"] };
+  saved.target.schools = [];
+  const [merged] = mergePrograms([saved], [program("a")]);
+  assert.equal(merged.target.openTo, "전국 대학생");
+  assert.deepEqual(merged.target.schools, []);
+  assert.deepEqual(merged.aliases, ["old"]);
+});

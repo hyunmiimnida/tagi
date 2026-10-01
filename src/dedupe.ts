@@ -110,8 +110,15 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
     if (index >= 0) {
       // 이미 저장된 게시물: 최신 내용으로 바꾸되, 합쳐진 항목이면 빈 값만 채운다
       const saved = result[index];
-      if (saved.links.length === 1) result[index] = { ...keepAiFields(saved, program), firstSeenAt: firstSeen(saved) };
-      else {
+      if (saved.links.length === 1) {
+        const fresh: Program = { ...keepAiFields(saved, program), firstSeenAt: firstSeen(saved) };
+        // 새 결과가 확인하지 않은 값(다른 학교 지원 가능 여부, 합쳐진 예전 id)은 저장된 값을 이어받는다
+        if (fresh.target.openTo === undefined && saved.target.openTo !== undefined) {
+          fresh.target = { ...fresh.target, openTo: saved.target.openTo, schools: saved.target.schools };
+        }
+        if (saved.aliases) fresh.aliases = [...new Set([...saved.aliases, ...(fresh.aliases ?? [])])];
+        result[index] = fresh;
+      } else {
         mergeInto(saved, program);
         // 원문을 다시 읽어 새 일정을 찾았으면(기간 연장 등) 그 일정을 따른다
         if (program.recruitPeriod.start || program.recruitPeriod.end) saved.recruitPeriod = program.recruitPeriod;
