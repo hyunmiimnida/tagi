@@ -15,6 +15,7 @@ import type { FilterCategory, ProgramView, SchoolOption } from "../lib/filter.ts
 import { useToday, useUser } from "../lib/user.tsx";
 import { LIST_QUERY_KEY } from "./BackLink.tsx";
 import { ChevronIcon, CloseIcon, SearchIcon } from "./Icons.tsx";
+import { EmptyArt } from "./EmptyArt.tsx";
 import { ProgramRow } from "./ProgramRow.tsx";
 
 interface Props {
@@ -349,13 +350,29 @@ export function Explorer({ programs, categories, schools }: Props) {
         </ul>
       ) : visible.length === 0 ? (
         <div className="empty">
+          <EmptyArt />
           <p className="empty-title">조건에 맞는 공고가 없어요</p>
           <p>필터를 줄이거나 다른 검색어를 써 보세요.</p>
-          {(hasChips || keyword) && (
-            <button className="button" onClick={reset}>
-              필터 초기화
-            </button>
-          )}
+          <div className="empty-actions">
+            {/* 학교를 골라 둔 것을 잊고 검색하는 경우가 많아, 다른 학교에 결과가 있으면 바로 넓혀 볼 수 있게 한다 (내 학교 설정은 그대로) */}
+            {school && (counts.all ?? 0) > 0 && (
+              <button
+                className="button primary"
+                onClick={() => {
+                  setSchool(null);
+                  setSchoolFromUrl(true);
+                  setUnits(new Set());
+                }}
+              >
+                전체 학교에서 {counts.all}개 보기
+              </button>
+            )}
+            {(hasChips || keyword) && (
+              <button className="button" onClick={reset}>
+                필터 초기화
+              </button>
+            )}
+          </div>
         </div>
       ) : (
         <ul className="rows">

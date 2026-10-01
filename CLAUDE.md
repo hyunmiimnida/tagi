@@ -93,6 +93,8 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `data/programs.json` — 수집 결과(최근 90일), `data/archive.json` — 지난 공고 보관함, `data/collect-log.json` — 마지막 수집 기록 (출처마다 `lastSuccessAt`·`lastSuccessCount`를 이전 기록에서 이어받는다)
 - 결과 올리기: GitHub Actions와 내 컴퓨터 수집이 겹쳐 push가 실패하면, 최신을 받아 다시 수집하고 올린다(최대 3번). Actions는 한 번에 하나만 실행
 - 검색엔진: `app/sitemap.ts`(홈·목록·상세 전체), `app/robots.ts`
+- 공유 미리보기 이미지: `app/opengraph-image.tsx`(사이트), `app/programs/[id]/opengraph-image.tsx`(공고마다), 그리는 부품 `lib/og.tsx`. 빌드할 때 Pretendard otf를 CDN에서 한 번 받아 쓴다(woff는 그림 만들 때 오류)
+- 그림: 분야 아이콘 `components/FieldIcon.tsx`, 빈 화면 그림 `components/EmptyArt.tsx`. 원문 포스터는 쓰지 않는다(원문 복사·robots.txt의 첨부 경로 차단)
 - `app/` — 화면. 하단 탭 바(`components/BottomNav.tsx`)로 홈 `/`, 공고 `/programs`, 캘린더 `/calendar`, 프로필 `/my`를 오간다. 상세는 `/programs/[id]`
   - 목록 필터는 주소(`?school=yu&unit=...&tag=...&q=...&closed=1&sort=recent`)에 저장된다
   - 상세·캘린더에서 `.ics` 캘린더 파일로 내보낼 수 있다 (`lib/ics.ts`)

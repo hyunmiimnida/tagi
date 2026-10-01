@@ -15,6 +15,7 @@ import type { FilterCategory } from "../lib/filter.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import type { ProgramView as Program } from "../lib/filter.ts";
 import { ChevronIcon } from "./Icons.tsx";
+import { FieldIcon } from "./FieldIcon.tsx";
 import { InstallCard } from "./InstallCard.tsx";
 import { ProgramRow } from "./ProgramRow.tsx";
 
@@ -185,7 +186,12 @@ export function Home({ programs, categories }: Props) {
                   href={`/programs?tag=${encodeURIComponent(tag)}`}
                   className={`shortcut ${count === 0 ? "dim" : ""}`}
                 >
-                  <span>{tag}</span>
+                  <span className="shortcut-label">
+                    <span className="shortcut-icon">
+                      <FieldIcon name={tag} />
+                    </span>
+                    {tag}
+                  </span>
                   <strong>{count}</strong>
                 </Link>
               );

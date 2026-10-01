@@ -2017,3 +2017,25 @@ main {
 .report-info-error {
   color: var(--warn);
 }
+
+.shortcut-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.shortcut-icon {
+  display: inline-grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.empty-art {
+  margin-bottom: 8px;
+}
