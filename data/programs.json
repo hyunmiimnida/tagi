@@ -866,7 +866,7 @@
       "grades": []
     },
     "recruitPeriod": {
-      "start": "2026-07-07",
+      "start": null,
       "end": "2026-08-10"
     },
     "activityPeriod": {
@@ -1416,7 +1416,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:39.019Z",
     "firstSeenAt": "2026-09-30T00:00:00.000Z",
-    "seriesId": "yu-news-225270390"
+    "seriesId": "yu-news-220544126"
   },
   {
     "id": "yu-news-231879232",
@@ -1502,7 +1502,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:40.682Z",
-    "firstSeenAt": "2026-09-30T00:00:00.000Z"
+    "firstSeenAt": "2026-09-30T00:00:00.000Z",
+    "seriesId": "yu-news-221599172"
   },
   {
     "id": "yu-news-231879185",
@@ -1692,7 +1693,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:44.759Z",
     "firstSeenAt": "2026-09-30T00:00:00.000Z",
-    "seriesId": "yu-news-226598891"
+    "seriesId": "yu-news-221742388"
   },
   {
     "id": "yu-news-231879110",
@@ -1751,7 +1752,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:45.860Z",
     "firstSeenAt": "2026-09-30T00:00:00.000Z",
-    "seriesId": "yu-news-227059805"
+    "seriesId": "yu-news-220049011"
   },
   {
     "id": "yu-news-231879109",
@@ -1966,7 +1967,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:50.879Z",
     "firstSeenAt": "2026-09-29T00:00:00.000Z",
-    "seriesId": "yu-news-223734066"
+    "seriesId": "yu-news-10130842"
   },
   {
     "id": "yu-news-231865002",
@@ -2012,135 +2013,6 @@
     "collectedAt": "2026-10-01T03:29:51.661Z",
     "firstSeenAt": "2026-09-29T00:00:00.000Z",
     "seriesId": "yu-news-229641837"
-  },
-  {
-    "id": "yu-news-231850919",
-    "title": "[재게시][교육개발센터] 2026 AI 기반 학업 전략 공모전 안내",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231850919"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-28",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:29:52.781Z",
-    "firstSeenAt": "2026-09-28T00:00:00.000Z",
-    "seriesId": "yu-news-231498638"
-  },
-  {
-    "id": "yu-news-231850918",
-    "title": "[재게시][교육개발센터] 2026 AI 기반 학업계획서 공모전 안내",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231850918"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-28",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:29:53.710Z",
-    "firstSeenAt": "2026-09-28T00:00:00.000Z",
-    "seriesId": "yu-news-227182580"
-  },
-  {
-    "id": "yu-news-231850915",
-    "title": "📅(일정변경)📅[학생상담센터]⭐ YU PEER(또래상담사) 양성교육 기본과정 참여자를 모집⭐",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-09-01",
-      "end": "2026-10-30"
-    },
-    "activityPeriod": {
-      "start": "2026-10-28",
-      "end": "2026-11-03"
-    },
-    "tags": [
-      "학교",
-      "상담·심리",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231850915"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-28",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:29:54.796Z",
-    "firstSeenAt": "2026-09-28T00:00:00.000Z",
-    "seriesId": "yu-news-224972264"
   },
   {
     "id": "yu-news-231850901",
@@ -2523,95 +2395,6 @@
     "collectedAt": "2026-10-01T03:30:03.307Z",
     "firstSeenAt": "2026-09-23T00:00:00.000Z",
     "seriesId": "yu-news-229641837"
-  },
-  {
-    "id": "yu-news-231780524",
-    "title": "⏰기간 연장⏰[대학혁신지원사업] 2026학년도 글로벌인재대학 에세이 공모전(글로벌 문화 교류와 이해) 참가자 모집 안내",
-    "organizer": "글로벌인재대학",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생",
-        "졸업생"
-      ]
-    },
-    "recruitPeriod": {
-      "start": "2026-09-10",
-      "end": "2026-09-30"
-    },
-    "activityPeriod": {
-      "start": "2026-10-02",
-      "end": "2026-10-30"
-    },
-    "tags": [
-      "학교",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231780524"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-23",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:30:04.902Z",
-    "firstSeenAt": "2026-09-23T00:00:00.000Z",
-    "seriesId": "yu-news-231780524"
-  },
-  {
-    "id": "yu-news-231780497",
-    "title": "[재게시] Physical AI Challenge 「PAC 2026」 참가팀 모집 안내",
-    "organizer": "영남일보",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231780497"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-23",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:30:05.427Z",
-    "firstSeenAt": "2026-09-23T00:00:00.000Z",
-    "seriesId": "yu-news-231526872"
   },
   {
     "id": "yu-career-2495",
@@ -3768,7 +3551,7 @@
       "grades": []
     },
     "recruitPeriod": {
-      "start": "2026-06-22",
+      "start": null,
       "end": "2026-07-05"
     },
     "activityPeriod": {
@@ -5172,7 +4955,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:38.126Z",
     "firstSeenAt": "2026-10-01T03:29:38.126Z",
-    "seriesId": "yu-news-226449696"
+    "seriesId": "yu-news-221729325"
   },
   {
     "id": "yu-news-231780470",
@@ -5256,7 +5039,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:10.933Z",
     "firstSeenAt": "2026-10-01T03:30:10.933Z",
-    "seriesId": "yu-news-226680264"
+    "seriesId": "yu-news-221807521"
   },
   {
     "id": "yu-news-231780460",
@@ -5346,54 +5129,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:13.806Z",
     "firstSeenAt": "2026-10-01T03:30:13.806Z",
-    "seriesId": "yu-news-229712152"
-  },
-  {
-    "id": "yu-news-231766395",
-    "title": "(재게시)[대학혁신지원사업] 2026학년도 글로벌인재대학 에세이 공모전(글로벌 문화 교류와 이해) 참가자 모집 안내",
-    "organizer": "글로벌인재대학",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생",
-        "졸업생"
-      ]
-    },
-    "recruitPeriod": {
-      "start": "2026-09-10",
-      "end": "2026-09-23"
-    },
-    "activityPeriod": {
-      "start": "2026-10-02",
-      "end": "2026-10-30"
-    },
-    "tags": [
-      "학교",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231766395"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-22",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:30:15.885Z",
-    "firstSeenAt": "2026-10-01T03:30:15.885Z",
-    "seriesId": "yu-news-231780524"
+    "seriesId": "yu-career-1949"
   },
   {
     "id": "yu-news-231766388",
@@ -5437,100 +5173,6 @@
     "seriesId": "yu-news-228923738"
   },
   {
-    "id": "yu-news-231766367",
-    "title": "‼️기간연장‼️ 🌳[대학혁신지원사업] 2026학년도 글로벌인재대학 YU 사회공헌봉사단 참가자 모집🌳",
-    "organizer": "글로벌인재대학",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생"
-      ]
-    },
-    "recruitPeriod": {
-      "start": "2026-09-10",
-      "end": "2026-09-23"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "해외·글로벌",
-      "봉사"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231766367"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-22",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:30:18.612Z",
-    "firstSeenAt": "2026-10-01T03:30:18.612Z",
-    "seriesId": "yu-news-226517521"
-  },
-  {
-    "id": "yu-news-231752289",
-    "title": "(재게시) [영대문화] 제47회 영대문화상 공모",
-    "organizer": "교지편집국 영대문화",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생",
-        "휴학생",
-        "졸업생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-09-29"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "장학·지원금",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231752289"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-21",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:30:19.295Z",
-    "firstSeenAt": "2026-10-01T03:30:19.295Z",
-    "seriesId": "yu-news-226436110"
-  },
-  {
     "id": "yu-news-231752254",
     "title": "580돌 한글날 맞이 순우리말 사행시 공모전 (9/21~10/13)",
     "organizer": "국어문화연구소",
@@ -5571,47 +5213,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:20.888Z",
     "firstSeenAt": "2026-10-01T03:30:20.888Z"
-  },
-  {
-    "id": "yu-news-231752246",
-    "title": "[재게시][교육개발센터] 2026학년도 2학기 'YU Can Do' 안내",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231752246"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-21",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:30:21.580Z",
-    "firstSeenAt": "2026-10-01T03:30:21.580Z",
-    "seriesId": "yu-news-224095609"
   },
   {
     "id": "yu-news-231752240",
@@ -5696,61 +5297,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:13.169Z",
     "firstSeenAt": "2026-10-01T03:33:13.169Z"
-  },
-  {
-    "id": "yu-news-231710174",
-    "title": "[재게시][앵커-MEGA] 2026학년도 SL 재직자와 함께 하는 현장맞춤형 교육 참가 학생 모집",
-    "organizer": "미래자동차혁신부품사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [
-        "기계공학부",
-        "미래자동차공학과",
-        "로봇공학과",
-        "전자공학과",
-        "전기공학과",
-        "신소재공학부",
-        "화학공학부"
-      ],
-      "grades": [
-        "4학년"
-      ],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-10-01",
-      "end": "2026-10-30"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231710174"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-18",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:33:15.307Z",
-    "firstSeenAt": "2026-10-01T03:33:15.307Z",
-    "seriesId": "yu-news-231667866"
   },
   {
     "id": "yu-news-231710171",
@@ -5880,7 +5426,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:17.894Z",
     "firstSeenAt": "2026-10-01T03:33:17.894Z",
-    "seriesId": "yu-news-224055623"
+    "seriesId": "yu-news-10169988"
   },
   {
     "id": "yu-news-231710149",
@@ -5970,7 +5516,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:19.884Z",
     "firstSeenAt": "2026-10-01T03:33:19.884Z",
-    "seriesId": "yu-news-226449696"
+    "seriesId": "yu-news-221729325"
   },
   {
     "id": "yu-news-231696106",
@@ -6171,7 +5717,7 @@
     },
     "recruitPeriod": {
       "start": "2026-09-10",
-      "end": "2026-09-23"
+      "end": "2026-09-30"
     },
     "activityPeriod": {
       "start": "2026-10-02",
@@ -6184,17 +5730,24 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231780524"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231766395"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231696043"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-17",
+    "postedAt": "2026-09-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:24.768Z",
-    "firstSeenAt": "2026-10-01T03:33:24.768Z",
-    "seriesId": "yu-news-231780524"
+    "firstSeenAt": "2026-10-01T03:33:24.768Z"
   },
   {
     "id": "yu-news-231682013",
@@ -6282,143 +5835,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:27.056Z",
     "firstSeenAt": "2026-10-01T03:33:27.056Z"
-  },
-  {
-    "id": "yu-news-231681982",
-    "title": "(재게시) 제 57회 천마문학상 현상공모🖋️",
-    "organizer": "영대신문",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생",
-        "휴학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-08-17",
-      "end": "2026-09-28"
-    },
-    "activityPeriod": {
-      "start": "2026-11-11",
-      "end": "2026-11-11"
-    },
-    "tags": [
-      "학교",
-      "장학·지원금",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231681982"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-16",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:33:27.919Z",
-    "firstSeenAt": "2026-10-01T03:33:27.919Z",
-    "seriesId": "yu-news-231681982"
-  },
-  {
-    "id": "yu-news-231681981",
-    "title": "(재게시) 제 18회 영어 에세이 콘테스트 참가자 모집😸🧡",
-    "organizer": "The Yeungnam Observer",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생",
-        "휴학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-09-20"
-    },
-    "activityPeriod": {
-      "start": "2026-09-22",
-      "end": "2026-09-22"
-    },
-    "tags": [
-      "학교",
-      "장학·지원금",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231681981"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-16",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:33:28.943Z",
-    "firstSeenAt": "2026-10-01T03:33:28.943Z",
-    "seriesId": "yu-news-226422550"
-  },
-  {
-    "id": "yu-news-231681979",
-    "title": "(재게시) [교육혁신센터] ★2026 학부교육 실태조사 실시★(기프티콘 지급)",
-    "organizer": "교육혁신센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생",
-        "휴학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231681979"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-16",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:33:30.095Z",
-    "firstSeenAt": "2026-10-01T03:33:30.095Z",
-    "seriesId": "yu-news-226395177"
   },
   {
     "id": "yu-news-231681957",
@@ -6509,17 +5925,20 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231710174"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231667866"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-15",
+    "postedAt": "2026-09-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:31.821Z",
-    "firstSeenAt": "2026-10-01T03:33:31.821Z",
-    "seriesId": "yu-news-231667866"
+    "firstSeenAt": "2026-10-01T03:33:31.821Z"
   },
   {
     "id": "yu-news-231667847",
@@ -6542,7 +5961,7 @@
     },
     "recruitPeriod": {
       "start": "2026-09-10",
-      "end": "2026-09-18"
+      "end": "2026-09-23"
     },
     "activityPeriod": {
       "start": null,
@@ -6556,17 +5975,21 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231766367"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231667847"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-15",
+    "postedAt": "2026-09-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:32.943Z",
     "firstSeenAt": "2026-10-01T03:33:32.943Z",
-    "seriesId": "yu-news-226517521"
+    "seriesId": "yu-news-220335684"
   },
   {
     "id": "yu-news-231667846",
@@ -6651,7 +6074,8 @@
     "postedAt": "2026-09-15",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:38.824Z",
-    "firstSeenAt": "2026-10-01T03:33:38.824Z"
+    "firstSeenAt": "2026-10-01T03:33:38.824Z",
+    "seriesId": "yu-news-223359588"
   },
   {
     "id": "yu-news-231667827",
@@ -6739,47 +6163,6 @@
     "firstSeenAt": "2026-10-01T03:33:40.806Z"
   },
   {
-    "id": "yu-news-231667786",
-    "title": "[재게시][교육개발센터] 2026학년도 2학기 'We Can Do' 안내",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-09-16"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231667786"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-15",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:33:41.770Z",
-    "firstSeenAt": "2026-10-01T03:33:41.770Z",
-    "seriesId": "yu-news-224095609"
-  },
-  {
     "id": "yu-news-231653766",
     "title": "[앵커사업단 YUnicorn창업지원단] 2026 YUnicorn 시제품 제작 및 사업화 지원 모집 공고",
     "organizer": "앵커사업단 YUnicorn창업지원단",
@@ -6823,51 +6206,6 @@
     "collectedAt": "2026-10-01T03:33:42.875Z",
     "firstSeenAt": "2026-10-01T03:33:42.875Z",
     "seriesId": "yu-news-225351705"
-  },
-  {
-    "id": "yu-news-231653764",
-    "title": "[재게시] 📢학생홍보대사 [영대사랑]에서 제31기 신입 기수를 모집합니다!",
-    "organizer": "영대사랑",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "장학·지원금",
-      "서포터즈·기자단"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231653764"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-14",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:33:43.608Z",
-    "firstSeenAt": "2026-10-01T03:33:43.608Z",
-    "seriesId": "yu-news-226395229"
   },
   {
     "id": "yu-news-231653761",
@@ -6956,7 +6294,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:45.862Z",
     "firstSeenAt": "2026-10-01T03:33:45.862Z",
-    "seriesId": "yu-news-223921417"
+    "seriesId": "yu-news-10064597"
   },
   {
     "id": "yu-news-231653747",
@@ -7144,7 +6482,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:52.469Z",
     "firstSeenAt": "2026-10-01T03:33:52.469Z",
-    "seriesId": "yu-news-224015293"
+    "seriesId": "yu-news-10064649"
   },
   {
     "id": "yu-news-231653660",
@@ -7188,7 +6526,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:55.310Z",
     "firstSeenAt": "2026-10-01T03:33:55.310Z",
-    "seriesId": "yu-news-224526213"
+    "seriesId": "yu-news-10261173"
   },
   {
     "id": "yu-news-231653655",
@@ -7229,7 +6567,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:56.130Z",
     "firstSeenAt": "2026-10-01T03:33:56.130Z",
-    "seriesId": "yu-news-224001781"
+    "seriesId": "yu-news-9986693"
   },
   {
     "id": "yu-news-231611579",
@@ -7271,52 +6609,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:57.431Z",
     "firstSeenAt": "2026-10-01T03:33:57.431Z"
-  },
-  {
-    "id": "yu-news-231611574",
-    "title": "(재게시) [앵커사업단 YUnicorn창업지원단] ✈️ 글로벌 앙트캠프 SLUSH 참여자 모집 ✈️",
-    "organizer": "앵커사업단 YUnicorn창업지원단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-09-27"
-    },
-    "activityPeriod": {
-      "start": "2026-11-16",
-      "end": "2026-11-21"
-    },
-    "tags": [
-      "학교",
-      "창업",
-      "해외·글로벌",
-      "해외탐방"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231611574"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-11",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:33:58.053Z",
-    "firstSeenAt": "2026-10-01T03:33:58.053Z",
-    "seriesId": "yu-news-226856596"
   },
   {
     "id": "yu-news-231611564",
@@ -7446,7 +6738,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:02.378Z",
     "firstSeenAt": "2026-10-01T03:34:02.378Z",
-    "seriesId": "yu-news-223774239"
+    "seriesId": "yu-news-221247473"
   },
   {
     "id": "yu-news-231611519",
@@ -7529,93 +6821,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:05.161Z",
     "firstSeenAt": "2026-10-01T03:34:05.161Z",
-    "seriesId": "yu-news-226137626"
-  },
-  {
-    "id": "yu-news-231611507",
-    "title": "[재게시][교육개발센터] 2026학년도 2학기 'We Can Do' 안내",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231611507"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-11",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:34:06.350Z",
-    "firstSeenAt": "2026-10-01T03:34:06.350Z",
-    "seriesId": "yu-news-224095609"
-  },
-  {
-    "id": "yu-news-231611469",
-    "title": "(재게시) [교육혁신센터] ★2026 학부교육 실태조사 실시★(기프티콘 지급)",
-    "organizer": "교육혁신센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생",
-        "휴학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231611469"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-11",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:34:08.113Z",
-    "firstSeenAt": "2026-10-01T03:34:08.113Z",
-    "seriesId": "yu-news-226395177"
+    "seriesId": "yu-news-221625247"
   },
   {
     "id": "yu-news-231597413",
@@ -7745,52 +6951,6 @@
     "firstSeenAt": "2026-10-01T03:34:12.534Z"
   },
   {
-    "id": "yu-news-231583287",
-    "title": "[전공설계지원센터] 📢 2026 전공설명회 개최 안내 (9/17) 📢",
-    "organizer": "전공설계지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-09-17",
-      "end": "2026-09-17"
-    },
-    "tags": [
-      "학교",
-      "학사·행정",
-      "교육·특강",
-      "박람회·설명회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231583287"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-09",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:34:14.776Z",
-    "firstSeenAt": "2026-10-01T03:34:14.776Z",
-    "seriesId": "yu-news-231455966"
-  },
-  {
     "id": "yu-news-231583228",
     "title": "[🚨9/9(화) 까지] (주)구영테크 2026-2학기 국내 현장실습학기제 참여학생 모집안내",
     "organizer": "(주)구영테크",
@@ -7833,7 +6993,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:17.445Z",
     "firstSeenAt": "2026-10-01T03:34:17.445Z",
-    "seriesId": "yu-news-228224580"
+    "seriesId": "yu-news-10547782"
   },
   {
     "id": "yu-news-231569161",
@@ -7875,7 +7035,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:18.357Z",
     "firstSeenAt": "2026-10-01T03:34:18.357Z",
-    "seriesId": "yu-news-224607063"
+    "seriesId": "yu-news-10430571"
   },
   {
     "id": "yu-news-231569059",
@@ -7919,7 +7079,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:20.518Z",
     "firstSeenAt": "2026-10-01T03:34:20.518Z",
-    "seriesId": "yu-news-223854598"
+    "seriesId": "yu-news-10038539"
   },
   {
     "id": "yu-news-231569045",
@@ -8004,7 +7164,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:23.664Z",
     "firstSeenAt": "2026-10-01T03:34:23.664Z",
-    "seriesId": "yu-news-224931641"
+    "seriesId": "yu-news-220166296"
   },
   {
     "id": "yu-news-231554931",
@@ -8046,7 +7206,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:24.381Z",
     "firstSeenAt": "2026-10-01T03:34:24.381Z",
-    "seriesId": "yu-news-226544723"
+    "seriesId": "yu-news-221364617"
   },
   {
     "id": "yu-news-231554916",
@@ -8065,7 +7225,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": null
+      "end": "2026-09-16"
     },
     "activityPeriod": {
       "start": null,
@@ -8077,17 +7237,25 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231667786"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231611507"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231554916"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-07",
+    "postedAt": "2026-09-15",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:26.193Z",
     "firstSeenAt": "2026-10-01T03:34:26.193Z",
-    "seriesId": "yu-news-224095609"
+    "seriesId": "yu-news-10051545"
   },
   {
     "id": "yu-news-231554914",
@@ -8118,17 +7286,21 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231752246"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231554914"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-07",
+    "postedAt": "2026-09-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:26.870Z",
     "firstSeenAt": "2026-10-01T03:34:26.870Z",
-    "seriesId": "yu-news-224095609"
+    "seriesId": "yu-news-10051545"
   },
   {
     "id": "yu-news-231526872",
@@ -8160,17 +7332,20 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231780497"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231526872"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-05",
+    "postedAt": "2026-09-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:29.621Z",
-    "firstSeenAt": "2026-10-01T03:34:29.621Z",
-    "seriesId": "yu-news-231526872"
+    "firstSeenAt": "2026-10-01T03:34:29.621Z"
   },
   {
     "id": "yu-news-231512817",
@@ -8216,7 +7391,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:32.260Z",
     "firstSeenAt": "2026-10-01T03:34:32.260Z",
-    "seriesId": "yu-news-223827732"
+    "seriesId": "yu-news-10143883"
   },
   {
     "id": "yu-news-231512801",
@@ -8303,7 +7478,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:35.780Z",
     "firstSeenAt": "2026-10-01T03:34:35.780Z",
-    "seriesId": "yu-news-228224580"
+    "seriesId": "yu-news-10547782"
   },
   {
     "id": "yu-news-231512795",
@@ -8324,11 +7499,11 @@
     },
     "recruitPeriod": {
       "start": "2026-09-01",
-      "end": "2026-09-30"
+      "end": "2026-10-30"
     },
     "activityPeriod": {
-      "start": "2026-09-18",
-      "end": "2026-10-02"
+      "start": "2026-10-28",
+      "end": "2026-11-03"
     },
     "tags": [
       "학교",
@@ -8338,17 +7513,21 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231850915"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231512795"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-04",
+    "postedAt": "2026-09-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:39.884Z",
     "firstSeenAt": "2026-10-01T03:34:39.884Z",
-    "seriesId": "yu-news-224972264"
+    "seriesId": "yu-news-221781422"
   },
   {
     "id": "yu-news-231512788",
@@ -8383,17 +7562,21 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231653764"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231512788"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-04",
+    "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:41.876Z",
     "firstSeenAt": "2026-10-01T03:34:41.876Z",
-    "seriesId": "yu-news-226395229"
+    "seriesId": "yu-news-221534048"
   },
   {
     "id": "yu-news-231512786",
@@ -8481,7 +7664,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:43.844Z",
     "firstSeenAt": "2026-10-01T03:34:43.844Z",
-    "seriesId": "yu-news-223948273"
+    "seriesId": "yu-news-221547085"
   },
   {
     "id": "yu-news-231498687",
@@ -8570,51 +7753,6 @@
     "firstSeenAt": "2026-10-01T03:34:45.429Z"
   },
   {
-    "id": "yu-news-231498656",
-    "title": "[학생상담센터]🌟2026 도박문제 예방교육(영상시청+마일리지 제공!)🌟",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-05-15",
-      "end": "2026-12-31"
-    },
-    "activityPeriod": {
-      "start": "2026-05-15",
-      "end": "2026-12-31"
-    },
-    "tags": [
-      "학교",
-      "상담·심리",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231498656"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-03",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:34:46.405Z",
-    "firstSeenAt": "2026-10-01T03:34:46.405Z",
-    "seriesId": "yu-news-224972239"
-  },
-  {
     "id": "yu-news-231498655",
     "title": "[학생상담센터]🌷인터넷스마트폰 예방교육(영상시청+마일리지!)🌷",
     "organizer": "학생상담센터",
@@ -8657,7 +7795,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:48.350Z",
     "firstSeenAt": "2026-10-01T03:34:48.350Z",
-    "seriesId": "yu-news-224972238"
+    "seriesId": "yu-news-10339449"
   },
   {
     "id": "yu-news-231498638",
@@ -8689,17 +7827,20 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231850919"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231498638"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-03",
+    "postedAt": "2026-09-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:51.102Z",
-    "firstSeenAt": "2026-10-01T03:34:51.102Z",
-    "seriesId": "yu-news-231498638"
+    "firstSeenAt": "2026-10-01T03:34:51.102Z"
   },
   {
     "id": "yu-news-231498637",
@@ -8731,13 +7872,17 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231850918"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231498637"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-03",
+    "postedAt": "2026-09-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:51.742Z",
     "firstSeenAt": "2026-10-01T03:34:51.742Z",
@@ -8826,7 +7971,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:55.414Z",
     "firstSeenAt": "2026-10-01T03:34:55.414Z",
-    "seriesId": "yu-news-223948272"
+    "seriesId": "yu-news-221547083"
   },
   {
     "id": "yu-news-231498598",
@@ -8945,60 +8090,21 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231611574"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231484553"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-02",
+    "postedAt": "2026-09-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:59.514Z",
     "firstSeenAt": "2026-10-01T03:34:59.514Z",
     "seriesId": "yu-news-226856596"
-  },
-  {
-    "id": "yu-news-231484538",
-    "title": "[창업보육센터] 「2차 모두의 창업 프로젝트 설명회」 경북 개최 안내",
-    "organizer": "창업보육센터 및 기술이전사업화센터 행정지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-09-03",
-      "end": "2026-09-03"
-    },
-    "tags": [
-      "학교",
-      "창업",
-      "박람회·설명회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231484538"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-02",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:35:00.999Z",
-    "firstSeenAt": "2026-10-01T03:35:00.999Z",
-    "seriesId": "yu-news-231385695"
   },
   {
     "id": "yu-news-231484454",
@@ -9043,7 +8149,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:04.032Z",
     "firstSeenAt": "2026-10-01T03:35:04.032Z",
-    "seriesId": "yu-news-226151198"
+    "seriesId": "yu-news-221182389"
   },
   {
     "id": "yu-news-231484452",
@@ -9090,7 +8196,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:07.355Z",
     "firstSeenAt": "2026-10-01T03:35:07.355Z",
-    "seriesId": "yu-news-226340996"
+    "seriesId": "yu-news-9947672"
   },
   {
     "id": "yu-news-231470389",
@@ -9137,7 +8243,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:09.616Z",
     "firstSeenAt": "2026-10-01T03:35:09.616Z",
-    "seriesId": "yu-news-226544692"
+    "seriesId": "yu-news-221521002"
   },
   {
     "id": "yu-news-231470361",
@@ -9184,49 +8290,6 @@
     "seriesId": "yu-news-228937954"
   },
   {
-    "id": "yu-news-231470325",
-    "title": "[2026 경북바이오산업엑스포] 컨퍼런스 개요 및 사전등록 안내(부대행사: 취업박람회)",
-    "organizer": "세포배양연구소",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-09-02"
-    },
-    "activityPeriod": {
-      "start": "2026-09-10",
-      "end": "2026-09-10"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "박람회·설명회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231470325"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-01",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:35:16.819Z",
-    "firstSeenAt": "2026-10-01T03:35:16.819Z",
-    "seriesId": "yu-news-231413835"
-  },
-  {
     "id": "yu-news-231470313",
     "title": "🧡제 18회 영어 에세이 콘테스트 참가자 모집🧡",
     "organizer": "The Yeungnam Observer",
@@ -9260,17 +8323,21 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231681981"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231470313"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-01",
+    "postedAt": "2026-09-16",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:17.505Z",
     "firstSeenAt": "2026-10-01T03:35:17.505Z",
-    "seriesId": "yu-news-226422550"
+    "seriesId": "yu-news-221742430"
   },
   {
     "id": "yu-news-231470067",
@@ -9312,7 +8379,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:18.440Z",
     "firstSeenAt": "2026-10-01T03:35:18.440Z",
-    "seriesId": "yu-news-223934757"
+    "seriesId": "yu-news-221520955"
   },
   {
     "id": "yu-news-231470054",
@@ -9358,7 +8425,7 @@
   {
     "id": "yu-news-231470053",
     "title": "[교육혁신센터] ★2026 학부교육 실태조사 실시★(기프티콘 지급)",
-    "organizer": "교무처 교육혁신센터",
+    "organizer": "교육혁신센터",
     "organizerType": "학교",
     "target": {
       "schools": [
@@ -9388,17 +8455,25 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231681979"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231611469"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231470053"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-01",
+    "postedAt": "2026-09-16",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:20.399Z",
     "firstSeenAt": "2026-10-01T03:35:20.399Z",
-    "seriesId": "yu-news-226395177"
+    "seriesId": "yu-news-221729287"
   },
   {
     "id": "yu-news-231470050",
@@ -9583,7 +8658,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:24.614Z",
     "firstSeenAt": "2026-10-01T03:35:24.614Z",
-    "seriesId": "yu-news-223948268"
+    "seriesId": "yu-news-221507841"
   },
   {
     "id": "yu-news-231456007",
@@ -9748,17 +8823,20 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231583287"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231455966"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-08-31",
+    "postedAt": "2026-09-09",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:30.285Z",
-    "firstSeenAt": "2026-10-01T03:35:30.285Z",
-    "seriesId": "yu-news-231455966"
+    "firstSeenAt": "2026-10-01T03:35:30.285Z"
   },
   {
     "id": "yu-news-231455948",
@@ -9876,17 +8954,20 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231470325"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231413835"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-08-28",
+    "postedAt": "2026-09-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:35.733Z",
-    "firstSeenAt": "2026-10-01T03:35:35.733Z",
-    "seriesId": "yu-news-231413835"
+    "firstSeenAt": "2026-10-01T03:35:35.733Z"
   },
   {
     "id": "yu-news-231413833",
@@ -10030,63 +9111,6 @@
     "seriesId": "yu-news-231413827"
   },
   {
-    "id": "yu-news-231399779",
-    "title": "[재게시][RISE-MEGA] 2026학년도「1:1 맞춤형 취업컨설팅」참가학생 모집",
-    "organizer": "미래자동차혁신부품사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [
-        "기계공학부",
-        "미래자동차공학과",
-        "로봇공학과",
-        "전자공학과",
-        "전기공학과",
-        "신소재공학부",
-        "화학공학부"
-      ],
-      "grades": [
-        "3학년",
-        "4학년"
-      ],
-      "statuses": [
-        "휴학생",
-        "졸업생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-09-01",
-      "end": "2026-09-30"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "멘토링·컨설팅"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231399779"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-27",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:35:40.785Z",
-    "firstSeenAt": "2026-10-01T03:35:40.785Z",
-    "seriesId": "yu-news-227931867"
-  },
-  {
     "id": "yu-news-231399733",
     "title": "점심제공*[K-MOOC]🔊2026년 2학기 한국형 온라인 공개강좌(K-MOOC)수강설명회 개최 안내",
     "organizer": "교무처 스마트교육센터",
@@ -10126,7 +9150,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:43.359Z",
     "firstSeenAt": "2026-10-01T03:35:43.359Z",
-    "seriesId": "yu-news-231174667"
+    "seriesId": "yu-news-221364616"
   },
   {
     "id": "yu-news-231385695",
@@ -10159,17 +9183,20 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231484538"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231385695"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-08-26",
+    "postedAt": "2026-09-02",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:45.741Z",
-    "firstSeenAt": "2026-10-01T03:35:45.741Z",
-    "seriesId": "yu-news-231385695"
+    "firstSeenAt": "2026-10-01T03:35:45.741Z"
   },
   {
     "id": "yu-news-231385694",
@@ -10211,7 +9238,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:46.309Z",
     "firstSeenAt": "2026-10-01T03:35:46.309Z",
-    "seriesId": "yu-news-226544723"
+    "seriesId": "yu-news-221364617"
   },
   {
     "id": "yu-news-231385690",
@@ -10342,7 +9369,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:51.214Z",
     "firstSeenAt": "2026-10-01T03:35:51.214Z",
-    "seriesId": "yu-news-223734066"
+    "seriesId": "yu-news-10130842"
   },
   {
     "id": "yu-news-231385645",
@@ -10429,49 +9456,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:53.023Z",
     "firstSeenAt": "2026-10-01T03:35:53.023Z",
-    "seriesId": "yu-news-223774239"
-  },
-  {
-    "id": "yu-news-231371584",
-    "title": "[재게시][교육개발센터] 2026 Learning Contents Award((비)교과 학습 실천 사례 공모전) 안내",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231371584"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-25",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:35:54.343Z",
-    "firstSeenAt": "2026-10-01T03:35:54.343Z",
-    "seriesId": "yu-news-225162025"
+    "seriesId": "yu-news-221247473"
   },
   {
     "id": "yu-news-231371571",
@@ -10559,7 +9544,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:56.227Z",
     "firstSeenAt": "2026-10-01T03:35:56.227Z",
-    "seriesId": "yu-news-223814348"
+    "seriesId": "yu-news-221351611"
   },
   {
     "id": "yu-news-231357493",
@@ -11049,62 +10034,6 @@
     "seriesId": "yu-career-1672"
   },
   {
-    "id": "yu-news-231287291",
-    "title": "[재게시][RISE-MEGA] 2026학년도「1:1 맞춤형 취업컨설팅」참가학생 모집",
-    "organizer": "미래자동차혁신부품사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [
-        "기계공학부",
-        "미래자동차공학과",
-        "로봇공학과",
-        "전자공학과",
-        "전기공학과",
-        "신소재공학부",
-        "화학공학부"
-      ],
-      "grades": [
-        "3학년",
-        "4학년"
-      ],
-      "statuses": [
-        "휴학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-09-01",
-      "end": "2026-09-30"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "멘토링·컨설팅"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231287291"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-19",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:36:14.524Z",
-    "firstSeenAt": "2026-10-01T03:36:14.524Z",
-    "seriesId": "yu-news-227931867"
-  },
-  {
     "id": "yu-news-231287284",
     "title": "[한국섬유개발연구원] 연구 프로젝트 일경험 참여 학생 모집 ~08.27.(목)",
     "organizer": "한국섬유개발연구원",
@@ -11281,52 +10210,6 @@
     "firstSeenAt": "2026-10-01T03:36:23.187Z"
   },
   {
-    "id": "yu-news-231273173",
-    "title": "[해외인턴] 미국 해외인턴 참가자 모집 안내(ICCE)",
-    "organizer": "ICCE",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-09-17"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "해외·글로벌",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231273173"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-18",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:36:25.073Z",
-    "firstSeenAt": "2026-10-01T03:36:25.073Z",
-    "seriesId": "yu-news-223774239"
-  },
-  {
     "id": "yu-news-231273135",
     "title": "[홍보] 경산시가족센터 「글로벌 프렌즈 투어」- 경주월드 참가모집",
     "organizer": "경산시가족센터",
@@ -11400,63 +10283,21 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231681982"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231259109"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-08-17",
+    "postedAt": "2026-09-16",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:27.284Z",
     "firstSeenAt": "2026-10-01T03:36:27.284Z",
-    "seriesId": "yu-news-231681982"
-  },
-  {
-    "id": "yu-news-231217005",
-    "title": "[해외인턴] 해외 인턴프로그램 참여자 모집(미국)(IGE)",
-    "organizer": "IGE Korea",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "해외·글로벌",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231217005"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-14",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:36:27.860Z",
-    "firstSeenAt": "2026-10-01T03:36:27.860Z",
-    "seriesId": "yu-news-231090338"
+    "seriesId": "yu-news-221442763"
   },
   {
     "id": "yu-news-231216993",
@@ -11593,63 +10434,6 @@
     "firstSeenAt": "2026-10-01T03:36:31.805Z"
   },
   {
-    "id": "yu-news-231188812",
-    "title": "[재게시][RISE-MEGA] 2026학년도「1:1 맞춤형 취업컨설팅」참가학생 모집",
-    "organizer": "미래자동차혁신부품사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [
-        "기계공학부",
-        "미래자동차공학과",
-        "로봇공학과",
-        "전자공학과",
-        "전기공학과",
-        "신소재공학부",
-        "화학공학부"
-      ],
-      "grades": [
-        "3학년",
-        "4학년"
-      ],
-      "statuses": [
-        "휴학생",
-        "졸업생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-09-01",
-      "end": "2026-09-30"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "멘토링·컨설팅"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231188812"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-12",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:36:32.749Z",
-    "firstSeenAt": "2026-10-01T03:36:32.749Z",
-    "seriesId": "yu-news-227931867"
-  },
-  {
     "id": "yu-news-231188806",
     "title": "<종이책 살리기 프로젝트> 학내 독서클럽을 위한 북카페 무상 대관 실시",
     "organizer": "언론출판문화원",
@@ -11736,55 +10520,6 @@
     "seriesId": "yu-news-225351705"
   },
   {
-    "id": "yu-news-231118497",
-    "title": "[RISE-MEGA] 2026 Agentic AI 자율주행 경진대회 학생진행요원 모집",
-    "organizer": "미래자동차혁신부품사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "4학년"
-      ],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생",
-        "졸업생"
-      ]
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-08-12"
-    },
-    "activityPeriod": {
-      "start": "2026-08-19",
-      "end": "2026-08-20"
-    },
-    "tags": [
-      "학교",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231118497"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-07",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:37:09.134Z",
-    "firstSeenAt": "2026-10-01T03:37:09.134Z",
-    "seriesId": "yu-news-231062135"
-  },
-  {
     "id": "yu-news-231118484",
     "title": "[글로벌평생교육원] 2026학년도 2학기 일반과정 수강생 모집 | 일반성인 대상 평생교육 프로그램",
     "organizer": "글로벌평생교육원",
@@ -11824,7 +10559,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:09.785Z",
     "firstSeenAt": "2026-10-01T03:37:09.785Z",
-    "seriesId": "yu-news-225853156"
+    "seriesId": "yu-news-220818160"
   },
   {
     "id": "yu-news-231118438",
@@ -11917,7 +10652,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:12.316Z",
     "firstSeenAt": "2026-10-01T03:37:12.316Z",
-    "seriesId": "yu-news-225202741"
+    "seriesId": "yu-news-220140139"
   },
   {
     "id": "yu-news-231118433",
@@ -11963,52 +10698,6 @@
     "collectedAt": "2026-10-01T03:37:14.768Z",
     "firstSeenAt": "2026-10-01T03:37:14.768Z",
     "seriesId": "yu-news-228503912"
-  },
-  {
-    "id": "yu-news-231104394",
-    "title": "(재게시)[RISE사업단 YUnicorn창업지원단] 2026 YUnicorn 지역정주형 창업스쿨 참여자 모집",
-    "organizer": "YUnicorn창업지원단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-08-09"
-    },
-    "activityPeriod": {
-      "start": "2026-08-24",
-      "end": "2026-12-24"
-    },
-    "tags": [
-      "학교",
-      "창업",
-      "장학·지원금",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231104394"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-06",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:37:15.366Z",
-    "firstSeenAt": "2026-10-01T03:37:15.366Z",
-    "seriesId": "yu-news-225351705"
   },
   {
     "id": "yu-news-231090343",
@@ -12092,17 +10781,24 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231217005"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231188765"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231090338"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-08-05",
+    "postedAt": "2026-08-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:20.336Z",
-    "firstSeenAt": "2026-10-01T03:37:20.336Z",
-    "seriesId": "yu-news-231090338"
+    "firstSeenAt": "2026-10-01T03:37:20.336Z"
   },
   {
     "id": "yu-news-231090324",
@@ -12372,7 +11068,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:26.425Z",
     "firstSeenAt": "2026-10-01T03:37:26.425Z",
-    "seriesId": "yu-news-223734062"
+    "seriesId": "yu-news-221416694"
   },
   {
     "id": "yu-news-231076247",
@@ -12606,7 +11302,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:32.011Z",
     "firstSeenAt": "2026-10-01T03:37:32.011Z",
-    "seriesId": "yu-news-226151239"
+    "seriesId": "yu-news-221013388"
   },
   {
     "id": "yu-news-231188792",
@@ -12652,7 +11348,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:44.357Z",
     "firstSeenAt": "2026-10-01T03:36:44.357Z",
-    "seriesId": "yu-news-225568567"
+    "seriesId": "yu-news-10183073"
   },
   {
     "id": "yu-news-231188787",
@@ -12696,52 +11392,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:46.906Z",
     "firstSeenAt": "2026-10-01T03:36:46.906Z"
-  },
-  {
-    "id": "yu-news-231188765",
-    "title": "[해외인턴] 해외 인턴프로그램 참여자 모집(미국)(IGE)",
-    "organizer": "IGE Korea",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "해외·글로벌",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231188765"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-12",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:36:47.758Z",
-    "firstSeenAt": "2026-10-01T03:36:47.758Z",
-    "seriesId": "yu-news-231090338"
   },
   {
     "id": "yu-news-231188764",
@@ -12866,61 +11516,21 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231752289"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231174697"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-08-11",
+    "postedAt": "2026-09-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:50.798Z",
     "firstSeenAt": "2026-10-01T03:36:50.798Z",
-    "seriesId": "yu-news-226436110"
-  },
-  {
-    "id": "yu-news-231174667",
-    "title": "2026학년도 2학기 한국형 온라인 공개강좌(K-MOOC) 수강 안내",
-    "organizer": "스마트교육기획팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-02-24",
-      "end": "2026-12-14"
-    },
-    "activityPeriod": {
-      "start": "2026-03-03",
-      "end": "2026-12-31"
-    },
-    "tags": [
-      "학교",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231174667"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-11",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:36:51.512Z",
-    "firstSeenAt": "2026-10-01T03:36:51.512Z",
-    "seriesId": "yu-news-231174667"
+    "seriesId": "yu-news-221364631"
   },
   {
     "id": "yu-news-231174661",
@@ -13225,7 +11835,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:00.287Z",
     "firstSeenAt": "2026-10-01T03:37:00.287Z",
-    "seriesId": "yu-news-223854598"
+    "seriesId": "yu-news-10038539"
   },
   {
     "id": "yu-news-231160605",
@@ -13246,7 +11856,7 @@
     },
     "recruitPeriod": {
       "start": "2026-02-24",
-      "end": "2026-12-18"
+      "end": "2026-12-14"
     },
     "activityPeriod": {
       "start": "2026-03-03",
@@ -13259,17 +11869,21 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231174667"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231160605"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-08-10",
+    "postedAt": "2026-08-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:01.517Z",
     "firstSeenAt": "2026-10-01T03:37:01.517Z",
-    "seriesId": "yu-news-231174667"
+    "seriesId": "yu-news-221364616"
   },
   {
     "id": "yu-news-231160599",
@@ -13314,7 +11928,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:01.970Z",
     "firstSeenAt": "2026-10-01T03:37:01.970Z",
-    "seriesId": "yu-news-224216149"
+    "seriesId": "yu-news-221325560"
   },
   {
     "id": "yu-news-231160583",
@@ -13436,6 +12050,7 @@
         "4학년"
       ],
       "statuses": [
+        "휴학생",
         "졸업생"
       ],
       "excludedStatuses": []
@@ -13456,17 +12071,29 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231399779"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231287291"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231188812"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231160575"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-08-10",
+    "postedAt": "2026-08-27",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:05.663Z",
     "firstSeenAt": "2026-10-01T03:37:05.663Z",
-    "seriesId": "yu-news-227931867"
+    "seriesId": "yu-news-227821243"
   },
   {
     "id": "yu-news-231118504",
@@ -13553,52 +12180,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:41.785Z",
     "firstSeenAt": "2026-10-01T03:37:41.785Z"
-  },
-  {
-    "id": "yu-news-231062180",
-    "title": "[해외인턴] 미국 해외인턴 참가자 모집 안내(ICCE)",
-    "organizer": "ICCE Korea",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-09-02"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "해외·글로벌",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231062180"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-03",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:37:44.608Z",
-    "firstSeenAt": "2026-10-01T03:37:44.608Z",
-    "seriesId": "yu-news-223774239"
   },
   {
     "id": "yu-news-231062174",
@@ -13859,17 +12440,20 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": [],
+      "grades": [
+        "4학년"
+      ],
       "statuses": [
         "재학생"
       ],
       "excludedStatuses": [
+        "휴학생",
         "졸업생"
       ]
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2026-08-11"
+      "end": "2026-08-12"
     },
     "activityPeriod": {
       "start": "2026-08-19",
@@ -13882,17 +12466,20 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231118497"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231062135"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-08-03",
+    "postedAt": "2026-08-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:51.902Z",
-    "firstSeenAt": "2026-10-01T03:37:51.902Z",
-    "seriesId": "yu-news-231062135"
+    "firstSeenAt": "2026-10-01T03:37:51.902Z"
   },
   {
     "id": "yu-news-230963957",
@@ -14033,52 +12620,6 @@
     "seriesId": "yu-news-227196097"
   },
   {
-    "id": "yu-news-230921893",
-    "title": "[해외인턴] 해외 인턴/일경험 프로그램 참여자 모집(미국)(GHR)",
-    "organizer": "GHR",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "해외·글로벌",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230921893"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-24",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:38:02.372Z",
-    "firstSeenAt": "2026-10-01T03:38:02.372Z",
-    "seriesId": "yu-news-230696932"
-  },
-  {
     "id": "yu-news-230907849",
     "title": "[RISE사업단 YUnicorn창업지원단] 2026 YUnicorn 지역정주형 창업스쿨 참여자 모집",
     "organizer": "YUnicorn창업지원단",
@@ -14112,13 +12653,17 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231104394"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230907849"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-07-23",
+    "postedAt": "2026-08-06",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:03.504Z",
     "firstSeenAt": "2026-10-01T03:38:03.504Z",
@@ -14658,48 +13203,6 @@
     "seriesId": "yu-news-224918115"
   },
   {
-    "id": "yu-news-230879658",
-    "title": "[재게시][교육개발센터] 2026 Learning Contents Award((비)교과 학습 실천 사례 공모전) 안내",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230879658"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-21",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:38:16.248Z",
-    "firstSeenAt": "2026-10-01T03:38:16.248Z",
-    "seriesId": "yu-news-225162025"
-  },
-  {
     "id": "yu-news-230879645",
     "title": "2026학년도 외국어특강 8월(3주 과정) 개설안내",
     "organizer": "한국어·국제언어교육원",
@@ -14739,7 +13242,8 @@
     "postedAt": "2026-07-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:17.188Z",
-    "firstSeenAt": "2026-10-01T03:38:17.188Z"
+    "firstSeenAt": "2026-10-01T03:38:17.188Z",
+    "seriesId": "yu-news-222629078"
   },
   {
     "id": "yu-news-230879641",
@@ -15148,49 +13652,6 @@
     "firstSeenAt": "2026-10-01T03:39:16.072Z"
   },
   {
-    "id": "yu-news-230781281",
-    "title": "[진로취업지원팀] 반도체 취업 선배 온라인 멘토링 (7월 21일 진행)",
-    "organizer": "진로취업지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-07-21",
-      "end": "2026-07-21"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "멘토링·컨설팅"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230781281"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-14",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:18.223Z",
-    "firstSeenAt": "2026-10-01T03:39:18.223Z",
-    "seriesId": "yu-career-2460"
-  },
-  {
     "id": "yu-news-230781261",
     "title": "[~7/22] 제 37기 한미친선서클(Korean-American Friendship Circle: KAFC) 참가 학생 모집 안내",
     "organizer": "제19지원사령부 민사처",
@@ -15274,53 +13735,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:19.909Z",
     "firstSeenAt": "2026-10-01T03:39:19.909Z",
-    "seriesId": "yu-news-225731059"
-  },
-  {
-    "id": "yu-news-230767203",
-    "title": "[해외인턴] 해외 인턴/일경험 프로그램 참여자 모집(미국)(GHR)",
-    "organizer": "GHR",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "해외·글로벌",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230767203"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-13",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:21.037Z",
-    "firstSeenAt": "2026-10-01T03:39:21.037Z",
-    "seriesId": "yu-news-230696932"
+    "seriesId": "yu-news-10091857"
   },
   {
     "id": "yu-news-230767191",
@@ -15409,48 +13824,6 @@
     "seriesId": "yu-news-230767181"
   },
   {
-    "id": "yu-news-230767180",
-    "title": "[글로벌공생HUSS]2026-2 마이크로전공 신청 안내",
-    "organizer": "인문사회글로벌공생융합인재양성사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-07-14",
-      "end": "2026-07-16"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230767180"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-13",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:24.070Z",
-    "firstSeenAt": "2026-10-01T03:39:24.070Z",
-    "seriesId": "yu-news-228224599"
-  },
-  {
     "id": "yu-news-230767176",
     "title": "[인문사회디지털융합전공] 융합전공 및 마이크로 전공 신청 안내(절대평가 학점교류 가능!)",
     "organizer": "인문사회디지털융합인재양성사업단",
@@ -15492,7 +13865,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:24.977Z",
     "firstSeenAt": "2026-10-01T03:39:24.977Z",
-    "seriesId": "yu-news-225595669"
+    "seriesId": "yu-news-223199214"
   },
   {
     "id": "yu-news-230767175",
@@ -15536,7 +13909,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:25.939Z",
     "firstSeenAt": "2026-10-01T03:39:25.939Z",
-    "seriesId": "yu-news-223854598"
+    "seriesId": "yu-news-10038539"
   },
   {
     "id": "yu-news-230767162",
@@ -15723,7 +14096,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:29.912Z",
     "firstSeenAt": "2026-10-01T03:39:29.912Z",
-    "seriesId": "yu-news-225731077"
+    "seriesId": "yu-news-220870192"
   },
   {
     "id": "yu-news-230725046",
@@ -15798,13 +14171,17 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230781281"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230711014"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-07-09",
+    "postedAt": "2026-07-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:33.257Z",
     "firstSeenAt": "2026-10-01T03:39:33.257Z",
@@ -15844,63 +14221,24 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230921893"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230767203"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230696932"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-07-08",
+    "postedAt": "2026-07-24",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:35.975Z",
-    "firstSeenAt": "2026-10-01T03:39:35.975Z",
-    "seriesId": "yu-news-230696932"
-  },
-  {
-    "id": "yu-news-230612492",
-    "title": "[해외인턴] 미국 해외인턴 참가자 모집 안내(ICCE)",
-    "organizer": "ICCE",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-29"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "해외·글로벌",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230612492"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-02",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:40:04.937Z",
-    "firstSeenAt": "2026-10-01T03:40:04.937Z",
-    "seriesId": "yu-news-223774239"
+    "firstSeenAt": "2026-10-01T03:39:35.975Z"
   },
   {
     "id": "yu-news-230598448",
@@ -15986,7 +14324,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:07.705Z",
     "firstSeenAt": "2026-10-01T03:40:07.705Z",
-    "seriesId": "yu-news-228029146"
+    "seriesId": "yu-news-220883264"
   },
   {
     "id": "yu-news-230598411",
@@ -16076,7 +14414,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:14.284Z",
     "firstSeenAt": "2026-10-01T03:40:14.284Z",
-    "seriesId": "yu-news-228126819"
+    "seriesId": "yu-news-220609154"
   },
   {
     "id": "yu-news-230584311",
@@ -16214,52 +14552,6 @@
     "firstSeenAt": "2026-10-01T03:40:21.463Z"
   },
   {
-    "id": "yu-news-230570240",
-    "title": "(기간연장) [RISE사업단-REGO레전드] 2026년도 RISE사업단 레전드 50+ 기업맞춤 지능형 첨단소재 인력양성사업 시제품제작지원사업 모집 공고",
-    "organizer": "레전드 50+ 기업맞춤 지능형 첨단소재 인력양성사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "3학년",
-        "4학년"
-      ],
-      "statuses": [],
-      "excludedStatuses": [
-        "휴학생"
-      ]
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-07"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230570240"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-06-29",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:40:22.056Z",
-    "firstSeenAt": "2026-10-01T03:40:22.056Z",
-    "seriesId": "yu-news-229585441"
-  },
-  {
     "id": "yu-news-230528104",
     "title": "(기간연장) [한국장학재단] 제33기 대학생 재능봉사 캠프 대학생 멘토 모집",
     "organizer": "한국장학재단",
@@ -16304,7 +14596,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:25.152Z",
     "firstSeenAt": "2026-10-01T03:40:25.152Z",
-    "seriesId": "yu-news-225297543"
+    "seriesId": "yu-news-220452962"
   },
   {
     "id": "yu-news-230514072",
@@ -16723,51 +15015,6 @@
     "seriesId": "yu-news-228937864"
   },
   {
-    "id": "yu-news-230682792",
-    "title": "[학생상담센터]🌟2026 도박문제 예방교육(영상시청+마일리지 제공!)🌟",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-05-15",
-      "end": "2026-12-31"
-    },
-    "activityPeriod": {
-      "start": "2026-05-15",
-      "end": "2026-12-31"
-    },
-    "tags": [
-      "학교",
-      "상담·심리",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230682792"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-07",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:47.090Z",
-    "firstSeenAt": "2026-10-01T03:39:47.090Z",
-    "seriesId": "yu-news-224972239"
-  },
-  {
     "id": "yu-news-230682791",
     "title": "[학생상담센터]🌷인터넷스마트폰 과의존 예방교육(영상시청+마일리지 제공!)🌷",
     "organizer": "학생상담센터",
@@ -16810,53 +15057,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:47.847Z",
     "firstSeenAt": "2026-10-01T03:39:47.847Z",
-    "seriesId": "yu-news-224972238"
-  },
-  {
-    "id": "yu-news-230668744",
-    "title": "[해외인턴] 미국 해외인턴 참가자 모집 안내(ICCE)",
-    "organizer": "ICCE Korea",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-08-05"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "해외·글로벌",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230668744"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-06",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:48.968Z",
-    "firstSeenAt": "2026-10-01T03:39:48.968Z",
-    "seriesId": "yu-news-223774239"
+    "seriesId": "yu-news-10339449"
   },
   {
     "id": "yu-news-230668706",
@@ -17115,7 +15316,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:57.505Z",
     "firstSeenAt": "2026-10-01T03:39:57.505Z",
-    "seriesId": "yu-news-223921320"
+    "seriesId": "yu-news-9947723"
   },
   {
     "id": "yu-news-230626586",
@@ -17163,7 +15364,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:58.854Z",
     "firstSeenAt": "2026-10-01T03:39:58.854Z",
-    "seriesId": "yu-news-225595659"
+    "seriesId": "yu-news-223626926"
   },
   {
     "id": "yu-news-230612549",
@@ -17380,7 +15581,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:32.700Z",
     "firstSeenAt": "2026-10-01T03:40:32.700Z",
-    "seriesId": "yu-career-2130"
+    "seriesId": "yu-news-222893764"
   },
   {
     "id": "yu-news-230499977",
@@ -17425,7 +15626,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:38.753Z",
     "firstSeenAt": "2026-10-01T03:40:38.753Z",
-    "seriesId": "yu-news-225595669"
+    "seriesId": "yu-news-223199214"
   },
   {
     "id": "yu-news-230485934",
@@ -17514,7 +15715,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:44.477Z",
     "firstSeenAt": "2026-10-01T03:40:44.477Z",
-    "seriesId": "yu-news-225297543"
+    "seriesId": "yu-news-220452962"
   },
   {
     "id": "yu-news-230485907",
@@ -17561,51 +15762,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:47.459Z",
     "firstSeenAt": "2026-10-01T03:40:47.459Z"
-  },
-  {
-    "id": "yu-news-230485899",
-    "title": "(재게시) 2026학년도 1학기 성적 조기열람 관련 폭력예방교육 수강 안내",
-    "organizer": "인권센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-12-31"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": "2026-12-31"
-    },
-    "tags": [
-      "학교",
-      "학사·행정",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230485899"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-06-23",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:40:48.228Z",
-    "firstSeenAt": "2026-10-01T03:40:48.228Z",
-    "seriesId": "yu-news-224526213"
   },
   {
     "id": "yu-news-230471832",
@@ -17655,7 +15811,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:49.239Z",
     "firstSeenAt": "2026-10-01T03:40:49.239Z",
-    "seriesId": "yu-news-225473698"
+    "seriesId": "yu-news-220557162"
   },
   {
     "id": "yu-news-230415648",
@@ -17834,49 +15990,6 @@
     "firstSeenAt": "2026-10-01T03:41:06.924Z"
   },
   {
-    "id": "yu-news-230387358",
-    "title": "(재공지) 푸드테크 AI 인력양성 여름캠프 참여자 모집 (지원서 접수: 6월23일까지)",
-    "organizer": "세포배양사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-06-08",
-      "end": "2026-06-23"
-    },
-    "activityPeriod": {
-      "start": "2026-07-13",
-      "end": "2026-08-21"
-    },
-    "tags": [
-      "학교",
-      "장학·지원금",
-      "교육·특강",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230387358"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-06-16",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:41:07.558Z",
-    "firstSeenAt": "2026-10-01T03:41:07.558Z"
-  },
-  {
     "id": "yu-news-230331181",
     "title": "[마감][RISE-MEGA]「2026 현대NGV 연계교육(온라인)」수강학생 모집(~6/18)",
     "organizer": "미래자동차혁신부품사업단",
@@ -17976,7 +16089,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:41:18.725Z",
     "firstSeenAt": "2026-10-01T03:41:18.725Z",
-    "seriesId": "yu-news-225297543"
+    "seriesId": "yu-news-220452962"
   },
   {
     "id": "yu-news-230331113",
@@ -18207,7 +16320,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:00.290Z",
     "firstSeenAt": "2026-10-01T03:42:00.290Z",
-    "seriesId": "yu-news-225094336"
+    "seriesId": "yu-news-10547782"
   },
   {
     "id": "yu-news-230288903",
@@ -18416,9 +16529,14 @@
     "tags": [
       "학교",
       "장학·지원금",
-      "교육·특강"
+      "교육·특강",
+      "인턴·일경험"
     ],
     "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230387358"
+      },
       {
         "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230288863"
@@ -18427,7 +16545,7 @@
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-06-09",
+    "postedAt": "2026-06-16",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:09.742Z",
     "firstSeenAt": "2026-10-01T03:42:09.742Z"
@@ -18704,7 +16822,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:31.475Z",
     "firstSeenAt": "2026-10-01T03:42:31.475Z",
-    "seriesId": "yu-news-226124110"
+    "seriesId": "yu-news-10547782"
   },
   {
     "id": "yu-news-230190447",
@@ -18754,7 +16872,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:35.507Z",
     "firstSeenAt": "2026-10-01T03:42:35.507Z",
-    "seriesId": "yu-news-224931641"
+    "seriesId": "yu-news-220166296"
   },
   {
     "id": "yu-news-230190418",
@@ -18841,17 +16959,21 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230485899"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230190375"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-06-02",
+    "postedAt": "2026-06-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:40.164Z",
     "firstSeenAt": "2026-10-01T03:42:40.164Z",
-    "seriesId": "yu-news-224526213"
+    "seriesId": "yu-news-10261173"
   },
   {
     "id": "yu-news-230176332",
@@ -18941,7 +17063,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:50.846Z",
     "firstSeenAt": "2026-10-01T03:42:50.846Z",
-    "seriesId": "yu-news-224931637"
+    "seriesId": "yu-news-220153170"
   },
   {
     "id": "yu-news-230176274",
@@ -19192,7 +17314,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:04.830Z",
     "firstSeenAt": "2026-10-01T03:43:04.830Z",
-    "seriesId": "yu-news-224931643"
+    "seriesId": "yu-news-222289472"
   },
   {
     "id": "yu-news-230120117",
@@ -19242,7 +17364,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:06.943Z",
     "firstSeenAt": "2026-10-01T03:43:06.943Z",
-    "seriesId": "yu-news-224877336"
+    "seriesId": "yu-news-10547782"
   },
   {
     "id": "yu-news-230091995",
@@ -19335,7 +17457,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:31.862Z",
     "firstSeenAt": "2026-10-01T03:43:31.862Z",
-    "seriesId": "yu-news-224890939"
+    "seriesId": "yu-news-10495661"
   },
   {
     "id": "yu-news-230035844",
@@ -19429,49 +17551,6 @@
     "firstSeenAt": "2026-10-01T03:43:42.370Z"
   },
   {
-    "id": "yu-news-230007673",
-    "title": "[재게시] 제25기 국제홍보대사(University Student Ambassador) 수습단원 모집 및 선발",
-    "organizer": "국제처 국제협력팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-05-13",
-      "end": "2026-05-22"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": "2027-08-31"
-    },
-    "tags": [
-      "학교",
-      "장학·지원금",
-      "서포터즈·기자단"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230007673"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-20",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:43:51.232Z",
-    "firstSeenAt": "2026-10-01T03:43:51.232Z",
-    "seriesId": "yu-news-224890988"
-  },
-  {
     "id": "yu-news-230007670",
     "title": "[재게시/대학혁신지원사업] 2026학년도 하계 OPP(Outbound Pilot Program) 참가자 모집",
     "organizer": "국제처 국제협력팀",
@@ -19515,7 +17594,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:53.633Z",
     "firstSeenAt": "2026-10-01T03:43:53.633Z",
-    "seriesId": "yu-news-224890939"
+    "seriesId": "yu-news-10495661"
   },
   {
     "id": "yu-news-230007667",
@@ -19563,7 +17642,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:55.866Z",
     "firstSeenAt": "2026-10-01T03:43:55.866Z",
-    "seriesId": "yu-news-228029204"
+    "seriesId": "yu-news-220922352"
   },
   {
     "id": "yu-news-230007644",
@@ -19764,7 +17843,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:18.149Z",
     "firstSeenAt": "2026-10-01T03:44:18.149Z",
-    "seriesId": "yu-news-226029094"
+    "seriesId": "yu-news-10547782"
   },
   {
     "id": "yu-news-229993457",
@@ -20047,7 +18126,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:37.319Z",
     "firstSeenAt": "2026-10-01T03:44:37.319Z",
-    "seriesId": "yu-news-224742046"
+    "seriesId": "yu-news-10575232"
   },
   {
     "id": "yu-news-229979348",
@@ -20101,7 +18180,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:39.932Z",
     "firstSeenAt": "2026-10-01T03:44:39.932Z",
-    "seriesId": "yu-news-224742046"
+    "seriesId": "yu-news-10575232"
   },
   {
     "id": "yu-news-229937259",
@@ -20200,7 +18279,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:59.914Z",
     "firstSeenAt": "2026-10-01T03:44:59.914Z",
-    "seriesId": "yu-news-224972238"
+    "seriesId": "yu-news-10339449"
   },
   {
     "id": "yu-news-229937213",
@@ -20235,17 +18314,25 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231498656"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230682792"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229937213"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-05-15",
+    "postedAt": "2026-09-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:02.672Z",
     "firstSeenAt": "2026-10-01T03:45:02.672Z",
-    "seriesId": "yu-news-224972239"
+    "seriesId": "yu-news-10495706"
   },
   {
     "id": "yu-news-229923175",
@@ -20349,7 +18436,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:09.865Z",
     "firstSeenAt": "2026-10-01T03:45:09.865Z",
-    "seriesId": "yu-news-225202741"
+    "seriesId": "yu-news-220140139"
   },
   {
     "id": "yu-news-229923138",
@@ -20395,7 +18482,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:14.849Z",
     "firstSeenAt": "2026-10-01T03:45:14.849Z",
-    "seriesId": "yu-news-224890939"
+    "seriesId": "yu-news-10495661"
   },
   {
     "id": "yu-news-229923122",
@@ -20442,7 +18529,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:16.975Z",
     "firstSeenAt": "2026-10-01T03:45:16.975Z",
-    "seriesId": "yu-news-224877288"
+    "seriesId": "yu-news-222445882"
   },
   {
     "id": "yu-news-229909075",
@@ -20493,61 +18580,6 @@
     "collectedAt": "2026-10-01T03:45:21.228Z",
     "firstSeenAt": "2026-10-01T03:45:21.228Z",
     "seriesId": "yu-news-224999423"
-  },
-  {
-    "id": "yu-news-229909022",
-    "title": "[재게시][RISE-특성화] 2026 하계 해외전공심화학습(베트남) 프로그램 참여자 모집 공고",
-    "organizer": "특성화대학사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [
-        "국제개발새마을학과",
-        "경제금융학부",
-        "산림자원학과",
-        "환경공학과",
-        "도시공학과",
-        "원예생명과학과"
-      ],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생"
-      ]
-    },
-    "recruitPeriod": {
-      "start": "2026-04-29",
-      "end": "2026-05-17"
-    },
-    "activityPeriod": {
-      "start": "2026-08-04",
-      "end": "2026-08-13"
-    },
-    "tags": [
-      "학교",
-      "해외·글로벌",
-      "교육·특강",
-      "해외탐방"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229909022"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-13",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:45:25.940Z",
-    "firstSeenAt": "2026-10-01T03:45:25.940Z",
-    "seriesId": "yu-news-225473687"
   },
   {
     "id": "yu-news-229909006",
@@ -20654,53 +18686,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:44.961Z",
     "firstSeenAt": "2026-10-01T03:45:44.961Z"
-  },
-  {
-    "id": "yu-news-229894902",
-    "title": "[실습생 모집_채용연계형🍀] (주)대웅에프엔티 2026-여름 및 2학기 국내 현장실습학기제 참여학생 모집안내",
-    "organizer": "(주)대웅에프엔티",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [
-        "생활과학대학"
-      ],
-      "departments": [
-        "의류패션학과"
-      ],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-06-05"
-    },
-    "activityPeriod": {
-      "start": "2026-06-24",
-      "end": "2026-12-23"
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229894902"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-12",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:45:47.404Z",
-    "firstSeenAt": "2026-10-01T03:45:47.404Z",
-    "seriesId": "yu-news-229641797"
   },
   {
     "id": "yu-news-229894894",
@@ -20881,17 +18866,21 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230007673"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229894864"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-05-12",
+    "postedAt": "2026-05-20",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:46:01.533Z",
     "firstSeenAt": "2026-10-01T03:46:01.533Z",
-    "seriesId": "yu-news-224890988"
+    "seriesId": "yu-news-220062092"
   },
   {
     "id": "yu-news-229838672",
@@ -20934,7 +18923,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:50:59.857Z",
     "firstSeenAt": "2026-10-01T03:50:59.857Z",
-    "seriesId": "yu-news-224742046"
+    "seriesId": "yu-news-10575232"
   },
   {
     "id": "yu-news-229824631",
@@ -21016,90 +19005,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:51:11.332Z",
     "firstSeenAt": "2026-10-01T03:51:11.332Z",
-    "seriesId": "yu-news-224742046"
-  },
-  {
-    "id": "yu-news-229824604",
-    "title": "[지역혁신동반성장센터] 행정직원 채용",
-    "organizer": "지역혁신동반성장센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2023-07-01",
-      "end": "2028-02-29"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229824604"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-07",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T03:51:13.401Z",
-    "firstSeenAt": "2026-10-01T03:51:13.401Z"
-  },
-  {
-    "id": "yu-news-229824561",
-    "title": "[재게시][RISE-특성화] 2026 하계 해외전공심화학습(베트남) 프로그램 참여자 모집 공고",
-    "organizer": "특성화대학사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-04-29",
-      "end": "2026-05-17"
-    },
-    "activityPeriod": {
-      "start": "2026-08-04",
-      "end": "2026-08-13"
-    },
-    "tags": [
-      "학교",
-      "해외·글로벌"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229824561"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-07",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T03:51:16.167Z",
-    "firstSeenAt": "2026-10-01T03:51:16.167Z",
-    "seriesId": "yu-news-225473687"
+    "seriesId": "yu-news-10575232"
   },
   {
     "id": "yu-news-229810470",
@@ -21233,10 +19139,21 @@
         "yu"
       ],
       "colleges": [],
-      "departments": [],
+      "departments": [
+        "국제개발새마을학과",
+        "경제금융학부",
+        "산림자원학과",
+        "환경공학과",
+        "도시공학과",
+        "원예생명과학과"
+      ],
       "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ]
     },
     "recruitPeriod": {
       "start": "2026-04-29",
@@ -21248,9 +19165,19 @@
     },
     "tags": [
       "학교",
-      "해외·글로벌"
+      "해외·글로벌",
+      "교육·특강",
+      "해외탐방"
     ],
     "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229909022"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229824561"
+      },
       {
         "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229726182"
@@ -21259,11 +19186,11 @@
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-04-30",
-    "extractedBy": "rules",
+    "postedAt": "2026-05-13",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:51:56.373Z",
     "firstSeenAt": "2026-10-01T03:51:56.373Z",
-    "seriesId": "yu-news-225473687"
+    "seriesId": "yu-news-225378803"
   },
   {
     "id": "yu-news-229712138",
@@ -21593,7 +19520,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:59:13.113Z",
     "firstSeenAt": "2026-10-01T03:59:13.113Z",
-    "seriesId": "yu-news-224310330"
+    "seriesId": "yu-news-10038541"
   },
   {
     "id": "yu-news-229120915",
@@ -21634,7 +19561,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:02:09.920Z",
     "firstSeenAt": "2026-10-01T04:02:09.920Z",
-    "seriesId": "yu-news-224095659"
+    "seriesId": "yu-news-10261161"
   },
   {
     "id": "yu-news-229036475",
@@ -21676,7 +19603,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:02:53.058Z",
     "firstSeenAt": "2026-10-01T04:02:53.058Z",
-    "seriesId": "yu-news-224526213"
+    "seriesId": "yu-news-10261173"
   },
   {
     "id": "yu-news-228909571",
@@ -21759,7 +19686,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:07:49.982Z",
     "firstSeenAt": "2026-10-01T04:07:49.982Z",
-    "seriesId": "yu-news-225853156"
+    "seriesId": "yu-news-220818160"
   },
   {
     "id": "yu-news-228029157",
@@ -21799,7 +19726,8 @@
     "postedAt": "2025-12-30",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:12:16.541Z",
-    "firstSeenAt": "2026-10-01T04:12:16.541Z"
+    "firstSeenAt": "2026-10-01T04:12:16.541Z",
+    "seriesId": "yu-news-10564691"
   },
   {
     "id": "yu-news-224890988",
@@ -21842,6 +19770,392 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:47:08.486Z",
     "firstSeenAt": "2026-10-01T04:47:08.486Z",
-    "seriesId": "yu-news-224890988"
+    "seriesId": "yu-news-220062092"
+  },
+  {
+    "id": "yu-news-230387440",
+    "title": "[RISE사업단-REGO레전드] 2026년도 RISE사업단 레전드 50+ 기업맞춤 지능형 첨단소재 인력양성사업 시제품제작지원사업 모집 공고",
+    "organizer": "레전드 50+ 기업맞춤 지능형 첨단소재 인력양성사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "3학년",
+        "4학년"
+      ],
+      "statuses": [],
+      "excludedStatuses": [
+        "휴학생"
+      ]
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-07"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230570240"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230387440"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-06-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T03:41:02.173Z",
+    "firstSeenAt": "2026-10-01T03:41:02.173Z",
+    "seriesId": "yu-news-229585441"
+  },
+  {
+    "id": "yu-news-230499958",
+    "title": "[글로벌공생HUSS] 2026-2 마이크로전공 신청 안내",
+    "organizer": "인문사회글로벌공생융합인재양성사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2026-07-14",
+      "end": "2026-07-16"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230767180"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230499958"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T03:40:42.031Z",
+    "firstSeenAt": "2026-10-01T03:40:42.031Z",
+    "seriesId": "yu-news-228224599"
+  },
+  {
+    "id": "yu-news-230134215",
+    "title": "[교육개발센터] 2026 Learning Contents Award((비)교과 학습 실천 사례 공모전) 안내",
+    "organizer": "교육개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231371584"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230879658"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230134215"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-08-25",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T03:42:58.558Z",
+    "firstSeenAt": "2026-10-01T03:42:58.558Z",
+    "seriesId": "yu-news-220322655"
+  },
+  {
+    "id": "yu-news-229641797",
+    "title": "[실습생 모집_채용연계형🍀] (주)대웅에프엔티 2026-여름 및 2학기 국내 현장실습학기제 참여학생 모집안내",
+    "organizer": "(주)대웅에프엔티",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [
+        "생활과학대학"
+      ],
+      "departments": [
+        "의류패션학과"
+      ],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-06-05"
+    },
+    "activityPeriod": {
+      "start": "2026-06-24",
+      "end": "2026-12-23"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229894902"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229641797"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-05-12",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T03:52:29.085Z",
+    "firstSeenAt": "2026-10-01T03:52:29.085Z"
+  },
+  {
+    "id": "yu-news-224109086",
+    "title": "[해외인턴] 미국 해외인턴 참가자 모집 안내(ICCE)",
+    "organizer": "ICCE",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "졸업생"
+      ],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-09-17"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "해외·글로벌",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231273173"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231062180"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230668744"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230612492"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230091982"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229880841"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229726211"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229613668"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=228909614"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=228839324"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=228629710"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=228503923"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=228112860"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=228015221"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227630413"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227549057"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227345294"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227182544"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227114352"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=226775241"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=226598904"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=226395271"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=225636279"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=225473707"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=225365264"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=225256802"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=225189078"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=225094299"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224999430"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224890985"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224674402"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224580067"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224472249"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224377824"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224283368"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224189377"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224109086"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-08-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T04:54:24.435Z",
+    "firstSeenAt": "2026-10-01T04:54:24.435Z",
+    "seriesId": "yu-news-220792095"
   }
 ]
