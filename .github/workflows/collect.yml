@@ -9,6 +9,11 @@ on:
 permissions:
   contents: write
 
+# 수집이 겹쳐 돌지 않게 한 번에 하나만 실행한다
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
 jobs:
   collect:
     runs-on: ubuntu-latest
@@ -26,6 +31,15 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
-          git diff --cached --quiet || git commit -m "정보 수집 결과 갱신"
-          git push
+          # 그사이 내 컴퓨터 수집 결과가 먼저 올라오면 올리기가 실패한다.
+          # 그때는 이번 결과를 버리고 최신을 받아 수집을 다시 한다 (최대 3번)
+          for try in 1 2 3; do
+            git add data
+            git diff --cached --quiet || git commit -m "정보 수집 결과 갱신"
+            git push && exit 0
+            echo "올리기 실패 ($try번째): 최신을 받아 다시 수집"
+            git fetch origin main
+            git reset --hard origin/main # 수집 서버라 다른 작업이 없어 통째로 맞춰도 된다
+            npm run collect || true
+          done
+          exit 1

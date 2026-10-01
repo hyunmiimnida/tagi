@@ -9,15 +9,31 @@ $logDir = Join-Path $PWD "logs"
 New-Item -ItemType Directory -Force $logDir | Out-Null
 Start-Transcript -Path (Join-Path $logDir "collect-local.log") -Append | Out-Null
 
+# 수집 결과 저장 커밋을 만든다. 바뀐 것이 없으면 false
+function Save-Data {
+  git add data | Out-Null
+  git diff --cached --quiet
+  if ($LASTEXITCODE -eq 0) { return $false }
+  git commit --quiet -m "정보 수집 결과 갱신 (내 컴퓨터)" | Out-Null
+  return $true
+}
+
 try {
-  git pull --rebase --quiet
+  git pull --rebase --autostash --quiet
   # 일부 출처가 실패해도 성공한 결과는 올린다
   npm.cmd run collect
-  git add data
-  git diff --cached --quiet
-  if ($LASTEXITCODE -ne 0) {
-    git commit --quiet -m "정보 수집 결과 갱신 (내 컴퓨터)"
+  # 수집하는 동안 GitHub Actions 결과가 먼저 올라오면 올리기가 실패한다.
+  # 그때는 이번 데이터 커밋만 되돌리고(data 폴더만, 다른 작업은 그대로) 최신을 받아 다시 수집한다 (최대 3번)
+  for ($try = 1; $try -le 3; $try++) {
+    if (-not (Save-Data)) { break }
     git push --quiet
+    if ($LASTEXITCODE -eq 0) { break }
+    Write-Output "올리기 실패 ($try번째): 최신을 받아 다시 수집"
+    git reset --soft HEAD~1
+    git reset --quiet -- data
+    git checkout -- data
+    git pull --rebase --autostash --quiet
+    npm.cmd run collect
   }
 } finally {
   Stop-Transcript | Out-Null
