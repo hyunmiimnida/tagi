@@ -1,7 +1,16 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { addedAt, compareDeadline, isClosed, matchesTags, matchesUnits, visibleForSchool } from "../lib/filter.ts";
+import {
+  ELIGIBILITY,
+  addedAt,
+  compareDeadline,
+  isClosed,
+  matchesEligibility,
+  matchesTags,
+  matchesUnits,
+  visibleForSchool,
+} from "../lib/filter.ts";
 import type { FilterCategory, ProgramView, SchoolOption } from "../lib/filter.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import { LIST_QUERY_KEY } from "./BackLink.tsx";
@@ -19,6 +28,7 @@ type Sort = "deadline" | "recent";
 interface Filters {
   school: string | null;
   units: Set<string>;
+  who: Set<string>;
   tags: Set<string>;
   keyword: string;
   showClosed: boolean;
@@ -33,6 +43,7 @@ function readQuery() {
   return {
     school: params.get("school"),
     units: new Set(params.getAll("unit")),
+    who: new Set(params.getAll("who").filter((w) => ELIGIBILITY.includes(w))),
     tags: new Set(params.getAll("tag")),
     keyword: params.get("q") ?? "",
     showClosed: params.get("closed") === "1",
@@ -40,10 +51,11 @@ function readQuery() {
   };
 }
 
-function writeQuery({ school, units, tags, keyword, showClosed, sort }: Filters) {
+function writeQuery({ school, units, who, tags, keyword, showClosed, sort }: Filters) {
   const params = new URLSearchParams();
   if (school) params.set("school", school);
   for (const unit of units) params.append("unit", unit);
+  for (const w of who) params.append("who", w);
   for (const tag of tags) params.append("tag", tag);
   if (keyword) params.set("q", keyword);
   if (showClosed) params.set("closed", "1");
@@ -64,6 +76,7 @@ export function Explorer({ programs, categories, schools }: Props) {
   const [school, setSchool] = useState<string | null>(null);
   const [schoolFromUrl, setSchoolFromUrl] = useState(false);
   const [units, setUnits] = useState<Set<string>>(new Set());
+  const [who, setWho] = useState<Set<string>>(new Set());
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [openPanel, setOpenPanel] = useState<string | null>(null);
   const [showClosed, setShowClosed] = useState(false);
@@ -77,6 +90,7 @@ export function Explorer({ programs, categories, schools }: Props) {
       setSchoolFromUrl(true);
       setUnits(query.units);
     }
+    setWho(query.who);
     setSelected(query.tags);
     setKeyword(query.keyword);
     setShowClosed(query.showClosed);
@@ -90,8 +104,8 @@ export function Explorer({ programs, categories, schools }: Props) {
   }, [loaded, schoolFromUrl, user.schoolId]);
 
   useEffect(() => {
-    if (loaded) writeQuery({ school, units, tags: selected, keyword, showClosed, sort });
-  }, [loaded, school, units, selected, keyword, showClosed, sort]);
+    if (loaded) writeQuery({ school, units, who, tags: selected, keyword, showClosed, sort });
+  }, [loaded, school, units, who, selected, keyword, showClosed, sort]);
 
   // 주최 유형 태그는 주최 줄에 이미 보이므로 공고 태그에서는 뺀다
   const organizerTags = useMemo(
@@ -105,11 +119,11 @@ export function Explorer({ programs, categories, schools }: Props) {
   const visible = useMemo(
     () =>
       open
-        .filter((p) => visibleForSchool(p, school) && matchesUnits(p, units))
+        .filter((p) => visibleForSchool(p, school) && matchesUnits(p, units) && matchesEligibility(p, who))
         .filter((p) => matchesTags(p.tags, selected, categories))
         .filter((p) => !word || `${p.title} ${p.organizer ?? ""}`.toLowerCase().includes(word))
         .sort((a, b) => (sort === "recent" ? addedAt(b).localeCompare(addedAt(a)) : compareDeadline(a, b, today))),
-    [open, categories, school, units, selected, word, sort, today],
+    [open, categories, school, units, who, selected, word, sort, today],
   );
 
   // 개수: 다른 필터는 반영하고, 자기 자신이 속한 필터만 빼고 센다
@@ -118,17 +132,24 @@ export function Explorer({ programs, categories, schools }: Props) {
     const inSchool = (id: string | null) => byTags.filter((p) => visibleForSchool(p, id));
     const schoolCounts = new Map(schools.map((s) => [s.id, inSchool(s.id).length]));
     const unitCounts = new Map<string, number>();
-    for (const p of inSchool(school)) for (const unit of p.units) unitCounts.set(unit, (unitCounts.get(unit) ?? 0) + 1);
+    for (const p of inSchool(school).filter((p) => matchesEligibility(p, who))) {
+      for (const unit of p.units) unitCounts.set(unit, (unitCounts.get(unit) ?? 0) + 1);
+    }
+    // 대상 개수: 그 대상 하나만 더 골랐을 때 남는 공고 수
+    const whoBase = inSchool(school).filter((p) => matchesUnits(p, units));
+    const whoCounts = new Map(
+      ELIGIBILITY.map((w) => [w, whoBase.filter((p) => matchesEligibility(p, new Set([...who, w]))).length]),
+    );
 
     const tagCounts = new Map<string, number>();
-    const base = open.filter((p) => visibleForSchool(p, school) && matchesUnits(p, units));
+    const base = open.filter((p) => visibleForSchool(p, school) && matchesUnits(p, units) && matchesEligibility(p, who));
     for (const category of categories) {
       const others = categories.filter((c) => c.id !== category.id);
       const pool = base.filter((p) => matchesTags(p.tags, selected, others));
       for (const tag of category.tags) tagCounts.set(tag, pool.filter((p) => p.tags.includes(tag)).length);
     }
-    return { all: inSchool(null).length, school: schoolCounts, unit: unitCounts, tag: tagCounts };
-  }, [open, categories, schools, school, units, selected]);
+    return { all: inSchool(null).length, school: schoolCounts, unit: unitCounts, who: whoCounts, tag: tagCounts };
+  }, [open, categories, schools, school, units, who, selected]);
 
   function chooseSchool(id: string | null) {
     setSchool(id);
@@ -147,13 +168,15 @@ export function Explorer({ programs, categories, schools }: Props) {
   function reset() {
     setSelected(new Set());
     setUnits(new Set());
+    setWho(new Set());
     setKeyword("");
   }
 
   const currentSchool = schools.find((s) => s.id === school) ?? null;
   const openedCategory = categories.find((category) => category.id === openPanel);
   const ready = loaded && today !== "";
-  const hasChips = selected.size > 0 || units.size > 0;
+  const hasChips = selected.size > 0 || units.size > 0 || who.size > 0;
+  const schoolFilterCount = units.size + who.size;
 
   const option = (key: string, label: string, on: boolean, count: number | undefined, onClick: () => void) => (
     <button
@@ -188,7 +211,7 @@ export function Explorer({ programs, categories, schools }: Props) {
             onClick={() => setOpenPanel(openPanel === SCHOOL_PANEL ? null : SCHOOL_PANEL)}
           >
             {currentSchool ? currentSchool.shortName : "학교"}
-            {units.size > 0 && <span className="chip-count">{units.size}</span>}
+            {schoolFilterCount > 0 && <span className="chip-count">{schoolFilterCount}</span>}
             <ChevronIcon dir="down" size={14} />
           </button>
           {categories.map((category) => {
@@ -219,6 +242,10 @@ export function Explorer({ programs, categories, schools }: Props) {
                 ),
               )}
             </div>
+            <div className="panel-group">
+              <p className="panel-label">대상</p>
+              {ELIGIBILITY.map((w) => option(w, w, who.has(w), counts.who.get(w), () => setWho(toggle(who, w))))}
+            </div>
             {currentSchool && currentSchool.units.length > 0 && (
               <div className="panel-group">
                 <p className="panel-label">{currentSchool.shortName} 교내 기관</p>
@@ -240,6 +267,12 @@ export function Explorer({ programs, categories, schools }: Props) {
 
         {hasChips && (
           <div className="selected-tags">
+            {[...who].map((w) => (
+              <button key={w} className="selected-tag" onClick={() => setWho(toggle(who, w))} aria-label={`${w} 필터 해제`}>
+                {w}
+                <CloseIcon size={14} />
+              </button>
+            ))}
             {[...units].map((unit) => (
               <button key={unit} className="selected-tag" onClick={() => setUnits(toggle(units, unit))} aria-label={`${unit} 필터 해제`}>
                 {unit}
@@ -254,10 +287,7 @@ export function Explorer({ programs, categories, schools }: Props) {
             ))}
             <button
               className="text-button"
-              onClick={() => {
-                setSelected(new Set());
-                setUnits(new Set());
-              }}
+              onClick={reset}
             >
               초기화
             </button>

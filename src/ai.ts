@@ -3,6 +3,7 @@ import { existsSync, readdirSync } from "node:fs";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { GRADES, STUDENT_STATUSES } from "./types.ts";
 import type { CollectedItem, Program, TagCategory } from "./types.ts";
 
 // AI 정보 추출: Codex CLI가 있으면 게시물 본문을 읽혀서 규칙으로 못 찾은 정보를 보완한다.
@@ -70,6 +71,11 @@ ${item.text.slice(0, maxText) || "(본문 없음, 이미지로만 안내됨)"}`,
     이름을 모르는 회사·교육업체·아카데미 운영사는 기업이다. 인력양성원·교육원처럼 공적 성격의 교육기관은 공공기관이다.
   - 공공기관: 공단·공사·진흥원·정부 출연 연구원 등 공적 기관. 기업이 세운 재단은 기업으로 본다.
 - colleges/departments/grades: 참여 자격이 특정 단과대학·학과·학년으로 "제한"될 때만 적는다. 우대·예시는 제한이 아니다.
+  - grades는 "1학년"·"2학년"·"3학년"·"4학년"만 쓴다 (5학년 이상·대학원은 쓰지 않는다). "2~3학년"이면 ["2학년","3학년"], "3학년 이상"이면 ["3학년","4학년"].
+- statuses: 참여할 수 있는 신분이 글에 적혀 있을 때만, "재학생"·"휴학생"·"졸업생" 중에서 고른다.
+  - "재학생 대상"이면 ["재학생"]. "재학생 및 휴학생"이면 ["재학생","휴학생"]. "졸업생(졸업예정자 포함)"이면 ["졸업생"]. "재학생·졸업생 누구나"면 ["재학생","졸업생"].
+  - 그냥 "학생", "학부생", "누구나"처럼 신분을 가리지 않으면 빈 배열.
+- excludedStatuses: 글에 "휴학생 제외"·"졸업생 제외"처럼 명시적으로 뺀 신분만 같은 이름으로 적는다.
 - tags: 아래 목록의 이름만. 그 프로그램의 핵심 내용일 때만 붙인다. 본문에 단어가 한 번 나온다고 붙이지 마라.
   - 장학·지원금: 학생이 장학금·지원금·상금·활동비를 직접 받는 경우에만.
   - 해외·글로벌: 해외 파견·해외 활동·유학생 교류가 핵심일 때만.
@@ -81,7 +87,7 @@ ${item.text.slice(0, maxText) || "(본문 없음, 이미지로만 안내됨)"}`,
 ${tagList}
 
 출력 형식 (게시물 수만큼, 설명 없이 JSON만):
-{"items":[{"id":"...","forStudents":true,"organizer":null,"organizerType":null,"recruitStart":null,"recruitEnd":null,"activityStart":null,"activityEnd":null,"colleges":[],"departments":[],"grades":[],"tags":[]}]}
+{"items":[{"id":"...","forStudents":true,"organizer":null,"organizerType":null,"recruitStart":null,"recruitEnd":null,"activityStart":null,"activityEnd":null,"colleges":[],"departments":[],"grades":[],"statuses":[],"excludedStatuses":[],"tags":[]}]}
 
 게시물:
 
@@ -124,6 +130,21 @@ async function askCodex(bin: string, prompt: string): Promise<{ items?: Record<s
   }
 }
 
+// 학년 표기를 "1학년"~"4학년"으로 맞춘다. "3학년 이상" → 3·4학년, "2~3학년" → 2·3학년. 학기·대학원 같은 표기는 뺀다
+export function normalizeGrades(values: string[]): string[] {
+  const out = new Set<string>();
+  for (const value of values) {
+    if (/제외|학기|대학원|석사|박사/.test(value)) continue;
+    const range = value.match(/([1-4])\s*[~\-·,]\s*([1-4])\s*학년/);
+    const atLeast = value.match(/([1-4])\s*학년\s*이상/);
+    const single = value.match(/^([1-4])\s*학년$/);
+    const [from, to] = range ? [range[1], range[2]] : atLeast ? [atLeast[1], "4"] : single ? [single[1], single[1]] : [];
+    if (!from) continue;
+    for (let g = Number(from); g <= Number(to); g++) out.add(`${g}학년`);
+  }
+  return GRADES.filter((g) => out.has(g));
+}
+
 // AI가 외부 단체(협회·재단 등)를 "학교"로 잘못 분류하면 바로잡는다.
 // 학교 이름이 들어 있지 않은데 외부 단체 이름이면, 주최 유형 키워드 규칙으로 다시 정하고 못 찾으면 비워 둔다
 const OUTSIDE_GROUP = /협회|지회|협의회|공단|공사|진흥원|재단|연합회|상공회의소/;
@@ -159,7 +180,9 @@ function apply(item: CollectedItem, data: Record<string, unknown>, categories: T
 
   program.target.colleges = strings(data.colleges);
   program.target.departments = strings(data.departments);
-  program.target.grades = strings(data.grades);
+  program.target.grades = normalizeGrades(strings(data.grades));
+  program.target.statuses = strings(data.statuses).filter((s) => STUDENT_STATUSES.includes(s));
+  program.target.excludedStatuses = strings(data.excludedStatuses).filter((s) => STUDENT_STATUSES.includes(s));
 
   const tags = strings(data.tags).filter((t) => allowedTags.has(t) && !organizerTypes.includes(t));
   program.tags = [...new Set([...(program.organizerType ? [program.organizerType] : []), ...tags])];

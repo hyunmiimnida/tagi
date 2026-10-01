@@ -86,3 +86,11 @@ test("AI가 외부 단체를 학교로 분류하면 바로잡는다", async () =
   fixOrganizerType(school as never, categories);
   assert.equal(school.organizerType, "학교");
 });
+
+test("학년 표기를 1~4학년으로 맞춘다", async () => {
+  const { normalizeGrades } = await import("./ai.ts");
+  assert.deepEqual(normalizeGrades(["3학년 이상"]), ["3학년", "4학년"]);
+  assert.deepEqual(normalizeGrades(["2~3학년"]), ["2학년", "3학년"]);
+  assert.deepEqual(normalizeGrades(["4학년", "1학년"]), ["1학년", "4학년"]);
+  assert.deepEqual(normalizeGrades(["5학기 이상 이수자", "대학원생", "2·3학년 제외", "고학년"]), []);
+});

@@ -1,5 +1,5 @@
 import { mkdir } from "node:fs/promises";
-import { enrichWithAi, findCodex, fixOrganizerType, pickProgramTitles } from "./ai.ts";
+import { enrichWithAi, findCodex, fixOrganizerType, normalizeGrades, pickProgramTitles } from "./ai.ts";
 import {
   ARCHIVE_FILE,
   PROGRAMS_FILE,
@@ -39,14 +39,26 @@ const schools = await readJson<School[]>(new URL("../config/schools.json", impor
 const categories = await readJson<TagCategory[]>(new URL("../config/tag-categories.json", import.meta.url));
 await mkdir(CACHE, { recursive: true });
 
+// 본문을 읽는 출처(상세 페이지가 있는 출처)의 id
+const readableSources = new Set(
+  schools.flatMap((school) => school.sources.filter((s) => archivers[s.collector]?.read).map((s) => s.id)),
+);
+// 모집 대상 신분(statuses)이 생기기 전에 추출한 본문 글은 다시 추출한다
+const outdated = (p: Program) => p.target.statuses === undefined && p.sources.some((s) => readableSources.has(s));
+
 const triage = await readJson<Record<string, boolean>>(TRIAGE_FILE, {});
-const results = await readJson<Program[]>(RESULTS_FILE, []);
+const results = (await readJson<Program[]>(RESULTS_FILE, [])).filter((p) => !outdated(p));
 const rejected = new Set(await readJson<string[]>(REJECTED_FILE, []));
 
 // 이미 처리했거나 목록·보관함에 있는 글은 건너뛴다
 async function knownUrls(): Promise<Set<string>> {
   const saved = [...(await readJson<Program[]>(PROGRAMS_FILE, [])), ...(await readJson<Program[]>(ARCHIVE_FILE, []))];
-  return new Set([...saved, ...results].flatMap((p) => p.links.map((l) => l.url)).concat([...rejected]));
+  return new Set(
+    [...saved, ...results]
+      .filter((p) => !outdated(p))
+      .flatMap((p) => p.links.map((l) => l.url))
+      .concat([...rejected]),
+  );
 }
 
 async function run() {
@@ -145,7 +157,10 @@ async function extract(
 // 추출 결과를 목록(최근 90일)과 보관함(그 이전)에 나눠 합친다
 async function save() {
   // 수집 중에 고친 검사 규칙을 이미 추출한 결과에도 적용한다
-  for (const program of results) fixOrganizerType(program, categories);
+  for (const program of results) {
+    fixOrganizerType(program, categories);
+    program.target.grades = normalizeGrades(program.target.grades);
+  }
   const { current, old } = splitByAge(results);
   const programs = mergePrograms(await readJson<Program[]>(PROGRAMS_FILE, []), current);
   const archive = mergeArchive(await readJson<Program[]>(ARCHIVE_FILE, []), old);

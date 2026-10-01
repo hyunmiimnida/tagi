@@ -40,3 +40,34 @@ test("학교를 고르면 그 학교와 공통 공고만 보인다", async () =>
   assert.ok(visibleForSchool({ schoolIds: ["yu"] } as never, null));
   assert.ok(!visibleForSchool({ schoolIds: ["knu"] } as never, "yu"));
 });
+
+const withTarget = (target: Record<string, string[]>) =>
+  ({ target: { schools: ["yu"], colleges: [], departments: [], grades: [], ...target } }) as never;
+
+test("대상 필터: 신분끼리는 또는, 학년과는 그리고, 제외한 신분은 빼고 고른다", async () => {
+  const { matchesEligibility } = await import("./filter.ts");
+  const open = withTarget({});
+  const enrolledNoLeave = withTarget({ statuses: ["재학생"], excludedStatuses: ["휴학생"] });
+  const graduates = withTarget({ statuses: ["졸업생"] });
+  const juniors = withTarget({ statuses: ["재학생"], grades: ["3학년", "4학년"] });
+  assert.ok(matchesEligibility(open, new Set(["휴학생", "2학년"])));
+  assert.ok(!matchesEligibility(enrolledNoLeave, new Set(["휴학생"])));
+  assert.ok(matchesEligibility(enrolledNoLeave, new Set(["휴학생", "재학생"])));
+  assert.ok(!matchesEligibility(graduates, new Set(["1학년"])));
+  assert.ok(matchesEligibility(graduates, new Set(["졸업생"])));
+  assert.ok(!matchesEligibility(juniors, new Set(["재학생", "1학년"])));
+  assert.ok(matchesEligibility(juniors, new Set(["4학년"])));
+});
+
+test("모집 대상 문구를 자세히 만든다", async () => {
+  const { describeTarget } = await import("./filter.ts");
+  const names = { yu: "영남대학교" };
+  assert.equal(describeTarget(withTarget({}), names), "영남대학교");
+  assert.equal(describeTarget(withTarget({ statuses: ["재학생"] }), names), "영남대학교 재학생");
+  assert.equal(describeTarget(withTarget({ statuses: ["재학생"], grades: ["1학년"] }), names), "영남대학교 재학생 - 1학년");
+  assert.equal(
+    describeTarget(withTarget({ statuses: ["재학생"], excludedStatuses: ["휴학생"] }), names),
+    "영남대학교 재학생(휴학생 제외)",
+  );
+  assert.equal(describeTarget(withTarget({ statuses: ["졸업생"], colleges: ["공과대학"] }), names), "영남대학교 졸업생 · 공과대학");
+});

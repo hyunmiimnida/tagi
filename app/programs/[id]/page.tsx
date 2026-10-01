@@ -4,7 +4,7 @@ import { Comments } from "../../../components/Comments.tsx";
 import { DetailActions } from "../../../components/DetailActions.tsx";
 import { ExternalIcon } from "../../../components/Icons.tsx";
 import { getPastRounds, getPrograms, getSchools, getSourceNames } from "../../../lib/data.ts";
-import { formatDate, formatPeriod } from "../../../lib/filter.ts";
+import { describeTarget, formatDate, formatPeriod } from "../../../lib/filter.ts";
 import type { Program } from "../../../src/types.ts";
 
 export const dynamicParams = false;
@@ -37,15 +37,10 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
   const pastRounds = getPastRounds(program);
   const sourceNames = getSourceNames();
   const schoolNames = Object.fromEntries(getSchools().map((school) => [school.id, school.name]));
-  const { target } = program;
   const year = new Date().getFullYear();
   const recruit = formatPeriod(program.recruitPeriod, year);
   const activity = formatPeriod(program.activityPeriod, year);
-  const restrictions = [target.colleges, target.departments, target.grades].filter((list) => list.length > 0);
-  const targetText = [
-    target.schools.map((schoolId) => schoolNames[schoolId] ?? schoolId).join(", ") || "모든 학교",
-    ...restrictions.map((list) => list.join(", ")),
-  ].join(" · ");
+  const targetText = describeTarget(program, schoolNames);
 
   const rows: [string, string | null][] = [
     ["모집 기간", recruit],

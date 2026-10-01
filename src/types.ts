@@ -1,3 +1,7 @@
+// 모집 대상의 학년과 신분. 필터와 AI 추출이 같은 이름을 쓴다
+export const GRADES = ["1학년", "2학년", "3학년", "4학년"];
+export const STUDENT_STATUSES = ["재학생", "휴학생", "졸업생"];
+
 // 기간. 날짜는 "2026-10-01" 형식, 모르면 null
 export interface Period {
   start: string | null;
@@ -14,7 +18,9 @@ export interface Program {
     schools: string[]; // 학교 id. 비어 있으면 모든 학교 공통
     colleges: string[];
     departments: string[];
-    grades: string[];
+    grades: string[]; // "1학년"~"4학년". 비어 있으면 학년 제한 없음
+    statuses?: string[]; // 참여할 수 있는 신분 (재학생·휴학생·졸업생). 비어 있으면 제한 없음
+    excludedStatuses?: string[]; // 공고에서 명시적으로 뺀 신분 (예: 휴학생 제외)
   };
   recruitPeriod: Period; // 모집 기간
   activityPeriod: Period; // 활동 기간
@@ -103,7 +109,7 @@ export function emptyProgram(school: School, source: Source, postId: string, tit
     title,
     organizer: null,
     organizerType: null,
-    target: { schools: [school.id], colleges: [], departments: [], grades: [] },
+    target: { schools: [school.id], colleges: [], departments: [], grades: [], statuses: [], excludedStatuses: [] },
     recruitPeriod: { start: null, end: null },
     activityPeriod: { start: null, end: null },
     tags: [],
