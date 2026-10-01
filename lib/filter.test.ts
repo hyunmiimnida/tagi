@@ -38,7 +38,7 @@ test("학교를 고르면 그 학교와 공통 공고만 보인다", async () =>
   assert.ok(visibleForSchool({ schoolIds: ["yu"] } as never, "yu"));
   assert.ok(visibleForSchool({ schoolIds: [] } as never, "yu"));
   assert.ok(visibleForSchool({ schoolIds: ["yu"] } as never, null));
-  assert.ok(!visibleForSchool({ schoolIds: ["knu"] } as never, "yu"));
+  assert.ok(!visibleForSchool({ schoolIds: ["knu"], target: {} } as never, "yu"));
 });
 
 const withTarget = (target: Record<string, string[] | string>) =>
@@ -94,4 +94,16 @@ test("게시일이 없으면 처음 수집한 시각을 보는 사람의 시간�
   const seen = "2026-09-30T18:31:28.906Z";
   const program = { postedAt: null, firstSeenAt: seen, collectedAt: seen, recruitPeriod: { start: null, end: null } } as never;
   assert.equal(addedAt(program), toDateString(new Date(seen)));
+});
+
+test("학교 필터: 다른 학교에 올라왔어도 지원할 수 있는 공고는 기본으로 함께 보이고, 끌 수 있다", async () => {
+  const { visibleForSchool } = await import("./filter.ts");
+  const mine = { schoolIds: ["knu"], target: { schools: ["knu"] } } as never;
+  const open = { schoolIds: ["yu"], target: { schools: [], openTo: "전국 대학생" } } as never;
+  const closed = { schoolIds: ["yu"], target: { schools: ["yu"], openTo: null } } as never;
+  assert.ok(visibleForSchool(mine, "knu"));
+  assert.ok(visibleForSchool(open, "knu"));
+  assert.ok(!visibleForSchool(open, "knu", false));
+  assert.ok(!visibleForSchool(closed, "knu"));
+  assert.ok(visibleForSchool(closed, null));
 });

@@ -32,6 +32,7 @@ interface Filters {
   tags: Set<string>;
   keyword: string;
   showClosed: boolean;
+  includeOpen: boolean; // 다른 학교에 올라왔지만 지원할 수 있는 공고도 보기
   sort: Sort;
 }
 
@@ -47,11 +48,12 @@ function readQuery() {
     tags: new Set(params.getAll("tag")),
     keyword: params.get("q") ?? "",
     showClosed: params.get("closed") === "1",
+    includeOpen: params.get("open") !== "0",
     sort: (params.get("sort") === "recent" ? "recent" : "deadline") as Sort,
   };
 }
 
-function writeQuery({ school, units, who, tags, keyword, showClosed, sort }: Filters) {
+function writeQuery({ school, units, who, tags, keyword, showClosed, includeOpen, sort }: Filters) {
   const params = new URLSearchParams();
   if (school) params.set("school", school);
   for (const unit of units) params.append("unit", unit);
@@ -59,6 +61,7 @@ function writeQuery({ school, units, who, tags, keyword, showClosed, sort }: Fil
   for (const tag of tags) params.append("tag", tag);
   if (keyword) params.set("q", keyword);
   if (showClosed) params.set("closed", "1");
+  if (!includeOpen) params.set("open", "0");
   if (sort !== "deadline") params.set("sort", sort);
   const query = params.toString() ? `?${params}` : "";
   window.history.replaceState(null, "", query || window.location.pathname);
@@ -81,6 +84,7 @@ export function Explorer({ programs, categories, schools }: Props) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [openPanel, setOpenPanel] = useState<string | null>(null);
   const [showClosed, setShowClosed] = useState(false);
+  const [includeOpen, setIncludeOpen] = useState(true);
   const [keyword, setKeyword] = useState("");
   const [sort, setSort] = useState<Sort>("deadline");
 
@@ -98,6 +102,7 @@ export function Explorer({ programs, categories, schools }: Props) {
     setSelected(query.tags);
     setKeyword(query.keyword);
     setShowClosed(query.showClosed);
+    setIncludeOpen(query.includeOpen);
     setSort(query.sort);
     setLoaded(true);
   }, []);
@@ -115,8 +120,8 @@ export function Explorer({ programs, categories, schools }: Props) {
   }, [loaded, whoFromUrl, status, grade]);
 
   useEffect(() => {
-    if (loaded) writeQuery({ school, units, who, tags: selected, keyword, showClosed, sort });
-  }, [loaded, school, units, who, selected, keyword, showClosed, sort]);
+    if (loaded) writeQuery({ school, units, who, tags: selected, keyword, showClosed, includeOpen, sort });
+  }, [loaded, school, units, who, selected, keyword, showClosed, includeOpen, sort]);
 
   // 주최 유형 태그는 주최 줄에 이미 보이므로 공고 태그에서는 뺀다
   const organizerTags = useMemo(
@@ -137,16 +142,16 @@ export function Explorer({ programs, categories, schools }: Props) {
   const visible = useMemo(
     () =>
       open
-        .filter((p) => visibleForSchool(p, school) && matchesUnits(p, units) && matchesEligibility(p, who))
+        .filter((p) => visibleForSchool(p, school, includeOpen) && matchesUnits(p, units) && matchesEligibility(p, who))
         .filter((p) => matchesTags(p.tags, selected, categories))
         .sort((a, b) => (sort === "recent" ? addedAt(b).localeCompare(addedAt(a)) : compareDeadline(a, b, today))),
-    [open, categories, school, units, who, selected, sort, today],
+    [open, categories, school, includeOpen, units, who, selected, sort, today],
   );
 
   // 개수: 다른 필터는 반영하고, 자기 자신이 속한 필터만 빼고 센다
   const counts = useMemo(() => {
     const byTags = open.filter((p) => matchesTags(p.tags, selected, categories));
-    const inSchool = (id: string | null) => byTags.filter((p) => visibleForSchool(p, id));
+    const inSchool = (id: string | null) => byTags.filter((p) => visibleForSchool(p, id, includeOpen));
     const schoolCounts = new Map(schools.map((s) => [s.id, inSchool(s.id).length]));
     const unitCounts = new Map<string, number>();
     for (const p of inSchool(school).filter((p) => matchesEligibility(p, who))) {
@@ -159,14 +164,14 @@ export function Explorer({ programs, categories, schools }: Props) {
     );
 
     const tagCounts = new Map<string, number>();
-    const base = open.filter((p) => visibleForSchool(p, school) && matchesUnits(p, units) && matchesEligibility(p, who));
+    const base = open.filter((p) => visibleForSchool(p, school, includeOpen) && matchesUnits(p, units) && matchesEligibility(p, who));
     for (const category of categories) {
       const others = categories.filter((c) => c.id !== category.id);
       const pool = base.filter((p) => matchesTags(p.tags, selected, others));
       for (const tag of category.tags) tagCounts.set(tag, pool.filter((p) => p.tags.includes(tag)).length);
     }
     return { all: inSchool(null).length, school: schoolCounts, unit: unitCounts, who: whoCounts, tag: tagCounts };
-  }, [open, categories, schools, school, units, who, selected]);
+  }, [open, categories, schools, school, units, who, selected, includeOpen]);
 
   function chooseSchool(id: string | null) {
     setSchool(id);
@@ -263,6 +268,12 @@ export function Explorer({ programs, categories, schools }: Props) {
               <p className="panel-label">대상</p>
               {ELIGIBILITY.map((w) => option(w, w, who.has(w), counts.who.get(w), () => setWho(toggle(who, w))))}
             </div>
+            {school && (
+              <label className="toggle panel-toggle">
+                <input type="checkbox" checked={includeOpen} onChange={(event) => setIncludeOpen(event.target.checked)} />
+                <span>다른 학교에 올라온 공고 중 우리 학교 학생도 지원할 수 있는 것 함께 보기</span>
+              </label>
+            )}
             {currentSchool && currentSchool.units.length > 0 && (
               <div className="panel-group">
                 <p className="panel-label">{currentSchool.shortName} 교내 기관</p>

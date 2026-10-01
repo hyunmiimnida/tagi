@@ -1929,3 +1929,19 @@ main {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* 다른 학교 학생도 지원할 수 있는 공고 */
+.row-open {
+  flex-shrink: 0;
+  padding: 0 6px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--text-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.panel-toggle {
+  margin-top: 4px;
+  line-height: 1.5;
+}

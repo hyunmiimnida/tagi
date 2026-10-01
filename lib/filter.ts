@@ -43,9 +43,11 @@ export function unitsOf(program: Program, units: { name: string; keywords: strin
   return units.filter((unit) => unit.keywords.some((keyword) => name.includes(compact(keyword)))).map((unit) => unit.name);
 }
 
-// 학교를 고르면 그 학교 정보와 모든 학교 공통 정보만 보인다
-export function visibleForSchool(program: ProgramView, schoolId: string | null): boolean {
-  return !schoolId || program.schoolIds.length === 0 || program.schoolIds.includes(schoolId);
+// 학교를 고르면 그 학교 정보와 모든 학교 공통 정보가 보인다.
+// includeOpen이면 다른 학교에 올라왔어도 다른 학교 학생이 지원할 수 있는 공고(target.openTo)도 함께 보인다
+export function visibleForSchool(program: ProgramView, schoolId: string | null, includeOpen = true): boolean {
+  if (!schoolId || program.schoolIds.length === 0 || program.schoolIds.includes(schoolId)) return true;
+  return includeOpen && Boolean(program.target.openTo);
 }
 
 // 학교 필터 안의 "대상" 선택지: 신분 3개와 학년 4개

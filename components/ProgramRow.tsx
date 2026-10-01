@@ -42,6 +42,11 @@ export function ProgramRow({
               {label}
             </span>
           ))}
+          {program.target.openTo && (
+            <span className="row-open" title={`지원 대상: ${program.target.openTo}`}>
+              다른 학교도 지원
+            </span>
+          )}
           <span className="row-org">{program.organizer ?? "주최 미확인"}</span>
           {program.organizerType && <span className="row-type">{program.organizerType}</span>}
         </div>
