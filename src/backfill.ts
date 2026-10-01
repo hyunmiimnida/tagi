@@ -2,6 +2,7 @@ import { mkdir } from "node:fs/promises";
 import { enrichWithAi, findCodex, fixOrganizerType, normalizeGrades, pickProgramTitles } from "./ai.ts";
 import {
   ARCHIVE_FILE,
+  EXCLUDED_FILE,
   PROGRAMS_FILE,
   mergeArchive,
   readJson,
@@ -181,7 +182,13 @@ async function save() {
   }
   // 목록·보관함·새 결과를 한데 모아 정리한 뒤 한 번에 나눈다 (같은 공고가 양쪽에 남지 않게)
   const saved = [...(await readJson<Program[]>(PROGRAMS_FILE, [])), ...(await readJson<Program[]>(ARCHIVE_FILE, []))];
-  const all = collapseReposts(mergePrograms(saved, results));
+  // --school이면 그 학교 결과만 합친다 (이미 합친 다른 학교 결과가 그 뒤에 손본 데이터를 덮어쓰지 않게).
+  // 제외 목록(data/excluded.json)에 있는 글은 다시 넣지 않는다
+  const excludedUrls = new Set(await readJson<string[]>(EXCLUDED_FILE, []));
+  const sourceIds = new Set(schools.filter((s) => !onlySchools || onlySchools.has(s.id)).flatMap((s) => s.sources.map((src) => src.id)));
+  const incoming = results.filter((p) => p.sources.some((id) => sourceIds.has(id)) && !p.links.some((l) => excludedUrls.has(l.url)));
+  console.log(`합칠 결과 ${incoming.length}개 (전체 ${results.length}개 중)`);
+  const all = collapseReposts(mergePrograms(saved, incoming));
   all.forEach(cleanPeriods);
   const { current: programs, old } = splitByAge(all);
   const archive = mergeArchive([], old);
