@@ -218,7 +218,7 @@ export function Explorer({ programs, categories, schools }: Props) {
           <SearchIcon />
           <input
             type="search"
-            placeholder="공고명, 주최 기관 검색"
+            placeholder="공고명, 기관, 내용으로 검색"
             aria-label="공고명이나 주최 기관으로 검색"
             value={keyword}
             onChange={(event) => setKeyword(event.target.value)}
