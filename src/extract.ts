@@ -114,3 +114,9 @@ export function cleanPeriods(program: Program): void {
   program.recruitPeriod = plausiblePeriod(program.recruitPeriod, program.postedAt);
   program.activityPeriod = plausiblePeriod(program.activityPeriod, program.postedAt);
 }
+
+// AI 없이 수집할 때 쓰는 거르기: 학생이 신청·참가할 것이 없는 단순 안내로 보이는 제목
+// (규정 개정·의견 조회, 납부·결과 발표, 소식지, 주의 안내 등). AI가 있으면 AI가 본문을 보고 판단한다
+const NOTICE_ONLY =
+  /규정|지침|의견\s*(조회|수렴)|입찰|납부|합격자|결과\s*(발표|안내|공고)|선정\s*결과|뉴스레터|소식지|주의\s*안내|사칭|공사\s*안내|휴무|정전|단수/;
+export const looksLikeNoticeOnly = (title: string) => NOTICE_ONLY.test(title);

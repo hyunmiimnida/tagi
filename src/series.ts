@@ -1,5 +1,6 @@
 import { confirmSameSeries } from "./ai.ts";
 import { readJson, writeJson } from "./archive.ts";
+import { sameSchool } from "./school-of.ts";
 import type { Program } from "./types.ts";
 
 // 반복 프로그램 묶기: 해마다·학기마다 다시 열리는 같은 프로그램을 하나의 묶음(seriesId)으로 잇는다.
@@ -57,6 +58,7 @@ export function titleInfo(program: Program): TitleInfo {
 
 // 두 공고가 같은 반복 프로그램인지: true/false, 애매하면 "maybe"
 export function seriesMatch(a: Program, b: Program, x = titleInfo(a), y = titleInfo(b)): boolean | "maybe" {
+  if (!sameSchool(a, b)) return false; // 다른 학교 공고는 묶지 않는다
   if (x.base.length < MIN_BASE || y.base.length < MIN_BASE) return x.base === y.base && x.base !== "" && sameOrganizer(a, b);
   if (x.base === y.base) return true;
   // 비슷한 때에 열리는 비슷한 이름은 반복이 아니라 서로 다른 프로그램일 가능성이 크다 (예: 학업 전략 공모전 ↔ 학업계획서 공모전)

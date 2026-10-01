@@ -45,7 +45,7 @@
 - 로그인(소셜 로그인)과 학교 설정. 학교는 공고 화면의 "학교" 필터에서 고르고, 고른 학교가 내 학교 설정으로 저장된다
 - 학교 필터 안의 교내 기관 필터: `config/schools.json`의 `units` (산학협력단을 뺀 "~단" 기관). 주최 유형이 학교이고 주최 이름에 키워드가 있으면 그 기관
 - 공고 출처가 속한 학교는 목록에 학교 배지(`shortName`, 예: 영남대)로 보인다 (`lib/data.ts`가 빌드할 때 계산)
-- 중복 제거: 같은 프로그램은 하나로 합치고 원문 링크는 모두 보관
+- 중복 제거: 같은 프로그램은 하나로 합치고 원문 링크는 모두 보관. 합치기와 반복 프로그램 묶기는 같은 학교 출처끼리만 한다 (`src/school-of.ts`)
 - 반복 프로그램: 해마다·학기마다 다시 열리는 프로그램을 `seriesId`로 묶어(`src/series.ts`) 상세 화면에 "지난 공고"와 후기 댓글(Supabase `comments` 표)을 보여 준다
 - 모집 대상 학교: 기본은 게시한 학교. AI가 다른 학교 학생도 지원할 수 있다고 보면 `target.openTo`(예: "전국 대학생")를 쓰고 `target.schools`를 비운다. 학교 배지·학교 필터는 게시한 학교 기준이라 그대로다
 - 합쳐진 공고는 `aliases`에 예전 id를 남기고, 없는 공고 주소는 `app/not-found.tsx`가 `public/api/ids.json`으로 새 주소나 보관 안내를 찾아 준다
@@ -79,6 +79,8 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `config/tag-categories.json` — 태그 카테고리, 태그, 태그를 붙이는 키워드
 - `src/types.ts` — 공통 데이터 형식
 - `src/collectors/` — 사이트별 수집기 (`index.ts`에 등록)
+  - `news-board`(영남대 영대소식), `career-program-list`(영남대 취업정보), `table-board`(번호·제목·작성자·등록일 표 모양 게시판. 경북대·계명대처럼 선택자·주소 규칙을 출처의 `board` 설정에 적으면 새 학교도 코드 없이 추가)
+  - 지금 학교: 영남대(영대소식·취업정보), 경북대(공지사항·행사), 계명대(공지사항·모집·장학·교외알림판). 경북대 KNU CUBE·진로취업과, 계명대 STORY+·취업센터는 robots.txt가 막아 수집하지 않는다
 - `data/programs.json` — 수집 결과(최근 90일), `data/archive.json` — 지난 공고 보관함, `data/collect-log.json` — 마지막 수집 기록
 - `app/` — 화면. 하단 탭 바(`components/BottomNav.tsx`)로 홈 `/`, 공고 `/programs`, 캘린더 `/calendar`, 프로필 `/my`를 오간다. 상세는 `/programs/[id]`
   - 목록 필터는 주소(`?school=yu&unit=...&tag=...&q=...&closed=1&sort=recent`)에 저장된다

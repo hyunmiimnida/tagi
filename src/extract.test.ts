@@ -59,10 +59,12 @@ test("표현이 많이 다른 출처 간 제목은 AI 판단 후보로 고른다
     tags: [], links: [{ sourceId: source, url: id }], sources: [source], postedAt: null,
     extractedBy: "rules" as const, collectedAt: "2026-10-01T00:00:00Z",
   });
-  const a = make("a", "s1", "[고용노동부] 2026 미래내일 일경험 사업 참여자 모집");
-  const b = make("b", "s2", "2026 미래내일 일경험 프로그램 안내");
-  const c = make("c", "s2", "2학기 집단상담 프로그램");
-  const pairs = findAmbiguousPairs([a, b, c]);
+  const a = make("a", "yu-career", "[고용노동부] 2026 미래내일 일경험 사업 참여자 모집");
+  const b = make("b", "yu-news", "2026 미래내일 일경험 프로그램 안내");
+  const c = make("c", "yu-news", "2학기 집단상담 프로그램");
+  // 다른 학교(경북대)에 올라온 비슷한 글은 합칠 후보로 고르지 않는다
+  const d = make("d", "knu-notice", "2026 미래내일 일경험 프로그램 안내");
+  const pairs = findAmbiguousPairs([a, b, c, d]);
   assert.equal(pairs.length, 1);
   assert.deepEqual(pairs[0].map((p) => p.id), ["a", "b"]);
 });
@@ -124,4 +126,12 @@ test("학년 나열은 범위로 넓히지 않는다", async () => {
   const { normalizeGrades } = await import("./ai.ts");
   assert.deepEqual(normalizeGrades(["1,3학년"]), ["1학년", "3학년"]);
   assert.deepEqual(normalizeGrades(["2·4학년"]), ["2학년", "4학년"]);
+});
+
+test("AI 없이 수집할 때 신청할 것이 없는 단순 안내 제목을 알아본다", async () => {
+  const { looksLikeNoticeOnly } = await import("./extract.ts");
+  assert.ok(looksLikeNoticeOnly("총무과 소관 규정 개정(안) 공고 및 의견조회 알림"));
+  assert.ok(looksLikeNoticeOnly("계명아트센터 어셔(Usher) 21기 서류 합격자"));
+  assert.ok(!looksLikeNoticeOnly("2027년 (재)대산농촌재단 장학생 선발 안내"));
+  assert.ok(!looksLikeNoticeOnly("2026학년도 MY 포트폴리오 공모전"));
 });

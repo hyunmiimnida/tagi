@@ -12,7 +12,7 @@ import {
 } from "./archive.ts";
 import { collectors } from "./collectors/index.ts";
 import { collapseReposts, findAmbiguousPairs, mergePair, mergePrograms } from "./dedupe.ts";
-import { cleanPeriods } from "./extract.ts";
+import { cleanPeriods, looksLikeNoticeOnly } from "./extract.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
@@ -67,7 +67,13 @@ for (const school of schools) {
       const ai = source.useAi ? await enrichWithAi(needAi, categories) : null;
       const aiCount = ai?.done ?? 0;
       // 교원·직원만 대상인 글은 학생용 정보가 아니므로 저장하지 않는다
-      const studentItems = items.filter((item) => !ai?.notForStudents.has(item.program.id));
+      // AI가 추출하지 못한 글(GitHub Actions 등)은 단순 안내로 보이는 제목만 이번에 건너뛴다.
+      // 기록하지 않으므로 AI가 있을 때 다시 판단한다
+      const studentItems = items.filter((item) =>
+        item.program.extractedBy === "ai"
+          ? !ai?.notForStudents.has(item.program.id)
+          : !ai?.notForStudents.has(item.program.id) && !looksLikeNoticeOnly(item.program.title),
+      );
       ai?.notForStudents.forEach((id) => excluded.add(id));
       for (const item of items) if (excluded.has(item.program.id)) excludedUrls.add(item.program.links[0].url);
       if (ai?.notForStudents.size) console.log(`${label} 학생 대상이 아닌 글 ${ai.notForStudents.size}개 제외`);

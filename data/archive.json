@@ -262,6 +262,98 @@
     ]
   },
   {
+    "id": "kmu-recruit-268371",
+    "title": "전산운영팀 PC실습실에서 근무할 조교를 추가 모집 하오니 많은 지원 바랍니다.",
+    "organizer": "전산운영팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-07-01",
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=268371&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-06-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:51.383Z",
+    "firstSeenAt": "2026-10-01T11:00:51.383Z"
+  },
+  {
+    "id": "kmu-recruit-267653",
+    "title": "[고정근로 추가모집] 컴퓨터 지식을 습득하고 장학금을 받을 수 있는 교내 전산관련 지원담당 HelpDesk 고정근로를 모집합니다.",
+    "organizer": "전산운영팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-07-01",
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=267653&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-06-16",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:52.677Z",
+    "firstSeenAt": "2026-10-01T11:00:52.677Z"
+  },
+  {
     "id": "yu-news-229219787",
     "title": "[YU Digital HUSS] 영남대 박물관 공동 프로젝트 <유물 속 동물, AI로 다시 태어나다> (콘텐츠 제작)참가자 모집",
     "organizer": "인문사회디지털융합인재양성사업단",
@@ -4167,8 +4259,7 @@
     "postedAt": null,
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:52.181Z",
-    "firstSeenAt": "2026-10-01T02:16:52.181Z",
-    "seriesId": "yu-career-2289"
+    "firstSeenAt": "2026-10-01T02:16:52.181Z"
   },
   {
     "id": "yu-news-230134228",
@@ -11659,6 +11750,50 @@
     "seriesId": "yu-news-10170009"
   },
   {
+    "id": "knu-event-1337153",
+    "title": "[BK21, 대학원생] 2026학년도 대학원생을 위한 논문작성법 특강 참여 안내",
+    "organizer": "교수학습센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1337153&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-04-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:34.730Z",
+    "firstSeenAt": "2026-10-01T10:50:34.730Z"
+  },
+  {
     "id": "yu-news-229416760",
     "title": "✨신입생✨ 마음건강에 도움 많이 된다",
     "organizer": "학생상담센터",
@@ -11916,6 +12051,48 @@
       "yu-news-229416697",
       "yu-news-229388546"
     ]
+  },
+  {
+    "id": "knu-event-1337140",
+    "title": "[BK21, 대학원생] 2026학년도 예비교수자 대상 마이크로티칭 참여 안내",
+    "organizer": "교수학습센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1337140&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-04-08",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:37.397Z",
+    "firstSeenAt": "2026-10-01T10:50:37.397Z"
   },
   {
     "id": "yu-career-2456",
@@ -12461,6 +12638,48 @@
     "firstSeenAt": "2026-10-01T03:58:57.926Z"
   },
   {
+    "id": "knu-event-1337105",
+    "title": "[BK21, 대학원생] 2026학년도 교육자(Lecturer) 트랙 대상 교수법 특강 참여 안내",
+    "organizer": "교수학습센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1337105&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-04-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:37.748Z",
+    "firstSeenAt": "2026-10-01T10:50:37.748Z"
+  },
+  {
     "id": "yu-career-2461",
     "title": "2026 대구·경북 공공기관 지역인재 합동채용설명회",
     "organizer": "학생성공처",
@@ -12800,8 +13019,7 @@
     "postedAt": null,
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:53.178Z",
-    "firstSeenAt": "2026-10-01T02:16:53.178Z",
-    "seriesId": "yu-career-2460"
+    "firstSeenAt": "2026-10-01T02:16:53.178Z"
   },
   {
     "id": "yu-news-229191610",
@@ -13142,8 +13360,7 @@
     "postedAt": "2026-03-26",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:59:34.749Z",
-    "firstSeenAt": "2026-10-01T03:59:34.749Z",
-    "seriesId": "yu-career-2460"
+    "firstSeenAt": "2026-10-01T03:59:34.749Z"
   },
   {
     "id": "yu-career-2440",
@@ -27431,6 +27648,47 @@
     "seriesId": "yu-news-10547782"
   },
   {
+    "id": "knu-event-1336108",
+    "title": "[경북대 퇴계연구소 HK3.0 사업단] 제2회 국내학술회의 개최",
+    "organizer": "퇴계연구소 HK3.0사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1336108&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2025-12-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:39.352Z",
+    "firstSeenAt": "2026-10-01T10:50:39.352Z"
+  },
+  {
     "id": "yu-news-227725602",
     "title": "✨2025 하반기 채용대비 All-Day 실전모의면접 (현재 면접 진행 기업 대상)✨",
     "organizer": "진로취업지원팀",
@@ -27469,8 +27727,7 @@
     "postedAt": "2025-12-08",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:15:47.826Z",
-    "firstSeenAt": "2026-10-01T04:15:47.826Z",
-    "seriesId": "yu-career-798"
+    "firstSeenAt": "2026-10-01T04:15:47.826Z"
   },
   {
     "id": "yu-news-227725560",
@@ -49898,8 +50155,7 @@
     "postedAt": null,
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:59.782Z",
-    "firstSeenAt": "2026-10-01T02:16:59.782Z",
-    "seriesId": "yu-career-2148"
+    "firstSeenAt": "2026-10-01T02:16:59.782Z"
   },
   {
     "id": "yu-news-225771788",
@@ -55199,6 +55455,49 @@
     "firstSeenAt": "2026-10-01T04:44:40.110Z"
   },
   {
+    "id": "knu-event-1334566",
+    "title": "[산학협력단] KNU-C 로컬창업자 CEO 특강(창업토크 콘서트 2025)",
+    "organizer": "산학협력단 산학창업지원부",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2025-05-20",
+      "end": "2025-06-04"
+    },
+    "activityPeriod": {
+      "start": "2025-06-04",
+      "end": "2025-06-04"
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1334566&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2025-05-26",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:39.879Z",
+    "firstSeenAt": "2026-10-01T10:50:39.879Z"
+  },
+  {
     "id": "yu-news-225162060",
     "title": "차세대모빌리티 반도체 소자 공정 센터 클린룸 투어 프로그램",
     "organizer": "반도체특성화대학사업단",
@@ -59476,8 +59775,7 @@
     "postedAt": "2025-05-07",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:48:17.848Z",
-    "firstSeenAt": "2026-10-01T04:48:17.848Z",
-    "seriesId": "yu-career-798"
+    "firstSeenAt": "2026-10-01T04:48:17.848Z"
   },
   {
     "id": "yu-news-224714996",
@@ -61779,7 +62077,8 @@
     "postedAt": "2025-04-04",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:51:54.418Z",
-    "firstSeenAt": "2026-10-01T04:51:54.418Z"
+    "firstSeenAt": "2026-10-01T04:51:54.418Z",
+    "seriesId": "yu-news-224337455"
   },
   {
     "id": "yu-news-223934794",
@@ -75003,6 +75302,48 @@
     "collectedAt": "2026-10-01T05:06:20.590Z",
     "firstSeenAt": "2026-10-01T05:06:20.590Z",
     "seriesId": "yu-news-8253736"
+  },
+  {
+    "id": "knu-event-1333136",
+    "title": "[창업교육센터]경북대학교 방구석콘서트(테크 트렌드편)_12/5",
+    "organizer": "창업교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2024-12-05",
+      "end": "2024-12-05"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1333136&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2024-11-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:40.892Z",
+    "firstSeenAt": "2026-10-01T10:50:40.892Z"
   },
   {
     "id": "yu-career-2086",

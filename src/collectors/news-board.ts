@@ -9,7 +9,7 @@ const PAGE_SIZE = 10;
 const ARCHIVE_PAGE_SIZE = 100; // 과거 글을 훑을 때는 한 쪽에 많이 받아 요청 수를 줄인다
 
 // 줄바꿈을 살려서 본문 글자만 뽑는다. 표는 한 줄(tr)을 한 줄로 만든다
-function htmlToText(html: string): string {
+export function htmlToText(html: string): string {
   return cheerio
     .load(
       html

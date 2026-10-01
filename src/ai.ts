@@ -4,6 +4,7 @@ import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { cleanPeriods } from "./extract.ts";
+import { SCHOOL_NAMES } from "./school-of.ts";
 import { GRADES, STUDENT_STATUSES } from "./types.ts";
 import type { CollectedItem, Program, TagCategory } from "./types.ts";
 
@@ -76,8 +77,10 @@ ${item.text.slice(0, maxText) || "(본문 없음, 이미지로만 안내됨)"}`,
   - 여러 회차로 열리면 activityStart = 가장 이른 회차, activityEnd = 가장 늦은 회차. 회차 날짜를 넘어서는 날짜를 만들지 마라.
   - 신청 기간을 activity에 복사하지 마라. activity가 글에 없으면 null.
   - end가 start보다 앞서면 안 된다.
-- forStudents: 학생(학부생·대학원생·유학생 포함)이 참여·신청할 수 있으면 true. 교원·직원만 대상이면 false.
-- organizer: 글에 적힌 기관명을 그대로 짧게 쓴다. "영남대학교"를 앞에 붙이지 마라.
+- forStudents: 학생(학부생·대학원생·유학생 포함)이 신청·지원·참가할 수 있는 기회이면 true.
+  기회 = 프로그램·교육·특강·행사 참가자 모집, 공모전·대회, 장학·지원금, 채용·인턴·현장실습, 봉사·서포터즈, 교환·해외 프로그램, 상담·멘토링 신청 등.
+  다음은 false: 교원·직원만 대상인 글, 학생이 신청·참가할 것이 없는 단순 안내(규정 제정·개정·의견 조회, 예산·행정 공지, 등록금 납부·서류 제출 안내, 합격자·결과 발표, 뉴스레터·소식지, 사기·안전 주의, 시설 공사·이용 안내), 일반인 대상 관광·축제·전시 홍보와 설문조사.
+- organizer: 글에 적힌 기관명을 그대로 짧게 쓴다. 글을 올린 학교 이름(예: ○○대학교)을 앞에 붙이지 마라.
   학교 부서가 외부 기관(기업·정부·지자체·공공기관) 사업을 안내만 하면 그 외부 기관이 주최다.
   작성 부서(홍보팀 등)는 안내만 했을 수 있다. 본문에 외부 기관의 담당자·운영사무국·주관사가 나오면 작성 부서를 주최로 쓰지 마라.
 - organizerType: 주최 유형 목록 중 하나.
@@ -173,11 +176,11 @@ export function normalizeGrades(values: string[]): string[] {
 // AI가 외부 단체(협회·재단 등)를 "학교"로 잘못 분류하면 바로잡는다.
 // 학교 이름이 들어 있지 않은데 외부 단체 이름이면, 주최 유형 키워드 규칙으로 다시 정하고 못 찾으면 비워 둔다
 const OUTSIDE_GROUP = /협회|지회|협의회|공단|공사|진흥원|재단|연합회|상공회의소/;
-const SCHOOL_NAME = /대학|영남|YU|학교/i;
+const isSchoolName = (name: string) => /대학|학교/.test(name) || SCHOOL_NAMES.some((school) => name.includes(school));
 export function fixOrganizerType(program: Program, categories: TagCategory[]): void {
   const organizer = program.organizer;
   if (program.organizerType !== "학교" || !organizer) return;
-  if (!OUTSIDE_GROUP.test(organizer) || SCHOOL_NAME.test(organizer)) return;
+  if (!OUTSIDE_GROUP.test(organizer) || isSchoolName(organizer)) return;
   const typeCategory = categories.find((c) => c.matchOn === "organizer");
   const types = typeCategory?.tags ?? [];
   const fixed = types.find((t) => t.name !== "학교" && t.keywords.some((k) => organizer.includes(k)))?.name ?? null;

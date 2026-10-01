@@ -135,5 +135,137 @@
         "localOnly": true
       }
     ]
+  },
+  {
+    "id": "knu",
+    "name": "경북대학교",
+    "shortName": "경북대",
+    "units": [
+      {
+        "name": "로봇부트캠프사업단",
+        "keywords": [
+          "로봇부트캠프사업단"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "knu-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/list.action?bbs_cde=1&menu_idx=67",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.subject a",
+          "idParam": "btin.doc_no",
+          "viewUrl": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no={id}&btin.appl_no=000000&menu_idx=67",
+          "pageParam": "pageIndex",
+          "title": ".board_view h2",
+          "content": "#viewcontent"
+        }
+      },
+      {
+        "id": "knu-event",
+        "name": "행사",
+        "collector": "table-board",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/list.action?bbs_cde=11&menu_idx=73",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.subject a",
+          "idParam": "btin.doc_no",
+          "viewUrl": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no={id}&btin.appl_no=000000&menu_idx=73",
+          "pageParam": "pageIndex",
+          "title": ".board_view h2",
+          "content": "#viewcontent"
+        }
+      }
+    ]
+  },
+  {
+    "id": "kmu",
+    "name": "계명대학교",
+    "shortName": "계명대",
+    "units": [
+      {
+        "name": "창업지원단",
+        "keywords": [
+          "창업지원단"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "kmu-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?mnu_uid=143",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.subject a",
+          "idParam": "parm_bod_uid",
+          "viewUrl": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid={id}&mnu_uid=143",
+          "pageParam": "pageNo",
+          "title": ".bbs_info dl.subject dd",
+          "content": ".bbs_con"
+        }
+      },
+      {
+        "id": "kmu-recruit",
+        "name": "모집",
+        "collector": "table-board",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?mnu_uid=147",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.subject a",
+          "idParam": "parm_bod_uid",
+          "viewUrl": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid={id}&mnu_uid=147",
+          "pageParam": "pageNo",
+          "title": ".bbs_info dl.subject dd",
+          "content": ".bbs_con"
+        }
+      },
+      {
+        "id": "kmu-scholarship",
+        "name": "장학",
+        "collector": "table-board",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?mnu_uid=145",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.subject a",
+          "idParam": "parm_bod_uid",
+          "viewUrl": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid={id}&mnu_uid=145",
+          "pageParam": "pageNo",
+          "title": ".bbs_info dl.subject dd",
+          "content": ".bbs_con"
+        }
+      },
+      {
+        "id": "kmu-outside",
+        "name": "교외알림판",
+        "collector": "table-board",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?mnu_uid=141",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.subject a",
+          "idParam": "parm_bod_uid",
+          "viewUrl": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid={id}&mnu_uid=141",
+          "pageParam": "pageNo",
+          "title": ".bbs_info dl.subject dd",
+          "content": ".bbs_con"
+        }
+      }
+    ]
   }
 ]

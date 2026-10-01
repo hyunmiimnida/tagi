@@ -55,6 +55,17 @@ export interface Source {
   defaultOrganizer?: string; // 게시물에서 주최를 알 수 없을 때 쓰는 값
   useAi?: boolean; // 본문이 길어 AI 추출이 필요한 출처
   localOnly?: boolean; // 해외 서버에서 접속이 막혀 내 컴퓨터에서만 수집하는 출처
+  board?: TableBoard; // "table-board" 수집기의 사이트별 설정
+}
+
+// 표 모양 게시판(번호·제목·작성자·등록일) 설정. 학교마다 다른 부분만 적는다
+export interface TableBoard {
+  link: string; // 목록에서 게시물 링크 선택자 (예: "td.subject a")
+  idParam: string; // 링크 주소에서 게시물 번호가 담긴 칸 이름 (예: "parm_bod_uid")
+  viewUrl: string; // 상세 주소. {id} 자리에 게시물 번호가 들어간다
+  pageParam: string; // 목록 쪽 번호 칸 이름 (1쪽부터)
+  title: string; // 상세에서 제목 선택자
+  content: string; // 상세에서 본문 선택자
 }
 
 // 교내 기관(사업단 등). 주최 이름에 keywords 중 하나가 들어 있으면 그 기관으로 본다

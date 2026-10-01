@@ -1,4 +1,5 @@
 import type { Period, Program } from "./types.ts";
+import { sameSchool } from "./school-of.ts";
 
 // 중복 제거: 같은 프로그램이 여러 출처에 올라오면 하나로 합치고 원문 링크는 모두 보관한다.
 
@@ -31,7 +32,7 @@ export function findAmbiguousPairs(programs: Program[]): [Program, Program][] {
   for (let i = 0; i < programs.length; i++) {
     for (let j = i + 1; j < programs.length; j++) {
       const [a, b] = [programs[i], programs[j]];
-      if (a.sources.some((s) => b.sources.includes(s)) || !datesCompatible(a, b)) continue;
+      if (a.sources.some((s) => b.sources.includes(s)) || !sameSchool(a, b) || !datesCompatible(a, b)) continue;
       const similarity = titleSimilarity(a.title, b.title);
       if (similarity >= 0.45 && similarity < 0.8) pairs.push([a, b]);
     }
@@ -127,7 +128,7 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
       continue;
     }
 
-    const duplicate = result.find((p) => !p.sources.includes(program.sources[0]) && isDuplicate(p, program));
+    const duplicate = result.find((p) => !p.sources.includes(program.sources[0]) && sameSchool(p, program) && isDuplicate(p, program));
     if (duplicate) mergeInto(duplicate, program);
     else result.push({ ...program, firstSeenAt: firstSeen(program) });
   }

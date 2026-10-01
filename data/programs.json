@@ -36,7 +36,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.935Z",
+    "collectedAt": "2026-10-01T11:16:07.331Z",
     "firstSeenAt": "2026-09-30T18:31:28.903Z",
     "seriesId": "yu-career-1914"
   },
@@ -77,7 +77,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.095Z",
+    "collectedAt": "2026-10-01T11:16:06.316Z",
     "firstSeenAt": "2026-09-30T18:31:28.906Z"
   },
   {
@@ -117,7 +117,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.096Z",
+    "collectedAt": "2026-10-01T11:16:06.319Z",
     "firstSeenAt": "2026-09-30T18:31:28.906Z"
   },
   {
@@ -180,7 +180,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-23",
@@ -199,15 +200,23 @@
       {
         "sourceId": "yu-career",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2618"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231766434"
       }
     ],
     "sources": [
-      "yu-career"
+      "yu-career",
+      "yu-news"
     ],
-    "postedAt": null,
+    "postedAt": "2026-09-22",
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.097Z",
+    "collectedAt": "2026-10-01T10:14:55.940Z",
     "firstSeenAt": "2026-09-30T18:31:28.907Z",
+    "aliases": [
+      "yu-news-231766434"
+    ],
     "seriesId": "yu-career-1698"
   },
   {
@@ -247,7 +256,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.097Z",
+    "collectedAt": "2026-10-01T11:16:06.321Z",
     "firstSeenAt": "2026-09-30T18:31:28.907Z",
     "seriesId": "yu-career-2338"
   },
@@ -288,7 +297,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.097Z",
+    "collectedAt": "2026-10-01T11:16:06.321Z",
     "firstSeenAt": "2026-09-30T18:31:28.907Z"
   },
   {
@@ -328,7 +337,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.097Z",
+    "collectedAt": "2026-10-01T11:16:06.321Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z"
   },
   {
@@ -368,7 +377,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.097Z",
+    "collectedAt": "2026-10-01T11:16:06.322Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z",
     "seriesId": "yu-career-1527"
   },
@@ -408,7 +417,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.097Z",
+    "collectedAt": "2026-10-01T11:16:06.322Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z",
     "seriesId": "yu-news-85874"
   },
@@ -447,7 +456,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.097Z",
+    "collectedAt": "2026-10-01T11:16:06.322Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z"
   },
   {
@@ -486,7 +495,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.098Z",
+    "collectedAt": "2026-10-01T11:16:06.322Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z",
     "seriesId": "yu-career-2092"
   },
@@ -526,7 +535,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.098Z",
+    "collectedAt": "2026-10-01T11:16:06.322Z",
     "firstSeenAt": "2026-09-30T18:31:28.909Z"
   },
   {
@@ -630,7 +639,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-15",
@@ -642,21 +652,30 @@
     },
     "tags": [
       "학교",
-      "취업·채용"
+      "취업·채용",
+      "멘토링·컨설팅"
     ],
     "links": [
       {
         "sourceId": "yu-career",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2614"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231696066"
       }
     ],
     "sources": [
-      "yu-career"
+      "yu-career",
+      "yu-news"
     ],
-    "postedAt": null,
+    "postedAt": "2026-09-17",
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.935Z",
+    "collectedAt": "2026-10-01T10:14:56.941Z",
     "firstSeenAt": "2026-09-30T18:31:29.734Z",
+    "aliases": [
+      "yu-news-231696066"
+    ],
     "seriesId": "yu-career-798"
   },
   {
@@ -695,7 +714,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.935Z",
+    "collectedAt": "2026-10-01T11:16:07.332Z",
     "firstSeenAt": "2026-09-30T18:31:29.734Z",
     "seriesId": "yu-career-2480"
   },
@@ -736,7 +755,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.936Z",
+    "collectedAt": "2026-10-01T11:16:07.333Z",
     "firstSeenAt": "2026-09-30T18:31:29.735Z",
     "seriesId": "yu-career-2503"
   },
@@ -776,7 +795,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.936Z",
+    "collectedAt": "2026-10-01T11:16:07.333Z",
     "firstSeenAt": "2026-09-30T18:31:29.735Z"
   },
   {
@@ -816,7 +835,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.936Z",
+    "collectedAt": "2026-10-01T11:16:07.334Z",
     "firstSeenAt": "2026-09-30T18:31:29.735Z",
     "seriesId": "yu-career-672"
   },
@@ -857,7 +876,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.936Z",
+    "collectedAt": "2026-10-01T11:16:07.334Z",
     "firstSeenAt": "2026-09-30T18:31:29.735Z",
     "seriesId": "yu-career-1914"
   },
@@ -876,7 +895,7 @@
       "openTo": null
     },
     "recruitPeriod": {
-      "start": null,
+      "start": "2026-07-07",
       "end": "2026-08-10"
     },
     "activityPeriod": {
@@ -994,7 +1013,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.936Z",
+    "collectedAt": "2026-10-01T11:16:07.335Z",
     "firstSeenAt": "2026-09-30T18:31:29.736Z"
   },
   {
@@ -1034,7 +1053,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.937Z",
+    "collectedAt": "2026-10-01T11:16:07.335Z",
     "firstSeenAt": "2026-09-30T18:31:29.736Z"
   },
   {
@@ -1073,7 +1092,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.937Z",
+    "collectedAt": "2026-10-01T11:16:07.336Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1112,7 +1131,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.937Z",
+    "collectedAt": "2026-10-01T11:16:07.336Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1151,7 +1170,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.937Z",
+    "collectedAt": "2026-10-01T11:16:07.336Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1190,7 +1209,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.937Z",
+    "collectedAt": "2026-10-01T11:16:07.336Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1229,7 +1248,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.937Z",
+    "collectedAt": "2026-10-01T11:16:07.337Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1268,7 +1287,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.937Z",
+    "collectedAt": "2026-10-01T11:16:07.337Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z",
     "seriesId": "yu-career-2184"
   },
@@ -1308,7 +1327,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.939Z",
+    "collectedAt": "2026-10-01T11:16:07.337Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z",
     "seriesId": "yu-career-2183"
   },
@@ -1348,7 +1367,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.940Z",
+    "collectedAt": "2026-10-01T11:16:07.337Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z"
   },
   {
@@ -1387,7 +1406,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-01T00:24:29.940Z",
+    "collectedAt": "2026-10-01T11:16:07.338Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z",
     "seriesId": "yu-career-2449"
   },
@@ -3224,7 +3243,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-19",
@@ -3243,15 +3263,23 @@
       {
         "sourceId": "yu-career",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2596"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231315409"
       }
     ],
     "sources": [
-      "yu-career"
+      "yu-career",
+      "yu-news"
     ],
-    "postedAt": null,
+    "postedAt": "2026-08-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:50.268Z",
-    "firstSeenAt": "2026-10-01T02:16:50.268Z"
+    "firstSeenAt": "2026-10-01T02:16:50.268Z",
+    "aliases": [
+      "yu-news-231315409"
+    ]
   },
   {
     "id": "yu-career-2480",
@@ -3505,7 +3533,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-01",
@@ -3522,15 +3551,23 @@
       {
         "sourceId": "yu-career",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2540"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230767181"
       }
     ],
     "sources": [
-      "yu-career"
+      "yu-career",
+      "yu-news"
     ],
-    "postedAt": null,
+    "postedAt": "2026-07-13",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:51.185Z",
-    "firstSeenAt": "2026-10-01T02:16:51.185Z"
+    "firstSeenAt": "2026-10-01T02:16:51.185Z",
+    "aliases": [
+      "yu-news-230767181"
+    ]
   },
   {
     "id": "yu-career-2583",
@@ -3642,7 +3679,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-07",
@@ -3660,15 +3698,23 @@
       {
         "sourceId": "yu-career",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2591"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231160634"
       }
     ],
     "sources": [
-      "yu-career"
+      "yu-career",
+      "yu-news"
     ],
-    "postedAt": null,
+    "postedAt": "2026-08-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:51.186Z",
-    "firstSeenAt": "2026-10-01T02:16:51.186Z"
+    "firstSeenAt": "2026-10-01T02:16:51.186Z",
+    "aliases": [
+      "yu-news-231160634"
+    ]
   },
   {
     "id": "yu-career-2586",
@@ -3850,7 +3896,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-15",
@@ -3869,16 +3916,29 @@
       {
         "sourceId": "yu-career",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2550"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231090343"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230767159"
       }
     ],
     "sources": [
-      "yu-career"
+      "yu-career",
+      "yu-news"
     ],
-    "postedAt": null,
+    "postedAt": "2026-08-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:51.187Z",
     "firstSeenAt": "2026-10-01T02:16:51.187Z",
-    "seriesId": "yu-career-2148"
+    "seriesId": "yu-career-2148",
+    "aliases": [
+      "yu-news-231090343",
+      "yu-news-230767159"
+    ]
   },
   {
     "id": "yu-career-2529",
@@ -4115,7 +4175,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-09",
@@ -4134,16 +4195,29 @@
       {
         "sourceId": "yu-career",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2549"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230907842"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230725095"
       }
     ],
     "sources": [
-      "yu-career"
+      "yu-career",
+      "yu-news"
     ],
-    "postedAt": null,
+    "postedAt": "2026-07-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:51.188Z",
     "firstSeenAt": "2026-10-01T02:16:51.188Z",
-    "seriesId": "yu-career-2289"
+    "seriesId": "yu-career-2289",
+    "aliases": [
+      "yu-news-230907842",
+      "yu-news-230725095"
+    ]
   },
   {
     "id": "yu-career-2548",
@@ -4458,7 +4532,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-16",
@@ -4471,21 +4546,30 @@
     "tags": [
       "공공기관",
       "취업·채용",
-      "박람회·설명회"
+      "박람회·설명회",
+      "멘토링·컨설팅"
     ],
     "links": [
       {
         "sourceId": "yu-career",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2552"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230865555"
       }
     ],
     "sources": [
-      "yu-career"
+      "yu-career",
+      "yu-news"
     ],
-    "postedAt": null,
+    "postedAt": "2026-07-20",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:51.189Z",
-    "firstSeenAt": "2026-10-01T02:16:51.189Z"
+    "firstSeenAt": "2026-10-01T02:16:51.189Z",
+    "aliases": [
+      "yu-news-230865555"
+    ]
   },
   {
     "id": "yu-career-2545",
@@ -4498,7 +4582,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-08",
@@ -4517,15 +4602,28 @@
       {
         "sourceId": "yu-career",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2545"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230781281"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230711014"
       }
     ],
     "sources": [
-      "yu-career"
+      "yu-career",
+      "yu-news"
     ],
-    "postedAt": null,
+    "postedAt": "2026-07-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:51.192Z",
-    "firstSeenAt": "2026-10-01T02:16:51.192Z"
+    "firstSeenAt": "2026-10-01T02:16:51.192Z",
+    "aliases": [
+      "yu-news-230711014",
+      "yu-news-230781281"
+    ]
   },
   {
     "id": "yu-career-2539",
@@ -4779,7 +4877,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-09",
@@ -4798,16 +4897,24 @@
       {
         "sourceId": "yu-career",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2518"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230401502"
       }
     ],
     "sources": [
-      "yu-career"
+      "yu-career",
+      "yu-news"
     ],
-    "postedAt": null,
+    "postedAt": "2026-06-17",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:52.179Z",
     "firstSeenAt": "2026-10-01T02:16:52.179Z",
-    "seriesId": "yu-career-672"
+    "seriesId": "yu-career-672",
+    "aliases": [
+      "yu-news-230401502"
+    ]
   },
   {
     "id": "yu-career-2522",
@@ -4860,7 +4967,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-24",
@@ -4872,22 +4980,31 @@
     },
     "tags": [
       "학교",
-      "취업·채용"
+      "취업·채용",
+      "멘토링·컨설팅"
     ],
     "links": [
       {
         "sourceId": "yu-career",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2535"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230514065"
       }
     ],
     "sources": [
-      "yu-career"
+      "yu-career",
+      "yu-news"
     ],
-    "postedAt": null,
+    "postedAt": "2026-06-25",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:52.179Z",
     "firstSeenAt": "2026-10-01T02:16:52.179Z",
-    "seriesId": "yu-career-798"
+    "seriesId": "yu-career-798",
+    "aliases": [
+      "yu-news-230514065"
+    ]
   },
   {
     "id": "yu-news-231893326",
@@ -5124,50 +5241,6 @@
     "collectedAt": "2026-10-01T03:30:13.045Z",
     "firstSeenAt": "2026-10-01T03:30:13.045Z",
     "seriesId": "yu-news-226964756"
-  },
-  {
-    "id": "yu-news-231766434",
-    "title": "🔜[9/23 10시 접수] 2026 하반기 미래자동차 직무교육",
-    "organizer": "진로취업지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-09-23",
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231766434"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-22",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:30:13.806Z",
-    "firstSeenAt": "2026-10-01T03:30:13.806Z",
-    "seriesId": "yu-career-1949"
   },
   {
     "id": "yu-news-231766388",
@@ -5639,57 +5712,6 @@
     "collectedAt": "2026-10-01T03:33:21.827Z",
     "firstSeenAt": "2026-10-01T03:33:21.827Z",
     "seriesId": "yu-news-84763"
-  },
-  {
-    "id": "yu-news-231696066",
-    "title": "🍀10월 All-Day 실전모의면접🍀",
-    "organizer": "진로취업지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "3학년",
-        "4학년"
-      ],
-      "statuses": [
-        "재학생",
-        "휴학생",
-        "졸업생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-10-02",
-      "end": "2026-10-02"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "멘토링·컨설팅"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231696066"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-17",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:33:23.050Z",
-    "firstSeenAt": "2026-10-01T03:33:23.050Z",
-    "seriesId": "yu-career-798"
   },
   {
     "id": "yu-news-231696044",
@@ -9889,51 +9911,6 @@
     "firstSeenAt": "2026-10-01T03:36:01.577Z"
   },
   {
-    "id": "yu-news-231315409",
-    "title": "(재게시)[채용 연계 지원] 2026 테크니컬 엔지니어(반도체) 취업 과정 모집",
-    "organizer": "진로취업지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-08-27",
-      "end": "2026-09-04"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231315409"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-21",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:36:02.573Z",
-    "firstSeenAt": "2026-10-01T03:36:02.573Z"
-  },
-  {
     "id": "yu-news-231315397",
     "title": "[창업보육센터] 「모두의 창업 프로젝트 2기」 참여자 모집 안내",
     "organizer": "창업보육센터 및 기술이전사업화센터 행정지원팀",
@@ -10864,55 +10841,6 @@
     "seriesId": "yu-news-228503912"
   },
   {
-    "id": "yu-news-231090343",
-    "title": "(재게시)🛰️2026 하계방학 LIG D&A와 함께하는 방위산업 취업캠프",
-    "organizer": "LIG D&A",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "4학년"
-      ],
-      "statuses": [
-        "재학생",
-        "졸업생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231090343"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-05",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:37:18.127Z",
-    "firstSeenAt": "2026-10-01T03:37:18.127Z",
-    "seriesId": "yu-career-2148"
-  },
-  {
     "id": "yu-news-231090338",
     "title": "[해외인턴] 해외 인턴프로그램 참여자 모집(미국)(IGE)",
     "organizer": "IGE Korea",
@@ -11807,48 +11735,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:53.662Z",
     "firstSeenAt": "2026-10-01T03:36:53.662Z"
-  },
-  {
-    "id": "yu-news-231160634",
-    "title": "[(수정) 8/14(금)까지!] 반도체 소부장 기업 채용(CWS, SEMTECH, TSE, TeMaat, ABLE)",
-    "organizer": "CWS, SEMTECH, TSE, TeMaat, ABLE",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-08-14"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231160634"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-10",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:36:54.705Z",
-    "firstSeenAt": "2026-10-01T03:36:54.705Z"
   },
   {
     "id": "yu-news-231160629",
@@ -12930,50 +12816,6 @@
     "seriesId": "yu-news-4212831"
   },
   {
-    "id": "yu-news-230907842",
-    "title": "(재게시) [항공물류 기업 채용설명회] Y-Bridge 8월 세미나(에어제타) 참여자 모집",
-    "organizer": "에어제타",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "박람회·설명회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230907842"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-23",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:38:05.011Z",
-    "firstSeenAt": "2026-10-01T03:38:05.011Z",
-    "seriesId": "yu-career-2289"
-  },
-  {
     "id": "yu-news-230907840",
     "title": "[채용공고]영남대학교 생활과학연구소 단기인력(파트타임) 연구원 보조 모집",
     "organizer": "생활과학연구소",
@@ -13101,8 +12943,7 @@
     "postedAt": "2026-07-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:07.956Z",
-    "firstSeenAt": "2026-10-01T03:38:07.956Z",
-    "seriesId": "yu-news-230767181"
+    "firstSeenAt": "2026-10-01T03:38:07.956Z"
   },
   {
     "id": "yu-news-230893733",
@@ -13697,50 +13538,6 @@
     "firstSeenAt": "2026-10-01T03:38:28.827Z"
   },
   {
-    "id": "yu-news-230865555",
-    "title": "[기업 채용설명회] 한국수력원자력 채용설명회 및 상담회 참여자 모집",
-    "organizer": "한국수력원자력(주)",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관",
-      "취업·채용",
-      "박람회·설명회",
-      "멘토링·컨설팅"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230865555"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-20",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:38:29.950Z",
-    "firstSeenAt": "2026-10-01T03:38:29.950Z"
-  },
-  {
     "id": "yu-news-230809460",
     "title": "[글로컬대학사업단] 3극 MIB 벨트 AX 혁신 1차년도 제2차 산학공동기술개발과제 공고",
     "organizer": "경북AI융합원",
@@ -14014,48 +13811,6 @@
     "seriesId": "yu-news-5554045"
   },
   {
-    "id": "yu-news-230767181",
-    "title": "지역 인재를 위한 AI 성장트랙 [멋쟁이사자처럼] Campus AX-Ton 참여자 모집",
-    "organizer": "멋쟁이사자처럼",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230767181"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-13",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:23.081Z",
-    "firstSeenAt": "2026-10-01T03:39:23.081Z",
-    "seriesId": "yu-news-230767181"
-  },
-  {
     "id": "yu-news-230767176",
     "title": "[인문사회디지털융합전공] 융합전공 및 마이크로 전공 신청 안내(절대평가 학점교류 가능!)",
     "organizer": "인문사회디지털융합인재양성사업단",
@@ -14201,99 +13956,6 @@
     "seriesId": "yu-news-228252549"
   },
   {
-    "id": "yu-news-230767159",
-    "title": "[7/15(수) 13:00 접수] 🛰️2026 하계방학 LIG D&A와 함께하는 방위산업 취업캠프",
-    "organizer": "LIG D&A",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "4학년"
-      ],
-      "statuses": [
-        "재학생",
-        "졸업생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-07-15",
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230767159"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-13",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:27.811Z",
-    "firstSeenAt": "2026-10-01T03:39:27.811Z",
-    "seriesId": "yu-career-2148"
-  },
-  {
-    "id": "yu-news-230725095",
-    "title": "[기업 채용설명회/에어제타] Y-Bridge 8월 세미나 참여자 모집",
-    "organizer": "에어제타",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "박람회·설명회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230725095"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-10",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:28.926Z",
-    "firstSeenAt": "2026-10-01T03:39:28.926Z",
-    "seriesId": "yu-career-2289"
-  },
-  {
     "id": "yu-news-230725093",
     "title": "[교육개발센터] 2026-1학기 학업증진 프로그램 신청 안내",
     "organizer": "교육개발센터",
@@ -14376,57 +14038,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:31.859Z",
     "firstSeenAt": "2026-10-01T03:39:31.859Z"
-  },
-  {
-    "id": "yu-news-230711014",
-    "title": "[진로취업지원팀] 반도체 취업 선배 온라인 멘토링 (7월 21일 진행)",
-    "organizer": "진로취업지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-07-21",
-      "end": "2026-07-21"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "멘토링·컨설팅"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230781281"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230711014"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-14",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:33.257Z",
-    "firstSeenAt": "2026-10-01T03:39:33.257Z",
-    "seriesId": "yu-career-2460",
-    "aliases": [
-      "yu-news-230781281"
-    ]
   },
   {
     "id": "yu-news-230696932",
@@ -14957,57 +14568,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:28.907Z",
     "firstSeenAt": "2026-10-01T03:40:28.907Z"
-  },
-  {
-    "id": "yu-news-230514065",
-    "title": "🍀2026 하계방학 실전 모의면접 참가자 모집 🍀7/3(금)",
-    "organizer": "진로취업지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "3학년",
-        "4학년"
-      ],
-      "statuses": [
-        "재학생",
-        "휴학생",
-        "졸업생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-07-03",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "멘토링·컨설팅"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230514065"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-06-25",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:40:30.067Z",
-    "firstSeenAt": "2026-10-01T03:40:30.067Z",
-    "seriesId": "yu-career-798"
   },
   {
     "id": "yu-news-230696928",
@@ -16119,50 +15679,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:57.588Z",
     "firstSeenAt": "2026-10-01T03:40:57.588Z"
-  },
-  {
-    "id": "yu-news-230401502",
-    "title": "[진로취업지원팀] 하계방학 대기업 및 공기업 직무적성검사 통합특강 참여자 모집 안내",
-    "organizer": "진로취업지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-06-22"
-    },
-    "activityPeriod": {
-      "start": "2026-06-29",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230401502"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-06-17",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:40:59.676Z",
-    "firstSeenAt": "2026-10-01T03:40:59.676Z",
-    "seriesId": "yu-career-672"
   },
   {
     "id": "yu-news-230401501",
@@ -20495,5 +20011,5318 @@
       "yu-news-224283368",
       "yu-news-224189377"
     ]
+  },
+  {
+    "id": "yu-news-231893412",
+    "title": "[AI스마트교육센터]스마트교육 콘텐츠 다국어(베트남어, 중국어) 자막 검수인력 모집",
+    "organizer": "AI스마트교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-08"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231893412"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-10-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:15:01.836Z",
+    "firstSeenAt": "2026-10-01T10:15:01.836Z",
+    "seriesId": "yu-news-224337455"
+  },
+  {
+    "id": "yu-news-231893407",
+    "title": "(재게시)⭐2026학년도 YU사회공헌 아이디어 공모전⭐ 참가자(팀) 모집",
+    "organizer": "사회공헌단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231893407"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-10-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:15:02.871Z",
+    "firstSeenAt": "2026-10-01T10:15:02.871Z",
+    "seriesId": "yu-news-221807521"
+  },
+  {
+    "id": "yu-news-231893394",
+    "title": "[전공설계지원센터] 나에게 맞는 전공, 전공적성 TEST로 알아보세요! ✏️",
+    "organizer": "전공설계지원센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-10-06",
+      "end": "2026-10-06"
+    },
+    "tags": [
+      "학교",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231893394"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-10-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:15:03.734Z",
+    "firstSeenAt": "2026-10-01T10:15:03.734Z"
+  },
+  {
+    "id": "knu-notice-1338470",
+    "title": "2027년 (재)대산농촌재단 장학생 선발 안내",
+    "organizer": "대산농촌재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "2학년",
+        "3학년",
+        "4학년"
+      ],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "국내 4년제 대학생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-11-11"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338470&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-10-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:47:50.622Z",
+    "firstSeenAt": "2026-10-01T10:47:50.622Z"
+  },
+  {
+    "id": "knu-notice-1338452",
+    "title": "[글로벌교육센터]★추가접수★ 2026년 10월 외국어강좌 추가 접수 안내 (개강: 10월 1일)",
+    "organizer": "글로벌교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-11"
+    },
+    "activityPeriod": {
+      "start": "2026-10-01",
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338452&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-09-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:47:52.189Z",
+    "firstSeenAt": "2026-10-01T10:47:52.189Z"
+  },
+  {
+    "id": "knu-notice-1338443",
+    "title": "26년도 경북대학교생활협동조합 제19차 근로장학생 모집 공고",
+    "organizer": "경북대학교생활협동조합",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338443&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-09-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:47:54.091Z",
+    "firstSeenAt": "2026-10-01T10:47:54.091Z"
+  },
+  {
+    "id": "knu-notice-1338434",
+    "title": "2026학년도 학생의료공제회 독감 예방접종비 지원사업 안내",
+    "organizer": "학생의료공제회",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338434&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-09-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:47:55.504Z",
+    "firstSeenAt": "2026-10-01T10:47:55.504Z"
+  },
+  {
+    "id": "knu-notice-1338431",
+    "title": "2026년 재단법인 대전청년내일재단 성취 장학생(대학생) 선발 연장 안내",
+    "organizer": "대전청년내일재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-01",
+      "end": "2026-10-08"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338431&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-09-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:47:56.199Z",
+    "firstSeenAt": "2026-10-01T10:47:56.199Z"
+  },
+  {
+    "id": "knu-notice-1338428",
+    "title": "2026학년도 (재)논산시장학회 하반기 장학생 선발 안내",
+    "organizer": "논산시장학회",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "1학년"
+      ],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "논산시 1년 이상 거주 주민 또는 그 자녀"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-28",
+      "end": "2026-10-30"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338428&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-09-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:47:58.093Z",
+    "firstSeenAt": "2026-10-01T10:47:58.093Z"
+  },
+  {
+    "id": "knu-notice-1338401",
+    "title": "2026학년도 2학기 첨성인 아너스 클럽 운영 계획 안내",
+    "organizer": "교무처 교무과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2027-01-04",
+      "end": "2027-01-11"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338401&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-09-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:48:00.096Z",
+    "firstSeenAt": "2026-10-01T10:48:00.096Z"
+  },
+  {
+    "id": "knu-notice-1338399",
+    "title": "[글로벌교육센터]2026년 10월 외국어강좌 개설 및 접수 안내 ★개강: 10월 1일★",
+    "organizer": "글로벌교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-18",
+      "end": "2026-09-29"
+    },
+    "activityPeriod": {
+      "start": "2026-10-01",
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338399&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-09-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:48:01.795Z",
+    "firstSeenAt": "2026-10-01T10:48:01.795Z"
+  },
+  {
+    "id": "knu-notice-1338396",
+    "title": "2026년 하반기 (재)춘천인재육성장학재단 봄내장학생 선발 안내",
+    "organizer": "춘천인재육성장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-28",
+      "end": "2026-10-07"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338396&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-09-17",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:48:02.078Z",
+    "firstSeenAt": "2026-10-01T10:48:02.078Z"
+  },
+  {
+    "id": "knu-notice-1338395",
+    "title": "[대학원혁신] 대학원 동문선배 멘토링",
+    "organizer": "진로취업과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-28",
+      "end": "2026-10-14"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338395&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-09-17",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:48:03.336Z",
+    "firstSeenAt": "2026-10-01T10:48:03.336Z"
+  },
+  {
+    "id": "knu-notice-1338373",
+    "title": "2026년 제13회 수림재단 동교인재상 선발 안내",
+    "organizer": "수림재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "국내 4년제 이상 대학 학생"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-01",
+      "end": "2026-10-16"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338373&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-09-15",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:48:04.130Z",
+    "firstSeenAt": "2026-10-01T10:48:04.130Z"
+  },
+  {
+    "id": "knu-notice-1338359",
+    "title": "2026년 (재)고속도로장학재단 고속도로 장학생 선발 안내",
+    "organizer": "고속도로장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-14",
+      "end": "2026-10-11"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338359&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-09-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:48:05.129Z",
+    "firstSeenAt": "2026-10-01T10:48:05.129Z"
+  },
+  {
+    "id": "knu-event-1338337",
+    "title": "[자연과학대학] 2026년 가을, 겨울 밤하늘 이야기 행사 안내",
+    "organizer": "자연과학대학",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1338337&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-09-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:19.735Z",
+    "firstSeenAt": "2026-10-01T10:50:19.735Z"
+  },
+  {
+    "id": "knu-event-1338460",
+    "title": "[로봇부트캠프사업단]2026 경북대학교 이노캠 로봇잡페어 개최 안내",
+    "organizer": "로봇부트캠프사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "지역청년"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-10-02",
+      "end": "2026-10-08"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1338460&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-10-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:21.218Z",
+    "firstSeenAt": "2026-10-01T10:50:21.218Z"
+  },
+  {
+    "id": "knu-event-1338454",
+    "title": "[지역사회공헌센터] 동성로 소셜 리빙랩 「2026 동성로 YOUNG구소」 참여자 모집",
+    "organizer": "지역사회공헌센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-10-01",
+      "end": "2026-10-13"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1338454&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-09-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:22.135Z",
+    "firstSeenAt": "2026-10-01T10:50:22.135Z"
+  },
+  {
+    "id": "knu-event-1338440",
+    "title": "[법학연구원 인권법센터] 특별강연 : 격변의 시대를 살아가는 법 -한국과 일본, 그리고 우리의 선택",
+    "organizer": "법학연구원 인권법센터",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1338440&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-09-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:23.078Z",
+    "firstSeenAt": "2026-10-01T10:50:23.078Z"
+  },
+  {
+    "id": "knu-event-1338404",
+    "title": "[치과대학]경북대학교 치과대학 대학원(치의학과/치의과학과) 진학설명회 개최(2026.10.12(월) 오후4시)",
+    "organizer": "치과대학",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-08"
+    },
+    "activityPeriod": {
+      "start": "2026-10-12",
+      "end": "2026-10-12"
+    },
+    "tags": [
+      "학교",
+      "학사·행정",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1338404&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-09-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:24.544Z",
+    "firstSeenAt": "2026-10-01T10:50:24.544Z"
+  },
+  {
+    "id": "knu-event-1338340",
+    "title": "[로봇부트캠프사업단]2026학년도 2학기 로봇부트캠프사업단 사업설명회 안내",
+    "organizer": "로봇부트캠프사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-14",
+      "end": "2026-09-14"
+    },
+    "tags": [
+      "학교",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1338340&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-09-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:26.004Z",
+    "firstSeenAt": "2026-10-01T10:50:26.004Z"
+  },
+  {
+    "id": "knu-event-1338320",
+    "title": "[국립대학육성사업] 2026 사회과학대학 콜로키움 - AI와 사회복지의 만남 특강 안내",
+    "organizer": "사회과학대학",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-07",
+      "end": "2026-09-23"
+    },
+    "activityPeriod": {
+      "start": "2026-09-30",
+      "end": "2026-09-30"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1338320&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-09-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:28.441Z",
+    "firstSeenAt": "2026-10-01T10:50:28.441Z"
+  },
+  {
+    "id": "knu-event-1338317",
+    "title": "[박물관] 한글날 제정 100주년 교육프로그램 참가자 모집",
+    "organizer": "문화체육관광부",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "정부부처",
+      "교육·특강",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1338317&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-09-05",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:29.050Z",
+    "firstSeenAt": "2026-10-01T10:50:29.050Z"
+  },
+  {
+    "id": "knu-event-1338296",
+    "title": "[교수학습센터] 2026학년도 2학기 대학원생 학습코치(첨성인 학습PT) 모집안내",
+    "organizer": "교수학습센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-09",
+      "end": "2026-09-22"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1338296&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-09-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:30.754Z",
+    "firstSeenAt": "2026-10-01T10:50:30.754Z"
+  },
+  {
+    "id": "knu-event-1337880",
+    "title": "[Microsoft AI 온라인 교육(무료&수료증 발급)] 경북대학교 KHP AI Connect Hub / AI 실무 학습 플랫폼 오픈 안내",
+    "organizer": "경북대학교 K-하이테크 플랫폼",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "기업 재직자"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1337880&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-07-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:50:33.996Z",
+    "firstSeenAt": "2026-10-01T10:50:33.996Z"
+  },
+  {
+    "id": "kmu-notice-271100",
+    "title": "2027학년도 1학기 CAMPUS Asia-AIMS 파견 교환학생 후보 2차 추가 선발시험 안내",
+    "organizer": "국제교류팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [
+        "한국어교육과",
+        "영어영문학과",
+        "국제통상학과",
+        "경영학과",
+        "국제경영학과(IB)",
+        "스포츠마케팅학과",
+        "관광경영학과",
+        "컴퓨터공학과"
+      ],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-05"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "해외·글로벌"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271100&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:05.406Z",
+    "firstSeenAt": "2026-10-01T10:53:05.406Z"
+  },
+  {
+    "id": "kmu-notice-271043",
+    "title": "[K-Cloud] 2026학년도 2학기 K-Cloud 융합 성장 인증제 신청 안내",
+    "organizer": "K-Cloud College 행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271043&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:07.972Z",
+    "firstSeenAt": "2026-10-01T10:53:07.972Z"
+  },
+  {
+    "id": "kmu-notice-270667",
+    "title": "[학생상담센터] 2026학년도 2학기 학기제 집단상담 안내",
+    "organizer": "학생상담센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-10-16",
+      "end": "2026-12-04"
+    },
+    "tags": [
+      "학교",
+      "상담·심리"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270667&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-15",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:09.964Z",
+    "firstSeenAt": "2026-10-01T10:53:09.964Z"
+  },
+  {
+    "id": "kmu-notice-270269",
+    "title": "2026학년도 2학기 K-STAR 단계별 선발 일정 안내",
+    "organizer": "학생성공센터 행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270269&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-02",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:10.865Z",
+    "firstSeenAt": "2026-10-01T10:53:10.865Z"
+  },
+  {
+    "id": "kmu-notice-270267",
+    "title": "[필수(법정)교육] 2026학년도 2학기 학생 대상 온라인 폭력예방교육 수강 안내",
+    "organizer": "인권센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-01",
+      "end": "2026-11-30"
+    },
+    "activityPeriod": {
+      "start": "2026-09-01",
+      "end": "2026-11-30"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270267&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-02",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:11.302Z",
+    "firstSeenAt": "2026-10-01T10:53:11.302Z"
+  },
+  {
+    "id": "kmu-notice-271115",
+    "title": "2026학년도 MY 포트폴리오 공모전",
+    "organizer": "학생성공센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-10-01",
+      "end": "2026-10-30"
+    },
+    "activityPeriod": {
+      "start": "2026-10-01",
+      "end": "2026-12-31"
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "공모전·대회",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271115&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:18.224Z",
+    "firstSeenAt": "2026-10-01T10:53:18.224Z"
+  },
+  {
+    "id": "kmu-notice-271044",
+    "title": "2026학년도 2학기 전공설계 파트너즈(전공 멘토링) 신청 안내",
+    "organizer": "학생성공센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-12-31"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271044&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:19.012Z",
+    "firstSeenAt": "2026-10-01T10:53:19.012Z"
+  },
+  {
+    "id": "kmu-notice-271040",
+    "title": "2026 계명공자아카데미 v - Iog 공모전",
+    "organizer": "계명공자아카데미",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271040&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:19.683Z",
+    "firstSeenAt": "2026-10-01T10:53:19.683Z"
+  },
+  {
+    "id": "kmu-notice-270973",
+    "title": "2026 대학 중심 딥테크 창업 활성화 기반 조성 사업 (예비)창업자 모집",
+    "organizer": "창업지원단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "(예비)창업자"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-28",
+      "end": "2026-10-11"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": "2027-01-31"
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270973&mnu_uid=143"
+      },
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270969&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-notice",
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-23",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:21.494Z",
+    "firstSeenAt": "2026-10-01T10:53:21.494Z",
+    "aliases": [
+      "kmu-recruit-270969"
+    ]
+  },
+  {
+    "id": "kmu-notice-270971",
+    "title": "10월 대명캠퍼스 계명모의토익 안내",
+    "organizer": "국제사업센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270971&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-23",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:21.854Z",
+    "firstSeenAt": "2026-10-01T10:53:21.854Z"
+  },
+  {
+    "id": "kmu-notice-270970",
+    "title": "10월 성서캠퍼스 계명모의토익 안내",
+    "organizer": "국제사업센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270970&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-23",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:23.105Z",
+    "firstSeenAt": "2026-10-01T10:53:23.105Z"
+  },
+  {
+    "id": "kmu-notice-270938",
+    "title": "[교수학습개발센터] 학습자 참여형 수업 길잡이 프로그램 안내",
+    "organizer": "교수학습개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-21",
+      "end": "2026-10-18"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270938&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:23.931Z",
+    "firstSeenAt": "2026-10-01T10:53:23.931Z"
+  },
+  {
+    "id": "kmu-notice-270930",
+    "title": "[학생상담센터]2026학년도 2학기 마음건강 증진을 위한 심리 워크숍(1차) 진행 안내",
+    "organizer": "학생상담센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-10-06",
+      "end": "2026-10-13"
+    },
+    "tags": [
+      "학교",
+      "상담·심리",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270930&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:24.865Z",
+    "firstSeenAt": "2026-10-01T10:53:24.865Z"
+  },
+  {
+    "id": "kmu-notice-270922",
+    "title": "AI 코스웨어(풀리캠퍼스) 기반 수학 기초역량 강화 프로그램 안내",
+    "organizer": "학생성공센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270922&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:25.899Z",
+    "firstSeenAt": "2026-10-01T10:53:25.899Z"
+  },
+  {
+    "id": "kmu-notice-270812",
+    "title": "[학생성공센터] 생성형 AI 및 프로그래밍 실습 교육 학생 모집(선착순/온라인)",
+    "organizer": "학생성공센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270812&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:27.640Z",
+    "firstSeenAt": "2026-10-01T10:53:27.640Z"
+  },
+  {
+    "id": "kmu-notice-270737",
+    "title": "[학생성공센터] 휴먼-AI 협업 실습 프로그램 학생 모집",
+    "organizer": "학생성공센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270737&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-17",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:28.137Z",
+    "firstSeenAt": "2026-10-01T10:53:28.137Z"
+  },
+  {
+    "id": "kmu-notice-270732",
+    "title": "제122회 <대학원생 콜로키움>에 초대합니다.",
+    "organizer": "여성학연구소",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-09-28"
+    },
+    "activityPeriod": {
+      "start": "2026-09-30",
+      "end": "2026-09-30"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270732&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-17",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:29.182Z",
+    "firstSeenAt": "2026-10-01T10:53:29.182Z"
+  },
+  {
+    "id": "kmu-notice-270665",
+    "title": "[학생성공센터] MOS 365 교육 학생 모집(온라인)",
+    "organizer": "학생성공센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270665&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-15",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:30.378Z",
+    "firstSeenAt": "2026-10-01T10:53:30.378Z"
+  },
+  {
+    "id": "kmu-notice-270606",
+    "title": "26학년도 2학기 일대일 컨설팅 프로그램 안내",
+    "organizer": "대학혁신사업팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270606&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:31.572Z",
+    "firstSeenAt": "2026-10-01T10:53:31.572Z"
+  },
+  {
+    "id": "kmu-notice-270448",
+    "title": "[학생상담센터] 2026년 2학기 통합스트레스 검사 실시 안내(추첨 기프티콘 지급/COM K1점)",
+    "organizer": "학생상담센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "상담·심리"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270448&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-08",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:33.822Z",
+    "firstSeenAt": "2026-10-01T10:53:33.822Z"
+  },
+  {
+    "id": "kmu-notice-270443",
+    "title": "2026 계명공자아카데미 한중 공감 토론 발표 대회",
+    "organizer": "계명공자아카데미",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270443&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-08",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:34.518Z",
+    "firstSeenAt": "2026-10-01T10:53:34.518Z"
+  },
+  {
+    "id": "kmu-notice-270429",
+    "title": "[학생상담센터] 9월 집단심리검사 안내",
+    "organizer": "학생상담센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "상담·심리"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270429&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:35.317Z",
+    "firstSeenAt": "2026-10-01T10:53:35.317Z"
+  },
+  {
+    "id": "kmu-notice-270428",
+    "title": "[교수학습개발센터] 2026학년도 2학기 전공 기초역량 증진 콘텐츠 프로그램 안내",
+    "organizer": "교수학습개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-07",
+      "end": "2026-12-31"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270428&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:37.132Z",
+    "firstSeenAt": "2026-10-01T10:53:37.132Z"
+  },
+  {
+    "id": "kmu-notice-270425",
+    "title": "[학생상담센터]2026학년도 2학기 주제별 워크숍 진행 안내",
+    "organizer": "학생상담센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-29",
+      "end": "2026-10-01"
+    },
+    "tags": [
+      "학교",
+      "상담·심리",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270425&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:38.286Z",
+    "firstSeenAt": "2026-10-01T10:53:38.286Z"
+  },
+  {
+    "id": "kmu-notice-270423",
+    "title": "[교수학습개발센터] 2026학년도 2학기 학습의 본질 강의 콘텐츠 프로그램 안내",
+    "organizer": "교수학습개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270423&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:39.437Z",
+    "firstSeenAt": "2026-10-01T10:53:39.437Z"
+  },
+  {
+    "id": "kmu-notice-270348",
+    "title": "2026년 가을학기 계명여성학세미나 초대 안내",
+    "organizer": "여성학연구소",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-15",
+      "end": "2026-09-15"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270348&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:40.502Z",
+    "firstSeenAt": "2026-10-01T10:53:40.502Z"
+  },
+  {
+    "id": "kmu-notice-270320",
+    "title": "뮤지컬 <드라큘라> 계명가족 특별할인 안내",
+    "organizer": "음악공연예술대학 행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-03",
+      "end": "2026-10-26"
+    },
+    "activityPeriod": {
+      "start": "2026-10-27",
+      "end": "2026-11-01"
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270320&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:42.142Z",
+    "firstSeenAt": "2026-10-01T10:53:42.142Z"
+  },
+  {
+    "id": "kmu-notice-270232",
+    "title": "2026학년도 가을학기 대학원생 콜로키움 발표자와 토론자 초청",
+    "organizer": "여성학연구소",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-30"
+    },
+    "activityPeriod": {
+      "start": "2026-09-30",
+      "end": "2026-11-25"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270232&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-09-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:43.197Z",
+    "firstSeenAt": "2026-10-01T10:53:43.197Z"
+  },
+  {
+    "id": "kmu-notice-270168",
+    "title": "2026년 한미 첨단분야 청년교류 지원사업 제6기 장학생 선발",
+    "organizer": "산업통상부",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "대한민국 국적 국내 4년제 대학 이공계 학부생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "정부부처",
+      "장학·지원금",
+      "해외·글로벌"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270168&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-08-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:47.125Z",
+    "firstSeenAt": "2026-10-01T10:53:47.125Z"
+  },
+  {
+    "id": "kmu-notice-270062",
+    "title": "2027학년도 1학기 CAMPUS Asia-AIMS 파견 교환학생 후보 선발시험 안내",
+    "organizer": "국제교류팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [
+        "한국어교육과",
+        "영어영문학과",
+        "국제통상학과",
+        "경영학과",
+        "Department of International Business(KAC)",
+        "국제경영학과(IB)",
+        "스포츠마케팅학과",
+        "관광경영학과",
+        "컴퓨터공학과"
+      ],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-09-06"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "해외·글로벌"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270062&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-08-25",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:49.184Z",
+    "firstSeenAt": "2026-10-01T10:53:49.184Z"
+  },
+  {
+    "id": "kmu-notice-270032",
+    "title": "제168회 정기 토르플(TORFL) 시험 응시 안내",
+    "organizer": "국제사업센터 행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-09-04"
+    },
+    "activityPeriod": {
+      "start": "2026-09-19",
+      "end": "2026-09-20"
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270032&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-08-24",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:50.385Z",
+    "firstSeenAt": "2026-10-01T10:53:50.385Z"
+  },
+  {
+    "id": "kmu-notice-269953",
+    "title": "글로벌 비즈니스 회화 교육 참여자 긴급 추가 모집(9월 과정)",
+    "organizer": "창업지원단 행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=269953&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-08-20",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:52.308Z",
+    "firstSeenAt": "2026-10-01T10:53:52.308Z"
+  },
+  {
+    "id": "kmu-notice-269414",
+    "title": "[앵커-산학연] 「산학연협력단지 공동연구과제」 3차년도 과제 모집 연장 안내",
+    "organizer": "산학연협력단지사업단 행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-07-22",
+      "end": "2026-08-02"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": "2026-12-31"
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-notice",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=269414&mnu_uid=143"
+      }
+    ],
+    "sources": [
+      "kmu-notice"
+    ],
+    "postedAt": "2026-07-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T10:53:53.201Z",
+    "firstSeenAt": "2026-10-01T10:53:53.201Z"
+  },
+  {
+    "id": "kmu-recruit-271136",
+    "title": "'태(胎), 왕실의 영원을 기리다' 특별전 연계 특강",
+    "organizer": "학예연구팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271136&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-10-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:20.791Z",
+    "firstSeenAt": "2026-10-01T11:00:20.791Z"
+  },
+  {
+    "id": "kmu-recruit-271131",
+    "title": "2026학년도 2학기 K-STAR 인증제 단계별 교육(온라인)",
+    "organizer": "학생성공센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-05"
+    },
+    "activityPeriod": {
+      "start": "2026-10-07",
+      "end": "2026-10-15"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271131&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-10-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:22.518Z",
+    "firstSeenAt": "2026-10-01T11:00:22.518Z"
+  },
+  {
+    "id": "kmu-recruit-271111",
+    "title": "2026학년도 2학기 K-Circle 전공설계 동아리 멘토, 멘티 모집(기간연장)",
+    "organizer": "학생성공센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "1학년",
+        "2학년",
+        "3학년",
+        "4학년"
+      ],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-10",
+      "end": "2026-10-14"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "학사·행정",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271111&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:25.578Z",
+    "firstSeenAt": "2026-10-01T11:00:25.578Z"
+  },
+  {
+    "id": "kmu-recruit-271110",
+    "title": "2026학년도 2학기 「내가 디자인하는 전공」 프로그램 참여자 모집(기간연장)",
+    "organizer": "학생성공센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-14",
+      "end": "2026-10-14"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "학사·행정",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271110&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:26.515Z",
+    "firstSeenAt": "2026-10-01T11:00:26.515Z"
+  },
+  {
+    "id": "kmu-recruit-271066",
+    "title": "[대학혁신지원사업] 원광대와 함께하는 「대학 연계 글로벌 시티즌 프로그램」 참가자 모집",
+    "organizer": "Tabula Rasa College",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-10-01",
+      "end": "2026-10-12"
+    },
+    "activityPeriod": {
+      "start": "2026-10-23",
+      "end": "2026-10-24"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271066&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:27.126Z",
+    "firstSeenAt": "2026-10-01T11:00:27.126Z"
+  },
+  {
+    "id": "kmu-recruit-271060",
+    "title": "사범대학 행정팀 고정근로장학생 모집",
+    "organizer": "사범대학 행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-11-02",
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271060&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:28.126Z",
+    "firstSeenAt": "2026-10-01T11:00:28.126Z"
+  },
+  {
+    "id": "kmu-recruit-271047",
+    "title": "[대학혁신지원사업] 「Cultural Exchange Program for Interntaional Students」 참가자 모집",
+    "organizer": "Tabula Rasa College",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-28",
+      "end": "2026-10-08"
+    },
+    "activityPeriod": {
+      "start": "2026-10-15",
+      "end": "2026-10-22"
+    },
+    "tags": [
+      "학교",
+      "해외·글로벌",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271047&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:29.247Z",
+    "firstSeenAt": "2026-10-01T11:00:29.247Z"
+  },
+  {
+    "id": "kmu-recruit-271037",
+    "title": "장춘대학 계명학원 멘토링 프로그램 멘토 모집",
+    "organizer": "장춘대학 계명학원 행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-28",
+      "end": "2026-10-08"
+    },
+    "activityPeriod": {
+      "start": "2026-10-26",
+      "end": "2026-12-31"
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "해외·글로벌",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271037&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:30.055Z",
+    "firstSeenAt": "2026-10-01T11:00:30.055Z"
+  },
+  {
+    "id": "kmu-recruit-270967",
+    "title": "앵커 커넥트업 비교과 프로그램 2차 에스엘 현직자에게 듣는 직무·취업 이야기",
+    "organizer": "앵커행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-23",
+      "end": "2026-10-02"
+    },
+    "activityPeriod": {
+      "start": "2026-10-02",
+      "end": "2026-10-02"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270967&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-23",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:32.799Z",
+    "firstSeenAt": "2026-10-01T11:00:32.799Z"
+  },
+  {
+    "id": "kmu-recruit-270966",
+    "title": "2026 랜선으로 만나는 릴레이 글로벌 취·창업 톡톡톡(talk) 모집",
+    "organizer": "창업지원단 행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "참여대학 학생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-11-25"
+    },
+    "activityPeriod": {
+      "start": "2026-11-03",
+      "end": "2026-11-26"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "창업",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270966&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-23",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:35.173Z",
+    "firstSeenAt": "2026-10-01T11:00:35.173Z"
+  },
+  {
+    "id": "kmu-recruit-270941",
+    "title": "KOICA-프로젝트봉사단 9기 온라인 모집설명회 참가자 모집",
+    "organizer": "한국국제협력단(KOICA)",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-10-07",
+      "end": "2026-10-07"
+    },
+    "tags": [
+      "공공기관",
+      "해외·글로벌",
+      "봉사",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270941&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:36.229Z",
+    "firstSeenAt": "2026-10-01T11:00:36.229Z"
+  },
+  {
+    "id": "kmu-recruit-270939",
+    "title": "[교수학습개발센터] 학습지원 프로그램 모니터링 참여자 모집",
+    "organizer": "교수학습개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-09-30"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270939&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:36.683Z",
+    "firstSeenAt": "2026-10-01T11:00:36.683Z"
+  },
+  {
+    "id": "kmu-recruit-270733",
+    "title": "제12회 Tabula Rasa 120 독서퀴즈대회 안내",
+    "organizer": "학술정보서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-30",
+      "end": "2026-10-30"
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270733&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-17",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:38.907Z",
+    "firstSeenAt": "2026-10-01T11:00:38.907Z"
+  },
+  {
+    "id": "kmu-recruit-270669",
+    "title": "[교수학습개발센터] 계명 GROW 학업 극복 멘토링 참여자 모집",
+    "organizer": "교수학습개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270669&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-15",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:40.141Z",
+    "firstSeenAt": "2026-10-01T11:00:40.141Z"
+  },
+  {
+    "id": "kmu-recruit-270452",
+    "title": "2026년도 하반기 대구국제개발협력센터 개발협력 영프로페셔널(YP) 모집",
+    "organizer": "대구국제개발협력센터",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "대한민국 국적의 만 19~34세 미취업자(제대군인 연장)"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-07",
+      "end": "2026-10-11"
+    },
+    "activityPeriod": {
+      "start": "2026-11-01",
+      "end": "2027-05-31"
+    },
+    "tags": [
+      "공공기관",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270452&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-08",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:41.918Z",
+    "firstSeenAt": "2026-10-01T11:00:41.918Z"
+  },
+  {
+    "id": "kmu-recruit-270410",
+    "title": "AI전략팀 실습조교 모집",
+    "organizer": "AI전략팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-08-24",
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-01",
+      "end": "2027-02-28"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270410&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-08-24",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:44.299Z",
+    "firstSeenAt": "2026-10-01T11:00:44.299Z"
+  },
+  {
+    "id": "kmu-recruit-270304",
+    "title": "[의과대학행정팀] 의과대학 의예과 학과조교 모집",
+    "organizer": "의과대학 의예과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": "2027-02-28"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270617&mnu_uid=147"
+      },
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270304&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-09-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:45.256Z",
+    "firstSeenAt": "2026-10-01T11:00:45.256Z"
+  },
+  {
+    "id": "kmu-recruit-270181",
+    "title": "[계명대학교 국제학연구소]국제지역학 융합전공 비교과 프로그램 제5회 국제지역학 트랜스컬처 UCC 공모전 참가 모집",
+    "organizer": "국제학연구소",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-01",
+      "end": "2026-10-19"
+    },
+    "activityPeriod": {
+      "start": "2026-12-02",
+      "end": "2026-12-02"
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270181&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-08-31",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:46.201Z",
+    "firstSeenAt": "2026-10-01T11:00:46.201Z"
+  },
+  {
+    "id": "kmu-recruit-270131",
+    "title": "경찰행정학과 학과 조교 추가 모집",
+    "organizer": "경찰행정학과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-01",
+      "end": "2027-02-28"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270131&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-08-27",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:47.172Z",
+    "firstSeenAt": "2026-10-01T11:00:47.172Z"
+  },
+  {
+    "id": "kmu-recruit-269975",
+    "title": "기자재운영팀 PC실습실 조교 추가 모집",
+    "organizer": "기자재운영팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-08-21",
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=269975&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-08-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:48.412Z",
+    "firstSeenAt": "2026-10-01T11:00:48.412Z"
+  },
+  {
+    "id": "kmu-recruit-269974",
+    "title": "[고정근로 추가모집] HelpDesk 고정근로 모집",
+    "organizer": "기자재운영팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-08-21",
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=269974&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-08-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:49.146Z",
+    "firstSeenAt": "2026-10-01T11:00:49.146Z"
+  },
+  {
+    "id": "kmu-recruit-268733",
+    "title": "국제학연구소 연구보조원 모집 안내",
+    "organizer": "국제학연구소",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [
+        "휴학생",
+        "졸업생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-07-06",
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-recruit",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=268733&mnu_uid=147"
+      }
+    ],
+    "sources": [
+      "kmu-recruit"
+    ],
+    "postedAt": "2026-07-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:00:50.885Z",
+    "firstSeenAt": "2026-10-01T11:00:50.885Z"
+  },
+  {
+    "id": "kmu-scholarship-271062",
+    "title": "[교외]2026학년도 2학기 (재)대전청년내일재단 장학생 선발 연장 공고",
+    "organizer": "(재)대전청년내일재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271062&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:14.006Z",
+    "firstSeenAt": "2026-10-01T11:05:14.006Z"
+  },
+  {
+    "id": "kmu-scholarship-271061",
+    "title": "[교외] 2026학년도 하반기 (재)논산시장학회 학업장려비 장학생 선발 공고",
+    "organizer": "(재)논산시장학회",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271061&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:15.510Z",
+    "firstSeenAt": "2026-10-01T11:05:15.510Z"
+  },
+  {
+    "id": "kmu-scholarship-270851",
+    "title": "[교외] 2026학년도 2학기 (재)춘천시민장학재단 봄내장학생 선발 공고",
+    "organizer": "춘천인재육성장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "고등학생 및 대학생"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-28",
+      "end": "2026-10-07"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270851&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:15.937Z",
+    "firstSeenAt": "2026-10-01T11:05:15.937Z"
+  },
+  {
+    "id": "kmu-scholarship-270672",
+    "title": "[교외]2026학년도 (재)고속도로장학재단 고속도로장학생 선발 안내",
+    "organizer": "고속도로장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "고속도로 사고 사망자 자녀·중증장애인과 자녀"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-14",
+      "end": "2026-10-11"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270672&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-16",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:16.999Z",
+    "firstSeenAt": "2026-10-01T11:05:16.999Z"
+  },
+  {
+    "id": "kmu-scholarship-270612",
+    "title": "[교외]2026학년도 2학기 (재)수성미래교육재단 수성인재장학생 선발 안내",
+    "organizer": "수성미래교육재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "본인·부모가 수성구 1년 이상 거주한 국내대학생"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-14",
+      "end": "2026-09-30"
+    },
+    "activityPeriod": {
+      "start": "2026-12-12",
+      "end": "2026-12-12"
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270612&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:17.876Z",
+    "firstSeenAt": "2026-10-01T11:05:17.876Z"
+  },
+  {
+    "id": "kmu-scholarship-270575",
+    "title": "[교외] 2026학년도 2학기 춘곡장학회 장학생 선발",
+    "organizer": "춘곡장학회",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270575&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-11",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:18.973Z",
+    "firstSeenAt": "2026-10-01T11:05:18.973Z"
+  },
+  {
+    "id": "kmu-scholarship-270574",
+    "title": "[교외] 2026년도 (재)포항시장학회 대학교 장학생 선발 공고",
+    "organizer": "포항시장학회",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": "본인·보호자 포항시 1년 이상 계속 주민등록 대학생"
+    },
+    "recruitPeriod": {
+      "start": "2026-08-24",
+      "end": "2026-09-22"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270574&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-11",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:19.842Z",
+    "firstSeenAt": "2026-10-01T11:05:19.842Z"
+  },
+  {
+    "id": "kmu-scholarship-270479",
+    "title": "[교외] 제36기 (사)미래에셋박현주재단 미래에셋 해외교환 장학생 선발 안내",
+    "organizer": "미래에셋박현주재단",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "기업",
+      "장학·지원금",
+      "해외·글로벌"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270479&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:20.905Z",
+    "firstSeenAt": "2026-10-01T11:05:20.905Z"
+  },
+  {
+    "id": "kmu-scholarship-270475",
+    "title": "[교외] 2026년 김해시미래인재장학재단 하반기 장학생 선발 공고",
+    "organizer": "김해시미래인재장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270475&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:22.747Z",
+    "firstSeenAt": "2026-10-01T11:05:22.747Z"
+  },
+  {
+    "id": "kmu-scholarship-270449",
+    "title": "[교외]2026학년도 2학기 (재)두을장학재단 장학생 선발 공고",
+    "organizer": "두을장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270449&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-08",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:23.131Z",
+    "firstSeenAt": "2026-10-01T11:05:23.131Z"
+  },
+  {
+    "id": "kmu-scholarship-270444",
+    "title": "[교외]2026학년도 2학기 (재)대전청년내일재단 장학생 선발 공고",
+    "organizer": "(재)대전청년내일재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270444&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-08",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:24.022Z",
+    "firstSeenAt": "2026-10-01T11:05:24.022Z"
+  },
+  {
+    "id": "kmu-scholarship-270420",
+    "title": "[교외]2026학년도 2학기 (재)인천인재평생교육진흥원 장학생 선발 공고",
+    "organizer": "(재)인천인재평생교육진흥원",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270420&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:25.036Z",
+    "firstSeenAt": "2026-10-01T11:05:25.036Z"
+  },
+  {
+    "id": "kmu-scholarship-270399",
+    "title": "[교외] 2026년 국가유산진흥원 전통 기·예능 분야 및 매장유산 관련 분야 우수 장학생 선발 공고",
+    "organizer": "국가유산진흥원",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270399&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:26.579Z",
+    "firstSeenAt": "2026-10-01T11:05:26.579Z"
+  },
+  {
+    "id": "kmu-scholarship-270349",
+    "title": "[교내] 2026학년도 2학기 장애학생(사랑나눔장학금 A, B) 신청 안내",
+    "organizer": "장학복지팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270349&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:28.167Z",
+    "firstSeenAt": "2026-10-01T11:05:28.167Z"
+  },
+  {
+    "id": "kmu-scholarship-270261",
+    "title": "[교외] 2026년 하반기분 통영시 대학생 학자금 이자 지원 신청에 따른 안내",
+    "organizer": "통영시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "통영시 지원 요건 충족 대학(원)생"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-02",
+      "end": "2026-09-23"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270261&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-02",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:32.233Z",
+    "firstSeenAt": "2026-10-01T11:05:32.233Z"
+  },
+  {
+    "id": "kmu-scholarship-270222",
+    "title": "[교내] 2026-2학기 계명행복우수A, 총장특별(성적우수), 총장특별(학업우수) 장학생 신청 안내",
+    "organizer": "장학복지팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270222&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:33.601Z",
+    "firstSeenAt": "2026-10-01T11:05:33.601Z"
+  },
+  {
+    "id": "kmu-scholarship-270221",
+    "title": "[교내] 2026학년도 2학기 특별 외국어성적장학금 신청 안내",
+    "organizer": "장학복지팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-07",
+      "end": "2026-10-30"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270221&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:35.601Z",
+    "firstSeenAt": "2026-10-01T11:05:35.601Z"
+  },
+  {
+    "id": "kmu-scholarship-270220",
+    "title": "[교내] 2026학년도 2학기 자격증 취득 장학지원제도 신청 안내",
+    "organizer": "장학복지팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-07",
+      "end": "2026-10-23"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270220&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:36.427Z",
+    "firstSeenAt": "2026-10-01T11:05:36.427Z"
+  },
+  {
+    "id": "kmu-scholarship-270217",
+    "title": "[교내]2026학년도 2학기 목사자녀장학금 신청 안내",
+    "organizer": "장학복지팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-07",
+      "end": "2026-10-30"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270217&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:37.575Z",
+    "firstSeenAt": "2026-10-01T11:05:37.575Z"
+  },
+  {
+    "id": "kmu-scholarship-270216",
+    "title": "[교내] 2026학년도 2학기 다자녀장학금 신청 안내",
+    "organizer": "장학복지팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-07",
+      "end": "2026-10-30"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270216&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:38.225Z",
+    "firstSeenAt": "2026-10-01T11:05:38.225Z"
+  },
+  {
+    "id": "kmu-scholarship-270211",
+    "title": "[교외] 2026년 대구광역시 대학생 학자금대출 부담경감 지원사업 안내",
+    "organizer": "대구광역시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270211&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-09-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:39.434Z",
+    "firstSeenAt": "2026-10-01T11:05:39.434Z"
+  },
+  {
+    "id": "kmu-scholarship-270192",
+    "title": "[교외]2026년 하반기 익산시 대학생 학자금 대출이자 지원",
+    "organizer": "익산시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270192&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-31",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:40.146Z",
+    "firstSeenAt": "2026-10-01T11:05:40.146Z"
+  },
+  {
+    "id": "kmu-scholarship-270153",
+    "title": "[교외] 2026년 (재)경주시장학회 장학생 선발 안내",
+    "organizer": "경주시장학회",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "부모 또는 학생이 경주시 1년 이상 거주"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270153&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:41.140Z",
+    "firstSeenAt": "2026-10-01T11:05:41.140Z"
+  },
+  {
+    "id": "kmu-scholarship-270137",
+    "title": "[교외] 2026년 2학기 푸른등대 기부장학금 신규장학생 선발 안내",
+    "organizer": "장학복지팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270137&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-27",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:42.185Z",
+    "firstSeenAt": "2026-10-01T11:05:42.185Z"
+  },
+  {
+    "id": "kmu-scholarship-270135",
+    "title": "[교외] 2026학년도 익산사랑장학재단 익산사랑 장학생 선발 공고",
+    "organizer": "익산사랑장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": "초·중·고·대학생"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-03",
+      "end": "2026-09-09"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270135&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-27",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:43.257Z",
+    "firstSeenAt": "2026-10-01T11:05:43.257Z"
+  },
+  {
+    "id": "kmu-scholarship-270096",
+    "title": "[교외] 2026년 하반기 울산연구원 장학생 선발 공고 안내",
+    "organizer": "울산연구원",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270096&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-26",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:44.214Z",
+    "firstSeenAt": "2026-10-01T11:05:44.214Z"
+  },
+  {
+    "id": "kmu-scholarship-270090",
+    "title": "2026-2학기 중소기업 취업연계 장학사업(희망사다리 Ⅰ유형) 신규장학생 신청 안내",
+    "organizer": "한국장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "3학년",
+        "4학년"
+      ],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "대한민국 국적 대학생"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-01",
+      "end": "2026-09-18"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "취업·채용",
+      "창업",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270090&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-26",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:46.305Z",
+    "firstSeenAt": "2026-10-01T11:05:46.305Z"
+  },
+  {
+    "id": "kmu-scholarship-270072",
+    "title": "2026-2학기 고졸후학습자장학금(희망사다리Ⅱ유형) 신규장학생 신청기간 안내",
+    "organizer": "한국장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "대한민국 국적 고졸 학부생 중 재직요건 충족자"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-01",
+      "end": "2026-09-30"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270072&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-26",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:46.976Z",
+    "firstSeenAt": "2026-10-01T11:05:46.976Z"
+  },
+  {
+    "id": "kmu-scholarship-270064",
+    "title": "[교외] 2026년 2학기 선원가족 장학생 선발 안내 및 홍보",
+    "organizer": "장학복지팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270064&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-25",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:47.546Z",
+    "firstSeenAt": "2026-10-01T11:05:47.546Z"
+  },
+  {
+    "id": "kmu-scholarship-270063",
+    "title": "[교외] 제24기 후기(2026학년도 2학기) 삼원장학생 선발 안내",
+    "organizer": "장학복지팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270063&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-25",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:48.779Z",
+    "firstSeenAt": "2026-10-01T11:05:48.779Z"
+  },
+  {
+    "id": "kmu-scholarship-270056",
+    "title": "[교외] 2026학년도 2학기 (재)달서인재육성장학재단 장학생 선발 공고",
+    "organizer": "(재)달서인재육성장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-08-31",
+      "end": "2026-09-28"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270056&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-25",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:49.742Z",
+    "firstSeenAt": "2026-10-01T11:05:49.742Z"
+  },
+  {
+    "id": "kmu-scholarship-270053",
+    "title": "[교외] 2026년도 제7기 경원장학재단 장학생 모집",
+    "organizer": "경원장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [
+        "공학계 전공/학과"
+      ],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "공학계 전공 대학생"
+    },
+    "recruitPeriod": {
+      "start": "2026-08-19",
+      "end": "2026-09-30"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270053&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-25",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:50.894Z",
+    "firstSeenAt": "2026-10-01T11:05:50.894Z"
+  },
+  {
+    "id": "kmu-scholarship-270043",
+    "title": "[교내근로] 2026학년도 2학기 교내 근로장학생 신청 안내",
+    "organizer": "장학복지팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270043&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-24",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:51.717Z",
+    "firstSeenAt": "2026-10-01T11:05:51.717Z"
+  },
+  {
+    "id": "kmu-scholarship-270036",
+    "title": "[교외] 2026학년도 2학기 통영시 대학생 등록금 전액 지원사업 홍보",
+    "organizer": "통영시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270036&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-24",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:52.847Z",
+    "firstSeenAt": "2026-10-01T11:05:52.847Z"
+  },
+  {
+    "id": "kmu-scholarship-269991",
+    "title": "[교외] 2026년도 (재)광산장학회 장학생 선발 공고",
+    "organizer": "(재)광산장학회",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "광산구 1년 이상 거주 주민·자녀 중 학생·학교밖청소년"
+    },
+    "recruitPeriod": {
+      "start": "2026-08-24",
+      "end": "2026-09-18"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=269991&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:53.729Z",
+    "firstSeenAt": "2026-10-01T11:05:53.729Z"
+  },
+  {
+    "id": "kmu-scholarship-269988",
+    "title": "[교외]2026년도 2학기 주거안정장학금 우리 대학 업무처리 및 지급 기준안내",
+    "organizer": "한국장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-scholarship",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=269988&mnu_uid=145"
+      }
+    ],
+    "sources": [
+      "kmu-scholarship"
+    ],
+    "postedAt": "2026-08-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:05:54.925Z",
+    "firstSeenAt": "2026-10-01T11:05:54.925Z"
+  },
+  {
+    "id": "kmu-outside-271142",
+    "title": "「2026년 제24회 대구음식산업박람회」 경연대회 안내",
+    "organizer": "대구광역시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "고등학생 이상"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-25"
+    },
+    "activityPeriod": {
+      "start": "2026-10-29",
+      "end": "2026-10-31"
+    },
+    "tags": [
+      "지자체",
+      "장학·지원금",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-outside",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271142&mnu_uid=141"
+      }
+    ],
+    "sources": [
+      "kmu-outside"
+    ],
+    "postedAt": "2026-10-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:12:07.520Z",
+    "firstSeenAt": "2026-10-01T11:12:07.520Z"
+  },
+  {
+    "id": "kmu-outside-271102",
+    "title": "「제1회 지역 현안 해결 솔루션 챌린지」공모 안내",
+    "organizer": "(재)대구테크노파크",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-outside",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271102&mnu_uid=141"
+      }
+    ],
+    "sources": [
+      "kmu-outside"
+    ],
+    "postedAt": "2026-09-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:12:11.635Z",
+    "firstSeenAt": "2026-10-01T11:12:11.635Z"
+  },
+  {
+    "id": "kmu-outside-271099",
+    "title": "2026년 보건복지분야 사회복무요원 SNS 영상 공모전 안내",
+    "organizer": "보건복지부",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "보건복지분야 사회복무요원"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "정부부처",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-outside",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271099&mnu_uid=141"
+      }
+    ],
+    "sources": [
+      "kmu-outside"
+    ],
+    "postedAt": "2026-09-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:12:13.391Z",
+    "firstSeenAt": "2026-10-01T11:12:13.391Z"
+  },
+  {
+    "id": "kmu-outside-271046",
+    "title": "제18회 가람시조문학신인상 공모",
+    "organizer": "익산시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "10년 미만 경력의 시조시인"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-21",
+      "end": "2026-10-02"
+    },
+    "activityPeriod": {
+      "start": "2026-11-07",
+      "end": "2026-11-07"
+    },
+    "tags": [
+      "지자체",
+      "장학·지원금",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-outside",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271046&mnu_uid=141"
+      }
+    ],
+    "sources": [
+      "kmu-outside"
+    ],
+    "postedAt": "2026-09-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:12:23.752Z",
+    "firstSeenAt": "2026-10-01T11:12:23.752Z"
+  },
+  {
+    "id": "kmu-outside-271036",
+    "title": "「2026 충청남도 드론경연대회」참가자 모집기간 연장",
+    "organizer": "충청남도",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-outside",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271036&mnu_uid=141"
+      }
+    ],
+    "sources": [
+      "kmu-outside"
+    ],
+    "postedAt": "2026-09-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:12:25.715Z",
+    "firstSeenAt": "2026-10-01T11:12:25.715Z"
+  },
+  {
+    "id": "kmu-outside-271035",
+    "title": "「2026 별별화성 Awards」 AI CF 공모전",
+    "organizer": "화성시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-outside",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=271035&mnu_uid=141"
+      }
+    ],
+    "sources": [
+      "kmu-outside"
+    ],
+    "postedAt": "2026-09-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:12:26.677Z",
+    "firstSeenAt": "2026-10-01T11:12:26.677Z"
+  },
+  {
+    "id": "kmu-outside-270983",
+    "title": "2026년 제7회 찾아가는 청년주거 상담소 안내",
+    "organizer": "교육부",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "상담·심리"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-outside",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270981&mnu_uid=141"
+      },
+      {
+        "sourceId": "kmu-outside",
+        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=270983&mnu_uid=141"
+      }
+    ],
+    "sources": [
+      "kmu-outside"
+    ],
+    "postedAt": "2026-09-23",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:12:27.515Z",
+    "firstSeenAt": "2026-10-01T11:12:27.515Z"
   }
 ]

@@ -1,18 +1,54 @@
 {
-  "ranAt": "2026-10-01T00:24:29.955Z",
-  "total": 62,
+  "ranAt": "2026-10-01T11:16:47.657Z",
+  "total": 558,
   "sources": [
     {
       "source": "yu-career",
       "ok": true,
-      "count": 34,
+      "count": 33,
       "message": ""
     },
     {
       "source": "yu-news",
       "ok": true,
       "count": 0,
-      "message": "내 컴퓨터에서만 수집"
+      "message": ""
+    },
+    {
+      "source": "knu-notice",
+      "ok": true,
+      "count": 0,
+      "message": ""
+    },
+    {
+      "source": "knu-event",
+      "ok": true,
+      "count": 0,
+      "message": ""
+    },
+    {
+      "source": "kmu-notice",
+      "ok": true,
+      "count": 0,
+      "message": ""
+    },
+    {
+      "source": "kmu-recruit",
+      "ok": true,
+      "count": 0,
+      "message": ""
+    },
+    {
+      "source": "kmu-scholarship",
+      "ok": true,
+      "count": 0,
+      "message": ""
+    },
+    {
+      "source": "kmu-outside",
+      "ok": true,
+      "count": 0,
+      "message": ""
     }
   ]
 }
