@@ -32,6 +32,7 @@ interface UserState {
   toggleFavorite: (programId: string) => void;
   signIn: (provider: ProviderId) => void;
   signOut: () => void;
+  deleteAccount: () => Promise<boolean>; // 계정과 계정에 저장된 모든 데이터를 지운다
 }
 
 const UserContext = createContext<UserState | null>(null);
@@ -166,6 +167,17 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       },
       signOut: () => {
         void supabase?.auth.signOut();
+      },
+      deleteAccount: async () => {
+        if (!supabase || !userId) return false;
+        const { error } = await supabase.rpc("delete_my_account");
+        if (error) return false;
+        // 이 브라우저에 남은 설정도 지운다. 이미 지운 계정이라 로그아웃은 이 브라우저에서만 한다
+        writeLocal(SCHOOL_KEY, null);
+        writeLocal(FAVORITES_KEY, null);
+        setSchoolId(null);
+        await supabase.auth.signOut({ scope: "local" });
+        return true;
       },
     }),
     [ready, userId, email, schoolId, favorites, loginOpen, setSchool, toggleFavorite],

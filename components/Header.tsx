@@ -18,13 +18,13 @@ export function Header() {
         </Link>
         <div className="header-right">
           {!user.loginEnabled ? (
-            <span className="trial-label" title="로그인이 설정되지 않아 관심 표시가 이 브라우저에만 저장돼요">
+            <Link href="/my" className="trial-label" title="로그인이 설정되지 않아 관심 표시가 이 브라우저에만 저장돼요">
               체험 모드
-            </span>
+            </Link>
           ) : user.signedIn ? (
-            <button className="text-button" onClick={user.signOut} title={user.email ?? undefined}>
-              로그아웃
-            </button>
+            <Link href="/my" className="text-button" title={user.email ?? undefined}>
+              내 정보
+            </Link>
           ) : (
             <button className="pill-button" onClick={() => user.setLoginOpen(true)}>
               로그인

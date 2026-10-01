@@ -1257,8 +1257,55 @@ main {
   font-weight: 700;
 }
 
-.comment-meta .text-button {
+.comment-tools {
+  display: flex;
+  gap: 2px;
   margin-left: auto;
+}
+
+/* 첫 댓글 전 이용 규칙 */
+.comment-rules {
+  margin-top: 14px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--surface-2);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.comment-rules ul {
+  margin: 8px 0;
+  padding-left: 18px;
+  color: var(--text-2);
+}
+
+.comment-rules p {
+  margin-bottom: 12px;
+  color: var(--text-3);
+}
+
+.comment-rules a,
+.doc a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.report-reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.report-reason {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: 0.8125rem;
+  font-weight: 600;
 }
 
 .comment-list p {
@@ -1599,4 +1646,125 @@ main {
   flex-shrink: 0;
   gap: 4px;
   align-items: center;
+}
+
+/* 내 정보 */
+.my-card {
+  padding: 22px 20px;
+}
+
+.my-card + .my-card,
+.my-links {
+  margin-top: 12px;
+}
+
+.my-card .button {
+  margin-top: 16px;
+}
+
+.my-links {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+}
+
+.my-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 0 20px;
+  color: var(--text);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.my-links a + a {
+  border-top: 1px solid var(--line);
+}
+
+.my-links svg {
+  color: var(--text-3);
+}
+
+.my-message {
+  margin: 12px 4px 0;
+  color: var(--warn);
+  font-size: 0.875rem;
+}
+
+.my-delete {
+  display: block;
+  margin: 24px auto 0;
+  padding: 8px 12px;
+  border: 0;
+  background: none;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+  text-decoration: underline;
+}
+
+/* 약관·방침 문서 */
+.doc {
+  margin-top: 12px;
+  padding: 28px 22px;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.doc h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.doc-date {
+  margin: 4px 0 20px;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+}
+
+.doc h2 {
+  margin: 28px 0 8px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+.doc p + p,
+.doc ul + p,
+.doc table + p {
+  margin-top: 8px;
+}
+
+.doc ul {
+  padding-left: 20px;
+}
+
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.doc-table th,
+.doc-table td {
+  padding: 10px 8px;
+  border-top: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.doc-table th {
+  color: var(--text-3);
+  font-weight: 600;
+}
+
+.footer-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.footer-links a {
+  color: var(--text-2);
 }

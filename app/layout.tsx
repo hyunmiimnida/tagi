@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Link from "next/link";
 import { BottomNav } from "../components/BottomNav.tsx";
 import { Header } from "../components/Header.tsx";
 import { PwaSetup } from "../components/InstallCard.tsx";
@@ -45,6 +46,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {Object.values(getSourceNames()).join(", ")}에서 매일 모아요
             </p>
             <p>일정과 자격은 자동으로 정리한 정보라 틀릴 수 있어요. 신청 전에 꼭 원문을 확인하세요.</p>
+            <p className="footer-links">
+              <Link href="/terms">이용약관</Link>
+              <Link href="/privacy">
+                <strong>개인정보처리방침</strong>
+              </Link>
+              <Link href="/my">내 정보</Link>
+            </p>
           </footer>
           <BottomNav />
           <LoginSheet />
