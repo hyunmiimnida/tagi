@@ -18,7 +18,7 @@
 - 프로그램 데이터: `data/programs.json` 파일 (git에 저장)
 - 로그인·학교 설정·관심 표시: Supabase (구글·카카오 소셜 로그인). 설정이 없으면 "체험 모드"로 브라우저에만 저장
 - 하루 1회 자동 수집: GitHub Actions가 수집 후 `data/`를 커밋 → Vercel이 자동 재배포
-  - `localOnly` 출처(해외 서버에서 접속 불가)는 GitHub Actions에서 건너뛰고, 내 컴퓨터의 `scripts/collect-local.ps1`(작업 스케줄러)로 수집해 올린다
+  - `localOnly` 출처(해외 서버에서 접속 불가)는 GitHub Actions에서 건너뛰고, 내 컴퓨터의 `scripts/collect-local.ps1`(작업 스케줄러 "tagi 정보 수집", 매일 오후 1시·8시, 꺼져 있었으면 켤 때 실행)로 수집해 올린다
 - 배포: Vercel
 - HTML 분석: cheerio
 
@@ -82,7 +82,7 @@
 - Codex 한도가 없으면 `--rules`를 붙여 AI 없이 규칙으로만 추출한다 (보관함에만 들어갈 오래된 글은 이것으로 충분하다)
 - 반복 프로그램인지 애매한 쌍을 AI가 판단하지 못하면, 지금 목록 공고와 관련된 쌍만 뽑아 직접 판단해 `data/series-decisions.json`에 `"id1|id2": true/false`로 적는다 (id는 사전순 정렬). 다음 저장 때 반영된다
 
-Codex CLI는 PATH에 없어도 `%LOCALAPPDATA%OpenAICodexin*codex.exe`에서 찾는다.
+Codex CLI는 PATH에 없어도 `%LOCALAPPDATA%\OpenAI\Codex\bin\*\codex.exe`에서 찾는다.
 AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜 연도, 신청/제출 기한 구분, 태그 남발, 주최 유형).
 
 ## 폴더 구조
