@@ -24,7 +24,7 @@ export function DetailActions({ program }: { program: Program }) {
 
   return (
     <div className="detail-actions">
-      <FavoriteButton programId={program.id} withLabel />
+      <FavoriteButton programId={program.id} title={program.title} withLabel />
       {hasDates && (
         <button className="action-button" onClick={() => downloadIcs([program], `${program.id}.ics`)}>
           <CalendarPlusIcon />

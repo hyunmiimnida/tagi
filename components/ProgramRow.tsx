@@ -61,7 +61,7 @@ export function ProgramRow({
           </div>
         )}
       </div>
-      <FavoriteButton programId={program.id} />
+      <FavoriteButton programId={program.id} title={program.title} />
     </li>
   );
 }
