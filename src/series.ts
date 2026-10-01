@@ -82,16 +82,42 @@ export async function assignSeries(current: Program[], archive: Program[], { use
   const decisions = await readJson<Record<string, boolean>>(DECISIONS_FILE, {});
   const ask: [number, number][] = [];
 
-  for (let i = 0; i < all.length; i++) {
-    for (let j = i + 1; j < all.length; j++) {
-      const match = seriesMatch(all[i], all[j], infos[i], infos[j]);
-      if (match === true) join(i, j);
-      else if (match === "maybe") {
-        const decided = decisions[pairKey(all[i], all[j])];
-        if (decided) join(i, j);
-        else if (decided === undefined && i < current.length) ask.push([i, j]);
-      }
+  const check = (i: number, j: number) => {
+    const match = seriesMatch(all[i], all[j], infos[i], infos[j]);
+    if (match === true) join(i, j);
+    else if (match === "maybe") {
+      const decided = decisions[pairKey(all[i], all[j])];
+      if (decided) join(i, j);
+      else if (decided === undefined && i < current.length) ask.push([i, j]);
     }
+  };
+
+  // 모든 쌍을 비교하면 보관함이 커질수록 느려진다. 두 글자 묶음을 함께 가진 공고만 후보로 골라 비교한다
+  // (겹치는 묶음 수로 계산한 유사도가 MAYBE보다 낮은 쌍은 seriesMatch도 false라서 결과는 같다)
+  const postings = new Map<string, number[]>();
+  infos.forEach((info, i) => {
+    for (const gram of info.grams) {
+      const list = postings.get(gram);
+      if (list) list.push(i);
+      else postings.set(gram, [i]);
+    }
+  });
+  for (let i = 0; i < all.length; i++) {
+    const shared = new Map<number, number>();
+    for (const gram of infos[i].grams) {
+      for (const j of postings.get(gram)!) if (j > i) shared.set(j, (shared.get(j) ?? 0) + 1);
+    }
+    for (const [j, count] of shared) {
+      if ((2 * count) / (infos[i].grams.size + infos[j].grams.size) >= MAYBE) check(i, j);
+    }
+  }
+  // 두 글자 묶음이 거의 없는 아주 짧은 기본 제목은 같은 제목끼리만 비교한다
+  const shortTitles = new Map<string, number[]>();
+  infos.forEach((info, i) => {
+    if (info.base !== "" && info.base.length < MIN_BASE) shortTitles.set(info.base, [...(shortTitles.get(info.base) ?? []), i]);
+  });
+  for (const list of shortTitles.values()) {
+    for (let a = 0; a < list.length; a++) for (let b = a + 1; b < list.length; b++) check(list[a], list[b]);
   }
 
   // 애매한 쌍은 AI에게 묻고 답을 기억한다 (다음에는 다시 묻지 않는다)
