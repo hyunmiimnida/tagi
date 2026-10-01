@@ -35,7 +35,10 @@ export interface SchoolOption {
 export function unitsOf(program: Program, units: { name: string; keywords: string[] }[]): string[] {
   const organizer = program.organizer;
   if (!organizer || program.organizerType !== "학교") return [];
-  return units.filter((unit) => unit.keywords.some((keyword) => organizer.includes(keyword))).map((unit) => unit.name);
+  // 띄어쓰기가 제각각이라("글로벌공생 HUSS 사업단") 공백을 지우고 비교한다
+  const compact = (text: string) => text.replace(/\s+/g, "").toLowerCase();
+  const name = compact(organizer);
+  return units.filter((unit) => unit.keywords.some((keyword) => name.includes(compact(keyword)))).map((unit) => unit.name);
 }
 
 // 학교를 고르면 그 학교 정보와 모든 학교 공통 정보만 보인다

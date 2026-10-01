@@ -18,6 +18,7 @@ import type { ArchivePost, CollectContext, CollectedItem, Program, School, TagCa
 // 과거 글 수집 (내 컴퓨터에서 한 번 실행, 몇 시간 걸린다. 끊겨도 다시 실행하면 이어서 한다)
 //   npm run backfill -- --since 2020-01-01   목록 훑기 → 제목으로 거르기 → 본문 읽고 추출
 //   npm run backfill -- --save               결과를 data/programs.json·archive.json에 합치기
+//   --rules를 붙이면 AI 없이 규칙으로만 추출한다 (Codex 한도가 없을 때)
 // 진행 상황은 .cache/backfill/에 둔다 (git에 올리지 않음). 원문 본문은 저장하지 않는다.
 
 const CACHE = new URL("../.cache/backfill/", import.meta.url);
@@ -33,6 +34,7 @@ const NEWS_MAX_TEXT = 1500;
 const AI_PARALLEL = 5; // 동시에 돌리는 AI 작업 수
 
 const args = process.argv.slice(2);
+const rulesOnly = args.includes("--rules");
 const since = args[args.indexOf("--since") + 1]?.match(/^\d{4}-\d{2}-\d{2}$/) ? args[args.indexOf("--since") + 1] : "2020-01-01";
 
 const schools = await readJson<School[]>(new URL("../config/schools.json", import.meta.url));
@@ -62,7 +64,7 @@ async function knownUrls(): Promise<Set<string>> {
 }
 
 async function run() {
-  if (!findCodex()) throw new Error("Codex CLI가 없어 과거 글을 거를 수 없습니다 (npm install -g @openai/codex)");
+  if (!rulesOnly && !findCodex()) throw new Error("Codex CLI가 없어 과거 글을 거를 수 없습니다 (npm install -g @openai/codex)");
   const known = await knownUrls();
 
   for (const school of schools) {
@@ -135,6 +137,16 @@ async function extract(
     for (const item of items) enrich(item, ctx.source, categories);
 
     const job = (async () => {
+      // --rules: AI 없이 규칙 추출 결과만 쓴다 (Codex 한도가 없을 때, 보관함에만 들어갈 오래된 글용)
+      if (rulesOnly) {
+        for (const item of items) {
+          fixOrganizerType(item.program, categories);
+          results.push(item.program);
+        }
+        await persist();
+        console.log(`${label} 규칙 추출 ${++finished}/${batches.length}묶음 (누적 ${results.length}개)`);
+        return;
+      }
       const ai = await enrichWithAi(items, categories, {
         batchSize: items.length,
         maxText: NEWS_MAX_TEXT,
