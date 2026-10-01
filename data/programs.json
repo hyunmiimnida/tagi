@@ -131,7 +131,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-23",
@@ -575,7 +576,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-14",
@@ -863,7 +865,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -904,12 +907,11 @@
     "organizer": "한국폴리텍대학",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": "만 39세 이하"
     },
     "recruitPeriod": {
       "start": "2026-06-29",
@@ -1389,7 +1391,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-10-01",
@@ -1431,7 +1434,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -1474,7 +1478,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-30",
@@ -1528,7 +1533,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -1570,7 +1576,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -1620,7 +1627,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -1664,7 +1672,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -1724,7 +1733,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-16",
@@ -1765,7 +1775,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -1800,9 +1811,7 @@
     "organizer": "YUnicorn창업지원단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
@@ -1810,7 +1819,8 @@
         "재학생",
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경북 소재 대학(원)생 및 지역정주형 창업스쿨 참여자"
     },
     "recruitPeriod": {
       "start": null,
@@ -1846,14 +1856,13 @@
     "organizer": "MRC",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "일반 대학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -1895,7 +1904,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-28",
@@ -1939,7 +1949,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -1984,7 +1995,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -2027,7 +2039,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -2073,7 +2086,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-29",
@@ -2112,7 +2126,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -2151,7 +2166,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -2192,7 +2208,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-01",
@@ -2233,7 +2250,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -2268,16 +2286,15 @@
     "organizer": "YUnicorn창업지원단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경상북도 소재 대학생 및 대학원생"
     },
     "recruitPeriod": {
       "start": null,
@@ -2321,7 +2338,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -2366,7 +2384,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -2728,7 +2747,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-01",
@@ -2896,7 +2916,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-24",
@@ -3502,7 +3523,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-21",
@@ -3548,7 +3570,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -3752,7 +3775,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-08",
@@ -3877,7 +3901,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-21",
@@ -3960,7 +3985,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-20",
@@ -4005,7 +4031,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-15",
@@ -4332,7 +4359,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-13",
@@ -4378,7 +4406,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-20",
@@ -4861,9 +4890,7 @@
     "organizer": "SW중심대학사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [
         "컴퓨터학부",
@@ -4884,7 +4911,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "영남·경북·경운·대구·울산·한동대 지정전공 학생"
     },
     "recruitPeriod": {
       "start": "2026-10-01",
@@ -4928,7 +4956,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -4970,7 +4999,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -5011,7 +5041,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -5059,7 +5090,8 @@
       "excludedStatuses": [
         "휴학생",
         "졸업생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-10-12",
@@ -5101,7 +5133,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-23",
@@ -5144,7 +5177,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -5178,14 +5212,13 @@
     "organizer": "국어문화연구소",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "누구나"
     },
     "recruitPeriod": {
       "start": "2026-09-21",
@@ -5220,14 +5253,13 @@
     "organizer": "산학협력단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경북지역 대학(원)생 및 일반인"
     },
     "recruitPeriod": {
       "start": "2026-09-21",
@@ -5262,14 +5294,13 @@
     "organizer": "유학생학사팀",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "일본 국적자"
     },
     "recruitPeriod": {
       "start": null,
@@ -5311,7 +5342,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -5353,7 +5385,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-22",
@@ -5398,7 +5431,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-19",
@@ -5434,16 +5468,15 @@
     "organizer": "한국어‧국제언어교육원",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "일반인"
     },
     "recruitPeriod": {
       "start": null,
@@ -5489,7 +5522,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -5531,7 +5565,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -5564,14 +5599,13 @@
     "organizer": "교육부",
     "organizerType": "정부부처",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "초·중·고등학생·동일연령 청소년·대학생"
     },
     "recruitPeriod": {
       "start": "2026-07-21",
@@ -5620,7 +5654,8 @@
         "휴학생",
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -5665,7 +5700,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -5713,7 +5749,8 @@
       "excludedStatuses": [
         "휴학생",
         "졸업생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-10",
@@ -5764,7 +5801,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -5800,14 +5838,13 @@
     "organizer": "대한민국 정부",
     "organizerType": "정부부처",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "외국인 학생"
     },
     "recruitPeriod": {
       "start": "2026-09-16",
@@ -5851,7 +5888,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -5888,9 +5926,7 @@
     "organizer": "미래자동차혁신부품사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [
         "기계공학부",
@@ -5907,7 +5943,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "앵커-MEGA 연합대학 참여학부(과)"
     },
     "recruitPeriod": {
       "start": null,
@@ -5957,7 +5994,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-10",
@@ -6004,7 +6042,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6048,7 +6087,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-15",
@@ -6092,7 +6132,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6135,7 +6176,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6168,16 +6210,15 @@
     "organizer": "앵커사업단 YUnicorn창업지원단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경북 대학(원)생·YUnicorn 창업스쿨 참여자"
     },
     "recruitPeriod": {
       "start": null,
@@ -6224,7 +6265,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6267,7 +6309,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-07",
@@ -6311,7 +6354,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-01",
@@ -6364,7 +6408,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-14",
@@ -6408,7 +6453,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6454,7 +6500,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6499,7 +6546,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6541,7 +6589,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6575,14 +6624,13 @@
     "organizer": "정부",
     "organizerType": "정부부처",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "창업 아이디어를 가진 누구나"
     },
     "recruitPeriod": {
       "start": null,
@@ -6623,7 +6671,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6665,7 +6714,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6709,7 +6759,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6746,14 +6797,13 @@
     "organizer": "언론출판문화원",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "영남대 구성원 1인 이상 포함된 독서 클럽"
     },
     "recruitPeriod": {
       "start": null,
@@ -6793,7 +6843,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-30",
@@ -6838,7 +6889,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6879,7 +6931,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -6914,14 +6967,13 @@
     "organizer": "창업보육센터 및 기술이전사업화센터 행정지원팀",
     "organizerType": "정부부처",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "창업 아이디어를 가진 누구나"
     },
     "recruitPeriod": {
       "start": null,
@@ -6965,7 +7017,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7008,7 +7061,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7053,7 +7107,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-14",
@@ -7094,7 +7149,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7136,7 +7192,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7179,7 +7236,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7221,7 +7279,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7270,7 +7329,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7315,7 +7375,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7363,7 +7424,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7406,7 +7468,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7450,7 +7513,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7495,7 +7559,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-01",
@@ -7544,7 +7609,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7584,14 +7650,13 @@
     "organizer": "중소벤처기업부",
     "organizerType": "정부부처",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "예비창업자 또는 업력 7년 이내 창업기업"
     },
     "recruitPeriod": {
       "start": "2026-08-20",
@@ -7636,7 +7701,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-03",
@@ -7683,7 +7749,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7724,7 +7791,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-04",
@@ -7767,7 +7835,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-15",
@@ -7810,7 +7879,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7855,7 +7925,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7901,7 +7972,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -7944,7 +8016,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-03",
@@ -7986,7 +8059,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8020,14 +8094,13 @@
     "organizer": "대학혁신지원사업 총괄협의회",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "대학혁신지원사업 141개 회원교 교원·직원·학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -8062,16 +8135,15 @@
     "organizer": "앵커사업단 YUnicorn창업지원단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경상북도 소재 대학생 및 대학원생"
     },
     "recruitPeriod": {
       "start": null,
@@ -8121,7 +8193,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-02",
@@ -8168,7 +8241,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-02",
@@ -8215,7 +8289,8 @@
         "휴학생",
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-14",
@@ -8258,7 +8333,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8305,7 +8381,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8352,7 +8429,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8394,7 +8472,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8438,7 +8517,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8490,7 +8570,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-01",
@@ -8545,7 +8626,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8588,7 +8670,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8630,7 +8713,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8673,7 +8757,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8707,14 +8792,13 @@
     "organizer": "국어문화원·국어문화연구소",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "자체적인 반(최소 5명 이상)을 구성할 수 있는 자"
     },
     "recruitPeriod": {
       "start": "2026-08-25",
@@ -8759,7 +8843,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8804,7 +8889,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8851,7 +8937,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -8893,7 +8980,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-24",
@@ -8929,14 +9017,13 @@
     "organizer": "세포배양연구소",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "바이오산업분야에 취업을 희망하는 청년"
     },
     "recruitPeriod": {
       "start": null,
@@ -8975,9 +9062,7 @@
     "organizer": "신소재공학부 레전드 50+ 기업맞춤 지능형 첨단소재 인력양성사업",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
@@ -8986,7 +9071,8 @@
         "휴학생",
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경북 지역 내 미취업자"
     },
     "recruitPeriod": {
       "start": null,
@@ -9021,9 +9107,7 @@
     "organizer": "레전드 50+ 기업맞춤 지능형 첨단소재 인력양성사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [
@@ -9033,7 +9117,8 @@
       "statuses": [],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": "레전드 50+ 기업"
     },
     "recruitPeriod": {
       "start": null,
@@ -9080,7 +9165,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -9123,7 +9209,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -9158,14 +9245,13 @@
     "organizer": "창업보육센터 및 기술이전사업화센터 행정지원팀",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "창업에 관심 있는 예비창업자 및 관련자"
     },
     "recruitPeriod": {
       "start": null,
@@ -9211,7 +9297,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -9255,7 +9342,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -9298,7 +9386,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-26",
@@ -9341,7 +9430,8 @@
       "statuses": [
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -9384,7 +9474,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -9427,7 +9518,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -9471,7 +9563,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -9517,7 +9610,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-24",
@@ -9559,7 +9653,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-24",
@@ -9602,7 +9697,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -9643,7 +9739,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-24",
@@ -9701,7 +9798,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-21",
@@ -9745,7 +9843,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -9780,14 +9879,13 @@
     "organizer": "창업보육센터 및 기술이전사업화센터 행정지원팀",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "참신한 창업 아이디어를 보유한 국민 누구나"
     },
     "recruitPeriod": {
       "start": "2026-08-20",
@@ -9833,7 +9931,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -9869,14 +9968,13 @@
     "organizer": "글로벌평생교육원",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "고등학교 졸업(예정)자 또는 동등 이상 학력자"
     },
     "recruitPeriod": {
       "start": "2026-07-08",
@@ -9918,7 +10016,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -9961,7 +10060,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -10004,7 +10104,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-20",
@@ -10039,14 +10140,13 @@
     "organizer": "한국섬유개발연구원",
     "organizerType": "공공기관",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "15세 이상~34세 이하"
     },
     "recruitPeriod": {
       "start": null,
@@ -10082,16 +10182,15 @@
     "organizer": "한국어‧국제언어교육원",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "일반인"
     },
     "recruitPeriod": {
       "start": "2026-08-19",
@@ -10127,16 +10226,15 @@
     "organizer": "한국어‧국제언어교육원",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "일반인"
     },
     "recruitPeriod": {
       "start": "2026-08-19",
@@ -10181,7 +10279,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -10222,7 +10321,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -10255,9 +10355,7 @@
     "organizer": "영대신문",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
@@ -10265,7 +10363,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "전국 2년제 이상 대학생"
     },
     "recruitPeriod": {
       "start": "2026-08-17",
@@ -10319,7 +10418,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -10366,7 +10466,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -10408,7 +10509,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -10439,14 +10541,13 @@
     "organizer": "언론출판문화원",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "영남대 구성원 1인 이상 포함된 독서 클럽"
     },
     "recruitPeriod": {
       "start": null,
@@ -10479,16 +10580,15 @@
     "organizer": "RISE사업단 YUnicorn창업지원단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "영남대 및 경산 지역 대학 (예비)창업자"
     },
     "recruitPeriod": {
       "start": null,
@@ -10525,14 +10625,13 @@
     "organizer": "글로벌평생교육원",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "일반성인"
     },
     "recruitPeriod": {
       "start": null,
@@ -10574,7 +10673,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -10611,9 +10711,7 @@
     "organizer": "한국건설기술연구원",
     "organizerType": "공공기관",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [
         "공과대학"
       ],
@@ -10624,7 +10722,8 @@
         "4학년"
       ],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "모집 대상 5개 대학 학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -10669,7 +10768,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-11",
@@ -10717,7 +10817,8 @@
         "재학생",
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -10762,7 +10863,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -10817,7 +10919,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -10852,16 +10955,15 @@
     "organizer": "벤처기업협회 대구경북지회",
     "organizerType": "기업",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "대구·경북 소재 대학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -10903,7 +11005,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -10950,7 +11053,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -10997,7 +11101,8 @@
         "4학년"
       ],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11040,7 +11145,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11090,7 +11196,8 @@
         "4학년"
       ],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11135,7 +11242,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11178,7 +11286,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11229,7 +11338,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11274,7 +11384,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-07",
@@ -11319,7 +11430,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11365,7 +11477,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11409,7 +11522,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11452,7 +11566,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11498,7 +11613,8 @@
         "휴학생",
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11545,7 +11661,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11589,7 +11706,8 @@
         "4학년"
       ],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11632,7 +11750,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11675,7 +11794,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-11",
@@ -11718,7 +11838,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-11",
@@ -11763,7 +11884,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11809,7 +11931,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-10",
@@ -11852,7 +11975,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-02-24",
@@ -11901,7 +12025,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -11950,7 +12075,8 @@
         "재학생",
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-05",
@@ -11996,7 +12122,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -12032,9 +12159,7 @@
     "organizer": "미래자동차혁신부품사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [
         "기계공학부",
@@ -12053,7 +12178,8 @@
         "휴학생",
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "RISE-MEGA 연합대학 참여학부(과)"
     },
     "recruitPeriod": {
       "start": null,
@@ -12108,7 +12234,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -12143,14 +12270,13 @@
     "organizer": "산학협력단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "AI전문인력양성 수료생 및 경북 지역 대학생·일반인"
     },
     "recruitPeriod": {
       "start": "2026-08-03",
@@ -12196,7 +12322,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -12241,7 +12368,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-05",
@@ -12277,9 +12405,7 @@
     "organizer": "미래자동차혁신부품사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [
         "기계공학부",
@@ -12294,7 +12420,8 @@
         "4학년"
       ],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "연합대학 참여학부(과)"
     },
     "recruitPeriod": {
       "start": "2026-08-03",
@@ -12346,7 +12473,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -12399,7 +12527,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -12449,7 +12578,8 @@
       "excludedStatuses": [
         "휴학생",
         "졸업생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -12496,7 +12626,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-11",
@@ -12543,7 +12674,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-24",
@@ -12590,7 +12722,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -12625,16 +12758,15 @@
     "organizer": "YUnicorn창업지원단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "영남대학교 및 경산 지역 내 대학교"
     },
     "recruitPeriod": {
       "start": null,
@@ -12682,7 +12814,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -12724,7 +12857,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -12760,16 +12894,15 @@
     "organizer": "생활과학연구소",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "식품영양학·체육학 등 관련 분야 전공자"
     },
     "recruitPeriod": {
       "start": null,
@@ -12814,7 +12947,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-22",
@@ -12856,7 +12990,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -12897,7 +13032,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -12938,7 +13074,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-08-15",
@@ -12973,16 +13110,15 @@
     "organizer": "코멘토",
     "organizerType": "기업",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "코멘토 제휴대학"
     },
     "recruitPeriod": {
       "start": null,
@@ -13031,7 +13167,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -13080,7 +13217,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -13125,7 +13263,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -13173,7 +13312,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -13215,7 +13355,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-21",
@@ -13258,7 +13399,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -13303,7 +13445,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -13345,7 +13488,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -13386,7 +13530,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -13420,9 +13565,7 @@
     "organizer": "호남대학교",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [
         "경영학과",
@@ -13437,7 +13580,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": "글로벌공생 HUSS 참여 대학 학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -13479,7 +13623,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -13515,9 +13660,7 @@
     "organizer": "경북AI융합원",
     "organizerType": "공공기관",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
@@ -13527,7 +13670,8 @@
       "excludedStatuses": [
         "휴학생",
         "졸업생"
-      ]
+      ],
+      "openTo": "영남대학교 및 협력대학 학생"
     },
     "recruitPeriod": {
       "start": "2026-07-16",
@@ -13560,9 +13704,7 @@
     "organizer": "글로벌공생 인문사회융합인재양성사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [
         "경영학과",
@@ -13573,7 +13715,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "글로벌공생 HUSS 참여 대학 학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -13623,7 +13766,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -13664,7 +13808,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -13708,7 +13853,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-13",
@@ -13743,16 +13889,15 @@
     "organizer": "한국식품산업클러스터진흥원",
     "organizerType": "공공기관",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [
         "4학년"
       ],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "전국 대학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -13795,7 +13940,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -13838,7 +13984,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-14",
@@ -13883,7 +14030,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-13",
@@ -13935,7 +14083,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-13",
@@ -13983,7 +14132,8 @@
         "재학생",
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-15",
@@ -14026,7 +14176,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -14069,7 +14220,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-13",
@@ -14104,14 +14256,13 @@
     "organizer": "한국섬유개발연구원",
     "organizerType": "공공기관",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "대학생 팀(2~4인)"
     },
     "recruitPeriod": {
       "start": "2026-06-22",
@@ -14153,7 +14304,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -14202,7 +14354,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -14255,7 +14408,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -14296,7 +14450,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-01",
@@ -14341,7 +14496,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-01",
@@ -14387,7 +14543,8 @@
         "휴학생",
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-30",
@@ -14429,7 +14586,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-07",
@@ -14479,7 +14637,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -14516,14 +14675,13 @@
     "organizer": "글로벌공생HUSS 사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "글로벌공생 융합전공 교과·비교과 참여 경험자"
     },
     "recruitPeriod": {
       "start": "2026-06-29",
@@ -14567,7 +14725,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-12",
@@ -14621,7 +14780,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -14672,7 +14832,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-25",
@@ -14723,7 +14884,8 @@
         "휴학생",
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -14768,7 +14930,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -14804,14 +14967,13 @@
     "organizer": "글로컬대학사업단 경북AI융합원",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경북 소재 기업·기관 재직자 또는 거주 관련분야 전문가"
     },
     "recruitPeriod": {
       "start": null,
@@ -14855,7 +15017,8 @@
         "4학년"
       ],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -14890,14 +15053,13 @@
     "organizer": "대학혁신지원사업 총괄협의회",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "대학혁신지원사업 141개 회원교 교원·직원·학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -14939,7 +15101,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -14975,16 +15138,15 @@
     "organizer": "한국어·국제언어교육원",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "일반인 및 교직원"
     },
     "recruitPeriod": {
       "start": "2026-06-23",
@@ -15029,7 +15191,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-15",
@@ -15065,14 +15228,13 @@
     "organizer": "에코업혁신융합대학사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "에코업 참여 대학 학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -15152,14 +15314,13 @@
     "organizer": "천마아트센터",
     "organizerType": "기업",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "20세(2007년생) 이상"
     },
     "recruitPeriod": {
       "start": "2026-07-01",
@@ -15200,7 +15361,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -15243,7 +15405,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-07",
@@ -15288,7 +15451,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -15335,7 +15499,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-06",
@@ -15379,7 +15544,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -15412,16 +15578,15 @@
     "organizer": "미래자동차혁신부품사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [
         "MII연합대학 참여학과"
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "MII연합대학 참여학과 학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -15455,16 +15620,15 @@
     "organizer": "고용노동부",
     "organizerType": "정부부처",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "34세 이하 청년(군필자는 최대 39세)"
     },
     "recruitPeriod": {
       "start": "2026-06-22",
@@ -15512,7 +15676,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -15554,7 +15719,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -15598,7 +15764,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-14",
@@ -15641,7 +15808,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-23",
@@ -15686,7 +15854,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-12",
@@ -15723,9 +15892,7 @@
     "organizer": "산학협력단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [
@@ -15735,7 +15902,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경북 소재 대학생 및 AI·SW 기초역량 보유자"
     },
     "recruitPeriod": {
       "start": "2026-06-15",
@@ -15783,7 +15951,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -15828,7 +15997,8 @@
       "statuses": [],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -15869,7 +16039,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -15912,7 +16083,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -15947,9 +16119,7 @@
     "organizer": "K-U시티세포배양사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [
@@ -15958,7 +16128,8 @@
       "statuses": [],
       "excludedStatuses": [
         "졸업생"
-      ]
+      ],
+      "openTo": "경상북도 소재 대학생 및 대학원생"
     },
     "recruitPeriod": {
       "start": "2026-06-08",
@@ -15995,9 +16166,7 @@
     "organizer": "미래자동차혁신부품사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [
         "기계공학부",
@@ -16015,7 +16184,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "RISE-MEGA 연합대학 참여학부(과) 학생"
     },
     "recruitPeriod": {
       "start": "2026-06-12",
@@ -16060,7 +16230,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-12",
@@ -16097,9 +16268,7 @@
     "organizer": "미래자동차혁신부품사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [
         "기계공학부",
@@ -16116,7 +16285,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": "영남대·대구가톨릭대·대구대 참여학부(과) 학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -16166,7 +16336,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -16210,7 +16381,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-01",
@@ -16245,14 +16417,13 @@
     "organizer": "경상북도 외국인공동체과",
     "organizerType": "지자체",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경북 6개월 이상 거주·거주예정 외국인 남녀 1쌍"
     },
     "recruitPeriod": {
       "start": "2026-06-08",
@@ -16292,7 +16463,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -16335,7 +16507,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-12",
@@ -16380,7 +16553,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-09",
@@ -16428,7 +16602,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -16474,7 +16649,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -16509,14 +16685,13 @@
     "organizer": "세포배양사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경상북도 소재 대학생 및 대학원생"
     },
     "recruitPeriod": {
       "start": "2026-06-08",
@@ -16567,7 +16742,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -16602,9 +16778,7 @@
     "organizer": "산학협력단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [
@@ -16614,7 +16788,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경북 소재 대학생 및 AI·SW 기초역량 보유자"
     },
     "recruitPeriod": {
       "start": "2026-06-08",
@@ -16648,16 +16823,15 @@
     "organizer": "한국섬유개발연구원",
     "organizerType": "공공기관",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "만 34세 이하 대구·경북 섬유기업 취업희망자"
     },
     "recruitPeriod": {
       "start": null,
@@ -16692,16 +16866,15 @@
     "organizer": "K-U시티세포배양사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [
         "4학년"
       ],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경상북도 소재 대학생 및 대학원생"
     },
     "recruitPeriod": {
       "start": "2026-06-08",
@@ -16745,7 +16918,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-06-08",
@@ -16795,7 +16969,8 @@
         "4학년"
       ],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -16845,7 +17020,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -16897,7 +17073,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -16941,7 +17118,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -16991,7 +17169,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17034,7 +17213,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17083,7 +17263,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17137,7 +17318,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-18",
@@ -17191,7 +17373,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17226,9 +17409,7 @@
     "organizer": "인문사회글로벌공생융합인재양성사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [
         "에너지화공전공",
@@ -17243,7 +17424,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": "글로벌공생HUSS 사업 참여대학 학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -17286,7 +17468,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17336,7 +17519,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17372,9 +17556,7 @@
     "organizer": "한국식품산업클러스터진흥원",
     "organizerType": "공공기관",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [
@@ -17383,7 +17565,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "전국 대학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -17428,7 +17611,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17478,7 +17662,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-21",
@@ -17521,7 +17706,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17565,7 +17751,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17614,7 +17801,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-20",
@@ -17650,14 +17838,13 @@
     "organizer": "신용보증기금, ICT콤플렉스",
     "organizerType": "공공기관",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "ICT콤플렉스 이용자(신입·경력 2년 미만 개발자)"
     },
     "recruitPeriod": {
       "start": "2026-05-08",
@@ -17704,7 +17891,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17759,7 +17947,8 @@
         "4학년"
       ],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17815,7 +18004,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17858,7 +18048,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -17894,16 +18085,15 @@
     "organizer": "RISE사업단 YUnicorn창업지원단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경상북도 소재 대학생 및 대학원생"
     },
     "recruitPeriod": {
       "start": null,
@@ -17940,16 +18130,15 @@
     "organizer": "삼성중공업",
     "organizerType": "기업",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "전문학사 이상"
     },
     "recruitPeriod": {
       "start": "2026-05-26",
@@ -18000,7 +18189,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -18052,7 +18242,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -18098,7 +18289,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-08",
@@ -18152,7 +18344,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -18207,7 +18400,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-18",
@@ -18251,7 +18445,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-15",
@@ -18296,7 +18491,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-15",
@@ -18354,7 +18550,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -18408,7 +18605,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -18453,7 +18651,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -18501,7 +18700,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -18548,7 +18748,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -18587,9 +18788,7 @@
     "organizer": "RISE사업단 YUnicorn창업지원단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
@@ -18597,7 +18796,8 @@
         "재학생",
         "휴학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경상북도 소재·거주 대학생 및 대학원생"
     },
     "recruitPeriod": {
       "start": null,
@@ -18658,7 +18858,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -18706,7 +18907,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -18742,16 +18944,15 @@
     "organizer": "RISE사업단 YUnicorn창업지원단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경상북도 소재 대학생 및 대학원생"
     },
     "recruitPeriod": {
       "start": null,
@@ -18804,7 +19005,8 @@
       "statuses": [
         "재학생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-04",
@@ -18848,7 +19050,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-13",
@@ -18895,7 +19098,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -18938,7 +19142,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-07",
@@ -18978,7 +19183,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-08",
@@ -19020,7 +19226,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -19062,7 +19269,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -19102,7 +19310,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-04-24",
@@ -19153,7 +19362,8 @@
       ],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-04-29",
@@ -19205,7 +19415,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-05-07",
@@ -19248,7 +19459,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-04-24",
@@ -19288,7 +19500,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -19329,7 +19542,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-04-23",
@@ -19372,7 +19586,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -19406,14 +19621,13 @@
     "organizer": "진로취업지원팀",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "경북·대구 대학생·청년·재직자 등"
     },
     "recruitPeriod": {
       "start": "2026-03-12",
@@ -19453,7 +19667,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-04-06",
@@ -19494,7 +19709,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -19535,7 +19751,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -19576,7 +19793,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -19618,7 +19836,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-03-03",
@@ -19651,14 +19870,13 @@
     "organizer": "글로벌평생교육원 행정실",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "숲해설가에 관심 있는 일반성인"
     },
     "recruitPeriod": {
       "start": null,
@@ -19701,7 +19919,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -19742,7 +19961,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2025-05-14",
@@ -19778,9 +19998,7 @@
     "organizer": "레전드 50+ 기업맞춤 지능형 첨단소재 인력양성사업단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [
@@ -19790,7 +20008,8 @@
       "statuses": [],
       "excludedStatuses": [
         "휴학생"
-      ]
+      ],
+      "openTo": "레전드 50+ 기업"
     },
     "recruitPeriod": {
       "start": null,
@@ -19835,7 +20054,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-07-14",
@@ -19881,7 +20101,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -19935,7 +20156,8 @@
       ],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -19983,7 +20205,8 @@
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,

@@ -47,6 +47,8 @@
 - 공고 출처가 속한 학교는 목록에 학교 배지(`shortName`, 예: 영남대)로 보인다 (`lib/data.ts`가 빌드할 때 계산)
 - 중복 제거: 같은 프로그램은 하나로 합치고 원문 링크는 모두 보관
 - 반복 프로그램: 해마다·학기마다 다시 열리는 프로그램을 `seriesId`로 묶어(`src/series.ts`) 상세 화면에 "지난 공고"와 후기 댓글(Supabase `comments` 표)을 보여 준다
+- 모집 대상 학교: 기본은 게시한 학교. AI가 다른 학교 학생도 지원할 수 있다고 보면 `target.openTo`(예: "전국 대학생")를 쓰고 `target.schools`를 비운다. 학교 배지·학교 필터는 게시한 학교 기준이라 그대로다
+- 합쳐진 공고는 `aliases`에 예전 id를 남기고, 없는 공고 주소는 `app/not-found.tsx`가 `public/api/ids.json`으로 새 주소나 보관 안내를 찾아 준다
 
 ## 수집 처리 순서 (`src/collect.ts`)
 
@@ -101,6 +103,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 
 - `npm run dev` — 내 컴퓨터에서 화면 실행 (http://localhost:3000)
 - `npm run collect` — 수집 실행, `npm run backfill` — 과거 글 쌓기 (위 설명 참고)
+- `npm run check-open-to` — 목록 공고 중 "다른 학교 학생도 지원 가능한지" 확인하지 않은 글만 다시 읽어 AI에게 묻는다 (Codex 필요)
 - `npm test` — 자동 검사, `npm run typecheck` — 코드 오류 검사, `npm run build` — 배포용 빌드
 
 ## 디자인 규칙
