@@ -65,6 +65,8 @@
 
 과거 글 쌓기 (`src/backfill.ts`, 내 컴퓨터에서만): `npm run backfill -- --since 2020-01-01`로 목록 훑기 → 제목으로 1차 거르기(AI) → 본문 읽고 추출(AI),
 끝나면 `npm run backfill -- --save`로 목록·보관함에 합친다. 진행 상황은 `.cache/backfill/`에 있어 끊겨도 이어서 한다
+- Codex 한도가 없으면 `--rules`를 붙여 AI 없이 규칙으로만 추출한다 (보관함에만 들어갈 오래된 글은 이것으로 충분하다)
+- 반복 프로그램인지 애매한 쌍을 AI가 판단하지 못하면, 지금 목록 공고와 관련된 쌍만 뽑아 직접 판단해 `data/series-decisions.json`에 `"id1|id2": true/false`로 적는다 (id는 사전순 정렬). 다음 저장 때 반영된다
 
 Codex CLI는 PATH에 없어도 `%LOCALAPPDATA%OpenAICodexin*codex.exe`에서 찾는다.
 AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜 연도, 신청/제출 기한 구분, 태그 남발, 주최 유형).
