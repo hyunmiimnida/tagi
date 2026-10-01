@@ -9,7 +9,7 @@ import type { CollectedItem, Program, TagCategory } from "./types.ts";
 // AI 정보 추출: Codex CLI가 있으면 게시물 본문을 읽혀서 규칙으로 못 찾은 정보를 보완한다.
 // 게시물 여러 개를 한 번에 보내 비용을 줄인다. 실패하면 규칙 기반 결과를 그대로 쓴다.
 
-const MODELS = ["gpt-6.1-sol", "gpt-6.0-astra"]; // 앞 모델이 실패하면 다음 모델로
+const MODELS = ["gpt-6.1-sol"]; // 실패하면 다음 모델로 (gpt-6.0-astra는 ChatGPT 계정에서 쓸 수 없어 뺐다)
 const BATCH_SIZE = 8;
 const MAX_TEXT = 2500; // 게시물 하나당 본문 글자 수
 const DATE = /^\d{4}-\d{2}-\d{2}$/;

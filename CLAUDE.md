@@ -52,7 +52,7 @@
 
 1. 출처별 수집기가 새 게시물을 가져온다 (robots.txt 확인, 요청 사이 1초 쉼)
 2. `src/extract.ts`가 규칙으로 주최·기간·태그를 채운다
-3. `useAi` 출처는 Codex CLI가 있으면 `src/ai.ts`가 게시물 8개씩 묶어 추출한다 (gpt-6.1-sol → 실패 시 gpt-6.0-astra)
+3. `useAi` 출처는 Codex CLI가 있으면 `src/ai.ts`가 게시물 8개씩 묶어 추출한다 (gpt-6.1-sol, 실패하면 규칙 결과를 그대로 쓴다)
    - AI로 이미 추출한 게시물은 다시 보내지 않는다. 교원·직원 대상 글은 빼고 `data/excluded.json`에 기억한다
    - AI 없이 수집한 결과(GitHub Actions)는 AI가 채운 주최·대상·태그를 덮어쓰지 않는다
 4. `src/dedupe.ts`가 기존 데이터와 합치고 중복을 제거한다 (원문 링크는 모두 보관)
