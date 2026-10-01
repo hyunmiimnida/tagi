@@ -84,6 +84,27 @@ export function getPastRounds(program: Program): Program[] {
   return rounds;
 }
 
+// 반복 프로그램 묶음 → [가장 최근 회차 제목, 지금 목록에 있는 공고 id(없으면 null)]. 프로필의 "내 댓글"이 어느 공고인지 보여 줄 때 쓴다
+export function getSeriesInfo(): Record<string, [string, string | null]> {
+  const info: Record<string, [string, string | null]> = {};
+  const latest: Record<string, string> = {};
+  for (const p of getArchive()) {
+    if (!p.seriesId || (latest[p.seriesId] ?? "") > roundStart(p)) continue;
+    latest[p.seriesId] = roundStart(p);
+    info[p.seriesId] = [p.title, null];
+  }
+  // 지금 목록에 있는 공고가 있으면 그 공고로 연결한다
+  for (const p of getPrograms()) {
+    if (!p.seriesId) continue;
+    const [, current] = info[p.seriesId] ?? [];
+    if (!current || (latest[p.seriesId] ?? "") <= roundStart(p)) {
+      latest[p.seriesId] = roundStart(p);
+      info[p.seriesId] = [p.title, p.id];
+    }
+  }
+  return info;
+}
+
 export const getCategories = (): FilterCategory[] =>
   readJson<TagCategory[]>("config/tag-categories.json").map(({ id, name, tags }) => ({
     id,

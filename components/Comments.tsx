@@ -16,6 +16,7 @@ interface Comment {
   body: string;
   created_at: string;
   mine: boolean;
+  author?: string; // 닉네임 (없으면 "익명")
 }
 
 function timeAgo(iso: string): string {
@@ -42,15 +43,14 @@ export function Comments({ seriesId }: { seriesId: string }) {
   // 로그인이 바뀌면 "내 글"과 숨긴 글이 달라지므로 다시 불러온다
   const load = useCallback(async () => {
     if (!supabase) return;
-    const { data, error } = await supabase
-      .from("comment_feed")
-      .select("id, body, created_at, mine")
-      .eq("series_id", seriesId)
-      .order("created_at", { ascending: false })
-      .limit(100);
+    const query = (columns: string) =>
+      supabase!.from("comment_feed").select(columns).eq("series_id", seriesId).order("created_at", { ascending: false }).limit(100);
+    // 닉네임 칸(supabase/profile.sql)이 아직 없으면 닉네임 없이 불러온다
+    let { data, error } = await query("id, body, created_at, mine, author");
+    if (error?.code === "42703") ({ data, error } = await query("id, body, created_at, mine"));
     // 댓글 표를 아직 만들지 않았으면(supabase/*.sql 미실행) 준비 중으로 보여 준다
     if (error) (error.code === "PGRST205" || error.code === "42P01" ? setMissingTable : setFailed)(true);
-    else setComments(data as Comment[]);
+    else setComments(data as unknown as Comment[]);
   }, [seriesId, userId]);
 
   useEffect(() => {
@@ -100,7 +100,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
 
   async function block(id: number, ask = true) {
     if (!supabase) return;
-    if (ask && !window.confirm("이 사람의 글을 앞으로 보지 않을까요? 내 정보에서 다시 볼 수 있어요.")) return;
+    if (ask && !window.confirm("이 사람의 글을 앞으로 보지 않을까요? 프로필에서 다시 볼 수 있어요.")) return;
     const { error } = await supabase.rpc("block_comment_author", { target: id });
     setNotice(error ? "숨기지 못했어요. 잠시 후 다시 시도해 주세요." : "이 사람의 글을 숨겼어요.");
     void load();
@@ -162,7 +162,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
               />
               <div className="comment-form-foot">
                 <span>
-                  {draft.length}/{MAX_LENGTH} · 익명으로 올라가요
+                  {draft.length}/{MAX_LENGTH} · {user.profile.nickname ? `"${user.profile.nickname}"(으)로` : "익명으로"} 올라가요
                 </span>
                 <button className="button primary small" disabled={!draft.trim() || sending}>
                   {sending ? "올리는 중" : "올리기"}
@@ -183,7 +183,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
               {comments.map((comment) => (
                 <li key={comment.id}>
                   <div className="comment-meta">
-                    <strong>{comment.mine ? "나" : "익명"}</strong>
+                    <strong>{comment.mine ? "나" : (comment.author ?? "익명")}</strong>
                     <span>{timeAgo(comment.created_at)}</span>
                     <span className="comment-tools">
                       {comment.mine ? (

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { GRADES, STUDENT_STATUSES } from "../src/types.ts";
 import type { SchoolOption } from "../lib/filter.ts";
 import { CONTACT } from "../lib/policy.ts";
@@ -13,10 +13,20 @@ import { ChevronIcon } from "./Icons.tsx";
 interface Props {
   schools: SchoolOption[];
   fieldTags: string[]; // 관심 분야로 고를 수 있는 태그
+  seriesInfo: Record<string, [title: string, currentId: string | null]>; // 댓글이 달린 프로그램 이름·주소
 }
 
+interface MyComment {
+  id: number;
+  series_id: string;
+  body: string;
+  created_at: string;
+}
+
+const NICKNAME = /^.{2,12}$/u;
+
 // 프로필: 계정, 내 학교·신분·학년, 관심 분야, 알림, 숨긴 사용자, 약관, 회원 탈퇴
-export function MyAccount({ schools, fieldTags }: Props) {
+export function MyAccount({ schools, fieldTags, seriesInfo }: Props) {
   const user = useUser();
   const router = useRouter();
   const { profile } = user;
@@ -24,6 +34,44 @@ export function MyAccount({ schools, fieldTags }: Props) {
   const [message, setMessage] = useState<string | null>(null);
   const [savedLocally, setSavedLocally] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const [nickname, setNickname] = useState("");
+  const [nicknameNote, setNicknameNote] = useState<string | null>(null);
+  const [myComments, setMyComments] = useState<MyComment[] | null>(null);
+
+  useEffect(() => setNickname(profile.nickname ?? ""), [profile.nickname]);
+
+  // 내가 쓴 댓글 (최근 50개)
+  const loadMyComments = useCallback(async () => {
+    if (!supabase || !user.userId) return;
+    const { data, error } = await supabase
+      .from("comment_feed")
+      .select("id, series_id, body, created_at")
+      .eq("mine", true)
+      .order("created_at", { ascending: false })
+      .limit(50);
+    setMyComments(error ? null : (data as MyComment[]));
+  }, [user.userId]);
+
+  useEffect(() => {
+    void loadMyComments();
+  }, [loadMyComments]);
+
+  async function saveNickname(event: React.FormEvent) {
+    event.preventDefault();
+    const value = nickname.trim();
+    if (value && !NICKNAME.test(value)) {
+      setNicknameNote("닉네임은 2~12자로 정해 주세요.");
+      return;
+    }
+    const saved = await user.setProfile({ nickname: value || null });
+    setNicknameNote(saved ? (value ? "닉네임을 저장했어요." : "닉네임을 지웠어요. 댓글에 익명으로 보여요.") : "닉네임을 저장하지 못했어요. 잠시 후 다시 시도해 주세요.");
+  }
+
+  async function removeComment(id: number) {
+    if (!supabase || !window.confirm("댓글을 지울까요?")) return;
+    await supabase.rpc("delete_my_comment", { target: id });
+    void loadMyComments();
+  }
 
   useEffect(() => {
     if (!supabase || !user.userId) return;
@@ -79,6 +127,26 @@ export function MyAccount({ schools, fieldTags }: Props) {
           <>
             <h2 className="card-title">{user.email ?? "소셜 계정으로 로그인했어요"}</h2>
             <p className="card-sub">관심 공고 {user.favorites.size}개 · 설정이 계정에 저장돼요</p>
+            <form className="nickname-form" onSubmit={saveNickname}>
+              <label htmlFor="nickname" className="my-label">
+                닉네임
+              </label>
+              <div className="nickname-row">
+                <input
+                  id="nickname"
+                  value={nickname}
+                  maxLength={12}
+                  placeholder="비워 두면 익명"
+                  onChange={(event) => setNickname(event.target.value)}
+                />
+                <button className="button small" disabled={nickname.trim() === (profile.nickname ?? "")}>
+                  저장
+                </button>
+              </div>
+              <p className="nickname-note" role="status">
+                {nicknameNote ?? "닉네임은 내 댓글에 함께 보여요. 실명은 쓰지 마세요."}
+              </p>
+            </form>
             <button className="button wide" onClick={user.signOut}>
               로그아웃
             </button>
@@ -178,6 +246,33 @@ export function MyAccount({ schools, fieldTags }: Props) {
         <p className="my-message" role="status">
           이 기기에만 저장됐어요. 계정 저장은 준비 중이에요.
         </p>
+      )}
+
+      {user.signedIn && myComments && (
+        <section className="card my-card">
+          <h2 className="card-title">내 댓글</h2>
+          {myComments.length === 0 ? (
+            <p className="card-sub">아직 쓴 댓글이 없어요.</p>
+          ) : (
+            <ul className="my-comments">
+              {myComments.map((comment) => {
+                const [title, currentId] = seriesInfo[comment.series_id] ?? ["지난 프로그램", null];
+                return (
+                  <li key={comment.id}>
+                    <div className="my-comment-head">
+                      {currentId ? <Link href={`/programs/${currentId}`}>{title}</Link> : <span>{title}</span>}
+                      <button className="text-button" onClick={() => removeComment(comment.id)}>
+                        삭제
+                      </button>
+                    </div>
+                    <p>{comment.body}</p>
+                    <time>{new Date(comment.created_at).toLocaleDateString("ko-KR")}</time>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </section>
       )}
 
       {user.signedIn && blockCount !== null && (

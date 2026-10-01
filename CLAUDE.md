@@ -80,13 +80,14 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `src/types.ts` — 공통 데이터 형식
 - `src/collectors/` — 사이트별 수집기 (`index.ts`에 등록)
 - `data/programs.json` — 수집 결과(최근 90일), `data/archive.json` — 지난 공고 보관함, `data/collect-log.json` — 마지막 수집 기록
-- `app/` — 화면. 하단 탭 바(`components/BottomNav.tsx`)로 홈 `/`, 공고 `/programs`, 캘린더 `/calendar`를 오간다. 상세는 `/programs/[id]`
+- `app/` — 화면. 하단 탭 바(`components/BottomNav.tsx`)로 홈 `/`, 공고 `/programs`, 캘린더 `/calendar`, 프로필 `/my`를 오간다. 상세는 `/programs/[id]`
   - 목록 필터는 주소(`?school=yu&unit=...&tag=...&q=...&closed=1&sort=recent`)에 저장된다
   - 상세·캘린더에서 `.ics` 캘린더 파일로 내보낼 수 있다 (`lib/ics.ts`)
 - `components/` — 화면 부품, `lib/` — 필터 규칙·데이터 읽기·로그인 상태
 - `supabase/schema.sql` — 로그인 사용자 데이터 표(학교 설정, 관심 표시, 후기 댓글)
 - `supabase/moderation.sql` — 회원 탈퇴, 댓글 신고(`reports`)·숨기기(`blocks`), 이용 규칙 동의. 댓글은 `comment_feed` 뷰로만 읽는다(글쓴이 id 비공개)
-- `/my`(내 정보·탈퇴), `/terms`(이용약관), `/privacy`(개인정보처리방침). 문의처·규칙 문구는 `lib/policy.ts`
+- `/my`(프로필: 닉네임, 학교·신분·학년, 관심 분야, 알림 설정 자리, 내 댓글, 탈퇴. 설정은 `lib/user.tsx`의 `profile`, 로그인하면 `profiles` 표에도 저장, `supabase/profile.sql`). 신분·학년은 공고 목록 대상 필터의 기본값, 관심 분야는 홈 "내 관심 분야 공고"에 쓴다
+- 약관: `/terms`(이용약관), `/privacy`(개인정보처리방침). 문의처·규칙 문구는 `lib/policy.ts`
 - PWA: `app/manifest.ts`, `public/sw.js`(오프라인 때 마지막 화면), 아이콘 `public/icon-*.png`, `app/apple-icon.png`
 - `mobile/` — 앱(Expo) 뼈대. **비용 문제로 잠시 멈춤.** 사이트를 바꿀 때 앱 전환에 걸림돌이 생기지 않게 한다 (데이터는 `public/api`로 계속 제공)
 - `.github/workflows/collect.yml` — 하루 1회 자동 수집

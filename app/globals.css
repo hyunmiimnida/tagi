@@ -1833,3 +1833,79 @@ main {
   height: 22px;
   accent-color: var(--accent);
 }
+
+.nickname-form {
+  margin-top: 4px;
+}
+
+.nickname-row {
+  display: flex;
+  gap: 8px;
+}
+
+.nickname-row input {
+  flex: 1;
+  min-width: 0;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+}
+
+.nickname-row .button {
+  margin-top: 0;
+}
+
+.nickname-note {
+  margin-top: 6px;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+}
+
+.my-comments {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.my-comments li {
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.my-comments li:first-child {
+  border-top: 0;
+}
+
+.my-comment-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.my-comment-head a,
+.my-comment-head span {
+  overflow: hidden;
+  color: var(--text-2);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.my-comments p {
+  margin-top: 4px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.my-comments time {
+  color: var(--text-3);
+  font-size: 0.75rem;
+}
