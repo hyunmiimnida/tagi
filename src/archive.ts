@@ -22,9 +22,13 @@ export async function readJson<T>(file: URL, fallback?: T): Promise<T> {
 
 export const writeJson = (file: URL, data: unknown) => writeFile(file, JSON.stringify(data, null, 2) + "\n");
 
-// 마지막 일정: 모집 마감·활동 종료·게시일·수집일 중 가장 늦은 날
+// 마지막 일정: 모집·활동 기간과 게시일 중 가장 늦은 날. 날짜를 하나도 모를 때만 수집일을 쓴다
+// (과거 글은 오늘 수집하므로 수집일을 함께 비교하면 모두 최근 글로 보인다)
 export const lastDate = (p: Program) =>
-  [p.recruitPeriod.end, p.activityPeriod.end, p.postedAt, p.collectedAt.slice(0, 10)].filter((d) => d !== null).sort().at(-1)!;
+  [p.recruitPeriod.start, p.recruitPeriod.end, p.activityPeriod.start, p.activityPeriod.end, p.postedAt]
+    .filter((d) => d !== null)
+    .sort()
+    .at(-1) ?? p.collectedAt.slice(0, 10);
 
 // 목록에 둘 항목과 보관할 항목으로 나눈다
 export function splitByAge(programs: Program[], now = Date.now()): { current: Program[]; old: Program[] } {

@@ -1147,6 +1147,31 @@ main {
   font-size: 0.8125rem;
 }
 
+.history-more {
+  border-top: 1px solid var(--line);
+}
+
+.history-more summary {
+  padding: 14px 0 6px;
+  color: var(--accent);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.history-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.history-more[open] summary {
+  display: none;
+}
+
+.history-more .history-list {
+  margin-top: 0;
+}
+
 .history-list svg {
   color: var(--text-3);
 }

@@ -29,6 +29,28 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return { title: program.title, description, openGraph: { title: program.title, description } };
 }
 
+const HISTORY_SHOWN = 8; // 지난 공고는 최근 몇 개만 먼저 보여 주고 나머지는 접어 둔다
+
+function historyRow(round: Program) {
+  const year = roundYear(round);
+  const recruitText = formatPeriod(round.recruitPeriod, year);
+  const period = recruitText
+    ? `모집 ${recruitText}`
+    : round.postedAt && `게시 ${formatDate(round.postedAt, year)}`;
+  return (
+    <li key={round.id}>
+      <a href={round.links[0].url} target="_blank" rel="noopener noreferrer">
+        <span className="history-year">{year}</span>
+        <span className="history-body">
+          <span className="history-title">{round.title}</span>
+          {period && <span className="history-period">{period}</span>}
+        </span>
+        <ExternalIcon size={16} />
+      </a>
+    </li>
+  );
+}
+
 export default async function ProgramPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const program = getPrograms().find((p) => p.id === id);
@@ -87,27 +109,13 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
         <section className="card history">
           <h2 className="card-title">지난 공고</h2>
           <p className="card-sub">해마다 열리는 프로그램이에요. 지난 회차 일정을 보면 준비 시기를 가늠할 수 있어요.</p>
-          <ul className="history-list">
-            {pastRounds.map((round) => {
-              const year = roundYear(round);
-              const recruitText = formatPeriod(round.recruitPeriod, year);
-              const period = recruitText
-                ? `모집 ${recruitText}`
-                : round.postedAt && `게시 ${formatDate(round.postedAt, year)}`;
-              return (
-                <li key={round.id}>
-                  <a href={round.links[0].url} target="_blank" rel="noopener noreferrer">
-                    <span className="history-year">{year}</span>
-                    <span className="history-body">
-                      <span className="history-title">{round.title}</span>
-                      {period && <span className="history-period">{period}</span>}
-                    </span>
-                    <ExternalIcon size={16} />
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
+          <ul className="history-list">{pastRounds.slice(0, HISTORY_SHOWN).map(historyRow)}</ul>
+          {pastRounds.length > HISTORY_SHOWN && (
+            <details className="history-more">
+              <summary>지난 공고 {pastRounds.length - HISTORY_SHOWN}개 더 보기</summary>
+              <ul className="history-list">{pastRounds.slice(HISTORY_SHOWN).map(historyRow)}</ul>
+            </details>
+          )}
         </section>
       )}
 
