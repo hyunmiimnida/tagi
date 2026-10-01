@@ -42,8 +42,11 @@
 - 목록·상세: 같은 형식으로 보여주고 원문 링크로 연결
 - 태그 필터링: 같은 카테고리 안은 "또는", 다른 카테고리끼리는 "그리고"
 - 개인 캘린더: 관심 표시한 항목의 일정만 모아 보기
-- 로그인(소셜 로그인)과 학교 설정
+- 로그인(소셜 로그인)과 학교 설정. 학교는 공고 화면의 "학교" 필터에서 고르고, 고른 학교가 내 학교 설정으로 저장된다
+- 학교 필터 안의 교내 기관 필터: `config/schools.json`의 `units` (산학협력단을 뺀 "~단" 기관). 주최 유형이 학교이고 주최 이름에 키워드가 있으면 그 기관
+- 공고 출처가 속한 학교는 목록에 학교 배지(`shortName`, 예: 영남대)로 보인다 (`lib/data.ts`가 빌드할 때 계산)
 - 중복 제거: 같은 프로그램은 하나로 합치고 원문 링크는 모두 보관
+- 반복 프로그램: 해마다·학기마다 다시 열리는 프로그램을 `seriesId`로 묶어(`src/series.ts`) 상세 화면에 "지난 공고"와 후기 댓글(Supabase `comments` 표)을 보여 준다
 
 ## 수집 처리 순서 (`src/collect.ts`)
 
@@ -54,8 +57,14 @@
    - AI 없이 수집한 결과(GitHub Actions)는 AI가 채운 주최·대상·태그를 덮어쓰지 않는다
 4. `src/dedupe.ts`가 기존 데이터와 합치고 중복을 제거한다 (원문 링크는 모두 보관)
    - 제목 유사도 80% 이상은 규칙으로 합치고, 45~80%인 출처 간 쌍은 AI에게 같은 프로그램인지 묻는다
-5. 마지막 일정이 90일 넘게 지난 항목은 지운다
-6. `npm run collect -- --refresh`는 저장된 게시물도 다시 읽고 다시 추출한다 (추출 규칙을 바꿨을 때)
+5. 마지막 일정이 90일 넘게 지난 항목은 지우지 않고 `data/archive.json`(보관함)으로 옮긴다
+6. `src/series.ts`가 목록과 보관함을 함께 보고 반복 프로그램을 묶는다
+   - 회차·연도·학기를 지운 "기본 제목"이 같거나 매우 비슷하면 묶고, 애매한 쌍은 AI에게 묻는다 (답은 `data/series-decisions.json`에 기억)
+   - 비슷한 때(60일 안)에 열리는 비슷한 이름은 다른 프로그램으로 본다
+7. `npm run collect -- --refresh`는 저장된 게시물도 다시 읽고 다시 추출한다 (추출 규칙을 바꿨을 때)
+
+과거 글 쌓기 (`src/backfill.ts`, 내 컴퓨터에서만): `npm run backfill -- --since 2020-01-01`로 목록 훑기 → 제목으로 1차 거르기(AI) → 본문 읽고 추출(AI),
+끝나면 `npm run backfill -- --save`로 목록·보관함에 합친다. 진행 상황은 `.cache/backfill/`에 있어 끊겨도 이어서 한다
 
 Codex CLI는 PATH에 없어도 `%LOCALAPPDATA%OpenAICodexin*codex.exe`에서 찾는다.
 AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜 연도, 신청/제출 기한 구분, 태그 남발, 주최 유형).
@@ -66,12 +75,12 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `config/tag-categories.json` — 태그 카테고리, 태그, 태그를 붙이는 키워드
 - `src/types.ts` — 공통 데이터 형식
 - `src/collectors/` — 사이트별 수집기 (`index.ts`에 등록)
-- `data/programs.json` — 수집 결과, `data/collect-log.json` — 마지막 수집 기록
+- `data/programs.json` — 수집 결과(최근 90일), `data/archive.json` — 지난 공고 보관함, `data/collect-log.json` — 마지막 수집 기록
 - `app/` — 화면. 하단 탭 바(`components/BottomNav.tsx`)로 홈 `/`, 공고 `/programs`, 캘린더 `/calendar`를 오간다. 상세는 `/programs/[id]`
-  - 목록 필터는 주소(`?tag=...&q=...&closed=1&sort=recent`)에 저장된다
+  - 목록 필터는 주소(`?school=yu&unit=...&tag=...&q=...&closed=1&sort=recent`)에 저장된다
   - 상세·캘린더에서 `.ics` 캘린더 파일로 내보낼 수 있다 (`lib/ics.ts`)
 - `components/` — 화면 부품, `lib/` — 필터 규칙·데이터 읽기·로그인 상태
-- `supabase/schema.sql` — 로그인 사용자 데이터 표
+- `supabase/schema.sql` — 로그인 사용자 데이터 표(학교 설정, 관심 표시, 후기 댓글)
 - `.github/workflows/collect.yml` — 하루 1회 자동 수집
 - `scripts/collect-local.ps1` — 내 컴퓨터에서 수집 후 GitHub에 올리기 (PowerShell 5.1 호환을 위해 BOM 포함 UTF-8로 저장)
 - `docs/설정-안내.md` — 연결 상태와 남은 설정 방법
@@ -85,7 +94,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 ## 명령어
 
 - `npm run dev` — 내 컴퓨터에서 화면 실행 (http://localhost:3000)
-- `npm run collect` — 수집 실행
+- `npm run collect` — 수집 실행, `npm run backfill` — 과거 글 쌓기 (위 설명 참고)
 - `npm test` — 자동 검사, `npm run typecheck` — 코드 오류 검사, `npm run build` — 배포용 빌드
 
 ## 디자인 규칙
