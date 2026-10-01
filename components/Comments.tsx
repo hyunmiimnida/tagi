@@ -28,6 +28,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
   const user = useUser();
   const [comments, setComments] = useState<Comment[] | null>(null);
   const [failed, setFailed] = useState(false);
+  const [missingTable, setMissingTable] = useState(false);
   const [draft, setDraft] = useState("");
   const [sending, setSending] = useState(false);
 
@@ -39,7 +40,8 @@ export function Comments({ seriesId }: { seriesId: string }) {
       .eq("series_id", seriesId)
       .order("created_at", { ascending: false })
       .limit(100);
-    if (error) setFailed(true);
+    // 댓글 표를 아직 만들지 않았으면(supabase/schema.sql 미실행) 준비 중으로 보여 준다
+    if (error) (error.code === "PGRST205" || error.code === "42P01" ? setMissingTable : setFailed)(true);
     else setComments(data as Comment[]);
   }, [seriesId]);
 
@@ -73,8 +75,8 @@ export function Comments({ seriesId }: { seriesId: string }) {
       <h2 className="card-title">후기·정보 나눔</h2>
       <p className="card-sub">지난 회차에 참여했다면 준비 팁이나 후기를 남겨 주세요. 다음 회차를 준비하는 학생에게 도움이 돼요.</p>
 
-      {!user.loginEnabled ? (
-        <p className="comment-empty">로그인 기능이 연결되면 댓글을 쓰고 볼 수 있어요.</p>
+      {!user.loginEnabled || missingTable ? (
+        <p className="comment-empty">댓글 기능을 준비하고 있어요. 곧 후기를 남길 수 있어요.</p>
       ) : (
         <>
           {user.signedIn ? (

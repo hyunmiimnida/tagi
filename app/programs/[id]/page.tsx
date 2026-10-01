@@ -103,7 +103,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
                 <li key={round.id}>
                   <a href={round.links[0].url} target="_blank" rel="noopener noreferrer">
                     <span className="history-year">{year}</span>
-                    <span>
+                    <span className="history-body">
                       <span className="history-title">{round.title}</span>
                       {period && <span className="history-period">{period}</span>}
                     </span>

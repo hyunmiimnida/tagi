@@ -1126,6 +1126,10 @@ main {
   font-weight: 700;
 }
 
+.history-body {
+  min-width: 0;
+}
+
 .history-title {
   display: block;
   overflow: hidden;
