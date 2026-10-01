@@ -1,7 +1,7 @@
 import * as cheerio from "cheerio";
 import { RobotsBlockedError } from "../fetch.ts";
 import { emptyProgram } from "../types.ts";
-import type { ArchivePost, CollectContext, CollectedItem, Collector, TableBoard } from "../types.ts";
+import type { Archiver, ArchivePost, CollectContext, CollectedItem, Collector, TableBoard } from "../types.ts";
 import { htmlToText } from "./news-board.ts";
 
 // 표 모양 게시판 수집기 (번호·제목·작성자·등록일이 한 줄인 학교 공지 게시판).
@@ -94,4 +94,23 @@ export const collectTableBoard: Collector = async (ctx) => {
     }
   }
   return [...items.values()];
+};
+
+// 과거 글: since 이후 게시물의 목록을 쪽마다 훑는다 (고정 공지는 쪽마다 반복되므로 번호로 거른다). 본문은 나중에 거른 글만 읽는다
+const ARCHIVE_MAX_PAGES = 300; // 끝없이 넘기지 않게 막는 안전장치
+export const archiveTableBoard: Archiver = {
+  async list(ctx, since) {
+    const seen = new Map<string, ArchivePost>();
+    for (let page = 1; page <= ARCHIVE_MAX_PAGES; page++) {
+      const posts = await listPage(ctx, page);
+      const fresh = posts.filter((post) => !seen.has(post.postId));
+      if (fresh.length === 0) break; // 마지막 쪽을 넘어가면 같은 글(고정 공지)만 나오거나 빈 쪽이 나온다
+      for (const post of fresh) if (!post.postedAt || post.postedAt >= since) seen.set(post.postId, post);
+      console.log(`  목록 ${page}쪽 확인 (${fresh.at(-1)?.postedAt ?? "?"})`);
+      // 고정 공지 때문에 날짜가 섞일 수 있어, 새로 나온 글이 모두 기준보다 오래되었을 때 멈춘다
+      if (fresh.every((post) => post.postedAt && post.postedAt < since)) break;
+    }
+    return [...seen.values()];
+  },
+  read: readPost,
 };

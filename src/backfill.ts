@@ -20,6 +20,7 @@ import type { ArchivePost, CollectContext, CollectedItem, Program, School, TagCa
 //   npm run backfill -- --since 2020-01-01   목록 훑기 → 제목으로 거르기 → 본문 읽고 추출
 //   npm run backfill -- --save               결과를 data/programs.json·archive.json에 합치기
 //   --rules를 붙이면 AI 없이 규칙으로만 추출한다 (Codex 한도가 없을 때)
+//   --school knu,kmu 를 붙이면 그 학교만 한다
 // 진행 상황은 .cache/backfill/에 둔다 (git에 올리지 않음). 원문 본문은 저장하지 않는다.
 
 const CACHE = new URL("../.cache/backfill/", import.meta.url);
@@ -36,6 +37,8 @@ const AI_PARALLEL = 5; // 동시에 돌리는 AI 작업 수
 
 const args = process.argv.slice(2);
 const rulesOnly = args.includes("--rules");
+// --school knu,kmu 처럼 고른 학교만 과거 글을 쌓는다 (없으면 모든 학교)
+const onlySchools = args.includes("--school") ? new Set(args[args.indexOf("--school") + 1]?.split(",") ?? []) : null;
 const since = args[args.indexOf("--since") + 1]?.match(/^\d{4}-\d{2}-\d{2}$/) ? args[args.indexOf("--since") + 1] : "2020-01-01";
 
 const schools = await readJson<School[]>(new URL("../config/schools.json", import.meta.url));
@@ -69,6 +72,7 @@ async function run() {
   const known = await knownUrls();
 
   for (const school of schools) {
+    if (onlySchools && !onlySchools.has(school.id)) continue;
     for (const source of school.sources) {
       const archiver = archivers[source.collector];
       if (!source.enabled || !archiver) continue;
