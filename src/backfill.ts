@@ -22,6 +22,7 @@ import type { ArchivePost, CollectContext, CollectedItem, Program, School, TagCa
 //   npm run backfill -- --save               결과를 data/programs.json·archive.json에 합치기
 //   --rules를 붙이면 AI 없이 규칙으로만 추출한다 (Codex 한도가 없을 때)
 //   --school knu,kmu 를 붙이면 그 학교만 한다
+//   --posters를 붙이면 본문이 그림뿐인 글의 포스터도 AI가 읽는다 (느려서 기본은 끔)
 // 진행 상황은 .cache/backfill/에 둔다 (git에 올리지 않음). 원문 본문은 저장하지 않는다.
 
 const CACHE = new URL("../.cache/backfill/", import.meta.url);
@@ -157,6 +158,7 @@ async function extract(
       const ai = await enrichWithAi(items, categories, {
         batchSize: items.length,
         maxText: NEWS_MAX_TEXT,
+        posters: args.includes("--posters"),
       });
       for (const item of items) {
         if (ai.notForStudents.has(item.program.id)) rejected.add(item.program.links[0].url);

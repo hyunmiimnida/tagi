@@ -379,7 +379,8 @@ ${titles.map((title, i) => `${i}. ${title}`).join("\n")}`;
 export async function enrichWithAi(
   items: CollectedItem[],
   categories: TagCategory[],
-  { batchSize = BATCH_SIZE, maxText = MAX_TEXT } = {},
+  // posters: 본문이 그림뿐인 글의 포스터를 읽을지 (오래된 글을 쌓는 backfill은 느려서 기본으로 끈다)
+  { batchSize = BATCH_SIZE, maxText = MAX_TEXT, posters = true } = {},
 ): Promise<{ done: number; notForStudents: Set<string> }> {
   const notForStudents = new Set<string>();
   const bin = findCodex();
@@ -394,10 +395,10 @@ export async function enrichWithAi(
   const worker = async () => {
     while (next < batches.length) {
       const batch = batches[next++];
-      const posters = batch.filter(needsPoster);
-      if (posters.length > 0) {
-        await Promise.all(posters.map((item) => readPoster(bin, item)));
-        console.log(`  포스터 읽기 ${posters.length}개`);
+      const withPoster = posters ? batch.filter(needsPoster) : [];
+      if (withPoster.length > 0) {
+        await Promise.all(withPoster.map((item) => readPoster(bin, item)));
+        console.log(`  포스터 읽기 ${withPoster.length}개`);
       }
       try {
         const answer = await askCodex(bin, buildPrompt(batch, categories, maxText));
