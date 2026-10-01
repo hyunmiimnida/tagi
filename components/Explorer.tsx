@@ -7,6 +7,7 @@ import {
   compareDeadline,
   isClosed,
   matchesEligibility,
+  matchesKeyword,
   matchesTags,
   matchesUnits,
   visibleForSchool,
@@ -130,13 +131,10 @@ export function Explorer({ programs, categories, schools }: Props) {
     [categories],
   );
 
-  const word = keyword.trim().toLowerCase();
+  const word = keyword.trim();
   // 마감 여부와 검색어를 먼저 거른다. 필터 옆 개수도 이 결과를 기준으로 센다
   const open = useMemo(
-    () =>
-      programs
-        .filter((p) => showClosed || !isClosed(p, today))
-        .filter((p) => !word || `${p.title} ${p.organizer ?? ""}`.toLowerCase().includes(word)),
+    () => programs.filter((p) => showClosed || !isClosed(p, today)).filter((p) => matchesKeyword(p, word)),
     [programs, showClosed, today, word],
   );
 

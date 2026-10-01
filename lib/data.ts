@@ -40,7 +40,7 @@ export function getPrograms(): ProgramView[] {
   return programs;
 }
 
-// 목록 화면용: 원문 링크는 상세 화면에서만 쓰므로 빼서 화면 데이터를 가볍게 한다.
+// 목록 화면용: 원문 링크는 상세 화면에서만 쓰므로 빼서 화면 데이터를 가볍게 한다 (한 줄 요약은 검색에 쓰므로 남긴다).
 // current = 빌드한 날 기준으로 아직 일정이 남은 공고만 (홈 화면용. 하루 여유를 둔다)
 export function getListPrograms({ current = false } = {}): ProgramView[] {
   const day = new Date(Date.now() - 86_400_000).toISOString().slice(0, 10);
@@ -48,7 +48,7 @@ export function getListPrograms({ current = false } = {}): ProgramView[] {
     !isClosed(p, day) || [p.recruitPeriod.end, p.activityPeriod.start, p.activityPeriod.end].some((d) => d && d >= day);
   return getPrograms()
     .filter((p) => !current || alive(p))
-    .map((p) => ({ ...p, links: [], sources: [], aliases: undefined, summary: undefined }));
+    .map((p) => ({ ...p, links: [], sources: [], aliases: undefined }));
 }
 
 export const getProgram = (id: string) => getPrograms().find((program) => program.id === id);

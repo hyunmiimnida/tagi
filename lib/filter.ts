@@ -43,6 +43,15 @@ export function unitsOf(program: Program, units: { name: string; keywords: strin
   return units.filter((unit) => unit.keywords.some((keyword) => name.includes(compact(keyword)))).map((unit) => unit.name);
 }
 
+// 검색: 제목·주최·한 줄 요약·태그에서 찾는다. 띄어 쓴 단어는 모두 들어 있어야 하고, 띄어쓰기는 무시한다
+// ("삼성 아카데미" → "삼성청년SW아카데미"도 찾는다)
+export function matchesKeyword(program: Pick<Program, "title" | "organizer" | "summary" | "tags">, keyword: string): boolean {
+  const words = keyword.toLowerCase().split(/\s+/).filter(Boolean);
+  if (words.length === 0) return true;
+  const text = [program.title, program.organizer, program.summary, ...program.tags].join(" ").replace(/\s+/g, "").toLowerCase();
+  return words.every((word) => text.includes(word));
+}
+
 // 학교를 고르면 그 학교 정보와 모든 학교 공통 정보가 보인다.
 // includeOpen이면 다른 학교에 올라왔어도 다른 학교 학생이 지원할 수 있는 공고(target.openTo)도 함께 보인다
 export function visibleForSchool(program: ProgramView, schoolId: string | null, includeOpen = true): boolean {

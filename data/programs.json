@@ -167,7 +167,8 @@
     "firstSeenAt": "2026-09-29T00:00:00.000Z",
     "aliases": [
       "yu-news-231865016"
-    ]
+    ],
+    "summary": "육군 학사장교 모집 안내를 듣고 진로 상담을 받아요."
   },
   {
     "id": "yu-career-2618",
@@ -216,7 +217,8 @@
     "firstSeenAt": "2026-09-30T18:31:28.907Z",
     "aliases": [
       "yu-news-231766434"
-    ]
+    ],
+    "summary": "미래자동차 분야 취업에 필요한 직무 역량을 키우는 교육을 받아요."
   },
   {
     "id": "yu-career-2622",
@@ -625,7 +627,8 @@
     "seriesId": "yu-career-2364",
     "aliases": [
       "yu-news-231667835"
-    ]
+    ],
+    "summary": "승무원 합격을 준비하는 이틀 집중 특강에 참여해요."
   },
   {
     "id": "yu-career-2614",
@@ -675,7 +678,8 @@
     "aliases": [
       "yu-news-231696066"
     ],
-    "seriesId": "yu-career-798"
+    "seriesId": "yu-career-798",
+    "summary": "자기소개서를 바탕으로 모의면접을 하고 개인별 피드백을 받아요."
   },
   {
     "id": "yu-career-2619",
@@ -927,7 +931,8 @@
     "seriesId": "yu-career-1985",
     "aliases": [
       "yu-news-230725079"
-    ]
+    ],
+    "summary": "KT 에이블스쿨 지역추천으로 서류전형 면제 혜택을 받아요."
   },
   {
     "id": "yu-career-2554",
@@ -973,7 +978,8 @@
     "firstSeenAt": "2026-09-30T18:31:29.736Z",
     "aliases": [
       "yu-news-230809446"
-    ]
+    ],
+    "summary": "GMP와 제약바이오 품질관리 기기분석 실무를 배워요."
   },
   {
     "id": "yu-career-2582",
@@ -1448,7 +1454,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:39.019Z",
     "firstSeenAt": "2026-09-30T00:00:00.000Z",
-    "seriesId": "yu-news-84242"
+    "seriesId": "yu-news-84242",
+    "summary": "집단상담에 참여하고 만족도 조사를 마치면 Y-마일리지를 받아요."
   },
   {
     "id": "yu-news-231879232",
@@ -1490,7 +1497,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:39.610Z",
-    "firstSeenAt": "2026-09-30T00:00:00.000Z"
+    "firstSeenAt": "2026-09-30T00:00:00.000Z",
+    "summary": "영남대학교 산학협력단 행정보조직 채용에 지원해요."
   },
   {
     "id": "yu-news-231879194",
@@ -1537,7 +1545,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:40.682Z",
     "firstSeenAt": "2026-09-30T00:00:00.000Z",
-    "seriesId": "yu-news-85916"
+    "seriesId": "yu-news-85916",
+    "summary": "외국인 유학생의 전공 공부와 학교생활을 돕고 멘토 활동비를 받아요."
   },
   {
     "id": "yu-news-231879185",
@@ -1590,7 +1599,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:41.567Z",
     "firstSeenAt": "2026-09-30T00:00:00.000Z",
-    "seriesId": "yu-news-227630403"
+    "seriesId": "yu-news-227630403",
+    "summary": "인문사회 융합 연구 성과를 학술포스터로 발표하고 팀 장학금을 받아요."
   },
   {
     "id": "yu-news-231879152",
@@ -1631,7 +1641,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:42.635Z",
-    "firstSeenAt": "2026-09-30T00:00:00.000Z"
+    "firstSeenAt": "2026-09-30T00:00:00.000Z",
+    "summary": "우리말과 글에 관한 논문을 발표하는 대회에 참가해요."
   },
   {
     "id": "yu-news-231879146",
@@ -1684,7 +1695,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:43.816Z",
-    "firstSeenAt": "2026-09-30T00:00:00.000Z"
+    "firstSeenAt": "2026-09-30T00:00:00.000Z",
+    "summary": "해외 세종학당에서 일하는 경험에 관한 특강을 듣고 도시락을 받아요."
   },
   {
     "id": "yu-news-231879139",
@@ -1731,7 +1743,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:44.759Z",
     "firstSeenAt": "2026-09-30T00:00:00.000Z",
-    "seriesId": "yu-news-85408"
+    "seriesId": "yu-news-85408",
+    "summary": "설계 프로젝트 제작 경험을 영어로 발표하고 수상하면 국제교류에 참여해요."
   },
   {
     "id": "yu-news-231879110",
@@ -1791,7 +1804,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:45.860Z",
     "firstSeenAt": "2026-09-30T00:00:00.000Z",
-    "seriesId": "yu-news-220049011"
+    "seriesId": "yu-news-220049011",
+    "summary": "AI 역량이나 알고리즘 실력을 겨루고 수상하면 장학금을 받아요."
   },
   {
     "id": "yu-news-231879109",
@@ -1833,7 +1847,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-09-30T18:10:47.073Z",
     "firstSeenAt": "2026-09-30T00:00:00.000Z",
-    "seriesId": "yu-news-226449686"
+    "seriesId": "yu-news-226449686",
+    "summary": "진료비와 약값, 예방접종비 지원을 위한 증빙서류를 제출해요."
   },
   {
     "id": "yu-news-231865046",
@@ -1878,7 +1893,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:46.655Z",
     "firstSeenAt": "2026-09-29T00:00:00.000Z",
-    "seriesId": "yu-news-227019168"
+    "seriesId": "yu-news-227019168",
+    "summary": "창업 아이디어를 시제품으로 만들고 사업화에 필요한 비용을 지원받아요."
   },
   {
     "id": "yu-news-231865040",
@@ -1919,7 +1935,8 @@
     "postedAt": "2026-09-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:47.634Z",
-    "firstSeenAt": "2026-09-29T00:00:00.000Z"
+    "firstSeenAt": "2026-09-29T00:00:00.000Z",
+    "summary": "MRC 겨울 인턴십에 참여해요."
   },
   {
     "id": "yu-news-231865028",
@@ -1961,7 +1978,8 @@
     "postedAt": "2026-09-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:48.791Z",
-    "firstSeenAt": "2026-09-29T00:00:00.000Z"
+    "firstSeenAt": "2026-09-29T00:00:00.000Z",
+    "summary": "AI 실무 교육과 프로젝트에 참여하고 우수자는 기업 탐방 기회를 받아요."
   },
   {
     "id": "yu-news-231865006",
@@ -2008,7 +2026,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:50.879Z",
     "firstSeenAt": "2026-09-29T00:00:00.000Z",
-    "seriesId": "yu-news-84001"
+    "seriesId": "yu-news-84001",
+    "summary": "일본이나 동남아 대학에서 한두 학기 교환학생으로 공부해요."
   },
   {
     "id": "yu-news-231865002",
@@ -2054,7 +2073,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:51.661Z",
     "firstSeenAt": "2026-09-29T00:00:00.000Z",
-    "seriesId": "yu-news-7494920"
+    "seriesId": "yu-news-7494920",
+    "summary": "생명존중과 자살예방 교육을 듣고 수료 조건을 충족하면 마일리지를 받아요."
   },
   {
     "id": "yu-news-231850901",
@@ -2098,7 +2118,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:55.804Z",
     "firstSeenAt": "2026-09-28T00:00:00.000Z",
-    "seriesId": "yu-news-7606481"
+    "seriesId": "yu-news-7606481",
+    "summary": "마음 고민에 맞는 정신건강 특강을 듣고 마일리지와 이수증을 받아요"
   },
   {
     "id": "yu-news-231850878",
@@ -2144,7 +2165,8 @@
     "postedAt": "2026-09-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:56.692Z",
-    "firstSeenAt": "2026-09-28T00:00:00.000Z"
+    "firstSeenAt": "2026-09-28T00:00:00.000Z",
+    "summary": "공주의 문화 현장을 탐방하며 로컬콘텐츠와 AI를 접목하는 캠프에 참여해요"
   },
   {
     "id": "yu-news-231850866",
@@ -2186,7 +2208,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-09-30T18:11:02.115Z",
     "firstSeenAt": "2026-09-28T00:00:00.000Z",
-    "seriesId": "yu-news-226449686"
+    "seriesId": "yu-news-226449686",
+    "summary": "진료비와 약값, 예방접종비 지원을 위한 서류를 제출해요"
   },
   {
     "id": "yu-news-231850864",
@@ -2229,7 +2252,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:58.572Z",
     "firstSeenAt": "2026-09-28T00:00:00.000Z",
-    "seriesId": "yu-news-229979358"
+    "seriesId": "yu-news-229979358",
+    "summary": "컴퓨터활용능력 1·2급 자격증 취득을 위한 교육을 무료로 받아요"
   },
   {
     "id": "yu-news-231822733",
@@ -2274,7 +2298,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:00.638Z",
     "firstSeenAt": "2026-09-26T00:00:00.000Z",
-    "seriesId": "yu-news-226856596"
+    "seriesId": "yu-news-226856596",
+    "summary": "핀란드 스타트업 행사와 창업기관을 방문하고 창업 관계자들과 교류해요"
   },
   {
     "id": "yu-news-231780534",
@@ -2318,7 +2343,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:02.459Z",
     "firstSeenAt": "2026-09-23T00:00:00.000Z",
-    "seriesId": "yu-news-230176279"
+    "seriesId": "yu-news-230176279",
+    "summary": "온라인으로 시험불안 완화 기법을 연습하고 나만의 마음관리 카드를 만들어요"
   },
   {
     "id": "yu-news-231780526",
@@ -2364,7 +2390,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:03.307Z",
     "firstSeenAt": "2026-09-23T00:00:00.000Z",
-    "seriesId": "yu-news-7494920"
+    "seriesId": "yu-news-7494920",
+    "summary": "생명존중과 자살예방 교육을 듣고 수료 요건을 채우면 마일리지와 이수증을 받아요"
   },
   {
     "id": "yu-career-2495",
@@ -2453,7 +2480,8 @@
     "firstSeenAt": "2026-10-01T02:16:50.262Z",
     "aliases": [
       "yu-col-sci-231090315"
-    ]
+    ],
+    "summary": "반도체 직무교육과 취업 상담을 받고 자소서·면접 준비를 해요."
   },
   {
     "id": "yu-career-2521",
@@ -2746,7 +2774,8 @@
     "seriesId": "yu-career-895",
     "aliases": [
       "yu-news-231470328"
-    ]
+    ],
+    "summary": "중소·중견기업 취업이나 창업을 조건으로 등록금 전액과 학기당 200만 원을 지원받아요"
   },
   {
     "id": "yu-career-2584",
@@ -2917,7 +2946,8 @@
     "seriesId": "yu-career-605",
     "aliases": [
       "yu-news-231413811"
-    ]
+    ],
+    "summary": "국민연금공단 아카데미에서 취업 준비와 미래 설계를 배워요"
   },
   {
     "id": "yu-career-2593",
@@ -3207,7 +3237,8 @@
     "firstSeenAt": "2026-10-01T02:16:50.268Z",
     "aliases": [
       "yu-news-231315409"
-    ]
+    ],
+    "summary": "반도체 엔지니어 취업 교육을 받고 수료하면 소부장 기업 채용과 연계될 수 있어요"
   },
   {
     "id": "yu-career-2480",
@@ -3337,7 +3368,8 @@
     "firstSeenAt": "2026-10-01T02:16:51.184Z",
     "aliases": [
       "yu-news-230893757"
-    ]
+    ],
+    "summary": "2학점 교과목에서 반도체 산업과 직무를 배우고 입사지원서와 면접을 준비해요"
   },
   {
     "id": "yu-career-2358",
@@ -3504,7 +3536,8 @@
     "firstSeenAt": "2026-10-01T02:16:51.185Z",
     "aliases": [
       "yu-news-230767181"
-    ]
+    ],
+    "summary": null
   },
   {
     "id": "yu-career-2583",
@@ -3554,7 +3587,8 @@
     "firstSeenAt": "2026-10-01T02:16:51.185Z",
     "aliases": [
       "yu-news-231090345"
-    ]
+    ],
+    "summary": "반도체 현직자의 특강과 멘토링, 팀 프로젝트로 소부장 기업 취업을 준비해요"
   },
   {
     "id": "yu-career-2530",
@@ -3603,7 +3637,8 @@
     "seriesId": "yu-career-2394",
     "aliases": [
       "yu-news-230584320"
-    ]
+    ],
+    "summary": "기업과 함께 ESG 보고서를 작성하고 취업용 실무 포트폴리오를 준비해요"
   },
   {
     "id": "yu-career-2591",
@@ -3651,7 +3686,8 @@
     "firstSeenAt": "2026-10-01T02:16:51.186Z",
     "aliases": [
       "yu-news-231160634"
-    ]
+    ],
+    "summary": "반도체 소부장 기업의 현장면접에 참여해 취업 기회를 얻어요"
   },
   {
     "id": "yu-career-2586",
@@ -3820,7 +3856,8 @@
     "seriesId": "yu-career-1979",
     "aliases": [
       "yu-news-230696946"
-    ]
+    ],
+    "summary": "한국수력원자력과 함께하는 에너지리더캠프에 참여해요"
   },
   {
     "id": "yu-career-2550",
@@ -3875,7 +3912,8 @@
     "aliases": [
       "yu-news-231090343",
       "yu-news-230767159"
-    ]
+    ],
+    "summary": "LIG D&A와 함께하는 무료 숙박형 캠프에서 방위산업 취업을 준비해요"
   },
   {
     "id": "yu-career-2529",
@@ -3962,7 +4000,8 @@
     "firstSeenAt": "2026-10-01T02:16:51.187Z",
     "aliases": [
       "yu-news-230865554"
-    ]
+    ],
+    "summary": "SQL 기초와 데이터 모델링, 문제풀이를 배우며 SQLD 자격증을 준비해요"
   },
   {
     "id": "yu-career-2541",
@@ -4050,7 +4089,8 @@
     "firstSeenAt": "2026-10-01T02:16:51.187Z",
     "aliases": [
       "yu-news-230865580"
-    ]
+    ],
+    "summary": "문제해결력과 소통 능력을 키우고 경험을 자기소개서와 면접에 활용하는 법을 배워요"
   },
   {
     "id": "yu-career-2525",
@@ -4099,7 +4139,8 @@
     "seriesId": "yu-career-1326",
     "aliases": [
       "yu-news-230710986"
-    ]
+    ],
+    "summary": "취업스터디에서 동료들과 자기소개서 첨삭, 모의면접, 인적성 공부를 해요"
   },
   {
     "id": "yu-career-2549",
@@ -4154,7 +4195,8 @@
     "aliases": [
       "yu-news-230907842",
       "yu-news-230725095"
-    ]
+    ],
+    "summary": "에어제타 채용설명회에서 항공물류 분야 정보를 듣고 일대일 상담에 참여해요"
   },
   {
     "id": "yu-career-2548",
@@ -4406,7 +4448,8 @@
     "seriesId": "yu-career-798",
     "aliases": [
       "yu-news-230879626"
-    ]
+    ],
+    "summary": "대기업 인사팀 출신 면접관과 모의면접을 하고 맞춤 컨설팅을 받아요"
   },
   {
     "id": "yu-career-2581",
@@ -4456,7 +4499,8 @@
     "firstSeenAt": "2026-10-01T02:16:51.189Z",
     "aliases": [
       "yu-news-230865589"
-    ]
+    ],
+    "summary": "동산의료원 채용과 연계된 설명회와 상담회에 참여해요"
   },
   {
     "id": "yu-career-2552",
@@ -4506,7 +4550,8 @@
     "firstSeenAt": "2026-10-01T02:16:51.189Z",
     "aliases": [
       "yu-news-230865555"
-    ]
+    ],
+    "summary": "한국수력원자력 채용설명회에서 채용 정보를 듣고 상담에 참여해요"
   },
   {
     "id": "yu-career-2545",
@@ -4560,7 +4605,8 @@
     "aliases": [
       "yu-news-230711014",
       "yu-news-230781281"
-    ]
+    ],
+    "summary": "반도체 기업 현직 선배에게 직무 실무와 자기소개서·면접 준비 팁을 배워요"
   },
   {
     "id": "yu-career-2539",
@@ -4851,7 +4897,8 @@
     "seriesId": "yu-career-672",
     "aliases": [
       "yu-news-230401502"
-    ]
+    ],
+    "summary": "온라인 특강으로 대기업 GSAT와 공기업 NCS를 집중 학습하고 교재를 무료로 받아요"
   },
   {
     "id": "yu-career-2522",
@@ -4941,7 +4988,8 @@
     "seriesId": "yu-career-798",
     "aliases": [
       "yu-news-230514065"
-    ]
+    ],
+    "summary": "자기소개서 기반 모의면접을 하고 대기업 인사팀 출신 면접관의 개별 피드백을 받아요"
   },
   {
     "id": "yu-news-231893326",
@@ -4997,7 +5045,8 @@
     "postedAt": "2026-10-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:35.947Z",
-    "firstSeenAt": "2026-10-01T03:29:35.947Z"
+    "firstSeenAt": "2026-10-01T03:29:35.947Z",
+    "summary": "팀원들과 n8n으로 업무를 자동화하는 AI 워크플로를 기획하고 구현해요"
   },
   {
     "id": "yu-news-231893316",
@@ -5043,7 +5092,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:38.126Z",
     "firstSeenAt": "2026-10-01T03:29:38.126Z",
-    "seriesId": "yu-news-4060569"
+    "seriesId": "yu-news-4060569",
+    "summary": "해외 교류 활동에서 겪은 성장과 도전 경험을 수기로 써서 공모전에 참여해요"
   },
   {
     "id": "yu-news-231780470",
@@ -5085,7 +5135,8 @@
     "postedAt": "2026-09-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:08.593Z",
-    "firstSeenAt": "2026-10-01T03:30:08.593Z"
+    "firstSeenAt": "2026-10-01T03:30:08.593Z",
+    "summary": "경산시 자원봉사센터의 추석이음 기부 캠페인에 참여해요"
   },
   {
     "id": "yu-news-231780464",
@@ -5129,7 +5180,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:10.933Z",
     "firstSeenAt": "2026-10-01T03:30:10.933Z",
-    "seriesId": "yu-news-221807521"
+    "seriesId": "yu-news-221807521",
+    "summary": "전공과 지속가능발전목표를 연결한 사회공헌 아이디어를 제안해요"
   },
   {
     "id": "yu-news-231780460",
@@ -5186,7 +5238,8 @@
     "seriesId": "yu-news-226964756",
     "aliases": [
       "yu-col-gl-231611572"
-    ]
+    ],
+    "summary": "팀을 꾸려 세계 문화를 공유하는 경진대회에 참여해요"
   },
   {
     "id": "yu-news-231766388",
@@ -5228,7 +5281,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:16.858Z",
     "firstSeenAt": "2026-10-01T03:30:16.858Z",
-    "seriesId": "yu-news-228923738"
+    "seriesId": "yu-news-228923738",
+    "summary": "스케일링과 신체·건강 측정 등 네 가지 체험을 하고 5천원 상당 상품권을 받아요"
   },
   {
     "id": "yu-news-231752254",
@@ -5269,7 +5323,8 @@
     "postedAt": "2026-09-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:20.888Z",
-    "firstSeenAt": "2026-10-01T03:30:20.888Z"
+    "firstSeenAt": "2026-10-01T03:30:20.888Z",
+    "summary": "좋아하는 순우리말로 사행시를 지어 상장과 상품권을 주는 공모전에 참여해요"
   },
   {
     "id": "yu-news-231752240",
@@ -5310,7 +5365,8 @@
     "postedAt": "2026-09-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:22.885Z",
-    "firstSeenAt": "2026-10-01T03:30:22.885Z"
+    "firstSeenAt": "2026-10-01T03:30:22.885Z",
+    "summary": "AI 기술을 활용한 캡스톤디자인 작품으로 상금이 있는 경진대회에 참여해요"
   },
   {
     "id": "yu-news-231724198",
@@ -5351,7 +5407,8 @@
     "postedAt": "2026-09-19",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:13.169Z",
-    "firstSeenAt": "2026-10-01T03:33:13.169Z"
+    "firstSeenAt": "2026-10-01T03:33:13.169Z",
+    "summary": "학부 장학생 선발에 지원해 항공권·등록금·학업장려금 등을 지원받을 기회에 도전해요"
   },
   {
     "id": "yu-news-231710171",
@@ -5394,7 +5451,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:16.205Z",
     "firstSeenAt": "2026-10-01T03:33:16.205Z",
-    "seriesId": "yu-news-86825"
+    "seriesId": "yu-news-86825",
+    "summary": "종합설계 작품을 발표하고 후속 경진대회에 나갈 영남대학교 대표팀 선발에 도전해요"
   },
   {
     "id": "yu-news-231710161",
@@ -5437,7 +5495,8 @@
     "postedAt": "2026-09-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:16.754Z",
-    "firstSeenAt": "2026-10-01T03:33:16.754Z"
+    "firstSeenAt": "2026-10-01T03:33:16.754Z",
+    "summary": "온라인 CST 강점 심리검사를 받고 결과를 이해하는 해석 특강을 수강해요"
   },
   {
     "id": "yu-news-231710151",
@@ -5483,7 +5542,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:17.894Z",
     "firstSeenAt": "2026-10-01T03:33:17.894Z",
-    "seriesId": "yu-news-84386"
+    "seriesId": "yu-news-84386",
+    "summary": "다문화·탈북가정 학생의 학습과 정서를 돕는 멘토로 활동하고 시간당 장학금을 받아요"
   },
   {
     "id": "yu-news-231710149",
@@ -5527,7 +5587,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:18.850Z",
     "firstSeenAt": "2026-10-01T03:33:18.850Z",
-    "seriesId": "yu-news-229430844"
+    "seriesId": "yu-news-229430844",
+    "summary": "일대일 전화·화상 수업이나 AI로 외국어를 배우고 수료 요건 충족 시 수강료 절반을 지원받아요"
   },
   {
     "id": "yu-news-231710140",
@@ -5573,7 +5634,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:19.884Z",
     "firstSeenAt": "2026-10-01T03:33:19.884Z",
-    "seriesId": "yu-news-4060569"
+    "seriesId": "yu-news-4060569",
+    "summary": "해외 교류에서 겪은 성장과 도전 경험을 수기로 써서 공모전에 참여해요"
   },
   {
     "id": "yu-news-231696106",
@@ -5614,7 +5676,8 @@
     "postedAt": "2026-09-17",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:20.785Z",
-    "firstSeenAt": "2026-10-01T03:33:20.785Z"
+    "firstSeenAt": "2026-10-01T03:33:20.785Z",
+    "summary": "산업·연구보안을 주제로 한 공모전에 참여해요"
   },
   {
     "id": "yu-news-231696096",
@@ -5656,7 +5719,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:21.827Z",
     "firstSeenAt": "2026-10-01T03:33:21.827Z",
-    "seriesId": "yu-news-84763"
+    "seriesId": "yu-news-84763",
+    "summary": "AI 시대 개인정보 보호 경험과 아이디어를 그림·영상·AI 콘텐츠로 표현해요"
   },
   {
     "id": "yu-news-231696044",
@@ -5711,7 +5775,8 @@
     "aliases": [
       "yu-col-arts-231512771"
     ],
-    "seriesId": "yu-news-227372522"
+    "seriesId": "yu-news-227372522",
+    "summary": "강연과 학과 박람회를 통해 다양한 전공을 살펴보고 학업 방향을 설계해요"
   },
   {
     "id": "yu-news-231696043",
@@ -5770,7 +5835,8 @@
     "aliases": [
       "yu-news-231780524",
       "yu-news-231766395"
-    ]
+    ],
+    "summary": "글로벌 문화 교류와 이해를 주제로 에세이를 작성해 공모전에 참여해요"
   },
   {
     "id": "yu-news-231682013",
@@ -5816,7 +5882,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:26.339Z",
     "firstSeenAt": "2026-10-01T03:33:26.339Z",
-    "seriesId": "yu-career-2503"
+    "seriesId": "yu-career-2503",
+    "summary": "반도체 실무교육을 받고 수료 후 기업 잡매칭과 취업 연계를 지원받아요"
   },
   {
     "id": "yu-news-231682007",
@@ -5858,7 +5925,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:27.056Z",
     "firstSeenAt": "2026-10-01T03:33:27.056Z",
-    "seriesId": "yu-news-4119106"
+    "seriesId": "yu-news-4119106",
+    "summary": "정부초청 학부 장학생에 지원해 한국 대학에서 공부할 기회를 얻어요"
   },
   {
     "id": "yu-news-231681957",
@@ -5905,7 +5973,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:31.113Z",
     "firstSeenAt": "2026-10-01T03:33:31.113Z",
-    "seriesId": "yu-news-228420112"
+    "seriesId": "yu-news-228420112",
+    "summary": "서한오토 USA에서 미국 해외인턴으로 근무할 기회에 지원해요"
   },
   {
     "id": "yu-news-231667866",
@@ -5971,7 +6040,8 @@
     "aliases": [
       "yu-news-231710174",
       "yu-rise-231766401"
-    ]
+    ],
+    "summary": "SL 재직자와 차량용 조명 설계 교육·실습에 무료로 참여하고 수료증을 받아요"
   },
   {
     "id": "yu-news-231667847",
@@ -6025,7 +6095,8 @@
     "firstSeenAt": "2026-10-01T03:33:32.943Z",
     "aliases": [
       "yu-news-231766367"
-    ]
+    ],
+    "summary": "내·외국인 학생이 함께 지역사회에서 봉사하며 문화를 교류해요"
   },
   {
     "id": "yu-news-231667846",
@@ -6066,7 +6137,8 @@
     "postedAt": "2026-09-15",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:33.814Z",
-    "firstSeenAt": "2026-10-01T03:33:33.814Z"
+    "firstSeenAt": "2026-10-01T03:33:33.814Z",
+    "summary": "한국어 말하기 대회에 참가해 말하기 실력을 선보여요"
   },
   {
     "id": "yu-news-231667834",
@@ -6113,7 +6185,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:38.824Z",
     "firstSeenAt": "2026-10-01T03:33:38.824Z",
-    "seriesId": "yu-news-9405744"
+    "seriesId": "yu-news-9405744",
+    "summary": "독도연구소의 연구와 관리를 주 12시간 보조하고 월 50만원을 받아요"
   },
   {
     "id": "yu-news-231667827",
@@ -6160,7 +6233,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:39.942Z",
     "firstSeenAt": "2026-10-01T03:33:39.942Z",
-    "seriesId": "yu-news-227372522"
+    "seriesId": "yu-news-227372522",
+    "summary": "강연과 학과 박람회를 통해 다양한 전공을 살펴보고 학업 방향을 설계해요"
   },
   {
     "id": "yu-news-231667809",
@@ -6202,7 +6276,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:40.806Z",
     "firstSeenAt": "2026-10-01T03:33:40.806Z",
-    "seriesId": "yu-news-7519703"
+    "seriesId": "yu-news-7519703",
+    "summary": "대학도서관 이용 경험에 대한 만족도 조사에 참여해요"
   },
   {
     "id": "yu-news-231653766",
@@ -6254,7 +6329,8 @@
     "seriesId": "yu-news-227019168",
     "aliases": [
       "yu-rise-231766399"
-    ]
+    ],
+    "summary": "창업 아이디어를 제품으로 만들기 위한 제작·디자인·시험 비용 등을 지원받아요"
   },
   {
     "id": "yu-news-231653761",
@@ -6299,7 +6375,8 @@
     "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:44.904Z",
-    "firstSeenAt": "2026-10-01T03:33:44.904Z"
+    "firstSeenAt": "2026-10-01T03:33:44.904Z",
+    "summary": "집단 인터뷰에 참여하고 Y마일리지와 공인출석계를 받아요"
   },
   {
     "id": "yu-news-231653758",
@@ -6345,7 +6422,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:45.862Z",
     "firstSeenAt": "2026-10-01T03:33:45.862Z",
-    "seriesId": "yu-news-85397"
+    "seriesId": "yu-news-85397",
+    "summary": "국제학생증 인증비를 전액 지원받고 전 세계 학생 할인 혜택을 이용해요"
   },
   {
     "id": "yu-news-231653747",
@@ -6391,7 +6469,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:46.569Z",
     "firstSeenAt": "2026-10-01T03:33:46.569Z",
-    "seriesId": "yu-news-226449725"
+    "seriesId": "yu-news-226449725",
+    "summary": "상담 교육을 받은 또래와 정기적으로 만나 대학 생활의 고민을 나눠요"
   },
   {
     "id": "yu-news-231653738",
@@ -6446,7 +6525,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:47.837Z",
     "firstSeenAt": "2026-10-01T03:33:47.837Z",
-    "seriesId": "yu-news-224028827"
+    "seriesId": "yu-news-224028827",
+    "summary": "멘토·멘티가 팀을 이뤄 외국인 학생의 한국어와 전공 학습을 함께해요"
   },
   {
     "id": "yu-news-231653713",
@@ -6490,7 +6570,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:49.373Z",
     "firstSeenAt": "2026-10-01T03:33:49.373Z",
-    "seriesId": "yu-career-2455"
+    "seriesId": "yu-career-2455",
+    "summary": "한미그룹 채용설명회에서 채용 정보와 다양한 직무를 알아봐요"
   },
   {
     "id": "yu-news-231653682",
@@ -6537,7 +6618,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:52.469Z",
     "firstSeenAt": "2026-10-01T03:33:52.469Z",
-    "seriesId": "yu-news-84001"
+    "seriesId": "yu-news-84001",
+    "summary": "중화권 대학에서 한두 학기 동안 교환학생으로 공부해요."
   },
   {
     "id": "yu-news-231653660",
@@ -6582,7 +6664,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:55.310Z",
     "firstSeenAt": "2026-10-01T03:33:55.310Z",
-    "seriesId": "yu-news-10261173"
+    "seriesId": "yu-news-10261173",
+    "summary": "성희롱·성폭력·가정폭력·성매매 예방교육을 온라인으로 이수해요."
   },
   {
     "id": "yu-news-231653655",
@@ -6624,7 +6707,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:56.130Z",
     "firstSeenAt": "2026-10-01T03:33:56.130Z",
-    "seriesId": "yu-news-9986693"
+    "seriesId": "yu-news-9986693",
+    "summary": null
   },
   {
     "id": "yu-news-231611579",
@@ -6664,7 +6748,8 @@
     "postedAt": "2026-09-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:57.431Z",
-    "firstSeenAt": "2026-10-01T03:33:57.431Z"
+    "firstSeenAt": "2026-10-01T03:33:57.431Z",
+    "summary": "창업 홍보·체험 행사에서 선착순으로 커피와 간식을 받고 신청 선물도 받아요."
   },
   {
     "id": "yu-news-231611564",
@@ -6707,7 +6792,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:59.984Z",
     "firstSeenAt": "2026-10-01T03:33:59.984Z",
-    "seriesId": "yu-news-227209729"
+    "seriesId": "yu-news-227209729",
+    "summary": null
   },
   {
     "id": "yu-news-231611562",
@@ -6751,7 +6837,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:00.865Z",
     "firstSeenAt": "2026-10-01T03:34:00.865Z",
-    "seriesId": "yu-news-7606481"
+    "seriesId": "yu-news-7606481",
+    "summary": "고민에 맞는 정신건강 특강을 듣고 이수 시 마일리지와 이수증을 받아요."
   },
   {
     "id": "yu-news-231611527",
@@ -6797,7 +6884,8 @@
     "postedAt": "2026-09-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:02.378Z",
-    "firstSeenAt": "2026-10-01T03:34:02.378Z"
+    "firstSeenAt": "2026-10-01T03:34:02.378Z",
+    "summary": "삼광의 미국 해외인턴에 참여해 직무 경험을 쌓아요."
   },
   {
     "id": "yu-news-231611519",
@@ -6836,7 +6924,8 @@
     "postedAt": "2026-09-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:04.190Z",
-    "firstSeenAt": "2026-10-01T03:34:04.190Z"
+    "firstSeenAt": "2026-10-01T03:34:04.190Z",
+    "summary": "독서클럽 활동을 위해 북카페를 무료로 빌려 이용해요."
   },
   {
     "id": "yu-news-231611518",
@@ -6880,7 +6969,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:05.161Z",
     "firstSeenAt": "2026-10-01T03:34:05.161Z",
-    "seriesId": "yu-news-7581628"
+    "seriesId": "yu-news-7581628",
+    "summary": "해외 교환학생 파견을 위한 장학금 지원을 받아요."
   },
   {
     "id": "yu-news-231597413",
@@ -6932,7 +7022,8 @@
     "firstSeenAt": "2026-10-01T03:34:08.927Z",
     "aliases": [
       "yu-col-sci-231597437"
-    ]
+    ],
+    "summary": "클로드 코드 설치 과정과 사용에 필요한 기초 개념을 특강에서 배워요."
   },
   {
     "id": "yu-news-231597402",
@@ -6975,7 +7066,8 @@
     "postedAt": "2026-09-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:09.998Z",
-    "firstSeenAt": "2026-10-01T03:34:09.998Z"
+    "firstSeenAt": "2026-10-01T03:34:09.998Z",
+    "summary": "스트레스 측정과 마음 안전키트 만들기에 참여하고 생명존중교육을 들어요."
   },
   {
     "id": "yu-news-231583350",
@@ -7016,7 +7108,8 @@
     "postedAt": "2026-09-09",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:12.534Z",
-    "firstSeenAt": "2026-10-01T03:34:12.534Z"
+    "firstSeenAt": "2026-10-01T03:34:12.534Z",
+    "summary": "창업 홍보·체험 행사에 참여하고 선착순 커피와 조건별 참여 선물을 받아요."
   },
   {
     "id": "yu-news-231569161",
@@ -7059,7 +7152,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:18.357Z",
     "firstSeenAt": "2026-10-01T03:34:18.357Z",
-    "seriesId": "yu-news-86093"
+    "seriesId": "yu-news-86093",
+    "summary": "월드프렌즈코리아 청년봉사단 단원으로 봉사활동에 참여해요."
   },
   {
     "id": "yu-news-231569059",
@@ -7104,7 +7198,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:20.518Z",
     "firstSeenAt": "2026-10-01T03:34:20.518Z",
-    "seriesId": "yu-news-1655882"
+    "seriesId": "yu-news-1655882",
+    "summary": "선착순으로 모의 TOEIC·TOEIC Speaking·OPIc 시험을 무료로 봐요."
   },
   {
     "id": "yu-news-231554967",
@@ -7150,7 +7245,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:23.664Z",
     "firstSeenAt": "2026-10-01T03:34:23.664Z",
-    "seriesId": "yu-news-220166296"
+    "seriesId": "yu-news-220166296",
+    "summary": "발레오모빌리티코리아 공급망 부서에서 현장실습을 하고 식사·교통 지원을 받아요."
   },
   {
     "id": "yu-news-231554931",
@@ -7193,7 +7289,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:24.381Z",
     "firstSeenAt": "2026-10-01T03:34:24.381Z",
-    "seriesId": "yu-news-221364617"
+    "seriesId": "yu-news-221364617",
+    "summary": "YU사회공헌단 학생봉사대와 바로ON봉사대 대원으로 봉사활동에 참여해요."
   },
   {
     "id": "yu-news-231554916",
@@ -7247,7 +7344,8 @@
     "aliases": [
       "yu-news-231667786",
       "yu-news-231611507"
-    ]
+    ],
+    "summary": null
   },
   {
     "id": "yu-news-231554914",
@@ -7296,7 +7394,8 @@
     "seriesId": "yu-news-84057",
     "aliases": [
       "yu-news-231752246"
-    ]
+    ],
+    "summary": null
   },
   {
     "id": "yu-news-231526872",
@@ -7345,7 +7444,8 @@
     "firstSeenAt": "2026-10-01T03:34:29.621Z",
     "aliases": [
       "yu-news-231780497"
-    ]
+    ],
+    "summary": "팀을 이뤄 Physical AI Challenge 대회에 참가해요."
   },
   {
     "id": "yu-news-231512817",
@@ -7392,7 +7492,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:32.260Z",
     "firstSeenAt": "2026-10-01T03:34:32.260Z",
-    "seriesId": "yu-news-84001"
+    "seriesId": "yu-news-84001",
+    "summary": "유럽·미주·홍콩 대학에서 한두 학기 동안 교환학생으로 공부해요."
   },
   {
     "id": "yu-news-231512801",
@@ -7435,7 +7536,8 @@
     "postedAt": "2026-09-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:33.194Z",
-    "firstSeenAt": "2026-10-01T03:34:33.194Z"
+    "firstSeenAt": "2026-10-01T03:34:33.194Z",
+    "summary": "향수 만들기, 요가, 미술치료 등 집단상담과 마음 관리 특강에 참여해요"
   },
   {
     "id": "yu-news-231512796",
@@ -7488,7 +7590,8 @@
     "seriesId": "yu-news-228224580",
     "aliases": [
       "yu-news-231583228"
-    ]
+    ],
+    "summary": "구영테크 경영지원팀에서 현장실습을 하며 실무를 경험해요"
   },
   {
     "id": "yu-news-231512795",
@@ -7541,7 +7644,8 @@
     "seriesId": "yu-news-221781422",
     "aliases": [
       "yu-news-231850915"
-    ]
+    ],
+    "summary": "친구의 고민을 듣고 돕는 또래상담사가 되기 위한 상담 기초와 대화 기술을 배워요"
   },
   {
     "id": "yu-news-231512788",
@@ -7594,7 +7698,8 @@
     "seriesId": "yu-news-221534048",
     "aliases": [
       "yu-news-231653764"
-    ]
+    ],
+    "summary": "학생홍보대사로 대학을 알리는 활동을 하고 학기별 장학금을 받아요"
   },
   {
     "id": "yu-news-231512786",
@@ -7636,7 +7741,8 @@
     "postedAt": "2026-09-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:42.784Z",
-    "firstSeenAt": "2026-10-01T03:34:42.784Z"
+    "firstSeenAt": "2026-10-01T03:34:42.784Z",
+    "summary": "창업에 도전하며 멘토링과 사업화 지원을 받고 1라운드 통과 시 활동자금도 받아요"
   },
   {
     "id": "yu-news-231512769",
@@ -7682,7 +7788,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:43.844Z",
     "firstSeenAt": "2026-10-01T03:34:43.844Z",
-    "seriesId": "yu-news-5993840"
+    "seriesId": "yu-news-5993840",
+    "summary": "교수·선후배와 팀을 꾸려 교류하고 진로와 취업을 준비하며 활동비를 지원받아요"
   },
   {
     "id": "yu-news-231498687",
@@ -7728,7 +7835,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:44.546Z",
     "firstSeenAt": "2026-10-01T03:34:44.546Z",
-    "seriesId": "yu-news-227440327"
+    "seriesId": "yu-news-227440327",
+    "summary": "자신에게 맞는 전공을 찾는 프로그램에 참여해요"
   },
   {
     "id": "yu-news-231498673",
@@ -7770,7 +7878,8 @@
     "postedAt": "2026-09-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:45.429Z",
-    "firstSeenAt": "2026-10-01T03:34:45.429Z"
+    "firstSeenAt": "2026-10-01T03:34:45.429Z",
+    "summary": "개교 80주년 기념건축물에 대한 의견을 내고 추첨으로 기프티콘을 받아요"
   },
   {
     "id": "yu-news-231498655",
@@ -7816,7 +7925,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:48.350Z",
     "firstSeenAt": "2026-10-01T03:34:48.350Z",
-    "seriesId": "yu-news-10339449"
+    "seriesId": "yu-news-10339449",
+    "summary": "인터넷·스마트폰 과의존 예방 영상을 모두 시청하고 Y마일리지를 받아요"
   },
   {
     "id": "yu-news-231498638",
@@ -7865,7 +7975,8 @@
     "firstSeenAt": "2026-10-01T03:34:51.102Z",
     "aliases": [
       "yu-news-231850919"
-    ]
+    ],
+    "summary": "AI를 활용한 학업 전략 공모전에 참여해요"
   },
   {
     "id": "yu-news-231498637",
@@ -7915,7 +8026,8 @@
     "seriesId": "yu-news-227182580",
     "aliases": [
       "yu-news-231850918"
-    ]
+    ],
+    "summary": "AI 기반 학업계획서를 작성해 공모전에 참여해요"
   },
   {
     "id": "yu-news-231498615",
@@ -7959,7 +8071,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:54.099Z",
     "firstSeenAt": "2026-10-01T03:34:54.099Z",
-    "seriesId": "yu-career-1914"
+    "seriesId": "yu-career-1914",
+    "summary": "이공계열과 인문사회계열 직무 교육을 통해 취업에 필요한 역량을 길러요"
   },
   {
     "id": "yu-news-231498599",
@@ -8002,7 +8115,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:55.414Z",
     "firstSeenAt": "2026-10-01T03:34:55.414Z",
-    "seriesId": "yu-news-7519697"
+    "seriesId": "yu-news-7519697",
+    "summary": "전공 분야 명사와의 토크 콘서트에 참여해 전공 이해를 넓히고 진로를 탐색해요"
   },
   {
     "id": "yu-news-231498598",
@@ -8044,7 +8158,8 @@
     "postedAt": "2026-09-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:56.914Z",
-    "firstSeenAt": "2026-10-01T03:34:56.914Z"
+    "firstSeenAt": "2026-10-01T03:34:56.914Z",
+    "summary": "인공지능 시대 인간 뇌의 특별함을 알아보고 식사와 Y마일리지를 받아요"
   },
   {
     "id": "yu-news-231498590",
@@ -8085,7 +8200,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:58.163Z",
     "firstSeenAt": "2026-10-01T03:34:58.163Z",
-    "seriesId": "yu-news-225595664"
+    "seriesId": "yu-news-225595664",
+    "summary": "대학혁신 성과나 학생 참여 경험 등을 원고로 써 소식지 게재에 응모해요"
   },
   {
     "id": "yu-news-231484553",
@@ -8143,7 +8259,8 @@
     "aliases": [
       "yu-news-231611574",
       "yu-rise-231569091"
-    ]
+    ],
+    "summary": "핀란드에서 SLUSH와 창업기관을 방문하고 글로벌 창업 관계자들과 교류해요"
   },
   {
     "id": "yu-news-231484454",
@@ -8189,7 +8306,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:04.032Z",
     "firstSeenAt": "2026-10-01T03:35:04.032Z",
-    "seriesId": "yu-news-221182389"
+    "seriesId": "yu-news-221182389",
+    "summary": "해외 교환학생과 팀을 이뤄 외국어를 배우고 서로의 문화를 나눠요"
   },
   {
     "id": "yu-news-231484452",
@@ -8237,7 +8355,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:07.355Z",
     "firstSeenAt": "2026-10-01T03:35:07.355Z",
-    "seriesId": "yu-news-4048828"
+    "seriesId": "yu-news-4048828",
+    "summary": "8주 동안 온라인 일대일 영어 수업을 무료로 받아요"
   },
   {
     "id": "yu-news-231470389",
@@ -8285,7 +8404,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:09.616Z",
     "firstSeenAt": "2026-10-01T03:35:09.616Z",
-    "seriesId": "yu-news-7569272"
+    "seriesId": "yu-news-7569272",
+    "summary": "법학전문대학원 입시 서류 검토와 확인 업무를 돕고 시간당 10,320원을 받아요"
   },
   {
     "id": "yu-news-231470361",
@@ -8344,7 +8464,8 @@
     "aliases": [
       "yu-col-politics-231554972",
       "yu-col-arts-231498665"
-    ]
+    ],
+    "summary": "취업박람회에서 다양한 기업을 만나고 취업선배 멘토링과 채용현장면접에 참여해요"
   },
   {
     "id": "yu-news-231470313",
@@ -8398,7 +8519,8 @@
     "seriesId": "yu-news-221742430",
     "aliases": [
       "yu-news-231681981"
-    ]
+    ],
+    "summary": "영어 에세이를 작성해 실력을 겨루고 수상하면 상금과 총장상을 받아요."
   },
   {
     "id": "yu-news-231470054",
@@ -8440,7 +8562,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:19.674Z",
     "firstSeenAt": "2026-10-01T03:35:19.674Z",
-    "seriesId": "yu-news-228923738"
+    "seriesId": "yu-news-228923738",
+    "summary": "스케일링과 신체 측정 등 네 가지 체험을 하고 5천원 상당 상품권을 받아요."
   },
   {
     "id": "yu-news-231470053",
@@ -8498,7 +8621,8 @@
     "aliases": [
       "yu-news-231681979",
       "yu-news-231611469"
-    ]
+    ],
+    "summary": "학부교육에 관한 설문에 참여하고 기프티콘을 받아요."
   },
   {
     "id": "yu-news-231470050",
@@ -8544,7 +8668,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:21.353Z",
     "firstSeenAt": "2026-10-01T03:35:21.353Z",
-    "seriesId": "yu-news-226449725"
+    "seriesId": "yu-news-226449725",
+    "summary": "상담 교육을 받고 친구들의 고민을 듣는 또래상담사로 활동하며 활동비를 받아요."
   },
   {
     "id": "yu-news-231456013",
@@ -8587,7 +8712,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:23.371Z",
     "firstSeenAt": "2026-10-01T03:35:23.371Z",
-    "seriesId": "yu-news-223841123"
+    "seriesId": "yu-news-223841123",
+    "summary": "축구·육상·레슬링 스포츠 홍보단으로 활동하고 현직 종사자를 만나요."
   },
   {
     "id": "yu-news-231456009",
@@ -8631,7 +8757,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:24.614Z",
     "firstSeenAt": "2026-10-01T03:35:24.614Z",
-    "seriesId": "yu-news-5993638"
+    "seriesId": "yu-news-5993638",
+    "summary": "온라인 강의로 학사정보와 교내 부서 이용법을 배우고 마일리지를 받아요."
   },
   {
     "id": "yu-news-231456007",
@@ -8673,7 +8800,8 @@
     "postedAt": "2026-08-31",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:26.172Z",
-    "firstSeenAt": "2026-10-01T03:35:26.172Z"
+    "firstSeenAt": "2026-10-01T03:35:26.172Z",
+    "summary": "기념건축물의 기능과 위치에 대한 의견을 내고 기프티콘 추첨에 참여해요."
   },
   {
     "id": "yu-news-231455978",
@@ -8715,7 +8843,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:28.605Z",
     "firstSeenAt": "2026-10-01T03:35:28.605Z",
-    "seriesId": "yu-news-84754"
+    "seriesId": "yu-news-84754",
+    "summary": "이주민과 외국인을 위한 한국어 봉사 수업을 진행하고 시급을 받아요."
   },
   {
     "id": "yu-news-231455970",
@@ -8761,7 +8890,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:29.486Z",
     "firstSeenAt": "2026-10-01T03:35:29.486Z",
-    "seriesId": "yu-news-7494920"
+    "seriesId": "yu-news-7494920",
+    "summary": "생명존중과 자살예방 교육을 받고 수료 조건을 충족하면 마일리지와 이수증을 받아요."
   },
   {
     "id": "yu-news-231455966",
@@ -8815,7 +8945,8 @@
     "aliases": [
       "yu-news-231583287"
     ],
-    "seriesId": "yu-news-227372522"
+    "seriesId": "yu-news-227372522",
+    "summary": "강연과 학과 부스를 통해 다양한 전공을 알아보고 나만의 전공 설계를 고민해요."
   },
   {
     "id": "yu-news-231455948",
@@ -8858,7 +8989,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:31.850Z",
     "firstSeenAt": "2026-10-01T03:35:31.850Z",
-    "seriesId": "yu-news-84031"
+    "seriesId": "yu-news-84031",
+    "summary": "Y또! 프로그램에 멘토나 멘티로 참여해요."
   },
   {
     "id": "yu-news-231455925",
@@ -8902,7 +9034,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:34.543Z",
     "firstSeenAt": "2026-10-01T03:35:34.543Z",
-    "seriesId": "yu-news-83964"
+    "seriesId": "yu-news-83964",
+    "summary": "심리검사를 받고 검사 결과를 이해하는 해석 특강에 참여해요."
   },
   {
     "id": "yu-news-231413835",
@@ -8950,7 +9083,8 @@
     "firstSeenAt": "2026-10-01T03:35:35.733Z",
     "aliases": [
       "yu-news-231470325"
-    ]
+    ],
+    "summary": "AI와 세포배양 기술 관련 컨퍼런스와 바이오산업 취업박람회에 참여해요."
   },
   {
     "id": "yu-news-231413833",
@@ -9003,7 +9137,8 @@
     "firstSeenAt": "2026-10-01T03:35:36.370Z",
     "aliases": [
       "yu-rise-231484466"
-    ]
+    ],
+    "summary": "신소재 기업과 e모빌리티 연구단지를 탐방하고 미래 모빌리티 포럼에 참여해요."
   },
   {
     "id": "yu-news-231413831",
@@ -9056,7 +9191,8 @@
     "seriesId": "yu-news-229585441",
     "aliases": [
       "yu-rise-231484465"
-    ]
+    ],
+    "summary": "교수·기업과 함께 시제품 개발 연구에 참여하고 제작 재료비를 지원받아요."
   },
   {
     "id": "yu-news-231413827",
@@ -9118,7 +9254,8 @@
     "firstSeenAt": "2026-10-01T03:35:39.081Z",
     "aliases": [
       "yu-news-231456018"
-    ]
+    ],
+    "summary": "빔웍스의 마케팅·개발·기획·임상연구 부서에서 현장실습을 해요."
   },
   {
     "id": "yu-news-231399733",
@@ -9161,7 +9298,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:43.359Z",
     "firstSeenAt": "2026-10-01T03:35:43.359Z",
-    "seriesId": "yu-news-221364616"
+    "seriesId": "yu-news-221364616",
+    "summary": "K-MOOC 강좌와 수강·이수 방법을 안내받고 점심식사를 제공받아요."
   },
   {
     "id": "yu-news-231385695",
@@ -9209,7 +9347,8 @@
     "firstSeenAt": "2026-10-01T03:35:45.741Z",
     "aliases": [
       "yu-news-231484538"
-    ]
+    ],
+    "summary": "창업 설명회에서 멘토링부터 시제품 제작과 사업화까지 지원 내용을 알아봐요."
   },
   {
     "id": "yu-news-231385694",
@@ -9252,7 +9391,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:46.309Z",
     "firstSeenAt": "2026-10-01T03:35:46.309Z",
-    "seriesId": "yu-news-221364617"
+    "seriesId": "yu-news-221364617",
+    "summary": "YU사회공헌단 학생봉사대나 바로ON봉사대 대원으로 봉사활동에 참여해요."
   },
   {
     "id": "yu-news-231385690",
@@ -9296,7 +9436,8 @@
     "postedAt": "2026-08-26",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:47.522Z",
-    "firstSeenAt": "2026-10-01T03:35:47.522Z"
+    "firstSeenAt": "2026-10-01T03:35:47.522Z",
+    "summary": "영어 수준을 확인하고 강사와 맞춤 어학 상담을 받으며 토익 단어장을 받아요."
   },
   {
     "id": "yu-news-231385688",
@@ -9340,7 +9481,8 @@
     "postedAt": "2026-08-26",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:48.922Z",
-    "firstSeenAt": "2026-10-01T03:35:48.922Z"
+    "firstSeenAt": "2026-10-01T03:35:48.922Z",
+    "summary": "외국인 객원기자로 대학생활 영어 칼럼을 쓰고 원고료를 받아요."
   },
   {
     "id": "yu-news-231385674",
@@ -9386,7 +9528,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:51.214Z",
     "firstSeenAt": "2026-10-01T03:35:51.214Z",
-    "seriesId": "yu-news-84001"
+    "seriesId": "yu-news-84001",
+    "summary": "일본·동남아 대학에서 한두 학기 교환학생으로 공부해요."
   },
   {
     "id": "yu-news-231385645",
@@ -9428,7 +9571,8 @@
     "postedAt": "2026-08-26",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:52.362Z",
-    "firstSeenAt": "2026-10-01T03:35:52.362Z"
+    "firstSeenAt": "2026-10-01T03:35:52.362Z",
+    "summary": "알고리즘이 마음에 미치는 영향을 심리학으로 배워요."
   },
   {
     "id": "yu-news-231371597",
@@ -9474,7 +9618,8 @@
     "postedAt": "2026-08-25",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:53.023Z",
-    "firstSeenAt": "2026-10-01T03:35:53.023Z"
+    "firstSeenAt": "2026-10-01T03:35:53.023Z",
+    "summary": "미국에서 화신의 해외 인턴으로 근무 경험을 쌓아요."
   },
   {
     "id": "yu-news-231371571",
@@ -9518,7 +9663,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:55.276Z",
     "firstSeenAt": "2026-10-01T03:35:55.276Z",
-    "seriesId": "yu-news-225284013"
+    "seriesId": "yu-news-225284013",
+    "summary": "명성에서 온라인몰 상품 데이터를 정리하며 현장실습을 해요."
   },
   {
     "id": "yu-news-231357530",
@@ -9564,7 +9710,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:56.227Z",
     "firstSeenAt": "2026-10-01T03:35:56.227Z",
-    "seriesId": "yu-news-83968"
+    "seriesId": "yu-news-83968",
+    "summary": "기업 분석과 경제·금융 스터디, 공모전으로 진로와 취업을 준비해요."
   },
   {
     "id": "yu-news-231357493",
@@ -9608,7 +9755,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:57.090Z",
     "firstSeenAt": "2026-10-01T03:35:57.090Z",
-    "seriesId": "yu-news-83964"
+    "seriesId": "yu-news-83964",
+    "summary": "심리검사를 받고 결과를 이해하는 해석 특강에 참여해요."
   },
   {
     "id": "yu-news-231357491",
@@ -9650,7 +9798,8 @@
     "postedAt": "2026-08-24",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:58.579Z",
-    "firstSeenAt": "2026-10-01T03:35:58.579Z"
+    "firstSeenAt": "2026-10-01T03:35:58.579Z",
+    "summary": "글로벌 아트 워크숍에서 미술 문화를 함께 나누는 활동을 해요."
   },
   {
     "id": "yu-news-231357488",
@@ -9693,7 +9842,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:00.672Z",
     "firstSeenAt": "2026-10-01T03:36:00.672Z",
-    "seriesId": "yu-news-84031"
+    "seriesId": "yu-news-84031",
+    "summary": "Y또! 프로그램에서 멘토 또는 멘티로 활동해요."
   },
   {
     "id": "yu-news-231315411",
@@ -9752,7 +9902,8 @@
     "postedAt": "2026-08-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:01.577Z",
-    "firstSeenAt": "2026-10-01T03:36:01.577Z"
+    "firstSeenAt": "2026-10-01T03:36:01.577Z",
+    "summary": "일본 오사카에서 산업 박람회와 기업·대학을 방문하고 특강에 참여해요."
   },
   {
     "id": "yu-news-231315397",
@@ -9795,7 +9946,8 @@
     "postedAt": "2026-08-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:03.707Z",
-    "firstSeenAt": "2026-10-01T03:36:03.707Z"
+    "firstSeenAt": "2026-10-01T03:36:03.707Z",
+    "summary": "창업자금과 멘토링, 시제품 제작 지원으로 창업 아이디어를 구체화해요."
   },
   {
     "id": "yu-news-231315394",
@@ -9841,7 +9993,8 @@
     "postedAt": "2026-08-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:05.954Z",
-    "firstSeenAt": "2026-10-01T03:36:05.954Z"
+    "firstSeenAt": "2026-10-01T03:36:05.954Z",
+    "summary": "독일·싱가포르·미국의 해외 인턴 프로그램으로 근무 경험을 쌓아요."
   },
   {
     "id": "yu-news-231315392",
@@ -9882,7 +10035,8 @@
     "postedAt": "2026-08-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:08.190Z",
-    "firstSeenAt": "2026-10-01T03:36:08.190Z"
+    "firstSeenAt": "2026-10-01T03:36:08.190Z",
+    "summary": "학점은행제 경영학 과정을 이수해 학사학위 취득을 준비해요."
   },
   {
     "id": "yu-news-231301319",
@@ -9928,7 +10082,8 @@
     "postedAt": "2026-08-20",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:09.743Z",
-    "firstSeenAt": "2026-10-01T03:36:09.743Z"
+    "firstSeenAt": "2026-10-01T03:36:09.743Z",
+    "summary": "취업캠프에서 입사서류를 완성하고 모의면접과 컨설팅으로 취업을 준비해요."
   },
   {
     "id": "yu-news-231287292",
@@ -9971,7 +10126,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:12.327Z",
     "firstSeenAt": "2026-10-01T03:36:12.327Z",
-    "seriesId": "yu-career-1672"
+    "seriesId": "yu-career-1672",
+    "summary": "자신을 알아가는 집단상담에 참여해요."
   },
   {
     "id": "yu-news-231287284",
@@ -10013,7 +10169,8 @@
     "postedAt": "2026-08-19",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:17.676Z",
-    "firstSeenAt": "2026-10-01T03:36:17.676Z"
+    "firstSeenAt": "2026-10-01T03:36:17.676Z",
+    "summary": "섬유 연구 프로젝트에 참여하고 개인 수당과 팀활동비를 지원받아요."
   },
   {
     "id": "yu-news-231287276",
@@ -10057,7 +10214,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:19.882Z",
     "firstSeenAt": "2026-10-01T03:36:19.882Z",
-    "seriesId": "yu-news-229430844"
+    "seriesId": "yu-news-229430844",
+    "summary": "4주간 외국어를 집중 학습하고 수료하면 수강료 절반을 장학금으로 받아요."
   },
   {
     "id": "yu-news-231287273",
@@ -10101,7 +10259,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:22.434Z",
     "firstSeenAt": "2026-10-01T03:36:22.434Z",
-    "seriesId": "yu-news-228937864"
+    "seriesId": "yu-news-228937864",
+    "summary": "10주간 외국어 회화와 어학시험을 준비하고 수료하면 장학금을 받아요."
   },
   {
     "id": "yu-news-231273195",
@@ -10146,7 +10305,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:23.187Z",
     "firstSeenAt": "2026-10-01T03:36:23.187Z",
-    "seriesId": "yu-news-91699"
+    "seriesId": "yu-news-91699",
+    "summary": "외국인 유학생과 김치를 담가 지역 이웃에게 나누고 봉사시간을 인정받아요."
   },
   {
     "id": "yu-news-231273135",
@@ -10187,7 +10347,8 @@
     "postedAt": "2026-08-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:25.710Z",
-    "firstSeenAt": "2026-10-01T03:36:25.710Z"
+    "firstSeenAt": "2026-10-01T03:36:25.710Z",
+    "summary": "경산시가족센터의 글로벌 프렌즈 투어로 경주월드를 방문해요."
   },
   {
     "id": "yu-news-231259109",
@@ -10239,7 +10400,8 @@
     "seriesId": "yu-news-221442763",
     "aliases": [
       "yu-news-231681982"
-    ]
+    ],
+    "summary": "시·소설·수필을 출품하고 수상하면 상장과 상금을 받아요"
   },
   {
     "id": "yu-news-231216993",
@@ -10291,7 +10453,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:29.786Z",
     "firstSeenAt": "2026-10-01T03:36:29.786Z",
-    "seriesId": "yu-career-1527"
+    "seriesId": "yu-career-1527",
+    "summary": "전공과 관련된 교외 근로를 하며 시간당 12,790원의 장학금을 받아요"
   },
   {
     "id": "yu-news-231202902",
@@ -10330,7 +10493,8 @@
     "postedAt": "2026-08-13",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:31.805Z",
-    "firstSeenAt": "2026-10-01T03:36:31.805Z"
+    "firstSeenAt": "2026-10-01T03:36:31.805Z",
+    "summary": "평생교육사를 위한 기념행사에 참석해요"
   },
   {
     "id": "yu-news-231188806",
@@ -10369,7 +10533,8 @@
     "postedAt": "2026-08-12",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:34.068Z",
-    "firstSeenAt": "2026-10-01T03:36:34.068Z"
+    "firstSeenAt": "2026-10-01T03:36:34.068Z",
+    "summary": "독서클럽 활동 공간으로 북카페를 무료로 이용해요"
   },
   {
     "id": "yu-news-231188798",
@@ -10413,7 +10578,8 @@
     "postedAt": "2026-08-12",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:36.397Z",
-    "firstSeenAt": "2026-10-01T03:36:36.397Z"
+    "firstSeenAt": "2026-10-01T03:36:36.397Z",
+    "summary": "창업 아이디어 검증부터 사업계획과 발표까지 배우고 우수자는 지원금을 받아요"
   },
   {
     "id": "yu-news-231118484",
@@ -10454,7 +10620,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:09.785Z",
     "firstSeenAt": "2026-10-01T03:37:09.785Z",
-    "seriesId": "yu-news-953513"
+    "seriesId": "yu-news-953513",
+    "summary": "학위 취득 목적이 아닌 평생교육 강좌를 수강해요"
   },
   {
     "id": "yu-news-231118438",
@@ -10499,7 +10666,8 @@
     "postedAt": "2026-08-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:11.592Z",
-    "firstSeenAt": "2026-10-01T03:37:11.592Z"
+    "firstSeenAt": "2026-10-01T03:37:11.592Z",
+    "summary": "베트남 연수 후 취업으로 이어지는 과정을 온라인 설명회에서 알아봐요"
   },
   {
     "id": "yu-news-231118436",
@@ -10547,7 +10715,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:12.316Z",
     "firstSeenAt": "2026-10-01T03:37:12.316Z",
-    "seriesId": "yu-news-228350312"
+    "seriesId": "yu-news-228350312",
+    "summary": "한국건설기술연구원에서 하천 분야 실험·실습을 경험해요"
   },
   {
     "id": "yu-news-231118433",
@@ -10593,7 +10762,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:14.768Z",
     "firstSeenAt": "2026-10-01T03:37:14.768Z",
-    "seriesId": "yu-news-228503912"
+    "seriesId": "yu-news-228503912",
+    "summary": "신재생에너지와 글로벌 공생을 다루는 인터넷강의를 듣고 3학점을 취득해요"
   },
   {
     "id": "yu-news-231090338",
@@ -10652,7 +10822,8 @@
       "yu-news-231217005",
       "yu-news-231188765"
     ],
-    "seriesId": "yu-news-83707"
+    "seriesId": "yu-news-83707",
+    "summary": "미국 기업에서 인턴으로 일하며 직무 경험을 쌓아요"
   },
   {
     "id": "yu-news-231090324",
@@ -10699,7 +10870,8 @@
     "postedAt": "2026-08-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:21.038Z",
-    "firstSeenAt": "2026-10-01T03:37:21.038Z"
+    "firstSeenAt": "2026-10-01T03:37:21.038Z",
+    "summary": "연구조교로 교양 강의 교안 디자인과 자막 교정을 돕고 보수를 받아요"
   },
   {
     "id": "yu-news-231090308",
@@ -10742,7 +10914,8 @@
     "postedAt": "2026-08-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:22.235Z",
-    "firstSeenAt": "2026-10-01T03:37:22.235Z"
+    "firstSeenAt": "2026-10-01T03:37:22.235Z",
+    "summary": "캡스톤디자인 아이디어·제품·신기술을 출품하고 수상하면 상금을 받아요"
   },
   {
     "id": "yu-news-231076260",
@@ -10784,7 +10957,8 @@
     "postedAt": "2026-08-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:23.491Z",
-    "firstSeenAt": "2026-10-01T03:37:23.491Z"
+    "firstSeenAt": "2026-10-01T03:37:23.491Z",
+    "summary": "섬유패션산업의 디지털 전환을 위한 전문인력 양성사업에 참여해요"
   },
   {
     "id": "yu-news-231076252",
@@ -10847,7 +11021,8 @@
       "yu-news-231160578",
       "yu-news-231188764",
       "yu-news-231216965"
-    ]
+    ],
+    "summary": "대구도시개발공사 주거복지처에서 현장실습을 하고 총 15학점을 인정받아요"
   },
   {
     "id": "yu-news-231076249",
@@ -10895,7 +11070,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:25.629Z",
     "firstSeenAt": "2026-10-01T03:37:25.629Z",
-    "seriesId": "yu-news-227263905"
+    "seriesId": "yu-news-227263905",
+    "summary": "스탠다드인터내셔널에서 영업 업무를 경험하는 채용연계형 현장실습에 참여해요"
   },
   {
     "id": "yu-news-231076248",
@@ -10939,7 +11115,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:26.425Z",
     "firstSeenAt": "2026-10-01T03:37:26.425Z",
-    "seriesId": "yu-news-9354704"
+    "seriesId": "yu-news-9354704",
+    "summary": "미국 교환학생 장학금과 첨단산업 체험 프로그램 참여 지원을 받아요"
   },
   {
     "id": "yu-news-231076247",
@@ -10989,7 +11166,8 @@
     "postedAt": "2026-08-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:27.720Z",
-    "firstSeenAt": "2026-10-01T03:37:27.720Z"
+    "firstSeenAt": "2026-10-01T03:37:27.720Z",
+    "summary": "필트라코퍼레이션에서 연구개발 또는 생산·품질관리 채용연계형 실습을 해요"
   },
   {
     "id": "yu-news-231076239",
@@ -11043,7 +11221,8 @@
     "seriesId": "yu-news-84753",
     "aliases": [
       "yu-news-231160625"
-    ]
+    ],
+    "summary": "교환학생과 짝을 이루어 한국 생활과 학업 적응을 돕는 봉사활동을 해요"
   },
   {
     "id": "yu-news-231076233",
@@ -11086,7 +11265,8 @@
     "postedAt": "2026-08-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:29.904Z",
-    "firstSeenAt": "2026-10-01T03:37:29.904Z"
+    "firstSeenAt": "2026-10-01T03:37:29.904Z",
+    "summary": "반도체 제조공정 분야의 직무 교육을 받아요"
   },
   {
     "id": "yu-news-231062191",
@@ -11139,7 +11319,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:30.769Z",
     "firstSeenAt": "2026-10-01T03:37:30.769Z",
-    "seriesId": "yu-news-226015537"
+    "seriesId": "yu-news-226015537",
+    "summary": "한국부동산원에서 전공과 관련된 부서의 현장실습에 참여해요"
   },
   {
     "id": "yu-news-231062185",
@@ -11185,7 +11366,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:32.011Z",
     "firstSeenAt": "2026-10-01T03:37:32.011Z",
-    "seriesId": "yu-news-221013388"
+    "seriesId": "yu-news-221013388",
+    "summary": "소양교육과 30시간 봉사활동 등 이수 요건을 충족해 1학점을 받아요."
   },
   {
     "id": "yu-news-231188792",
@@ -11232,7 +11414,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:44.357Z",
     "firstSeenAt": "2026-10-01T03:36:44.357Z",
-    "seriesId": "yu-news-86045"
+    "seriesId": "yu-news-86045",
+    "summary": "해외 인턴으로 일하며 전공 관련 실무 경험을 쌓아요."
   },
   {
     "id": "yu-news-231188787",
@@ -11276,7 +11459,8 @@
     "postedAt": "2026-08-12",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:46.906Z",
-    "firstSeenAt": "2026-10-01T03:36:46.906Z"
+    "firstSeenAt": "2026-10-01T03:36:46.906Z",
+    "summary": "복학·편입·전과 후 진로와 학교 적응을 돕는 프로그램에 참여해요."
   },
   {
     "id": "yu-news-231174712",
@@ -11319,7 +11503,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:49.575Z",
     "firstSeenAt": "2026-10-01T03:36:49.575Z",
-    "seriesId": "yu-news-226015539"
+    "seriesId": "yu-news-226015539",
+    "summary": "학생이 주도하는 비교과 프로그램을 제안하는 공모전에 참여해요."
   },
   {
     "id": "yu-news-231174697",
@@ -11374,7 +11559,8 @@
     "seriesId": "yu-news-221364631",
     "aliases": [
       "yu-news-231752289"
-    ]
+    ],
+    "summary": "시·소설·수필 작품을 출품하고 당선되면 상금을 받아요."
   },
   {
     "id": "yu-news-231174661",
@@ -11417,7 +11603,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:52.655Z",
     "firstSeenAt": "2026-10-01T03:36:52.655Z",
-    "seriesId": "yu-news-220452925"
+    "seriesId": "yu-news-220452925",
+    "summary": "국가유산 분야 창업캠프에 참여해요."
   },
   {
     "id": "yu-news-231160640",
@@ -11464,7 +11651,8 @@
     "postedAt": "2026-08-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:53.662Z",
-    "firstSeenAt": "2026-10-01T03:36:53.662Z"
+    "firstSeenAt": "2026-10-01T03:36:53.662Z",
+    "summary": "자기소개서 컨설팅과 실무자 멘토링, 모의면접으로 취업을 준비해요."
   },
   {
     "id": "yu-news-231160629",
@@ -11508,7 +11696,8 @@
     "postedAt": "2026-08-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:55.622Z",
-    "firstSeenAt": "2026-10-01T03:36:55.622Z"
+    "firstSeenAt": "2026-10-01T03:36:55.622Z",
+    "summary": "온라인과 대면 토론을 결합한 크로스컬처관리 수업으로 3학점을 받아요."
   },
   {
     "id": "yu-news-231160626",
@@ -11553,7 +11742,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:57.081Z",
     "firstSeenAt": "2026-10-01T03:36:57.081Z",
-    "seriesId": "yu-news-228503912"
+    "seriesId": "yu-news-228503912",
+    "summary": "여러 대학 교수진의 신재생에너지 온라인 강의를 듣고 3학점을 받아요."
   },
   {
     "id": "yu-news-231160607",
@@ -11598,7 +11788,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:00.287Z",
     "firstSeenAt": "2026-10-01T03:37:00.287Z",
-    "seriesId": "yu-news-1655882"
+    "seriesId": "yu-news-1655882",
+    "summary": "선착순 무료 지원으로 TOEIC·TOEIC Speaking·OPIc 모의시험에 응시해요."
   },
   {
     "id": "yu-news-231160605",
@@ -11650,7 +11841,8 @@
     "seriesId": "yu-news-221364616",
     "aliases": [
       "yu-news-231174667"
-    ]
+    ],
+    "summary": "다양한 대학의 K-MOOC 온라인 강좌를 이수하고 교양학점을 인정받아요."
   },
   {
     "id": "yu-news-231160599",
@@ -11696,7 +11888,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:01.970Z",
     "firstSeenAt": "2026-10-01T03:37:01.970Z",
-    "seriesId": "yu-news-83817"
+    "seriesId": "yu-news-83817",
+    "summary": "법학전문대학원에서 근로장학생으로 일하고 시간당 10,320원을 받아요."
   },
   {
     "id": "yu-news-231160583",
@@ -11747,7 +11940,8 @@
     "postedAt": "2026-08-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:03.474Z",
-    "firstSeenAt": "2026-10-01T03:37:03.474Z"
+    "firstSeenAt": "2026-10-01T03:37:03.474Z",
+    "summary": "캐나다 대학 연구인턴십에 참여하고 주거비·생활비·항공료 등을 지원받아요."
   },
   {
     "id": "yu-news-231160575",
@@ -11820,7 +12014,8 @@
       "yu-news-231399779",
       "yu-news-231287291",
       "yu-news-231188812"
-    ]
+    ],
+    "summary": "무료 온라인 상담 두 차례로 진로·직무를 설정하고 자기소개서 첨삭을 받아요."
   },
   {
     "id": "yu-news-231118504",
@@ -11863,7 +12058,8 @@
     "postedAt": "2026-08-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:07.637Z",
-    "firstSeenAt": "2026-10-01T03:37:07.637Z"
+    "firstSeenAt": "2026-10-01T03:37:07.637Z",
+    "summary": "일본 히로시마에서 문화 체험과 국제교류를 하고 식비·숙박비를 지원받아요."
   },
   {
     "id": "yu-news-231062184",
@@ -11906,7 +12102,8 @@
     "postedAt": "2026-08-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:41.785Z",
-    "firstSeenAt": "2026-10-01T03:37:41.785Z"
+    "firstSeenAt": "2026-10-01T03:37:41.785Z",
+    "summary": "AI 창업 컨설팅과 교육·멘토링을 받고 팀당 200만원을 지원받아요."
   },
   {
     "id": "yu-news-231062174",
@@ -11952,7 +12149,8 @@
     "postedAt": "2026-08-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:45.602Z",
-    "firstSeenAt": "2026-10-01T03:37:45.602Z"
+    "firstSeenAt": "2026-10-01T03:37:45.602Z",
+    "summary": "싱가포르 해외 인턴 프로그램에 참여해 실무 경험을 쌓아요."
   },
   {
     "id": "yu-news-231062155",
@@ -11998,7 +12196,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:46.657Z",
     "firstSeenAt": "2026-10-01T03:37:46.657Z",
-    "seriesId": "yu-news-223827708"
+    "seriesId": "yu-news-223827708",
+    "summary": "외국인 어학연수생과 언어·문화를 교류하고 버디 수당과 활동비를 지원받아요."
   },
   {
     "id": "yu-news-231062147",
@@ -12049,7 +12248,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:47.385Z",
     "firstSeenAt": "2026-10-01T03:37:47.385Z",
-    "seriesId": "yu-news-227862473"
+    "seriesId": "yu-news-227862473",
+    "summary": "환경차 배터리시스템 교육을 듣고 현대NGV 수료증과 점심을 제공받아요."
   },
   {
     "id": "yu-news-231062141",
@@ -12101,7 +12301,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:48.758Z",
     "firstSeenAt": "2026-10-01T03:37:48.758Z",
-    "seriesId": "yu-news-226816041"
+    "seriesId": "yu-news-226816041",
+    "summary": "서울 문화 체험과 성과공유회에 참여하고 숙박비·교통비·식비를 지원받아요."
   },
   {
     "id": "yu-news-231062136",
@@ -12157,7 +12358,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:49.731Z",
     "firstSeenAt": "2026-10-01T03:37:49.731Z",
-    "seriesId": "yu-news-225595703"
+    "seriesId": "yu-news-225595703",
+    "summary": "세원물산에서 인사총무나 생산관리 분야의 채용연계형 현장실습을 해요"
   },
   {
     "id": "yu-news-231062135",
@@ -12213,7 +12415,8 @@
     "firstSeenAt": "2026-10-01T03:37:51.902Z",
     "aliases": [
       "yu-news-231118497"
-    ]
+    ],
+    "summary": "AI 자율주행 경진대회 운영을 돕고 활동시간에 따른 지원금을 받아요"
   },
   {
     "id": "yu-news-230963957",
@@ -12258,7 +12461,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:52.483Z",
     "firstSeenAt": "2026-10-01T03:37:52.483Z",
-    "seriesId": "yu-news-228503912"
+    "seriesId": "yu-news-228503912",
+    "summary": "신재생에너지를 배우는 온라인 강의를 듣고 3학점을 취득해요"
   },
   {
     "id": "yu-news-230921900",
@@ -12307,7 +12511,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:56.036Z",
     "firstSeenAt": "2026-10-01T03:37:56.036Z",
-    "seriesId": "yu-news-223734027"
+    "seriesId": "yu-news-223734027",
+    "summary": "영대신문 문화부 수습기자로 취재와 기사 작성을 경험하고 기자 교육을 받아요"
   },
   {
     "id": "yu-news-230921898",
@@ -12354,7 +12559,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:00.078Z",
     "firstSeenAt": "2026-10-01T03:38:00.078Z",
-    "seriesId": "yu-news-227196097"
+    "seriesId": "yu-news-227196097",
+    "summary": "무료 캠프에서 소통과 리더십을 배우고 데일 카네기 공식 수료증을 받아요"
   },
   {
     "id": "yu-news-230907849",
@@ -12405,7 +12611,8 @@
     "firstSeenAt": "2026-10-01T03:38:03.504Z",
     "aliases": [
       "yu-news-231104394"
-    ]
+    ],
+    "summary": "창업 아이디어를 검증하고 사업계획과 발표를 준비하며 최대 300만원을 지원받아요"
   },
   {
     "id": "yu-news-230907840",
@@ -12447,7 +12654,8 @@
     "postedAt": "2026-07-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:06.072Z",
-    "firstSeenAt": "2026-10-01T03:38:06.072Z"
+    "firstSeenAt": "2026-10-01T03:38:06.072Z",
+    "summary": "노인 대상 영양·운동 연구를 보조하는 시간제 업무를 하고 시급 1만 5천원을 받아요"
   },
   {
     "id": "yu-news-230893738",
@@ -12488,7 +12696,8 @@
     "postedAt": "2026-07-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:07.956Z",
-    "firstSeenAt": "2026-10-01T03:38:07.956Z"
+    "firstSeenAt": "2026-10-01T03:38:07.956Z",
+    "summary": null
   },
   {
     "id": "yu-news-230893733",
@@ -12529,7 +12738,8 @@
     "postedAt": "2026-07-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:08.985Z",
-    "firstSeenAt": "2026-10-01T03:38:08.985Z"
+    "firstSeenAt": "2026-10-01T03:38:08.985Z",
+    "summary": "비교과프로그램과 YuTopia 이용에 관한 서면 인터뷰에 참여해요"
   },
   {
     "id": "yu-news-230893731",
@@ -12572,7 +12782,8 @@
     "postedAt": "2026-07-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:10.172Z",
-    "firstSeenAt": "2026-10-01T03:38:10.172Z"
+    "firstSeenAt": "2026-10-01T03:38:10.172Z",
+    "summary": "한국어 말하기 대회에서 실력을 겨루고 수상하면 상품권을 받아요"
   },
   {
     "id": "yu-news-230893726",
@@ -12616,7 +12827,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:11.055Z",
     "firstSeenAt": "2026-10-01T03:38:11.055Z",
-    "seriesId": "yu-news-226029109"
+    "seriesId": "yu-news-226029109",
+    "summary": "코멘토 홍보 콘텐츠를 만들고 온라인으로 확산하는 서포터즈 활동을 해요"
   },
   {
     "id": "yu-news-230879703",
@@ -12666,7 +12878,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:12.129Z",
     "firstSeenAt": "2026-10-01T03:38:12.129Z",
-    "seriesId": "yu-news-224904562"
+    "seriesId": "yu-news-224904562",
+    "summary": "한국세라믹기술원에서 시멘트와 건설소재 실험을 보조하는 현장실습을 해요"
   },
   {
     "id": "yu-news-230879701",
@@ -12715,7 +12928,8 @@
     "postedAt": "2026-07-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:13.296Z",
-    "firstSeenAt": "2026-10-01T03:38:13.296Z"
+    "firstSeenAt": "2026-10-01T03:38:13.296Z",
+    "summary": "에이치에스컴에서 컨퍼런스 운영 분야의 채용연계형 현장실습을 해요"
   },
   {
     "id": "yu-news-230879681",
@@ -12761,7 +12975,8 @@
     "postedAt": "2026-07-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:14.533Z",
-    "firstSeenAt": "2026-10-01T03:38:14.533Z"
+    "firstSeenAt": "2026-10-01T03:38:14.533Z",
+    "summary": "한국투자증권에서 채용과 연계되는 현장실습에 참여해요"
   },
   {
     "id": "yu-news-230879677",
@@ -12810,7 +13025,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:15.092Z",
     "firstSeenAt": "2026-10-01T03:38:15.092Z",
-    "seriesId": "yu-news-224918115"
+    "seriesId": "yu-news-224918115",
+    "summary": "한국정보통신기술협회에서 소프트웨어 분야의 현장실습을 6개월간 해요"
   },
   {
     "id": "yu-news-230879645",
@@ -12854,7 +13070,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:17.188Z",
     "firstSeenAt": "2026-10-01T03:38:17.188Z",
-    "seriesId": "yu-news-222629078"
+    "seriesId": "yu-news-222629078",
+    "summary": "외국어 회화나 토익 특강을 듣고 수료하면 수강료 절반을 장학금으로 받아요"
   },
   {
     "id": "yu-news-230879641",
@@ -12898,7 +13115,8 @@
     "postedAt": "2026-07-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:18.624Z",
-    "firstSeenAt": "2026-10-01T03:38:18.624Z"
+    "firstSeenAt": "2026-10-01T03:38:18.624Z",
+    "summary": "반도체 취업캠프에서 산업과 직무를 배우고 취업선배 멘토링과 팀 프로젝트를 해요"
   },
   {
     "id": "yu-news-230865593",
@@ -12944,7 +13162,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:24.004Z",
     "firstSeenAt": "2026-10-01T03:38:24.004Z",
-    "seriesId": "yu-news-83731"
+    "seriesId": "yu-news-83731",
+    "summary": "학생상담센터에서 심리검사와 개인상담을 수련하고 수퍼비전과 상담 교육을 받아요"
   },
   {
     "id": "yu-news-230865591",
@@ -12986,7 +13205,8 @@
     "postedAt": "2026-07-20",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:25.210Z",
-    "firstSeenAt": "2026-10-01T03:38:25.210Z"
+    "firstSeenAt": "2026-10-01T03:38:25.210Z",
+    "summary": "영남대학교 개교 80주년을 기념하는 슬로건 디자인 공모전에 참여해요"
   },
   {
     "id": "yu-news-230865590",
@@ -13028,7 +13248,8 @@
     "postedAt": "2026-07-20",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:25.841Z",
-    "firstSeenAt": "2026-10-01T03:38:25.841Z"
+    "firstSeenAt": "2026-10-01T03:38:25.841Z",
+    "summary": "영남대학교 개교 80주년을 기념하는 엠블럼 디자인 공모전에 참여해요"
   },
   {
     "id": "yu-news-230865560",
@@ -13079,7 +13300,8 @@
     "postedAt": "2026-07-20",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:28.827Z",
-    "firstSeenAt": "2026-10-01T03:38:28.827Z"
+    "firstSeenAt": "2026-10-01T03:38:28.827Z",
+    "summary": "다른 대학 학생들과 친환경 화장품을 개발하고 비건 미스트를 만들어요"
   },
   {
     "id": "yu-news-230809460",
@@ -13124,7 +13346,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:33.506Z",
     "firstSeenAt": "2026-10-01T03:38:33.506Z",
-    "seriesId": "yu-news-230415663"
+    "seriesId": "yu-news-230415663",
+    "summary": "기업과 대학이 함께하는 AI 연구에 참여하고 인턴십과 연계해요"
   },
   {
     "id": "yu-news-230795351",
@@ -13171,7 +13394,8 @@
     "postedAt": "2026-07-15",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:36.991Z",
-    "firstSeenAt": "2026-10-01T03:38:36.991Z"
+    "firstSeenAt": "2026-10-01T03:38:36.991Z",
+    "summary": "생성형 AI로 글로벌공생 문제를 분석하고 우수 성과자는 장학금을 받아요"
   },
   {
     "id": "yu-news-230781314",
@@ -13221,7 +13445,8 @@
     "postedAt": "2026-07-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:16.072Z",
-    "firstSeenAt": "2026-10-01T03:39:16.072Z"
+    "firstSeenAt": "2026-10-01T03:39:16.072Z",
+    "summary": "생성형 AI 활용법을 배우고 해외시장 조사와 홍보 콘텐츠 제작을 실습해요"
   },
   {
     "id": "yu-news-230781261",
@@ -13271,7 +13496,8 @@
     "seriesId": "yu-news-4212831",
     "aliases": [
       "yu-news-230907848"
-    ]
+    ],
+    "summary": "약 6개월 동안 한미 친선 교류 활동에 참여해요"
   },
   {
     "id": "yu-news-230781254",
@@ -13317,7 +13543,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:19.909Z",
     "firstSeenAt": "2026-10-01T03:39:19.909Z",
-    "seriesId": "yu-news-85448"
+    "seriesId": "yu-news-85448",
+    "summary": "2학기에 생활관의 1인실이나 2인실에 입주할 기회를 얻어요"
   },
   {
     "id": "yu-news-230767191",
@@ -13361,7 +13588,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:22.140Z",
     "firstSeenAt": "2026-10-01T03:39:22.140Z",
-    "seriesId": "yu-news-5554045"
+    "seriesId": "yu-news-5554045",
+    "summary": "식품 분야 공공기관에서 행정·실험·제품 개발·생산 업무를 실습해요"
   },
   {
     "id": "yu-news-230767176",
@@ -13406,7 +13634,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:24.977Z",
     "firstSeenAt": "2026-10-01T03:39:24.977Z",
-    "seriesId": "yu-news-223199214"
+    "seriesId": "yu-news-223199214",
+    "summary": "디지털 지역재생 융합전공을 배우고 타 대학 학점교류와 장학금 기회를 얻어요"
   },
   {
     "id": "yu-news-230767175",
@@ -13451,7 +13680,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:25.939Z",
     "firstSeenAt": "2026-10-01T03:39:25.939Z",
-    "seriesId": "yu-news-1655882"
+    "seriesId": "yu-news-1655882",
+    "summary": "선착순으로 토익·토익스피킹·오픽 모의시험을 무료로 응시해요"
   },
   {
     "id": "yu-news-230767162",
@@ -13506,7 +13736,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:27.049Z",
     "firstSeenAt": "2026-10-01T03:39:27.049Z",
-    "seriesId": "yu-news-228252549"
+    "seriesId": "yu-news-228252549",
+    "summary": "다른 대학의 온라인 교과목을 수강하고 학점을 인정받아요"
   },
   {
     "id": "yu-news-230725093",
@@ -13558,7 +13789,8 @@
     "seriesId": "yu-news-5312865",
     "aliases": [
       "yu-col-ccgs-230879699"
-    ]
+    ],
+    "summary": "학사경고 후 대학 생활 적응과 학습 의욕 회복을 돕는 교육에 참여해요"
   },
   {
     "id": "yu-news-230725046",
@@ -13599,7 +13831,8 @@
     "postedAt": "2026-07-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:31.859Z",
-    "firstSeenAt": "2026-10-01T03:39:31.859Z"
+    "firstSeenAt": "2026-10-01T03:39:31.859Z",
+    "summary": "연구원 유튜브 홍보 영상을 만들고 건당 활동비 40만원을 받아요"
   },
   {
     "id": "yu-news-230696932",
@@ -13657,7 +13890,8 @@
     "aliases": [
       "yu-news-230921893",
       "yu-news-230767203"
-    ]
+    ],
+    "summary": "미국에서 인턴이나 일경험 프로그램에 참여해요"
   },
   {
     "id": "yu-news-230598448",
@@ -13702,7 +13936,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:06.786Z",
     "firstSeenAt": "2026-10-01T03:40:06.786Z",
-    "seriesId": "yu-news-6615947"
+    "seriesId": "yu-news-6615947",
+    "summary": "금창에서 자동차부품 검사와 생산 공정 업무를 실습해요"
   },
   {
     "id": "yu-news-230598425",
@@ -13746,7 +13981,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:07.705Z",
     "firstSeenAt": "2026-10-01T03:40:07.705Z",
-    "seriesId": "yu-news-6863622"
+    "seriesId": "yu-news-6863622",
+    "summary": "학생 주도 프로젝트로 학점을 받는 도전학기제를 온라인 설명회에서 알아봐요"
   },
   {
     "id": "yu-news-230598411",
@@ -13791,7 +14027,8 @@
     "postedAt": "2026-07-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:09.875Z",
-    "firstSeenAt": "2026-10-01T03:40:09.875Z"
+    "firstSeenAt": "2026-10-01T03:40:09.875Z",
+    "summary": "AI 관련 기업 인턴십에 참여하고 교통·숙박 등 실비를 최대 100만원 지원받아요"
   },
   {
     "id": "yu-news-230584349",
@@ -13838,7 +14075,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:14.284Z",
     "firstSeenAt": "2026-10-01T03:40:14.284Z",
-    "seriesId": "yu-news-85483"
+    "seriesId": "yu-news-85483",
+    "summary": "출판부 도서 재고 조사와 서고 정리를 돕고 시급 1만 2천원을 받아요"
   },
   {
     "id": "yu-news-230584311",
@@ -13881,7 +14119,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:16.660Z",
     "firstSeenAt": "2026-10-01T03:40:16.660Z",
-    "seriesId": "yu-news-225392376"
+    "seriesId": "yu-news-225392376",
+    "summary": "반도체융합전공을 신청해요"
   },
   {
     "id": "yu-news-230570271",
@@ -13934,7 +14173,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:18.962Z",
     "firstSeenAt": "2026-10-01T03:40:18.962Z",
-    "seriesId": "yu-news-225636239"
+    "seriesId": "yu-news-225636239",
+    "summary": "AWS 본사에서 기술과 실무를 경험하고 현직자의 진로 설계 이야기를 들어요"
   },
   {
     "id": "yu-news-230570243",
@@ -13974,7 +14214,8 @@
     "postedAt": "2026-06-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:21.463Z",
-    "firstSeenAt": "2026-10-01T03:40:21.463Z"
+    "firstSeenAt": "2026-10-01T03:40:21.463Z",
+    "summary": "글로벌공생 교과·비교과 활동에서 배운 점과 경험을 수기로 써서 공모전에 참여해요"
   },
   {
     "id": "yu-news-230528104",
@@ -14022,7 +14263,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:25.152Z",
     "firstSeenAt": "2026-10-01T03:40:25.152Z",
-    "seriesId": "yu-news-220452962"
+    "seriesId": "yu-news-220452962",
+    "summary": "청소년에게 학습·체험·진로 멘토링을 제공하고 활동지원금을 받아요."
   },
   {
     "id": "yu-news-230514072",
@@ -14074,7 +14316,8 @@
     "postedAt": "2026-06-25",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:27.469Z",
-    "firstSeenAt": "2026-10-01T03:40:27.469Z"
+    "firstSeenAt": "2026-10-01T03:40:27.469Z",
+    "summary": "환경·에너지 관련 기관을 견학하며 현장을 배워요."
   },
   {
     "id": "yu-news-230514071",
@@ -14129,7 +14372,8 @@
     "postedAt": "2026-06-25",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:28.907Z",
-    "firstSeenAt": "2026-10-01T03:40:28.907Z"
+    "firstSeenAt": "2026-10-01T03:40:28.907Z",
+    "summary": "입사지원서 컨설팅과 자기소개 실습, 모의면접으로 취업을 준비해요."
   },
   {
     "id": "yu-news-230696928",
@@ -14175,7 +14419,8 @@
     "postedAt": "2026-07-08",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:37.295Z",
-    "firstSeenAt": "2026-10-01T03:39:37.295Z"
+    "firstSeenAt": "2026-10-01T03:39:37.295Z",
+    "summary": "미국에서 인턴이나 일경험 프로그램에 참여해요."
   },
   {
     "id": "yu-news-230682842",
@@ -14215,7 +14460,8 @@
     "postedAt": "2026-07-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:38.429Z",
-    "firstSeenAt": "2026-10-01T03:39:38.429Z"
+    "firstSeenAt": "2026-10-01T03:39:38.429Z",
+    "summary": "AI로 국제·지역 문제를 해결하는 팀 연구에 참여하고 연구비를 지원받아요."
   },
   {
     "id": "yu-news-230682841",
@@ -14261,7 +14507,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:41.589Z",
     "firstSeenAt": "2026-10-01T03:39:41.589Z",
-    "seriesId": "yu-career-1326"
+    "seriesId": "yu-career-1326",
+    "summary": "취업스터디에서 자소서 첨삭, 모의면접, 인적성 공부를 함께해요."
   },
   {
     "id": "yu-news-230682824",
@@ -14302,7 +14549,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:44.167Z",
     "firstSeenAt": "2026-10-01T03:39:44.167Z",
-    "seriesId": "yu-news-225595664"
+    "seriesId": "yu-news-225595664",
+    "summary": "대학혁신 성과나 학생 참여 경험 등을 원고로 써 소식지 게재에 도전해요."
   },
   {
     "id": "yu-news-230682802",
@@ -14346,7 +14594,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:44.891Z",
     "firstSeenAt": "2026-10-01T03:39:44.891Z",
-    "seriesId": "yu-news-230682802"
+    "seriesId": "yu-news-230682802",
+    "summary": "태영필트레이션 채용설명회를 듣고 현장면접에 참여해요."
   },
   {
     "id": "yu-news-230682794",
@@ -14390,7 +14639,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:45.951Z",
     "firstSeenAt": "2026-10-01T03:39:45.951Z",
-    "seriesId": "yu-news-228937864"
+    "seriesId": "yu-news-228937864",
+    "summary": "외국어 회화나 어학시험 대비 강의를 듣고 교재를 무료로 받아요."
   },
   {
     "id": "yu-news-230668706",
@@ -14430,7 +14680,8 @@
     "postedAt": "2026-07-06",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:49.971Z",
-    "firstSeenAt": "2026-10-01T03:39:49.971Z"
+    "firstSeenAt": "2026-10-01T03:39:49.971Z",
+    "summary": "기자재·드론 체험이나 환경·에너지 현장 탐방에 참여해요."
   },
   {
     "id": "yu-news-230640653",
@@ -14438,16 +14689,15 @@
     "organizer": "RISE사업단 YUnicorn창업지원단",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [
         "졸업생"
       ],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "영남대학교 및 경산 지역 내 대학교 출신"
     },
     "recruitPeriod": {
       "start": null,
@@ -14475,7 +14725,8 @@
     "postedAt": "2026-07-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:50.807Z",
-    "firstSeenAt": "2026-10-01T03:39:50.807Z"
+    "firstSeenAt": "2026-10-01T03:39:50.807Z",
+    "summary": "창업 집중교육과 인재지원금 지급을 계획 중인 창업스쿨 수요조사에 참여해요."
   },
   {
     "id": "yu-news-230626626",
@@ -14515,7 +14766,8 @@
     "postedAt": "2026-07-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:52.052Z",
-    "firstSeenAt": "2026-10-01T03:39:52.052Z"
+    "firstSeenAt": "2026-10-01T03:39:52.052Z",
+    "summary": "가곡이나 판소리를 무료로 배워요."
   },
   {
     "id": "yu-news-230626611",
@@ -14559,7 +14811,8 @@
     "postedAt": "2026-07-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:52.974Z",
-    "firstSeenAt": "2026-10-01T03:39:52.974Z"
+    "firstSeenAt": "2026-10-01T03:39:52.974Z",
+    "summary": "베트남 제조·경영 실무관리자 육성 프로그램 설명회에 참여해요."
   },
   {
     "id": "yu-news-230626595",
@@ -14603,7 +14856,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:54.505Z",
     "firstSeenAt": "2026-10-01T03:39:54.505Z",
-    "seriesId": "yu-news-225663381"
+    "seriesId": "yu-news-225663381",
+    "summary": "팀을 꾸려 중국 상해에서 전공과 연결된 주제를 직접 조사해요."
   },
   {
     "id": "yu-news-230626590",
@@ -14649,7 +14903,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:57.505Z",
     "firstSeenAt": "2026-10-01T03:39:57.505Z",
-    "seriesId": "yu-news-83934"
+    "seriesId": "yu-news-83934",
+    "summary": "초등·고등학생의 AI 교육 멘토로 활동하고 시간당 1만 8천 원을 받아요."
   },
   {
     "id": "yu-news-230626586",
@@ -14697,7 +14952,8 @@
     "postedAt": "2026-07-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:58.854Z",
-    "firstSeenAt": "2026-10-01T03:39:58.854Z"
+    "firstSeenAt": "2026-10-01T03:39:58.854Z",
+    "summary": "해외 대학 온라인 강의를 이수해 학점을 인정받고 수강료를 보전받아요."
   },
   {
     "id": "yu-news-230612548",
@@ -14739,7 +14995,8 @@
     "postedAt": "2026-07-02",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:00.776Z",
-    "firstSeenAt": "2026-10-01T03:40:00.776Z"
+    "firstSeenAt": "2026-10-01T03:40:00.776Z",
+    "summary": "Ansys 해석이나 Catia 설계 소프트웨어 활용을 배워요."
   },
   {
     "id": "yu-news-230612543",
@@ -14783,7 +15040,8 @@
     "postedAt": "2026-07-02",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:02.342Z",
-    "firstSeenAt": "2026-10-01T03:40:02.342Z"
+    "firstSeenAt": "2026-10-01T03:40:02.342Z",
+    "summary": "KT 실무자에게 ICT·비즈니스·AX 교육을 무료로 받고 출석 요건에 따라 수당을 받아요."
   },
   {
     "id": "yu-news-230612542",
@@ -14831,7 +15089,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:02.926Z",
     "firstSeenAt": "2026-10-01T03:40:02.926Z",
-    "seriesId": "yu-news-225284013"
+    "seriesId": "yu-news-225284013",
+    "summary": "명성에서 온라인몰 상품 데이터를 정리하는 현장실습에 참여해요."
   },
   {
     "id": "yu-news-230514043",
@@ -14874,7 +15133,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:32.700Z",
     "firstSeenAt": "2026-10-01T03:40:32.700Z",
-    "seriesId": "yu-career-1729"
+    "seriesId": "yu-career-1729",
+    "summary": "반도체 공정 이론을 배우고 소자 제작 과정을 실습해요."
   },
   {
     "id": "yu-news-230499977",
@@ -14920,7 +15180,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:38.753Z",
     "firstSeenAt": "2026-10-01T03:40:38.753Z",
-    "seriesId": "yu-news-223199214"
+    "seriesId": "yu-news-223199214",
+    "summary": "디지털 지역재생 융합전공을 이수하고 타 대학 학점교류와 장학금 혜택을 받아요"
   },
   {
     "id": "yu-news-230485934",
@@ -14963,7 +15224,8 @@
     "postedAt": "2026-06-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:42.941Z",
-    "firstSeenAt": "2026-10-01T03:40:42.941Z"
+    "firstSeenAt": "2026-10-01T03:40:42.941Z",
+    "summary": "외국어 회화와 어학시험 대비 수업을 듣고 수료 시 수강료 절반을 장학금으로 받아요"
   },
   {
     "id": "yu-news-230485932",
@@ -15011,7 +15273,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:44.477Z",
     "firstSeenAt": "2026-10-01T03:40:44.477Z",
-    "seriesId": "yu-news-220452962"
+    "seriesId": "yu-news-220452962",
+    "summary": "팀으로 청소년 학습·체험·진로 멘토링을 하고 1인당 활동지원금 42만원을 받아요"
   },
   {
     "id": "yu-news-230485907",
@@ -15056,7 +15319,8 @@
     "postedAt": "2026-06-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:47.459Z",
-    "firstSeenAt": "2026-10-01T03:40:47.459Z"
+    "firstSeenAt": "2026-10-01T03:40:47.459Z",
+    "summary": "자연어처리 심화교육을 받고 수료하면 AICE Basic 또는 ADsP 응시료를 지원받아요"
   },
   {
     "id": "yu-news-230471832",
@@ -15107,7 +15371,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:49.239Z",
     "firstSeenAt": "2026-10-01T03:40:49.239Z",
-    "seriesId": "yu-news-83764"
+    "seriesId": "yu-news-83764",
+    "summary": "ICT 기업의 프로젝트 인턴십에 참여하고 학점 인정을 받을 수 있어요"
   },
   {
     "id": "yu-news-230415648",
@@ -15151,7 +15416,8 @@
     "postedAt": "2026-06-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:57.588Z",
-    "firstSeenAt": "2026-10-01T03:40:57.588Z"
+    "firstSeenAt": "2026-10-01T03:40:57.588Z",
+    "summary": "AI로 경북 지역문제를 해결하는 연구에 참여하고 연구활동 비용을 지원받아요"
   },
   {
     "id": "yu-news-230401501",
@@ -15195,7 +15461,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:41:00.578Z",
     "firstSeenAt": "2026-10-01T03:41:00.578Z",
-    "seriesId": "yu-career-625"
+    "seriesId": "yu-career-625",
+    "summary": "직업상담사 양성교육을 통해 고용서비스 분야의 상담 실무 역량을 키워요"
   },
   {
     "id": "yu-news-230387365",
@@ -15242,7 +15509,8 @@
     "postedAt": "2026-06-16",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:41:06.924Z",
-    "firstSeenAt": "2026-10-01T03:41:06.924Z"
+    "firstSeenAt": "2026-10-01T03:41:06.924Z",
+    "summary": "세포배양·바이오 교육과 실습에 참여하고 지원금과 지역기업 취업 연계 지원을 받아요"
   },
   {
     "id": "yu-news-230331181",
@@ -15296,7 +15564,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:41:11.027Z",
     "firstSeenAt": "2026-10-01T03:41:11.027Z",
-    "seriesId": "yu-news-227862473"
+    "seriesId": "yu-news-227862473",
+    "summary": "자동차·생산기술·AI 관련 온라인 교육을 듣고 현대NGV 수료증을 받아요"
   },
   {
     "id": "yu-news-230331145",
@@ -15344,7 +15613,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:41:18.725Z",
     "firstSeenAt": "2026-10-01T03:41:18.725Z",
-    "seriesId": "yu-news-220452962"
+    "seriesId": "yu-news-220452962",
+    "summary": "팀으로 청소년 학습·체험·진로 멘토링을 하고 1인당 활동지원금 42만원을 받아요"
   },
   {
     "id": "yu-news-230331113",
@@ -15397,7 +15667,8 @@
     "postedAt": "2026-06-12",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:41:20.664Z",
-    "firstSeenAt": "2026-10-01T03:41:20.664Z"
+    "firstSeenAt": "2026-10-01T03:41:20.664Z",
+    "summary": "Agentic AI 자율주행 이론을 배우고 모의주행과 경진대회에 참여해요"
   },
   {
     "id": "yu-news-230317083",
@@ -15447,7 +15718,8 @@
     "postedAt": "2026-06-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:41:23.948Z",
-    "firstSeenAt": "2026-10-01T03:41:23.948Z"
+    "firstSeenAt": "2026-10-01T03:41:23.948Z",
+    "summary": "에이치에스컴에서 컨퍼런스 운영 업무를 경험하는 채용연계형 현장실습에 참여해요"
   },
   {
     "id": "yu-news-230302995",
@@ -15501,7 +15773,8 @@
     "seriesId": "yu-news-90828",
     "aliases": [
       "yu-col-sci-230232648"
-    ]
+    ],
+    "summary": "외국어 회화와 어학시험 집중교육을 받고 장학금 40만원과 수료 학점 2학점을 받아요"
   },
   {
     "id": "yu-news-230302951",
@@ -15540,7 +15813,8 @@
     "postedAt": "2026-06-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:41:58.249Z",
-    "firstSeenAt": "2026-10-01T03:41:58.249Z"
+    "firstSeenAt": "2026-10-01T03:41:58.249Z",
+    "summary": "한국 전통혼례를 올리며 한복·소품과 전문가의 의례 진행을 무료로 지원받아요"
   },
   {
     "id": "yu-news-230288924",
@@ -15592,7 +15866,8 @@
     "seriesId": "yu-news-5039786",
     "aliases": [
       "yu-col-sob-230415685"
-    ]
+    ],
+    "summary": "타이코에이엠피에서 인사총무 업무를 경험하는 채용연계 현장실습에 참여해요"
   },
   {
     "id": "yu-news-230288903",
@@ -15636,7 +15911,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:04.253Z",
     "firstSeenAt": "2026-10-01T03:42:04.253Z",
-    "seriesId": "yu-career-2104"
+    "seriesId": "yu-career-2104",
+    "summary": "생산운영관리 실무교육에 참여해요"
   },
   {
     "id": "yu-news-230288891",
@@ -15680,7 +15956,8 @@
     "postedAt": "2026-06-09",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:04.721Z",
-    "firstSeenAt": "2026-10-01T03:42:04.721Z"
+    "firstSeenAt": "2026-10-01T03:42:04.721Z",
+    "summary": "팀으로 책을 읽고 토론하며 활동비 최대 40만원과 마일리지를 받아요"
   },
   {
     "id": "yu-news-230288889",
@@ -15732,7 +16009,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:06.818Z",
     "firstSeenAt": "2026-10-01T03:42:06.818Z",
-    "seriesId": "yu-career-1527"
+    "seriesId": "yu-career-1527",
+    "summary": "전공 관련 교외기관에서 취업연계 근로를 하고 시간당 12,790원의 장학금을 받아요"
   },
   {
     "id": "yu-news-230288873",
@@ -15777,7 +16055,8 @@
     "postedAt": "2026-06-09",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:08.786Z",
-    "firstSeenAt": "2026-10-01T03:42:08.786Z"
+    "firstSeenAt": "2026-10-01T03:42:08.786Z",
+    "summary": "어트랙트에서 온라인 세일즈 매니저 업무를 경험하는 채용연계 현장실습에 참여해요"
   },
   {
     "id": "yu-news-230288863",
@@ -15826,7 +16105,8 @@
     "firstSeenAt": "2026-10-01T03:42:09.742Z",
     "aliases": [
       "yu-news-230387358"
-    ]
+    ],
+    "summary": "푸드테크·AI 이론과 실습을 배우고 교육 이수 기간에 주당 10만원을 지원받아요"
   },
   {
     "id": "yu-news-230274837",
@@ -15873,7 +16153,8 @@
     "postedAt": "2026-06-08",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:10.707Z",
-    "firstSeenAt": "2026-10-01T03:42:10.707Z"
+    "firstSeenAt": "2026-10-01T03:42:10.707Z",
+    "summary": "에프알티에서 영상 편집과 브랜드 그래픽 디자인을 실습하며 채용 연계 기회를 얻어요."
   },
   {
     "id": "yu-news-230274814",
@@ -15918,7 +16199,8 @@
     "postedAt": "2026-06-08",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:13.875Z",
-    "firstSeenAt": "2026-10-01T03:42:13.875Z"
+    "firstSeenAt": "2026-10-01T03:42:13.875Z",
+    "summary": "컴퓨터비전 교육을 받고 수료하면 AICE Basic 또는 ADsP 응시료를 지원받아요."
   },
   {
     "id": "yu-news-230274809",
@@ -15961,7 +16243,8 @@
     "postedAt": "2026-06-08",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:14.943Z",
-    "firstSeenAt": "2026-10-01T03:42:14.943Z"
+    "firstSeenAt": "2026-10-01T03:42:14.943Z",
+    "summary": "섬유 기초와 에코텍스 기반 자원순환 실무를 이론과 실습으로 배워요."
   },
   {
     "id": "yu-news-230232673",
@@ -16006,7 +16289,8 @@
     "postedAt": "2026-06-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:24.838Z",
-    "firstSeenAt": "2026-10-01T03:42:24.838Z"
+    "firstSeenAt": "2026-10-01T03:42:24.838Z",
+    "summary": "세포배양·바이오 교육과 현장 경험을 쌓고 지원금과 지역 기업 취업 연계 지원을 받아요."
   },
   {
     "id": "yu-news-230232660",
@@ -16049,7 +16333,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:25.624Z",
     "firstSeenAt": "2026-10-01T03:42:25.624Z",
-    "seriesId": "yu-news-227684857"
+    "seriesId": "yu-news-227684857",
+    "summary": "외국인 대학원생과 교원을 위한 한국어 특강을 수강해요."
   },
   {
     "id": "yu-news-230218610",
@@ -16100,7 +16385,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:31.475Z",
     "firstSeenAt": "2026-10-01T03:42:31.475Z",
-    "seriesId": "yu-news-226124110"
+    "seriesId": "yu-news-226124110",
+    "summary": "패스트뷰에서 콘텐츠 에디터로 기사 기획과 작성 업무를 실습해요."
   },
   {
     "id": "yu-news-230190447",
@@ -16151,7 +16437,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:35.507Z",
     "firstSeenAt": "2026-10-01T03:42:35.507Z",
-    "seriesId": "yu-news-220166296"
+    "seriesId": "yu-news-220166296",
+    "summary": "발레오모빌리티코리아에서 프로젝트·품질·설비·생산·공급망 관련 업무를 실습해요."
   },
   {
     "id": "yu-news-230190418",
@@ -16205,7 +16492,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:38.803Z",
     "firstSeenAt": "2026-10-01T03:42:38.803Z",
-    "seriesId": "yu-news-9188919"
+    "seriesId": "yu-news-9188919",
+    "summary": "엘씨텍에서 전공과 연계된 현장실습에 참여하며 채용 연계 기회를 얻어요."
   },
   {
     "id": "yu-news-230190375",
@@ -16258,7 +16546,8 @@
     "seriesId": "yu-news-10261173",
     "aliases": [
       "yu-news-230485899"
-    ]
+    ],
+    "summary": "폭력예방교육을 이수하고 다른 요건도 충족한 학부생은 성적을 일찍 확인해요."
   },
   {
     "id": "yu-news-230176332",
@@ -16303,7 +16592,8 @@
     "postedAt": "2026-06-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:48.034Z",
-    "firstSeenAt": "2026-10-01T03:42:48.034Z"
+    "firstSeenAt": "2026-10-01T03:42:48.034Z",
+    "summary": "올리콘발저스코팅코리아 경산공장 생산부에서 현장실습을 해요."
   },
   {
     "id": "yu-news-230176303",
@@ -16350,7 +16640,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:50.846Z",
     "firstSeenAt": "2026-10-01T03:42:50.846Z",
-    "seriesId": "yu-news-83963"
+    "seriesId": "yu-news-83963",
+    "summary": "홍콩한인상공회 인턴십에 참여해 해외 기업에서 6개월간 근무해요."
   },
   {
     "id": "yu-news-230176274",
@@ -16398,7 +16689,8 @@
     "postedAt": "2026-06-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:55.809Z",
-    "firstSeenAt": "2026-10-01T03:42:55.809Z"
+    "firstSeenAt": "2026-10-01T03:42:55.809Z",
+    "summary": "세원정공과 관계사에서 구매·해외영업·자재·영업 업무를 실습해요."
   },
   {
     "id": "yu-news-230134226",
@@ -16453,7 +16745,8 @@
     "postedAt": "2026-05-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:57.686Z",
-    "firstSeenAt": "2026-10-01T03:42:57.686Z"
+    "firstSeenAt": "2026-10-01T03:42:57.686Z",
+    "summary": "삼성현을 주제로 AI 디지털 콘텐츠를 제작·전시하고 팀별 장학금을 받아요."
   },
   {
     "id": "yu-news-230134200",
@@ -16508,7 +16801,8 @@
     "postedAt": "2026-05-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:01.551Z",
-    "firstSeenAt": "2026-10-01T03:43:01.551Z"
+    "firstSeenAt": "2026-10-01T03:43:01.551Z",
+    "summary": "코멘토 직무부트캠프 수강권을 받아 실무와 취업 역량을 키워요."
   },
   {
     "id": "yu-news-230120156",
@@ -16559,7 +16853,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:03.569Z",
     "firstSeenAt": "2026-10-01T03:43:03.569Z",
-    "seriesId": "yu-news-8429032"
+    "seriesId": "yu-news-8429032",
+    "summary": "융합팀을 꾸려 미래사회 문제의 해결책을 만드는 경진대회에 참여해요."
   },
   {
     "id": "yu-news-230120151",
@@ -16605,7 +16900,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:04.830Z",
     "firstSeenAt": "2026-10-01T03:43:04.830Z",
-    "seriesId": "yu-news-222289472"
+    "seriesId": "yu-news-222289472",
+    "summary": "두 명이 한 팀으로 해외 자매대학을 방문해 교환학생 파견을 위한 사전조사를 해요."
   },
   {
     "id": "yu-news-230120117",
@@ -16656,7 +16952,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:06.943Z",
     "firstSeenAt": "2026-10-01T03:43:06.943Z",
-    "seriesId": "yu-news-224877336"
+    "seriesId": "yu-news-224877336",
+    "summary": "인터불고엑스코 식음팀에서 홀서빙과 고객응대 업무를 실습해요."
   },
   {
     "id": "yu-news-230091995",
@@ -16702,7 +16999,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:10.703Z",
     "firstSeenAt": "2026-10-01T03:43:10.703Z",
-    "seriesId": "yu-news-5554045"
+    "seriesId": "yu-news-5554045",
+    "summary": "한국식품산업클러스터진흥원에서 식품 행정·실험·분석·생산 관련 업무를 실습해요."
   },
   {
     "id": "yu-news-230035855",
@@ -16749,7 +17047,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:31.862Z",
     "firstSeenAt": "2026-10-01T03:43:31.862Z",
-    "seriesId": "yu-news-4565498"
+    "seriesId": "yu-news-4565498",
+    "summary": "해외 교육기관에서 4주간 어학연수에 참여해요."
   },
   {
     "id": "yu-news-230035844",
@@ -16799,7 +17098,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:37.359Z",
     "firstSeenAt": "2026-10-01T03:43:37.359Z",
-    "seriesId": "yu-news-85692"
+    "seriesId": "yu-news-85692",
+    "summary": "공인어학·외국어 회화 강좌를 듣고 수강료 80% 장학금과 무료 교재를 받아요."
   },
   {
     "id": "yu-news-230021752",
@@ -16842,7 +17142,8 @@
     "postedAt": "2026-05-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:42.370Z",
-    "firstSeenAt": "2026-10-01T03:43:42.370Z"
+    "firstSeenAt": "2026-10-01T03:43:42.370Z",
+    "summary": "하이라이트브랜즈에서 의류 디자인·상품기획·소싱 현장실습에 참여해요."
   },
   {
     "id": "yu-news-230007670",
@@ -16889,7 +17190,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:53.633Z",
     "firstSeenAt": "2026-10-01T03:43:53.633Z",
-    "seriesId": "yu-news-4565498"
+    "seriesId": "yu-news-4565498",
+    "summary": "미국이나 필리핀에서 4주 동안 어학연수에 참여해요."
   },
   {
     "id": "yu-news-230007667",
@@ -16946,7 +17248,8 @@
     "seriesId": "yu-news-220922352",
     "aliases": [
       "yu-col-arts-230007669"
-    ]
+    ],
+    "summary": "상신브레이크에서 사진 촬영과 디자인 업무를 현장실습으로 경험해요."
   },
   {
     "id": "yu-news-230007644",
@@ -16990,7 +17293,8 @@
     "postedAt": "2026-05-20",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:57.989Z",
-    "firstSeenAt": "2026-10-01T03:43:57.989Z"
+    "firstSeenAt": "2026-10-01T03:43:57.989Z",
+    "summary": "스타트업 개발 프로젝트를 수행하고 지원금·전문가 코칭·채용 기회를 받아요."
   },
   {
     "id": "yu-news-229993524",
@@ -17044,7 +17348,8 @@
     "seriesId": "yu-news-9547281",
     "aliases": [
       "yu-col-sob-229993542"
-    ]
+    ],
+    "summary": "경북신용보증재단 본점과 지역 지점에서 현장실습에 참여해요."
   },
   {
     "id": "yu-news-229993485",
@@ -17100,7 +17405,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:12.165Z",
     "firstSeenAt": "2026-10-01T03:44:12.165Z",
-    "seriesId": "yu-news-224972250"
+    "seriesId": "yu-news-224972250",
+    "summary": "퓨처드라이브에서 자율주행·로봇 기술 연구개발 현장실습에 참여해요."
   },
   {
     "id": "yu-news-229993476",
@@ -17165,7 +17471,8 @@
     "seriesId": "yu-news-226029094",
     "aliases": [
       "yu-col-sob-229993544"
-    ]
+    ],
+    "summary": "이맥스글로비즈에서 해외영업 분야 현장실습에 참여해요."
   },
   {
     "id": "yu-news-229993457",
@@ -17217,7 +17524,8 @@
     "seriesId": "yu-news-224918123",
     "aliases": [
       "yu-col-sob-229993492"
-    ]
+    ],
+    "summary": "아이엠뱅크에서 약 6개월간 인턴으로 근무하고 월 220만원 수준의 실습비를 받아요."
   },
   {
     "id": "yu-news-229979418",
@@ -17262,7 +17570,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:24.658Z",
     "firstSeenAt": "2026-10-01T03:44:24.658Z",
-    "seriesId": "yu-news-226856596"
+    "seriesId": "yu-news-226856596",
+    "summary": "홍콩·심천에서 기술 행사를 참관하고 대학과 창업기업 육성 현장을 탐방해요."
   },
   {
     "id": "yu-news-229979406",
@@ -17308,7 +17617,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:26.553Z",
     "firstSeenAt": "2026-10-01T03:44:26.553Z",
-    "seriesId": "yu-career-2505"
+    "seriesId": "yu-career-2505",
+    "summary": "스마트조선소 AI 실무 교육과 취업 지원 과정을 소개하는 설명회에 참여해요."
   },
   {
     "id": "yu-news-229979401",
@@ -17358,7 +17668,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:28.585Z",
     "firstSeenAt": "2026-10-01T03:44:28.585Z",
-    "seriesId": "yu-news-224904562"
+    "seriesId": "yu-news-224904562",
+    "summary": "한국세라믹기술원에서 시멘트와 건설 재료 실험을 수행하는 현장실습에 참여해요."
   },
   {
     "id": "yu-news-229979393",
@@ -17411,7 +17722,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:30.573Z",
     "firstSeenAt": "2026-10-01T03:44:30.573Z",
-    "seriesId": "yu-news-9188919"
+    "seriesId": "yu-news-9188919",
+    "summary": "엘씨텍에서 연구개발·설계 분야의 채용 연계 현장실습에 참여해요."
   },
   {
     "id": "yu-news-229979355",
@@ -17459,7 +17771,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:37.319Z",
     "firstSeenAt": "2026-10-01T03:44:37.319Z",
-    "seriesId": "yu-news-10575232"
+    "seriesId": "yu-news-10575232",
+    "summary": "융합캠프에서 다양한 분야의 강의를 듣고 이수 조건을 충족하면 1학점을 받아요."
   },
   {
     "id": "yu-news-229979348",
@@ -17514,7 +17827,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:39.932Z",
     "firstSeenAt": "2026-10-01T03:44:39.932Z",
-    "seriesId": "yu-news-10575232"
+    "seriesId": "yu-news-10575232",
+    "summary": "인문사회 융합캠프에서 강의와 교류 활동에 참여하고 이수하면 1학점을 받아요."
   },
   {
     "id": "yu-news-229937259",
@@ -17569,7 +17883,8 @@
     "postedAt": "2026-05-15",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:49.970Z",
-    "firstSeenAt": "2026-10-01T03:44:49.970Z"
+    "firstSeenAt": "2026-10-01T03:44:49.970Z",
+    "summary": "삼성현을 주제로 AI 디지털 전시 콘텐츠를 만들고 팀별 장학금 50만원을 받아요."
   },
   {
     "id": "yu-news-229937215",
@@ -17622,7 +17937,8 @@
     "seriesId": "yu-news-10339449",
     "aliases": [
       "yu-news-230682791"
-    ]
+    ],
+    "summary": "인터넷·스마트폰 과의존 예방 영상 3개를 모두 시청하고 Y마일리지를 받아요."
   },
   {
     "id": "yu-news-229937213",
@@ -17680,7 +17996,8 @@
     "aliases": [
       "yu-news-231498656",
       "yu-news-230682792"
-    ]
+    ],
+    "summary": "도박문제 예방 교육 영상을 끝까지 시청하고 Y마일리지를 받아요."
   },
   {
     "id": "yu-news-229923175",
@@ -17731,7 +18048,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:05.592Z",
     "firstSeenAt": "2026-10-01T03:45:05.592Z",
-    "seriesId": "yu-news-229641801"
+    "seriesId": "yu-news-229641801",
+    "summary": "대구 메리어트 호텔 식음팀에서 식음료 서비스 현장실습에 참여해요."
   },
   {
     "id": "yu-news-229923146",
@@ -17787,7 +18105,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:09.865Z",
     "firstSeenAt": "2026-10-01T03:45:09.865Z",
-    "seriesId": "yu-news-220140139"
+    "seriesId": "yu-news-220140139",
+    "summary": "한국생명공학연구원의 연구센터에서 생명공학 분야 현장실습에 참여해요."
   },
   {
     "id": "yu-news-229923138",
@@ -17834,7 +18153,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:14.849Z",
     "firstSeenAt": "2026-10-01T03:45:14.849Z",
-    "seriesId": "yu-news-4565498"
+    "seriesId": "yu-news-4565498",
+    "summary": "미국이나 필리핀에서 4주 동안 어학연수에 참여해요."
   },
   {
     "id": "yu-news-229923122",
@@ -17882,7 +18202,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:16.975Z",
     "firstSeenAt": "2026-10-01T03:45:16.975Z",
-    "seriesId": "yu-career-2350"
+    "seriesId": "yu-career-2350",
+    "summary": "와이앤아처에서 액셀러레이팅 프로그램 운영을 보조하는 현장실습을 해요."
   },
   {
     "id": "yu-news-229909075",
@@ -17933,7 +18254,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:21.228Z",
     "firstSeenAt": "2026-10-01T03:45:21.228Z",
-    "seriesId": "yu-news-224999423"
+    "seriesId": "yu-news-224999423",
+    "summary": "미국 인턴 취업을 위한 면접 교육을 받고 비자 발급 비용과 항공료를 지원받아요."
   },
   {
     "id": "yu-news-229909006",
@@ -17978,7 +18300,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:31.788Z",
     "firstSeenAt": "2026-10-01T03:45:31.788Z",
-    "seriesId": "yu-news-225595711"
+    "seriesId": "yu-news-225595711",
+    "summary": "창업동아리로 활동하며 팀당 최대 300만원의 지원금을 받을 수 있어요."
   },
   {
     "id": "yu-news-229894906",
@@ -18040,7 +18363,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:44.961Z",
     "firstSeenAt": "2026-10-01T03:45:44.961Z",
-    "seriesId": "yu-news-2768623"
+    "seriesId": "yu-news-2768623",
+    "summary": "발레오전장시스템코리아에서 공정·인사·재무·물류·품질 분야 현장실습을 해요."
   },
   {
     "id": "yu-news-229894894",
@@ -18090,7 +18414,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:49.645Z",
     "firstSeenAt": "2026-10-01T03:45:49.645Z",
-    "seriesId": "yu-news-224918115"
+    "seriesId": "yu-news-224918115",
+    "summary": "한국정보통신기술협회에서 소프트웨어 품질을 시험하는 현장실습을 해요."
   },
   {
     "id": "yu-news-229894875",
@@ -18135,7 +18460,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:56.180Z",
     "firstSeenAt": "2026-10-01T03:45:56.180Z",
-    "seriesId": "yu-news-226856596"
+    "seriesId": "yu-news-226856596",
+    "summary": "홍콩과 심천에서 기술 행사를 참관하고 현지 대학과 창업기업 육성 현장을 방문해요."
   },
   {
     "id": "yu-news-229894870",
@@ -18189,7 +18515,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:59.294Z",
     "firstSeenAt": "2026-10-01T03:45:59.294Z",
-    "seriesId": "yu-news-227304658"
+    "seriesId": "yu-news-227304658",
+    "summary": "베트남 학생들과 기후변화 완화를 위한 국제협력 프로젝트에 참여해요."
   },
   {
     "id": "yu-news-229894864",
@@ -18240,7 +18567,8 @@
     "seriesId": "yu-news-220062092",
     "aliases": [
       "yu-news-230007673"
-    ]
+    ],
+    "summary": "국제홍보대사로 대학 홍보와 국제 업무를 돕고 활동 평가에 따라 장학금을 받아요."
   },
   {
     "id": "yu-news-229838672",
@@ -18284,7 +18612,8 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:50:59.857Z",
     "firstSeenAt": "2026-10-01T03:50:59.857Z",
-    "seriesId": "yu-news-10575232"
+    "seriesId": "yu-news-10575232",
+    "summary": "융합캠프에서 강의와 교류 활동에 참여하고 이수하면 계절학기 1학점을 인정받아요."
   },
   {
     "id": "yu-news-229824631",
@@ -18325,7 +18654,8 @@
     "postedAt": "2026-05-07",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:51:09.126Z",
-    "firstSeenAt": "2026-10-01T03:51:09.126Z"
+    "firstSeenAt": "2026-10-01T03:51:09.126Z",
+    "summary": "SW응용학부나 자동차SW학과를 부·복수전공하며 장학금 지원 기회를 얻어요."
   },
   {
     "id": "yu-news-229824628",
@@ -18368,7 +18698,8 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:51:11.332Z",
     "firstSeenAt": "2026-10-01T03:51:11.332Z",
-    "seriesId": "yu-news-10575232"
+    "seriesId": "yu-news-10575232",
+    "summary": "다양한 주제의 캠프 강의를 듣고 이수 조건을 채우면 1학점과 수업료 환급을 받아요."
   },
   {
     "id": "yu-news-229810470",
@@ -18411,7 +18742,8 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:51:25.776Z",
     "firstSeenAt": "2026-10-01T03:51:25.776Z",
-    "seriesId": "yu-news-227304658"
+    "seriesId": "yu-news-227304658",
+    "summary": "베트남 학생들과 기후변화 완화를 위한 국제협력 프로젝트에 참여해요."
   },
   {
     "id": "yu-news-229782350",
@@ -18452,7 +18784,8 @@
     "postedAt": "2026-05-04",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:51:34.014Z",
-    "firstSeenAt": "2026-10-01T03:51:34.014Z"
+    "firstSeenAt": "2026-10-01T03:51:34.014Z",
+    "summary": "우즈베키스탄 대학생들과 교류하며 초등학생 교육과 환경개선, 개발이슈 조사를 해요."
   },
   {
     "id": "yu-news-229726220",
@@ -18493,7 +18826,8 @@
     "postedAt": "2026-04-30",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:51:46.442Z",
-    "firstSeenAt": "2026-10-01T03:51:46.442Z"
+    "firstSeenAt": "2026-10-01T03:51:46.442Z",
+    "summary": "우즈베키스탄 대학생들과 교류하며 초등학생 교육과 환경개선, 개발이슈 조사를 해요."
   },
   {
     "id": "yu-news-229726182",
@@ -18561,7 +18895,8 @@
     "aliases": [
       "yu-news-229909022",
       "yu-news-229824561"
-    ]
+    ],
+    "summary": "베트남에서 KOICA 개발협력 현장을 배우고 현지 대학생들과 교류해요."
   },
   {
     "id": "yu-news-229641821",
@@ -18602,7 +18937,8 @@
     "postedAt": "2026-04-24",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:52:26.502Z",
-    "firstSeenAt": "2026-10-01T03:52:26.502Z"
+    "firstSeenAt": "2026-10-01T03:52:26.502Z",
+    "summary": "우즈베키스탄 대학생들과 교류하며 초등학생 교육과 환경개선, 개발이슈 조사를 해요."
   },
   {
     "id": "yu-news-229599610",
@@ -18644,7 +18980,8 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:52:49.952Z",
     "firstSeenAt": "2026-10-01T03:52:49.952Z",
-    "seriesId": "yu-news-225839595"
+    "seriesId": "yu-news-225839595",
+    "summary": "학생연구원으로 대학과 기업의 공동 기술개발 연구와 기업 현장 파견에 참여해요."
   },
   {
     "id": "yu-news-229599590",
@@ -18688,7 +19025,8 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:52:58.121Z",
     "firstSeenAt": "2026-10-01T03:52:58.121Z",
-    "seriesId": "yu-news-224999423"
+    "seriesId": "yu-news-224999423",
+    "summary": "미국 인턴 취업을 위한 면접 교육을 받고 비자 발급 비용과 항공료를 지원받아요."
   },
   {
     "id": "yu-news-229585516",
@@ -18730,7 +19068,8 @@
     "postedAt": "2026-04-20",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:53:10.591Z",
-    "firstSeenAt": "2026-10-01T03:53:10.591Z"
+    "firstSeenAt": "2026-10-01T03:53:10.591Z",
+    "summary": "일본 오키나와의 대학과 호텔·리조트를 탐방하며 항공비와 숙식 지원을 받아요."
   },
   {
     "id": "yu-news-229332358",
@@ -18770,7 +19109,8 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:58:45.714Z",
     "firstSeenAt": "2026-10-01T03:58:45.714Z",
-    "seriesId": "yu-news-84157"
+    "seriesId": "yu-news-84157",
+    "summary": "무역과 해외취업을 준비하는 실무 교육을 받고 숙식이 제공되는 합숙교육에 참여해요."
   },
   {
     "id": "yu-news-229304200",
@@ -18812,7 +19152,8 @@
     "postedAt": "2026-03-31",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:59:02.626Z",
-    "firstSeenAt": "2026-10-01T03:59:02.626Z"
+    "firstSeenAt": "2026-10-01T03:59:02.626Z",
+    "summary": "팀으로 취창업 프로젝트와 공모전에 참여하고 활동 실비를 지원받아요"
   },
   {
     "id": "yu-news-229290096",
@@ -18854,7 +19195,8 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:59:13.113Z",
     "firstSeenAt": "2026-10-01T03:59:13.113Z",
-    "seriesId": "yu-news-2756920"
+    "seriesId": "yu-news-2756920",
+    "summary": "여러 전공의 학생들과 팀을 꾸려 종합설계 과제물을 만들고 재료비를 지원받아요"
   },
   {
     "id": "yu-news-229120915",
@@ -18907,7 +19249,8 @@
     "seriesId": "yu-news-85184",
     "aliases": [
       "yu-col-pharm-229149375"
-    ]
+    ],
+    "summary": "온라인으로 장애인식개선교육을 듣고 이수증을 발급받아요"
   },
   {
     "id": "yu-news-229036475",
@@ -18950,7 +19293,8 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:02:53.058Z",
     "firstSeenAt": "2026-10-01T04:02:53.058Z",
-    "seriesId": "yu-news-10261173"
+    "seriesId": "yu-news-10261173",
+    "summary": "온라인으로 인권과 성평등에 관한 폭력예방교육을 이수해요"
   },
   {
     "id": "yu-news-228909571",
@@ -18991,7 +19335,8 @@
     "postedAt": "2026-03-03",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:05:11.926Z",
-    "firstSeenAt": "2026-10-01T04:05:11.926Z"
+    "firstSeenAt": "2026-10-01T04:05:11.926Z",
+    "summary": "SW 동아리 활동에 필요한 경비를 동아리별 최대 500만원까지 지원받아요"
   },
   {
     "id": "yu-news-228573820",
@@ -19032,7 +19377,8 @@
     "postedAt": "2026-02-07",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:07:49.982Z",
-    "firstSeenAt": "2026-10-01T04:07:49.982Z"
+    "firstSeenAt": "2026-10-01T04:07:49.982Z",
+    "summary": "숲해설 교육과 실습을 받고 평가에 합격하면 숲해설가 자격증을 취득해요"
   },
   {
     "id": "yu-news-228029157",
@@ -19074,7 +19420,8 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:12:16.541Z",
     "firstSeenAt": "2026-10-01T04:12:16.541Z",
-    "seriesId": "yu-news-10564691"
+    "seriesId": "yu-news-10564691",
+    "summary": "TOEIC 정기시험 응시료를 횟수 제한 없이 10% 할인받아요"
   },
   {
     "id": "yu-news-224890988",
@@ -19118,7 +19465,8 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:47:08.486Z",
     "firstSeenAt": "2026-10-01T04:47:08.486Z",
-    "seriesId": "yu-news-220062092"
+    "seriesId": "yu-news-220062092",
+    "summary": "대학의 국제 사업을 홍보하고 국제 업무를 도우며 활동 평가에 따라 장학금을 받아요"
   },
   {
     "id": "yu-news-230499958",
@@ -19168,7 +19516,8 @@
     "seriesId": "yu-news-228224599",
     "aliases": [
       "yu-news-230767180"
-    ]
+    ],
+    "summary": "글로벌공생 분야의 마이크로전공 교과목을 이수하고 전공 인증을 받아요"
   },
   {
     "id": "yu-news-230134215",
@@ -19223,7 +19572,8 @@
     "aliases": [
       "yu-news-231371584",
       "yu-news-230879658"
-    ]
+    ],
+    "summary": "교과·비교과 학습을 실천한 사례로 공모전에 참여해요"
   },
   {
     "id": "yu-news-229641797",
@@ -19277,7 +19627,8 @@
     "firstSeenAt": "2026-10-01T03:52:29.085Z",
     "aliases": [
       "yu-news-229894902"
-    ]
+    ],
+    "summary": "대웅에프엔티에서 소재교육 준비 등을 맡는 채용연계형 현장실습에 참여해요"
   },
   {
     "id": "yu-news-224109086",
@@ -19507,7 +19858,8 @@
       "yu-news-224377824",
       "yu-news-224283368",
       "yu-news-224189377"
-    ]
+    ],
+    "summary": "미국 자동차 부품 기업에서 12개월 동안 생산기술·품질·생산 분야 인턴으로 일해요"
   },
   {
     "id": "yu-news-231893412",
@@ -19551,7 +19903,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:15:01.836Z",
     "firstSeenAt": "2026-10-01T10:15:01.836Z",
-    "seriesId": "yu-news-224337455"
+    "seriesId": "yu-news-224337455",
+    "summary": "AI가 번역한 스마트교육 콘텐츠의 중국어·베트남어 자막을 검수해요"
   },
   {
     "id": "yu-news-231893407",
@@ -19594,7 +19947,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:15:02.871Z",
     "firstSeenAt": "2026-10-01T10:15:02.871Z",
-    "seriesId": "yu-news-221807521"
+    "seriesId": "yu-news-221807521",
+    "summary": "전공과 지속가능발전목표를 연결해 글로벌·지역사회 문제를 해결할 아이디어를 제안해요"
   },
   {
     "id": "yu-news-231893394",
@@ -19636,7 +19990,8 @@
     "postedAt": "2026-10-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:15:03.734Z",
-    "firstSeenAt": "2026-10-01T10:15:03.734Z"
+    "firstSeenAt": "2026-10-01T10:15:03.734Z",
+    "summary": "전공적성 검사로 관심 분야에 맞는 부·복수전공과 진로 방향을 탐색해요"
   },
   {
     "id": "knu-notice-1338470",
@@ -19682,7 +20037,8 @@
     "postedAt": "2026-10-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:47:50.622Z",
-    "firstSeenAt": "2026-10-01T10:47:50.622Z"
+    "firstSeenAt": "2026-10-01T10:47:50.622Z",
+    "summary": "최대 4학기 등록금 전액을 지원받고 농업인재 양성 프로그램에 참여해요."
   },
   {
     "id": "knu-notice-1338452",
@@ -19724,7 +20080,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:47:52.189Z",
-    "firstSeenAt": "2026-10-01T10:47:52.189Z"
+    "firstSeenAt": "2026-10-01T10:47:52.189Z",
+    "summary": "여러 외국어를 일대일 온라인 맞춤 수업으로 배워요."
   },
   {
     "id": "knu-notice-1338443",
@@ -19766,7 +20123,8 @@
     "postedAt": "2026-09-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:47:54.091Z",
-    "firstSeenAt": "2026-10-01T10:47:54.091Z"
+    "firstSeenAt": "2026-10-01T10:47:54.091Z",
+    "summary": "생활협동조합에서 근로장학생으로 일해요."
   },
   {
     "id": "knu-notice-1338434",
@@ -19808,7 +20166,8 @@
     "postedAt": "2026-09-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:47:55.504Z",
-    "firstSeenAt": "2026-10-01T10:47:55.504Z"
+    "firstSeenAt": "2026-10-01T10:47:55.504Z",
+    "summary": "독감 예방접종 비용을 지원받아요."
   },
   {
     "id": "knu-notice-1338431",
@@ -19850,7 +20209,8 @@
     "postedAt": "2026-09-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:47:56.199Z",
-    "firstSeenAt": "2026-10-01T10:47:56.199Z"
+    "firstSeenAt": "2026-10-01T10:47:56.199Z",
+    "summary": "생활비로 쓸 수 있는 장학금 150만원을 지원받아요."
   },
   {
     "id": "knu-notice-1338428",
@@ -19894,7 +20254,8 @@
     "postedAt": "2026-09-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:47:58.093Z",
-    "firstSeenAt": "2026-10-01T10:47:58.093Z"
+    "firstSeenAt": "2026-10-01T10:47:58.093Z",
+    "summary": "생활비 장학금 150만원을 지원받아요."
   },
   {
     "id": "knu-notice-1338401",
@@ -19937,7 +20298,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:48:00.096Z",
     "firstSeenAt": "2026-10-01T10:48:00.096Z",
-    "seriesId": "knu-notice-1330127"
+    "seriesId": "knu-notice-1330127",
+    "summary": "여섯 가지 핵심역량을 갖춘 졸업예정자로 선발되면 인증서를 받아요."
   },
   {
     "id": "knu-notice-1338399",
@@ -19979,7 +20341,8 @@
     "postedAt": "2026-09-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:48:01.795Z",
-    "firstSeenAt": "2026-10-01T10:48:01.795Z"
+    "firstSeenAt": "2026-10-01T10:48:01.795Z",
+    "summary": "외국어 회화와 시험 대비 수업, 일대일 온라인 맞춤 수업을 들어요."
   },
   {
     "id": "knu-notice-1338396",
@@ -20021,7 +20384,8 @@
     "postedAt": "2026-09-17",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:48:02.078Z",
-    "firstSeenAt": "2026-10-01T10:48:02.078Z"
+    "firstSeenAt": "2026-10-01T10:48:02.078Z",
+    "summary": "봄내장학생으로 선발되면 최대 100만원의 장학금을 받아요."
   },
   {
     "id": "knu-notice-1338395",
@@ -20065,7 +20429,8 @@
     "postedAt": "2026-09-17",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:48:03.336Z",
-    "firstSeenAt": "2026-10-01T10:48:03.336Z"
+    "firstSeenAt": "2026-10-01T10:48:03.336Z",
+    "summary": "동문 선배에게 진학과 취업 경험, 산업 현장의 실무 이야기를 들어요."
   },
   {
     "id": "knu-notice-1338373",
@@ -20108,7 +20473,8 @@
     "postedAt": "2026-09-15",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:48:04.130Z",
-    "firstSeenAt": "2026-10-01T10:48:04.130Z"
+    "firstSeenAt": "2026-10-01T10:48:04.130Z",
+    "summary": "동교인재상 수상자로 선발되면 상패와 최대 500만원의 상금을 받아요."
   },
   {
     "id": "knu-notice-1338359",
@@ -20150,7 +20516,8 @@
     "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:48:05.129Z",
-    "firstSeenAt": "2026-10-01T10:48:05.129Z"
+    "firstSeenAt": "2026-10-01T10:48:05.129Z",
+    "summary": "생활비로 쓸 수 있는 장학금 500만원을 지원받아요."
   },
   {
     "id": "knu-event-1338337",
@@ -20191,7 +20558,8 @@
     "postedAt": "2026-09-09",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:50:19.735Z",
-    "firstSeenAt": "2026-10-01T10:50:19.735Z"
+    "firstSeenAt": "2026-10-01T10:50:19.735Z",
+    "summary": "가을과 겨울 밤하늘을 주제로 한 행사에 참여해요."
   },
   {
     "id": "knu-event-1338460",
@@ -20235,7 +20603,8 @@
     "postedAt": "2026-10-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:50:21.218Z",
-    "firstSeenAt": "2026-10-01T10:50:21.218Z"
+    "firstSeenAt": "2026-10-01T10:50:21.218Z",
+    "summary": "로봇기업의 채용·인턴십 상담을 받고 직무 정보와 취업 준비 지원을 받아요."
   },
   {
     "id": "knu-event-1338454",
@@ -20279,7 +20648,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:50:22.135Z",
-    "firstSeenAt": "2026-10-01T10:50:22.135Z"
+    "firstSeenAt": "2026-10-01T10:50:22.135Z",
+    "summary": "동성로 활성화를 위한 팀 프로젝트를 진행하고 활동비와 수료증을 받아요."
   },
   {
     "id": "knu-event-1338440",
@@ -20321,7 +20691,8 @@
     "postedAt": "2026-09-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:50:23.078Z",
-    "firstSeenAt": "2026-10-01T10:50:23.078Z"
+    "firstSeenAt": "2026-10-01T10:50:23.078Z",
+    "summary": "격변의 시대 속 한국과 일본, 우리의 선택을 주제로 한 특별강연을 들어요."
   },
   {
     "id": "knu-event-1338404",
@@ -20364,7 +20735,8 @@
     "postedAt": "2026-09-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:50:24.544Z",
-    "firstSeenAt": "2026-10-01T10:50:24.544Z"
+    "firstSeenAt": "2026-10-01T10:50:24.544Z",
+    "summary": "치과대학 대학원의 교육과정과 연구 분야를 알아보고 교수님과 진학을 상담해요."
   },
   {
     "id": "knu-event-1338340",
@@ -20408,7 +20780,8 @@
     "postedAt": "2026-09-09",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:50:26.004Z",
-    "firstSeenAt": "2026-10-01T10:50:26.004Z"
+    "firstSeenAt": "2026-10-01T10:50:26.004Z",
+    "summary": "로봇부트캠프 교육과 참여 혜택, 이수 기준을 알아보고 궁금한 점을 질문해요."
   },
   {
     "id": "knu-event-1338320",
@@ -20450,7 +20823,8 @@
     "postedAt": "2026-09-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:50:28.441Z",
-    "firstSeenAt": "2026-10-01T10:50:28.441Z"
+    "firstSeenAt": "2026-10-01T10:50:28.441Z",
+    "summary": "AI가 사회복지에 가져올 변화와 사회혁신의 방향을 다루는 강연을 들어요."
   },
   {
     "id": "knu-event-1338317",
@@ -20493,7 +20867,8 @@
     "postedAt": "2026-09-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:50:29.050Z",
-    "firstSeenAt": "2026-10-01T10:50:29.050Z"
+    "firstSeenAt": "2026-10-01T10:50:29.050Z",
+    "summary": "강연과 답사, 웹툰·공예·글쓰기 체험으로 한글과 경상 방언의 가치를 배워요."
   },
   {
     "id": "knu-event-1338296",
@@ -20539,7 +20914,8 @@
     "postedAt": "2026-09-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:50:30.754Z",
-    "firstSeenAt": "2026-10-01T10:50:30.754Z"
+    "firstSeenAt": "2026-10-01T10:50:30.754Z",
+    "summary": "학부생의 학습포트폴리오를 매주 검토하고 개선을 돕는 피드백을 작성해요."
   },
   {
     "id": "knu-event-1337880",
@@ -20581,7 +20957,8 @@
     "postedAt": "2026-07-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:50:33.996Z",
-    "firstSeenAt": "2026-10-01T10:50:33.996Z"
+    "firstSeenAt": "2026-10-01T10:50:33.996Z",
+    "summary": "Microsoft AI 실무 활용 온라인 교육을 무료로 듣고 수료증을 받아요."
   },
   {
     "id": "kmu-notice-271100",
@@ -20633,7 +21010,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:05.406Z",
-    "firstSeenAt": "2026-10-01T10:53:05.406Z"
+    "firstSeenAt": "2026-10-01T10:53:05.406Z",
+    "summary": "인도네시아·필리핀·말레이시아 대학에서 교환학생으로 공부해요."
   },
   {
     "id": "kmu-notice-271043",
@@ -20674,7 +21052,8 @@
     "postedAt": "2026-09-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:07.972Z",
-    "firstSeenAt": "2026-10-01T10:53:07.972Z"
+    "firstSeenAt": "2026-10-01T10:53:07.972Z",
+    "summary": null
   },
   {
     "id": "kmu-notice-270667",
@@ -20716,7 +21095,8 @@
     "postedAt": "2026-09-15",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:09.964Z",
-    "firstSeenAt": "2026-10-01T10:53:09.964Z"
+    "firstSeenAt": "2026-10-01T10:53:09.964Z",
+    "summary": "집단상담을 통해 대인관계 소통과 자기돌봄을 연습해요."
   },
   {
     "id": "kmu-notice-270269",
@@ -20765,7 +21145,8 @@
     "firstSeenAt": "2026-10-01T10:53:10.865Z",
     "aliases": [
       "kmu-scholarship-261841"
-    ]
+    ],
+    "summary": null
   },
   {
     "id": "kmu-notice-270267",
@@ -20822,7 +21203,8 @@
     "aliases": [
       "kmu-col-coe-237826",
       "kmu-col-ssc-237896"
-    ]
+    ],
+    "summary": "온라인 폭력예방교육을 수강하고 교육지원금 추첨에 참여해요."
   },
   {
     "id": "kmu-notice-271115",
@@ -20866,7 +21248,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:18.224Z",
-    "firstSeenAt": "2026-10-01T10:53:18.224Z"
+    "firstSeenAt": "2026-10-01T10:53:18.224Z",
+    "summary": "포트폴리오를 작성하고 컨설팅을 받으며 상금이 있는 공모전에 참여해요."
   },
   {
     "id": "kmu-notice-271044",
@@ -20908,7 +21291,8 @@
     "postedAt": "2026-09-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:19.012Z",
-    "firstSeenAt": "2026-10-01T10:53:19.012Z"
+    "firstSeenAt": "2026-10-01T10:53:19.012Z",
+    "summary": "선배 멘토와 일대일로 상담하며 전공 선택과 학업 고민을 해결해요."
   },
   {
     "id": "kmu-notice-271040",
@@ -20950,7 +21334,8 @@
     "postedAt": "2026-09-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:19.683Z",
-    "firstSeenAt": "2026-10-01T10:53:19.683Z"
+    "firstSeenAt": "2026-10-01T10:53:19.683Z",
+    "summary": "계명공자아카데미의 브이로그 공모전에 참여해요."
   },
   {
     "id": "kmu-notice-270973",
@@ -21005,7 +21390,8 @@
     "aliases": [
       "kmu-recruit-270969",
       "kmu-startup-239534"
-    ]
+    ],
+    "summary": "딥테크 창업 기획을 지원받고 선정되면 시제품 제작비도 지원받아요."
   },
   {
     "id": "kmu-notice-270971",
@@ -21046,7 +21432,8 @@
     "postedAt": "2026-09-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:21.854Z",
-    "firstSeenAt": "2026-10-01T10:53:21.854Z"
+    "firstSeenAt": "2026-10-01T10:53:21.854Z",
+    "summary": "대명캠퍼스에서 모의토익에 응시해요."
   },
   {
     "id": "kmu-notice-270970",
@@ -21087,7 +21474,8 @@
     "postedAt": "2026-09-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:23.105Z",
-    "firstSeenAt": "2026-10-01T10:53:23.105Z"
+    "firstSeenAt": "2026-10-01T10:53:23.105Z",
+    "summary": "성서캠퍼스에서 모의토익에 응시해요."
   },
   {
     "id": "kmu-notice-270938",
@@ -21132,7 +21520,8 @@
     "postedAt": "2026-09-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:23.931Z",
-    "firstSeenAt": "2026-10-01T10:53:23.931Z"
+    "firstSeenAt": "2026-10-01T10:53:23.931Z",
+    "summary": "참여형 수업의 학습 방식을 이해하고 이수한 세션별로 비교과 점수를 받아요."
   },
   {
     "id": "kmu-notice-270930",
@@ -21177,7 +21566,8 @@
     "postedAt": "2026-09-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:24.865Z",
-    "firstSeenAt": "2026-10-01T10:53:24.865Z"
+    "firstSeenAt": "2026-10-01T10:53:24.865Z",
+    "summary": "심리 워크숍에서 스트레스 회복과 대화, 미루기 개선 방법을 학습해요."
   },
   {
     "id": "kmu-notice-270922",
@@ -21219,7 +21609,8 @@
     "postedAt": "2026-09-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:25.899Z",
-    "firstSeenAt": "2026-10-01T10:53:25.899Z"
+    "firstSeenAt": "2026-10-01T10:53:25.899Z",
+    "summary": "AI 학습 플랫폼으로 수학 개념을 학습하고 실전 문제를 풀이해요."
   },
   {
     "id": "kmu-notice-270812",
@@ -21261,7 +21652,8 @@
     "postedAt": "2026-09-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:27.640Z",
-    "firstSeenAt": "2026-10-01T10:53:27.640Z"
+    "firstSeenAt": "2026-10-01T10:53:27.640Z",
+    "summary": "온라인으로 생성형 AI와 프로그래밍 실습 교육에 참여해요."
   },
   {
     "id": "kmu-notice-270737",
@@ -21303,7 +21695,8 @@
     "postedAt": "2026-09-17",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:28.137Z",
-    "firstSeenAt": "2026-10-01T10:53:28.137Z"
+    "firstSeenAt": "2026-10-01T10:53:28.137Z",
+    "summary": "사람과 AI가 협업하는 실습 프로그램에 참여해요."
   },
   {
     "id": "kmu-notice-270732",
@@ -21345,7 +21738,8 @@
     "postedAt": "2026-09-17",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:29.182Z",
-    "firstSeenAt": "2026-10-01T10:53:29.182Z"
+    "firstSeenAt": "2026-10-01T10:53:29.182Z",
+    "summary": "문학 작품 속 여성성과 남성성을 다루는 연구 성과를 공유하고 토론해요."
   },
   {
     "id": "kmu-notice-270665",
@@ -21387,7 +21781,8 @@
     "postedAt": "2026-09-15",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:30.378Z",
-    "firstSeenAt": "2026-10-01T10:53:30.378Z"
+    "firstSeenAt": "2026-10-01T10:53:30.378Z",
+    "summary": "온라인으로 MOS 365 엑셀·워드·파워포인트 교육에 참여해요."
   },
   {
     "id": "kmu-notice-270606",
@@ -21429,7 +21824,8 @@
     "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:31.572Z",
-    "firstSeenAt": "2026-10-01T10:53:31.572Z"
+    "firstSeenAt": "2026-10-01T10:53:31.572Z",
+    "summary": "글쓰기·스피치·영어 분야의 일대일 컨설팅에 참여해요."
   },
   {
     "id": "kmu-notice-270448",
@@ -21473,7 +21869,8 @@
     "postedAt": "2026-09-08",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:33.822Z",
-    "firstSeenAt": "2026-10-01T10:53:33.822Z"
+    "firstSeenAt": "2026-10-01T10:53:33.822Z",
+    "summary": "온라인 검사로 대학생활의 스트레스 수준과 취약 영역을 확인해요."
   },
   {
     "id": "kmu-notice-270443",
@@ -21515,7 +21912,8 @@
     "postedAt": "2026-09-08",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:34.518Z",
-    "firstSeenAt": "2026-10-01T10:53:34.518Z"
+    "firstSeenAt": "2026-10-01T10:53:34.518Z",
+    "summary": "한중 공감 토론 발표 대회에 참가해요."
   },
   {
     "id": "kmu-notice-270429",
@@ -21557,7 +21955,8 @@
     "postedAt": "2026-09-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:35.317Z",
-    "firstSeenAt": "2026-10-01T10:53:35.317Z"
+    "firstSeenAt": "2026-10-01T10:53:35.317Z",
+    "summary": "집단심리검사를 받아요."
   },
   {
     "id": "kmu-notice-270428",
@@ -21602,7 +22001,8 @@
     "postedAt": "2026-09-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:37.132Z",
-    "firstSeenAt": "2026-10-01T10:53:37.132Z"
+    "firstSeenAt": "2026-10-01T10:53:37.132Z",
+    "summary": "전공 기초역량을 높이는 온라인 콘텐츠를 수강해요."
   },
   {
     "id": "kmu-notice-270425",
@@ -21647,7 +22047,8 @@
     "postedAt": "2026-09-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:38.286Z",
-    "firstSeenAt": "2026-10-01T10:53:38.286Z"
+    "firstSeenAt": "2026-10-01T10:53:38.286Z",
+    "summary": "우울·스트레스와 약물 오남용 예방 교육을 받고 수료 점수를 받아요."
   },
   {
     "id": "kmu-notice-270423",
@@ -21689,7 +22090,8 @@
     "postedAt": "2026-09-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:39.437Z",
-    "firstSeenAt": "2026-10-01T10:53:39.437Z"
+    "firstSeenAt": "2026-10-01T10:53:39.437Z",
+    "summary": "학습역량을 높이는 강의를 듣고 만족도 조사 후 COMpass K 점수를 받아요."
   },
   {
     "id": "kmu-notice-270348",
@@ -21731,7 +22133,8 @@
     "postedAt": "2026-09-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:40.502Z",
-    "firstSeenAt": "2026-10-01T10:53:40.502Z"
+    "firstSeenAt": "2026-10-01T10:53:40.502Z",
+    "summary": "환경정의와 생태주의를 에코페미니즘 관점에서 살펴보는 세미나에 참여해요."
   },
   {
     "id": "kmu-notice-270232",
@@ -21773,7 +22176,8 @@
     "postedAt": "2026-09-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:43.197Z",
-    "firstSeenAt": "2026-10-01T10:53:43.197Z"
+    "firstSeenAt": "2026-10-01T10:53:43.197Z",
+    "summary": "콜로키움에서 연구 논문을 발표하거나 토론하며 학술 교류를 해요."
   },
   {
     "id": "kmu-notice-270168",
@@ -21816,7 +22220,8 @@
     "postedAt": "2026-08-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:47.125Z",
-    "firstSeenAt": "2026-10-01T10:53:47.125Z"
+    "firstSeenAt": "2026-10-01T10:53:47.125Z",
+    "summary": "미국 교환학생 장학금을 받고 첨단산업 체험 프로그램 참여를 지원받아요."
   },
   {
     "id": "kmu-notice-270062",
@@ -21869,7 +22274,8 @@
     "postedAt": "2026-08-25",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:49.184Z",
-    "firstSeenAt": "2026-10-01T10:53:49.184Z"
+    "firstSeenAt": "2026-10-01T10:53:49.184Z",
+    "summary": "아시아 4개국 대학에서 공부할 교환학생 후보 선발시험에 지원해요."
   },
   {
     "id": "kmu-notice-270032",
@@ -21910,7 +22316,8 @@
     "postedAt": "2026-08-24",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:50.385Z",
-    "firstSeenAt": "2026-10-01T10:53:50.385Z"
+    "firstSeenAt": "2026-10-01T10:53:50.385Z",
+    "summary": "러시아어 어휘·문법, 읽기, 듣기, 쓰기, 말하기 능력을 평가받아요."
   },
   {
     "id": "kmu-notice-269953",
@@ -21952,7 +22359,8 @@
     "postedAt": "2026-08-20",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:52.308Z",
-    "firstSeenAt": "2026-10-01T10:53:52.308Z"
+    "firstSeenAt": "2026-10-01T10:53:52.308Z",
+    "summary": "글로벌 비즈니스 회화 교육을 받아요."
   },
   {
     "id": "kmu-notice-269414",
@@ -21994,7 +22402,8 @@
     "postedAt": "2026-07-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T10:53:53.201Z",
-    "firstSeenAt": "2026-10-01T10:53:53.201Z"
+    "firstSeenAt": "2026-10-01T10:53:53.201Z",
+    "summary": "모빌리티 분야 산학공동연구에 참여하고 학생연구원 인건비를 받아요."
   },
   {
     "id": "kmu-recruit-271136",
@@ -22036,7 +22445,8 @@
     "postedAt": "2026-10-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:20.791Z",
-    "firstSeenAt": "2026-10-01T11:00:20.791Z"
+    "firstSeenAt": "2026-10-01T11:00:20.791Z",
+    "summary": "왕실의 태 관련 특별전과 연계된 특강을 들어요."
   },
   {
     "id": "kmu-recruit-271131",
@@ -22078,7 +22488,8 @@
     "postedAt": "2026-10-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:22.518Z",
-    "firstSeenAt": "2026-10-01T11:00:22.518Z"
+    "firstSeenAt": "2026-10-01T11:00:22.518Z",
+    "summary": "온라인으로 K-STAR 인증 기준과 혜택, 포트폴리오 작성법을 배워요."
   },
   {
     "id": "kmu-recruit-271111",
@@ -22129,7 +22540,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:25.578Z",
-    "firstSeenAt": "2026-10-01T11:00:25.578Z"
+    "firstSeenAt": "2026-10-01T11:00:25.578Z",
+    "summary": "멘토와 멘티가 함께 전공과 진로를 탐색하고 팀 활동비를 지원받아요."
   },
   {
     "id": "kmu-recruit-271110",
@@ -22173,7 +22585,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:26.515Z",
-    "firstSeenAt": "2026-10-01T11:00:26.515Z"
+    "firstSeenAt": "2026-10-01T11:00:26.515Z",
+    "summary": "교수와 전문가의 자문을 받아 관심 분야에 맞는 전공을 직접 설계해요."
   },
   {
     "id": "kmu-recruit-271066",
@@ -22217,7 +22630,8 @@
     "postedAt": "2026-09-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:27.126Z",
-    "firstSeenAt": "2026-10-01T11:00:27.126Z"
+    "firstSeenAt": "2026-10-01T11:00:27.126Z",
+    "summary": "원광대와 함께 자기이해와 공감, 경청, 협력을 배우는 활동에 참여해요."
   },
   {
     "id": "kmu-recruit-271060",
@@ -22264,7 +22678,8 @@
     "postedAt": "2026-09-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:28.126Z",
-    "firstSeenAt": "2026-10-01T11:00:28.126Z"
+    "firstSeenAt": "2026-10-01T11:00:28.126Z",
+    "summary": "사범대학 행정팀에서 근로장학생으로 일하고 장학금을 받아요."
   },
   {
     "id": "kmu-recruit-271047",
@@ -22309,7 +22724,8 @@
     "postedAt": "2026-09-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:29.247Z",
-    "firstSeenAt": "2026-10-01T11:00:29.247Z"
+    "firstSeenAt": "2026-10-01T11:00:29.247Z",
+    "summary": "한국인과 외국인 학생이 서로의 문화를 소개하고 문화 존중 방법을 토론해요."
   },
   {
     "id": "kmu-recruit-271037",
@@ -22355,7 +22771,8 @@
     "postedAt": "2026-09-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:30.055Z",
-    "firstSeenAt": "2026-10-01T11:00:30.055Z"
+    "firstSeenAt": "2026-10-01T11:00:30.055Z",
+    "summary": "장춘대학 계명학원 학생들과 멘토링으로 언어와 문화를 교류해요."
   },
   {
     "id": "kmu-recruit-270967",
@@ -22400,7 +22817,8 @@
     "postedAt": "2026-09-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:32.799Z",
-    "firstSeenAt": "2026-10-01T11:00:32.799Z"
+    "firstSeenAt": "2026-10-01T11:00:32.799Z",
+    "summary": "에스엘 채용담당자에게 직무 역량과 채용 과정, 자기소개서·면접 요령을 배워요."
   },
   {
     "id": "kmu-recruit-270966",
@@ -22444,7 +22862,8 @@
     "postedAt": "2026-09-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:35.173Z",
-    "firstSeenAt": "2026-10-01T11:00:35.173Z"
+    "firstSeenAt": "2026-10-01T11:00:35.173Z",
+    "summary": "해외 기업과 연구기관 연사의 온라인 강연을 듣고 취업·창업 정보를 얻어요."
   },
   {
     "id": "kmu-recruit-270941",
@@ -22488,7 +22907,8 @@
     "postedAt": "2026-09-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:36.229Z",
-    "firstSeenAt": "2026-10-01T11:00:36.229Z"
+    "firstSeenAt": "2026-10-01T11:00:36.229Z",
+    "summary": "온라인 설명회에서 KOICA 해외봉사단 모집과 참여 경험을 듣고 질문해요."
   },
   {
     "id": "kmu-recruit-270939",
@@ -22530,7 +22950,8 @@
     "postedAt": "2026-09-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:36.683Z",
-    "firstSeenAt": "2026-10-01T11:00:36.683Z"
+    "firstSeenAt": "2026-10-01T11:00:36.683Z",
+    "summary": "학습지원 프로그램을 모니터링하고 개선 의견을 제안하며 활동비를 받아요."
   },
   {
     "id": "kmu-recruit-270733",
@@ -22573,7 +22994,8 @@
     "postedAt": "2026-09-17",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:38.907Z",
-    "firstSeenAt": "2026-10-01T11:00:38.907Z"
+    "firstSeenAt": "2026-10-01T11:00:38.907Z",
+    "summary": "지정 도서를 읽고 독서퀴즈대회에 참가해 본선 진출 시 상금을 받아요."
   },
   {
     "id": "kmu-recruit-270669",
@@ -22617,7 +23039,8 @@
     "postedAt": "2026-09-15",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:40.141Z",
-    "firstSeenAt": "2026-10-01T11:00:40.141Z"
+    "firstSeenAt": "2026-10-01T11:00:40.141Z",
+    "summary": "멘토와 멘티가 함께 학습하며 대학생활 적응과 학습능력 향상을 도모해요."
   },
   {
     "id": "kmu-recruit-270452",
@@ -22658,7 +23081,8 @@
     "postedAt": "2026-09-08",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:41.918Z",
-    "firstSeenAt": "2026-10-01T11:00:41.918Z"
+    "firstSeenAt": "2026-10-01T11:00:41.918Z",
+    "summary": "개발협력 영프로페셔널로 국제개발협력 교육·홍보·행사 운영을 지원해요."
   },
   {
     "id": "kmu-recruit-270410",
@@ -22705,7 +23129,8 @@
     "postedAt": "2026-08-24",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:44.299Z",
-    "firstSeenAt": "2026-10-01T11:00:44.299Z"
+    "firstSeenAt": "2026-10-01T11:00:44.299Z",
+    "summary": "AI전략팀 실습조교로 근무하고 학비 감면을 받아요."
   },
   {
     "id": "kmu-recruit-270304",
@@ -22756,7 +23181,8 @@
     "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:45.256Z",
-    "firstSeenAt": "2026-10-01T11:00:45.256Z"
+    "firstSeenAt": "2026-10-01T11:00:45.256Z",
+    "summary": "의예과 조교로 학과 행정 업무를 돕고 학비 감면을 받아요."
   },
   {
     "id": "kmu-recruit-270181",
@@ -22801,7 +23227,8 @@
     "postedAt": "2026-08-31",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:46.201Z",
-    "firstSeenAt": "2026-10-01T11:00:46.201Z"
+    "firstSeenAt": "2026-10-01T11:00:46.201Z",
+    "summary": "글로컬·AI·뉴미디어·갈등 관련 영상을 제작해 공모전에 출품해요."
   },
   {
     "id": "kmu-recruit-270131",
@@ -22848,7 +23275,8 @@
     "postedAt": "2026-08-27",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:47.172Z",
-    "firstSeenAt": "2026-10-01T11:00:47.172Z"
+    "firstSeenAt": "2026-10-01T11:00:47.172Z",
+    "summary": "경찰행정학과 조교로 행정 업무를 돕고 학비 감면을 받아요."
   },
   {
     "id": "kmu-recruit-269975",
@@ -22895,7 +23323,8 @@
     "postedAt": "2026-08-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:48.412Z",
-    "firstSeenAt": "2026-10-01T11:00:48.412Z"
+    "firstSeenAt": "2026-10-01T11:00:48.412Z",
+    "summary": "PC실습실 조교로 실습실 운영과 관리를 맡고 학비 감면을 받아요."
   },
   {
     "id": "kmu-recruit-269974",
@@ -22940,7 +23369,8 @@
     "postedAt": "2026-08-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:49.146Z",
-    "firstSeenAt": "2026-10-01T11:00:49.146Z"
+    "firstSeenAt": "2026-10-01T11:00:49.146Z",
+    "summary": "교내 전산 업무와 행사 기술지원을 맡고 근로장학금을 받아요."
   },
   {
     "id": "kmu-recruit-268733",
@@ -22985,7 +23415,8 @@
     "postedAt": "2026-07-06",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:00:50.885Z",
-    "firstSeenAt": "2026-10-01T11:00:50.885Z"
+    "firstSeenAt": "2026-10-01T11:00:50.885Z",
+    "summary": "한중일 역사 갈등 관련 연구를 보조하고 월 44만 원을 받아요."
   },
   {
     "id": "kmu-scholarship-271061",
@@ -23028,7 +23459,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:15.510Z",
     "firstSeenAt": "2026-10-01T11:05:15.510Z",
-    "seriesId": "kmu-scholarship-261950"
+    "seriesId": "kmu-scholarship-261950",
+    "summary": "논산시장학회 장학생으로 선발되면 학업장려비를 받아요."
   },
   {
     "id": "kmu-scholarship-270851",
@@ -23068,7 +23500,8 @@
     "postedAt": "2026-09-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:15.937Z",
-    "firstSeenAt": "2026-10-01T11:05:15.937Z"
+    "firstSeenAt": "2026-10-01T11:05:15.937Z",
+    "summary": "봄내장학생으로 선발되면 유형에 따라 장학금을 지원받아요."
   },
   {
     "id": "kmu-scholarship-270672",
@@ -23108,7 +23541,8 @@
     "postedAt": "2026-09-16",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:16.999Z",
-    "firstSeenAt": "2026-10-01T11:05:16.999Z"
+    "firstSeenAt": "2026-10-01T11:05:16.999Z",
+    "summary": "고속도로 사고 관련 자격을 갖춘 대학생은 장학금 500만 원을 받아요."
   },
   {
     "id": "kmu-scholarship-270612",
@@ -23150,7 +23584,8 @@
     "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:17.876Z",
-    "firstSeenAt": "2026-10-01T11:05:17.876Z"
+    "firstSeenAt": "2026-10-01T11:05:17.876Z",
+    "summary": "수성인재장학생으로 선발되면 학업을 위한 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-270575",
@@ -23193,7 +23628,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:18.973Z",
     "firstSeenAt": "2026-10-01T11:05:18.973Z",
-    "seriesId": "kmu-scholarship-264071"
+    "seriesId": "kmu-scholarship-264071",
+    "summary": "춘곡장학회 장학생으로 선발되면 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-270574",
@@ -23235,7 +23671,8 @@
     "postedAt": "2026-09-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:19.842Z",
-    "firstSeenAt": "2026-10-01T11:05:19.842Z"
+    "firstSeenAt": "2026-10-01T11:05:19.842Z",
+    "summary": "포항시장학회 장학생으로 선발되면 등록금을 최대 200만 원 지원받아요."
   },
   {
     "id": "kmu-scholarship-270479",
@@ -23279,7 +23716,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:20.905Z",
     "firstSeenAt": "2026-10-01T11:05:20.905Z",
-    "seriesId": "kmu-scholarship-262031"
+    "seriesId": "kmu-scholarship-262031",
+    "summary": "미래에셋 장학생으로 선발되면 해외 교환학생 활동을 위한 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-270475",
@@ -23321,7 +23759,8 @@
     "postedAt": "2026-09-09",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:22.747Z",
-    "firstSeenAt": "2026-10-01T11:05:22.747Z"
+    "firstSeenAt": "2026-10-01T11:05:22.747Z",
+    "summary": "김해시미래인재장학재단 장학생으로 선발되면 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-270449",
@@ -23363,7 +23802,8 @@
     "postedAt": "2026-09-08",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:23.131Z",
-    "firstSeenAt": "2026-10-01T11:05:23.131Z"
+    "firstSeenAt": "2026-10-01T11:05:23.131Z",
+    "summary": "두을장학재단 장학생으로 선발되면 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-270444",
@@ -23412,7 +23852,8 @@
     "firstSeenAt": "2026-10-01T11:05:24.022Z",
     "aliases": [
       "kmu-scholarship-271062"
-    ]
+    ],
+    "summary": "대전청년내일재단 장학생으로 선발되면 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-270420",
@@ -23455,7 +23896,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:25.036Z",
     "firstSeenAt": "2026-10-01T11:05:25.036Z",
-    "seriesId": "kmu-scholarship-262517"
+    "seriesId": "kmu-scholarship-262517",
+    "summary": "인천인재평생교육진흥원 장학생으로 선발되면 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-270399",
@@ -23497,7 +23939,8 @@
     "postedAt": "2026-09-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:26.579Z",
-    "firstSeenAt": "2026-10-01T11:05:26.579Z"
+    "firstSeenAt": "2026-10-01T11:05:26.579Z",
+    "summary": "전통 기·예능이나 매장유산 관련 분야 우수 장학생으로 선발되어 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-270349",
@@ -23540,7 +23983,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:28.167Z",
     "firstSeenAt": "2026-10-01T11:05:28.167Z",
-    "seriesId": "kmu-scholarship-262179"
+    "seriesId": "kmu-scholarship-262179",
+    "summary": "장애학생을 위한 사랑나눔장학금 A·B를 신청해요."
   },
   {
     "id": "kmu-scholarship-270261",
@@ -23585,7 +24029,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:32.233Z",
     "firstSeenAt": "2026-10-01T11:05:32.233Z",
-    "seriesId": "kmu-scholarship-261963"
+    "seriesId": "kmu-scholarship-261963",
+    "summary": "한국장학재단의 등록금·생활비 대출에서 발생한 이자를 지원받아요."
   },
   {
     "id": "kmu-scholarship-270222",
@@ -23628,7 +24073,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:33.601Z",
     "firstSeenAt": "2026-10-01T11:05:33.601Z",
-    "seriesId": "kmu-scholarship-262294"
+    "seriesId": "kmu-scholarship-262294",
+    "summary": "계명행복우수A와 성적·학업우수 총장특별장학금을 신청해요."
   },
   {
     "id": "kmu-scholarship-270221",
@@ -23673,7 +24119,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:35.601Z",
     "firstSeenAt": "2026-10-01T11:05:35.601Z",
-    "seriesId": "kmu-scholarship-261685"
+    "seriesId": "kmu-scholarship-261685",
+    "summary": "복수 외국어 성적이나 토익 점수 향상에 따라 수업료 지원 또는 장려금을 받아요."
   },
   {
     "id": "kmu-scholarship-270220",
@@ -23750,7 +24197,8 @@
       "kmu-col-kbs-237818",
       "kmu-col-musicarts-237868"
     ],
-    "seriesId": "kmu-scholarship-261799"
+    "seriesId": "kmu-scholarship-261799",
+    "summary": "인정된 자격증을 취득하면 등급에 따라 장학금 20만~50만 원을 받아요."
   },
   {
     "id": "kmu-scholarship-270217",
@@ -23795,7 +24243,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:37.575Z",
     "firstSeenAt": "2026-10-01T11:05:37.575Z",
-    "seriesId": "kmu-scholarship-261684"
+    "seriesId": "kmu-scholarship-261684",
+    "summary": "미자립교회나 군 단위 이하 지역 교회 목사의 자녀는 수업료 30%를 지원받아요."
   },
   {
     "id": "kmu-scholarship-270216",
@@ -23840,7 +24289,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:38.225Z",
     "firstSeenAt": "2026-10-01T11:05:38.225Z",
-    "seriesId": "kmu-scholarship-261684"
+    "seriesId": "kmu-scholarship-261684",
+    "summary": "형제·자매가 함께 본교에 다니면 한 명이 수업료의 30% 또는 70%를 지원받아요."
   },
   {
     "id": "kmu-scholarship-270211",
@@ -23882,7 +24332,8 @@
     "postedAt": "2026-09-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:39.434Z",
-    "firstSeenAt": "2026-10-01T11:05:39.434Z"
+    "firstSeenAt": "2026-10-01T11:05:39.434Z",
+    "summary": "대구광역시의 대학생 학자금대출 부담을 줄이는 지원을 받아요."
   },
   {
     "id": "kmu-scholarship-270192",
@@ -23925,7 +24376,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:40.146Z",
     "firstSeenAt": "2026-10-01T11:05:40.146Z",
-    "seriesId": "kmu-scholarship-262232"
+    "seriesId": "kmu-scholarship-262232",
+    "summary": "익산시의 지원으로 학자금 대출이자를 지원받아요."
   },
   {
     "id": "kmu-scholarship-270153",
@@ -23967,7 +24419,8 @@
     "postedAt": "2026-08-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:41.140Z",
-    "firstSeenAt": "2026-10-01T11:05:41.140Z"
+    "firstSeenAt": "2026-10-01T11:05:41.140Z",
+    "summary": "경주시장학회 장학생으로 선발되면 200만원을 지원받아요."
   },
   {
     "id": "kmu-scholarship-270137",
@@ -24010,7 +24463,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:42.185Z",
     "firstSeenAt": "2026-10-01T11:05:42.185Z",
-    "seriesId": "kmu-scholarship-261722"
+    "seriesId": "kmu-scholarship-261722",
+    "summary": "푸른등대 기부장학생으로 선발되어 장학금을 받을 수 있어요."
   },
   {
     "id": "kmu-scholarship-270135",
@@ -24052,7 +24506,8 @@
     "postedAt": "2026-08-27",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:43.257Z",
-    "firstSeenAt": "2026-10-01T11:05:43.257Z"
+    "firstSeenAt": "2026-10-01T11:05:43.257Z",
+    "summary": "익산사랑장학재단의 여러 선발 분야에 지원해 장학금을 받을 수 있어요."
   },
   {
     "id": "kmu-scholarship-270096",
@@ -24095,7 +24550,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:44.214Z",
     "firstSeenAt": "2026-10-01T11:05:44.214Z",
-    "seriesId": "kmu-scholarship-261752"
+    "seriesId": "kmu-scholarship-261752",
+    "summary": "울산연구원 장학생으로 선발되어 장학금을 받을 수 있어요."
   },
   {
     "id": "kmu-scholarship-270090",
@@ -24143,7 +24599,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:46.305Z",
     "firstSeenAt": "2026-10-01T11:05:46.305Z",
-    "seriesId": "kmu-scholarship-261907"
+    "seriesId": "kmu-scholarship-261907",
+    "summary": "취업·창업과 연계해 등록금 전액과 학기당 지원금 200만원을 지원받아요."
   },
   {
     "id": "kmu-scholarship-270072",
@@ -24186,7 +24643,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:46.976Z",
     "firstSeenAt": "2026-10-01T11:05:46.976Z",
-    "seriesId": "kmu-scholarship-261901"
+    "seriesId": "kmu-scholarship-261901",
+    "summary": "고등학교 졸업 후 일하며 대학에 다니는 학생이 장학금을 받을 수 있어요."
   },
   {
     "id": "kmu-scholarship-270064",
@@ -24228,7 +24686,8 @@
     "postedAt": "2026-08-25",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:47.546Z",
-    "firstSeenAt": "2026-10-01T11:05:47.546Z"
+    "firstSeenAt": "2026-10-01T11:05:47.546Z",
+    "summary": "선원가족 장학생으로 선발되어 장학금을 받을 수 있어요."
   },
   {
     "id": "kmu-scholarship-270063",
@@ -24271,7 +24730,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:48.779Z",
     "firstSeenAt": "2026-10-01T11:05:48.779Z",
-    "seriesId": "kmu-scholarship-261692"
+    "seriesId": "kmu-scholarship-261692",
+    "summary": "삼원장학생으로 선발되어 장학금을 받을 수 있어요."
   },
   {
     "id": "kmu-scholarship-270056",
@@ -24314,7 +24774,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:49.742Z",
     "firstSeenAt": "2026-10-01T11:05:49.742Z",
-    "seriesId": "kmu-scholarship-262369"
+    "seriesId": "kmu-scholarship-262369",
+    "summary": "달서인재육성장학재단 장학생으로 선발되어 장학금을 받을 수 있어요."
   },
   {
     "id": "kmu-scholarship-270053",
@@ -24356,7 +24817,8 @@
     "postedAt": "2026-08-25",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:50.894Z",
-    "firstSeenAt": "2026-10-01T11:05:50.894Z"
+    "firstSeenAt": "2026-10-01T11:05:50.894Z",
+    "summary": "공학계 전공 학생이 경원장학재단의 심사를 거쳐 장학금을 받을 수 있어요."
   },
   {
     "id": "kmu-scholarship-270043",
@@ -24398,7 +24860,8 @@
     "postedAt": "2026-08-24",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:51.717Z",
-    "firstSeenAt": "2026-10-01T11:05:51.717Z"
+    "firstSeenAt": "2026-10-01T11:05:51.717Z",
+    "summary": "교내에서 근로하며 장학금을 받을 수 있어요."
   },
   {
     "id": "kmu-scholarship-270036",
@@ -24441,7 +24904,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:52.847Z",
     "firstSeenAt": "2026-10-01T11:05:52.847Z",
-    "seriesId": "kmu-scholarship-261571"
+    "seriesId": "kmu-scholarship-261571",
+    "summary": "통영시의 대학생 지원사업으로 등록금 전액을 지원받아요."
   },
   {
     "id": "kmu-scholarship-269991",
@@ -24483,7 +24947,8 @@
     "postedAt": "2026-08-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:53.729Z",
-    "firstSeenAt": "2026-10-01T11:05:53.729Z"
+    "firstSeenAt": "2026-10-01T11:05:53.729Z",
+    "summary": "광산장학회 장학생으로 선발되어 장학금을 받을 수 있어요."
   },
   {
     "id": "knu-startup-743",
@@ -24524,7 +24989,8 @@
     "postedAt": "2026-09-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:35.636Z",
-    "firstSeenAt": "2026-10-01T11:25:35.636Z"
+    "firstSeenAt": "2026-10-01T11:25:35.636Z",
+    "summary": "창업가의 경험과 초기 창업 요령을 듣고 커피도 받아요."
   },
   {
     "id": "knu-startup-742",
@@ -24565,7 +25031,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:36.588Z",
     "firstSeenAt": "2026-10-01T11:25:36.588Z",
-    "seriesId": "knu-startup-740"
+    "seriesId": "knu-startup-740",
+    "summary": "창업 프로젝트 행사에서 선착순 선물과 추첨 경품 기회를 얻어요."
   },
   {
     "id": "knu-startup-741",
@@ -24607,7 +25074,8 @@
     "postedAt": "2026-09-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:37.623Z",
-    "firstSeenAt": "2026-10-01T11:25:37.623Z"
+    "firstSeenAt": "2026-10-01T11:25:37.623Z",
+    "summary": "창업기업의 사업화에 필요한 재료비와 용역비를 지원받아요."
   },
   {
     "id": "knu-startup-728",
@@ -24649,7 +25117,8 @@
     "postedAt": "2026-08-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:39.641Z",
-    "firstSeenAt": "2026-10-01T11:25:39.641Z"
+    "firstSeenAt": "2026-10-01T11:25:39.641Z",
+    "summary": "창업보육센터에 입주해 사무공간을 이용하고 창업 지원을 받아요."
   },
   {
     "id": "knu-startup-726",
@@ -24690,7 +25159,8 @@
     "postedAt": "2026-07-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:40.608Z",
-    "firstSeenAt": "2026-10-01T11:25:40.608Z"
+    "firstSeenAt": "2026-10-01T11:25:40.608Z",
+    "summary": "생성형 AI로 사업계획서와 발표자료를 만드는 방법을 배워요."
   },
   {
     "id": "knu-startup-698",
@@ -24730,7 +25200,8 @@
     "postedAt": "2026-05-20",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:42.626Z",
-    "firstSeenAt": "2026-10-01T11:25:42.626Z"
+    "firstSeenAt": "2026-10-01T11:25:42.626Z",
+    "summary": "의료 기술의 시제품 제작과 시험·인증, 사업화 연계를 지원받아요."
   },
   {
     "id": "knu-startup-750",
@@ -24778,7 +25249,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:46.662Z",
     "firstSeenAt": "2026-10-01T11:25:46.662Z",
-    "seriesId": "knu-startup-619"
+    "seriesId": "knu-startup-619",
+    "summary": "창업 아이디어와 영어 발표를 다듬고 우수 참여자는 실리콘밸리를 탐방해요."
   },
   {
     "id": "knu-startup-746",
@@ -24819,7 +25291,8 @@
     "postedAt": "2026-09-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:47.683Z",
-    "firstSeenAt": "2026-10-01T11:25:47.683Z"
+    "firstSeenAt": "2026-10-01T11:25:47.683Z",
+    "summary": "창업 강연과 네트워킹 등 프로그램의 기획·홍보·운영을 도와요."
   },
   {
     "id": "knu-startup-740",
@@ -24862,7 +25335,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:49.671Z",
     "firstSeenAt": "2026-10-01T11:25:49.671Z",
-    "seriesId": "knu-startup-740"
+    "seriesId": "knu-startup-740",
+    "summary": "창업 프로젝트 행사에서 선착순 선물과 추첨 경품 기회를 얻어요."
   },
   {
     "id": "knu-startup-737",
@@ -24906,7 +25380,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:52.715Z",
     "firstSeenAt": "2026-10-01T11:25:52.715Z",
-    "seriesId": "knu-startup-702"
+    "seriesId": "knu-startup-702",
+    "summary": "첨단정보통신융합산업기술원에서 연구 인턴으로 활동해요."
   },
   {
     "id": "knu-startup-735",
@@ -24952,7 +25427,8 @@
     "postedAt": "2026-08-19",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:54.712Z",
-    "firstSeenAt": "2026-10-01T11:25:54.712Z"
+    "firstSeenAt": "2026-10-01T11:25:54.712Z",
+    "summary": "기술 아이디어를 시제품으로 구현하며 개발비와 창업 교육·멘토링을 지원받아요."
   },
   {
     "id": "knu-startup-734",
@@ -24995,7 +25471,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:55.709Z",
     "firstSeenAt": "2026-10-01T11:25:55.709Z",
-    "seriesId": "knu-startup-428"
+    "seriesId": "knu-startup-428",
+    "summary": null
   },
   {
     "id": "knu-startup-733",
@@ -25038,7 +25515,8 @@
     "postedAt": "2026-08-12",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:56.715Z",
-    "firstSeenAt": "2026-10-01T11:25:56.715Z"
+    "firstSeenAt": "2026-10-01T11:25:56.715Z",
+    "summary": "AI·로봇·XR 등 공간 기반 기술 분야의 창업 지원사업에 참여해요."
   },
   {
     "id": "knu-startup-730",
@@ -25084,7 +25562,8 @@
     "postedAt": "2026-08-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:58.749Z",
-    "firstSeenAt": "2026-10-01T11:25:58.749Z"
+    "firstSeenAt": "2026-10-01T11:25:58.749Z",
+    "summary": "의료기술을 활용한 사업 아이디어를 발굴하는 창업기획 교육을 무료로 받아요."
   },
   {
     "id": "knu-startup-725",
@@ -25129,7 +25608,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:26:00.757Z",
     "firstSeenAt": "2026-10-01T11:26:00.757Z",
-    "seriesId": "knu-startup-395"
+    "seriesId": "knu-startup-395",
+    "summary": "스타트업허브센터에 입주해 사무공간과 가구, 인터넷을 지원받아요."
   },
   {
     "id": "yu-col-liberalart-231413805",
@@ -25170,7 +25650,8 @@
     "postedAt": "2026-08-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:10:53.450Z",
-    "firstSeenAt": "2026-10-01T12:10:53.450Z"
+    "firstSeenAt": "2026-10-01T12:10:53.450Z",
+    "summary": "글로벌 리더들의 미래 산업 전망을 듣고 통찰을 얻어요"
   },
   {
     "id": "yu-col-liberalart-230612500",
@@ -25213,7 +25694,8 @@
     "postedAt": "2026-07-02",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:10:57.842Z",
-    "firstSeenAt": "2026-10-01T12:10:57.842Z"
+    "firstSeenAt": "2026-10-01T12:10:57.842Z",
+    "summary": "북디자인, 출판사 창업, 웹소설 창작, 출판 기획·편집을 배워요"
   },
   {
     "id": "yu-col-sci-230893771",
@@ -25256,7 +25738,8 @@
     "postedAt": "2026-07-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:10:56.727Z",
-    "firstSeenAt": "2026-10-01T12:10:56.727Z"
+    "firstSeenAt": "2026-10-01T12:10:56.727Z",
+    "summary": "반도체 산업과 기업을 공부하고 취업 아카데미와 연계해 취업을 준비해요."
   },
   {
     "id": "yu-col-sci-230176275",
@@ -25301,7 +25784,8 @@
     "postedAt": "2026-06-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:03.394Z",
-    "firstSeenAt": "2026-10-01T12:11:03.394Z"
+    "firstSeenAt": "2026-10-01T12:11:03.394Z",
+    "summary": "온·오프라인 성인지교육을 모두 듣고 성인지교육 1회 이수를 인정받아요."
   },
   {
     "id": "yu-rise-231865038",
@@ -25343,7 +25827,8 @@
     "postedAt": "2026-09-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:10:56.974Z",
-    "firstSeenAt": "2026-10-01T12:10:56.974Z"
+    "firstSeenAt": "2026-10-01T12:10:56.974Z",
+    "summary": "철강 생산 시뮬레이션 국제대회에 참여하고 등록비와 준비 회의비를 지원받아요"
   },
   {
     "id": "yu-rise-231865036",
@@ -25386,7 +25871,8 @@
     "postedAt": "2026-09-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:10:59.345Z",
-    "firstSeenAt": "2026-10-01T12:10:59.345Z"
+    "firstSeenAt": "2026-10-01T12:10:59.345Z",
+    "summary": "교수와 함께 기업의 기술 문제를 해결하는 프로젝트를 수행하고 팀당 300만원을 지원받아요"
   },
   {
     "id": "yu-col-yumc-231160632",
@@ -25428,7 +25914,8 @@
     "postedAt": "2026-08-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:09.952Z",
-    "firstSeenAt": "2026-10-01T12:11:09.952Z"
+    "firstSeenAt": "2026-10-01T12:11:09.952Z",
+    "summary": "의사과학자의 진로와 연구를 다루는 포럼에 참여해요"
   },
   {
     "id": "yu-col-sob-231583208",
@@ -25475,7 +25962,8 @@
     "postedAt": "2026-09-09",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:12.163Z",
-    "firstSeenAt": "2026-10-01T12:11:12.163Z"
+    "firstSeenAt": "2026-10-01T12:11:12.163Z",
+    "summary": "유럽권 대학에 교환학생으로 파견되어 공부해요."
   },
   {
     "id": "yu-col-sob-230710988",
@@ -25517,7 +26005,8 @@
     "postedAt": "2026-07-09",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:13.271Z",
-    "firstSeenAt": "2026-10-01T12:11:13.271Z"
+    "firstSeenAt": "2026-10-01T12:11:13.271Z",
+    "summary": "AI 도입과 생산성을 주제로 한 세미나에 참여해요."
   },
   {
     "id": "yu-col-sob-229993572",
@@ -25584,7 +26073,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:16.568Z",
     "firstSeenAt": "2026-10-01T12:11:16.568Z",
-    "seriesId": "yu-news-224918107"
+    "seriesId": "yu-news-224918107",
+    "summary": "케이비와이퍼시스템에서 전공과 관련된 직무를 현장실습으로 경험해요."
   },
   {
     "id": "yu-col-sob-229993501",
@@ -25646,7 +26136,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:19.892Z",
     "firstSeenAt": "2026-10-01T12:11:19.892Z",
-    "seriesId": "yu-news-2768623"
+    "seriesId": "yu-news-2768623",
+    "summary": "발레오전장시스템코리아에서 전공과 관련된 직무를 현장실습으로 경험해요."
   },
   {
     "id": "yu-col-life-230232686",
@@ -25687,7 +26178,8 @@
     "postedAt": "2026-06-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:13.752Z",
-    "firstSeenAt": "2026-10-01T12:11:13.752Z"
+    "firstSeenAt": "2026-10-01T12:11:13.752Z",
+    "summary": "푸드테크 기술을 배우고 기업 현장실습과 연구실 심화교육에 참여해요"
   },
   {
     "id": "yu-col-life-230232685",
@@ -25729,7 +26221,8 @@
     "postedAt": "2026-06-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:14.844Z",
-    "firstSeenAt": "2026-10-01T12:11:14.844Z"
+    "firstSeenAt": "2026-10-01T12:11:14.844Z",
+    "summary": "세포배양·바이오 실무를 배우고 지원금과 지역 바이오기업 취업 연계 지원을 받아요"
   },
   {
     "id": "yu-col-pharm-231780510",
@@ -25772,7 +26265,8 @@
     "postedAt": "2026-09-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:13.264Z",
-    "firstSeenAt": "2026-10-01T12:11:13.264Z"
+    "firstSeenAt": "2026-10-01T12:11:13.264Z",
+    "summary": "안티에이징·웰니스 분야의 컨퍼런스와 실무 교육, 전시에 무료로 참가해요."
   },
   {
     "id": "yu-col-pharm-230626625",
@@ -25814,7 +26308,8 @@
     "postedAt": "2026-07-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:17.686Z",
-    "firstSeenAt": "2026-10-01T12:11:17.686Z"
+    "firstSeenAt": "2026-10-01T12:11:17.686Z",
+    "summary": "한의약 산업 분야별 인력 양성 교육을 받아요."
   },
   {
     "id": "yu-col-pharm-230584354",
@@ -25858,7 +26353,8 @@
     "postedAt": "2026-06-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:18.776Z",
-    "firstSeenAt": "2026-10-01T12:11:18.776Z"
+    "firstSeenAt": "2026-10-01T12:11:18.776Z",
+    "summary": "식약처 현장을 견학하고 선배와 대화하며 채용 정보를 알아봐요."
   },
   {
     "id": "yu-col-pharm-229712158",
@@ -25904,7 +26400,8 @@
     "postedAt": "2026-04-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:22.122Z",
-    "firstSeenAt": "2026-10-01T12:11:22.122Z"
+    "firstSeenAt": "2026-10-01T12:11:22.122Z",
+    "summary": "4일 동안 임상약리학의 핵심 주제를 체험해요."
   },
   {
     "id": "yu-col-education-231484418",
@@ -25946,7 +26443,8 @@
     "postedAt": "2026-09-02",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:19.111Z",
-    "firstSeenAt": "2026-10-01T12:11:19.111Z"
+    "firstSeenAt": "2026-10-01T12:11:19.111Z",
+    "summary": "교육역사관의 전시실과 체험관 등에서 교육봉사를 해요."
   },
   {
     "id": "yu-col-education-228937838",
@@ -25986,7 +26484,8 @@
     "postedAt": "2026-03-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:27.872Z",
-    "firstSeenAt": "2026-10-01T12:11:27.872Z"
+    "firstSeenAt": "2026-10-01T12:11:27.872Z",
+    "summary": "수학체험센터에서 어린이 놀이시설의 안전을 지도하고 체험 활동을 지원해요."
   },
   {
     "id": "yu-col-arts-231569134",
@@ -26028,7 +26527,8 @@
     "postedAt": "2026-09-08",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:24.231Z",
-    "firstSeenAt": "2026-10-01T12:11:24.231Z"
+    "firstSeenAt": "2026-10-01T12:11:24.231Z",
+    "summary": "빔웍스에서 학기 중 국내 현장실습에 참여해요"
   },
   {
     "id": "yu-col-gl-231611578",
@@ -26071,7 +26571,8 @@
     "postedAt": "2026-09-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:29.706Z",
-    "firstSeenAt": "2026-10-01T12:11:29.706Z"
+    "firstSeenAt": "2026-10-01T12:11:29.706Z",
+    "summary": "은행 전문가의 경험을 듣고 중국어를 활용한 진로를 탐색해요"
   },
   {
     "id": "yu-col-gl-231611552",
@@ -26119,7 +26620,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:31.910Z",
     "firstSeenAt": "2026-10-01T12:11:31.910Z",
-    "seriesId": "yu-news-226300218"
+    "seriesId": "yu-news-226300218",
+    "summary": "내·외국인 학생이 함께 사회공헌 활동에 참여하고 마일리지를 받아요"
   },
   {
     "id": "yu-col-gl-231583306",
@@ -26167,7 +26669,8 @@
     "postedAt": "2026-09-09",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:33.040Z",
-    "firstSeenAt": "2026-10-01T12:11:33.040Z"
+    "firstSeenAt": "2026-10-01T12:11:33.040Z",
+    "summary": "글로벌 문화 교류와 이해를 주제로 에세이 공모전에 참여해요"
   },
   {
     "id": "yu-col-gl-231287267",
@@ -26208,7 +26711,8 @@
     "postedAt": "2026-08-19",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:34.126Z",
-    "firstSeenAt": "2026-10-01T12:11:34.126Z"
+    "firstSeenAt": "2026-10-01T12:11:34.126Z",
+    "summary": "국제회의에서 AI를 활용한 개발 협력 논의를 듣고 관련 전시를 살펴봐요"
   },
   {
     "id": "yu-col-gl-230725084",
@@ -26251,7 +26755,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:35.249Z",
     "firstSeenAt": "2026-10-01T12:11:35.249Z",
-    "seriesId": "yu-news-6393359"
+    "seriesId": "yu-news-6393359",
+    "summary": "기업 채용에 지원하고 단과대학 추천을 신청해요"
   },
   {
     "id": "yu-col-gl-230668725",
@@ -26291,7 +26796,8 @@
     "postedAt": "2026-07-06",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:36.341Z",
-    "firstSeenAt": "2026-10-01T12:11:36.341Z"
+    "firstSeenAt": "2026-10-01T12:11:36.341Z",
+    "summary": "국제육상대회에서 외국인 선수 안내와 소통을 돕고 일급 15만 원을 받아요"
   },
   {
     "id": "yu-col-ccgs-230584300",
@@ -26333,7 +26839,8 @@
     "postedAt": "2026-06-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:36.603Z",
-    "firstSeenAt": "2026-10-01T12:11:36.603Z"
+    "firstSeenAt": "2026-10-01T12:11:36.603Z",
+    "summary": "기초학력 강화 수업의 TA로 강의와 학습 지도를 하고 강의료를 받아요"
   },
   {
     "id": "kmu-startup-239168",
@@ -26373,7 +26880,8 @@
     "postedAt": "2026-09-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:38.717Z",
-    "firstSeenAt": "2026-10-01T12:11:38.717Z"
+    "firstSeenAt": "2026-10-01T12:11:38.717Z",
+    "summary": null
   },
   {
     "id": "kmu-startup-238210",
@@ -26414,7 +26922,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:39.813Z",
     "firstSeenAt": "2026-10-01T12:11:39.813Z",
-    "seriesId": "kmu-startup-237083"
+    "seriesId": "kmu-startup-237083",
+    "summary": "창업보육센터에 입주해 컨설팅과 기술개발·판로·자금조달 지원을 받아요"
   },
   {
     "id": "kmu-startup-238164",
@@ -26473,7 +26982,8 @@
     "aliases": [
       "kmu-col-abeek-237607",
       "kmu-col-human-237611"
-    ]
+    ],
+    "summary": "기술 아이디어로 창업을 준비하며 사업화 자금과 교육·멘토링을 지원받아요"
   },
   {
     "id": "kmu-startup-237181",
@@ -26513,7 +27023,8 @@
     "postedAt": "2026-08-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:44.036Z",
-    "firstSeenAt": "2026-10-01T12:11:44.036Z"
+    "firstSeenAt": "2026-10-01T12:11:44.036Z",
+    "summary": "시소마켓에 참여해 창업기업의 제품을 홍보하고 판매해요"
   },
   {
     "id": "kmu-startup-237083",
@@ -26554,7 +27065,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:45.101Z",
     "firstSeenAt": "2026-10-01T12:11:45.101Z",
-    "seriesId": "kmu-startup-237083"
+    "seriesId": "kmu-startup-237083",
+    "summary": "창업보육센터에 입주해 컨설팅과 기술개발·판로·자금조달 지원을 받아요"
   },
   {
     "id": "kmu-startup-233876",
@@ -26598,7 +27110,8 @@
     "postedAt": "2026-06-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:46.780Z",
-    "firstSeenAt": "2026-10-01T12:11:46.780Z"
+    "firstSeenAt": "2026-10-01T12:11:46.780Z",
+    "summary": "창업을 위한 공유오피스를 1년간 무료로 이용해요"
   },
   {
     "id": "kmu-col-abeek-239373",
@@ -26675,7 +27188,8 @@
       "kmu-col-ssc-239470",
       "kmu-col-kbs-238828",
       "kmu-col-natural-239348"
-    ]
+    ],
+    "summary": "교사자격증 취득에 필요한 응급처치와 심폐소생술 실습에 참여해요"
   },
   {
     "id": "kmu-col-abeek-239368",
@@ -26745,7 +27259,8 @@
       "kmu-col-musicarts-239353",
       "kmu-col-natural-239351",
       "kmu-col-ssc-239472"
-    ]
+    ],
+    "summary": "교원자격증 취득에 필요한 성인지 교육을 이수해요"
   },
   {
     "id": "kmu-col-abeek-238834",
@@ -26815,7 +27330,8 @@
       "kmu-col-musicarts-238885",
       "kmu-col-ssc-239143",
       "kmu-col-natural-238939"
-    ]
+    ],
+    "summary": "교원자격증 취득에 필요한 교직 적성과 인성 검사를 받아요"
   },
   {
     "id": "kmu-col-abeek-238297",
@@ -26859,7 +27375,8 @@
     "postedAt": "2026-09-08",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:48.356Z",
-    "firstSeenAt": "2026-10-01T12:11:48.356Z"
+    "firstSeenAt": "2026-10-01T12:11:48.356Z",
+    "summary": "학장추천 장학으로 최대 300만 원 학비감면 또는 최대 100만 원 학업장려금을 받아요"
   },
   {
     "id": "kmu-col-abeek-238182",
@@ -26924,7 +27441,8 @@
       "kmu-col-coe-238136",
       "kmu-col-musicarts-238159",
       "kmu-col-pharmacyhome-238142"
-    ]
+    ],
+    "summary": "팩트챗에서 ChatGPT·Claude·Gemini 등 50종 이상의 AI 모델을 이용해요"
   },
   {
     "id": "kmu-col-coe-238600",
@@ -26969,7 +27487,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:44.896Z",
     "firstSeenAt": "2026-10-01T12:11:44.896Z",
-    "seriesId": "kmu-col-coe-238600"
+    "seriesId": "kmu-col-coe-238600",
+    "summary": "심사를 거쳐 등록금 범위 내에서 학장추천특별장학금을 받아요."
   },
   {
     "id": "kmu-col-coe-237401",
@@ -27019,7 +27538,8 @@
     "postedAt": "2026-08-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:51.224Z",
-    "firstSeenAt": "2026-10-01T12:11:51.224Z"
+    "firstSeenAt": "2026-10-01T12:11:51.224Z",
+    "summary": "교원 임용시험을 준비하는 전용 학습실을 이용해요."
   },
   {
     "id": "kmu-col-human-239342",
@@ -27072,7 +27592,8 @@
     "firstSeenAt": "2026-10-01T12:11:48.175Z",
     "aliases": [
       "kmu-col-pharmacyhome-239371"
-    ]
+    ],
+    "summary": "3인 팀으로 생성형 AI 콘텐츠 저작권을 주제로 토론하고 상금에 도전해요."
   },
   {
     "id": "kmu-col-human-239319",
@@ -27115,7 +27636,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:49.589Z",
     "firstSeenAt": "2026-10-01T12:11:49.589Z",
-    "seriesId": "kmu-col-coe-238600"
+    "seriesId": "kmu-col-coe-238600",
+    "summary": "교수 추천과 심사를 거쳐 등록금이나 학업장려 장학금을 지원받아요."
   },
   {
     "id": "kmu-col-kbs-239437",
@@ -27161,7 +27683,8 @@
     "postedAt": "2026-09-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:49.471Z",
-    "firstSeenAt": "2026-10-01T12:11:49.471Z"
+    "firstSeenAt": "2026-10-01T12:11:49.471Z",
+    "summary": "장학생으로 선발되면 최대 등록금 전액 또는 학업장려금 100만 원을 지원받아요"
   },
   {
     "id": "kmu-col-kbs-238065",
@@ -27202,7 +27725,8 @@
     "postedAt": "2026-09-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:52.728Z",
-    "firstSeenAt": "2026-10-01T12:11:52.728Z"
+    "firstSeenAt": "2026-10-01T12:11:52.728Z",
+    "summary": "신설 융합비즈니스학과에 입학하면 첫 학기 등록금을 50% 감면받아요"
   },
   {
     "id": "kmu-col-kbs-238730",
@@ -27279,7 +27803,8 @@
       "kmu-col-pharmacyhome-238647",
       "kmu-col-natural-229865",
       "kmu-col-ssc-238690"
-    ]
+    ],
+    "summary": "인터넷·스마트폰 과의존 예방교육을 온라인으로 1시간 듣고 COMPass K 1점을 받아요"
   },
   {
     "id": "kmu-col-pharmacyhome-239517",
@@ -27322,7 +27847,8 @@
     "postedAt": "2026-09-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:59.738Z",
-    "firstSeenAt": "2026-10-01T12:11:59.738Z"
+    "firstSeenAt": "2026-10-01T12:11:59.738Z",
+    "summary": "안티에이징·웰니스 분야 컨퍼런스와 실무 교육, 전시에 무료로 참여해요."
   },
   {
     "id": "kmu-col-pharmacyhome-238292",
@@ -27364,7 +27890,8 @@
     "postedAt": "2026-09-08",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:12:02.931Z",
-    "firstSeenAt": "2026-10-01T12:12:02.931Z"
+    "firstSeenAt": "2026-10-01T12:12:02.931Z",
+    "summary": "비임상 분야 온라인 교육에 참여해요."
   },
   {
     "id": "kmu-col-pharmacyhome-238212",
@@ -27410,7 +27937,8 @@
     "postedAt": "2026-09-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:12:04.009Z",
-    "firstSeenAt": "2026-10-01T12:12:04.009Z"
+    "firstSeenAt": "2026-10-01T12:12:04.009Z",
+    "summary": "또래에게 학습 노하우를 나누는 활동을 하고 장학금 50만 원을 받아요."
   },
   {
     "id": "kmu-col-natural-238576",
@@ -27456,7 +27984,8 @@
     "postedAt": "2026-09-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:12:02.680Z",
-    "firstSeenAt": "2026-10-01T12:12:02.680Z"
+    "firstSeenAt": "2026-10-01T12:12:02.680Z",
+    "summary": "학과 추천과 심사를 거쳐 등록금 감면이나 학업장려 장학금을 받아요."
   },
   {
     "id": "kmu-col-sports-239178",
@@ -27498,7 +28027,8 @@
     "postedAt": "2026-09-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:57.061Z",
-    "firstSeenAt": "2026-10-01T12:11:57.061Z"
+    "firstSeenAt": "2026-10-01T12:11:57.061Z",
+    "summary": "스포츠 직무와 자격증 교육을 받고 상담으로 취업을 준비해요"
   },
   {
     "id": "kmu-col-sports-238746",
@@ -27539,7 +28069,8 @@
     "postedAt": "2026-09-15",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:12:01.235Z",
-    "firstSeenAt": "2026-10-01T12:12:01.235Z"
+    "firstSeenAt": "2026-10-01T12:12:01.235Z",
+    "summary": "창업 기초를 배우고 사업계획서와 시장조사 컨설팅을 받아요"
   },
   {
     "id": "kmu-col-sports-237739",
@@ -27579,7 +28110,8 @@
     "postedAt": "2026-08-31",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:12:03.944Z",
-    "firstSeenAt": "2026-10-01T12:12:03.944Z"
+    "firstSeenAt": "2026-10-01T12:12:03.944Z",
+    "summary": "채용설명회에서 스포츠산업 공공기관의 채용 정보를 알아봐요"
   },
   {
     "id": "kmu-col-sports-236091",
@@ -27620,7 +28152,8 @@
     "postedAt": "2026-08-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:12:06.068Z",
-    "firstSeenAt": "2026-10-01T12:12:06.068Z"
+    "firstSeenAt": "2026-10-01T12:12:06.068Z",
+    "summary": null
   },
   {
     "id": "kmu-col-ssc-239475",
@@ -27664,7 +28197,8 @@
     "postedAt": "2026-09-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:12:00.540Z",
-    "firstSeenAt": "2026-10-01T12:12:00.540Z"
+    "firstSeenAt": "2026-10-01T12:12:00.540Z",
+    "summary": "학과 추천과 심사를 거쳐 등록금 감면이나 학업장려 장학금을 받아요"
   },
   {
     "id": "kmu-col-ssc-238299",
@@ -27708,7 +28242,8 @@
     "postedAt": "2026-09-08",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:12:07.453Z",
-    "firstSeenAt": "2026-10-01T12:12:07.453Z"
+    "firstSeenAt": "2026-10-01T12:12:07.453Z",
+    "summary": "대학 생활과 학생 행사에 필요한 안전교육을 받고 COMpass K 1점을 받아요"
   },
   {
     "id": "yu-career-2184",
@@ -27721,7 +28256,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-04-28",
@@ -27756,7 +28292,8 @@
     "seriesId": "yu-career-2184",
     "aliases": [
       "yu-news-229599532"
-    ]
+    ],
+    "summary": "삼성 청년 SW·AI 아카데미에서 소프트웨어와 AI를 배워요"
   },
   {
     "id": "yu-news-226395269",
@@ -27771,7 +28308,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -27841,7 +28379,8 @@
       "yu-news-227182540",
       "yu-news-227114354",
       "yu-news-226775237"
-    ]
+    ],
+    "summary": "미국 조지아주에 있는 한화큐셀에서 해외인턴으로 일해요"
   },
   {
     "id": "knu-notice-1338356",
@@ -27884,7 +28423,8 @@
     "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:56:47.966Z",
-    "firstSeenAt": "2026-10-01T13:56:47.966Z"
+    "firstSeenAt": "2026-10-01T13:56:47.966Z",
+    "summary": "여러 기업의 채용설명회와 상담회에 참여해요."
   },
   {
     "id": "knu-notice-1338346",
@@ -27926,7 +28466,8 @@
     "postedAt": "2026-09-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:56:49.564Z",
-    "firstSeenAt": "2026-10-01T13:56:49.564Z"
+    "firstSeenAt": "2026-10-01T13:56:49.564Z",
+    "summary": "주거생활비를 연간 최대 800만원씩 최대 3년 동안 지원받아요."
   },
   {
     "id": "knu-notice-1338323",
@@ -27968,7 +28509,8 @@
     "postedAt": "2026-09-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:56:54.159Z",
-    "firstSeenAt": "2026-10-01T13:56:54.159Z"
+    "firstSeenAt": "2026-10-01T13:56:54.159Z",
+    "summary": "융합전공을 스스로 설계하는 공모전에 참여해요."
   },
   {
     "id": "knu-notice-1338321",
@@ -28015,7 +28557,8 @@
     "postedAt": "2026-09-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:56:55.381Z",
-    "firstSeenAt": "2026-10-01T13:56:55.381Z"
+    "firstSeenAt": "2026-10-01T13:56:55.381Z",
+    "summary": "싱가포르의 대학·기관·기업을 방문하고 문화를 체험하며 진로를 탐색해요."
   },
   {
     "id": "knu-notice-1338315",
@@ -28056,7 +28599,8 @@
     "postedAt": "2026-09-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:56:56.710Z",
-    "firstSeenAt": "2026-10-01T13:56:56.710Z"
+    "firstSeenAt": "2026-10-01T13:56:56.710Z",
+    "summary": null
   },
   {
     "id": "knu-notice-1338314",
@@ -28099,7 +28643,8 @@
     "postedAt": "2026-09-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:56:57.814Z",
-    "firstSeenAt": "2026-10-01T13:56:57.814Z"
+    "firstSeenAt": "2026-10-01T13:56:57.814Z",
+    "summary": "메이커 페스타 부스를 운영하며 생성형 AI 교육 시연과 체험을 지원해요."
   },
   {
     "id": "knu-notice-1338313",
@@ -28144,7 +28689,8 @@
     "postedAt": "2026-09-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:56:58.979Z",
-    "firstSeenAt": "2026-10-01T13:56:58.979Z"
+    "firstSeenAt": "2026-10-01T13:56:58.979Z",
+    "summary": "AI 윤리 정책과 수업 사례를 배우고 수업안을 설계하며 멘토링을 받아요."
   },
   {
     "id": "knu-notice-1338312",
@@ -28189,7 +28735,8 @@
     "postedAt": "2026-09-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:57:00.094Z",
-    "firstSeenAt": "2026-10-01T13:57:00.094Z"
+    "firstSeenAt": "2026-10-01T13:57:00.094Z",
+    "summary": "교육 현장의 AI 윤리 문제를 탐색하고 활용할 가이드라인을 개발해요."
   },
   {
     "id": "knu-notice-1338309",
@@ -28231,7 +28778,8 @@
     "postedAt": "2026-09-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:57:02.722Z",
-    "firstSeenAt": "2026-10-01T13:57:02.722Z"
+    "firstSeenAt": "2026-10-01T13:57:02.722Z",
+    "summary": "인천인재평생교육진흥원의 장학생으로 선발되면 장학금을 받아요"
   },
   {
     "id": "knu-notice-1338278",
@@ -28274,7 +28822,8 @@
     "postedAt": "2026-09-02",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:57:03.882Z",
-    "firstSeenAt": "2026-10-01T13:57:03.882Z"
+    "firstSeenAt": "2026-10-01T13:57:03.882Z",
+    "summary": "해외교환 장학생으로 선발되면 파견 지역에 따라 650만~850만원을 받아요"
   },
   {
     "id": "knu-notice-1338269",
@@ -28316,7 +28865,8 @@
     "postedAt": "2026-09-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:57:05.083Z",
-    "firstSeenAt": "2026-10-01T13:57:05.083Z"
+    "firstSeenAt": "2026-10-01T13:57:05.083Z",
+    "summary": "무료 토익 특강에서 핵심 어휘와 구문 분석, 시험 대비 전략을 배워요"
   },
   {
     "id": "knu-notice-1338267",
@@ -28355,7 +28905,8 @@
     "postedAt": "2026-09-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:57:06.220Z",
-    "firstSeenAt": "2026-10-01T13:57:06.220Z"
+    "firstSeenAt": "2026-10-01T13:57:06.220Z",
+    "summary": "모의토익에 응시해 실력을 점검하고 성적표를 받을 수 있어요"
   },
   {
     "id": "knu-notice-1338262",
@@ -28405,7 +28956,8 @@
     "postedAt": "2026-09-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:57:07.749Z",
-    "firstSeenAt": "2026-10-01T13:57:07.749Z"
+    "firstSeenAt": "2026-10-01T13:57:07.749Z",
+    "summary": "대학 생활과 군사교육을 병행하며 경제적 지원을 받고 졸업 후 육군 장교가 돼요"
   },
   {
     "id": "knu-notice-1338205",
@@ -28445,7 +28997,8 @@
     "postedAt": "2026-08-26",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:57:08.877Z",
-    "firstSeenAt": "2026-10-01T13:57:08.877Z"
+    "firstSeenAt": "2026-10-01T13:57:08.877Z",
+    "summary": "선원가족 장학생으로 선발되면 최대 350만원의 장학금을 받아요"
   },
   {
     "id": "knu-notice-1338066",
@@ -28488,7 +29041,8 @@
     "postedAt": "2026-08-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:57:10.251Z",
-    "firstSeenAt": "2026-10-01T13:57:10.251Z"
+    "firstSeenAt": "2026-10-01T13:57:10.251Z",
+    "summary": "미발표 학술논문으로 경진대회에 참가해 연구 성과를 발표하고 상금에 도전해요"
   },
   {
     "id": "knu-notice-1337042",
@@ -28531,7 +29085,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T13:57:14.799Z",
     "firstSeenAt": "2026-10-01T13:57:14.799Z",
-    "seriesId": "knu-notice-1330127"
+    "seriesId": "knu-notice-1330127",
+    "summary": "첨성인 핵심역량 여섯 가지를 충족하면 졸업할 때 인증서를 받아요"
   },
   {
     "id": "knu-event-1338476",
@@ -28575,7 +29130,8 @@
     "postedAt": "2026-10-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:01:52.024Z",
-    "firstSeenAt": "2026-10-01T14:01:52.024Z"
+    "firstSeenAt": "2026-10-01T14:01:52.024Z",
+    "summary": "대학원생 마음건강 캠프에서 심신을 회복하고 대학원생활 적응력을 높여요."
   },
   {
     "id": "knu-startup-720",
@@ -28615,7 +29171,8 @@
     "postedAt": "2026-07-21",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:07:46.916Z",
-    "firstSeenAt": "2026-10-01T14:07:46.916Z"
+    "firstSeenAt": "2026-10-01T14:07:46.916Z",
+    "summary": "AI 기초와 실무 프로젝트를 무료로 배우고 수료증을 받아요."
   },
   {
     "id": "knu-startup-715",
@@ -28658,7 +29215,8 @@
     "postedAt": "2026-06-26",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:07:51.220Z",
-    "firstSeenAt": "2026-10-01T14:07:51.220Z"
+    "firstSeenAt": "2026-10-01T14:07:51.220Z",
+    "summary": "첨단정보통신융합산업기술원에서 연구 인턴으로 활동해요."
   },
   {
     "id": "knu-startup-713",
@@ -28703,7 +29261,8 @@
     "postedAt": "2026-06-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:07:52.264Z",
-    "firstSeenAt": "2026-10-01T14:07:52.264Z"
+    "firstSeenAt": "2026-10-01T14:07:52.264Z",
+    "summary": "의료바이오 창업 아이디어를 다듬고 독일 프로그램 참가 비용을 지원받아요."
   },
   {
     "id": "knu-startup-706",
@@ -28746,7 +29305,8 @@
     "postedAt": "2026-06-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:07:57.586Z",
-    "firstSeenAt": "2026-10-01T14:07:57.586Z"
+    "firstSeenAt": "2026-10-01T14:07:57.586Z",
+    "summary": "숙박과 식사를 지원받으며 무료 창업 캠프에서 사업모델과 고객 발굴을 배워요."
   },
   {
     "id": "knu-startup-703",
@@ -28787,7 +29347,8 @@
     "postedAt": "2026-06-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:07:59.649Z",
-    "firstSeenAt": "2026-10-01T14:07:59.649Z"
+    "firstSeenAt": "2026-10-01T14:07:59.649Z",
+    "summary": "팀으로 무료 해커톤에 참여해 개발 결과를 발표하고 상금에 도전해요."
   },
   {
     "id": "kmu-notice-269154",
@@ -28829,7 +29390,8 @@
     "postedAt": "2026-07-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:25:58.974Z",
-    "firstSeenAt": "2026-10-01T14:25:58.974Z"
+    "firstSeenAt": "2026-10-01T14:25:58.974Z",
+    "summary": "모빌리티 분야 산학공동연구에 참여하고 학생연구원 인건비를 받아요."
   },
   {
     "id": "kmu-scholarship-269978",
@@ -28872,7 +29434,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:35.900Z",
     "firstSeenAt": "2026-10-01T14:30:35.900Z",
-    "seriesId": "kmu-scholarship-265731"
+    "seriesId": "kmu-scholarship-265731",
+    "summary": "세종이도인재장학생으로 선발되어 장학금을 받을 수 있어요."
   },
   {
     "id": "kmu-scholarship-269943",
@@ -28920,7 +29483,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:37.261Z",
     "firstSeenAt": "2026-10-01T14:30:37.261Z",
-    "seriesId": "kmu-scholarship-261574"
+    "seriesId": "kmu-scholarship-261574",
+    "summary": "소속 학과사무실에서 수업·연구·행사 업무를 돕고 근로장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-269918",
@@ -28962,7 +29526,8 @@
     "postedAt": "2026-08-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:38.532Z",
-    "firstSeenAt": "2026-10-01T14:30:38.532Z"
+    "firstSeenAt": "2026-10-01T14:30:38.532Z",
+    "summary": "성적우수·학업장려 장학생으로 선발되면 등록금이나 생활비로 200만원을 받아요."
   },
   {
     "id": "kmu-scholarship-269917",
@@ -29005,7 +29570,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:40.169Z",
     "firstSeenAt": "2026-10-01T14:30:40.169Z",
-    "seriesId": "kmu-scholarship-263492"
+    "seriesId": "kmu-scholarship-263492",
+    "summary": "보훈 또는 보훈가족 장학금 지원을 신청해요."
   },
   {
     "id": "kmu-scholarship-269875",
@@ -29050,7 +29616,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:41.445Z",
     "firstSeenAt": "2026-10-01T14:30:41.445Z",
-    "seriesId": "kmu-scholarship-261340"
+    "seriesId": "kmu-scholarship-261340",
+    "summary": "희망하는 교외 근로기관에 지원해 선발되면 근로 활동을 해요."
   },
   {
     "id": "kmu-scholarship-269836",
@@ -29095,7 +29662,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:42.735Z",
     "firstSeenAt": "2026-10-01T14:30:42.735Z",
-    "seriesId": "kmu-scholarship-261153"
+    "seriesId": "kmu-scholarship-261153",
+    "summary": "국가장학금 2차 신청을 통해 심사를 거쳐 장학금을 받을 수 있어요."
   },
   {
     "id": "kmu-scholarship-269774",
@@ -29138,7 +29706,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:44.241Z",
     "firstSeenAt": "2026-10-01T14:30:44.241Z",
-    "seriesId": "kmu-scholarship-262172"
+    "seriesId": "kmu-scholarship-262172",
+    "summary": "군산시의 지원으로 학자금 대출 이자 부담을 줄여요."
   },
   {
     "id": "kmu-scholarship-269773",
@@ -29181,7 +29750,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:45.701Z",
     "firstSeenAt": "2026-10-01T14:30:45.701Z",
-    "seriesId": "kmu-scholarship-261132"
+    "seriesId": "kmu-scholarship-261132",
+    "summary": "주거비 부담을 덜어주는 장학금을 지원받아요."
   },
   {
     "id": "kmu-scholarship-269744",
@@ -29227,7 +29797,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:47.001Z",
     "firstSeenAt": "2026-10-01T14:30:47.001Z",
-    "seriesId": "kmu-scholarship-261342"
+    "seriesId": "kmu-scholarship-261342",
+    "summary": "장애학생의 학습과 학교생활을 돕고 근로장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-269688",
@@ -29269,7 +29840,8 @@
     "postedAt": "2026-08-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:48.303Z",
-    "firstSeenAt": "2026-10-01T14:30:48.303Z"
+    "firstSeenAt": "2026-10-01T14:30:48.303Z",
+    "summary": "5·18희망장학생으로 선발되면 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-269687",
@@ -29311,7 +29883,8 @@
     "postedAt": "2026-08-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:49.576Z",
-    "firstSeenAt": "2026-10-01T14:30:49.576Z"
+    "firstSeenAt": "2026-10-01T14:30:49.576Z",
+    "summary": "서울미래인재재단 장학생으로 선발되면 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-269595",
@@ -29354,7 +29927,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:50.835Z",
     "firstSeenAt": "2026-10-01T14:30:50.835Z",
-    "seriesId": "kmu-scholarship-260896"
+    "seriesId": "kmu-scholarship-260896",
+    "summary": "국가근로장학생으로 선발되어 근로하고 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-269594",
@@ -29397,7 +29971,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:52.302Z",
     "firstSeenAt": "2026-10-01T14:30:52.302Z",
-    "seriesId": "kmu-scholarship-260826"
+    "seriesId": "kmu-scholarship-260826",
+    "summary": "울산광역시의 지원으로 학자금 대출 이자 부담을 줄여요."
   },
   {
     "id": "kmu-scholarship-269438",
@@ -29439,7 +30014,8 @@
     "postedAt": "2026-07-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:53.778Z",
-    "firstSeenAt": "2026-10-01T14:30:53.778Z"
+    "firstSeenAt": "2026-10-01T14:30:53.778Z",
+    "summary": "서구인재육성재단 장학생으로 선발되면 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-269418",
@@ -29481,7 +30057,8 @@
     "postedAt": "2026-07-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:55.057Z",
-    "firstSeenAt": "2026-10-01T14:30:55.057Z"
+    "firstSeenAt": "2026-10-01T14:30:55.057Z",
+    "summary": "화성시인재육성재단의 소상공인 장학금을 지원받아요."
   },
   {
     "id": "kmu-scholarship-269417",
@@ -29523,7 +30100,8 @@
     "postedAt": "2026-07-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:56.324Z",
-    "firstSeenAt": "2026-10-01T14:30:56.324Z"
+    "firstSeenAt": "2026-10-01T14:30:56.324Z",
+    "summary": "장학 수기를 써서 공모전에 참여해요."
   },
   {
     "id": "kmu-scholarship-269160",
@@ -29566,7 +30144,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:57.597Z",
     "firstSeenAt": "2026-10-01T14:30:57.597Z",
-    "seriesId": "kmu-scholarship-264575"
+    "seriesId": "kmu-scholarship-264575",
+    "summary": "재능키움 장학생으로 선발되면 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-269159",
@@ -29608,7 +30187,8 @@
     "postedAt": "2026-07-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:58.857Z",
-    "firstSeenAt": "2026-10-01T14:30:58.857Z"
+    "firstSeenAt": "2026-10-01T14:30:58.857Z",
+    "summary": "정읍시민장학재단 장학생으로 선발되면 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-268653",
@@ -29650,7 +30230,8 @@
     "postedAt": "2026-07-06",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:31:00.307Z",
-    "firstSeenAt": "2026-10-01T14:31:00.307Z"
+    "firstSeenAt": "2026-10-01T14:31:00.307Z",
+    "summary": "학자금 대출 원금 상환이나 이자 부담을 지원받아요."
   },
   {
     "id": "kmu-scholarship-268651",
@@ -29692,7 +30273,8 @@
     "postedAt": "2026-07-06",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:31:01.558Z",
-    "firstSeenAt": "2026-10-01T14:31:01.558Z"
+    "firstSeenAt": "2026-10-01T14:31:01.558Z",
+    "summary": "미래이음 장학생으로 선발되면 생활비 장학금 500만 원을 받아요."
   },
   {
     "id": "kmu-scholarship-267092",
@@ -29734,7 +30316,8 @@
     "postedAt": "2026-06-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:31:09.414Z",
-    "firstSeenAt": "2026-10-01T14:31:09.414Z"
+    "firstSeenAt": "2026-10-01T14:31:09.414Z",
+    "summary": "외국인 근로자 자녀를 위한 장학생 선발에 지원해요."
   },
   {
     "id": "kmu-scholarship-267091",
@@ -29778,7 +30361,8 @@
     "postedAt": "2026-06-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:31:10.818Z",
-    "firstSeenAt": "2026-10-01T14:31:10.818Z"
+    "firstSeenAt": "2026-10-01T14:31:10.818Z",
+    "summary": "산학재단 디딤돌 장학생으로 선발되면 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-261685",
@@ -29823,7 +30407,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:32:42.182Z",
     "firstSeenAt": "2026-10-01T14:32:42.182Z",
-    "seriesId": "kmu-scholarship-261685"
+    "seriesId": "kmu-scholarship-261685",
+    "summary": "여러 외국어 성적이나 토익 점수 향상에 따라 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-261600",
@@ -29872,7 +30457,8 @@
     "postedAt": "2026-02-19",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:32:49.030Z",
-    "firstSeenAt": "2026-10-01T14:32:49.030Z"
+    "firstSeenAt": "2026-10-01T14:32:49.030Z",
+    "summary": "초·중·고등학생의 공부와 고민 상담을 돕고 장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-261574",
@@ -29920,7 +30506,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:32:50.319Z",
     "firstSeenAt": "2026-10-01T14:32:50.319Z",
-    "seriesId": "kmu-scholarship-261574"
+    "seriesId": "kmu-scholarship-261574",
+    "summary": "소속 학과에서 수업·연구·행사 업무를 돕고 근로장학금을 받아요."
   },
   {
     "id": "kmu-scholarship-261340",
@@ -29966,6 +30553,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:32:57.244Z",
     "firstSeenAt": "2026-10-01T14:32:57.244Z",
-    "seriesId": "kmu-scholarship-261340"
+    "seriesId": "kmu-scholarship-261340",
+    "summary": "희망하는 교외 근로지에 지원해 선발되면 국가근로에 참여해요."
   }
 ]

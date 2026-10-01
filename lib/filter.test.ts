@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { matchesTags } from "./filter.ts";
+import { matchesKeyword, matchesTags } from "./filter.ts";
 
 const categories = [
   { id: "field", name: "분야", tags: ["취업·채용", "창업"] },
@@ -106,4 +106,13 @@ test("학교 필터: 다른 학교에 올라왔어도 지원할 수 있는 공�
   assert.ok(!visibleForSchool(open, "knu", false));
   assert.ok(!visibleForSchool(closed, "knu"));
   assert.ok(visibleForSchool(closed, null));
+});
+
+test("검색은 제목·주최·요약·태그에서 띄어쓰기를 무시하고 모든 단어를 찾는다", () => {
+  const p = { title: "삼성청년SW아카데미 14기 모집", organizer: "고용노동부", summary: "1년 동안 무료로 SW 교육을 받아요", tags: ["교육·특강"] };
+  assert.ok(matchesKeyword(p, "삼성 아카데미"));
+  assert.ok(matchesKeyword(p, "무료"));
+  assert.ok(matchesKeyword(p, "교육·특강"));
+  assert.ok(matchesKeyword(p, "  "));
+  assert.ok(!matchesKeyword(p, "삼성 해외"));
 });
