@@ -16,6 +16,7 @@ const MIN_BASE = 4; // 기본 제목이 이보다 짧으면 너무 흔한 이름
 export function baseTitle(title: string): string {
   return title
     .toLowerCase()
+    .replace(/^(\s*\[[^\]]*\]\s*)+/, " ") // 앞쪽 [부서·사업 이름] 머리말 (같은 부서의 다른 프로그램을 묶지 않게)
     .replace(/\(재게시\)|\[재게시\]|재게시|기간\s*연장|마감\s*임박|추가\s*모집|재공고|긴급/g, " ")
     .replace(/\d{1,2}\s*\/\s*\d{1,2}(\s*\([^)]*\))?/g, " ") // 9/21, 10/13(화)
     .replace(/20\d{2}\s*(학년도|년도|년)?|'?\d{2}\s*년/g, " ")
@@ -41,6 +42,25 @@ function dice(x: Set<string>, y: Set<string>): number {
 const sameOrganizer = (a: Program, b: Program) =>
   !!a.organizer && !!b.organizer && (a.organizer.includes(b.organizer) || b.organizer.includes(a.organizer));
 
+// 둘 다 학교 밖 기관(기업·공공기관 등)이 주최하는데 기관이 다르면 다른 프로그램이다 (회사마다 올라오는 현장실습 모집 등).
+// 학교 부서는 해마다 이름이 바뀌기도 해서 이 규칙을 쓰지 않는다
+const differentOutsideOrganizers = (a: Program, b: Program) =>
+  !!a.organizerType && !!b.organizerType && a.organizerType !== "학교" && b.organizerType !== "학교" && !sameOrganizer(a, b) && !!a.organizer && !!b.organizer;
+
+// 두 기본 제목이 같은 틀에 맨 앞의 짧은 이름만 서로 다르면 다른 프로그램이다
+// 예: "(주)솔라라이트 … 현장실습" ↔ "셈테크 … 현장실습", "울진군 향토생활관" ↔ "영주시 향토생활관"
+// (한쪽에만 말이 더 붙은 것은 같은 프로그램일 수 있어 그대로 둔다)
+export function swappedName(x: string, y: string): boolean {
+  let start = 0;
+  while (start < x.length && start < y.length && x[start] === y[start]) start++;
+  let end = 0;
+  while (end < x.length - start && end < y.length - start && x[x.length - 1 - end] === y[y.length - 1 - end]) end++;
+  const [a, b] = [x.slice(start, x.length - end), y.slice(start, y.length - end)];
+  const isName = (part: string) => part.length >= 2 && part.length <= 12 && !/^\d+$/.test(part);
+  // 맨 앞의 이름(회사·지역)만 다르고 뒤의 틀이 6글자 넘게 같을 때만 본다 ("(주)"의 "주" 한 글자 차이는 봐준다)
+  return start <= 1 && end >= 6 && isName(a) && isName(b);
+}
+
 // 회차의 시작 시점: 모집 시작 → 게시일 → 활동 시작 → 수집일
 const startOf = (p: Program) => p.recruitPeriod.start ?? p.postedAt ?? p.activityPeriod.start ?? p.collectedAt.slice(0, 10);
 
@@ -59,8 +79,10 @@ export function titleInfo(program: Program): TitleInfo {
 // 두 공고가 같은 반복 프로그램인지: true/false, 애매하면 "maybe"
 export function seriesMatch(a: Program, b: Program, x = titleInfo(a), y = titleInfo(b)): boolean | "maybe" {
   if (!sameSchool(a, b)) return false; // 다른 학교 공고는 묶지 않는다
+  if (differentOutsideOrganizers(a, b)) return false;
   if (x.base.length < MIN_BASE || y.base.length < MIN_BASE) return x.base === y.base && x.base !== "" && sameOrganizer(a, b);
   if (x.base === y.base) return true;
+  if (swappedName(x.base, y.base)) return false;
   // 비슷한 때에 열리는 비슷한 이름은 반복이 아니라 서로 다른 프로그램일 가능성이 크다 (예: 학업 전략 공모전 ↔ 학업계획서 공모전)
   if (Math.abs(Date.parse(startOf(a)) - Date.parse(startOf(b))) < 60 * 86_400_000) return false;
   const similarity = dice(x.grams, y.grams);
@@ -77,19 +99,48 @@ export async function assignSeries(current: Program[], archive: Program[], { use
   const infos = all.map(titleInfo);
   const parent = all.map((_, i) => i);
   const find = (i: number): number => (parent[i] === i ? i : (parent[i] = find(parent[i])));
-  const join = (i: number, j: number) => {
-    parent[find(i)] = find(j);
+  // 묶음마다 대표 공고와 크기. 두 묶음을 이을 때 대표끼리도 비슷해야 한다
+  // (A~B, B~C만으로 A·B·C가 사슬처럼 이어져 묶음이 끝없이 커지지 않게)
+  const size = all.map(() => 1);
+  // 묶음마다 학교 밖 주최 기관 이름들. 서로 다른 외부 기관의 묶음은 잇지 않는다
+  // (주최가 학교 부서로 적힌 공고가 회사 A·B의 현장실습을 잇는 다리가 되지 않게)
+  const outside = all.map((p) => (p.organizer && p.organizerType && p.organizerType !== "학교" ? [p.organizer] : []));
+  // 묶음마다 서로 다른 기본 제목들. 이을 때 한 쌍이라도 "이름만 바뀐" 제목이면 잇지 않는다
+  // (회사 이름 없는 "현장실습 사전교육" 공고가 회사 A·B 묶음을 잇는 다리가 되지 않게)
+  const bases = infos.map((info) => [info.base]);
+  const compatible = (x: string[], y: string[]) =>
+    x.length === 0 || y.length === 0 || x.some((a) => y.some((b) => a.includes(b) || b.includes(a)));
+  // byAi: AI가 이 쌍을 직접 보고 같다고 판단했으면 묶음 단위 검사를 건너뛴다
+  const join = (i: number, j: number, byAi = false) => {
+    const [ri, rj] = [find(i), find(j)];
+    if (ri === rj) return;
+    if (!byAi && !compatible(outside[ri], outside[rj])) return;
+    if (!byAi && bases[ri].some((a) => bases[rj].some((b) => a !== b && swappedName(a, b)))) return;
+    const [big, small] = size[ri] >= size[rj] ? [ri, rj] : [rj, ri];
+    parent[small] = big;
+    size[big] += size[small];
+    outside[big] = [...new Set([...outside[big], ...outside[small]])];
+    bases[big] = [...new Set([...bases[big], ...bases[small]])];
   };
+  // 이을 쌍을 모아 두었다가 가장 비슷한 쌍부터 잇는다
+  const edges: { i: number; j: number; score: number; byAi?: boolean }[] = [];
+  const score = (i: number, j: number) => (infos[i].base === infos[j].base ? 2 : dice(infos[i].grams, infos[j].grams));
 
   const decisions = await readJson<Record<string, boolean>>(DECISIONS_FILE, {});
   const ask: [number, number][] = [];
 
   const check = (i: number, j: number) => {
+    // 이미 AI(또는 사람)가 판단한 쌍은 그 답을 먼저 따른다 (data/series-decisions.json)
+    const known = decisions[pairKey(all[i], all[j])];
+    if (known !== undefined) {
+      if (known && sameSchool(all[i], all[j])) edges.push({ i, j, score: score(i, j), byAi: true });
+      return;
+    }
     const match = seriesMatch(all[i], all[j], infos[i], infos[j]);
-    if (match === true) join(i, j);
+    if (match === true) edges.push({ i, j, score: score(i, j) });
     else if (match === "maybe") {
       const decided = decisions[pairKey(all[i], all[j])];
-      if (decided) join(i, j);
+      if (decided) edges.push({ i, j, score: score(i, j), byAi: true });
       else if (decided === undefined && i < current.length) ask.push([i, j]);
     }
   };
@@ -122,6 +173,14 @@ export async function assignSeries(current: Program[], archive: Program[], { use
     for (let a = 0; a < list.length; a++) for (let b = a + 1; b < list.length; b++) check(list[a], list[b]);
   }
 
+  // AI(또는 사람)가 같다고 판단한 쌍은 기본 제목 규칙이 바뀌어 후보에서 빠져도 잇는다
+  const indexOf = new Map(all.map((p, i) => [p.id, i]));
+  for (const [key, same] of Object.entries(decisions)) {
+    if (!same) continue;
+    const [x, y] = key.split("|").map((id) => indexOf.get(id));
+    if (x !== undefined && y !== undefined && sameSchool(all[x], all[y])) edges.push({ i: x, j: y, score: score(x, y), byAi: true });
+  }
+
   // 애매한 쌍은 AI에게 묻고 답을 기억한다 (다음에는 다시 묻지 않는다)
   if (useAi && ask.length > 0) {
     const pairs = ask.map(([i, j]) => [all[i], all[j]] as [Program, Program]);
@@ -129,11 +188,13 @@ export async function assignSeries(current: Program[], archive: Program[], { use
     if (answers) {
       ask.forEach(([i, j], k) => {
         decisions[pairKey(all[i], all[j])] = answers[k];
-        if (answers[k]) join(i, j);
+        if (answers[k]) edges.push({ i, j, score: score(i, j), byAi: true });
       });
       await writeJson(DECISIONS_FILE, decisions);
     }
   }
+
+  edges.sort((a, b) => b.score - a.score).forEach(({ i, j, byAi }) => join(i, j, byAi));
 
   const groups = new Map<number, Program[]>();
   all.forEach((p, i) => groups.set(find(i), [...(groups.get(find(i)) ?? []), p]));

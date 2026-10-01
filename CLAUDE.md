@@ -52,17 +52,22 @@
 
 ## 수집 처리 순서 (`src/collect.ts`)
 
-1. 출처별 수집기가 새 게시물을 가져온다 (robots.txt 확인, 요청 사이 1초 쉼)
+1. 출처별 수집기가 새 게시물을 가져온다. 서로 다른 사이트는 동시에 읽고, 같은 사이트는 요청 사이 1초 쉰다
+   - robots.txt는 사이트마다 한 번 받아 기억하고, 목록·상세 등 **읽는 모든 주소**를 `fetchHtml`이 확인한다. 막힌 글은 건너뛰고 `collect-log.json`의 `robotsBlocked`에 남긴다
 2. `src/extract.ts`가 규칙으로 주최·기간·태그를 채운다
 3. `useAi` 출처는 Codex CLI가 있으면 `src/ai.ts`가 게시물 8개씩 묶어 추출한다 (gpt-6.1-sol, 실패하면 규칙 결과를 그대로 쓴다)
    - AI로 이미 추출한 게시물은 다시 보내지 않는다. 교원·직원 대상 글은 빼고 `data/excluded.json`에 기억한다
    - AI 없이 수집한 결과(GitHub Actions)는 AI가 채운 주최·대상·태그를 덮어쓰지 않는다
 4. `src/dedupe.ts`가 기존 데이터와 합치고 중복을 제거한다 (원문 링크는 모두 보관)
-   - 제목 유사도 80% 이상은 규칙으로 합치고, 45~80%인 출처 간 쌍은 AI에게 같은 프로그램인지 묻는다
+   - 제목 유사도 80% 이상은 규칙으로 합치고, 45~80%인 출처 간 쌍은 AI에게 같은 프로그램인지 묻는다 (답은 `data/duplicate-decisions.json`에 기억)
+   - 같은 게시판의 재게시는 "재게시·기간연장" 표시와 제목 앞 마감·대상 머리말(`[(재게시) 8/17(월) 까지_…]`)을 지우고 같은 공고로 합친다. 합쳐진 글의 id는 `aliases`에 남고, 관심 표시는 `public/api/moved.json`으로 새 id에 옮겨진다
 5. 마지막 일정이 90일 넘게 지난 항목은 지우지 않고 `data/archive.json`(보관함)으로 옮긴다
 6. `src/series.ts`가 목록과 보관함을 함께 보고 반복 프로그램을 묶는다
    - 회차·연도·학기를 지운 "기본 제목"이 같거나 매우 비슷하면 묶고, 애매한 쌍은 AI에게 묻는다 (답은 `data/series-decisions.json`에 기억)
    - 비슷한 때(60일 안)에 열리는 비슷한 이름은 다른 프로그램으로 본다
+   - 기본 제목에서 앞쪽 `[부서 이름]` 머리말은 지운다. 같은 틀에 맨 앞 이름(회사·지역)만 다르면 다른 프로그램 (`swappedName`)
+   - 사슬 막기: 가장 비슷한 쌍부터 잇고, 묶음끼리 이을 때 서로 다른 외부 주최 기관이거나 "이름만 바뀐" 제목이 섞이면 잇지 않는다. AI·사람이 같다고 판단한 쌍은 그대로 잇는다
+   - 기간 검사: 마감일이 게시일보다 60일 넘게 앞서면 연도 넘김을 고치거나(1년 더함) 모르는 값으로 둔다 (`plausiblePeriod`)
 7. `npm run collect -- --refresh`는 저장된 게시물도 다시 읽고 다시 추출한다 (추출 규칙을 바꿨을 때)
 
 과거 글 쌓기 (`src/backfill.ts`, 내 컴퓨터에서만): `npm run backfill -- --since 2020-01-01`로 목록 훑기 → 제목으로 1차 거르기(AI) → 본문 읽고 추출(AI),
@@ -83,7 +88,9 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
   - 지금 학교: 영남대(취업정보, 그리고 내 컴퓨터에서만 수집하는 영대소식·RISE사업단·단과대 14곳), 경북대(공지사항·행사·창업지원단), 계명대(공지사항·모집·장학·창업지원단·단과대 10곳)
   - 수집하지 않는 곳: 경북대 KNU CUBE·진로취업과·단과대(home.knu.ac.kr의 /HOME 경로를 robots.txt가 막음)·AI대학(AI 크롤러 차단), 계명대 STORY+·취업센터·간호대·의대(접근 거부), 영남대 창업지원단 사이트(글이 거의 없음, 영대소식·RISE사업단에 같은 글이 올라옴)
   - 계명대 단과대·창업지원단은 K2Web 게시판(`/bbs/{사이트}/{게시판번호}/artclList.do`)이라 table-board의 `idPattern`으로 번호를 찾는다
-- `data/programs.json` — 수집 결과(최근 90일), `data/archive.json` — 지난 공고 보관함, `data/collect-log.json` — 마지막 수집 기록
+- `data/programs.json` — 수집 결과(최근 90일), `data/archive.json` — 지난 공고 보관함, `data/collect-log.json` — 마지막 수집 기록 (출처마다 `lastSuccessAt`·`lastSuccessCount`를 이전 기록에서 이어받는다)
+- 결과 올리기: GitHub Actions와 내 컴퓨터 수집이 겹쳐 push가 실패하면, 최신을 받아 다시 수집하고 올린다(최대 3번). Actions는 한 번에 하나만 실행
+- 검색엔진: `app/sitemap.ts`(홈·목록·상세 전체), `app/robots.ts`
 - `app/` — 화면. 하단 탭 바(`components/BottomNav.tsx`)로 홈 `/`, 공고 `/programs`, 캘린더 `/calendar`, 프로필 `/my`를 오간다. 상세는 `/programs/[id]`
   - 목록 필터는 주소(`?school=yu&unit=...&tag=...&q=...&closed=1&sort=recent`)에 저장된다
   - 상세·캘린더에서 `.ics` 캘린더 파일로 내보낼 수 있다 (`lib/ics.ts`)
