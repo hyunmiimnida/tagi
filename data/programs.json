@@ -1373,7 +1373,8 @@
     "postedAt": null,
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T00:24:29.940Z",
-    "firstSeenAt": "2026-09-30T18:31:29.738Z"
+    "firstSeenAt": "2026-09-30T18:31:29.738Z",
+    "seriesId": "yu-career-2449"
   },
   {
     "id": "yu-news-231879233",
@@ -1415,7 +1416,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:39.019Z",
     "firstSeenAt": "2026-09-30T00:00:00.000Z",
-    "seriesId": "yu-news-230274768"
+    "seriesId": "yu-news-225270390"
   },
   {
     "id": "yu-news-231879232",
@@ -1552,7 +1553,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:41.567Z",
-    "firstSeenAt": "2026-09-30T00:00:00.000Z"
+    "firstSeenAt": "2026-09-30T00:00:00.000Z",
+    "seriesId": "yu-news-227630403"
   },
   {
     "id": "yu-news-231879152",
@@ -1689,7 +1691,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:44.759Z",
-    "firstSeenAt": "2026-09-30T00:00:00.000Z"
+    "firstSeenAt": "2026-09-30T00:00:00.000Z",
+    "seriesId": "yu-news-226598891"
   },
   {
     "id": "yu-news-231879110",
@@ -1747,7 +1750,8 @@
     "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:45.860Z",
-    "firstSeenAt": "2026-09-30T00:00:00.000Z"
+    "firstSeenAt": "2026-09-30T00:00:00.000Z",
+    "seriesId": "yu-news-227059805"
   },
   {
     "id": "yu-news-231879109",
@@ -1832,7 +1836,8 @@
     "postedAt": "2026-09-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:46.655Z",
-    "firstSeenAt": "2026-09-29T00:00:00.000Z"
+    "firstSeenAt": "2026-09-29T00:00:00.000Z",
+    "seriesId": "yu-news-225351705"
   },
   {
     "id": "yu-news-231865040",
@@ -1961,7 +1966,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:50.879Z",
     "firstSeenAt": "2026-09-29T00:00:00.000Z",
-    "seriesId": "yu-news-231385674"
+    "seriesId": "yu-news-223734066"
   },
   {
     "id": "yu-news-231865002",
@@ -2090,7 +2095,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:53.710Z",
     "firstSeenAt": "2026-09-28T00:00:00.000Z",
-    "seriesId": "yu-news-231498637"
+    "seriesId": "yu-news-227182580"
   },
   {
     "id": "yu-news-231850915",
@@ -2135,7 +2140,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:54.796Z",
     "firstSeenAt": "2026-09-28T00:00:00.000Z",
-    "seriesId": "yu-news-229599535"
+    "seriesId": "yu-news-224972264"
   },
   {
     "id": "yu-news-231850901",
@@ -2301,7 +2306,8 @@
     "postedAt": "2026-09-28",
     "extractedBy": "ai",
     "collectedAt": "2026-09-30T18:11:02.115Z",
-    "firstSeenAt": "2026-09-28T00:00:00.000Z"
+    "firstSeenAt": "2026-09-28T00:00:00.000Z",
+    "seriesId": "yu-news-226449686"
   },
   {
     "id": "yu-news-231850865",
@@ -2428,7 +2434,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:00.638Z",
     "firstSeenAt": "2026-09-26T00:00:00.000Z",
-    "seriesId": "yu-news-229979418"
+    "seriesId": "yu-news-226856596"
   },
   {
     "id": "yu-news-231780534",
@@ -3339,7 +3345,8 @@
     "postedAt": null,
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T02:16:50.268Z",
-    "firstSeenAt": "2026-10-01T02:16:50.268Z"
+    "firstSeenAt": "2026-10-01T02:16:50.268Z",
+    "seriesId": "yu-news-228937954"
   },
   {
     "id": "yu-career-2533",
@@ -5164,7 +5171,8 @@
     "postedAt": "2026-10-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:38.126Z",
-    "firstSeenAt": "2026-10-01T03:29:38.126Z"
+    "firstSeenAt": "2026-10-01T03:29:38.126Z",
+    "seriesId": "yu-news-226449696"
   },
   {
     "id": "yu-news-231780470",
@@ -5247,7 +5255,8 @@
     "postedAt": "2026-09-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:10.933Z",
-    "firstSeenAt": "2026-10-01T03:30:10.933Z"
+    "firstSeenAt": "2026-10-01T03:30:10.933Z",
+    "seriesId": "yu-news-226680264"
   },
   {
     "id": "yu-news-231780460",
@@ -5293,7 +5302,8 @@
     "postedAt": "2026-09-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:13.045Z",
-    "firstSeenAt": "2026-10-01T03:30:13.045Z"
+    "firstSeenAt": "2026-10-01T03:30:13.045Z",
+    "seriesId": "yu-news-226964756"
   },
   {
     "id": "yu-news-231766434",
@@ -5423,7 +5433,8 @@
     "postedAt": "2026-09-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:16.858Z",
-    "firstSeenAt": "2026-10-01T03:30:16.858Z"
+    "firstSeenAt": "2026-10-01T03:30:16.858Z",
+    "seriesId": "yu-news-228923738"
   },
   {
     "id": "yu-news-231766367",
@@ -5470,7 +5481,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:18.612Z",
     "firstSeenAt": "2026-10-01T03:30:18.612Z",
-    "seriesId": "yu-news-231766367"
+    "seriesId": "yu-news-226517521"
   },
   {
     "id": "yu-news-231752289",
@@ -5517,7 +5528,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:19.295Z",
     "firstSeenAt": "2026-10-01T03:30:19.295Z",
-    "seriesId": "yu-news-231174697"
+    "seriesId": "yu-news-226436110"
   },
   {
     "id": "yu-news-231752254",
@@ -5600,7 +5611,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:30:21.580Z",
     "firstSeenAt": "2026-10-01T03:30:21.580Z",
-    "seriesId": "yu-news-231554914"
+    "seriesId": "yu-news-224095609"
   },
   {
     "id": "yu-news-231752240",
@@ -5780,7 +5791,8 @@
     "postedAt": "2026-09-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:16.205Z",
-    "firstSeenAt": "2026-10-01T03:33:16.205Z"
+    "firstSeenAt": "2026-10-01T03:33:16.205Z",
+    "seriesId": "yu-news-226680272"
   },
   {
     "id": "yu-news-231710161",
@@ -5823,7 +5835,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:16.754Z",
     "firstSeenAt": "2026-10-01T03:33:16.754Z",
-    "seriesId": "yu-news-229824573"
+    "seriesId": "yu-news-224985816"
   },
   {
     "id": "yu-news-231710151",
@@ -5868,7 +5880,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:17.894Z",
     "firstSeenAt": "2026-10-01T03:33:17.894Z",
-    "seriesId": "yu-news-229402667"
+    "seriesId": "yu-news-224055623"
   },
   {
     "id": "yu-news-231710149",
@@ -5957,7 +5969,8 @@
     "postedAt": "2026-09-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:19.884Z",
-    "firstSeenAt": "2026-10-01T03:33:19.884Z"
+    "firstSeenAt": "2026-10-01T03:33:19.884Z",
+    "seriesId": "yu-news-226449696"
   },
   {
     "id": "yu-news-231696106",
@@ -6360,7 +6373,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:28.943Z",
     "firstSeenAt": "2026-10-01T03:33:28.943Z",
-    "seriesId": "yu-news-231470313"
+    "seriesId": "yu-news-226422550"
   },
   {
     "id": "yu-news-231681979",
@@ -6405,7 +6418,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:30.095Z",
     "firstSeenAt": "2026-10-01T03:33:30.095Z",
-    "seriesId": "yu-news-231470053"
+    "seriesId": "yu-news-226395177"
   },
   {
     "id": "yu-news-231681957",
@@ -6450,7 +6463,8 @@
     "postedAt": "2026-09-16",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:31.113Z",
-    "firstSeenAt": "2026-10-01T03:33:31.113Z"
+    "firstSeenAt": "2026-10-01T03:33:31.113Z",
+    "seriesId": "yu-news-228420112"
   },
   {
     "id": "yu-news-231667866",
@@ -6552,7 +6566,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:32.943Z",
     "firstSeenAt": "2026-10-01T03:33:32.943Z",
-    "seriesId": "yu-news-231766367"
+    "seriesId": "yu-news-226517521"
   },
   {
     "id": "yu-news-231667846",
@@ -6763,7 +6777,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:41.770Z",
     "firstSeenAt": "2026-10-01T03:33:41.770Z",
-    "seriesId": "yu-news-231554916"
+    "seriesId": "yu-news-224095609"
   },
   {
     "id": "yu-news-231653766",
@@ -6807,7 +6821,8 @@
     "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:42.875Z",
-    "firstSeenAt": "2026-10-01T03:33:42.875Z"
+    "firstSeenAt": "2026-10-01T03:33:42.875Z",
+    "seriesId": "yu-news-225351705"
   },
   {
     "id": "yu-news-231653764",
@@ -6852,7 +6867,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:43.608Z",
     "firstSeenAt": "2026-10-01T03:33:43.608Z",
-    "seriesId": "yu-news-231512788"
+    "seriesId": "yu-news-226395229"
   },
   {
     "id": "yu-news-231653761",
@@ -6940,7 +6955,8 @@
     "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:45.862Z",
-    "firstSeenAt": "2026-10-01T03:33:45.862Z"
+    "firstSeenAt": "2026-10-01T03:33:45.862Z",
+    "seriesId": "yu-news-223921417"
   },
   {
     "id": "yu-news-231653747",
@@ -6984,7 +7000,8 @@
     "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:46.569Z",
-    "firstSeenAt": "2026-10-01T03:33:46.569Z"
+    "firstSeenAt": "2026-10-01T03:33:46.569Z",
+    "seriesId": "yu-news-226449725"
   },
   {
     "id": "yu-news-231653738",
@@ -7037,7 +7054,8 @@
     "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:47.837Z",
-    "firstSeenAt": "2026-10-01T03:33:47.837Z"
+    "firstSeenAt": "2026-10-01T03:33:47.837Z",
+    "seriesId": "yu-news-224028827"
   },
   {
     "id": "yu-news-231653713",
@@ -7125,7 +7143,8 @@
     "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:52.469Z",
-    "firstSeenAt": "2026-10-01T03:33:52.469Z"
+    "firstSeenAt": "2026-10-01T03:33:52.469Z",
+    "seriesId": "yu-news-224015293"
   },
   {
     "id": "yu-news-231653660",
@@ -7169,7 +7188,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:55.310Z",
     "firstSeenAt": "2026-10-01T03:33:55.310Z",
-    "seriesId": "yu-news-230190375"
+    "seriesId": "yu-news-224526213"
   },
   {
     "id": "yu-news-231653655",
@@ -7209,7 +7228,8 @@
     "postedAt": "2026-09-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:56.130Z",
-    "firstSeenAt": "2026-10-01T03:33:56.130Z"
+    "firstSeenAt": "2026-10-01T03:33:56.130Z",
+    "seriesId": "yu-news-224001781"
   },
   {
     "id": "yu-news-231611579",
@@ -7296,7 +7316,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:58.053Z",
     "firstSeenAt": "2026-10-01T03:33:58.053Z",
-    "seriesId": "yu-news-229894875"
+    "seriesId": "yu-news-226856596"
   },
   {
     "id": "yu-news-231611564",
@@ -7337,7 +7357,8 @@
     "postedAt": "2026-09-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:33:59.984Z",
-    "firstSeenAt": "2026-10-01T03:33:59.984Z"
+    "firstSeenAt": "2026-10-01T03:33:59.984Z",
+    "seriesId": "yu-news-227209729"
   },
   {
     "id": "yu-news-231611562",
@@ -7424,7 +7445,8 @@
     "postedAt": "2026-09-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:02.378Z",
-    "firstSeenAt": "2026-10-01T03:34:02.378Z"
+    "firstSeenAt": "2026-10-01T03:34:02.378Z",
+    "seriesId": "yu-news-223774239"
   },
   {
     "id": "yu-news-231611519",
@@ -7507,7 +7529,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:05.161Z",
     "firstSeenAt": "2026-10-01T03:34:05.161Z",
-    "seriesId": "yu-news-229430835"
+    "seriesId": "yu-news-226137626"
   },
   {
     "id": "yu-news-231611507",
@@ -7548,7 +7570,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:06.350Z",
     "firstSeenAt": "2026-10-01T03:34:06.350Z",
-    "seriesId": "yu-news-231554916"
+    "seriesId": "yu-news-224095609"
   },
   {
     "id": "yu-news-231611469",
@@ -7593,7 +7615,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:08.113Z",
     "firstSeenAt": "2026-10-01T03:34:08.113Z",
-    "seriesId": "yu-news-231470053"
+    "seriesId": "yu-news-226395177"
   },
   {
     "id": "yu-news-231597413",
@@ -7811,7 +7833,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:17.445Z",
     "firstSeenAt": "2026-10-01T03:34:17.445Z",
-    "seriesId": "yu-news-231512796"
+    "seriesId": "yu-news-228224580"
   },
   {
     "id": "yu-news-231569161",
@@ -7853,7 +7875,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:18.357Z",
     "firstSeenAt": "2026-10-01T03:34:18.357Z",
-    "seriesId": "yu-news-229627740"
+    "seriesId": "yu-news-224607063"
   },
   {
     "id": "yu-news-231569059",
@@ -7897,7 +7919,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:20.518Z",
     "firstSeenAt": "2026-10-01T03:34:20.518Z",
-    "seriesId": "yu-news-229444920"
+    "seriesId": "yu-news-223854598"
   },
   {
     "id": "yu-news-231569045",
@@ -7982,7 +8004,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:23.664Z",
     "firstSeenAt": "2026-10-01T03:34:23.664Z",
-    "seriesId": "yu-news-230190447"
+    "seriesId": "yu-news-224931641"
   },
   {
     "id": "yu-news-231554931",
@@ -8023,7 +8045,8 @@
     "postedAt": "2026-09-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:24.381Z",
-    "firstSeenAt": "2026-10-01T03:34:24.381Z"
+    "firstSeenAt": "2026-10-01T03:34:24.381Z",
+    "seriesId": "yu-news-226544723"
   },
   {
     "id": "yu-news-231554916",
@@ -8064,7 +8087,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:26.193Z",
     "firstSeenAt": "2026-10-01T03:34:26.193Z",
-    "seriesId": "yu-news-231554916"
+    "seriesId": "yu-news-224095609"
   },
   {
     "id": "yu-news-231554914",
@@ -8105,7 +8128,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:26.870Z",
     "firstSeenAt": "2026-10-01T03:34:26.870Z",
-    "seriesId": "yu-news-231554914"
+    "seriesId": "yu-news-224095609"
   },
   {
     "id": "yu-news-231526872",
@@ -8193,7 +8216,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:32.260Z",
     "firstSeenAt": "2026-10-01T03:34:32.260Z",
-    "seriesId": "yu-news-229416703"
+    "seriesId": "yu-news-223827732"
   },
   {
     "id": "yu-news-231512801",
@@ -8280,7 +8303,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:35.780Z",
     "firstSeenAt": "2026-10-01T03:34:35.780Z",
-    "seriesId": "yu-news-231512796"
+    "seriesId": "yu-news-228224580"
   },
   {
     "id": "yu-news-231512795",
@@ -8325,7 +8348,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:39.884Z",
     "firstSeenAt": "2026-10-01T03:34:39.884Z",
-    "seriesId": "yu-news-229599535"
+    "seriesId": "yu-news-224972264"
   },
   {
     "id": "yu-news-231512788",
@@ -8370,7 +8393,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:41.876Z",
     "firstSeenAt": "2026-10-01T03:34:41.876Z",
-    "seriesId": "yu-news-231512788"
+    "seriesId": "yu-news-226395229"
   },
   {
     "id": "yu-news-231512786",
@@ -8458,7 +8481,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:43.844Z",
     "firstSeenAt": "2026-10-01T03:34:43.844Z",
-    "seriesId": "yu-news-229543390"
+    "seriesId": "yu-news-223948273"
   },
   {
     "id": "yu-news-231498687",
@@ -8502,7 +8525,8 @@
     "postedAt": "2026-09-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:44.546Z",
-    "firstSeenAt": "2026-10-01T03:34:44.546Z"
+    "firstSeenAt": "2026-10-01T03:34:44.546Z",
+    "seriesId": "yu-news-227440327"
   },
   {
     "id": "yu-news-231498673",
@@ -8588,7 +8612,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:46.405Z",
     "firstSeenAt": "2026-10-01T03:34:46.405Z",
-    "seriesId": "yu-news-231498656"
+    "seriesId": "yu-news-224972239"
   },
   {
     "id": "yu-news-231498655",
@@ -8632,7 +8656,8 @@
     "postedAt": "2026-09-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:48.350Z",
-    "firstSeenAt": "2026-10-01T03:34:48.350Z"
+    "firstSeenAt": "2026-10-01T03:34:48.350Z",
+    "seriesId": "yu-news-224972238"
   },
   {
     "id": "yu-news-231498638",
@@ -8716,7 +8741,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:51.742Z",
     "firstSeenAt": "2026-10-01T03:34:51.742Z",
-    "seriesId": "yu-news-231498637"
+    "seriesId": "yu-news-227182580"
   },
   {
     "id": "yu-news-231498615",
@@ -8800,7 +8825,8 @@
     "postedAt": "2026-09-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:55.414Z",
-    "firstSeenAt": "2026-10-01T03:34:55.414Z"
+    "firstSeenAt": "2026-10-01T03:34:55.414Z",
+    "seriesId": "yu-news-223948272"
   },
   {
     "id": "yu-news-231498598",
@@ -8883,7 +8909,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:58.163Z",
     "firstSeenAt": "2026-10-01T03:34:58.163Z",
-    "seriesId": "yu-news-229824624"
+    "seriesId": "yu-news-225595664"
   },
   {
     "id": "yu-news-231484553",
@@ -8929,7 +8955,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:59.514Z",
     "firstSeenAt": "2026-10-01T03:34:59.514Z",
-    "seriesId": "yu-news-229894875"
+    "seriesId": "yu-news-226856596"
   },
   {
     "id": "yu-news-231484538",
@@ -9016,7 +9042,8 @@
     "postedAt": "2026-09-02",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:04.032Z",
-    "firstSeenAt": "2026-10-01T03:35:04.032Z"
+    "firstSeenAt": "2026-10-01T03:35:04.032Z",
+    "seriesId": "yu-news-226151198"
   },
   {
     "id": "yu-news-231484452",
@@ -9062,7 +9089,8 @@
     "postedAt": "2026-09-02",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:07.355Z",
-    "firstSeenAt": "2026-10-01T03:35:07.355Z"
+    "firstSeenAt": "2026-10-01T03:35:07.355Z",
+    "seriesId": "yu-news-226340996"
   },
   {
     "id": "yu-news-231470389",
@@ -9108,7 +9136,8 @@
     "postedAt": "2026-09-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:09.616Z",
-    "firstSeenAt": "2026-10-01T03:35:09.616Z"
+    "firstSeenAt": "2026-10-01T03:35:09.616Z",
+    "seriesId": "yu-news-226544692"
   },
   {
     "id": "yu-news-231470361",
@@ -9151,7 +9180,8 @@
     "postedAt": "2026-09-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:13.001Z",
-    "firstSeenAt": "2026-10-01T03:35:13.001Z"
+    "firstSeenAt": "2026-10-01T03:35:13.001Z",
+    "seriesId": "yu-news-228937954"
   },
   {
     "id": "yu-news-231470325",
@@ -9240,7 +9270,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:17.505Z",
     "firstSeenAt": "2026-10-01T03:35:17.505Z",
-    "seriesId": "yu-news-231470313"
+    "seriesId": "yu-news-226422550"
   },
   {
     "id": "yu-news-231470067",
@@ -9281,7 +9311,8 @@
     "postedAt": "2026-09-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:18.440Z",
-    "firstSeenAt": "2026-10-01T03:35:18.440Z"
+    "firstSeenAt": "2026-10-01T03:35:18.440Z",
+    "seriesId": "yu-news-223934757"
   },
   {
     "id": "yu-news-231470054",
@@ -9321,7 +9352,8 @@
     "postedAt": "2026-09-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:19.674Z",
-    "firstSeenAt": "2026-10-01T03:35:19.674Z"
+    "firstSeenAt": "2026-10-01T03:35:19.674Z",
+    "seriesId": "yu-news-228923738"
   },
   {
     "id": "yu-news-231470053",
@@ -9366,7 +9398,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:20.399Z",
     "firstSeenAt": "2026-10-01T03:35:20.399Z",
-    "seriesId": "yu-news-231470053"
+    "seriesId": "yu-news-226395177"
   },
   {
     "id": "yu-news-231470050",
@@ -9410,7 +9442,8 @@
     "postedAt": "2026-09-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:21.353Z",
-    "firstSeenAt": "2026-10-01T03:35:21.353Z"
+    "firstSeenAt": "2026-10-01T03:35:21.353Z",
+    "seriesId": "yu-news-226449725"
   },
   {
     "id": "yu-news-231456018",
@@ -9507,7 +9540,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:23.371Z",
     "firstSeenAt": "2026-10-01T03:35:23.371Z",
-    "seriesId": "yu-news-230500001"
+    "seriesId": "yu-news-223841123"
   },
   {
     "id": "yu-news-231456009",
@@ -9549,7 +9582,8 @@
     "postedAt": "2026-08-31",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:24.614Z",
-    "firstSeenAt": "2026-10-01T03:35:24.614Z"
+    "firstSeenAt": "2026-10-01T03:35:24.614Z",
+    "seriesId": "yu-news-223948268"
   },
   {
     "id": "yu-news-231456007",
@@ -9632,7 +9666,8 @@
     "postedAt": "2026-08-31",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:28.605Z",
-    "firstSeenAt": "2026-10-01T03:35:28.605Z"
+    "firstSeenAt": "2026-10-01T03:35:28.605Z",
+    "seriesId": "yu-news-229022439"
   },
   {
     "id": "yu-news-231455970",
@@ -9764,7 +9799,8 @@
     "postedAt": "2026-08-31",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:31.850Z",
-    "firstSeenAt": "2026-10-01T03:35:31.850Z"
+    "firstSeenAt": "2026-10-01T03:35:31.850Z",
+    "seriesId": "yu-news-226354596"
   },
   {
     "id": "yu-news-231455925",
@@ -9807,7 +9843,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:34.543Z",
     "firstSeenAt": "2026-10-01T03:35:34.543Z",
-    "seriesId": "yu-news-229824573"
+    "seriesId": "yu-news-224985816"
   },
   {
     "id": "yu-news-231413835",
@@ -10048,7 +10084,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:40.785Z",
     "firstSeenAt": "2026-10-01T03:35:40.785Z",
-    "seriesId": "yu-news-231160575"
+    "seriesId": "yu-news-227931867"
   },
   {
     "id": "yu-news-231399733",
@@ -10174,7 +10210,8 @@
     "postedAt": "2026-08-26",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:46.309Z",
-    "firstSeenAt": "2026-10-01T03:35:46.309Z"
+    "firstSeenAt": "2026-10-01T03:35:46.309Z",
+    "seriesId": "yu-news-226544723"
   },
   {
     "id": "yu-news-231385690",
@@ -10305,7 +10342,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:51.214Z",
     "firstSeenAt": "2026-10-01T03:35:51.214Z",
-    "seriesId": "yu-news-231385674"
+    "seriesId": "yu-news-223734066"
   },
   {
     "id": "yu-news-231385645",
@@ -10391,7 +10428,8 @@
     "postedAt": "2026-08-25",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:53.023Z",
-    "firstSeenAt": "2026-10-01T03:35:53.023Z"
+    "firstSeenAt": "2026-10-01T03:35:53.023Z",
+    "seriesId": "yu-news-223774239"
   },
   {
     "id": "yu-news-231371584",
@@ -10433,7 +10471,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:54.343Z",
     "firstSeenAt": "2026-10-01T03:35:54.343Z",
-    "seriesId": "yu-news-230134215"
+    "seriesId": "yu-news-225162025"
   },
   {
     "id": "yu-news-231371571",
@@ -10475,7 +10513,8 @@
     "postedAt": "2026-08-25",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:55.276Z",
-    "firstSeenAt": "2026-10-01T03:35:55.276Z"
+    "firstSeenAt": "2026-10-01T03:35:55.276Z",
+    "seriesId": "yu-news-225284013"
   },
   {
     "id": "yu-news-231357530",
@@ -10519,7 +10558,8 @@
     "postedAt": "2026-08-24",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:56.227Z",
-    "firstSeenAt": "2026-10-01T03:35:56.227Z"
+    "firstSeenAt": "2026-10-01T03:35:56.227Z",
+    "seriesId": "yu-news-223814348"
   },
   {
     "id": "yu-news-231357493",
@@ -10562,7 +10602,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:57.090Z",
     "firstSeenAt": "2026-10-01T03:35:57.090Z",
-    "seriesId": "yu-news-229824573"
+    "seriesId": "yu-news-224985816"
   },
   {
     "id": "yu-news-231357491",
@@ -10644,7 +10684,8 @@
     "postedAt": "2026-08-24",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:00.672Z",
-    "firstSeenAt": "2026-10-01T03:36:00.672Z"
+    "firstSeenAt": "2026-10-01T03:36:00.672Z",
+    "seriesId": "yu-news-226354596"
   },
   {
     "id": "yu-news-231315411",
@@ -11061,7 +11102,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:14.524Z",
     "firstSeenAt": "2026-10-01T03:36:14.524Z",
-    "seriesId": "yu-news-231160575"
+    "seriesId": "yu-news-227931867"
   },
   {
     "id": "yu-news-231287284",
@@ -11193,7 +11234,8 @@
     "postedAt": "2026-08-19",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:22.434Z",
-    "firstSeenAt": "2026-10-01T03:36:22.434Z"
+    "firstSeenAt": "2026-10-01T03:36:22.434Z",
+    "seriesId": "yu-news-228937864"
   },
   {
     "id": "yu-news-231273195",
@@ -11282,7 +11324,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:25.073Z",
     "firstSeenAt": "2026-10-01T03:36:25.073Z",
-    "seriesId": "yu-news-229613668"
+    "seriesId": "yu-news-223774239"
   },
   {
     "id": "yu-news-231273135",
@@ -11509,7 +11551,8 @@
     "postedAt": "2026-08-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:30.663Z",
-    "firstSeenAt": "2026-10-01T03:36:30.663Z"
+    "firstSeenAt": "2026-10-01T03:36:30.663Z",
+    "seriesId": "yu-news-226110497"
   },
   {
     "id": "yu-news-231202902",
@@ -11604,7 +11647,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:32.749Z",
     "firstSeenAt": "2026-10-01T03:36:32.749Z",
-    "seriesId": "yu-news-231160575"
+    "seriesId": "yu-news-227931867"
   },
   {
     "id": "yu-news-231188806",
@@ -11690,7 +11733,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:36.397Z",
     "firstSeenAt": "2026-10-01T03:36:36.397Z",
-    "seriesId": "yu-news-229824639"
+    "seriesId": "yu-news-225351705"
   },
   {
     "id": "yu-news-231118497",
@@ -11780,7 +11823,8 @@
     "postedAt": "2026-08-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:09.785Z",
-    "firstSeenAt": "2026-10-01T03:37:09.785Z"
+    "firstSeenAt": "2026-10-01T03:37:09.785Z",
+    "seriesId": "yu-news-225853156"
   },
   {
     "id": "yu-news-231118438",
@@ -11873,7 +11917,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:12.316Z",
     "firstSeenAt": "2026-10-01T03:37:12.316Z",
-    "seriesId": "yu-news-229726198"
+    "seriesId": "yu-news-225202741"
   },
   {
     "id": "yu-news-231118433",
@@ -11917,7 +11961,8 @@
     "postedAt": "2026-08-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:14.768Z",
-    "firstSeenAt": "2026-10-01T03:37:14.768Z"
+    "firstSeenAt": "2026-10-01T03:37:14.768Z",
+    "seriesId": "yu-news-228503912"
   },
   {
     "id": "yu-news-231104394",
@@ -11963,7 +12008,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:15.366Z",
     "firstSeenAt": "2026-10-01T03:37:15.366Z",
-    "seriesId": "yu-news-229824639"
+    "seriesId": "yu-news-225351705"
   },
   {
     "id": "yu-news-231090343",
@@ -12236,7 +12281,8 @@
     "postedAt": "2026-08-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:24.311Z",
-    "firstSeenAt": "2026-10-01T03:37:24.311Z"
+    "firstSeenAt": "2026-10-01T03:37:24.311Z",
+    "seriesId": "yu-news-226110497"
   },
   {
     "id": "yu-news-231076249",
@@ -12282,7 +12328,8 @@
     "postedAt": "2026-08-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:25.629Z",
-    "firstSeenAt": "2026-10-01T03:37:25.629Z"
+    "firstSeenAt": "2026-10-01T03:37:25.629Z",
+    "seriesId": "yu-news-227263905"
   },
   {
     "id": "yu-news-231076248",
@@ -12324,7 +12371,8 @@
     "postedAt": "2026-08-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:26.425Z",
-    "firstSeenAt": "2026-10-01T03:37:26.425Z"
+    "firstSeenAt": "2026-10-01T03:37:26.425Z",
+    "seriesId": "yu-news-223734062"
   },
   {
     "id": "yu-news-231076247",
@@ -12418,7 +12466,8 @@
     "postedAt": "2026-08-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:28.257Z",
-    "firstSeenAt": "2026-10-01T03:37:28.257Z"
+    "firstSeenAt": "2026-10-01T03:37:28.257Z",
+    "seriesId": "yu-news-228615721"
   },
   {
     "id": "yu-news-231076233",
@@ -12511,7 +12560,8 @@
     "postedAt": "2026-08-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:30.769Z",
-    "firstSeenAt": "2026-10-01T03:37:30.769Z"
+    "firstSeenAt": "2026-10-01T03:37:30.769Z",
+    "seriesId": "yu-news-226015537"
   },
   {
     "id": "yu-news-231062185",
@@ -12555,7 +12605,8 @@
     "postedAt": "2026-08-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:32.011Z",
-    "firstSeenAt": "2026-10-01T03:37:32.011Z"
+    "firstSeenAt": "2026-10-01T03:37:32.011Z",
+    "seriesId": "yu-news-226151239"
   },
   {
     "id": "yu-news-231188792",
@@ -12601,7 +12652,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:44.357Z",
     "firstSeenAt": "2026-10-01T03:36:44.357Z",
-    "seriesId": "yu-news-229880803"
+    "seriesId": "yu-news-225568567"
   },
   {
     "id": "yu-news-231188787",
@@ -12736,7 +12787,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:48.460Z",
     "firstSeenAt": "2026-10-01T03:36:48.460Z",
-    "seriesId": "yu-news-231160578"
+    "seriesId": "yu-news-226110497"
   },
   {
     "id": "yu-news-231174712",
@@ -12777,7 +12828,8 @@
     "postedAt": "2026-08-11",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:49.575Z",
-    "firstSeenAt": "2026-10-01T03:36:49.575Z"
+    "firstSeenAt": "2026-10-01T03:36:49.575Z",
+    "seriesId": "yu-news-226015539"
   },
   {
     "id": "yu-news-231174697",
@@ -12824,7 +12876,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:50.798Z",
     "firstSeenAt": "2026-10-01T03:36:50.798Z",
-    "seriesId": "yu-news-231174697"
+    "seriesId": "yu-news-226436110"
   },
   {
     "id": "yu-news-231174667",
@@ -13082,7 +13134,8 @@
     "postedAt": "2026-08-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:57.081Z",
-    "firstSeenAt": "2026-10-01T03:36:57.081Z"
+    "firstSeenAt": "2026-10-01T03:36:57.081Z",
+    "seriesId": "yu-news-228503912"
   },
   {
     "id": "yu-news-231160625",
@@ -13127,7 +13180,8 @@
     "postedAt": "2026-08-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:59.451Z",
-    "firstSeenAt": "2026-10-01T03:36:59.451Z"
+    "firstSeenAt": "2026-10-01T03:36:59.451Z",
+    "seriesId": "yu-news-228615721"
   },
   {
     "id": "yu-news-231160607",
@@ -13171,7 +13225,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:00.287Z",
     "firstSeenAt": "2026-10-01T03:37:00.287Z",
-    "seriesId": "yu-news-229444920"
+    "seriesId": "yu-news-223854598"
   },
   {
     "id": "yu-news-231160605",
@@ -13259,7 +13313,8 @@
     "postedAt": "2026-08-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:01.970Z",
-    "firstSeenAt": "2026-10-01T03:37:01.970Z"
+    "firstSeenAt": "2026-10-01T03:37:01.970Z",
+    "seriesId": "yu-news-224216149"
   },
   {
     "id": "yu-news-231160583",
@@ -13355,7 +13410,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:04.373Z",
     "firstSeenAt": "2026-10-01T03:37:04.373Z",
-    "seriesId": "yu-news-231160578"
+    "seriesId": "yu-news-226110497"
   },
   {
     "id": "yu-news-231160575",
@@ -13411,7 +13466,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:05.663Z",
     "firstSeenAt": "2026-10-01T03:37:05.663Z",
-    "seriesId": "yu-news-231160575"
+    "seriesId": "yu-news-227931867"
   },
   {
     "id": "yu-news-231118504",
@@ -13543,7 +13598,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:44.608Z",
     "firstSeenAt": "2026-10-01T03:37:44.608Z",
-    "seriesId": "yu-news-229613668"
+    "seriesId": "yu-news-223774239"
   },
   {
     "id": "yu-news-231062174",
@@ -13633,7 +13688,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:46.657Z",
     "firstSeenAt": "2026-10-01T03:37:46.657Z",
-    "seriesId": "yu-news-229838665"
+    "seriesId": "yu-news-223827708"
   },
   {
     "id": "yu-news-231062147",
@@ -13684,7 +13739,8 @@
     "postedAt": "2026-08-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:47.385Z",
-    "firstSeenAt": "2026-10-01T03:37:47.385Z"
+    "firstSeenAt": "2026-10-01T03:37:47.385Z",
+    "seriesId": "yu-news-227862473"
   },
   {
     "id": "yu-news-231062141",
@@ -13734,7 +13790,8 @@
     "postedAt": "2026-08-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:48.758Z",
-    "firstSeenAt": "2026-10-01T03:37:48.758Z"
+    "firstSeenAt": "2026-10-01T03:37:48.758Z",
+    "seriesId": "yu-news-226816041"
   },
   {
     "id": "yu-news-231062136",
@@ -13788,7 +13845,8 @@
     "postedAt": "2026-08-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:49.731Z",
-    "firstSeenAt": "2026-10-01T03:37:49.731Z"
+    "firstSeenAt": "2026-10-01T03:37:49.731Z",
+    "seriesId": "yu-news-225595703"
   },
   {
     "id": "yu-news-231062135",
@@ -13877,7 +13935,8 @@
     "postedAt": "2026-07-27",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:52.483Z",
-    "firstSeenAt": "2026-10-01T03:37:52.483Z"
+    "firstSeenAt": "2026-10-01T03:37:52.483Z",
+    "seriesId": "yu-news-228503912"
   },
   {
     "id": "yu-news-230921900",
@@ -13924,7 +13983,8 @@
     "postedAt": "2026-07-24",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:56.036Z",
-    "firstSeenAt": "2026-10-01T03:37:56.036Z"
+    "firstSeenAt": "2026-10-01T03:37:56.036Z",
+    "seriesId": "yu-news-223734027"
   },
   {
     "id": "yu-news-230921898",
@@ -13969,7 +14029,8 @@
     "postedAt": "2026-07-24",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:00.078Z",
-    "firstSeenAt": "2026-10-01T03:38:00.078Z"
+    "firstSeenAt": "2026-10-01T03:38:00.078Z",
+    "seriesId": "yu-news-227196097"
   },
   {
     "id": "yu-news-230921893",
@@ -14061,7 +14122,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:03.504Z",
     "firstSeenAt": "2026-10-01T03:38:03.504Z",
-    "seriesId": "yu-news-229824639"
+    "seriesId": "yu-news-225351705"
   },
   {
     "id": "yu-news-230907848",
@@ -14103,7 +14164,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:04.493Z",
     "firstSeenAt": "2026-10-01T03:38:04.493Z",
-    "seriesId": "yu-news-230781261"
+    "seriesId": "yu-news-225839622"
   },
   {
     "id": "yu-news-230907842",
@@ -14316,7 +14377,8 @@
     "postedAt": "2026-07-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:08.985Z",
-    "firstSeenAt": "2026-10-01T03:38:08.985Z"
+    "firstSeenAt": "2026-10-01T03:38:08.985Z",
+    "seriesId": "yu-news-226815982"
   },
   {
     "id": "yu-news-230893731",
@@ -14402,7 +14464,8 @@
     "postedAt": "2026-07-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:11.055Z",
-    "firstSeenAt": "2026-10-01T03:38:11.055Z"
+    "firstSeenAt": "2026-10-01T03:38:11.055Z",
+    "seriesId": "yu-news-226029109"
   },
   {
     "id": "yu-news-230879703",
@@ -14451,7 +14514,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:12.129Z",
     "firstSeenAt": "2026-10-01T03:38:12.129Z",
-    "seriesId": "yu-news-229979401"
+    "seriesId": "yu-news-224904562"
   },
   {
     "id": "yu-news-230879701",
@@ -14592,7 +14655,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:15.092Z",
     "firstSeenAt": "2026-10-01T03:38:15.092Z",
-    "seriesId": "yu-news-229894894"
+    "seriesId": "yu-news-224918115"
   },
   {
     "id": "yu-news-230879658",
@@ -14634,7 +14697,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:38:16.248Z",
     "firstSeenAt": "2026-10-01T03:38:16.248Z",
-    "seriesId": "yu-news-230134215"
+    "seriesId": "yu-news-225162025"
   },
   {
     "id": "yu-news-230879645",
@@ -15166,7 +15229,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:18.799Z",
     "firstSeenAt": "2026-10-01T03:39:18.799Z",
-    "seriesId": "yu-news-230781261"
+    "seriesId": "yu-news-225839622"
   },
   {
     "id": "yu-news-230781254",
@@ -15210,7 +15273,8 @@
     "postedAt": "2026-07-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:19.909Z",
-    "firstSeenAt": "2026-10-01T03:39:19.909Z"
+    "firstSeenAt": "2026-10-01T03:39:19.909Z",
+    "seriesId": "yu-news-225731059"
   },
   {
     "id": "yu-news-230767203",
@@ -15300,7 +15364,8 @@
     "postedAt": "2026-07-13",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:22.140Z",
-    "firstSeenAt": "2026-10-01T03:39:22.140Z"
+    "firstSeenAt": "2026-10-01T03:39:22.140Z",
+    "seriesId": "yu-news-228308357"
   },
   {
     "id": "yu-news-230767181",
@@ -15383,7 +15448,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:24.070Z",
     "firstSeenAt": "2026-10-01T03:39:24.070Z",
-    "seriesId": "yu-news-230499958"
+    "seriesId": "yu-news-228224599"
   },
   {
     "id": "yu-news-230767176",
@@ -15426,7 +15491,8 @@
     "postedAt": "2026-07-13",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:24.977Z",
-    "firstSeenAt": "2026-10-01T03:39:24.977Z"
+    "firstSeenAt": "2026-10-01T03:39:24.977Z",
+    "seriesId": "yu-news-225595669"
   },
   {
     "id": "yu-news-230767175",
@@ -15470,7 +15536,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:25.939Z",
     "firstSeenAt": "2026-10-01T03:39:25.939Z",
-    "seriesId": "yu-news-229444920"
+    "seriesId": "yu-news-223854598"
   },
   {
     "id": "yu-news-230767162",
@@ -15523,7 +15589,8 @@
     "postedAt": "2026-07-13",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:27.049Z",
-    "firstSeenAt": "2026-10-01T03:39:27.049Z"
+    "firstSeenAt": "2026-10-01T03:39:27.049Z",
+    "seriesId": "yu-news-228252549"
   },
   {
     "id": "yu-news-230767159",
@@ -15655,7 +15722,8 @@
     "postedAt": "2026-07-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:29.912Z",
-    "firstSeenAt": "2026-10-01T03:39:29.912Z"
+    "firstSeenAt": "2026-10-01T03:39:29.912Z",
+    "seriesId": "yu-news-225731077"
   },
   {
     "id": "yu-news-230725046",
@@ -15832,7 +15900,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:04.937Z",
     "firstSeenAt": "2026-10-01T03:40:04.937Z",
-    "seriesId": "yu-news-229613668"
+    "seriesId": "yu-news-223774239"
   },
   {
     "id": "yu-news-230598448",
@@ -15917,7 +15985,8 @@
     "postedAt": "2026-07-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:07.705Z",
-    "firstSeenAt": "2026-10-01T03:40:07.705Z"
+    "firstSeenAt": "2026-10-01T03:40:07.705Z",
+    "seriesId": "yu-news-228029146"
   },
   {
     "id": "yu-news-230598411",
@@ -16006,7 +16075,8 @@
     "postedAt": "2026-06-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:14.284Z",
-    "firstSeenAt": "2026-10-01T03:40:14.284Z"
+    "firstSeenAt": "2026-10-01T03:40:14.284Z",
+    "seriesId": "yu-news-228126819"
   },
   {
     "id": "yu-news-230584311",
@@ -16047,7 +16117,8 @@
     "postedAt": "2026-06-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:16.660Z",
-    "firstSeenAt": "2026-10-01T03:40:16.660Z"
+    "firstSeenAt": "2026-10-01T03:40:16.660Z",
+    "seriesId": "yu-news-225392376"
   },
   {
     "id": "yu-news-230570271",
@@ -16098,7 +16169,8 @@
     "postedAt": "2026-06-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:18.962Z",
-    "firstSeenAt": "2026-10-01T03:40:18.962Z"
+    "firstSeenAt": "2026-10-01T03:40:18.962Z",
+    "seriesId": "yu-news-225636239"
   },
   {
     "id": "yu-news-230570243",
@@ -16232,7 +16304,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:25.152Z",
     "firstSeenAt": "2026-10-01T03:40:25.152Z",
-    "seriesId": "yu-news-230528104"
+    "seriesId": "yu-news-225297543"
   },
   {
     "id": "yu-news-230514072",
@@ -16560,7 +16632,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:44.167Z",
     "firstSeenAt": "2026-10-01T03:39:44.167Z",
-    "seriesId": "yu-news-229824624"
+    "seriesId": "yu-news-225595664"
   },
   {
     "id": "yu-news-230682802",
@@ -16647,7 +16719,8 @@
     "postedAt": "2026-07-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:45.951Z",
-    "firstSeenAt": "2026-10-01T03:39:45.951Z"
+    "firstSeenAt": "2026-10-01T03:39:45.951Z",
+    "seriesId": "yu-news-228937864"
   },
   {
     "id": "yu-news-230682792",
@@ -16692,7 +16765,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:47.090Z",
     "firstSeenAt": "2026-10-01T03:39:47.090Z",
-    "seriesId": "yu-news-231498656"
+    "seriesId": "yu-news-224972239"
   },
   {
     "id": "yu-news-230682791",
@@ -16737,7 +16810,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:47.847Z",
     "firstSeenAt": "2026-10-01T03:39:47.847Z",
-    "seriesId": "yu-news-230682791"
+    "seriesId": "yu-news-224972238"
   },
   {
     "id": "yu-news-230668744",
@@ -16783,7 +16856,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:48.968Z",
     "firstSeenAt": "2026-10-01T03:39:48.968Z",
-    "seriesId": "yu-news-229613668"
+    "seriesId": "yu-news-223774239"
   },
   {
     "id": "yu-news-230668706",
@@ -16869,7 +16942,8 @@
     "postedAt": "2026-07-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:50.807Z",
-    "firstSeenAt": "2026-10-01T03:39:50.807Z"
+    "firstSeenAt": "2026-10-01T03:39:50.807Z",
+    "seriesId": "yu-news-225351705"
   },
   {
     "id": "yu-news-230626626",
@@ -16995,7 +17069,8 @@
     "postedAt": "2026-07-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:54.505Z",
-    "firstSeenAt": "2026-10-01T03:39:54.505Z"
+    "firstSeenAt": "2026-10-01T03:39:54.505Z",
+    "seriesId": "yu-news-225663381"
   },
   {
     "id": "yu-news-230626590",
@@ -17039,7 +17114,8 @@
     "postedAt": "2026-07-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:57.505Z",
-    "firstSeenAt": "2026-10-01T03:39:57.505Z"
+    "firstSeenAt": "2026-10-01T03:39:57.505Z",
+    "seriesId": "yu-news-223921320"
   },
   {
     "id": "yu-news-230626586",
@@ -17086,7 +17162,8 @@
     "postedAt": "2026-07-03",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:58.854Z",
-    "firstSeenAt": "2026-10-01T03:39:58.854Z"
+    "firstSeenAt": "2026-10-01T03:39:58.854Z",
+    "seriesId": "yu-news-225595659"
   },
   {
     "id": "yu-news-230612549",
@@ -17260,7 +17337,8 @@
     "postedAt": "2026-07-02",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:02.926Z",
-    "firstSeenAt": "2026-10-01T03:40:02.926Z"
+    "firstSeenAt": "2026-10-01T03:40:02.926Z",
+    "seriesId": "yu-news-225284013"
   },
   {
     "id": "yu-news-230514043",
@@ -17346,7 +17424,8 @@
     "postedAt": "2026-06-24",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:38.753Z",
-    "firstSeenAt": "2026-10-01T03:40:38.753Z"
+    "firstSeenAt": "2026-10-01T03:40:38.753Z",
+    "seriesId": "yu-news-225595669"
   },
   {
     "id": "yu-news-230485934",
@@ -17434,7 +17513,8 @@
     "postedAt": "2026-06-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:44.477Z",
-    "firstSeenAt": "2026-10-01T03:40:44.477Z"
+    "firstSeenAt": "2026-10-01T03:40:44.477Z",
+    "seriesId": "yu-news-225297543"
   },
   {
     "id": "yu-news-230485907",
@@ -17525,7 +17605,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:48.228Z",
     "firstSeenAt": "2026-10-01T03:40:48.228Z",
-    "seriesId": "yu-news-230190375"
+    "seriesId": "yu-news-224526213"
   },
   {
     "id": "yu-news-230471832",
@@ -17574,7 +17654,8 @@
     "postedAt": "2026-06-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:49.239Z",
-    "firstSeenAt": "2026-10-01T03:40:49.239Z"
+    "firstSeenAt": "2026-10-01T03:40:49.239Z",
+    "seriesId": "yu-news-225473698"
   },
   {
     "id": "yu-news-230415648",
@@ -17847,7 +17928,8 @@
     "postedAt": "2026-06-12",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:41:11.027Z",
-    "firstSeenAt": "2026-10-01T03:41:11.027Z"
+    "firstSeenAt": "2026-10-01T03:41:11.027Z",
+    "seriesId": "yu-news-227862473"
   },
   {
     "id": "yu-news-230331145",
@@ -17894,7 +17976,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:41:18.725Z",
     "firstSeenAt": "2026-10-01T03:41:18.725Z",
-    "seriesId": "yu-news-230528104"
+    "seriesId": "yu-news-225297543"
   },
   {
     "id": "yu-news-230331113",
@@ -17948,7 +18030,8 @@
     "postedAt": "2026-06-12",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:41:20.664Z",
-    "firstSeenAt": "2026-10-01T03:41:20.664Z"
+    "firstSeenAt": "2026-10-01T03:41:20.664Z",
+    "seriesId": "yu-news-227114396"
   },
   {
     "id": "yu-news-230317083",
@@ -18123,7 +18206,8 @@
     "postedAt": "2026-06-09",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:00.290Z",
-    "firstSeenAt": "2026-10-01T03:42:00.290Z"
+    "firstSeenAt": "2026-10-01T03:42:00.290Z",
+    "seriesId": "yu-news-225094336"
   },
   {
     "id": "yu-news-230288903",
@@ -18569,7 +18653,8 @@
     "postedAt": "2026-06-05",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:25.624Z",
-    "firstSeenAt": "2026-10-01T03:42:25.624Z"
+    "firstSeenAt": "2026-10-01T03:42:25.624Z",
+    "seriesId": "yu-news-227684857"
   },
   {
     "id": "yu-news-230218610",
@@ -18618,7 +18703,8 @@
     "postedAt": "2026-06-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:31.475Z",
-    "firstSeenAt": "2026-10-01T03:42:31.475Z"
+    "firstSeenAt": "2026-10-01T03:42:31.475Z",
+    "seriesId": "yu-news-226124110"
   },
   {
     "id": "yu-news-230190447",
@@ -18668,7 +18754,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:35.507Z",
     "firstSeenAt": "2026-10-01T03:42:35.507Z",
-    "seriesId": "yu-news-230190447"
+    "seriesId": "yu-news-224931641"
   },
   {
     "id": "yu-news-230190418",
@@ -18765,7 +18851,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:40.164Z",
     "firstSeenAt": "2026-10-01T03:42:40.164Z",
-    "seriesId": "yu-news-230190375"
+    "seriesId": "yu-news-224526213"
   },
   {
     "id": "yu-news-230176332",
@@ -18854,7 +18940,8 @@
     "postedAt": "2026-06-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:42:50.846Z",
-    "firstSeenAt": "2026-10-01T03:42:50.846Z"
+    "firstSeenAt": "2026-10-01T03:42:50.846Z",
+    "seriesId": "yu-news-224931637"
   },
   {
     "id": "yu-news-230176274",
@@ -19104,7 +19191,8 @@
     "postedAt": "2026-05-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:04.830Z",
-    "firstSeenAt": "2026-10-01T03:43:04.830Z"
+    "firstSeenAt": "2026-10-01T03:43:04.830Z",
+    "seriesId": "yu-news-224931643"
   },
   {
     "id": "yu-news-230120117",
@@ -19153,7 +19241,8 @@
     "postedAt": "2026-05-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:06.943Z",
-    "firstSeenAt": "2026-10-01T03:43:06.943Z"
+    "firstSeenAt": "2026-10-01T03:43:06.943Z",
+    "seriesId": "yu-news-224877336"
   },
   {
     "id": "yu-news-230091995",
@@ -19199,7 +19288,8 @@
     "postedAt": "2026-05-26",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:10.703Z",
-    "firstSeenAt": "2026-10-01T03:43:10.703Z"
+    "firstSeenAt": "2026-10-01T03:43:10.703Z",
+    "seriesId": "yu-news-228308357"
   },
   {
     "id": "yu-news-230035855",
@@ -19244,7 +19334,8 @@
     "postedAt": "2026-05-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:31.862Z",
-    "firstSeenAt": "2026-10-01T03:43:31.862Z"
+    "firstSeenAt": "2026-10-01T03:43:31.862Z",
+    "seriesId": "yu-news-224890939"
   },
   {
     "id": "yu-news-230035844",
@@ -19292,7 +19383,8 @@
     "postedAt": "2026-05-22",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:37.359Z",
-    "firstSeenAt": "2026-10-01T03:43:37.359Z"
+    "firstSeenAt": "2026-10-01T03:43:37.359Z",
+    "seriesId": "yu-news-228937873"
   },
   {
     "id": "yu-news-230021752",
@@ -19377,7 +19469,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:51.232Z",
     "firstSeenAt": "2026-10-01T03:43:51.232Z",
-    "seriesId": "yu-news-230007673"
+    "seriesId": "yu-news-224890988"
   },
   {
     "id": "yu-news-230007670",
@@ -19422,7 +19514,8 @@
     "postedAt": "2026-05-20",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:53.633Z",
-    "firstSeenAt": "2026-10-01T03:43:53.633Z"
+    "firstSeenAt": "2026-10-01T03:43:53.633Z",
+    "seriesId": "yu-news-224890939"
   },
   {
     "id": "yu-news-230007667",
@@ -19469,7 +19562,8 @@
     "postedAt": "2026-05-20",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:55.866Z",
-    "firstSeenAt": "2026-10-01T03:43:55.866Z"
+    "firstSeenAt": "2026-10-01T03:43:55.866Z",
+    "seriesId": "yu-news-228029204"
   },
   {
     "id": "yu-news-230007644",
@@ -19558,7 +19652,8 @@
     "postedAt": "2026-05-19",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:05.284Z",
-    "firstSeenAt": "2026-10-01T03:44:05.284Z"
+    "firstSeenAt": "2026-10-01T03:44:05.284Z",
+    "seriesId": "yu-news-224931690"
   },
   {
     "id": "yu-news-229993485",
@@ -19612,7 +19707,8 @@
     "postedAt": "2026-05-19",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:12.165Z",
-    "firstSeenAt": "2026-10-01T03:44:12.165Z"
+    "firstSeenAt": "2026-10-01T03:44:12.165Z",
+    "seriesId": "yu-news-224972250"
   },
   {
     "id": "yu-news-229993476",
@@ -19667,7 +19763,8 @@
     "postedAt": "2026-05-19",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:18.149Z",
-    "firstSeenAt": "2026-10-01T03:44:18.149Z"
+    "firstSeenAt": "2026-10-01T03:44:18.149Z",
+    "seriesId": "yu-news-226029094"
   },
   {
     "id": "yu-news-229993457",
@@ -19709,7 +19806,8 @@
     "postedAt": "2026-05-19",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:20.112Z",
-    "firstSeenAt": "2026-10-01T03:44:20.112Z"
+    "firstSeenAt": "2026-10-01T03:44:20.112Z",
+    "seriesId": "yu-news-224918123"
   },
   {
     "id": "yu-news-229979418",
@@ -19755,7 +19853,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:24.658Z",
     "firstSeenAt": "2026-10-01T03:44:24.658Z",
-    "seriesId": "yu-news-229979418"
+    "seriesId": "yu-news-226856596"
   },
   {
     "id": "yu-news-229979406",
@@ -19851,7 +19949,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:28.585Z",
     "firstSeenAt": "2026-10-01T03:44:28.585Z",
-    "seriesId": "yu-news-229979401"
+    "seriesId": "yu-news-224904562"
   },
   {
     "id": "yu-news-229979393",
@@ -19948,7 +20046,8 @@
     "postedAt": "2026-05-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:37.319Z",
-    "firstSeenAt": "2026-10-01T03:44:37.319Z"
+    "firstSeenAt": "2026-10-01T03:44:37.319Z",
+    "seriesId": "yu-news-224742046"
   },
   {
     "id": "yu-news-229979348",
@@ -20001,7 +20100,8 @@
     "postedAt": "2026-05-18",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:39.932Z",
-    "firstSeenAt": "2026-10-01T03:44:39.932Z"
+    "firstSeenAt": "2026-10-01T03:44:39.932Z",
+    "seriesId": "yu-news-224742046"
   },
   {
     "id": "yu-news-229937259",
@@ -20100,7 +20200,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:44:59.914Z",
     "firstSeenAt": "2026-10-01T03:44:59.914Z",
-    "seriesId": "yu-news-230682791"
+    "seriesId": "yu-news-224972238"
   },
   {
     "id": "yu-news-229937213",
@@ -20145,7 +20245,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:02.672Z",
     "firstSeenAt": "2026-10-01T03:45:02.672Z",
-    "seriesId": "yu-news-231498656"
+    "seriesId": "yu-news-224972239"
   },
   {
     "id": "yu-news-229923175",
@@ -20248,7 +20348,8 @@
     "postedAt": "2026-05-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:09.865Z",
-    "firstSeenAt": "2026-10-01T03:45:09.865Z"
+    "firstSeenAt": "2026-10-01T03:45:09.865Z",
+    "seriesId": "yu-news-225202741"
   },
   {
     "id": "yu-news-229923138",
@@ -20293,7 +20394,8 @@
     "postedAt": "2026-05-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:14.849Z",
-    "firstSeenAt": "2026-10-01T03:45:14.849Z"
+    "firstSeenAt": "2026-10-01T03:45:14.849Z",
+    "seriesId": "yu-news-224890939"
   },
   {
     "id": "yu-news-229923122",
@@ -20339,7 +20441,8 @@
     "postedAt": "2026-05-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:16.975Z",
-    "firstSeenAt": "2026-10-01T03:45:16.975Z"
+    "firstSeenAt": "2026-10-01T03:45:16.975Z",
+    "seriesId": "yu-news-224877288"
   },
   {
     "id": "yu-news-229909075",
@@ -20388,7 +20491,8 @@
     "postedAt": "2026-05-13",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:21.228Z",
-    "firstSeenAt": "2026-10-01T03:45:21.228Z"
+    "firstSeenAt": "2026-10-01T03:45:21.228Z",
+    "seriesId": "yu-news-224999423"
   },
   {
     "id": "yu-news-229909022",
@@ -20443,7 +20547,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:25.940Z",
     "firstSeenAt": "2026-10-01T03:45:25.940Z",
-    "seriesId": "yu-news-229909022"
+    "seriesId": "yu-news-225473687"
   },
   {
     "id": "yu-news-229909006",
@@ -20488,7 +20592,8 @@
     "postedAt": "2026-05-13",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:31.788Z",
-    "firstSeenAt": "2026-10-01T03:45:31.788Z"
+    "firstSeenAt": "2026-10-01T03:45:31.788Z",
+    "seriesId": "yu-news-225351705"
   },
   {
     "id": "yu-news-229894906",
@@ -20644,7 +20749,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:49.645Z",
     "firstSeenAt": "2026-10-01T03:45:49.645Z",
-    "seriesId": "yu-news-229894894"
+    "seriesId": "yu-news-224918115"
   },
   {
     "id": "yu-news-229894875",
@@ -20690,7 +20795,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:56.180Z",
     "firstSeenAt": "2026-10-01T03:45:56.180Z",
-    "seriesId": "yu-news-229894875"
+    "seriesId": "yu-news-226856596"
   },
   {
     "id": "yu-news-229894870",
@@ -20742,7 +20847,8 @@
     "postedAt": "2026-05-12",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:59.294Z",
-    "firstSeenAt": "2026-10-01T03:45:59.294Z"
+    "firstSeenAt": "2026-10-01T03:45:59.294Z",
+    "seriesId": "yu-news-227304658"
   },
   {
     "id": "yu-news-229894864",
@@ -20785,7 +20891,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:46:01.533Z",
     "firstSeenAt": "2026-10-01T03:46:01.533Z",
-    "seriesId": "yu-news-230007673"
+    "seriesId": "yu-news-224890988"
   },
   {
     "id": "yu-news-229838672",
@@ -20827,7 +20933,8 @@
     "postedAt": "2026-05-08",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:50:59.857Z",
-    "firstSeenAt": "2026-10-01T03:50:59.857Z"
+    "firstSeenAt": "2026-10-01T03:50:59.857Z",
+    "seriesId": "yu-news-224742046"
   },
   {
     "id": "yu-news-229824631",
@@ -20908,7 +21015,8 @@
     "postedAt": "2026-05-07",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:51:11.332Z",
-    "firstSeenAt": "2026-10-01T03:51:11.332Z"
+    "firstSeenAt": "2026-10-01T03:51:11.332Z",
+    "seriesId": "yu-news-224742046"
   },
   {
     "id": "yu-news-229824604",
@@ -20991,7 +21099,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:51:16.167Z",
     "firstSeenAt": "2026-10-01T03:51:16.167Z",
-    "seriesId": "yu-news-229909022"
+    "seriesId": "yu-news-225473687"
   },
   {
     "id": "yu-news-229810470",
@@ -21032,7 +21140,8 @@
     "postedAt": "2026-05-06",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:51:25.776Z",
-    "firstSeenAt": "2026-10-01T03:51:25.776Z"
+    "firstSeenAt": "2026-10-01T03:51:25.776Z",
+    "seriesId": "yu-news-227304658"
   },
   {
     "id": "yu-news-229782350",
@@ -21154,7 +21263,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:51:56.373Z",
     "firstSeenAt": "2026-10-01T03:51:56.373Z",
-    "seriesId": "yu-news-229909022"
+    "seriesId": "yu-news-225473687"
   },
   {
     "id": "yu-news-229712138",
@@ -21196,7 +21305,8 @@
     "postedAt": "2026-04-29",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:52:01.717Z",
-    "firstSeenAt": "2026-10-01T03:52:01.717Z"
+    "firstSeenAt": "2026-10-01T03:52:01.717Z",
+    "seriesId": "yu-news-224999423"
   },
   {
     "id": "yu-news-229641821",
@@ -21276,7 +21386,8 @@
     "postedAt": "2026-04-21",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:52:49.952Z",
-    "firstSeenAt": "2026-10-01T03:52:49.952Z"
+    "firstSeenAt": "2026-10-01T03:52:49.952Z",
+    "seriesId": "yu-news-225839595"
   },
   {
     "id": "yu-news-229599590",
@@ -21318,7 +21429,8 @@
     "postedAt": "2026-04-21",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:52:58.121Z",
-    "firstSeenAt": "2026-10-01T03:52:58.121Z"
+    "firstSeenAt": "2026-10-01T03:52:58.121Z",
+    "seriesId": "yu-news-224999423"
   },
   {
     "id": "yu-news-229585516",
@@ -21360,5 +21472,376 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:53:10.591Z",
     "firstSeenAt": "2026-10-01T03:53:10.591Z"
+  },
+  {
+    "id": "yu-news-229332358",
+    "title": "📢 [한국무역협회] 제14기 경북대구청년무역사관학교 모집(~ 4/5)",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2026-03-12",
+      "end": "2026-04-05"
+    },
+    "activityPeriod": {
+      "start": "2026-06-24",
+      "end": "2026-07-24"
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229332358"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-04-02",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-01T03:58:45.714Z",
+    "firstSeenAt": "2026-10-01T03:58:45.714Z"
+  },
+  {
+    "id": "yu-news-229304200",
+    "title": "[YU Digital HUSS] 취창업 학습동아리 지원사업 <커리어 Build-Up 팀프로젝트> 참가자 모집",
+    "organizer": "인문사회디지털융합인재양성사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2026-04-06",
+      "end": "2026-04-28"
+    },
+    "activityPeriod": {
+      "start": "2026-05-06",
+      "end": "2026-12-31"
+    },
+    "tags": [
+      "학교",
+      "창업"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229304200"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-03-31",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-01T03:59:02.626Z",
+    "firstSeenAt": "2026-10-01T03:59:02.626Z"
+  },
+  {
+    "id": "yu-news-229290096",
+    "title": "[공학교육혁신센터] 2026 융합 Capstone Design Project 참가 팀 모집",
+    "organizer": "공학교육혁신센터 행정실",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-04-13"
+    },
+    "activityPeriod": {
+      "start": "2026-07-24",
+      "end": "2026-07-24"
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229290096"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-03-30",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-01T03:59:13.113Z",
+    "firstSeenAt": "2026-10-01T03:59:13.113Z",
+    "seriesId": "yu-news-224310330"
+  },
+  {
+    "id": "yu-news-229120915",
+    "title": "2026년도 재학생 장애인식개선교육(온라인) 실시 안내",
+    "organizer": "장애학생지원센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-03-18",
+      "end": "2026-12-31"
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229120915"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-03-18",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-01T04:02:09.920Z",
+    "firstSeenAt": "2026-10-01T04:02:09.920Z",
+    "seriesId": "yu-news-224095659"
+  },
+  {
+    "id": "yu-news-229036475",
+    "title": "2026학년도 1학기 폭력예방교육 수강 안내",
+    "organizer": "인권센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-12-31"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229036475"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-03-12",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-01T04:02:53.058Z",
+    "firstSeenAt": "2026-10-01T04:02:53.058Z",
+    "seriesId": "yu-news-224526213"
+  },
+  {
+    "id": "yu-news-228909571",
+    "title": "★2026년도 MIDAS 동아리 지원 프로그램 모집 (~ 3. 9.(월) 16시)★",
+    "organizer": "SW중심대학사업단 행정지원실",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2026-03-03",
+      "end": "2026-03-09"
+    },
+    "activityPeriod": {
+      "start": "2026-03-16",
+      "end": "2026-09-30"
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=228909571"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-03-03",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-01T04:05:11.926Z",
+    "firstSeenAt": "2026-10-01T04:05:11.926Z"
+  },
+  {
+    "id": "yu-news-228573820",
+    "title": "[글로벌평생교육원] 2026학년도 <숲해설가 전문과정> 수강생 모집 안내(2026년 3월 개강)",
+    "organizer": "글로벌평생교육원 행정실",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-01-14"
+    },
+    "activityPeriod": {
+      "start": "2026-03-14",
+      "end": "2026-08-22"
+    },
+    "tags": [
+      "학교",
+      "해외·글로벌",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=228573820"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-02-07",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-01T04:07:49.982Z",
+    "firstSeenAt": "2026-10-01T04:07:49.982Z",
+    "seriesId": "yu-news-225853156"
+  },
+  {
+    "id": "yu-news-228029157",
+    "title": "2026학년도 [TOEIC] 재학생 TOEIC 정기시험 응시료(10%) 할인접수 안내",
+    "organizer": "천마학부대학 행정실",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-12-27"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=228029157"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2025-12-30",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-01T04:12:16.541Z",
+    "firstSeenAt": "2026-10-01T04:12:16.541Z"
+  },
+  {
+    "id": "yu-news-224890988",
+    "title": "제24기 국제홍보대사(University Student Ambassador) 수습단원 모집 및 선발",
+    "organizer": "국제협력팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2025-05-14",
+      "end": "2025-05-23"
+    },
+    "activityPeriod": {
+      "start": "2025-09-01",
+      "end": "2026-08-31"
+    },
+    "tags": [
+      "학교",
+      "해외·글로벌",
+      "서포터즈·기자단"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224890988"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2025-05-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-01T04:47:08.486Z",
+    "firstSeenAt": "2026-10-01T04:47:08.486Z",
+    "seriesId": "yu-news-224890988"
   }
 ]
