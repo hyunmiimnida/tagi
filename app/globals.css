@@ -1963,3 +1963,57 @@ main {
   color: var(--warn);
   font-weight: 600;
 }
+
+/* 정보가 틀렸어요 */
+.report-info {
+  margin: 8px 4px 0;
+  text-align: right;
+}
+
+.report-info-form {
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.report-info-title {
+  font-weight: 700;
+}
+
+.report-info-form textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.875rem;
+}
+
+.report-reason.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.report-info-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.report-info-done,
+.report-info-error {
+  margin: 8px 4px 0;
+  color: var(--text-3);
+  font-size: 0.875rem;
+}
+
+.report-info-error {
+  color: var(--warn);
+}
