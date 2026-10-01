@@ -16,7 +16,7 @@ import { collectors } from "./collectors/index.ts";
 import { collapseReposts, findAmbiguousPairs, mergePair, mergePrograms } from "./dedupe.ts";
 import { cleanPeriods, looksLikeNoticeOnly } from "./extract.ts";
 import { enrich } from "./extract.ts";
-import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
+import { fetchHtml, isAllowedByRobots, robotsBlocked } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
 import type { CollectedItem, Program, School, Source, TagCategory } from "./types.ts";
 
@@ -152,7 +152,11 @@ await writeJson(ARCHIVE_FILE, archive);
 await writeJson(EXCLUDED_FILE, [...excludedUrls].sort());
 const LOG_FILE = new URL("collect-log.json", DATA_DIR);
 const previousLog = await readJson<CollectLog | null>(LOG_FILE, null).catch(() => null);
-await writeJson(LOG_FILE, mergeCollectLog(previousLog, log, new Date().toISOString(), merged.length));
+await writeJson(LOG_FILE, {
+  ...mergeCollectLog(previousLog, log, new Date().toISOString(), merged.length),
+  robotsBlocked: robotsBlocked.slice(0, 50), // robots.txt가 막아 건너뛴 상세 주소 (최대 50개)
+});
+if (robotsBlocked.length) console.log(`robots.txt가 막아 건너뛴 글 ${robotsBlocked.length}개`);
 console.log(`새로 수집 ${incoming.length}개, 전체 ${merged.length}개를 data/programs.json에 저장`);
 
 // 실패한 출처가 있으면 자동 실행(GitHub Actions)에서 알림이 가도록 실패로 끝낸다

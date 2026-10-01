@@ -1,4 +1,5 @@
 import * as cheerio from "cheerio";
+import { RobotsBlockedError } from "../fetch.ts";
 import { emptyProgram } from "../types.ts";
 import type { ArchivePost, CollectContext, CollectedItem, Collector, TableBoard } from "../types.ts";
 import { htmlToText } from "./news-board.ts";
@@ -85,7 +86,10 @@ export const collectTableBoard: Collector = async (ctx) => {
     }
     for (const post of posts) {
       if (ctx.isKnown(post.url) || items.has(post.postId)) continue;
-      const item = await readPost(ctx, post);
+      const item = await readPost(ctx, post).catch((error) => {
+        if (error instanceof RobotsBlockedError) return null; // robots.txt가 막은 글은 건너뛴다 (fetch.ts가 기록)
+        throw error;
+      });
       if (item) items.set(post.postId, item);
     }
   }
