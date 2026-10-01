@@ -39,6 +39,20 @@ export function findCodex(): string | null {
   return codexPath;
 }
 
+// 다른 학교 학생도 지원할 수 있는지. 본 추출과 이미 추출한 글 다시 확인(checkOpenTo)이 함께 쓴다
+const OPEN_TO_RULE = `- openTo: 글을 올린 학교의 학생이 아니어도 지원할 수 있으면, 지원할 수 있는 사람을 글에 적힌 대로 30자 안으로 짧게 쓴다.
+  예: "전국 대학생", "대구·경북 지역 대학생", "만 19~34세 청년", "대학생 및 대학원생 누구나".
+  글을 올린 학교 학생만 대상이거나, 다른 학교 학생도 되는지 글에서 알 수 없으면 null. 학교 부서가 여는 교내 프로그램은 대부분 null이다.
+  학년·신분(재학생 등)은 grades·statuses에 쓰고 openTo에는 반복하지 않는다.`;
+
+const openTo = (v: unknown) => (typeof v === "string" && v.trim() && v.length <= 40 ? v.trim() : null);
+
+function setOpenTo(program: Program, value: string | null) {
+  program.target.openTo = value;
+  // 다른 학교 학생도 되면 모집 대상 학교를 비운다 (게시한 학교는 학교 배지·필터에 그대로 남는다)
+  if (value) program.target.schools = [];
+}
+
 function buildPrompt(items: CollectedItem[], categories: TagCategory[], maxText = MAX_TEXT): string {
   const tagList = categories.map((c) => `- ${c.name}: ${c.tags.map((t) => t.name).join(", ")}`).join("\n");
   const posts = items
@@ -77,6 +91,7 @@ ${item.text.slice(0, maxText) || "(본문 없음, 이미지로만 안내됨)"}`,
   - "재학생 대상"이면 ["재학생"]. "재학생 및 휴학생"이면 ["재학생","휴학생"]. "졸업생(졸업예정자 포함)"이면 ["졸업생"]. "재학생·졸업생 누구나"면 ["재학생","졸업생"].
   - 그냥 "학생", "학부생", "누구나"처럼 신분을 가리지 않으면 빈 배열.
 - excludedStatuses: 글에 "휴학생 제외"·"졸업생 제외"처럼 명시적으로 뺀 신분만 같은 이름으로 적는다.
+${OPEN_TO_RULE}
 - tags: 아래 목록의 이름만. 그 프로그램의 핵심 내용일 때만 붙인다. 본문에 단어가 한 번 나온다고 붙이지 마라.
   - 장학·지원금: 학생이 장학금·지원금·상금·활동비를 직접 받는 경우에만.
   - 해외·글로벌: 해외 파견·해외 활동·유학생 교류가 핵심일 때만.
@@ -88,7 +103,7 @@ ${item.text.slice(0, maxText) || "(본문 없음, 이미지로만 안내됨)"}`,
 ${tagList}
 
 출력 형식 (게시물 수만큼, 설명 없이 JSON만):
-{"items":[{"id":"...","forStudents":true,"organizer":null,"organizerType":null,"recruitStart":null,"recruitEnd":null,"activityStart":null,"activityEnd":null,"colleges":[],"departments":[],"grades":[],"statuses":[],"excludedStatuses":[],"tags":[]}]}
+{"items":[{"id":"...","forStudents":true,"organizer":null,"organizerType":null,"recruitStart":null,"recruitEnd":null,"activityStart":null,"activityEnd":null,"colleges":[],"departments":[],"grades":[],"statuses":[],"excludedStatuses":[],"openTo":null,"tags":[]}]}
 
 게시물:
 
@@ -197,12 +212,45 @@ function apply(item: CollectedItem, data: Record<string, unknown>, categories: T
   program.target.grades = normalizeGrades(strings(data.grades));
   program.target.statuses = strings(data.statuses).filter((s) => STUDENT_STATUSES.includes(s));
   program.target.excludedStatuses = strings(data.excludedStatuses).filter((s) => STUDENT_STATUSES.includes(s));
+  if ("openTo" in data) setOpenTo(program, openTo(data.openTo));
 
   const tags = strings(data.tags).filter((t) => allowedTags.has(t) && !organizerTypes.includes(t));
   program.tags = [...new Set([...(program.organizerType ? [program.organizerType] : []), ...tags])];
   fixOrganizerType(program, categories);
   program.extractedBy = "ai";
   return true;
+}
+
+// 이미 추출한 글이 다른 학교 학생도 지원할 수 있는지만 다시 묻는다. 답을 받은 글 수를 돌려준다
+export async function checkOpenTo(items: CollectedItem[], maxText = 1500): Promise<number> {
+  const bin = findCodex();
+  if (!bin || items.length === 0) return 0;
+  const posts = items
+    .map((item) => `### id: ${item.program.id}\n제목: ${item.program.title}\n본문:\n${item.text.slice(0, maxText) || "(본문 없음)"}`)
+    .join("\n\n");
+  const prompt = `너는 대학 공지에서 사실 정보만 뽑는 추출기다. 파일을 읽거나 명령을 실행하지 말고, 아래 글만 보고 JSON으로만 답해라.
+${OPEN_TO_RULE}
+
+출력 형식 (게시물 수만큼, 설명 없이 JSON만): {"items":[{"id":"...","openTo":null}]}
+
+게시물:
+
+${posts}`;
+  try {
+    const answer = await askCodex(bin, prompt);
+    const byId = new Map(items.map((item) => [item.program.id, item.program]));
+    let answered = 0;
+    for (const data of answer.items ?? []) {
+      const program = byId.get(String(data.id));
+      if (!program || !("openTo" in data)) continue;
+      setOpenTo(program, openTo(data.openTo));
+      answered++;
+    }
+    return answered;
+  } catch (error) {
+    console.error("  AI 모집 대상 확인 실패:", error instanceof Error ? error.message : error);
+    return 0;
+  }
 }
 
 // 두 게시물이 같은 프로그램인지 AI에게 묻는다. 같다고 답한 쌍의 번호를 돌려준다

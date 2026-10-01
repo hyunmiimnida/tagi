@@ -72,8 +72,9 @@ export function matchesEligibility(program: Program, selected: Set<string>): boo
 
 // 상세 화면의 모집 대상 문구. 예: "영남대학교 재학생(휴학생 제외) - 1학년, 2학년 · 공과대학"
 export function describeTarget(program: Program, schoolNames: Record<string, string>): string {
-  const { schools, colleges, departments, grades, statuses = [], excludedStatuses = [] } = program.target;
-  const school = schools.map((id) => schoolNames[id] ?? id).join(", ") || "모든 학교";
+  const { schools, colleges, departments, grades, statuses = [], excludedStatuses = [], openTo } = program.target;
+  // 다른 학교 학생도 지원할 수 있으면 공고에 적힌 대상(예: 전국 대학생)을 그대로 보여 준다
+  const school = openTo || schools.map((id) => schoolNames[id] ?? id).join(", ") || "모든 학교";
   const who = statuses.join("·") + (excludedStatuses.length > 0 ? `(${excludedStatuses.join("·")} 제외)` : "");
   const head = [school, who].filter(Boolean).join(" ");
   const withGrades = grades.length > 0 ? `${head} - ${grades.join(", ")}` : head;

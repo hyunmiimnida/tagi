@@ -44,10 +44,11 @@ function fold(line: string): string {
   return parts.join("\r\n ");
 }
 
-export function buildIcs(programs: Program[]): string {
+// 일정의 링크는 이 서비스의 상세 화면으로 연결한다 (원문 링크는 상세 화면에 있다)
+export function buildIcs(programs: Program[], origin: string): string {
   const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", `PRODID:-//${SITE_NAME}//KO`, "CALSCALE:GREGORIAN"];
   for (const program of programs) {
-    const url = program.links[0]?.url ?? "";
+    const url = `${origin}/programs/${program.id}`;
     const { recruitPeriod: recruit, activityPeriod: activity } = program;
     if (recruit.end) lines.push(...event(`${program.id}-deadline`, `[마감] ${program.title}`, recruit.end, recruit.end, url));
     if (activity.start) {
@@ -59,7 +60,7 @@ export function buildIcs(programs: Program[]): string {
 }
 
 export function downloadIcs(programs: Program[], filename: string): void {
-  const blob = new Blob([buildIcs(programs)], { type: "text/calendar;charset=utf-8" });
+  const blob = new Blob([buildIcs(programs, window.location.origin)], { type: "text/calendar;charset=utf-8" });
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
   link.download = filename;

@@ -14,7 +14,8 @@
     "collect": "node src/collect.ts",
     "typecheck": "tsc --noEmit",
     "test": "node --test",
-    "backfill": "node src/backfill.ts"
+    "backfill": "node src/backfill.ts",
+    "check-open-to": "node src/check-open-to.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.2",

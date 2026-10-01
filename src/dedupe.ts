@@ -56,6 +56,9 @@ const union = (a: string[], b: string[]) => [...new Set([...a, ...b])];
 
 // extra의 정보를 base에 합친다. base에 없는 값만 채운다
 function mergeInto(base: Program, extra: Program): void {
+  const baseOpenTo = base.target.openTo;
+  // 합쳐져 없어지는 공고의 주소를 기억한다 (예전 링크·관심 표시를 이 공고로 연결)
+  if (extra.id !== base.id) base.aliases = union(base.aliases ?? [], [extra.id, ...(extra.aliases ?? [])]);
   // AI가 추출한 쪽의 주최·대상·태그를 우선한다
   if (extra.extractedBy === "ai" && base.extractedBy !== "ai") {
     base.organizer = extra.organizer ?? base.organizer;
@@ -72,7 +75,10 @@ function mergeInto(base: Program, extra: Program): void {
   // 주최 유형 태그는 base의 것만 남긴다
   base.tags = union(base.tags, extra.tags.filter((t) => t !== extra.organizerType || t === base.organizerType));
   base.sources = union(base.sources, extra.sources);
-  base.target.schools = union(base.target.schools, extra.target.schools);
+  // 어느 한쪽이라도 다른 학교 학생에게 열려 있으면 열린 공고로 본다
+  const openTo = baseOpenTo || extra.target.openTo || (baseOpenTo ?? extra.target.openTo);
+  if (openTo !== undefined) base.target.openTo = openTo;
+  base.target.schools = openTo ? [] : union(base.target.schools, extra.target.schools);
   for (const link of extra.links) {
     if (!base.links.some((l) => l.url === link.url)) base.links.push(link);
   }

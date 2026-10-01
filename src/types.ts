@@ -21,6 +21,9 @@ export interface Program {
     grades: string[]; // "1학년"~"4학년". 비어 있으면 학년 제한 없음
     statuses?: string[]; // 참여할 수 있는 신분 (재학생·휴학생·졸업생). 비어 있으면 제한 없음
     excludedStatuses?: string[]; // 공고에서 명시적으로 뺀 신분 (예: 휴학생 제외)
+    // 게시한 학교 학생이 아니어도 지원할 수 있을 때 그 대상 (예: "전국 대학생", "만 19~34세 청년").
+    // null = 게시한 학교 학생 대상이거나 알 수 없음, 없음(undefined) = 아직 확인하지 않음
+    openTo?: string | null;
   };
   recruitPeriod: Period; // 모집 기간
   activityPeriod: Period; // 활동 기간
@@ -31,6 +34,7 @@ export interface Program {
   extractedBy: "rules" | "ai"; // 정보 추출 방법
   collectedAt: string;
   firstSeenAt?: string; // 처음 수집한 시각 (새로 올라온 항목 표시용)
+  aliases?: string[]; // 이 공고에 합쳐져 없어진 공고 id (예전 주소를 이 공고로 연결한다)
   seriesId?: string; // 해마다·학기마다 반복되는 같은 프로그램의 묶음 id (src/series.ts)
 }
 

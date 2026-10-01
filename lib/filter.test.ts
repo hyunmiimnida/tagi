@@ -41,7 +41,7 @@ test("학교를 고르면 그 학교와 공통 공고만 보인다", async () =>
   assert.ok(!visibleForSchool({ schoolIds: ["knu"] } as never, "yu"));
 });
 
-const withTarget = (target: Record<string, string[]>) =>
+const withTarget = (target: Record<string, string[] | string>) =>
   ({ target: { schools: ["yu"], colleges: [], departments: [], grades: [], ...target } }) as never;
 
 test("대상 필터: 신분끼리는 또는, 학년과는 그리고, 제외한 신분은 빼고 고른다", async () => {
@@ -70,6 +70,8 @@ test("모집 대상 문구를 자세히 만든다", async () => {
     "영남대학교 재학생(휴학생 제외)",
   );
   assert.equal(describeTarget(withTarget({ statuses: ["졸업생"], colleges: ["공과대학"] }), names), "영남대학교 졸업생 · 공과대학");
+  // 다른 학교 학생도 지원할 수 있으면 공고에 적힌 대상을 쓴다
+  assert.equal(describeTarget(withTarget({ schools: [], openTo: "전국 대학생", grades: ["3학년", "4학년"] }), names), "전국 대학생 - 3학년, 4학년");
 });
 
 test("마감일을 모르는 공고는 올라온 지 30일이 지나면 마감으로 본다", async () => {

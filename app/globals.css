@@ -1768,3 +1768,16 @@ main {
 .footer-links a {
   color: var(--text-2);
 }
+
+.empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* 화면 밖 공고 줄은 그리기를 미뤄 긴 목록도 가볍게 */
+.rows > .row {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 110px;
+}

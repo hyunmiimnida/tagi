@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Program, School, TagCategory } from "../src/types.ts";
-import { unitsOf } from "./filter.ts";
+import { isClosed, unitsOf } from "./filter.ts";
 import type { FilterCategory, ProgramView, SchoolOption } from "./filter.ts";
 
 // 서버에서 수집 결과와 설정 파일을 읽는다
@@ -38,6 +38,17 @@ export function getPrograms(): ProgramView[] {
   const programs = readJson<Program[]>("data/programs.json").map((program) => toView(program, schools));
   if (cacheable) programsCache = programs;
   return programs;
+}
+
+// 목록 화면용: 원문 링크는 상세 화면에서만 쓰므로 빼서 화면 데이터를 가볍게 한다.
+// current = 빌드한 날 기준으로 아직 일정이 남은 공고만 (홈 화면용. 하루 여유를 둔다)
+export function getListPrograms({ current = false } = {}): ProgramView[] {
+  const day = new Date(Date.now() - 86_400_000).toISOString().slice(0, 10);
+  const alive = (p: ProgramView) =>
+    !isClosed(p, day) || [p.recruitPeriod.end, p.activityPeriod.start, p.activityPeriod.end].some((d) => d && d >= day);
+  return getPrograms()
+    .filter((p) => !current || alive(p))
+    .map((p) => ({ ...p, links: [], sources: [], aliases: undefined }));
 }
 
 export const getProgram = (id: string) => getPrograms().find((program) => program.id === id);
