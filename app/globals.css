@@ -1909,3 +1909,23 @@ main {
   color: var(--text-3);
   font-size: 0.75rem;
 }
+
+/* 오른쪽 위 닉네임 (로그인했을 때) */
+.nickname-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 160px;
+  padding: 5px 12px 5px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.nickname-chip span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
