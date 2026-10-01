@@ -5,11 +5,12 @@ import { Header } from "../components/Header.tsx";
 import { PwaSetup } from "../components/InstallCard.tsx";
 import { LoginSheet } from "../components/LoginSheet.tsx";
 import { describeSources, getLastCollected } from "../lib/data.ts";
-import { SITE_NAME } from "../lib/filter.ts";
+import { SITE_NAME, SITE_URL } from "../lib/filter.ts";
 import { UserProvider } from "../lib/user.tsx";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: { default: SITE_NAME, template: `%s | ${SITE_NAME}` },
   description: "학교 공지, 취업, 대외활동 정보를 한곳에 모아 태그로 찾아보는 대학생 정보 서비스",
   openGraph: { siteName: SITE_NAME, locale: "ko_KR", type: "website" },

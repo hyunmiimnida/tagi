@@ -2,6 +2,8 @@ import { GRADES, STUDENT_STATUSES } from "../src/types.ts";
 import type { Program } from "../src/types.ts";
 
 export const SITE_NAME = "캠퍼스모아";
+// 배포 주소 (사이트맵·공유 미리보기에 쓴다). 주소를 바꾸면 NEXT_PUBLIC_SITE_URL 로 덮어쓴다
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tagi-ten.vercel.app";
 
 export interface FilterCategory {
   id: string;
