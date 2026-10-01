@@ -42,7 +42,7 @@ function Section({ title, href, children }: { title: string; href?: string; chil
 }
 
 export function Home({ programs, categories }: Props) {
-  const { schoolId, favorites, signedIn, loginEnabled } = useUser();
+  const { schoolId, favorites, signedIn, loginEnabled, profile } = useUser();
   const today = useToday();
 
   const open = useMemo(
@@ -62,6 +62,14 @@ export function Home({ programs, categories }: Props) {
     () => open.filter((p) => isNew(p, today)).sort((a, b) => addedAt(b).localeCompare(addedAt(a))),
     [open, today],
   );
+
+  // 프로필에서 고른 관심 분야의 모집 중 공고 (최신순)
+  const interests = profile.interests;
+  const picked = useMemo(
+    () => open.filter((p) => p.tags.some((t) => interests.includes(t))).sort((a, b) => addedAt(b).localeCompare(addedAt(a))),
+    [open, interests],
+  );
+  const interestHref = `/programs?${interests.map((t) => `tag=${encodeURIComponent(t)}`).join("&")}&sort=recent`;
 
   const todayCount = fresh.filter((p) => addedAt(p) === today).length;
 
@@ -151,6 +159,20 @@ export function Home({ programs, categories }: Props) {
           </ul>
         )}
       </Section>
+
+      {interests.length > 0 && (
+        <Section title="내 관심 분야 공고" href={interestHref}>
+          {picked.length === 0 ? (
+            <p className="section-empty">{interests.join(", ")} 분야에 지금 모집 중인 공고가 없어요.</p>
+          ) : (
+            <ul className="rows">
+              {picked.slice(0, 4).map((p) => (
+                <ProgramRow key={p.id} program={p} today={today} compact />
+              ))}
+            </ul>
+          )}
+        </Section>
+      )}
 
       {field && (
         <Section title="분야별로 둘러보기">

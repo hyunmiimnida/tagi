@@ -50,9 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/terms">이용약관</Link>
               <Link href="/privacy">
                 <strong>개인정보처리방침</strong>
-              </Link>
-              <Link href="/my">내 정보</Link>
-            </p>
+              </Link>            </p>
           </footer>
           <BottomNav />
           <LoginSheet />

@@ -90,3 +90,10 @@ export const CloseIcon = ({ size = 16 }: IconProps) => (
     <path d="m6 6 12 12M18 6 6 18" />
   </Svg>
 );
+
+export const ProfileIcon = ({ size, filled }: IconProps) => (
+  <Svg size={size}>
+    <circle cx="12" cy="8.5" r="3.8" fill={filled ? "currentColor" : "none"} />
+    <path d="M4.5 20c.8-3.7 3.9-6 7.5-6s6.7 2.3 7.5 6z" fill={filled ? "currentColor" : "none"} />
+  </Svg>
+);

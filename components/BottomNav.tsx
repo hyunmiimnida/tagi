@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CalendarIcon, HomeIcon, ListIcon } from "./Icons.tsx";
+import { CalendarIcon, HomeIcon, ListIcon, ProfileIcon } from "./Icons.tsx";
 
 const TABS = [
   { href: "/", label: "홈", Icon: HomeIcon, match: (path: string) => path === "/" },
   { href: "/programs", label: "공고", Icon: ListIcon, match: (path: string) => path.startsWith("/programs") },
   { href: "/calendar", label: "캘린더", Icon: CalendarIcon, match: (path: string) => path.startsWith("/calendar") },
+  { href: "/my", label: "프로필", Icon: ProfileIcon, match: (path: string) => path.startsWith("/my") },
 ];
 
 // 화면 아래에 고정된 탭 바

@@ -18,6 +18,18 @@ export const LOGIN_PROVIDERS = [
 
 type ProviderId = (typeof LOGIN_PROVIDERS)[number]["id"];
 
+// 프로필 설정. 로그인 전에는 이 브라우저에, 로그인하면 계정(profiles 표)에도 저장한다
+export interface Profile {
+  status: string | null; // 재학생·휴학생·졸업생
+  grade: string | null; // 1학년~4학년
+  interests: string[]; // 관심 분야 태그
+  notifyDeadline: boolean; // 마감 하루 전 알림 (앱에서 쓸 설정)
+  nickname: string | null; // 댓글에 보이는 이름. 없으면 "익명"
+}
+
+export const EMPTY_PROFILE: Profile = { status: null, grade: null, interests: [], notifyDeadline: false, nickname: null };
+const PROFILE_COLUMNS = "school_id, status, grade, interests, notify_deadline, nickname";
+
 interface UserState {
   loginEnabled: boolean; // Supabase가 설정되어 있는지
   ready: boolean;
@@ -25,6 +37,8 @@ interface UserState {
   userId: string | null;
   email: string | null; // 카카오는 이메일을 주지 않을 수 있다
   schoolId: string | null;
+  profile: Profile;
+  setProfile: (patch: Partial<Profile>) => Promise<boolean>; // 계정에 저장하지 못하면 false (브라우저에는 저장됨)
   favorites: Set<string>;
   loginOpen: boolean;
   setLoginOpen: (open: boolean) => void;
@@ -39,6 +53,16 @@ const UserContext = createContext<UserState | null>(null);
 
 const SCHOOL_KEY = "schoolId";
 const FAVORITES_KEY = "favorites";
+const PROFILE_KEY = "profile";
+
+function readLocalProfile(): Profile {
+  try {
+    const value = JSON.parse(readLocal(PROFILE_KEY) ?? "{}");
+    return { ...EMPTY_PROFILE, ...(value && typeof value === "object" ? value : {}) };
+  } catch {
+    return EMPTY_PROFILE;
+  }
+}
 
 function readLocal(name: string): string | null {
   try {
@@ -73,10 +97,12 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   const [email, setEmail] = useState<string | null>(null);
   const [schoolId, setSchoolId] = useState<string | null>(null);
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
+  const [profile, setProfileState] = useState<Profile>(EMPTY_PROFILE);
   const [loginOpen, setLoginOpen] = useState(false);
 
   useEffect(() => {
     setSchoolId(readLocal(SCHOOL_KEY));
+    setProfileState(readLocalProfile());
 
     if (!supabase) {
       setFavorites(readLocalList(FAVORITES_KEY));
@@ -99,13 +125,28 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!supabase || !userId) return;
     let cancelled = false;
-    Promise.all([
-      supabase.from("profiles").select("school_id").eq("user_id", userId).maybeSingle(),
-      supabase.from("favorites").select("program_id").eq("user_id", userId),
-    ]).then(([profile, favoriteRows]) => {
+    const client = supabase;
+    // 프로필 칸(supabase/profile.sql)을 아직 만들지 않았으면 학교만 불러온다
+    const loadProfile = async () => {
+      const full = await client.from("profiles").select(PROFILE_COLUMNS).eq("user_id", userId).maybeSingle();
+      return full.error ? client.from("profiles").select("school_id").eq("user_id", userId).maybeSingle() : full;
+    };
+    Promise.all([loadProfile(), client.from("favorites").select("program_id").eq("user_id", userId)]).then(([profile, favoriteRows]) => {
       if (cancelled) return;
       // 계정에 저장된 값이 있으면 "전체 학교"(null)라도 그대로 따른다
       if (profile.data) setSchoolId(profile.data.school_id ?? null);
+      const row = profile.data as Record<string, unknown> | null;
+      if (row && "status" in row) {
+        const next: Profile = {
+          status: (row.status as string | null) ?? null,
+          grade: (row.grade as string | null) ?? null,
+          interests: (row.interests as string[] | null) ?? [],
+          notifyDeadline: Boolean(row.notify_deadline),
+          nickname: (row.nickname as string | null) ?? null,
+        };
+        setProfileState(next);
+        writeLocal(PROFILE_KEY, JSON.stringify(next));
+      }
       setFavorites(new Set((favoriteRows.data ?? []).map((row) => row.program_id as string)));
       setReady(true);
     });
@@ -123,6 +164,26 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       }
     },
     [userId],
+  );
+
+  const setProfile = useCallback(
+    async (patch: Partial<Profile>) => {
+      const next = { ...profile, ...patch };
+      setProfileState(next);
+      writeLocal(PROFILE_KEY, JSON.stringify(next));
+      if (!supabase || !userId) return true;
+      const { error } = await supabase.from("profiles").upsert({
+        user_id: userId,
+        school_id: schoolId,
+        status: next.status,
+        grade: next.grade,
+        interests: next.interests,
+        notify_deadline: next.notifyDeadline,
+        nickname: next.nickname,
+      });
+      return !error;
+    },
+    [profile, userId, schoolId],
   );
 
   const toggleFavorite = useCallback(
@@ -157,6 +218,8 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       userId,
       email,
       schoolId,
+      profile,
+      setProfile,
       favorites,
       loginOpen,
       setLoginOpen,
@@ -175,12 +238,14 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         // 이 브라우저에 남은 설정도 지운다. 이미 지운 계정이라 로그아웃은 이 브라우저에서만 한다
         writeLocal(SCHOOL_KEY, null);
         writeLocal(FAVORITES_KEY, null);
+        writeLocal(PROFILE_KEY, null);
+        setProfileState(EMPTY_PROFILE);
         setSchoolId(null);
         await supabase.auth.signOut({ scope: "local" });
         return true;
       },
     }),
-    [ready, userId, email, schoolId, favorites, loginOpen, setSchool, toggleFavorite],
+    [ready, userId, email, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite],
   );
 
   return <UserContext value={value}>{children}</UserContext>;

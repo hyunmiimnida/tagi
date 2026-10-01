@@ -77,6 +77,7 @@ export function Explorer({ programs, categories, schools }: Props) {
   const [schoolFromUrl, setSchoolFromUrl] = useState(false);
   const [units, setUnits] = useState<Set<string>>(new Set());
   const [who, setWho] = useState<Set<string>>(new Set());
+  const [whoFromUrl, setWhoFromUrl] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [openPanel, setOpenPanel] = useState<string | null>(null);
   const [showClosed, setShowClosed] = useState(false);
@@ -90,7 +91,10 @@ export function Explorer({ programs, categories, schools }: Props) {
       setSchoolFromUrl(true);
       setUnits(query.units);
     }
-    setWho(query.who);
+    if (query.who.size > 0) {
+      setWho(query.who);
+      setWhoFromUrl(true);
+    }
     setSelected(query.tags);
     setKeyword(query.keyword);
     setShowClosed(query.showClosed);
@@ -102,6 +106,13 @@ export function Explorer({ programs, categories, schools }: Props) {
   useEffect(() => {
     if (loaded && !schoolFromUrl) setSchool(user.schoolId);
   }, [loaded, schoolFromUrl, user.schoolId]);
+
+  // 주소에 대상이 없으면 프로필의 신분·학년을 기본으로 쓴다 (졸업생은 학년을 쓰지 않는다)
+  const { status, grade } = user.profile;
+  useEffect(() => {
+    if (!loaded || whoFromUrl) return;
+    setWho(new Set([status, status === "졸업생" ? null : grade].filter((w): w is string => Boolean(w))));
+  }, [loaded, whoFromUrl, status, grade]);
 
   useEffect(() => {
     if (loaded) writeQuery({ school, units, who, tags: selected, keyword, showClosed, sort });

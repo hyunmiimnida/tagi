@@ -3,16 +3,26 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { GRADES, STUDENT_STATUSES } from "../src/types.ts";
+import type { SchoolOption } from "../lib/filter.ts";
 import { CONTACT } from "../lib/policy.ts";
 import { supabase, useUser } from "../lib/user.tsx";
+import type { Profile } from "../lib/user.tsx";
 import { ChevronIcon } from "./Icons.tsx";
 
-// 내 정보: 로그인 계정, 숨긴 사용자, 로그아웃·회원 탈퇴, 약관 링크
-export function MyAccount({ schoolNames }: { schoolNames: Record<string, string> }) {
+interface Props {
+  schools: SchoolOption[];
+  fieldTags: string[]; // 관심 분야로 고를 수 있는 태그
+}
+
+// 프로필: 계정, 내 학교·신분·학년, 관심 분야, 알림, 숨긴 사용자, 약관, 회원 탈퇴
+export function MyAccount({ schools, fieldTags }: Props) {
   const user = useUser();
   const router = useRouter();
+  const { profile } = user;
   const [blockCount, setBlockCount] = useState<number | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  const [savedLocally, setSavedLocally] = useState(false);
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
@@ -22,6 +32,15 @@ export function MyAccount({ schoolNames }: { schoolNames: Record<string, string>
       .select("blocked_id", { count: "exact", head: true })
       .then(({ count, error }) => setBlockCount(error ? null : (count ?? 0)));
   }, [user.userId]);
+
+  // 계정에 저장하지 못하면(설정 표를 아직 안 만듦 등) 이 기기에만 저장됐다고 알린다
+  async function update(patch: Partial<Profile>) {
+    const saved = await user.setProfile(patch);
+    setSavedLocally(!saved);
+  }
+
+  const toggle = (list: string[], value: string) =>
+    list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
 
   async function unblockAll() {
     if (!supabase || !user.userId || !window.confirm("숨긴 사람들의 글을 다시 볼까요?")) return;
@@ -46,22 +65,20 @@ export function MyAccount({ schoolNames }: { schoolNames: Record<string, string>
     router.push("/");
   }
 
-  const school = user.schoolId ? (schoolNames[user.schoolId] ?? user.schoolId) : "전체 학교";
-
   return (
     <div className="my">
       <section className="card my-card">
         {!user.loginEnabled ? (
           <>
             <h2 className="card-title">체험 모드</h2>
-            <p className="card-sub">로그인 없이 이 브라우저에만 학교 설정과 관심 공고를 저장하고 있어요.</p>
+            <p className="card-sub">로그인 없이 이 브라우저에만 설정과 관심 공고를 저장하고 있어요.</p>
           </>
         ) : !user.ready ? (
           <p className="card-sub">불러오는 중…</p>
         ) : user.signedIn ? (
           <>
             <h2 className="card-title">{user.email ?? "소셜 계정으로 로그인했어요"}</h2>
-            <p className="card-sub">내 학교: {school} · 관심 공고 {user.favorites.size}개</p>
+            <p className="card-sub">관심 공고 {user.favorites.size}개 · 설정이 계정에 저장돼요</p>
             <button className="button wide" onClick={user.signOut}>
               로그아웃
             </button>
@@ -69,13 +86,99 @@ export function MyAccount({ schoolNames }: { schoolNames: Record<string, string>
         ) : (
           <>
             <h2 className="card-title">로그인하지 않았어요</h2>
-            <p className="card-sub">로그인하면 관심 공고와 학교 설정을 어느 기기에서든 볼 수 있어요.</p>
+            <p className="card-sub">로그인하면 설정과 관심 공고를 어느 기기에서든 볼 수 있어요.</p>
             <button className="button primary wide" onClick={() => user.setLoginOpen(true)}>
               로그인
             </button>
           </>
         )}
       </section>
+
+      <section className="card my-card">
+        <h2 className="card-title">내 정보</h2>
+        <p className="card-sub">고른 대로 공고 목록의 학교·대상 필터가 처음부터 맞춰져요.</p>
+
+        <h3 className="my-label">학교</h3>
+        <div className="my-options">
+          <button className={`tag-option ${user.schoolId === null ? "on" : ""}`} onClick={() => user.setSchool(null)}>
+            전체 학교
+          </button>
+          {schools.map((s) => (
+            <button key={s.id} className={`tag-option ${user.schoolId === s.id ? "on" : ""}`} onClick={() => user.setSchool(s.id)}>
+              {s.name}
+            </button>
+          ))}
+        </div>
+
+        <h3 className="my-label">신분</h3>
+        <div className="my-options">
+          {STUDENT_STATUSES.map((s) => (
+            <button
+              key={s}
+              className={`tag-option ${profile.status === s ? "on" : ""}`}
+              aria-pressed={profile.status === s}
+              onClick={() => update({ status: profile.status === s ? null : s })}
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+
+        {profile.status !== "졸업생" && (
+          <>
+            <h3 className="my-label">학년</h3>
+            <div className="my-options">
+              {GRADES.map((g) => (
+                <button
+                  key={g}
+                  className={`tag-option ${profile.grade === g ? "on" : ""}`}
+                  aria-pressed={profile.grade === g}
+                  onClick={() => update({ grade: profile.grade === g ? null : g })}
+                >
+                  {g}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+      </section>
+
+      <section className="card my-card">
+        <h2 className="card-title">관심 분야</h2>
+        <p className="card-sub">고른 분야의 공고를 홈에서 따로 모아 보여 드려요.</p>
+        <div className="my-options spaced">
+          {fieldTags.map((tag) => (
+            <button
+              key={tag}
+              className={`tag-option ${profile.interests.includes(tag) ? "on" : ""}`}
+              aria-pressed={profile.interests.includes(tag)}
+              onClick={() => update({ interests: toggle(profile.interests, tag) })}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="card my-card">
+        <label className="my-switch">
+          <span>
+            <strong>마감 알림</strong>
+            <small>관심 공고 마감 하루 전에 알려 드려요. 앱이 나오면 이 설정대로 알림이 가요.</small>
+          </span>
+          <input
+            type="checkbox"
+            checked={profile.notifyDeadline}
+            onChange={(event) => update({ notifyDeadline: event.target.checked })}
+          />
+        </label>
+      </section>
+
+      {savedLocally && (
+        <p className="my-message" role="status">
+          이 기기에만 저장됐어요. 계정 저장은 준비 중이에요.
+        </p>
+      )}
 
       {user.signedIn && blockCount !== null && (
         <section className="card my-card">

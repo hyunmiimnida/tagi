@@ -1653,8 +1653,7 @@ main {
   padding: 22px 20px;
 }
 
-.my-card + .my-card,
-.my-links {
+.my > * + * {
   margin-top: 12px;
 }
 
@@ -1784,4 +1783,53 @@ main {
 
 .hero h1 a {
   color: inherit;
+}
+
+/* 프로필 설정 */
+.my-label {
+  margin: 18px 0 8px;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.my-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.my-options.spaced {
+  margin-top: 14px;
+}
+
+.my-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.my-switch span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.my-switch strong {
+  font-size: 1.0625rem;
+}
+
+.my-switch small {
+  color: var(--text-3);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.my-switch input {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  accent-color: var(--accent);
 }
