@@ -9,7 +9,8 @@ import {
   writeJson,
 } from "./archive.ts";
 import { archivers } from "./collectors/index.ts";
-import { mergePrograms } from "./dedupe.ts";
+import { collapseReposts, mergePrograms } from "./dedupe.ts";
+import { cleanPeriods } from "./extract.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
@@ -90,8 +91,9 @@ async function run() {
       console.log(`${label} 목록 ${unique.length}개 중 새로 볼 글 ${todo.length}개`);
 
       // 2. 상세를 읽어야 하는 출처는 제목으로 먼저 거른다
-      if (archiver.read) await triageTitles(label, todo);
-      const candidates = archiver.read ? todo.filter((post) => triage[post.url]) : todo;
+      // --rules일 때는 AI 없이 진행하므로, 아직 거르지 않은 글은 일단 모두 후보로 본다
+      if (archiver.read && !rulesOnly) await triageTitles(label, todo);
+      const candidates = archiver.read ? todo.filter((post) => triage[post.url] ?? rulesOnly) : todo;
       console.log(`${label} 추출할 글 ${candidates.length}개`);
 
       // 3. 본문 읽고 AI로 추출
@@ -173,9 +175,12 @@ async function save() {
     fixOrganizerType(program, categories);
     program.target.grades = normalizeGrades(program.target.grades);
   }
-  const { current, old } = splitByAge(results);
-  const programs = mergePrograms(await readJson<Program[]>(PROGRAMS_FILE, []), current);
-  const archive = mergeArchive(await readJson<Program[]>(ARCHIVE_FILE, []), old);
+  // 목록·보관함·새 결과를 한데 모아 정리한 뒤 한 번에 나눈다 (같은 공고가 양쪽에 남지 않게)
+  const saved = [...(await readJson<Program[]>(PROGRAMS_FILE, [])), ...(await readJson<Program[]>(ARCHIVE_FILE, []))];
+  const all = collapseReposts(mergePrograms(saved, results));
+  all.forEach(cleanPeriods);
+  const { current: programs, old } = splitByAge(all);
+  const archive = mergeArchive([], old);
   console.log(`반복 프로그램 묶음 ${await assignSeries(programs, archive)}개`);
   await writeJson(PROGRAMS_FILE, programs);
   await writeJson(ARCHIVE_FILE, archive);

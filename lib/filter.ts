@@ -61,8 +61,9 @@ export function matchesEligibility(program: Program, selected: Set<string>): boo
   const grades = GRADES.filter((g) => selected.has(g));
   if (statuses.length > 0 && !statuses.some((s) => allows(program, s))) return false;
   if (grades.length > 0) {
-    // 학년은 다니고 있는 학생(재학·휴학)에게만 의미가 있다
-    if (!allows(program, "재학생") && !allows(program, "휴학생")) return false;
+    // 학년은 다니고 있는 학생(재학·휴학)에게만 의미가 있다. 신분을 골랐으면 그중 재학·휴학이 이 공고에 지원할 수 있어야 한다
+    const enrolled = (statuses.length > 0 ? statuses : ["재학생", "휴학생"]).filter((s) => s !== "졸업생");
+    if (!enrolled.some((s) => allows(program, s))) return false;
     const allowed = program.target.grades;
     if (allowed.length > 0 && !grades.some((g) => allowed.includes(g))) return false;
   }
@@ -86,9 +87,13 @@ export const matchesUnits = (program: ProgramView, units: Set<string>) =>
 // 마지막 일정. 모집 마감일이 있으면 그 날짜, 없으면 활동 종료일
 export const lastDay = (program: Program) => program.recruitPeriod.end ?? program.activityPeriod.end;
 
+// 마감일을 모르는 공고는 올라온 지 이만큼 지나면 마감된 것으로 본다 (오래된 공고가 계속 "모집 중"으로 보이지 않게)
+export const UNDATED_OPEN_DAYS = 30;
+
 export function isClosed(program: Program, today: string): boolean {
   const end = lastDay(program);
-  return end !== null && end < today;
+  if (end !== null) return end < today;
+  return daysUntil(today, addedAt(program)) > UNDATED_OPEN_DAYS;
 }
 
 export function daysUntil(date: string, today: string): number {

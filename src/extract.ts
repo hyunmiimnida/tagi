@@ -1,4 +1,4 @@
-import type { CollectedItem, Period, Source, TagCategory } from "./types.ts";
+import type { CollectedItem, Period, Program, Source, TagCategory } from "./types.ts";
 
 // 규칙 기반 정보 추출: 제목과 본문에서 주최, 기간, 태그를 찾아 공통 데이터 형식을 채운다.
 // 찾지 못한 값은 추측하지 않고 비워 둔다.
@@ -95,4 +95,22 @@ export function enrich(item: CollectedItem, source: Source, categories: TagCateg
     if (category.matchOn === "title") matchTag(category, program.title).forEach((t) => tags.add(t));
   }
   program.tags = [...tags];
+  cleanPeriods(program);
+}
+
+// 말이 안 되는 기간은 버린다 (본문에 나온 다른 날짜를 잘못 읽은 경우).
+// 게시일보다 1년 넘게 앞서 시작하거나, 게시일보다 1년 반 넘게 뒤에 끝나는 기간은 모르는 값으로 둔다
+const DAY = 86_400_000;
+export function plausiblePeriod(period: Period, postedAt: string | null): Period {
+  if (!postedAt) return period;
+  const posted = Date.parse(postedAt);
+  const tooEarly = period.start !== null && Date.parse(period.start) < posted - 365 * DAY;
+  const tooLate = period.end !== null && Date.parse(period.end) > posted + 545 * DAY;
+  return tooEarly || tooLate ? { start: null, end: null } : period;
+}
+
+// 게시일을 아는 글만 검사한다 (게시일이 없는 출처는 기간이 목록에 정리되어 있어 믿을 만하다)
+export function cleanPeriods(program: Program): void {
+  program.recruitPeriod = plausiblePeriod(program.recruitPeriod, program.postedAt);
+  program.activityPeriod = plausiblePeriod(program.activityPeriod, program.postedAt);
 }

@@ -2,7 +2,8 @@ import { execFile, execFileSync } from "node:child_process";
 import { existsSync, readdirSync } from "node:fs";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
+import { cleanPeriods } from "./extract.ts";
 import { GRADES, STUDENT_STATUSES } from "./types.ts";
 import type { CollectedItem, Program, TagCategory } from "./types.ts";
 
@@ -99,14 +100,17 @@ function runCodex(bin: string, model: string, prompt: string, outFile: string): 
     const child = execFile(
       bin,
       ["exec", "--skip-git-repo-check", "--sandbox", "read-only", "-m", model, "--output-last-message", outFile, "-"],
-      { timeout: 600_000, maxBuffer: 20 * 1024 * 1024 },
+      // 프로젝트 폴더가 아닌 빈 임시 폴더에서 실행한다 (게시물 본문에 숨은 지시가 있어도 프로젝트 파일에 손대지 못하게)
+      { timeout: 600_000, maxBuffer: 20 * 1024 * 1024, cwd: dirname(outFile) },
       (error) => (error ? reject(error) : resolve()),
     );
     child.stdin?.end(prompt);
   });
 }
 
-const date = (v: unknown) => (typeof v === "string" && DATE.test(v) ? v : null);
+// 형식이 맞고 실제 달력에 있는 날짜만 받는다 (2026-02-30 같은 날짜는 버린다)
+const date = (v: unknown) =>
+  typeof v === "string" && DATE.test(v) && new Date(`${v}T00:00:00Z`).toISOString().startsWith(v) ? v : null;
 const strings = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : []);
 
 async function askCodex(bin: string, prompt: string): Promise<{ items?: Record<string, unknown>[]; same?: unknown }> {
@@ -135,7 +139,13 @@ export function normalizeGrades(values: string[]): string[] {
   const out = new Set<string>();
   for (const value of values) {
     if (/제외|학기|대학원|석사|박사/.test(value)) continue;
-    const range = value.match(/([1-4])\s*[~\-·,]\s*([1-4])\s*학년/);
+    // "1,3학년"·"1·3학년"은 그 학년들만, "2~3학년"·"2-3학년"은 범위
+    const list = value.match(/^([1-4](?:\s*[,·]\s*[1-4])+)\s*학년/);
+    if (list) {
+      for (const g of list[1].match(/[1-4]/g)!) out.add(`${g}학년`);
+      continue;
+    }
+    const range = value.match(/([1-4])\s*[~\-]\s*([1-4])\s*학년/);
     const atLeast = value.match(/([1-4])\s*학년\s*이상/);
     const single = value.match(/^([1-4])\s*학년$/);
     const [from, to] = range ? [range[1], range[2]] : atLeast ? [atLeast[1], "4"] : single ? [single[1], single[1]] : [];
@@ -161,14 +171,17 @@ export function fixOrganizerType(program: Program, categories: TagCategory[]): v
   program.organizerType = fixed;
 }
 
-// 학생 대상이 아니면 false를 돌려준다
-function apply(item: CollectedItem, data: Record<string, unknown>, categories: TagCategory[]): boolean {
+// 반영하면 true, 학생 대상이 아니면 false, 응답이 불완전해 반영하지 않으면 null (다음에 다시 추출한다)
+function apply(item: CollectedItem, data: Record<string, unknown>, categories: TagCategory[]): boolean | null {
   const { program } = item;
+  const complete = typeof data.forStudents === "boolean" && Array.isArray(data.tags) && Array.isArray(data.grades);
+  if (!complete) return null;
   if (data.forStudents === false) return false;
   const allowedTags = new Set(categories.flatMap((c) => c.tags.map((t) => t.name)));
   const organizerTypes = categories.find((c) => c.matchOn === "organizer")?.tags.map((t) => t.name) ?? [];
 
-  if (typeof data.organizer === "string" && data.organizer.trim()) program.organizer = data.organizer.trim();
+  // 기관 이름은 짧은 이름만 받는다 (본문의 엉뚱한 긴 글이 들어오지 않게)
+  if (typeof data.organizer === "string" && data.organizer.trim() && data.organizer.length <= 60) program.organizer = data.organizer.trim();
   if (organizerTypes.includes(data.organizerType as string)) program.organizerType = data.organizerType as string;
 
   // AI가 날짜를 하나라도 찾았으면 그 기간은 AI 결과를 따른다
@@ -177,6 +190,7 @@ function apply(item: CollectedItem, data: Record<string, unknown>, categories: T
   const valid = (p: { start: string | null; end: string | null }) => !p.start || !p.end || p.start <= p.end;
   if ((recruit.start || recruit.end) && valid(recruit)) program.recruitPeriod = recruit;
   if ((activity.start || activity.end) && valid(activity)) program.activityPeriod = activity;
+  cleanPeriods(program);
 
   program.target.colleges = strings(data.colleges);
   program.target.departments = strings(data.departments);
@@ -280,8 +294,9 @@ export async function enrichWithAi(
       for (const data of answer.items ?? []) {
         const item = batch.find((b) => b.program.id === data.id);
         if (!item) continue;
-        if (apply(item, data, categories)) done++;
-        else notForStudents.add(item.program.id);
+        const result = apply(item, data, categories);
+        if (result === true) done++;
+        else if (result === false) notForStudents.add(item.program.id);
       }
       console.log(`  AI 추출 ${Math.min(i + batchSize, items.length)}/${items.length}`);
     } catch (error) {

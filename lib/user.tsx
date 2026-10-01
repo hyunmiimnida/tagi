@@ -47,6 +47,16 @@ function readLocal(name: string): string | null {
   }
 }
 
+// 저장값이 깨져 있으면(잘못된 JSON 등) 빈 목록으로 시작한다
+function readLocalList(name: string): Set<string> {
+  try {
+    const value: unknown = JSON.parse(readLocal(name) ?? "[]");
+    return new Set(Array.isArray(value) ? value.filter((v): v is string => typeof v === "string") : []);
+  } catch {
+    return new Set();
+  }
+}
+
 function writeLocal(name: string, value: string | null): void {
   try {
     if (value === null) localStorage.removeItem(name);
@@ -68,7 +78,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     setSchoolId(readLocal(SCHOOL_KEY));
 
     if (!supabase) {
-      setFavorites(new Set(JSON.parse(readLocal(FAVORITES_KEY) ?? "[]")));
+      setFavorites(readLocalList(FAVORITES_KEY));
       setReady(true);
       return;
     }
@@ -93,7 +103,8 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       supabase.from("favorites").select("program_id").eq("user_id", userId),
     ]).then(([profile, favoriteRows]) => {
       if (cancelled) return;
-      if (profile.data?.school_id) setSchoolId(profile.data.school_id);
+      // 계정에 저장된 값이 있으면 "전체 학교"(null)라도 그대로 따른다
+      if (profile.data) setSchoolId(profile.data.school_id ?? null);
       setFavorites(new Set((favoriteRows.data ?? []).map((row) => row.program_id as string)));
       setReady(true);
     });

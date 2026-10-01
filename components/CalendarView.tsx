@@ -150,7 +150,13 @@ export function CalendarView({ programs }: { programs: Program[] }) {
             아직 관심 공고가 없어요. <Link href="/programs">공고</Link>에서 ☆를 눌러 보세요.
           </p>
         ) : (
-          <EventList events={events.filter((event) => event.date >= today).slice(0, 20)} today={today} />
+          <EventList
+            events={events
+              .filter((event) => event.date >= today)
+              .sort((a, b) => a.date.localeCompare(b.date))
+              .slice(0, 20)}
+            today={today}
+          />
         )}
       </section>
 

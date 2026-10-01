@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, rename, writeFile } from "node:fs/promises";
 import { mergePrograms } from "./dedupe.ts";
 import type { Program } from "./types.ts";
 
@@ -20,7 +20,12 @@ export async function readJson<T>(file: URL, fallback?: T): Promise<T> {
   }
 }
 
-export const writeJson = (file: URL, data: unknown) => writeFile(file, JSON.stringify(data, null, 2) + "\n");
+// 임시 파일에 다 쓴 뒤 바꿔치기한다 (쓰는 도중 멈춰도 원래 파일이 깨지지 않게)
+export async function writeJson(file: URL, data: unknown): Promise<void> {
+  const temp = new URL(`${file.href}.tmp`);
+  await writeFile(temp, JSON.stringify(data, null, 2) + "\n");
+  await rename(temp, file);
+}
 
 // 마지막 일정: 모집·활동 기간과 게시일 중 가장 늦은 날. 날짜를 하나도 모를 때만 수집일을 쓴다
 // (과거 글은 오늘 수집하므로 수집일을 함께 비교하면 모두 최근 글로 보인다)

@@ -94,3 +94,34 @@ test("학년 표기를 1~4학년으로 맞춘다", async () => {
   assert.deepEqual(normalizeGrades(["4학년", "1학년"]), ["1학년", "4학년"]);
   assert.deepEqual(normalizeGrades(["5학기 이상 이수자", "대학원생", "2·3학년 제외", "고학년"]), []);
 });
+
+test("같은 게시판에 다시 올린 글은 하나로 합치고 나중 일정을 따른다", async () => {
+  const { collapseReposts } = await import("./dedupe.ts");
+  const post = (id: string, title: string, postedAt: string, end: string | null) =>
+    ({
+      id, title, postedAt, sources: ["news"], links: [{ sourceId: "news", url: id }], extractedBy: "ai",
+      recruitPeriod: { start: null, end }, activityPeriod: { start: null, end: null }, tags: [], target: {},
+      organizer: null, organizerType: null,
+    }) as never;
+  const merged = collapseReposts([
+    post("a", "학생홍보대사 31기 모집", "2026-09-04", "2026-09-15"),
+    post("b", "[재게시] 학생홍보대사 31기 모집", "2026-09-14", "2026-09-22"),
+    post("c", "학생홍보대사 31기 모집", "2027-03-01", null),
+  ]) as { id: string; recruitPeriod: { end: string | null }; links: unknown[] }[];
+  assert.deepEqual(merged.map((p) => p.id), ["a", "c"]);
+  assert.equal(merged[0].recruitPeriod.end, "2026-09-22");
+  assert.equal(merged[0].links.length, 2);
+});
+
+test("말이 안 되는 기간은 버린다", async () => {
+  const { plausiblePeriod } = await import("./extract.ts");
+  assert.deepEqual(plausiblePeriod({ start: "2025-09-22", end: "2029-02-01" }, "2026-04-13"), { start: null, end: null });
+  assert.deepEqual(plausiblePeriod({ start: "2023-07-01", end: "2026-06-01" }, "2026-05-07"), { start: null, end: null });
+  assert.deepEqual(plausiblePeriod({ start: "2026-03-01", end: "2026-12-31" }, "2026-02-20"), { start: "2026-03-01", end: "2026-12-31" });
+});
+
+test("학년 나열은 범위로 넓히지 않는다", async () => {
+  const { normalizeGrades } = await import("./ai.ts");
+  assert.deepEqual(normalizeGrades(["1,3학년"]), ["1학년", "3학년"]);
+  assert.deepEqual(normalizeGrades(["2·4학년"]), ["2학년", "4학년"]);
+});

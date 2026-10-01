@@ -108,7 +108,7 @@ export function Home({ programs, categories }: Props) {
           </Link>
           <Link href="/calendar" className="stat">
             <span>관심 공고</span>
-            <strong>{favorites.size}</strong>
+            <strong>{programs.filter((p) => favorites.has(p.id)).length}</strong>
           </Link>
         </div>
       </section>

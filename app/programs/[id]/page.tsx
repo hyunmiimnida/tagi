@@ -29,6 +29,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return { title: program.title, description, openGraph: { title: program.title, description } };
 }
 
+// 원문 버튼: http(s) 주소만, 출처마다 하나씩 (재게시를 합친 공고는 가장 최근 글이 앞에 있다)
+function applyLinks(program: Program) {
+  const safe = program.links.filter((link) => /^https?:\/\//.test(link.url));
+  return safe.filter((link, index) => safe.findIndex((l) => l.sourceId === link.sourceId) === index);
+}
+
 const HISTORY_SHOWN = 8; // 지난 공고는 최근 몇 개만 먼저 보여 주고 나머지는 접어 둔다
 
 function historyRow(round: Program) {
@@ -57,6 +63,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
   if (!program) notFound();
 
   const pastRounds = getPastRounds(program);
+  const links = applyLinks(program);
   const sourceNames = getSourceNames();
   const schoolNames = Object.fromEntries(getSchools().map((school) => [school.id, school.name]));
   const year = new Date().getFullYear();
@@ -119,10 +126,10 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
         </section>
       )}
 
-      {pastRounds.length > 0 && program.seriesId && <Comments seriesId={program.seriesId} />}
+      {program.seriesId && <Comments seriesId={program.seriesId} />}
 
       <div className="cta">
-        {program.links.map((link, index) => (
+        {links.map((link, index) => (
           <a
             key={link.url}
             href={link.url}
@@ -130,7 +137,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
             rel="noopener noreferrer"
             className={`button ${index === 0 ? "primary" : ""} wide`}
           >
-            {program.links.length > 1 ? `${sourceNames[link.sourceId] ?? link.sourceId}에서 보기` : "원문에서 신청하기"}
+            {links.length > 1 ? `${sourceNames[link.sourceId] ?? link.sourceId}에서 보기` : "원문에서 신청하기"}
             <ExternalIcon />
           </a>
         ))}

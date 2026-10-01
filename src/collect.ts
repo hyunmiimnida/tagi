@@ -11,7 +11,8 @@ import {
   writeJson,
 } from "./archive.ts";
 import { collectors } from "./collectors/index.ts";
-import { findAmbiguousPairs, mergePair, mergePrograms } from "./dedupe.ts";
+import { collapseReposts, findAmbiguousPairs, mergePair, mergePrograms } from "./dedupe.ts";
+import { cleanPeriods } from "./extract.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
@@ -27,7 +28,10 @@ const archived = await readJson<Program[]>(ARCHIVE_FILE, []);
 const refresh = process.argv.includes("--refresh");
 const excludedUrls = new Set(await readJson<string[]>(EXCLUDED_FILE, []));
 const urlsOf = (programs: Program[]) => programs.flatMap((p) => p.links.map((l) => l.url));
-const knownUrls = new Set(refresh ? [] : [...urlsOf(existing), ...urlsOf(archived), ...excludedUrls]);
+// AI를 쓰는 출처에서 AI 추출이 실패해 규칙으로만 저장된 글은 "아직 모르는 글"로 보고 다시 읽어 AI로 추출한다
+const aiSources = new Set(schools.flatMap((s) => s.sources.filter((source) => source.useAi).map((source) => source.id)));
+const settled = (p: Program) => p.extractedBy === "ai" || !p.sources.some((s) => aiSources.has(s));
+const knownUrls = new Set(refresh ? [] : [...urlsOf([...existing, ...archived].filter(settled)), ...excludedUrls]);
 // AI로 이미 추출한 게시물 주소. 목록을 매번 다시 읽는 출처도 AI는 새 게시물에만 쓴다
 const aiDoneUrls = new Set(refresh ? [] : urlsOf([...existing, ...archived].filter((p) => p.extractedBy === "ai")));
 
@@ -82,7 +86,10 @@ for (const school of schools) {
 }
 
 // 마지막 일정이 오래 지난 항목은 지우지 않고 보관함(archive.json)으로 옮긴다
-const { current, old } = splitByAge(mergePrograms(existing, incoming).filter((p) => !excluded.has(p.id)));
+// 같은 게시판에 다시 올린 글은 하나로 합치고, 말이 안 되는 기간은 지운다
+const combined = collapseReposts(mergePrograms(existing, incoming).filter((p) => !excluded.has(p.id)));
+combined.forEach(cleanPeriods);
+const { current, old } = splitByAge(combined);
 let merged = current;
 
 // 제목 표현이 달라 규칙으로 판단하기 애매한 중복은 AI에게 묻는다
@@ -96,7 +103,12 @@ for (const index of await confirmDuplicates(pairs)) {
 }
 
 // 해마다 반복되는 프로그램을 지난 공고와 묶는다
-const archive = mergeArchive(archived, old);
+// 목록에 다시 올라온 공고(예: 다시 읽어 새 일정을 찾은 글)는 보관함에서 뺀다
+const listedUrls = new Set(merged.flatMap((p) => p.links.map((l) => l.url)));
+const archive = mergeArchive(
+  archived.filter((p) => !p.links.some((l) => listedUrls.has(l.url)) && !excluded.has(p.id)),
+  old,
+);
 const seriesCount = await assignSeries(merged, archive);
 console.log(`반복 프로그램 묶음 ${seriesCount}개`);
 

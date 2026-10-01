@@ -105,7 +105,12 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
       // 이미 저장된 게시물: 최신 내용으로 바꾸되, 합쳐진 항목이면 빈 값만 채운다
       const saved = result[index];
       if (saved.links.length === 1) result[index] = { ...keepAiFields(saved, program), firstSeenAt: firstSeen(saved) };
-      else mergeInto(saved, program);
+      else {
+        mergeInto(saved, program);
+        // 원문을 다시 읽어 새 일정을 찾았으면(기간 연장 등) 그 일정을 따른다
+        if (program.recruitPeriod.start || program.recruitPeriod.end) saved.recruitPeriod = program.recruitPeriod;
+        if (program.activityPeriod.start || program.activityPeriod.end) saved.activityPeriod = program.activityPeriod;
+      }
       continue;
     }
 
@@ -115,4 +120,47 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
   }
 
   return result;
+}
+
+// 같은 게시판에 다시 올린 글(재게시·재공지·기간연장)은 같은 공고다.
+// 이런 표시를 지운 제목이 같고 두 달 안에 올라온 글을 하나로 합친다.
+// 처음 글의 id를 남기고(관심 표시·주소 유지), 일정은 나중 글을 따르며(기간연장 반영), 원문 링크는 나중 글을 앞에 둔다.
+const REPOST_MARK = /재게시|재공지|재공고|기간\s*연장|마감\s*임박|일정\s*변경|장소\s*변경/g;
+const repostKey = (title: string) => normalize(title.replace(REPOST_MARK, ""));
+const REPOST_DAYS = 60;
+
+export function collapseReposts(programs: Program[]): Program[] {
+  const groups = new Map<string, Program[]>();
+  for (const program of programs) {
+    if (!program.postedAt) continue; // 게시일이 없는 출처(목록형)는 글마다 다른 회차다
+    const key = `${program.sources.join(",")}|${repostKey(program.title)}`;
+    groups.set(key, [...(groups.get(key) ?? []), program]);
+  }
+
+  const removed = new Set<Program>();
+  for (const group of groups.values()) {
+    if (group.length < 2) continue;
+    group.sort((a, b) => a.postedAt!.localeCompare(b.postedAt!));
+    let base = group[0];
+    for (const next of group.slice(1)) {
+      const gap = (Date.parse(next.postedAt!) - Date.parse(base.postedAt!)) / 86_400_000;
+      if (gap > REPOST_DAYS) {
+        base = next; // 두 달 넘게 지나 다시 올린 글은 다른 회차로 본다
+        continue;
+      }
+      if (next.recruitPeriod.start || next.recruitPeriod.end) base.recruitPeriod = next.recruitPeriod;
+      if (next.activityPeriod.start || next.activityPeriod.end) base.activityPeriod = next.activityPeriod;
+      if (next.extractedBy === "ai") {
+        base.target = next.target;
+        base.tags = next.tags;
+        base.organizer = next.organizer ?? base.organizer;
+        base.organizerType = next.organizerType ?? base.organizerType;
+        base.extractedBy = "ai";
+      }
+      base.links = [...next.links, ...base.links.filter((l) => !next.links.some((n) => n.url === l.url))];
+      base.postedAt = next.postedAt; // 기준 게시일을 옮겨 다음 재게시도 이어 붙인다
+      removed.add(next);
+    }
+  }
+  return programs.filter((p) => !removed.has(p));
 }

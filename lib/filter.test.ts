@@ -71,3 +71,18 @@ test("모집 대상 문구를 자세히 만든다", async () => {
   );
   assert.equal(describeTarget(withTarget({ statuses: ["졸업생"], colleges: ["공과대학"] }), names), "영남대학교 졸업생 · 공과대학");
 });
+
+test("마감일을 모르는 공고는 올라온 지 30일이 지나면 마감으로 본다", async () => {
+  const { isClosed } = await import("./filter.ts");
+  const undated = (postedAt: string) =>
+    ({ postedAt, collectedAt: postedAt, recruitPeriod: { start: null, end: null }, activityPeriod: { start: null, end: null } }) as never;
+  assert.ok(!isClosed(undated("2026-09-20"), "2026-10-01"));
+  assert.ok(isClosed(undated("2026-07-20"), "2026-10-01"));
+});
+
+test("졸업생과 학년을 함께 고르면 학년 조건은 재학·휴학 자격으로만 따진다", async () => {
+  const { matchesEligibility } = await import("./filter.ts");
+  const program = withTarget({ statuses: ["재학생", "졸업생"], grades: ["1학년"] });
+  assert.ok(!matchesEligibility(program, new Set(["졸업생", "1학년"])));
+  assert.ok(matchesEligibility(program, new Set(["재학생", "1학년"])));
+});

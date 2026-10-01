@@ -114,16 +114,22 @@ export function Explorer({ programs, categories, schools }: Props) {
   );
 
   const word = keyword.trim().toLowerCase();
-  const open = useMemo(() => programs.filter((p) => showClosed || !isClosed(p, today)), [programs, showClosed, today]);
+  // 마감 여부와 검색어를 먼저 거른다. 필터 옆 개수도 이 결과를 기준으로 센다
+  const open = useMemo(
+    () =>
+      programs
+        .filter((p) => showClosed || !isClosed(p, today))
+        .filter((p) => !word || `${p.title} ${p.organizer ?? ""}`.toLowerCase().includes(word)),
+    [programs, showClosed, today, word],
+  );
 
   const visible = useMemo(
     () =>
       open
         .filter((p) => visibleForSchool(p, school) && matchesUnits(p, units) && matchesEligibility(p, who))
         .filter((p) => matchesTags(p.tags, selected, categories))
-        .filter((p) => !word || `${p.title} ${p.organizer ?? ""}`.toLowerCase().includes(word))
         .sort((a, b) => (sort === "recent" ? addedAt(b).localeCompare(addedAt(a)) : compareDeadline(a, b, today))),
-    [open, categories, school, units, who, selected, word, sort, today],
+    [open, categories, school, units, who, selected, sort, today],
   );
 
   // 개수: 다른 필터는 반영하고, 자기 자신이 속한 필터만 빼고 센다

@@ -27,16 +27,26 @@ function toView(program: Program, schools: School[]): ProgramView {
   };
 }
 
+// 빌드할 때는 공고 페이지 수백 개가 같은 데이터를 쓰므로 한 번만 읽는다.
+// 개발 중(npm run dev)에는 데이터가 바뀌면 바로 보이도록 매번 읽는다
+const cacheable = process.env.NODE_ENV === "production";
+let programsCache: ProgramView[] | null = null;
+
 export function getPrograms(): ProgramView[] {
+  if (cacheable && programsCache) return programsCache;
   const schools = readSchools();
-  return readJson<Program[]>("data/programs.json").map((program) => toView(program, schools));
+  const programs = readJson<Program[]>("data/programs.json").map((program) => toView(program, schools));
+  if (cacheable) programsCache = programs;
+  return programs;
 }
+
+export const getProgram = (id: string) => getPrograms().find((program) => program.id === id);
 
 // 보관함(마지막 일정이 오래 지난 공고). 반복 프로그램의 지난 회차를 보여 줄 때만 쓴다
 let archiveCache: Program[] | null = null;
 function getArchive(): Program[] {
   try {
-    archiveCache ??= readJson<Program[]>("data/archive.json");
+    if (!cacheable || !archiveCache) archiveCache = readJson<Program[]>("data/archive.json");
   } catch {
     archiveCache = [];
   }
@@ -44,14 +54,14 @@ function getArchive(): Program[] {
 }
 
 const roundStart = (p: Program) => p.recruitPeriod.start ?? p.postedAt ?? p.activityPeriod.start ?? p.collectedAt.slice(0, 10);
-const NEAR_MS = 30 * 86_400_000; // 한 달 안에 다시 올린 글(재게시·기간연장)은 같은 회차로 친다
+const NEAR_MS = 14 * 86_400_000; // 2주 안의 글은 같은 회차를 다른 곳에 올린 것으로 친다 (재게시는 수집 때 이미 합친다)
 
 // 같은 반복 프로그램의 지난 회차들 (최근 순)
 export function getPastRounds(program: Program): Program[] {
   if (!program.seriesId) return [];
   const mine = roundStart(program);
   const near = (a: string, b: string) => Math.abs(Date.parse(a) - Date.parse(b)) < NEAR_MS;
-  const members = [...readJson<Program[]>("data/programs.json"), ...getArchive()]
+  const members = [...getPrograms(), ...getArchive()]
     .filter((p) => p.seriesId === program.seriesId && p.id !== program.id && roundStart(p) < mine)
     .sort((a, b) => roundStart(b).localeCompare(roundStart(a)));
 
