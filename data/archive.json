@@ -445,6 +445,90 @@
     "firstSeenAt": "2026-10-01T12:10:56.714Z"
   },
   {
+    "id": "dcu-scholarship-185809",
+    "title": "2026-2 학자금 대출 신청",
+    "organizer": "장학지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NTgwOSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-07-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T17:39:44.966Z",
+    "summary": "학자금 대출을 신청해요.",
+    "firstSeenAt": "2026-10-01T17:39:44.966Z"
+  },
+  {
+    "id": "dcu-scholarship-185808",
+    "title": "2026학년도 2학기 학자금대출 신청 관련 안내",
+    "organizer": "장학지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NTgwOCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-07-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T17:39:50.521Z",
+    "summary": "학자금 대출을 신청해요.",
+    "firstSeenAt": "2026-10-01T17:39:50.521Z"
+  },
+  {
     "id": "yu-news-229219787",
     "title": "[YU Digital HUSS] 영남대 박물관 공동 프로젝트 <유물 속 동물, AI로 다시 태어나다> (콘텐츠 제작)참가자 모집",
     "organizer": "인문사회디지털융합인재양성사업단",
@@ -1215,6 +1299,50 @@
     "collectedAt": "2026-10-01T03:42:23.765Z",
     "firstSeenAt": "2026-10-01T03:42:23.765Z",
     "seriesId": "yu-career-2350"
+  },
+  {
+    "id": "dcu-program-185772",
+    "title": "[대일플] 3가지 제휴 서비스로 취업준비 끝!(코멘토, 잡플래닛, 나임)",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTc3MiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-06-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T17:39:25.395Z",
+    "summary": "현직자 멘토링과 기업 분석, AI 취업지원 서비스를 이용해요",
+    "firstSeenAt": "2026-10-01T17:39:25.395Z"
   },
   {
     "id": "yu-news-229613688",
@@ -12231,6 +12359,51 @@
     "firstSeenAt": "2026-10-01T12:11:23.210Z"
   },
   {
+    "id": "yu-news-229599590",
+    "title": "💸지원금 받고 미국 인턴 🌍K-Move스쿨 2기 모집(4/23, 29 면담)",
+    "organizer": "현장실습지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-04-27"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229599590"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-04-21",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-01T03:52:58.121Z",
+    "firstSeenAt": "2026-10-01T03:52:58.121Z",
+    "seriesId": "yu-news-224999423",
+    "summary": "미국 인턴 취업을 위한 면접 교육을 받고 비자 발급 비용과 항공료를 지원받아요."
+  },
+  {
     "id": "yu-news-229585441",
     "title": "[RISE-REGO레전드] 2026년도 RISE사업단 레전드 50+ 기업맞춤 지능형 첨단소재 인력양성사업 “LEt’s Grow Ourselves (LEGO) ”",
     "organizer": "신소재공학부",
@@ -15814,6 +15987,49 @@
     "aliases": [
       "kmu-col-kbs-227996"
     ]
+  },
+  {
+    "id": "dcu-program-184438",
+    "title": "우리 대학은 AI 자기소개서 솔루션 제휴 대학!",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NDQzOCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-04-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T17:39:33.142Z",
+    "summary": "AI 자기소개서 첨삭과 NCS·인적성 모의고사를 무료로 이용해요",
+    "firstSeenAt": "2026-10-01T17:39:33.142Z"
   },
   {
     "id": "yu-news-229290105",
