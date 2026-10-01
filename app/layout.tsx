@@ -4,7 +4,7 @@ import { BottomNav } from "../components/BottomNav.tsx";
 import { Header } from "../components/Header.tsx";
 import { PwaSetup } from "../components/InstallCard.tsx";
 import { LoginSheet } from "../components/LoginSheet.tsx";
-import { getLastCollected, getSourceNames } from "../lib/data.ts";
+import { describeSources, getLastCollected } from "../lib/data.ts";
 import { SITE_NAME } from "../lib/filter.ts";
 import { UserProvider } from "../lib/user.tsx";
 import "./globals.css";
@@ -43,14 +43,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <footer className="footer">
             <p>
               {lastCollected && `${lastCollected} 기준 · `}
-              {Object.values(getSourceNames()).join(", ")}에서 매일 모아요
+              {describeSources()}에서 매일 모아요
             </p>
             <p>일정과 자격은 자동으로 정리한 정보라 틀릴 수 있어요. 신청 전에 꼭 원문을 확인하세요.</p>
             <p className="footer-links">
               <Link href="/terms">이용약관</Link>
               <Link href="/privacy">
                 <strong>개인정보처리방침</strong>
-              </Link>            </p>
+              </Link>
+            </p>
           </footer>
           <BottomNav />
           <LoginSheet />

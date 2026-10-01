@@ -13,6 +13,7 @@ import type { CollectedItem, Program, TagCategory } from "./types.ts";
 
 const MODELS = ["gpt-6.1-sol"]; // 실패하면 다음 모델로 (gpt-6.0-astra는 ChatGPT 계정에서 쓸 수 없어 뺐다)
 const BATCH_SIZE = 8;
+const AI_PARALLEL = 5; // 동시에 Codex에 보내는 묶음 수
 const MAX_TEXT = 2500; // 게시물 하나당 본문 글자 수
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -337,22 +338,30 @@ export async function enrichWithAi(
   const bin = findCodex();
   if (!bin || items.length === 0) return { done: 0, notForStudents };
 
+  // 묶음 여러 개를 동시에 Codex에 보낸다 (묶음마다 1분쯤 걸려서 차례로 보내면 오래 걸린다)
+  const batches: CollectedItem[][] = [];
+  for (let i = 0; i < items.length; i += batchSize) batches.push(items.slice(i, i + batchSize));
   let done = 0;
-  for (let i = 0; i < items.length; i += batchSize) {
-    const batch = items.slice(i, i + batchSize);
-    try {
-      const answer = await askCodex(bin, buildPrompt(batch, categories, maxText));
-      for (const data of answer.items ?? []) {
-        const item = batch.find((b) => b.program.id === data.id);
-        if (!item) continue;
-        const result = apply(item, data, categories);
-        if (result === true) done++;
-        else if (result === false) notForStudents.add(item.program.id);
+  let finished = 0;
+  let next = 0;
+  const worker = async () => {
+    while (next < batches.length) {
+      const batch = batches[next++];
+      try {
+        const answer = await askCodex(bin, buildPrompt(batch, categories, maxText));
+        for (const data of answer.items ?? []) {
+          const item = batch.find((b) => b.program.id === data.id);
+          if (!item) continue;
+          const result = apply(item, data, categories);
+          if (result === true) done++;
+          else if (result === false) notForStudents.add(item.program.id);
+        }
+      } catch (error) {
+        console.error("  AI 추출 실패, 규칙 결과를 사용:", error instanceof Error ? error.message : error);
       }
-      console.log(`  AI 추출 ${Math.min(i + batchSize, items.length)}/${items.length}`);
-    } catch (error) {
-      console.error("  AI 추출 실패, 규칙 결과를 사용:", error instanceof Error ? error.message : error);
+      console.log(`  AI 추출 묶음 ${++finished}/${batches.length}`);
     }
-  }
+  };
+  await Promise.all(Array.from({ length: Math.min(AI_PARALLEL, batches.length) }, worker));
   return { done, notForStudents };
 }

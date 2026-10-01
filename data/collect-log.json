@@ -1,6 +1,6 @@
 {
-  "ranAt": "2026-10-01T11:31:31.585Z",
-  "total": 566,
+  "ranAt": "2026-10-01T12:22:03.416Z",
+  "total": 620,
   "sources": [
     {
       "source": "yu-career",
@@ -12,6 +12,78 @@
       "source": "yu-news",
       "ok": true,
       "count": 0,
+      "message": ""
+    },
+    {
+      "source": "yu-col-liberalart",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "yu-col-sci",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "yu-col-eng",
+      "ok": true,
+      "count": 12,
+      "message": ""
+    },
+    {
+      "source": "yu-col-digital",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "yu-rise",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "yu-col-politics",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "yu-col-yumc",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "yu-col-sob",
+      "ok": true,
+      "count": 12,
+      "message": ""
+    },
+    {
+      "source": "yu-col-life",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "yu-col-pharm",
+      "ok": true,
+      "count": 12,
+      "message": ""
+    },
+    {
+      "source": "yu-col-chek",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "yu-col-education",
+      "ok": true,
+      "count": 10,
       "message": ""
     },
     {
@@ -29,7 +101,25 @@
     {
       "source": "knu-startup",
       "ok": true,
-      "count": 30,
+      "count": 0,
+      "message": ""
+    },
+    {
+      "source": "yu-col-arts",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "yu-col-gl",
+      "ok": true,
+      "count": 11,
+      "message": ""
+    },
+    {
+      "source": "yu-col-ccgs",
+      "ok": true,
+      "count": 11,
       "message": ""
     },
     {
@@ -48,6 +138,72 @@
       "source": "kmu-scholarship",
       "ok": true,
       "count": 0,
+      "message": ""
+    },
+    {
+      "source": "kmu-startup",
+      "ok": true,
+      "count": 9,
+      "message": ""
+    },
+    {
+      "source": "kmu-col-arts",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "kmu-col-abeek",
+      "ok": true,
+      "count": 12,
+      "message": ""
+    },
+    {
+      "source": "kmu-col-coe",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "kmu-col-human",
+      "ok": true,
+      "count": 11,
+      "message": ""
+    },
+    {
+      "source": "kmu-col-kbs",
+      "ok": true,
+      "count": 11,
+      "message": ""
+    },
+    {
+      "source": "kmu-col-musicarts",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "kmu-col-pharmacyhome",
+      "ok": true,
+      "count": 11,
+      "message": ""
+    },
+    {
+      "source": "kmu-col-natural",
+      "ok": true,
+      "count": 12,
+      "message": ""
+    },
+    {
+      "source": "kmu-col-sports",
+      "ok": true,
+      "count": 10,
+      "message": ""
+    },
+    {
+      "source": "kmu-col-ssc",
+      "ok": true,
+      "count": 10,
       "message": ""
     }
   ]

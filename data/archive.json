@@ -354,6 +354,54 @@
     "firstSeenAt": "2026-10-01T11:00:52.677Z"
   },
   {
+    "id": "yu-col-eng-230415655",
+    "title": "[진로취업지원팀] 2026 지역기반 미래모빌리티 취업역량강화캠프 신청 안내",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-06-29",
+      "end": "2026-07-01"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강",
+      "박람회·설명회",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-eng",
+        "url": "https://eng.yu.ac.kr/eng/community/notice.do?mode=view&articleNo=230415655"
+      }
+    ],
+    "sources": [
+      "yu-col-eng"
+    ],
+    "postedAt": "2026-06-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:10:56.714Z",
+    "firstSeenAt": "2026-10-01T12:10:56.714Z"
+  },
+  {
     "id": "yu-news-229219787",
     "title": "[YU Digital HUSS] 영남대 박물관 공동 프로젝트 <유물 속 동물, AI로 다시 태어나다> (콘텐츠 제작)참가자 모집",
     "organizer": "인문사회디지털융합인재양성사업단",
@@ -605,6 +653,133 @@
     "collectedAt": "2026-10-01T04:43:09.760Z",
     "firstSeenAt": "2026-10-01T04:43:09.760Z",
     "seriesId": "yu-news-222893764"
+  },
+  {
+    "id": "yu-col-liberalart-230373244",
+    "title": "[국어문화연구소] 6월 컬로퀴엄 안내(6/30)_인문관 312호",
+    "organizer": "국어문화연구소",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-06-30",
+      "end": "2026-06-30"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-liberalart",
+        "url": "https://liberalart.yu.ac.kr/liberalart/board/notice.do?mode=view&articleNo=230373244"
+      }
+    ],
+    "sources": [
+      "yu-col-liberalart"
+    ],
+    "postedAt": "2026-06-15",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:03.375Z",
+    "firstSeenAt": "2026-10-01T12:11:03.375Z"
+  },
+  {
+    "id": "yu-col-sci-230232712",
+    "title": "2026학년도 1학기 학교현장실습 후기 공모 안내",
+    "organizer": "행정실",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-06-30"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-sci",
+        "url": "https://sci.yu.ac.kr/sci/community/notice.do?mode=view&articleNo=230232712"
+      }
+    ],
+    "sources": [
+      "yu-col-sci"
+    ],
+    "postedAt": "2026-06-05",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:10:58.992Z",
+    "firstSeenAt": "2026-10-01T12:10:58.992Z"
+  },
+  {
+    "id": "yu-col-eng-230415661",
+    "title": "2026 한양이엔지(주) 신입사원 공개채용 안내",
+    "organizer": "한양이엔지(주)",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-06-30"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "기업",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-eng",
+        "url": "https://eng.yu.ac.kr/eng/community/notice.do?mode=view&articleNo=230415661"
+      }
+    ],
+    "sources": [
+      "yu-col-eng"
+    ],
+    "postedAt": "2026-06-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:10:55.621Z",
+    "firstSeenAt": "2026-10-01T12:10:55.621Z"
   },
   {
     "id": "yu-news-230387440",
@@ -1163,6 +1338,48 @@
     "seriesId": "yu-news-221533993"
   },
   {
+    "id": "yu-col-sci-230176348",
+    "title": "2026학년도 1학기 교직 적성 및 인성 검사 실시 안내",
+    "organizer": "교무팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-06-01",
+      "end": "2026-06-12"
+    },
+    "activityPeriod": {
+      "start": "2026-06-25",
+      "end": "2026-06-26"
+    },
+    "tags": [
+      "학교",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-sci",
+        "url": "https://sci.yu.ac.kr/sci/community/notice.do?mode=view&articleNo=230176348"
+      }
+    ],
+    "sources": [
+      "yu-col-sci"
+    ],
+    "postedAt": "2026-06-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:02.258Z",
+    "firstSeenAt": "2026-10-01T12:11:02.258Z"
+  },
+  {
     "id": "yu-news-230415663",
     "title": "[글로컬대학사업단 경북AI융합원] 3극 MIB 벨트 AX 혁신 1차년도 산학공동기술개발과제 공고",
     "organizer": "경북AI융합원",
@@ -1445,6 +1662,48 @@
     ]
   },
   {
+    "id": "yu-col-education-229135054",
+    "title": "경상중학교 학습 멘토 모집 안내",
+    "organizer": "경산중학교",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "중학생 수학·영어를 지도할 수 있는 학생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-03-20"
+    },
+    "activityPeriod": {
+      "start": "2026-04-06",
+      "end": "2026-06-24"
+    },
+    "tags": [
+      "학교",
+      "봉사",
+      "장학·지원금",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-education",
+        "url": "https://education.yu.ac.kr/education/notice/notice.do?mode=view&articleNo=229135054"
+      }
+    ],
+    "sources": [
+      "yu-col-education"
+    ],
+    "postedAt": "2026-03-19",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:26.759Z",
+    "firstSeenAt": "2026-10-01T12:11:26.759Z"
+  },
+  {
     "id": "yu-news-230274768",
     "title": "[학생상담센터] (에니어그램 프로그램 내용 추가) 2026학년도 1학기 하계방학 집단상담 프로그램 실시",
     "organizer": "학생상담센터",
@@ -1535,6 +1794,89 @@
     "aliases": [
       "yu-news-230485918"
     ]
+  },
+  {
+    "id": "yu-col-liberalart-230485930",
+    "title": "[한겨레교육] 출판사 취업 준비생을 위한 출판 강의 안내",
+    "organizer": "한겨레교육",
+    "organizerType": "기업",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "대학생 및 대학원생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-liberalart",
+        "url": "https://liberalart.yu.ac.kr/liberalart/board/notice.do?mode=view&articleNo=230485930"
+      }
+    ],
+    "sources": [
+      "yu-col-liberalart"
+    ],
+    "postedAt": "2026-06-23",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:00.071Z",
+    "firstSeenAt": "2026-10-01T12:11:00.071Z"
+  },
+  {
+    "id": "yu-col-pharm-230021738",
+    "title": "[한국의약품안전관리원]「의약품 안전의 미래를 만나다」 프로그램 개최 안내",
+    "organizer": "한국의약품안전관리원",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [
+        "보건의료 관련학과"
+      ],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "보건의료 관련학과 대학생"
+    },
+    "recruitPeriod": {
+      "start": "2026-05-20",
+      "end": "2026-06-02"
+    },
+    "activityPeriod": {
+      "start": "2026-06-23",
+      "end": "2026-06-23"
+    },
+    "tags": [
+      "공공기관",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-pharm",
+        "url": "https://pharm.yu.ac.kr/pharm/community/notice.do?mode=view&articleNo=230021738"
+      }
+    ],
+    "sources": [
+      "yu-col-pharm"
+    ],
+    "postedAt": "2026-05-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:21.049Z",
+    "firstSeenAt": "2026-10-01T12:11:21.049Z"
   },
   {
     "id": "yu-news-230471828",
@@ -2004,6 +2346,45 @@
     "firstSeenAt": "2026-10-01T03:45:19.242Z"
   },
   {
+    "id": "kmu-col-arts-233521",
+    "title": "제6회 전국어린이미술실기대회 요강 안내",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "전국 어린이"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-col-arts",
+        "url": "https://arts.kmu.ac.kr/bbs/arts/325/233521/artclView.do"
+      }
+    ],
+    "sources": [
+      "kmu-col-arts"
+    ],
+    "postedAt": "2026-06-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:47.523Z",
+    "firstSeenAt": "2026-10-01T12:11:47.523Z"
+  },
+  {
     "id": "yu-news-230401555",
     "title": "2026학년도 기술혁신·기업가정신 연계전공(★장학금 지원★) 신규 참여 학생 모집",
     "organizer": "창업교육혁신선도대학사업단",
@@ -2177,6 +2558,54 @@
     "collectedAt": "2026-10-01T03:52:16.788Z",
     "firstSeenAt": "2026-10-01T03:52:16.788Z",
     "seriesId": "yu-news-224809557"
+  },
+  {
+    "id": "yu-career-2175",
+    "title": "2025 영남대 계약직원 희망자 인재 pool 모집",
+    "organizer": "영남대",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2025-04-04",
+      "end": "2025-04-27"
+    },
+    "activityPeriod": {
+      "start": "2025-04-04",
+      "end": "2025-04-27"
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-career",
+        "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2175"
+      },
+      {
+        "sourceId": "yu-col-liberalart",
+        "url": "https://liberalart.yu.ac.kr/liberalart/board/notice.do?mode=view&articleNo=230401591"
+      }
+    ],
+    "sources": [
+      "yu-career",
+      "yu-col-liberalart"
+    ],
+    "postedAt": "2026-06-17",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T02:17:01.939Z",
+    "firstSeenAt": "2026-10-01T02:17:01.939Z",
+    "aliases": [
+      "yu-col-liberalart-230401591"
+    ]
   },
   {
     "id": "yu-news-230387389",
@@ -3101,6 +3530,49 @@
     "firstSeenAt": "2026-10-01T03:42:11.713Z"
   },
   {
+    "id": "yu-col-arts-230274819",
+    "title": "[디자인미술] (주)에프알티 2026-여름학기 국내 현장실습학기제 참여학생 모집안내",
+    "organizer": "(주)에프알티",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-arts",
+        "url": "https://arts.yu.ac.kr/arts/community/notice.do?mode=view&articleNo=230274819"
+      }
+    ],
+    "sources": [
+      "yu-col-arts"
+    ],
+    "postedAt": "2026-06-08",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:29.711Z",
+    "firstSeenAt": "2026-10-01T12:11:29.711Z"
+  },
+  {
     "id": "yu-career-2491",
     "title": "[재맞고] 2026 상반기 자동차산업 직무교육(거점형특화프로그램)[2차수 교육 추가모집]",
     "organizer": "학생성공처",
@@ -3536,6 +4008,94 @@
     "collectedAt": "2026-10-01T04:04:35.467Z",
     "firstSeenAt": "2026-10-01T04:04:35.467Z",
     "seriesId": "yu-news-7569230"
+  },
+  {
+    "id": "yu-col-yumc-229824591",
+    "title": "영남권 허브 임상수기센터 개소식 및 심포지엄",
+    "organizer": "의학교육혁신사업단, 의과학연구소",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [
+        "의과대학"
+      ],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-06-04"
+    },
+    "activityPeriod": {
+      "start": "2026-06-05",
+      "end": "2026-06-05"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-yumc",
+        "url": "https://yumc.yu.ac.kr/yumc/notice/notice-board.do?mode=view&articleNo=229824591"
+      }
+    ],
+    "sources": [
+      "yu-col-yumc"
+    ],
+    "postedAt": "2026-05-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:15.473Z",
+    "firstSeenAt": "2026-10-01T12:11:15.473Z"
+  },
+  {
+    "id": "yu-col-pharm-230035850",
+    "title": "[한국규제과학센터] 제13회 규제과학 혁신포럼 개최 안내(6/5)",
+    "organizer": "식품의약품안전처",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-06-05",
+      "end": "2026-06-05"
+    },
+    "tags": [
+      "정부부처",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-pharm",
+        "url": "https://pharm.yu.ac.kr/pharm/community/notice.do?mode=view&articleNo=230035850"
+      }
+    ],
+    "sources": [
+      "yu-col-pharm"
+    ],
+    "postedAt": "2026-05-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:19.884Z",
+    "firstSeenAt": "2026-10-01T12:11:19.884Z"
   },
   {
     "id": "yu-news-230218618",
@@ -4824,6 +5384,47 @@
     "seriesId": "yu-news-220322596"
   },
   {
+    "id": "kmu-col-arts-232573",
+    "title": "2026학년도 2학기 면학장학생 신청 안내",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-col-arts",
+        "url": "https://arts.kmu.ac.kr/bbs/arts/325/232573/artclView.do"
+      }
+    ],
+    "sources": [
+      "kmu-col-arts"
+    ],
+    "postedAt": "2026-05-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:48.595Z",
+    "firstSeenAt": "2026-10-01T12:11:48.595Z"
+  },
+  {
     "id": "yu-news-230106026",
     "title": "[모집중] 2026 병역진로설계 설명회(대구경북지방병무청)",
     "organizer": "대구경북지방병무청",
@@ -5432,6 +6033,46 @@
     "collectedAt": "2026-10-01T03:51:49.442Z",
     "firstSeenAt": "2026-10-01T03:51:49.442Z",
     "seriesId": "yu-news-226015547"
+  },
+  {
+    "id": "kmu-col-arts-232408",
+    "title": "제36회 계명대학교 전국 고등학생 미술실기대회 요강 및 접수 방법 안내",
+    "organizer": "계명대학교",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "전국 고등학생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-col-arts",
+        "url": "https://arts.kmu.ac.kr/bbs/arts/325/232408/artclView.do"
+      }
+    ],
+    "sources": [
+      "kmu-col-arts"
+    ],
+    "postedAt": "2026-05-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:49.889Z",
+    "firstSeenAt": "2026-10-01T12:11:49.889Z"
   },
   {
     "id": "yu-career-2501",
@@ -6813,6 +7454,52 @@
     "firstSeenAt": "2026-10-01T11:25:44.651Z"
   },
   {
+    "id": "kmu-col-arts-232028",
+    "title": "미술대학 행정팀 고정근로장학생 모집(대명캠퍼스 근무)",
+    "organizer": "미술대학 행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-col-arts",
+        "url": "https://arts.kmu.ac.kr/bbs/arts/325/232028/artclView.do"
+      }
+    ],
+    "sources": [
+      "kmu-col-arts"
+    ],
+    "postedAt": "2026-05-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:51.179Z",
+    "firstSeenAt": "2026-10-01T12:11:51.179Z"
+  },
+  {
     "id": "yu-career-2474",
     "title": "[한국장학재단] 중소기업 취업업계 장학생 기업탐방",
     "organizer": "한국장학재단",
@@ -7012,6 +7699,88 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:45:51.780Z",
     "firstSeenAt": "2026-10-01T03:45:51.780Z"
+  },
+  {
+    "id": "yu-col-yumc-229894863",
+    "title": "영남대학교 의과대학 지역의사제 입학전형 설명회",
+    "organizer": "의과대학",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-yumc",
+        "url": "https://yumc.yu.ac.kr/yumc/notice/notice-board.do?mode=view&articleNo=229894863"
+      }
+    ],
+    "sources": [
+      "yu-col-yumc"
+    ],
+    "postedAt": "2026-05-12",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:13.257Z",
+    "firstSeenAt": "2026-10-01T12:11:13.257Z"
+  },
+  {
+    "id": "yu-col-yumc-229894862",
+    "title": "[RISE-의학] 2026학년도 고등학생 대상 영남대학교 의과대학 진로체험 프로그램",
+    "organizer": "의과대학",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "고등학생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-yumc",
+        "url": "https://yumc.yu.ac.kr/yumc/notice/notice-board.do?mode=view&articleNo=229894862"
+      }
+    ],
+    "sources": [
+      "yu-col-yumc"
+    ],
+    "postedAt": "2026-05-12",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:14.368Z",
+    "firstSeenAt": "2026-10-01T12:11:14.368Z"
   },
   {
     "id": "yu-career-2494",
@@ -9376,6 +10145,49 @@
     "firstSeenAt": "2026-10-01T02:16:50.263Z"
   },
   {
+    "id": "yu-col-politics-229599578",
+    "title": "2026년도 법학적성시험(LEET) 설명회 안내",
+    "organizer": "법학전문대학원협의회",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "법학전문대학원 입학 관심 학생·학부모"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-04-28",
+      "end": "2026-04-28"
+    },
+    "tags": [
+      "학교",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-politics",
+        "url": "https://politics.yu.ac.kr/politics/community/notice.do?mode=view&articleNo=229599578"
+      }
+    ],
+    "sources": [
+      "yu-col-politics"
+    ],
+    "postedAt": "2026-04-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:05.914Z",
+    "firstSeenAt": "2026-10-01T12:11:05.914Z",
+    "seriesId": "yu-news-5995905"
+  },
+  {
     "id": "yu-career-2475",
     "title": "2026 제1차 KB굿잡 우수기업 취업박람회",
     "organizer": "학생성공처",
@@ -9581,6 +10393,47 @@
     "collectedAt": "2026-10-01T03:53:24.875Z",
     "firstSeenAt": "2026-10-01T03:53:24.875Z",
     "seriesId": "yu-news-224028825"
+  },
+  {
+    "id": "yu-col-pharm-229683894",
+    "title": "[한국산업약사회] 제12회 PYLA 참여 학생 모집",
+    "organizer": "한국산업약사회",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-pharm",
+        "url": "https://pharm.yu.ac.kr/pharm/community/notice.do?mode=view&articleNo=229683894"
+      }
+    ],
+    "sources": [
+      "yu-col-pharm"
+    ],
+    "postedAt": "2026-04-27",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:23.210Z",
+    "firstSeenAt": "2026-10-01T12:11:23.210Z"
   },
   {
     "id": "yu-news-229585441",
@@ -10282,6 +11135,51 @@
     ]
   },
   {
+    "id": "yu-col-chek-229388560",
+    "title": "★ 제5회 영남대학교 나눔봉사창조상 포상 계획 안내",
+    "organizer": "영남대학교",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-04-20"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-chek",
+        "url": "https://chek.yu.ac.kr/chek/community/notice.do?mode=view&articleNo=229388560"
+      }
+    ],
+    "sources": [
+      "yu-col-chek"
+    ],
+    "postedAt": "2026-04-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:17.029Z",
+    "firstSeenAt": "2026-10-01T12:11:17.029Z"
+  },
+  {
     "id": "yu-news-229487005",
     "title": "[지역혁신사업본부] RISE사업단 및 글로컬대학사업단 연구원 채용 안내",
     "organizer": "사업운영팀",
@@ -10570,6 +11468,50 @@
     "collectedAt": "2026-10-01T03:56:52.684Z",
     "firstSeenAt": "2026-10-01T03:56:52.684Z",
     "seriesId": "yu-news-225853158"
+  },
+  {
+    "id": "yu-col-education-229543372",
+    "title": "2026년 수성미래교육관 대학생 교육봉사자 모집 안내",
+    "organizer": "수성미래교육관",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "대학생 및 대학원생"
+    },
+    "recruitPeriod": {
+      "start": "2026-04-17",
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "봉사",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-education",
+        "url": "https://education.yu.ac.kr/education/notice/notice.do?mode=view&articleNo=229543372"
+      }
+    ],
+    "sources": [
+      "yu-col-education"
+    ],
+    "postedAt": "2026-04-17",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:22.375Z",
+    "firstSeenAt": "2026-10-01T12:11:22.375Z"
   },
   {
     "id": "yu-news-229529303",
@@ -12517,6 +13459,56 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T03:58:40.296Z",
     "firstSeenAt": "2026-10-01T03:58:40.296Z"
+  },
+  {
+    "id": "kmu-col-arts-227918",
+    "title": "2026학년도 자기주도인재장학(KSRS) 시행 안내문",
+    "organizer": null,
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "kmu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-04-03"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "장학·지원금",
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "kmu-col-arts",
+        "url": "https://arts.kmu.ac.kr/bbs/arts/325/227918/artclView.do"
+      },
+      {
+        "sourceId": "kmu-col-kbs",
+        "url": "https://kbs.kmu.ac.kr/bbs/kbs/173/227996/artclView.do"
+      }
+    ],
+    "sources": [
+      "kmu-col-arts",
+      "kmu-col-kbs"
+    ],
+    "postedAt": "2026-03-11",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:52.457Z",
+    "firstSeenAt": "2026-10-01T12:11:52.457Z",
+    "aliases": [
+      "kmu-col-kbs-227996"
+    ]
   },
   {
     "id": "yu-news-229290105",
@@ -15447,6 +16439,60 @@
     "seriesId": "yu-news-9986693"
   },
   {
+    "id": "yu-col-politics-228994153",
+    "title": "장학사정관 장학금 상시 신청 안내",
+    "organizer": "장학팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-politics",
+        "url": "https://politics.yu.ac.kr/politics/community/notice.do?mode=view&articleNo=228994153"
+      },
+      {
+        "sourceId": "yu-col-pharm",
+        "url": "https://pharm.yu.ac.kr/pharm/community/notice.do?mode=view&articleNo=228994154"
+      }
+    ],
+    "sources": [
+      "yu-col-politics",
+      "yu-col-pharm"
+    ],
+    "postedAt": "2026-03-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:08.135Z",
+    "firstSeenAt": "2026-10-01T12:11:08.135Z",
+    "aliases": [
+      "yu-col-pharm-228994154"
+    ]
+  },
+  {
     "id": "yu-news-228937866",
     "title": "2026학년도 BOOST 전화&화상 외국어(3월 과정) 모집 안내",
     "organizer": "한국어‧국제언어교육원",
@@ -16343,6 +17389,49 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:05:48.689Z",
     "firstSeenAt": "2026-10-01T04:05:48.689Z"
+  },
+  {
+    "id": "yu-col-education-227739231",
+    "title": "대구남산초등학교 도서실 교육봉사자 모집 안내",
+    "organizer": "대구남산초등학교",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "대학(원)생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-01-05",
+      "end": "2026-02-27"
+    },
+    "tags": [
+      "학교",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-education",
+        "url": "https://education.yu.ac.kr/education/notice/notice.do?mode=view&articleNo=227739231"
+      }
+    ],
+    "sources": [
+      "yu-col-education"
+    ],
+    "postedAt": "2025-12-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:28.963Z",
+    "firstSeenAt": "2026-10-01T12:11:28.963Z"
   },
   {
     "id": "yu-news-228839322",
@@ -21108,6 +22197,51 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:11:08.050Z",
     "firstSeenAt": "2026-10-01T04:11:08.050Z"
+  },
+  {
+    "id": "yu-col-chek-227263923",
+    "title": "2025학년도 동계 집중어학프로그램(학점 부여) 안내",
+    "organizer": "외국어교육원",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2025-12-19"
+    },
+    "activityPeriod": {
+      "start": "2025-12-23",
+      "end": "2026-01-21"
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-chek",
+        "url": "https://chek.yu.ac.kr/chek/community/notice.do?mode=view&articleNo=227263923"
+      }
+    ],
+    "sources": [
+      "yu-col-chek"
+    ],
+    "postedAt": "2025-11-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:20.279Z",
+    "firstSeenAt": "2026-10-01T12:11:20.279Z"
   },
   {
     "id": "yu-career-2400",
@@ -29523,6 +30657,56 @@
     "firstSeenAt": "2026-10-01T04:20:35.872Z"
   },
   {
+    "id": "yu-col-politics-227467508",
+    "title": "2025 기업맞춤형 취업캠프 모집",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "2학년",
+        "3학년",
+        "4학년"
+      ],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2025-11-27",
+      "end": "2025-11-29"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-politics",
+        "url": "https://politics.yu.ac.kr/politics/community/notice.do?mode=view&articleNo=227467508"
+      }
+    ],
+    "sources": [
+      "yu-col-politics"
+    ],
+    "postedAt": "2025-11-19",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:10.347Z",
+    "firstSeenAt": "2026-10-01T12:11:10.347Z"
+  },
+  {
     "id": "yu-career-2349",
     "title": "마음도 채우고, 샌드위치도 챙기자! 정신건강특강 OPEN ☕️",
     "organizer": "학생성공처",
@@ -30249,6 +31433,53 @@
     "aliases": [
       "yu-news-227576152"
     ]
+  },
+  {
+    "id": "yu-col-chek-226734632",
+    "title": "★ 2025학년도 생활과학 테크놀로지 공모전 안내",
+    "organizer": "생활과학대학",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [
+        "생활과학대학"
+      ],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2025-11-13"
+    },
+    "activityPeriod": {
+      "start": "2025-11-18",
+      "end": "2025-11-26"
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-chek",
+        "url": "https://chek.yu.ac.kr/chek/community/notice.do?mode=view&articleNo=226734632"
+      }
+    ],
+    "sources": [
+      "yu-col-chek"
+    ],
+    "postedAt": "2025-09-26",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:22.451Z",
+    "firstSeenAt": "2026-10-01T12:11:22.451Z"
   },
   {
     "id": "yu-career-2359",
@@ -31042,17 +32273,16 @@
   {
     "id": "yu-news-227345263",
     "title": "2026 대학생 자작미래자동차 경진대회 개최",
-    "organizer": "디지털융합대학 행정실",
+    "organizer": "디지털융합대학행정실",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "전국 대학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -31070,15 +32300,23 @@
       {
         "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227345263"
+      },
+      {
+        "sourceId": "yu-col-digital",
+        "url": "https://digital.yu.ac.kr/digital/board/notice.do?mode=view&articleNo=227304673"
       }
     ],
     "sources": [
-      "yu-news"
+      "yu-news",
+      "yu-col-digital"
     ],
     "postedAt": "2025-11-10",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T04:21:36.816Z",
-    "firstSeenAt": "2026-10-01T04:21:36.816Z"
+    "firstSeenAt": "2026-10-01T04:21:36.816Z",
+    "aliases": [
+      "yu-col-digital-227304673"
+    ]
   },
   {
     "id": "yu-news-227291107",
@@ -37645,6 +38883,47 @@
     "firstSeenAt": "2026-10-01T04:26:39.372Z"
   },
   {
+    "id": "yu-col-yumc-227087108",
+    "title": "제11회 영남의대 의료인문학 한마당 개최 안내",
+    "organizer": "관리자",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-yumc",
+        "url": "https://yumc.yu.ac.kr/yumc/notice/notice-board.do?mode=view&articleNo=227087108"
+      }
+    ],
+    "sources": [
+      "yu-col-yumc"
+    ],
+    "postedAt": "2025-10-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:18.789Z",
+    "firstSeenAt": "2026-10-01T12:11:18.789Z"
+  },
+  {
     "id": "yu-career-2323",
     "title": "[인재양성지원센터] [재맞고] 2025 상생협력 채용박람회 탐방 취업캠프",
     "organizer": "인재양성지원센터",
@@ -41864,6 +43143,51 @@
     "aliases": [
       "yu-news-226639664"
     ]
+  },
+  {
+    "id": "yu-col-life-226598911",
+    "title": "2026학년도 미국 IOWA주립대학교 복수학위제(3+1.5) 프로그램 참여 학생 모집 안내",
+    "organizer": "생명응용과학대학",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2025-09-16",
+      "end": "2025-09-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "해외·글로벌"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-life",
+        "url": "https://life.yu.ac.kr/life/community/notice.do?mode=view&articleNo=226598911"
+      }
+    ],
+    "sources": [
+      "yu-col-life"
+    ],
+    "postedAt": "2025-09-16",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:15.942Z",
+    "firstSeenAt": "2026-10-01T12:11:15.942Z"
   },
   {
     "id": "yu-career-2300",
@@ -60630,45 +61954,6 @@
     "seriesId": "yu-news-5995905"
   },
   {
-    "id": "yu-career-2175",
-    "title": "2025 영남대 계약직원 희망자 인재 pool 모집",
-    "organizer": "영남대",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": []
-    },
-    "recruitPeriod": {
-      "start": "2025-04-04",
-      "end": "2025-04-27"
-    },
-    "activityPeriod": {
-      "start": "2025-04-04",
-      "end": "2025-04-27"
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-career",
-        "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2175"
-      }
-    ],
-    "sources": [
-      "yu-career"
-    ],
-    "postedAt": null,
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T02:17:01.939Z",
-    "firstSeenAt": "2026-10-01T02:17:01.939Z"
-  },
-  {
     "id": "yu-news-224607026",
     "title": "2025학년도 1학기 유학생 취업역량강화 프로그램 - 채용박람회(A)",
     "organizer": "유학생지원팀",
@@ -70262,6 +71547,61 @@
     "seriesId": "yu-news-5312865"
   },
   {
+    "id": "yu-news-222615873",
+    "title": "[학생지원팀] 2024학년도 지구촌 공동과제와 사회공헌 이해 증진을 위한 아프리카 현지조사 프로그램 참가자 모집",
+    "organizer": "학생지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2024-11-27",
+      "end": "2024-12-05"
+    },
+    "activityPeriod": {
+      "start": "2025-01-11",
+      "end": "2025-01-19"
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "해외·글로벌",
+      "해외탐방"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222615873"
+      },
+      {
+        "sourceId": "yu-col-digital",
+        "url": "https://digital.yu.ac.kr/digital/board/notice.do?mode=view&articleNo=222708554"
+      }
+    ],
+    "sources": [
+      "yu-news",
+      "yu-col-digital"
+    ],
+    "postedAt": "2024-11-26",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T05:06:20.590Z",
+    "firstSeenAt": "2026-10-01T05:06:20.590Z",
+    "seriesId": "yu-news-8253736",
+    "aliases": [
+      "yu-col-digital-222708554"
+    ]
+  },
+  {
     "id": "yu-career-2101",
     "title": "2024 동계방학 6시그마 'GB+BB Master' 통합과정 품질교육",
     "organizer": "학생성공처",
@@ -75305,47 +76645,6 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T05:05:22.796Z",
     "firstSeenAt": "2026-10-01T05:05:22.796Z"
-  },
-  {
-    "id": "yu-news-222615873",
-    "title": "[학생지원팀] 2024학년도 지구촌 공동과제와 사회공헌 이해 증진을 위한 아프리카 현지조사 프로그램 참가자 모집",
-    "organizer": "학생지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2024-11-27",
-      "end": "2024-12-05"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222615873"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-11-26",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:06:20.590Z",
-    "firstSeenAt": "2026-10-01T05:06:20.590Z",
-    "seriesId": "yu-news-8253736"
   },
   {
     "id": "knu-event-1333136",
@@ -146829,7 +148128,8 @@
     "postedAt": "2023-06-09",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T06:18:32.692Z",
-    "firstSeenAt": "2026-10-01T06:18:32.692Z"
+    "firstSeenAt": "2026-10-01T06:18:32.692Z",
+    "seriesId": "yu-news-6393359"
   },
   {
     "id": "yu-news-6393354",
@@ -153492,6 +154792,53 @@
     "firstSeenAt": "2026-10-01T02:17:14.830Z"
   },
   {
+    "id": "yu-col-life-5995381",
+    "title": "생명응용과학대학 제2회「영남대학교 나눔봉사창조상」포상자 모집 안내",
+    "organizer": "생명응용과학대학",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [
+        "생명응용과학대학"
+      ],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2023-04-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-life",
+        "url": "https://life.yu.ac.kr/life/community/notice.do?mode=view&articleNo=5995381"
+      }
+    ],
+    "sources": [
+      "yu-col-life"
+    ],
+    "postedAt": "2023-04-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:17.021Z",
+    "firstSeenAt": "2026-10-01T12:11:17.021Z"
+  },
+  {
     "id": "yu-career-1670",
     "title": "(4/17,4/18추가) 2023학년도 3월2차/4월1차 진로 및 취업특강",
     "organizer": "학생성공처",
@@ -155436,6 +156783,54 @@
     "seriesId": "yu-news-222537255"
   },
   {
+    "id": "yu-col-life-5870273",
+    "title": "학군사관(ROTC) 64 · 65기 후보생 모집",
+    "organizer": "육군학생군사학교",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "1학년",
+        "2학년",
+        "3학년"
+      ],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2023-03-02",
+      "end": "2023-04-05"
+    },
+    "activityPeriod": {
+      "start": "2023-03-02",
+      "end": "2023-04-05"
+    },
+    "tags": [
+      "정부부처",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-life",
+        "url": "https://life.yu.ac.kr/life/community/notice.do?mode=view&articleNo=5870273"
+      }
+    ],
+    "sources": [
+      "yu-col-life"
+    ],
+    "postedAt": "2023-02-20",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:19.207Z",
+    "firstSeenAt": "2026-10-01T12:11:19.207Z"
+  },
+  {
     "id": "yu-news-5994988",
     "title": "(재게시) 2023 5개학교연합 지식재산 산학연수 IP:PBL 모집 안내(~4/4 18:00까지)",
     "organizer": "지식재산융합인재양성사업단",
@@ -156689,6 +158084,53 @@
     "collectedAt": "2026-10-01T06:34:38.615Z",
     "firstSeenAt": "2026-10-01T06:34:38.615Z",
     "seriesId": "yu-news-86732"
+  },
+  {
+    "id": "yu-col-life-5994130",
+    "title": "‘미국 아이오와주립대학교 복수학위제 및 Study Abroad’ 설명회 개최 안내",
+    "organizer": "관리자",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [
+        "생명응용과학대학"
+      ],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2023-03-24",
+      "end": "2023-03-24"
+    },
+    "tags": [
+      "학교",
+      "해외·글로벌",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-life",
+        "url": "https://life.yu.ac.kr/life/community/notice.do?mode=view&articleNo=5994130"
+      }
+    ],
+    "sources": [
+      "yu-col-life"
+    ],
+    "postedAt": "2023-03-17",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:18.131Z",
+    "firstSeenAt": "2026-10-01T12:11:18.131Z"
   },
   {
     "id": "yu-news-5994529",
@@ -162874,6 +164316,53 @@
     "collectedAt": "2026-10-01T06:42:38.591Z",
     "firstSeenAt": "2026-10-01T06:42:38.591Z",
     "seriesId": "yu-news-10326330"
+  },
+  {
+    "id": "yu-col-life-5445270",
+    "title": "2023학년도 1학기 도전학기제 신청자 모집 안내",
+    "organizer": "수업학적팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2023-01-27",
+      "end": "2023-01-27"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-col-life",
+        "url": "https://life.yu.ac.kr/life/community/notice.do?mode=view&articleNo=5445270"
+      }
+    ],
+    "sources": [
+      "yu-col-life"
+    ],
+    "postedAt": "2023-01-16",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T12:11:22.471Z",
+    "firstSeenAt": "2026-10-01T12:11:22.471Z"
   },
   {
     "id": "yu-news-5289098",

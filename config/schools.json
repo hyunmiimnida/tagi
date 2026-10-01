@@ -133,6 +133,156 @@
         "pages": 3,
         "useAi": true,
         "localOnly": true
+      },
+      {
+        "id": "yu-rise",
+        "name": "RISE사업단",
+        "collector": "news-board",
+        "url": "https://www.yu.ac.kr/rise/board/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-liberalart",
+        "name": "인문대학",
+        "collector": "news-board",
+        "url": "https://liberalart.yu.ac.kr/liberalart/board/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-sci",
+        "name": "자연과학대학",
+        "collector": "news-board",
+        "url": "https://sci.yu.ac.kr/sci/community/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-eng",
+        "name": "공과대학",
+        "collector": "news-board",
+        "url": "https://eng.yu.ac.kr/eng/community/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-digital",
+        "name": "디지털융합대학",
+        "collector": "news-board",
+        "url": "https://digital.yu.ac.kr/digital/board/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-politics",
+        "name": "사회과학대학",
+        "collector": "news-board",
+        "url": "https://politics.yu.ac.kr/politics/community/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-sob",
+        "name": "경영대학",
+        "collector": "news-board",
+        "url": "https://sob.yu.ac.kr/sob/community/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-yumc",
+        "name": "의과대학",
+        "collector": "news-board",
+        "url": "https://yumc.yu.ac.kr/yumc/notice/notice-board.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-pharm",
+        "name": "약학대학",
+        "collector": "news-board",
+        "url": "https://pharm.yu.ac.kr/pharm/community/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-life",
+        "name": "생명응용과학대학",
+        "collector": "news-board",
+        "url": "https://life.yu.ac.kr/life/community/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-chek",
+        "name": "생활과학대학",
+        "collector": "news-board",
+        "url": "https://chek.yu.ac.kr/chek/community/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-education",
+        "name": "사범대학",
+        "collector": "news-board",
+        "url": "https://education.yu.ac.kr/education/notice/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-arts",
+        "name": "예술대학",
+        "collector": "news-board",
+        "url": "https://arts.yu.ac.kr/arts/community/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-gl",
+        "name": "글로벌인재대학",
+        "collector": "news-board",
+        "url": "https://gl.yu.ac.kr/gl/community/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
+      },
+      {
+        "id": "yu-col-ccgs",
+        "name": "천마학부대학",
+        "collector": "news-board",
+        "url": "https://ccgs.yu.ac.kr/ccgs/support/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "localOnly": true
       }
     ]
   },
@@ -273,6 +423,216 @@
           "pageParam": "pageNo",
           "title": ".bbs_info dl.subject dd",
           "content": ".bbs_con"
+        }
+      },
+      {
+        "id": "kmu-startup",
+        "name": "창업지원단",
+        "collector": "table-board",
+        "url": "https://cms.kmu.ac.kr/bbs/kubic2025/2441/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "defaultOrganizer": "창업지원단",
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://cms.kmu.ac.kr/bbs/kubic2025/2441/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".view .title strong",
+          "content": ".view .txt",
+          "listDate": "td.td-date",
+          "date": ".view .title .detail li"
+        }
+      },
+      {
+        "id": "kmu-col-abeek",
+        "name": "공과대학",
+        "collector": "table-board",
+        "url": "https://abeek.kmu.ac.kr/bbs/abeek/251/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://abeek.kmu.ac.kr/bbs/abeek/251/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".view .title strong",
+          "content": ".view .txt",
+          "listDate": "td.td-date",
+          "date": ".view .title .detail li"
+        }
+      },
+      {
+        "id": "kmu-col-arts",
+        "name": "미술대학",
+        "collector": "table-board",
+        "url": "https://arts.kmu.ac.kr/bbs/arts/325/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://arts.kmu.ac.kr/bbs/arts/325/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".view .title strong",
+          "content": ".view .txt",
+          "listDate": "td.td-date",
+          "date": ".view .title .detail li"
+        }
+      },
+      {
+        "id": "kmu-col-coe",
+        "name": "사범대학",
+        "collector": "table-board",
+        "url": "https://coe.kmu.ac.kr/bbs/coe/154/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://coe.kmu.ac.kr/bbs/coe/154/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".view .title strong",
+          "content": ".view .txt",
+          "listDate": "td.td-date",
+          "date": ".view .title .detail li"
+        }
+      },
+      {
+        "id": "kmu-col-human",
+        "name": "인문국제학대학",
+        "collector": "table-board",
+        "url": "https://human.kmu.ac.kr/bbs/human/533/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://human.kmu.ac.kr/bbs/human/533/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".view .title strong",
+          "content": ".view .txt",
+          "listDate": "td.td-date",
+          "date": ".view .title .detail li"
+        }
+      },
+      {
+        "id": "kmu-col-kbs",
+        "name": "경영대학",
+        "collector": "table-board",
+        "url": "https://kbs.kmu.ac.kr/bbs/kbs/173/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://kbs.kmu.ac.kr/bbs/kbs/173/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".view .title strong",
+          "content": ".view .txt",
+          "listDate": "td.td-date",
+          "date": ".view .title .detail li"
+        }
+      },
+      {
+        "id": "kmu-col-musicarts",
+        "name": "음악공연예술대학",
+        "collector": "table-board",
+        "url": "https://musicarts.kmu.ac.kr/bbs/musicarts/304/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://musicarts.kmu.ac.kr/bbs/musicarts/304/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".view .title strong",
+          "content": ".view .txt",
+          "listDate": "td.td-date",
+          "date": ".view .title .detail li"
+        }
+      },
+      {
+        "id": "kmu-col-natural",
+        "name": "자연과학대학",
+        "collector": "table-board",
+        "url": "https://natural.kmu.ac.kr/bbs/natural/718/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://natural.kmu.ac.kr/bbs/natural/718/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".view .title strong",
+          "content": ".view .txt",
+          "listDate": "td.td-date",
+          "date": ".view .title .detail li"
+        }
+      },
+      {
+        "id": "kmu-col-pharmacyhome",
+        "name": "약학대학",
+        "collector": "table-board",
+        "url": "https://pharmacyhome.kmu.ac.kr/bbs/pharmacyhome/383/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://pharmacyhome.kmu.ac.kr/bbs/pharmacyhome/383/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".view .title strong",
+          "content": ".view .txt",
+          "listDate": "td.td-date",
+          "date": ".view .title .detail li"
+        }
+      },
+      {
+        "id": "kmu-col-sports",
+        "name": "체육대학",
+        "collector": "table-board",
+        "url": "https://sports.kmu.ac.kr/bbs/sports/357/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://sports.kmu.ac.kr/bbs/sports/357/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".view .title strong",
+          "content": ".view .txt",
+          "listDate": "td.td-date",
+          "date": ".view .title .detail li"
+        }
+      },
+      {
+        "id": "kmu-col-ssc",
+        "name": "사회과학대학",
+        "collector": "table-board",
+        "url": "https://ssc.kmu.ac.kr/bbs/ssc/190/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://ssc.kmu.ac.kr/bbs/ssc/190/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".view .title strong",
+          "content": ".view .txt",
+          "listDate": "td.td-date",
+          "date": ".view .title .detail li"
         }
       }
     ]

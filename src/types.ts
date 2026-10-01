@@ -61,7 +61,8 @@ export interface Source {
 // 표 모양 게시판(번호·제목·작성자·등록일) 설정. 학교마다 다른 부분만 적는다
 export interface TableBoard {
   link: string; // 목록에서 게시물 링크 선택자 (예: "td.subject a")
-  idParam: string; // 링크 주소에서 게시물 번호가 담긴 칸 이름 (예: "parm_bod_uid")
+  idParam?: string; // 링크 주소에서 게시물 번호가 담긴 칸 이름 (예: "parm_bod_uid")
+  idPattern?: string; // 번호가 주소 경로에 있을 때 찾는 규칙 (예: "/(\d+)/artclView")
   viewUrl: string; // 상세 주소. {id} 자리에 게시물 번호가 들어간다
   pageParam: string; // 목록 쪽 번호 칸 이름 (1쪽부터)
   title: string; // 상세에서 제목 선택자

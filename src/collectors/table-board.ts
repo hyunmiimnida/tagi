@@ -34,7 +34,9 @@ async function listPage(ctx: CollectContext, page: number): Promise<ArchivePost[
   for (const a of $(board.link).toArray()) {
     const href = $(a).attr("href") ?? "";
     // 주소의 & 앞뒤가 깨져 있어도 번호를 찾도록 글자로 찾는다
-    const postId = href.match(new RegExp(`[?&]${board.idParam.replace(/\./g, "\\.")}=(\\d+)`))?.[1];
+    // 번호가 주소 경로에 있으면(idPattern) 그 규칙으로, 아니면 주소의 칸(idParam)에서 찾는다
+    const pattern = board.idPattern ?? `[?&]${(board.idParam ?? "").replace(/\./g, "\\.")}=(\\d+)`;
+    const postId = href.match(new RegExp(pattern))?.[1];
     if (!postId) continue;
     const row = $(a).closest("tr");
     posts.push({

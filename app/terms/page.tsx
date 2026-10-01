@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { getSourceNames } from "../../lib/data.ts";
+import { describeSources } from "../../lib/data.ts";
 import { SITE_NAME } from "../../lib/filter.ts";
 import { COMMENT_RULES, CONTACT, POLICY_DATE } from "../../lib/policy.ts";
 
 export const metadata = { title: "이용약관" };
 
 export default function TermsPage() {
-  const sources = Object.values(getSourceNames()).join(", ");
+  const sources = describeSources();
   return (
     <article className="card doc">
       <h1>이용약관</h1>

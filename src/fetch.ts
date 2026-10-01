@@ -1,16 +1,21 @@
 const USER_AGENT = "campus-info-hub-collector/0.1";
 const DELAY_MS = 1000; // 사이트에 부담을 주지 않도록 요청 사이에 쉬는 시간
 
-let lastRequestAt = 0;
+// 사이트(호스트)마다 요청을 한 줄로 세워 1초씩 띄운다. 서로 다른 학교 사이트는 동시에 읽어도 된다
+const queues = new Map<string, Promise<unknown>>();
 
-async function politeFetch(url: string): Promise<Response> {
-  const wait = lastRequestAt + DELAY_MS - Date.now();
-  if (wait > 0) await new Promise((r) => setTimeout(r, wait));
-  lastRequestAt = Date.now();
-  return fetch(url, {
-    headers: { "User-Agent": USER_AGENT },
-    signal: AbortSignal.timeout(30_000),
+function politeFetch(url: string): Promise<Response> {
+  const host = new URL(url).host;
+  const turn = (queues.get(host) ?? Promise.resolve()).then(async () => {
+    const response = await fetch(url, {
+      headers: { "User-Agent": USER_AGENT },
+      signal: AbortSignal.timeout(30_000),
+    });
+    await new Promise((r) => setTimeout(r, DELAY_MS)); // 다음 요청까지 쉰다
+    return response;
   });
+  queues.set(host, turn.catch(() => {}));
+  return turn;
 }
 
 export async function fetchHtml(url: string): Promise<string> {

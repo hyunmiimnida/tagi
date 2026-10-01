@@ -129,6 +129,13 @@ export function getSourceNames(): Record<string, string> {
   return names;
 }
 
+// 출처 요약. 예: "영남대학교·경북대학교·계명대학교 공지 34곳" (출처가 많아 이름을 다 나열하지 않는다)
+export function describeSources(): string {
+  const schools = readSchools();
+  const count = schools.reduce((n, school) => n + school.sources.filter((s) => s.enabled).length, 0);
+  return `${schools.map((school) => school.name).join("·")} 공지 ${count}곳`;
+}
+
 // 마지막 수집 시각을 "10.1 06:00" 형식(한국 시간)으로
 export function getLastCollected(): string | null {
   try {

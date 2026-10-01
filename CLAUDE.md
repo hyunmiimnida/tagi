@@ -80,7 +80,9 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `src/types.ts` — 공통 데이터 형식
 - `src/collectors/` — 사이트별 수집기 (`index.ts`에 등록)
   - `news-board`(영남대 영대소식), `career-program-list`(영남대 취업정보), `table-board`(번호·제목·작성자·등록일 표 모양 게시판. 경북대·계명대처럼 선택자·주소 규칙을 출처의 `board` 설정에 적으면 새 학교도 코드 없이 추가)
-  - 지금 학교: 영남대(영대소식·취업정보), 경북대(공지사항·행사·창업지원단), 계명대(공지사항·모집·장학). 경북대 KNU CUBE·진로취업과, 계명대 STORY+·취업센터는 robots.txt가 막아 수집하지 않는다
+  - 지금 학교: 영남대(취업정보, 그리고 내 컴퓨터에서만 수집하는 영대소식·RISE사업단·단과대 14곳), 경북대(공지사항·행사·창업지원단), 계명대(공지사항·모집·장학·창업지원단·단과대 10곳)
+  - 수집하지 않는 곳: 경북대 KNU CUBE·진로취업과·단과대(home.knu.ac.kr의 /HOME 경로를 robots.txt가 막음)·AI대학(AI 크롤러 차단), 계명대 STORY+·취업센터·간호대·의대(접근 거부), 영남대 창업지원단 사이트(글이 거의 없음, 영대소식·RISE사업단에 같은 글이 올라옴)
+  - 계명대 단과대·창업지원단은 K2Web 게시판(`/bbs/{사이트}/{게시판번호}/artclList.do`)이라 table-board의 `idPattern`으로 번호를 찾는다
 - `data/programs.json` — 수집 결과(최근 90일), `data/archive.json` — 지난 공고 보관함, `data/collect-log.json` — 마지막 수집 기록
 - `app/` — 화면. 하단 탭 바(`components/BottomNav.tsx`)로 홈 `/`, 공고 `/programs`, 캘린더 `/calendar`, 프로필 `/my`를 오간다. 상세는 `/programs/[id]`
   - 목록 필터는 주소(`?school=yu&unit=...&tag=...&q=...&closed=1&sort=recent`)에 저장된다

@@ -16,7 +16,7 @@ import { cleanPeriods, looksLikeNoticeOnly } from "./extract.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
-import type { Program, School, TagCategory } from "./types.ts";
+import type { CollectedItem, Program, School, Source, TagCategory } from "./types.ts";
 
 const CONFIG_DIR = new URL("../config/", import.meta.url);
 
@@ -39,56 +39,72 @@ const incoming: Program[] = [];
 const excluded = new Set<string>(); // 학생 대상이 아니라서 뺀 게시물 id
 const log: { source: string; ok: boolean; count: number; message: string }[] = [];
 
-for (const school of schools) {
-  for (const source of school.sources) {
-    const label = `[${school.name} > ${source.name}]`;
-    if (!source.enabled) continue;
+// 1단계: 출처별로 새 게시물을 읽는다. 서로 다른 사이트는 동시에 읽는다 (같은 사이트는 fetch.ts가 1초씩 띄운다)
+// 한 출처가 실패해도 나머지 출처는 계속 수집한다
+const READ_PARALLEL = 6;
+const results: { source: Source; label: string; items: CollectedItem[] }[] = [];
+const tasks = schools.flatMap((school) => school.sources.filter((source) => source.enabled).map((source) => ({ school, source })));
 
-    // 해외 서버(GitHub Actions)에서 접속할 수 없는 출처는 내 컴퓨터에서만 수집한다
-    if (source.localOnly && process.env.GITHUB_ACTIONS === "true") {
-      console.log(`${label} 내 컴퓨터에서만 수집하는 출처라서 건너뜀`);
-      log.push({ source: source.id, ok: true, count: 0, message: "내 컴퓨터에서만 수집" });
-      continue;
-    }
-
-    // 한 출처가 실패해도 나머지 출처는 계속 수집한다
-    try {
-      const collector = collectors[source.collector];
-      if (!collector) throw new Error(`"${source.collector}" 수집기가 등록되어 있지 않음`);
-      if (!(await isAllowedByRobots(source.url))) {
-        console.log(`${label} robots.txt에서 자동 접근을 막아서 수집하지 않음`);
-        log.push({ source: source.id, ok: true, count: 0, message: "robots.txt에서 막음" });
-        continue;
-      }
-
-      const items = await collector({ school, source, fetchHtml, isKnown: (url) => knownUrls.has(url) });
-      for (const item of items) enrich(item, source, categories);
-      const needAi = items.filter((item) => !aiDoneUrls.has(item.program.links[0].url));
-      const ai = source.useAi ? await enrichWithAi(needAi, categories) : null;
-      const aiCount = ai?.done ?? 0;
-      // 교원·직원만 대상인 글은 학생용 정보가 아니므로 저장하지 않는다
-      // AI가 추출하지 못한 글(GitHub Actions 등)은 단순 안내로 보이는 제목만 이번에 건너뛴다.
-      // 기록하지 않으므로 AI가 있을 때 다시 판단한다
-      const studentItems = items.filter((item) =>
-        item.program.extractedBy === "ai"
-          ? !ai?.notForStudents.has(item.program.id)
-          : !ai?.notForStudents.has(item.program.id) && !looksLikeNoticeOnly(item.program.title),
-      );
-      ai?.notForStudents.forEach((id) => excluded.add(id));
-      for (const item of items) if (excluded.has(item.program.id)) excludedUrls.add(item.program.links[0].url);
-      if (ai?.notForStudents.size) console.log(`${label} 학생 대상이 아닌 글 ${ai.notForStudents.size}개 제외`);
-      incoming.push(...studentItems.map((item) => item.program));
-
-      console.log(`${label} ${items.length}개 수집` + (aiCount ? ` (AI 추출 ${aiCount}개)` : ""));
-      log.push({ source: source.id, ok: true, count: items.length, message: "" });
-    } catch (error) {
-      // 접속 오류는 실제 원인(cause)까지 기록한다
-      const cause = error instanceof Error && error.cause instanceof Error ? ` (${error.cause.message})` : "";
-      const message = (error instanceof Error ? error.message : String(error)) + cause;
-      console.error(`${label} 수집 실패: ${message}`);
-      log.push({ source: source.id, ok: false, count: 0, message });
-    }
+async function readSource({ school, source }: (typeof tasks)[number]) {
+  const label = `[${school.name} > ${source.name}]`;
+  // 해외 서버(GitHub Actions)에서 접속할 수 없는 출처는 내 컴퓨터에서만 수집한다
+  if (source.localOnly && process.env.GITHUB_ACTIONS === "true") {
+    console.log(`${label} 내 컴퓨터에서만 수집하는 출처라서 건너뜀`);
+    log.push({ source: source.id, ok: true, count: 0, message: "내 컴퓨터에서만 수집" });
+    return;
   }
+  try {
+    const collector = collectors[source.collector];
+    if (!collector) throw new Error(`"${source.collector}" 수집기가 등록되어 있지 않음`);
+    if (!(await isAllowedByRobots(source.url))) {
+      console.log(`${label} robots.txt에서 자동 접근을 막아서 수집하지 않음`);
+      log.push({ source: source.id, ok: true, count: 0, message: "robots.txt에서 막음" });
+      return;
+    }
+    const items = await collector({ school, source, fetchHtml, isKnown: (url) => knownUrls.has(url) });
+    for (const item of items) enrich(item, source, categories);
+    console.log(`${label} ${items.length}개 읽음`);
+    results.push({ source, label, items });
+  } catch (error) {
+    // 접속 오류는 실제 원인(cause)까지 기록한다
+    const cause = error instanceof Error && error.cause instanceof Error ? ` (${error.cause.message})` : "";
+    const message = (error instanceof Error ? error.message : String(error)) + cause;
+    console.error(`${label} 수집 실패: ${message}`);
+    log.push({ source: source.id, ok: false, count: 0, message });
+  }
+}
+
+let nextTask = 0;
+await Promise.all(
+  Array.from({ length: READ_PARALLEL }, async () => {
+    while (nextTask < tasks.length) await readSource(tasks[nextTask++]);
+  }),
+);
+
+// 2단계: AI 추출이 필요한 글을 모두 모아 한꺼번에 보낸다 (ai.ts가 여러 묶음을 동시에 보낸다)
+const needAi = results
+  .filter(({ source }) => source.useAi)
+  .flatMap(({ items }) => items.filter((item) => !aiDoneUrls.has(item.program.links[0].url)));
+const ai = needAi.length > 0 ? await enrichWithAi(needAi, categories) : null;
+
+// 3단계: 출처별로 결과를 정리한다
+for (const { source, label, items } of results) {
+  // 학생이 신청·참가할 기회가 아닌 글은 저장하지 않는다
+  // AI가 추출하지 못한 글(GitHub Actions 등)은 단순 안내로 보이는 제목만 이번에 건너뛴다.
+  // 기록하지 않으므로 AI가 있을 때 다시 판단한다
+  const notForStudents = items.filter((item) => ai?.notForStudents.has(item.program.id));
+  const studentItems = items.filter(
+    (item) => !ai?.notForStudents.has(item.program.id) && (item.program.extractedBy === "ai" || !looksLikeNoticeOnly(item.program.title)),
+  );
+  for (const item of notForStudents) {
+    excluded.add(item.program.id);
+    excludedUrls.add(item.program.links[0].url);
+  }
+  if (notForStudents.length) console.log(`${label} 학생 대상이 아닌 글 ${notForStudents.length}개 제외`);
+  incoming.push(...studentItems.map((item) => item.program));
+  const aiCount = items.filter((item) => item.program.extractedBy === "ai").length;
+  console.log(`${label} ${items.length}개 수집` + (aiCount ? ` (AI 추출 ${aiCount}개)` : ""));
+  log.push({ source: source.id, ok: true, count: items.length, message: "" });
 }
 
 // 마지막 일정이 오래 지난 항목은 지우지 않고 보관함(archive.json)으로 옮긴다
