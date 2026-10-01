@@ -7,6 +7,7 @@ import { downloadIcs } from "../lib/ics.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import type { ProgramView as Program } from "../lib/filter.ts";
 import { CalendarIcon, CalendarPlusIcon, ChevronIcon } from "./Icons.tsx";
+import { PastFavorites } from "./PastFavorites.tsx";
 
 interface CalendarEvent {
   date: string;
@@ -38,6 +39,7 @@ export function CalendarView({ programs }: { programs: Program[] }) {
   const favorites = useMemo(() => programs.filter((p) => user.favorites.has(p.id)), [programs, user.favorites]);
   const events = useMemo(() => favorites.flatMap(eventsOf), [favorites]);
   const noDate = favorites.filter((p) => eventsOf(p).length === 0);
+  const listedIds = useMemo(() => new Set(programs.map((p) => p.id)), [programs]);
 
   if (!today || !user.ready) return <div className="skeleton-block tall" />;
 
@@ -179,6 +181,8 @@ export function CalendarView({ programs }: { programs: Program[] }) {
           </ul>
         </section>
       )}
+
+      <PastFavorites listedIds={listedIds} />
     </div>
   );
 }
