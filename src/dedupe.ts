@@ -73,6 +73,7 @@ function mergeInto(base: Program, extra: Program): void {
   base.recruitPeriod = fillPeriod(base.recruitPeriod, extra.recruitPeriod);
   base.activityPeriod = fillPeriod(base.activityPeriod, extra.activityPeriod);
   base.postedAt ??= extra.postedAt;
+  if (!base.summary && extra.summary !== undefined) base.summary = extra.summary ?? base.summary ?? null;
   // 주최 유형 태그는 base의 것만 남긴다
   base.tags = union(base.tags, extra.tags.filter((t) => t !== extra.organizerType || t === base.organizerType));
   base.sources = union(base.sources, extra.sources);
@@ -94,6 +95,7 @@ function keepAiFields(saved: Program, fresh: Program): Program {
     organizerType: saved.organizerType,
     target: saved.target,
     tags: saved.tags,
+    summary: saved.summary,
     recruitPeriod: fillPeriod(fresh.recruitPeriod, saved.recruitPeriod),
     activityPeriod: fillPeriod(fresh.activityPeriod, saved.activityPeriod),
     extractedBy: "ai",
@@ -117,6 +119,7 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
         if (fresh.target.openTo === undefined && saved.target.openTo !== undefined) {
           fresh.target = { ...fresh.target, openTo: saved.target.openTo, schools: saved.target.schools };
         }
+        if (fresh.summary === undefined && saved.summary !== undefined) fresh.summary = saved.summary;
         if (saved.aliases) fresh.aliases = [...new Set([...saved.aliases, ...(fresh.aliases ?? [])])];
         result[index] = fresh;
       } else {
@@ -177,6 +180,7 @@ export function collapseReposts(programs: Program[]): Program[] {
         base.tags = next.tags;
         base.organizer = next.organizer ?? base.organizer;
         base.organizerType = next.organizerType ?? base.organizerType;
+        if (next.summary) base.summary = next.summary;
         base.extractedBy = "ai";
       }
       base.links = [...next.links, ...base.links.filter((l) => !next.links.some((n) => n.url === l.url))];

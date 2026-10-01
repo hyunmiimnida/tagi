@@ -37,6 +37,10 @@ export default function PrivacyPage() {
             <td>내가 한 신고와 숨긴 사용자 목록</td>
             <td>규칙을 어긴 댓글 관리, 숨긴 사람 글 가리기</td>
           </tr>
+          <tr>
+            <td>알림 받을 기기 주소(마감 알림을 켠 경우, 브라우저가 만든 값)</td>
+            <td>관심 공고 마감 하루 전 알림 보내기 (알림을 끄면 바로 지움)</td>
+          </tr>
         </tbody>
       </table>
       <p>
@@ -54,6 +58,8 @@ export default function PrivacyPage() {
         <li>Supabase: 로그인과 계정 정보 저장</li>
         <li>Vercel: 사이트 운영 (접속 기록이 일시적으로 남을 수 있음)</li>
         <li>카카오, 구글: 소셜 로그인</li>
+        <li>GitHub: 매일 아침 마감 알림을 보내는 작업 실행</li>
+        <li>브라우저 알림 서비스(구글·애플·모질라 등, 쓰는 브라우저에 따라): 마감 알림 전달 (공고 제목을 암호화해 보냄)</li>
       </ul>
       <p>위 목적 밖으로 정보를 다른 곳에 주거나 팔지 않습니다.</p>
 
@@ -62,7 +68,7 @@ export default function PrivacyPage() {
         <tbody>
           <tr>
             <th>받는 곳</th>
-            <td>Supabase Inc.(로그인·계정 정보 저장), Vercel Inc.(사이트 운영)</td>
+            <td>Supabase Inc.(로그인·계정 정보 저장), Vercel Inc.(사이트 운영), GitHub Inc.(알림 보내기 작업), 브라우저 알림 서비스(마감 알림을 켠 경우)</td>
           </tr>
           <tr>
             <th>나라</th>
@@ -70,7 +76,7 @@ export default function PrivacyPage() {
           </tr>
           <tr>
             <th>옮기는 정보</th>
-            <td>1번 표의 정보(Supabase), 접속 기록(Vercel)</td>
+            <td>1번 표의 정보(Supabase), 접속 기록(Vercel), 알림 받을 기기 주소와 관심 공고(GitHub·알림 서비스, 알림을 보낼 때만)</td>
           </tr>
           <tr>
             <th>시기·방법</th>

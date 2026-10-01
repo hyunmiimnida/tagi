@@ -8,7 +8,7 @@ import { collectors } from "./index.ts";
 // 학교 사이트 구조가 바뀌면 샘플을 다시 저장하고, 이 테스트가 깨지는지 본다
 const schools: School[] = JSON.parse(readFileSync(new URL("../../config/schools.json", import.meta.url), "utf8"));
 
-for (const id of ["yu-news", "yu-career", "knu-notice", "knu-startup", "kmu-notice", "kmu-col-coe"]) {
+for (const id of ["yu-news", "yu-career", "knu-notice", "knu-startup", "kmu-notice", "kmu-col-coe", "dcu-program"]) {
   test(`수집기가 저장된 ${id} 페이지를 읽는다`, async () => {
     const pages: string[] = JSON.parse(readFileSync(new URL(`../../test/fixtures/${id}.json`, import.meta.url), "utf8"));
     const school = schools.find((s) => s.sources.some((src) => src.id === id))!;

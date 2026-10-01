@@ -4,9 +4,10 @@ import { fetchHtml } from "../src/fetch.ts";
 import type { School } from "../src/types.ts";
 
 // 수집기 테스트용 HTML 샘플을 저장한다 (사이트 구조가 바뀌어 테스트가 깨지면 다시 실행해 샘플을 갱신한다)
-//   node scripts/save-fixtures.ts
+//   node scripts/save-fixtures.ts [출처 id ...]
 // 출처마다 목록 1쪽과 처음 상세 1개만 받는다. 스크립트·스타일·글 안 그림 데이터는 지워 파일을 작게 만든다
-const CASES = ["yu-news", "yu-career", "knu-notice", "knu-startup", "kmu-notice", "kmu-col-coe"];
+const ALL = ["yu-news", "yu-career", "knu-notice", "knu-startup", "kmu-notice", "kmu-col-coe", "dcu-program"];
+const CASES = process.argv.length > 2 ? process.argv.slice(2) : ALL; // 출처 id를 주면 그것만 다시 저장
 const OUT = new URL("../test/fixtures/", import.meta.url);
 mkdirSync(OUT, { recursive: true });
 

@@ -59,6 +59,24 @@ async function listPage({ source, fetchHtml }: CollectContext, offset: number, l
   return posts;
 }
 
+// 본문 그림 주소 (data: 주소와 작은 아이콘 이름은 뺀다)
+export function imagesIn($: cheerio.CheerioAPI, content: ReturnType<cheerio.CheerioAPI>, pageUrl: string): string[] {
+  const urls = content
+    .find("img")
+    .toArray()
+    .map((img) => $(img).attr("src") ?? "")
+    .filter((src) => src && !src.startsWith("data:") && !/icon|btn|bullet|blank/i.test(src))
+    .map((src) => {
+      try {
+        return new URL(src, pageUrl).href;
+      } catch {
+        return "";
+      }
+    })
+    .filter((url) => /^https?:/.test(url));
+  return [...new Set(urls)];
+}
+
 // 상세 페이지를 읽어 본문 글자와 작성 부서를 얻는다
 async function readPost({ school, source, fetchHtml }: CollectContext, post: ArchivePost): Promise<CollectedItem | null> {
   const detail = cheerio.load(await fetchHtml(post.url));
@@ -71,6 +89,7 @@ async function readPost({ school, source, fetchHtml }: CollectContext, post: Arc
     program,
     writer: detail(".b-writer-box span").last().text().trim() || null,
     text: htmlToText(detail(".b-content-box .fr-view").html() ?? ""),
+    images: imagesIn(detail, detail(".b-content-box .fr-view"), post.url),
   };
 }
 

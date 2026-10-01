@@ -1,7 +1,7 @@
 // 오프라인 지원. 인터넷이 끊겨도 마지막으로 본 화면을 보여 준다
 // 화면·데이터: 먼저 인터넷에서 받고, 실패하면 저장해 둔 것을 쓴다
 // 빌드 파일(/_next/static): 이름에 버전이 들어 있어 저장해 둔 것을 바로 쓴다
-const CACHE = "campusmoa-v1";
+const CACHE = "campusmoa-v2";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(["/"])));
@@ -55,5 +55,34 @@ self.addEventListener("fetch", (event) => {
         if (request.mode === "navigate") return (await caches.match("/")) ?? Response.error();
         return Response.error();
       }),
+  );
+});
+
+// 마감 알림 (scripts/notify.ts가 보낸다). 내용: { title, body, url }
+self.addEventListener("push", (event) => {
+  let data = {};
+  try {
+    data = event.data ? event.data.json() : {};
+  } catch {}
+  event.waitUntil(
+    self.registration.showNotification(data.title || "캠퍼스모아", {
+      body: data.body || "",
+      icon: "/icon-192.png",
+      badge: "/icon-192.png",
+      data: { url: data.url || "/calendar" },
+    }),
+  );
+});
+
+// 알림을 누르면 사이트를 연다 (이미 열려 있으면 그 창으로)
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const url = new URL(event.notification.data?.url || "/", self.location.origin).href;
+  event.waitUntil(
+    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((windows) => {
+      const open = windows.find((w) => w.url.startsWith(self.location.origin));
+      if (open) return open.navigate(url).then((w) => (w || open).focus());
+      return self.clients.openWindow(url);
+    }),
   );
 });

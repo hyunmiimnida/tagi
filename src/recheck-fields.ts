@@ -1,11 +1,11 @@
-import { checkOpenTo, findCodex } from "./ai.ts";
+import { findCodex, recheckFields } from "./ai.ts";
 import { PROGRAMS_FILE, readJson, writeJson } from "./archive.ts";
 import { archivers } from "./collectors/index.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
 import type { CollectContext, CollectedItem, Program, School } from "./types.ts";
 
-// 목록(data/programs.json)의 공고 중 "다른 학교 학생도 지원할 수 있는지" 확인하지 않은 글을 다시 읽어 AI에게 묻는다.
-//   npm run check-open-to
+// 목록(data/programs.json)의 공고 중 나중에 생긴 AI 칸(다른 학교 학생도 지원할 수 있는지, 한 줄 요약)을 확인하지 않은 글을 다시 읽어 AI에게 묻는다.
+//   npm run recheck
 // 본문이 있는 출처만 확인한다. 새로 수집하는 글은 수집할 때 함께 확인하므로 한 번만 돌리면 된다.
 
 const BATCH = 20;
@@ -24,7 +24,7 @@ for (const school of schools) {
       continue;
     }
     const ctx: CollectContext = { school, source, fetchHtml, isKnown: () => false };
-    const todo = programs.filter((p) => p.target.openTo === undefined && p.links.some((l) => l.sourceId === source.id));
+    const todo = programs.filter((p) => (p.target.openTo === undefined || p.summary === undefined) && p.links.some((l) => l.sourceId === source.id));
     console.log(`${label} 확인할 공고 ${todo.length}개`);
 
     for (let i = 0; i < todo.length; i += BATCH) {
@@ -38,7 +38,7 @@ for (const school of schools) {
           console.error(`  읽기 실패 ${link.url}:`, error instanceof Error ? error.message : error);
         }
       }
-      const answered = await checkOpenTo(items);
+      const answered = await recheckFields(items);
       await writeJson(PROGRAMS_FILE, programs); // 끊겨도 다시 실행하면 남은 것만 한다
       const open = items.filter((item) => item.program.target.openTo).length;
       console.log(`${label} ${Math.min(i + BATCH, todo.length)}/${todo.length} (답 ${answered}개, 다른 학교도 가능 ${open}개)`);

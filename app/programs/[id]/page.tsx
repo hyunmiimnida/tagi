@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const program = getPrograms().find((p) => p.id === id);
   if (!program) return {};
   const recruit = formatPeriod(program.recruitPeriod, new Date().getFullYear());
-  const description = [program.organizer, recruit && `모집 ${recruit}`, program.tags.map((t) => `#${t}`).join(" ")]
+  const description = [program.summary, program.organizer, recruit && `모집 ${recruit}`, program.tags.map((t) => `#${t}`).join(" ")]
     .filter(Boolean)
     .join(" · ");
   return { title: program.title, description, openGraph: { title: program.title, description } };
@@ -87,6 +87,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
       <header className="detail-head">
         <p className="detail-org">{program.organizer ?? "주최 미확인"}</p>
         <h1>{program.title}</h1>
+        {program.summary && <p className="detail-summary">{program.summary}</p>}
         {program.tags.length > 0 && (
           <div className="row-tags">
             {program.tags.map((tag) => (

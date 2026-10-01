@@ -35,6 +35,8 @@ export interface Program {
   collectedAt: string;
   firstSeenAt?: string; // 처음 수집한 시각 (새로 올라온 항목 표시용)
   aliases?: string[]; // 이 공고에 합쳐져 없어진 공고 id (예전 주소를 이 공고로 연결한다)
+  // 무엇을 하는(받는) 기회인지 AI가 쓴 한 문장 요약. null = 알 수 없음, 없음(undefined) = 아직 묻지 않음
+  summary?: string | null;
   seriesId?: string; // 해마다·학기마다 반복되는 같은 프로그램의 묶음 id (src/series.ts)
 }
 
@@ -43,6 +45,7 @@ export interface CollectedItem {
   program: Program;
   writer: string | null; // 게시물 작성 부서
   text: string;
+  images?: string[]; // 본문 그림 주소 (본문 글자가 거의 없으면 AI가 포스터 글자를 읽는다). 저장하지 않는다
 }
 
 export interface Source {
@@ -69,6 +72,11 @@ export interface TableBoard {
   content: string; // 상세에서 본문 선택자
   listDate?: string; // 목록에서 등록일 칸 선택자 (기본: "td.date")
   date?: string; // 상세에서 등록일 선택자 (기본: "등록일·일시" 이름표 옆 값)
+  writer?: string; // 상세에서 작성 부서 선택자 (기본: "작성자·부서" 이름표 옆 값). "작성자 :" 같은 머리말은 지운다
+  // 쪽 번호·게시물 번호를 base64로 감싼 주소 칸에 넣는 게시판 (예: 대구가톨릭대 mv_data).
+  // list는 목록 칸 값({page} 자리에 쪽 번호), view는 상세 칸 값({id} 자리에 게시물 번호). 이때 idPattern은 풀어 낸 값에서 번호를 찾고,
+  // viewUrl의 {id} 자리에는 감싼 view 값이 들어간다
+  encoded?: { param: string; list: string; view: string };
 }
 
 // 교내 기관(사업단 등). 주최 이름에 keywords 중 하나가 들어 있으면 그 기관으로 본다

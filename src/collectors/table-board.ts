@@ -2,7 +2,7 @@ import * as cheerio from "cheerio";
 import { RobotsBlockedError } from "../fetch.ts";
 import { emptyProgram } from "../types.ts";
 import type { Archiver, ArchivePost, CollectContext, CollectedItem, Collector, TableBoard } from "../types.ts";
-import { htmlToText } from "./news-board.ts";
+import { htmlToText, imagesIn } from "./news-board.ts";
 
 // 표 모양 게시판 수집기 (번호·제목·작성자·등록일이 한 줄인 학교 공지 게시판).
 // 학교마다 다른 선택자·주소 규칙은 config/schools.json의 "board"에 적는다.
@@ -19,6 +19,14 @@ export function toIsoDate(text: string): string | null {
 // 눈에 안 보이는 글자(폭 없는 공백)도 지운다
 const clean = (text: string) => text.replace(/[​-‍﻿]/g, "").replace(/\s+/g, " ").trim();
 
+// 감싼 값은 주소에 그대로 넣는다 (이 게시판들은 %3D 같은 주소 인코딩을 풀지 않는다). 끝의 = 채움은 빼도 읽는다
+const b64 = (text: string) => Buffer.from(text).toString("base64").replace(/=+$/, "");
+const unb64 = (text: string) => Buffer.from(text.replace(/\|+$/, ""), "base64").toString("utf8");
+
+// 상세 주소 (encoded 게시판은 번호를 감싸 넣는다)
+export const viewUrlOf = (board: TableBoard, id: string) =>
+  board.viewUrl.replace("{id}", board.encoded ? b64(board.encoded.view.replace("{id}", id)) : id);
+
 function boardOf({ source }: CollectContext): TableBoard {
   if (!source.board) throw new Error(`${source.id}: config/schools.json에 "board" 설정이 없음`);
   return source.board;
@@ -28,22 +36,30 @@ function boardOf({ source }: CollectContext): TableBoard {
 async function listPage(ctx: CollectContext, page: number): Promise<ArchivePost[]> {
   const board = boardOf(ctx);
   const listUrl = new URL(ctx.source.url);
-  listUrl.searchParams.set(board.pageParam, String(page));
+  let address: string;
+  if (board.encoded) {
+    const value = b64(board.encoded.list.replace("{page}", String(page)));
+    address = `${listUrl.href}${listUrl.search ? "&" : "?"}${board.encoded.param}=${value}`;
+  } else {
+    listUrl.searchParams.set(board.pageParam, String(page));
+    address = listUrl.href;
+  }
 
-  const $ = cheerio.load(await ctx.fetchHtml(listUrl.href));
+  const $ = cheerio.load(await ctx.fetchHtml(address));
   const posts: ArchivePost[] = [];
   for (const a of $(board.link).toArray()) {
     const href = $(a).attr("href") ?? "";
     // 주소의 & 앞뒤가 깨져 있어도 번호를 찾도록 글자로 찾는다
     // 번호가 주소 경로에 있으면(idPattern) 그 규칙으로, 아니면 주소의 칸(idParam)에서 찾는다
     const pattern = board.idPattern ?? `[?&]${(board.idParam ?? "").replace(/\./g, "\\.")}=(\\d+)`;
-    const postId = href.match(new RegExp(pattern))?.[1];
+    const target = board.encoded ? unb64(href.match(new RegExp(`[?&]${board.encoded.param}=([^&]+)`))?.[1] ?? "") : href;
+    const postId = target.match(new RegExp(pattern))?.[1];
     if (!postId) continue;
     const row = $(a).closest("tr");
     posts.push({
       postId,
       title: clean($(a).attr("title") || $(a).text()),
-      url: board.viewUrl.replace("{id}", postId),
+      url: viewUrlOf(board, postId),
       postedAt: toIsoDate(row.find(board.listDate ?? "td.date").first().text()),
     });
   }
@@ -67,12 +83,14 @@ async function readPost(ctx: CollectContext, post: ArchivePost): Promise<Collect
   const program = emptyProgram(ctx.school, ctx.source, post.postId, title, post.url);
   const posted = board.date ? $(board.date).first().text() : labeled($, /등록일|일시|작성일/);
   program.postedAt = toIsoDate(posted) ?? post.postedAt;
-  // 본문의 그림(글자 대신 이미지로 붙인 공고)은 글자가 아니므로 뺀다
+  // 본문의 그림(글자 대신 이미지로 붙인 공고)은 주소만 기억하고 글자에서는 뺀다 (글자가 거의 없으면 AI가 그림을 읽는다)
+  const images = imagesIn($, $(board.content).first(), post.url);
   $(board.content).find("img, script, style").remove();
   return {
     program,
-    writer: labeled($, /작성자|부서/) || null,
+    writer: (board.writer ? clean($(board.writer).first().text()).replace(/^[^:]*:\s*/, "") : labeled($, /작성자|부서/)) || null,
     text: htmlToText($(board.content).first().html() ?? ""),
+    images,
   };
 }
 

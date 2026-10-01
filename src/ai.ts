@@ -1,9 +1,10 @@
 import { execFile, execFileSync } from "node:child_process";
 import { existsSync, readdirSync } from "node:fs";
-import { mkdtemp, readFile, rm } from "node:fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { cleanPeriods } from "./extract.ts";
+import { fetchImage } from "./fetch.ts";
 import { SCHOOL_NAMES } from "./school-of.ts";
 import { GRADES, STUDENT_STATUSES } from "./types.ts";
 import type { CollectedItem, Program, TagCategory } from "./types.ts";
@@ -41,13 +42,20 @@ export function findCodex(): string | null {
   return codexPath;
 }
 
-// 다른 학교 학생도 지원할 수 있는지. 본 추출과 이미 추출한 글 다시 확인(checkOpenTo)이 함께 쓴다
+// 다른 학교 학생도 지원할 수 있는지. 본 추출과 이미 추출한 글 다시 확인(recheckFields)이 함께 쓴다
 const OPEN_TO_RULE = `- openTo: 글을 올린 학교의 학생이 아니어도 지원할 수 있으면, 지원할 수 있는 사람을 글에 적힌 대로 30자 안으로 짧게 쓴다.
   예: "전국 대학생", "대구·경북 지역 대학생", "만 19~34세 청년", "대학생 및 대학원생 누구나".
   글을 올린 학교 학생만 대상이거나, 다른 학교 학생도 되는지 글에서 알 수 없으면 null. 학교 부서가 여는 교내 프로그램은 대부분 null이다.
   학년·신분(재학생 등)은 grades·statuses에 쓰고 openTo에는 반복하지 않는다.`;
 
 const openTo = (v: unknown) => (typeof v === "string" && v.trim() && v.length <= 40 ? v.trim() : null);
+
+// 상세 화면 맨 위 한 줄 요약. 본 추출과 다시 확인(recheckFields)이 함께 쓴다
+const SUMMARY_RULE = `- summary: 학생이 무엇을 하거나 받는 기회인지 한 문장(60자 안, "~해요" 말투)으로 쓴다. 원문 문장을 베끼지 말고 네 말로 요약한다.
+  날짜·신청 방법·문의처는 넣지 않는다(다른 칸에 있다). 예: "삼성 SW 교육을 1년 동안 무료로 받고 교육비를 지원받아요".
+  무엇을 하는지 글에서 알 수 없으면 null.`;
+
+const summary = (v: unknown) => (typeof v === "string" && v.trim() && v.length <= 90 ? v.trim() : null);
 
 function setOpenTo(program: Program, value: string | null) {
   program.target.openTo = value;
@@ -96,6 +104,7 @@ ${item.text.slice(0, maxText) || "(본문 없음, 이미지로만 안내됨)"}`,
   - 그냥 "학생", "학부생", "누구나"처럼 신분을 가리지 않으면 빈 배열.
 - excludedStatuses: 글에 "휴학생 제외"·"졸업생 제외"처럼 명시적으로 뺀 신분만 같은 이름으로 적는다.
 ${OPEN_TO_RULE}
+${SUMMARY_RULE}
 - tags: 아래 목록의 이름만. 그 프로그램의 핵심 내용일 때만 붙인다. 본문에 단어가 한 번 나온다고 붙이지 마라.
   - 장학·지원금: 학생이 장학금·지원금·상금·활동비를 직접 받는 경우에만.
   - 해외·글로벌: 해외 파견·해외 활동·유학생 교류가 핵심일 때만.
@@ -107,18 +116,18 @@ ${OPEN_TO_RULE}
 ${tagList}
 
 출력 형식 (게시물 수만큼, 설명 없이 JSON만):
-{"items":[{"id":"...","forStudents":true,"organizer":null,"organizerType":null,"recruitStart":null,"recruitEnd":null,"activityStart":null,"activityEnd":null,"colleges":[],"departments":[],"grades":[],"statuses":[],"excludedStatuses":[],"openTo":null,"tags":[]}]}
+{"items":[{"id":"...","forStudents":true,"organizer":null,"organizerType":null,"recruitStart":null,"recruitEnd":null,"activityStart":null,"activityEnd":null,"colleges":[],"departments":[],"grades":[],"statuses":[],"excludedStatuses":[],"openTo":null,"summary":null,"tags":[]}]}
 
 게시물:
 
 ${posts}`;
 }
 
-function runCodex(bin: string, model: string, prompt: string, outFile: string): Promise<void> {
+function runCodex(bin: string, model: string, prompt: string, outFile: string, images: string[] = []): Promise<void> {
   return new Promise((resolve, reject) => {
     const child = execFile(
       bin,
-      ["exec", "--skip-git-repo-check", "--sandbox", "read-only", "-m", model, "--output-last-message", outFile, "-"],
+      ["exec", "--skip-git-repo-check", "--sandbox", "read-only", "-m", model, ...images.flatMap((image) => ["-i", image]), "--output-last-message", outFile, "-"],
       // 프로젝트 폴더가 아닌 빈 임시 폴더에서 실행한다 (게시물 본문에 숨은 지시가 있어도 프로젝트 파일에 손대지 못하게)
       { timeout: 600_000, maxBuffer: 20 * 1024 * 1024, cwd: dirname(outFile) },
       (error) => (error ? reject(error) : resolve()),
@@ -148,6 +157,40 @@ async function askCodex(bin: string, prompt: string): Promise<{ items?: Record<s
       }
     }
     throw lastError;
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+}
+
+// 포스터 읽기: 본문 글자가 거의 없고 그림만 있는 글은 그림(최대 2장)의 글자를 AI가 읽어 본문 뒤에 붙인다.
+// 읽은 글자는 정보 추출에만 쓰고 저장하지 않는다 (원문을 복사하지 않는다)
+const POSTER_TEXT_MIN = 150; // 본문 글자(공백 제외)가 이보다 적으면 포스터를 읽는다
+const POSTER_MAX = 2;
+const EXT: Record<string, string> = { "image/png": "png", "image/jpeg": "jpg", "image/gif": "gif", "image/webp": "webp" };
+export const needsPoster = (item: CollectedItem) =>
+  (item.images?.length ?? 0) > 0 && item.text.replace(/\s/g, "").length < POSTER_TEXT_MIN;
+
+async function readPoster(bin: string, item: CollectedItem): Promise<void> {
+  const dir = await mkdtemp(join(tmpdir(), "poster-"));
+  try {
+    const files: string[] = [];
+    for (const url of item.images!.slice(0, POSTER_MAX)) {
+      const image = await fetchImage(url);
+      if (!image) continue;
+      const file = join(dir, `poster${files.length}.${EXT[image.type]}`);
+      await writeFile(file, image.data);
+      files.push(file);
+    }
+    if (files.length === 0) return;
+    const outFile = join(dir, "answer.txt");
+    const prompt = `첨부한 그림은 대학 공지 "${item.program.title}"의 포스터다. 파일을 읽거나 명령을 실행하지 말고, 그림에 적힌 글자 중
+공고 내용(제목, 대상, 모집·신청 기간, 활동 일정, 장소, 신청 방법, 주최·주관, 혜택)만 줄마다 그대로 옮겨 적어라. 설명 없이 글자만.
+공고와 관계없는 그림이거나 글자가 없으면 "없음"이라고만 써라.`;
+    await runCodex(bin, MODELS[0], prompt, outFile, files);
+    const text = (await readFile(outFile, "utf8")).trim();
+    if (text && text !== "없음") item.text = `${item.text}\n[포스터에 적힌 글자]\n${text.slice(0, 2000)}`;
+  } catch (error) {
+    console.error("  포스터 읽기 실패:", error instanceof Error ? error.message : error);
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
@@ -217,6 +260,7 @@ function apply(item: CollectedItem, data: Record<string, unknown>, categories: T
   program.target.statuses = strings(data.statuses).filter((s) => STUDENT_STATUSES.includes(s));
   program.target.excludedStatuses = strings(data.excludedStatuses).filter((s) => STUDENT_STATUSES.includes(s));
   if ("openTo" in data) setOpenTo(program, openTo(data.openTo));
+  if ("summary" in data) program.summary = summary(data.summary);
 
   const tags = strings(data.tags).filter((t) => allowedTags.has(t) && !organizerTypes.includes(t));
   program.tags = [...new Set([...(program.organizerType ? [program.organizerType] : []), ...tags])];
@@ -225,17 +269,19 @@ function apply(item: CollectedItem, data: Record<string, unknown>, categories: T
   return true;
 }
 
-// 이미 추출한 글이 다른 학교 학생도 지원할 수 있는지만 다시 묻는다. 답을 받은 글 수를 돌려준다
-export async function checkOpenTo(items: CollectedItem[], maxText = 1500): Promise<number> {
+// 이미 추출한 글에 나중에 생긴 칸(다른 학교 지원 가능 여부, 요약)만 다시 묻는다. 확인하지 않은 칸만 채운다. 답을 받은 글 수를 돌려준다
+export async function recheckFields(items: CollectedItem[], maxText = 1500): Promise<number> {
   const bin = findCodex();
   if (!bin || items.length === 0) return 0;
+  await Promise.all(items.filter(needsPoster).map((item) => readPoster(bin, item)));
   const posts = items
     .map((item) => `### id: ${item.program.id}\n제목: ${item.program.title}\n본문:\n${item.text.slice(0, maxText) || "(본문 없음)"}`)
     .join("\n\n");
   const prompt = `너는 대학 공지에서 사실 정보만 뽑는 추출기다. 파일을 읽거나 명령을 실행하지 말고, 아래 글만 보고 JSON으로만 답해라.
 ${OPEN_TO_RULE}
+${SUMMARY_RULE}
 
-출력 형식 (게시물 수만큼, 설명 없이 JSON만): {"items":[{"id":"...","openTo":null}]}
+출력 형식 (게시물 수만큼, 설명 없이 JSON만): {"items":[{"id":"...","openTo":null,"summary":null}]}
 
 게시물:
 
@@ -247,7 +293,8 @@ ${posts}`;
     for (const data of answer.items ?? []) {
       const program = byId.get(String(data.id));
       if (!program || !("openTo" in data)) continue;
-      setOpenTo(program, openTo(data.openTo));
+      if (program.target.openTo === undefined) setOpenTo(program, openTo(data.openTo));
+      if (program.summary === undefined && "summary" in data) program.summary = summary(data.summary);
       answered++;
     }
     return answered;
@@ -347,6 +394,11 @@ export async function enrichWithAi(
   const worker = async () => {
     while (next < batches.length) {
       const batch = batches[next++];
+      const posters = batch.filter(needsPoster);
+      if (posters.length > 0) {
+        await Promise.all(posters.map((item) => readPoster(bin, item)));
+        console.log(`  포스터 읽기 ${posters.length}개`);
+      }
       try {
         const answer = await askCodex(bin, buildPrompt(batch, categories, maxText));
         for (const data of answer.items ?? []) {

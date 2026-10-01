@@ -44,6 +44,16 @@ test("같은 글을 다시 추출해도 이미 확인한 모집 대상과 예전
   assert.deepEqual(merged.aliases, ["old"]);
 });
 
+test("다시 수집해도(AI 없이 포함) 요약을 남기고, 합칠 때 빈 요약을 채운다", async () => {
+  const { mergePrograms } = await import("./dedupe.ts");
+  const saved = { ...program("a"), summary: "서포터즈로 활동하며 활동비를 받아요" };
+  const [again] = mergePrograms([saved], [{ ...program("a"), extractedBy: "rules" }]);
+  assert.equal(again.summary, "서포터즈로 활동하며 활동비를 받아요");
+  const x = program("x");
+  const [merged] = mergePair([x, saved], x, saved);
+  assert.equal(merged.summary, "서포터즈로 활동하며 활동비를 받아요");
+});
+
 test("재게시 머리말(마감 날짜·대상)을 지워 같은 공고로 알아본다", async () => {
   const { repostKey, stripDeadlineHead } = await import("./dedupe.ts");
   assert.equal(

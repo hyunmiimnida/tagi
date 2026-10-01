@@ -49,6 +49,9 @@
 - 반복 프로그램: 해마다·학기마다 다시 열리는 프로그램을 `seriesId`로 묶어(`src/series.ts`) 상세 화면에 "지난 공고"와 후기 댓글(Supabase `comments` 표)을 보여 준다
 - 모집 대상 학교: 기본은 게시한 학교. AI가 다른 학교 학생도 지원할 수 있다고 보면 `target.openTo`(예: "전국 대학생")를 쓰고 `target.schools`를 비운다. 학교 배지는 게시한 학교 기준이고, 학교 필터는 openTo 공고도 기본으로 함께 보여 준다("다른 학교도 지원" 배지, 필터 안 스위치로 끄면 주소에 `open=0`)
 - 캘린더의 "지난 관심 공고": 보관함으로 간 관심 공고를 `public/api/ids.json`에서 찾아 제목·원문·이번 회차를 보여 준다 (`components/PastFavorites.tsx`)
+- 댓글 도배 막기: `supabase/spam.sql` 트리거(20초 안 재작성, 하루 20개, 같은 내용 반복, 링크 2개 이상). 걸리면 `spam:이유` 오류 → `components/Comments.tsx`가 안내
+- 마감 알림(웹 푸시): 프로필에서 켜면 `lib/push.ts`가 기기 알림 주소를 `push_subscriptions` 표에 저장. 매일 오전 9시 `.github/workflows/notify.yml`이 `scripts/notify.ts deadline`으로 내일 모집 마감인 관심 공고를 보낸다(`public/sw.js`가 받아 표시). 비밀 값 `SUPABASE_SERVICE_ROLE_KEY`·`VAPID_PRIVATE_KEY`는 GitHub Secrets에만
+- 신고 알림: 같은 워크플로가 새 댓글 신고·정보 오류 신고를 "신고 확인 필요" GitHub 이슈로 올린다(저장소 주인에게 메일). 알린 신고는 `alerted_at`에 표시
 - 운영 연락처: `lib/policy.ts`의 `CONTACT_EMAIL` (개인정보 보호 책임자·문의·권리 침해 신고). 수집기 이름(`src/fetch.ts`의 USER_AGENT)에도 같은 이메일을 적는다
 - 합쳐진 공고는 `aliases`에 예전 id를 남기고, 없는 공고 주소는 `app/not-found.tsx`가 `public/api/ids.json`으로 새 주소나 보관 안내를 찾아 준다
 
@@ -58,6 +61,8 @@
    - robots.txt는 사이트마다 한 번 받아 기억하고, 목록·상세 등 **읽는 모든 주소**를 `fetchHtml`이 확인한다. 막힌 글은 건너뛰고 `collect-log.json`의 `robotsBlocked`에 남긴다
 2. `src/extract.ts`가 규칙으로 주최·기간·태그를 채운다
 3. `useAi` 출처는 Codex CLI가 있으면 `src/ai.ts`가 게시물 8개씩 묶어 추출한다 (gpt-6.1-sol, 실패하면 규칙 결과를 그대로 쓴다)
+   - 본문 글자가 거의 없고 그림만 있는 글은 그림(최대 2장)을 받아 Codex가 포스터 글자를 읽고 본문 뒤에 붙인다 (`needsPoster`). 그림 주소도 robots.txt를 따른다(영남대 `/_attach`, 계명대 본부 `/upload`는 막혀 있어 못 읽음). 읽은 글자는 저장하지 않는다
+   - AI는 상세 화면 맨 위 한 줄 요약(`summary`, 원문을 베끼지 않고 자기 말로 60자 안)도 쓴다
    - AI로 이미 추출한 게시물은 다시 보내지 않는다. 교원·직원 대상 글은 빼고 `data/excluded.json`에 기억한다
    - AI 없이 수집한 결과(GitHub Actions)는 AI가 채운 주최·대상·태그를 덮어쓰지 않는다
 4. `src/dedupe.ts`가 기존 데이터와 합치고 중복을 제거한다 (원문 링크는 모두 보관)
@@ -87,8 +92,10 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `src/types.ts` — 공통 데이터 형식
 - `src/collectors/` — 사이트별 수집기 (`index.ts`에 등록)
   - `news-board`(영남대 영대소식), `career-program-list`(영남대 취업정보), `table-board`(번호·제목·작성자·등록일 표 모양 게시판. 경북대·계명대처럼 선택자·주소 규칙을 출처의 `board` 설정에 적으면 새 학교도 코드 없이 추가)
-  - 지금 학교: 영남대(취업정보, 그리고 내 컴퓨터에서만 수집하는 영대소식·RISE사업단·단과대 14곳), 경북대(공지사항·행사·창업지원단), 계명대(공지사항·모집·장학·창업지원단·단과대 10곳)
+  - 지금 학교: 영남대(취업정보, 그리고 내 컴퓨터에서만 수집하는 영대소식·RISE사업단·단과대 14곳), 경북대(공지사항·행사·창업지원단), 계명대(공지사항·모집·장학·창업지원단·단과대 10곳), 대구가톨릭대(공지사항·진로취업·장학·봉사)
   - 수집하지 않는 곳: 경북대 KNU CUBE·진로취업과·단과대(home.knu.ac.kr의 /HOME 경로를 robots.txt가 막음)·AI대학(AI 크롤러 차단), 계명대 STORY+·취업센터·간호대·의대(접근 거부), 영남대 창업지원단 사이트(글이 거의 없음, 영대소식·RISE사업단에 같은 글이 올라옴)
+  - 수집하지 않는 학교: 대구대(게시판 /article/ 경로를 robots.txt가 막음)
+  - 대구가톨릭대 게시판은 쪽·글 번호를 base64로 감싼 `mv_data` 칸을 쓴다 → table-board의 `encoded` 설정 (주소 인코딩 없이, 끝 `=` 빼고 넣는다)
   - 계명대 단과대·창업지원단은 K2Web 게시판(`/bbs/{사이트}/{게시판번호}/artclList.do`)이라 table-board의 `idPattern`으로 번호를 찾는다
 - `data/programs.json` — 수집 결과(최근 90일), `data/archive.json` — 지난 공고 보관함, `data/collect-log.json` — 마지막 수집 기록 (출처마다 `lastSuccessAt`·`lastSuccessCount`를 이전 기록에서 이어받는다)
 - 결과 올리기: GitHub Actions와 내 컴퓨터 수집이 겹쳐 push가 실패하면, 최신을 받아 다시 수집하고 올린다(최대 3번). Actions는 한 번에 하나만 실행
@@ -104,7 +111,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `/my`(프로필: 닉네임, 학교·신분·학년, 관심 분야, 알림 설정 자리, 내 댓글, 탈퇴. 설정은 `lib/user.tsx`의 `profile`, 로그인하면 `profiles` 표에도 저장, `supabase/profile.sql`). 신분·학년은 공고 목록 대상 필터의 기본값, 관심 분야는 홈 "내 관심 분야 공고"에 쓴다
 - 약관: `/terms`(이용약관), `/privacy`(개인정보처리방침). 문의처·규칙 문구는 `lib/policy.ts`
 - PWA: `app/manifest.ts`, `public/sw.js`(오프라인 때 마지막 화면), 아이콘 `public/icon-*.png`, `app/apple-icon.png`
-- `mobile/` — 앱(Expo) 뼈대. **비용 문제로 잠시 멈춤.** 사이트를 바꿀 때 앱 전환에 걸림돌이 생기지 않게 한다 (데이터는 `public/api`로 계속 제공)
+- `mobile/` — 앱(Expo) 뼈대. **비용 문제로 잠시 멈춤** (스토어 개발자 등록비가 든다). 지금은 PWA(홈 화면에 추가)와 웹 푸시로 앱 역할을 대신한다. 앱 아이콘 시안은 `design/app-icon/` 사이트를 바꿀 때 앱 전환에 걸림돌이 생기지 않게 한다 (데이터는 `public/api`로 계속 제공)
 - `.github/workflows/collect.yml` — 하루 1회 자동 수집
 - `scripts/collect-local.ps1` — 내 컴퓨터에서 수집 후 GitHub에 올리기 (PowerShell 5.1 호환을 위해 BOM 포함 UTF-8로 저장)
 - `docs/설정-안내.md` — 연결 상태와 남은 설정 방법
@@ -119,7 +126,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 
 - `npm run dev` — 내 컴퓨터에서 화면 실행 (http://localhost:3000)
 - `npm run collect` — 수집 실행, `npm run backfill` — 과거 글 쌓기 (위 설명 참고)
-- `npm run check-open-to` — 목록 공고 중 "다른 학교 학생도 지원 가능한지" 확인하지 않은 글만 다시 읽어 AI에게 묻는다 (Codex 필요)
+- `npm run recheck` — 목록 공고 중 나중에 생긴 AI 칸(다른 학교 학생도 지원 가능한지 `openTo`, 한 줄 요약 `summary`)을 확인하지 않은 글만 다시 읽어 AI에게 묻는다 (Codex 필요)
 - `node scripts/audit-quality.ts` — 품질 점검: 중복 줄, 잡음(신청할 것 없는 글) 비율, 마감일 대조 샘플(원문의 날짜 줄을 사람이 보고 대조) → `logs/quality-audit.json`. 출시 기준: 마감일 정확도 90%↑, 잡음 5%↓, 중복 0
 - `node scripts/review-excluded.ts` — "학생 대상 아님"으로 뺀 글을 다시 읽어 AI에게 다시 판단받기 (`--apply`로 되살리기. 되살리기 전에 사람이 목록 확인)
 - `node scripts/save-fixtures.ts` — 수집기 테스트용 HTML 샘플 갱신 (`test/fixtures/`, 학교 사이트 구조가 바뀌었을 때)

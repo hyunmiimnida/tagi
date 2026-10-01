@@ -10,6 +10,12 @@ import { supabase, useUser } from "../lib/user.tsx";
 // 다른 사람 글은 신고하거나 숨길 수 있다 (supabase/moderation.sql)
 
 const MAX_LENGTH = 500;
+const SPAM_NOTICES: Record<string, string> = {
+  too_fast: "조금 전에 댓글을 썼어요. 20초 뒤에 다시 써 주세요.",
+  daily: "오늘은 댓글을 더 쓸 수 없어요. 하루에 20개까지 쓸 수 있어요.",
+  duplicate: "같은 내용의 댓글을 이미 썼어요.",
+  links: "링크는 댓글 하나에 1개까지 넣을 수 있어요.",
+};
 
 interface Comment {
   id: number;
@@ -85,7 +91,10 @@ export function Comments({ seriesId }: { seriesId: string }) {
     const { error } = await supabase.from("comments").insert({ series_id: seriesId, user_id: userId, body });
     setSending(false);
     if (error) {
-      setFailed(true);
+      // 도배 막기 규칙(supabase/spam.sql)에 걸리면 이유를 알려 주고, 쓴 글은 그대로 둔다
+      const spam = error.message.match(/spam:(\w+)/)?.[1];
+      if (spam) setNotice(SPAM_NOTICES[spam] ?? SPAM_NOTICES.too_fast);
+      else setFailed(true);
       return;
     }
     setDraft("");

@@ -48,7 +48,7 @@ export function getListPrograms({ current = false } = {}): ProgramView[] {
     !isClosed(p, day) || [p.recruitPeriod.end, p.activityPeriod.start, p.activityPeriod.end].some((d) => d && d >= day);
   return getPrograms()
     .filter((p) => !current || alive(p))
-    .map((p) => ({ ...p, links: [], sources: [], aliases: undefined }));
+    .map((p) => ({ ...p, links: [], sources: [], aliases: undefined, summary: undefined }));
 }
 
 export const getProgram = (id: string) => getPrograms().find((program) => program.id === id);

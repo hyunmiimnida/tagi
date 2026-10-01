@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import { GRADES, STUDENT_STATUSES } from "../src/types.ts";
 import type { SchoolOption } from "../lib/filter.ts";
 import { CONTACT } from "../lib/policy.ts";
+import { disablePush, enablePush, needsInstallForPush } from "../lib/push.ts";
 import { supabase, useUser } from "../lib/user.tsx";
 import type { Profile } from "../lib/user.tsx";
 import { ChevronIcon } from "./Icons.tsx";
@@ -37,6 +38,8 @@ export function MyAccount({ schools, fieldTags, seriesInfo }: Props) {
   const [nickname, setNickname] = useState("");
   const [nicknameNote, setNicknameNote] = useState<string | null>(null);
   const [myComments, setMyComments] = useState<MyComment[] | null>(null);
+  const [pushBusy, setPushBusy] = useState(false);
+  const [pushNote, setPushNote] = useState<string | null>(null);
 
   useEffect(() => setNickname(profile.nickname ?? ""), [profile.nickname]);
 
@@ -85,6 +88,28 @@ export function MyAccount({ schools, fieldTags, seriesInfo }: Props) {
   async function update(patch: Partial<Profile>) {
     const saved = await user.setProfile(patch);
     setSavedLocally(!saved);
+  }
+
+  // 마감 알림: 켜면 이 기기의 알림 권한을 받아 알림 받을 주소를 저장한다 (lib/push.ts)
+  async function toggleDeadline(on: boolean) {
+    if (!supabase || !user.userId) return;
+    setPushBusy(true);
+    const result = on ? await enablePush(supabase, user.userId) : await disablePush(supabase);
+    setPushBusy(false);
+    if (on && result !== "on") {
+      setPushNote(
+        result === "denied"
+          ? "알림이 차단돼 있어요. 브라우저 주소창 왼쪽의 사이트 설정에서 알림을 허용해 주세요."
+          : result === "unsupported"
+            ? needsInstallForPush()
+              ? "아이폰은 공유 버튼 → '홈 화면에 추가'로 설치한 앱에서 알림을 켤 수 있어요."
+              : "이 브라우저는 알림을 지원하지 않아요."
+            : "알림을 켜지 못했어요. 잠시 후 다시 시도해 주세요.",
+      );
+      return;
+    }
+    setPushNote(on ? "알림을 켰어요. 관심 공고 마감 하루 전에 이 기기로 알려 드려요." : "알림을 껐어요.");
+    await update({ notifyDeadline: on });
   }
 
   const toggle = (list: string[], value: string) =>
@@ -232,14 +257,23 @@ export function MyAccount({ schools, fieldTags, seriesInfo }: Props) {
         <label className="my-switch">
           <span>
             <strong>마감 알림</strong>
-            <small>관심 공고 마감 하루 전에 알려 드려요. 앱이 나오면 이 설정대로 알림이 가요.</small>
+            <small>
+              관심 공고 모집 마감 하루 전 아침 9시에 이 기기로 알려 드려요.
+              {!user.signedIn && " 로그인하면 켤 수 있어요."}
+            </small>
           </span>
           <input
             type="checkbox"
-            checked={profile.notifyDeadline}
-            onChange={(event) => update({ notifyDeadline: event.target.checked })}
+            checked={user.signedIn && profile.notifyDeadline}
+            disabled={!user.signedIn || pushBusy}
+            onChange={(event) => void toggleDeadline(event.target.checked)}
           />
         </label>
+        {pushNote && (
+          <p className="nickname-note" role="status">
+            {pushNote}
+          </p>
+        )}
       </section>
 
       {savedLocally && (

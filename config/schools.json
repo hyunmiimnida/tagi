@@ -636,5 +636,112 @@
         }
       }
     ]
+  },
+  {
+    "id": "dcu",
+    "name": "대구가톨릭대학교",
+    "shortName": "대구가톨릭대",
+    "sources": [
+      {
+        "id": "dcu-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.cu.ac.kr/plaza/notice/notice",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "table tbody td a[href*=\"mode=view\"]",
+          "idPattern": "idx=([0-9]+)",
+          "viewUrl": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data={id}",
+          "pageParam": "listNo",
+          "title": ".view_info h6",
+          "content": ".view_content",
+          "listDate": "td:nth-child(5)",
+          "date": ".view_info span:nth-child(1)",
+          "writer": ".view_info span:nth-child(2)",
+          "encoded": {
+            "param": "mv_data",
+            "list": "idx=&startPage=1&listNo={page}&table=cs_bbs_data&code=notice",
+            "view": "idx={id}&table=cs_bbs_data&code=notice&mode=view"
+          }
+        }
+      },
+      {
+        "id": "dcu-program",
+        "name": "진로·취업공지",
+        "collector": "table-board",
+        "url": "https://www.cu.ac.kr/plaza/notice/program",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "table tbody td a[href*=\"mode=view\"]",
+          "idPattern": "idx=([0-9]+)",
+          "viewUrl": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data={id}",
+          "pageParam": "listNo",
+          "title": ".view_info h6",
+          "content": ".view_content",
+          "listDate": "td:nth-child(5)",
+          "date": ".view_info span:nth-child(1)",
+          "writer": ".view_info span:nth-child(2)",
+          "encoded": {
+            "param": "mv_data",
+            "list": "idx=&startPage=1&listNo={page}&table=cs_bbs_data&code=program01",
+            "view": "idx={id}&table=cs_bbs_data&code=program01&mode=view"
+          }
+        }
+      },
+      {
+        "id": "dcu-scholarship",
+        "name": "장학공지",
+        "collector": "table-board",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "table tbody td a[href*=\"mode=view\"]",
+          "idPattern": "idx=([0-9]+)",
+          "viewUrl": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data={id}",
+          "pageParam": "listNo",
+          "title": ".view_info h6",
+          "content": ".view_content",
+          "listDate": "td:nth-child(5)",
+          "date": ".view_info span:nth-child(1)",
+          "writer": ".view_info span:nth-child(2)",
+          "encoded": {
+            "param": "mv_data",
+            "list": "idx=&startPage=1&listNo={page}&table=cs_bbs_data&code=janghak",
+            "view": "idx={id}&table=cs_bbs_data&code=janghak&mode=view"
+          }
+        }
+      },
+      {
+        "id": "dcu-service",
+        "name": "봉사공지",
+        "collector": "table-board",
+        "url": "https://www.cu.ac.kr/plaza/notice/service",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "table tbody td a[href*=\"mode=view\"]",
+          "idPattern": "idx=([0-9]+)",
+          "viewUrl": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data={id}",
+          "pageParam": "listNo",
+          "title": ".view_info h6",
+          "content": ".view_content",
+          "listDate": "td:nth-child(5)",
+          "date": ".view_info span:nth-child(1)",
+          "writer": ".view_info span:nth-child(2)",
+          "encoded": {
+            "param": "mv_data",
+            "list": "idx=&startPage=1&listNo={page}&table=cs_bbs_data&code=insung",
+            "view": "idx={id}&table=cs_bbs_data&code=insung&mode=view"
+          }
+        }
+      }
+    ]
   }
 ]
