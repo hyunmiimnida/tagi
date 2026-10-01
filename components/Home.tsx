@@ -15,6 +15,7 @@ import type { FilterCategory } from "../lib/filter.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import type { ProgramView as Program } from "../lib/filter.ts";
 import { ChevronIcon } from "./Icons.tsx";
+import { InstallCard } from "./InstallCard.tsx";
 import { ProgramRow } from "./ProgramRow.tsx";
 
 const URGENT_DAYS = 7;
@@ -112,6 +113,8 @@ export function Home({ programs, categories }: Props) {
           </Link>
         </div>
       </section>
+
+      <InstallCard />
 
       <Section title="놓치기 전에, 마감 임박" href="/programs">
         {urgent.length === 0 ? (

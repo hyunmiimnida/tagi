@@ -1577,3 +1577,26 @@ main {
 .cta .button.primary {
   box-shadow: 0 6px 20px rgb(49 130 246 / 28%);
 }
+
+/* 홈 화면에 추가 안내 */
+.install-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+}
+.install-card strong {
+  font-size: 16px;
+}
+.install-card p {
+  margin: 4px 0 0;
+  color: var(--text-2);
+  font-size: 14px;
+}
+.install-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 4px;
+  align-items: center;
+}

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { BottomNav } from "../components/BottomNav.tsx";
 import { Header } from "../components/Header.tsx";
+import { PwaSetup } from "../components/InstallCard.tsx";
 import { LoginSheet } from "../components/LoginSheet.tsx";
 import { getLastCollected, getSourceNames } from "../lib/data.ts";
 import { SITE_NAME } from "../lib/filter.ts";
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </footer>
           <BottomNav />
           <LoginSheet />
+          <PwaSetup />
         </UserProvider>
       </body>
     </html>
