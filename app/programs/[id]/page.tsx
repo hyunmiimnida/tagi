@@ -111,6 +111,12 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
       {(!recruit || !activity) && (
         <p className="notice">일부 일정은 자동으로 찾지 못했어요. 신청 전에 원문에서 꼭 확인해 주세요.</p>
       )}
+      {program.target.openTo && (
+        <p className="notice">
+          게시한 학교가 아니어도 지원할 수 있다고 AI가 판단한 공고예요({program.target.openTo}). 지역·학년 같은 조건이 있을 수 있으니
+          원문에서 꼭 확인해 주세요.
+        </p>
+      )}
 
       {pastRounds.length > 0 && (
         <section className="card history">

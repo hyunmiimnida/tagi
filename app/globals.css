@@ -1958,3 +1958,8 @@ main {
   color: var(--accent);
   font-weight: 600;
 }
+
+.footer .stale {
+  color: var(--warn);
+  font-weight: 600;
+}

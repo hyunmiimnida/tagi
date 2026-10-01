@@ -45,7 +45,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <p>{describeSources()}에서 매일 모아요</p>
             {/* 학교마다 출처 중 가장 오래전에 성공한 시각. 한 곳이라도 수집이 멈추면 드러난다 */}
             {collected.length > 0 && (
-              <p>마지막 수집: {collected.map(({ school, at }) => `${school} ${at}`).join(" · ")}</p>
+              <p>
+                마지막 수집:{" "}
+                {collected.map(({ school, at, stale }, i) => (
+                  <span key={school} className={stale ? "stale" : undefined}>
+                    {i > 0 && " · "}
+                    {school} {at}
+                    {stale && " (수집이 멈췄어요)"}
+                  </span>
+                ))}
+              </p>
             )}
             <p>일정과 자격은 자동으로 정리한 정보라 틀릴 수 있어요. 신청 전에 꼭 원문을 확인하세요.</p>
             <p className="footer-links">

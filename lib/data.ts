@@ -137,7 +137,9 @@ export function describeSources(): string {
 }
 
 // 학교별 마지막 수집 시각. 학교 출처 중 가장 오래전에 성공한 시각을 보여 준다 (한 곳이라도 멈추면 드러나게)
-export function getCollectedBySchool(): { school: string; at: string }[] {
+const STALE_DAYS = 3; // 이보다 오래 수집에 성공하지 못한 학교는 바닥글에 경고한다
+
+export function getCollectedBySchool(): { school: string; at: string; stale: boolean }[] {
   try {
     const log = readJson<{ sources: { source: string; lastSuccessAt?: string }[] }>("data/collect-log.json");
     const last = new Map(log.sources.map((s) => [s.source, s.lastSuccessAt]));
@@ -145,7 +147,8 @@ export function getCollectedBySchool(): { school: string; at: string }[] {
       const times = school.sources.filter((s) => s.enabled).map((s) => last.get(s.id));
       if (times.length === 0 || times.some((t) => !t)) return [];
       const oldest = (times as string[]).sort()[0];
-      return [{ school: school.shortName, at: formatKoreanTime(oldest) }];
+      const stale = Date.now() - Date.parse(oldest) > STALE_DAYS * 86_400_000;
+      return [{ school: school.shortName, at: formatKoreanTime(oldest), stale }];
     });
   } catch {
     return [];
