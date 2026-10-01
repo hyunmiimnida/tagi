@@ -7,3 +7,4 @@ tsconfig.tsbuildinfo
 .next/
 logs/
 public/_icon-preview.html
+.cache/

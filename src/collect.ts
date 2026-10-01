@@ -1,5 +1,15 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir } from "node:fs/promises";
 import { confirmDuplicates, enrichWithAi } from "./ai.ts";
+import {
+  ARCHIVE_FILE,
+  DATA_DIR,
+  EXCLUDED_FILE,
+  PROGRAMS_FILE,
+  mergeArchive,
+  readJson,
+  splitByAge,
+  writeJson,
+} from "./archive.ts";
 import { collectors } from "./collectors/index.ts";
 import { findAmbiguousPairs, mergePair, mergePrograms } from "./dedupe.ts";
 import { enrich } from "./extract.ts";
@@ -7,31 +17,18 @@ import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
 import type { Program, School, TagCategory } from "./types.ts";
 
 const CONFIG_DIR = new URL("../config/", import.meta.url);
-const DATA_DIR = new URL("../data/", import.meta.url);
-const PROGRAMS_FILE = new URL("programs.json", DATA_DIR);
-const KEEP_DAYS = 90; // 마지막 일정이 이보다 오래 지난 항목은 지운다
-
-async function readJson<T>(file: URL, fallback?: T): Promise<T> {
-  try {
-    return JSON.parse(await readFile(file, "utf8"));
-  } catch (error) {
-    if (fallback !== undefined && (error as NodeJS.ErrnoException).code === "ENOENT") return fallback;
-    throw error;
-  }
-}
 
 const schools = await readJson<School[]>(new URL("schools.json", CONFIG_DIR));
 const categories = await readJson<TagCategory[]>(new URL("tag-categories.json", CONFIG_DIR));
 const existing = await readJson<Program[]>(PROGRAMS_FILE, []);
+const archived = await readJson<Program[]>(ARCHIVE_FILE, []);
 // --refresh: 이미 저장된 게시물도 다시 읽어 정보를 새로 추출한다
 const refresh = process.argv.includes("--refresh");
-const EXCLUDED_FILE = new URL("excluded.json", DATA_DIR);
 const excludedUrls = new Set(await readJson<string[]>(EXCLUDED_FILE, []));
-const knownUrls = new Set(refresh ? [] : [...existing.flatMap((p) => p.links.map((l) => l.url)), ...excludedUrls]);
+const urlsOf = (programs: Program[]) => programs.flatMap((p) => p.links.map((l) => l.url));
+const knownUrls = new Set(refresh ? [] : [...urlsOf(existing), ...urlsOf(archived), ...excludedUrls]);
 // AI로 이미 추출한 게시물 주소. 목록을 매번 다시 읽는 출처도 AI는 새 게시물에만 쓴다
-const aiDoneUrls = new Set(
-  refresh ? [] : existing.filter((p) => p.extractedBy === "ai").flatMap((p) => p.links.map((l) => l.url)),
-);
+const aiDoneUrls = new Set(refresh ? [] : urlsOf([...existing, ...archived].filter((p) => p.extractedBy === "ai")));
 
 const incoming: Program[] = [];
 const excluded = new Set<string>(); // 학생 대상이 아니라서 뺀 게시물 id
@@ -83,11 +80,9 @@ for (const school of schools) {
   }
 }
 
-const cutoff = new Date(Date.now() - KEEP_DAYS * 86_400_000).toISOString().slice(0, 10);
-const lastDate = (p: Program) =>
-  [p.recruitPeriod.end, p.activityPeriod.end, p.postedAt, p.collectedAt.slice(0, 10)].filter((d) => d !== null).sort().at(-1)!;
-
-let merged = mergePrograms(existing, incoming).filter((p) => lastDate(p) >= cutoff && !excluded.has(p.id));
+// 마지막 일정이 오래 지난 항목은 지우지 않고 보관함(archive.json)으로 옮긴다
+const { current, old } = splitByAge(mergePrograms(existing, incoming).filter((p) => !excluded.has(p.id)));
+let merged = current;
 
 // 제목 표현이 달라 규칙으로 판단하기 애매한 중복은 AI에게 묻는다
 const pairs = findAmbiguousPairs(merged);
@@ -100,12 +95,10 @@ for (const index of await confirmDuplicates(pairs)) {
 }
 
 await mkdir(DATA_DIR, { recursive: true });
-await writeFile(PROGRAMS_FILE, JSON.stringify(merged, null, 2) + "\n");
-await writeFile(EXCLUDED_FILE, JSON.stringify([...excludedUrls].sort(), null, 2) + "\n");
-await writeFile(
-  new URL("collect-log.json", DATA_DIR),
-  JSON.stringify({ ranAt: new Date().toISOString(), total: merged.length, sources: log }, null, 2) + "\n",
-);
+await writeJson(PROGRAMS_FILE, merged);
+if (old.length > 0) await writeJson(ARCHIVE_FILE, mergeArchive(await readJson<Program[]>(ARCHIVE_FILE, []), old));
+await writeJson(EXCLUDED_FILE, [...excludedUrls].sort());
+await writeJson(new URL("collect-log.json", DATA_DIR), { ranAt: new Date().toISOString(), total: merged.length, sources: log });
 console.log(`새로 수집 ${incoming.length}개, 전체 ${merged.length}개를 data/programs.json에 저장`);
 
 // 실패한 출처가 있으면 자동 실행(GitHub Actions)에서 알림이 가도록 실패로 끝낸다

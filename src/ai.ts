@@ -37,7 +37,7 @@ export function findCodex(): string | null {
   return codexPath;
 }
 
-function buildPrompt(items: CollectedItem[], categories: TagCategory[]): string {
+function buildPrompt(items: CollectedItem[], categories: TagCategory[], maxText = MAX_TEXT): string {
   const tagList = categories.map((c) => `- ${c.name}: ${c.tags.map((t) => t.name).join(", ")}`).join("\n");
   const posts = items
     .map(
@@ -45,7 +45,7 @@ function buildPrompt(items: CollectedItem[], categories: TagCategory[]): string 
 게시일: ${item.program.postedAt ?? "모름"} / 작성 부서: ${item.writer ?? "모름"}
 제목: ${item.program.title}
 본문:
-${item.text.slice(0, MAX_TEXT) || "(본문 없음, 이미지로만 안내됨)"}`,
+${item.text.slice(0, maxText) || "(본문 없음, 이미지로만 안내됨)"}`,
     )
     .join("\n\n");
 
@@ -66,6 +66,7 @@ ${item.text.slice(0, MAX_TEXT) || "(본문 없음, 이미지로만 안내됨)"}`
   작성 부서(홍보팀 등)는 안내만 했을 수 있다. 본문에 외부 기관의 담당자·운영사무국·주관사가 나오면 작성 부서를 주최로 쓰지 마라.
 - organizerType: 주최 유형 목록 중 하나.
   - 학교: 이름에 "대학교"나 "대학"이 들어간 기관과 그 부서·사업단만. 이 조건에 안 맞으면 절대 학교로 쓰지 마라.
+    지역 이름(경산시·대구시·경북 등)으로 시작하는 센터·기관은 학교가 아니라 지자체나 공공기관이다.
     이름을 모르는 회사·교육업체·아카데미 운영사는 기업이다. 인력양성원·교육원처럼 공적 성격의 교육기관은 공공기관이다.
   - 공공기관: 공단·공사·진흥원·정부 출연 연구원 등 공적 기관. 기업이 세운 재단은 기업으로 본다.
 - colleges/departments/grades: 참여 자격이 특정 단과대학·학과·학년으로 "제한"될 때만 적는다. 우대·예시는 제한이 아니다.
@@ -171,27 +172,50 @@ ${pairs.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join
   }
 }
 
+// 과거 글 1차 거르기: 제목만 보고 "학생이 신청·참여하는 공고"인 글의 번호를 돌려준다. 실패하면 null
+export async function pickProgramTitles(titles: string[]): Promise<number[] | null> {
+  const bin = findCodex();
+  if (!bin) return null;
+  const prompt = `아래는 대학 홈페이지 소식 게시판의 글 제목이다. 파일을 읽거나 명령을 실행하지 말고 JSON만 답해라.
+학생(학부생·대학원생·유학생)이 신청·참여·지원할 수 있는 모집 공고의 번호만 골라라.
+- 고른다: 프로그램·교육·특강·캠프·공모전·대회·장학·지원금·인턴·채용·서포터즈·봉사·해외 파견·행사 참가자 모집, 신청 안내.
+- 고르지 않는다: 보도·홍보 기사, 수상·성과 소식, 결과·합격자 발표, 교원·직원 대상 글, 입찰·계약, 단순 행정 안내(휴무·시설 공사 등).
+- 애매하면 고른다 (다음 단계에서 본문을 읽고 다시 거른다).
+형식: {"pick":[번호들]}
+
+${titles.map((title, i) => `${i}. ${title}`).join("\n")}`;
+  try {
+    const answer = (await askCodex(bin, prompt)) as { pick?: unknown };
+    if (!Array.isArray(answer.pick)) return null;
+    return answer.pick.filter((n): n is number => Number.isInteger(n) && n >= 0 && n < titles.length);
+  } catch (error) {
+    console.error("  AI 제목 거르기 실패:", error instanceof Error ? error.message : error);
+    return null;
+  }
+}
+
 // AI로 추출한 게시물 수와, 학생 대상이 아니라서 뺄 게시물 id를 돌려준다
 export async function enrichWithAi(
   items: CollectedItem[],
   categories: TagCategory[],
+  { batchSize = BATCH_SIZE, maxText = MAX_TEXT } = {},
 ): Promise<{ done: number; notForStudents: Set<string> }> {
   const notForStudents = new Set<string>();
   const bin = findCodex();
   if (!bin || items.length === 0) return { done: 0, notForStudents };
 
   let done = 0;
-  for (let i = 0; i < items.length; i += BATCH_SIZE) {
-    const batch = items.slice(i, i + BATCH_SIZE);
+  for (let i = 0; i < items.length; i += batchSize) {
+    const batch = items.slice(i, i + batchSize);
     try {
-      const answer = await askCodex(bin, buildPrompt(batch, categories));
+      const answer = await askCodex(bin, buildPrompt(batch, categories, maxText));
       for (const data of answer.items ?? []) {
         const item = batch.find((b) => b.program.id === data.id);
         if (!item) continue;
         if (apply(item, data, categories)) done++;
         else notForStudents.add(item.program.id);
       }
-      console.log(`  AI 추출 ${Math.min(i + BATCH_SIZE, items.length)}/${items.length}`);
+      console.log(`  AI 추출 ${Math.min(i + batchSize, items.length)}/${items.length}`);
     } catch (error) {
       console.error("  AI 추출 실패, 규칙 결과를 사용:", error instanceof Error ? error.message : error);
     }

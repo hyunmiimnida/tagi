@@ -81,6 +81,21 @@ export interface CollectContext {
 
 export type Collector = (ctx: CollectContext) => Promise<CollectedItem[]>;
 
+// 과거 글 목록의 한 줄. item이 있으면 목록만으로 정보가 다 모인 것이다 (상세를 읽지 않는다)
+export interface ArchivePost {
+  postId: string;
+  title: string;
+  url: string;
+  postedAt: string | null;
+  item?: CollectedItem;
+}
+
+// 과거 글 수집기: since(YYYY-MM-DD) 이후 글의 목록을 훑고, 필요하면 상세를 읽는다
+export interface Archiver {
+  list: (ctx: CollectContext, since: string) => Promise<ArchivePost[]>;
+  read?: (ctx: CollectContext, post: ArchivePost) => Promise<CollectedItem | null>;
+}
+
 export function emptyProgram(school: School, source: Source, postId: string, title: string, url: string): Program {
   return {
     id: `${source.id}-${postId}`,
