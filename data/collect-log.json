@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-09-30T18:46:52.909Z",
+  "ranAt": "2026-10-01T00:24:29.955Z",
   "total": 62,
   "sources": [
     {
@@ -12,7 +12,7 @@
       "source": "yu-news",
       "ok": true,
       "count": 0,
-      "message": ""
+      "message": "내 컴퓨터에서만 수집"
     }
   ]
 }
