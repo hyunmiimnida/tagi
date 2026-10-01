@@ -11,7 +11,7 @@ import {
 } from "./archive.ts";
 import { archivers } from "./collectors/index.ts";
 import { collapseReposts, mergePrograms } from "./dedupe.ts";
-import { cleanPeriods } from "./extract.ts";
+import { cleanPeriods, isStaffHiring } from "./extract.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
@@ -188,7 +188,9 @@ async function save() {
   // 제외 목록(data/excluded.json)에 있는 글은 다시 넣지 않는다
   const excludedUrls = new Set(await readJson<string[]>(EXCLUDED_FILE, []));
   const sourceIds = new Set(schools.filter((s) => !onlySchools || onlySchools.has(s.id)).flatMap((s) => s.sources.map((src) => src.id)));
-  const incoming = results.filter((p) => p.sources.some((id) => sourceIds.has(id)) && !p.links.some((l) => excludedUrls.has(l.url)));
+  const incoming = results.filter(
+    (p) => p.sources.some((id) => sourceIds.has(id)) && !p.links.some((l) => excludedUrls.has(l.url)) && !isStaffHiring(p.title),
+  );
   console.log(`합칠 결과 ${incoming.length}개 (전체 ${results.length}개 중)`);
   const all = collapseReposts(mergePrograms(saved, incoming));
   all.forEach(cleanPeriods);
