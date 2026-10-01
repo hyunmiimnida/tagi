@@ -88,3 +88,10 @@ test("졸업생과 학년을 함께 고르면 학년 조건은 재학·휴학 �
   assert.ok(!matchesEligibility(program, new Set(["졸업생", "1학년"])));
   assert.ok(matchesEligibility(program, new Set(["재학생", "1학년"])));
 });
+
+test("게시일이 없으면 처음 수집한 시각을 보는 사람의 시간대 날짜로 센다", async () => {
+  const { addedAt, toDateString } = await import("./filter.ts");
+  const seen = "2026-09-30T18:31:28.906Z";
+  const program = { postedAt: null, firstSeenAt: seen, collectedAt: seen, recruitPeriod: { start: null, end: null } } as never;
+  assert.equal(addedAt(program), toDateString(new Date(seen)));
+});

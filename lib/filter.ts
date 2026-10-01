@@ -125,7 +125,8 @@ export function toDateString(date: Date): string {
 
 // 올라온 날. 게시일 → 접수 시작일 → 처음 수집한 날 순으로 쓴다
 export function addedAt(program: Program): string {
-  const firstSeen = (program.firstSeenAt ?? program.collectedAt).slice(0, 10);
+  // 수집 시각은 UTC라서, 보는 사람의 시간대 날짜로 바꾼다 (한국 아침 9시 전 수집분이 전날로 보이지 않게)
+  const firstSeen = toDateString(new Date(program.firstSeenAt ?? program.collectedAt));
   const start = program.recruitPeriod.start;
   return program.postedAt ?? (start && start < firstSeen ? start : firstSeen);
 }

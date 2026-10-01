@@ -63,6 +63,8 @@ export function Home({ programs, categories }: Props) {
     [open, today],
   );
 
+  const todayCount = fresh.filter((p) => addedAt(p) === today).length;
+
   // 내 관심 공고의 다가오는 일정 3개
   const myEvents = useMemo(() => {
     const events: { date: string; kind: string; program: Program }[] = [];
@@ -94,18 +96,40 @@ export function Home({ programs, categories }: Props) {
           {month}월 {day}일 {formatDate(today, year).slice(-2, -1)}요일
         </p>
         <h1>
-          지금 지원할 수 있는 공고
-          <br />
-          <strong>{open.length}개</strong>가 있어요
+          {todayCount > 0 ? (
+            <>
+              오늘 새로 올라온 공고
+              <br />
+              <Link href="/programs?sort=recent">
+                <strong>{todayCount}개</strong>
+              </Link>
+              가 있어요
+            </>
+          ) : fresh.length > 0 ? (
+            <>
+              오늘은 새 공고가 없어요
+              <br />
+              최근 3일 동안{" "}
+              <Link href="/programs?sort=recent">
+                <strong>{fresh.length}개</strong>
+              </Link>
+              가 올라왔어요
+            </>
+          ) : (
+            <>
+              최근 3일 동안
+              <br />새 공고가 없어요
+            </>
+          )}
         </h1>
         <div className="hero-stats">
           <Link href="/programs" className="stat">
+            <span>지원 가능</span>
+            <strong>{open.length}</strong>
+          </Link>
+          <Link href="/programs" className="stat">
             <span>마감 임박</span>
             <strong className="warn">{urgent.length}</strong>
-          </Link>
-          <Link href="/programs?sort=recent" className="stat">
-            <span>새 공고</span>
-            <strong>{fresh.length}</strong>
           </Link>
           <Link href="/calendar" className="stat">
             <span>관심 공고</span>
@@ -116,7 +140,7 @@ export function Home({ programs, categories }: Props) {
 
       <InstallCard />
 
-      <Section title="놓치기 전에, 마감 임박" href="/programs">
+      <Section title="마감 임박 공고" href="/programs">
         {urgent.length === 0 ? (
           <p className="section-empty">일주일 안에 마감되는 공고가 없어요.</p>
         ) : (

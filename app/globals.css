@@ -1781,3 +1781,7 @@ main {
   content-visibility: auto;
   contain-intrinsic-size: auto 110px;
 }
+
+.hero h1 a {
+  color: inherit;
+}
