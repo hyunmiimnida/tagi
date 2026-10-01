@@ -8,3 +8,4 @@ tsconfig.tsbuildinfo
 logs/
 public/_icon-preview.html
 .cache/
+public/api/

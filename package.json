@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/build-api.ts",
     "build": "next build",
     "start": "next start",
     "collect": "node src/collect.ts",
