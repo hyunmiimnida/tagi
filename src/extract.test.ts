@@ -66,3 +66,23 @@ test("표현이 많이 다른 출처 간 제목은 AI 판단 후보로 고른다
   assert.equal(pairs.length, 1);
   assert.deepEqual(pairs[0].map((p) => p.id), ["a", "b"]);
 });
+
+test("AI가 외부 단체를 학교로 분류하면 바로잡는다", async () => {
+  const { fixOrganizerType } = await import("./ai.ts");
+  const categories = [
+    { id: "organizer-type", name: "주최 유형", matchOn: "organizer" as const, tags: [
+      { name: "공공기관", keywords: ["재단", "진흥원"] },
+      { name: "학교", keywords: [] },
+    ] },
+  ];
+  const outside = { organizer: "벤처기업협회 대구경북지회", organizerType: "학교", tags: ["학교", "공모전·대회"] };
+  fixOrganizerType(outside as never, categories);
+  assert.equal(outside.organizerType, null);
+  assert.deepEqual(outside.tags, ["공모전·대회"]);
+  const foundation = { organizer: "한국장학재단", organizerType: "학교", tags: ["학교"] };
+  fixOrganizerType(foundation as never, categories);
+  assert.equal(foundation.organizerType, "공공기관");
+  const school = { organizer: "YU 사회공헌단", organizerType: "학교", tags: ["학교"] };
+  fixOrganizerType(school as never, categories);
+  assert.equal(school.organizerType, "학교");
+});

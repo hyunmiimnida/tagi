@@ -124,6 +124,22 @@ async function askCodex(bin: string, prompt: string): Promise<{ items?: Record<s
   }
 }
 
+// AI가 외부 단체(협회·재단 등)를 "학교"로 잘못 분류하면 바로잡는다.
+// 학교 이름이 들어 있지 않은데 외부 단체 이름이면, 주최 유형 키워드 규칙으로 다시 정하고 못 찾으면 비워 둔다
+const OUTSIDE_GROUP = /협회|지회|협의회|공단|공사|진흥원|재단|연합회|상공회의소/;
+const SCHOOL_NAME = /대학|영남|YU|학교/i;
+export function fixOrganizerType(program: Program, categories: TagCategory[]): void {
+  const organizer = program.organizer;
+  if (program.organizerType !== "학교" || !organizer) return;
+  if (!OUTSIDE_GROUP.test(organizer) || SCHOOL_NAME.test(organizer)) return;
+  const typeCategory = categories.find((c) => c.matchOn === "organizer");
+  const types = typeCategory?.tags ?? [];
+  const fixed = types.find((t) => t.name !== "학교" && t.keywords.some((k) => organizer.includes(k)))?.name ?? null;
+  program.tags = program.tags.filter((t) => t !== "학교");
+  if (fixed) program.tags = [fixed, ...program.tags.filter((t) => t !== fixed)];
+  program.organizerType = fixed;
+}
+
 // 학생 대상이 아니면 false를 돌려준다
 function apply(item: CollectedItem, data: Record<string, unknown>, categories: TagCategory[]): boolean {
   const { program } = item;
@@ -147,6 +163,7 @@ function apply(item: CollectedItem, data: Record<string, unknown>, categories: T
 
   const tags = strings(data.tags).filter((t) => allowedTags.has(t) && !organizerTypes.includes(t));
   program.tags = [...new Set([...(program.organizerType ? [program.organizerType] : []), ...tags])];
+  fixOrganizerType(program, categories);
   program.extractedBy = "ai";
   return true;
 }

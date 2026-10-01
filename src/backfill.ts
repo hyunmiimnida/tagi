@@ -1,5 +1,5 @@
 import { mkdir } from "node:fs/promises";
-import { enrichWithAi, findCodex, pickProgramTitles } from "./ai.ts";
+import { enrichWithAi, findCodex, fixOrganizerType, pickProgramTitles } from "./ai.ts";
 import {
   ARCHIVE_FILE,
   PROGRAMS_FILE,
@@ -27,10 +27,10 @@ const REJECTED_FILE = new URL("rejected.json", CACHE); // 본문을 읽어 보�
 const listFile = (sourceId: string) => new URL(`list-${sourceId}-${since}.json`, CACHE);
 
 const TRIAGE_BATCH = 200; // 제목 거르기 한 번에 보낼 제목 수
-const NEWS_BATCH = 12; // 본문 추출 한 번에 보낼 게시물 수
+const NEWS_BATCH = 20; // 본문 추출 한 번에 보낼 게시물 수
 const LIST_ONLY_BATCH = 40; // 목록 정보만 있는 출처는 글이 짧아 많이 보낸다
 const NEWS_MAX_TEXT = 1500;
-const AI_PARALLEL = 3; // 동시에 돌리는 AI 작업 수
+const AI_PARALLEL = 5; // 동시에 돌리는 AI 작업 수
 
 const args = process.argv.slice(2);
 const since = args[args.indexOf("--since") + 1]?.match(/^\d{4}-\d{2}-\d{2}$/) ? args[args.indexOf("--since") + 1] : "2020-01-01";
@@ -144,6 +144,8 @@ async function extract(
 
 // 추출 결과를 목록(최근 90일)과 보관함(그 이전)에 나눠 합친다
 async function save() {
+  // 수집 중에 고친 검사 규칙을 이미 추출한 결과에도 적용한다
+  for (const program of results) fixOrganizerType(program, categories);
   const { current, old } = splitByAge(results);
   const programs = mergePrograms(await readJson<Program[]>(PROGRAMS_FILE, []), current);
   const archive = mergeArchive(await readJson<Program[]>(ARCHIVE_FILE, []), old);
