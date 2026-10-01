@@ -50,12 +50,13 @@ export default function TermsPage() {
       <h2>5. 서비스 변경과 중단</h2>
       <p>서비스는 미리 알리지 않고 내용을 바꾸거나 중단할 수 있습니다. 약관을 바꾸면 이 화면에 시행일과 함께 알립니다.</p>
 
-      <h2>6. 문의</h2>
+      <h2>6. 문의와 권리 침해 신고</h2>
       <p>
-        <a href={CONTACT.href} target="_blank" rel="noreferrer">
+        <a href={CONTACT.href}>
           {CONTACT.label}
         </a>
-        로 알려 주세요.
+        로 알려 주세요. 명예훼손·사생활 침해 등 권리를 침해하는 댓글은 이메일로 신고하면 확인하는 동안 바로 숨기고, 확인 후 지우거나
+        다시 보이게 합니다. 공고 원문을 올린 기관이 정보 정정이나 수집 중단을 원하면 같은 이메일로 알려 주세요.
       </p>
     </article>
   );

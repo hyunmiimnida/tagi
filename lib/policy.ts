@@ -1,7 +1,8 @@
 // 이용약관·개인정보처리방침·댓글 규칙에 함께 쓰는 값
 
-// 문의처. 개인정보 보호 책임자 연락처로도 쓰인다 (운영자 이메일로 바꿔 쓴다)
-export const CONTACT = { label: "GitHub 문의 게시판", href: "https://github.com/hyunmiimnida/tagi/issues" };
+// 운영용 이메일. 문의·개인정보 보호 책임자·게시물 신고(임시조치 요청) 창구이고, 수집기 이름(User-Agent)에도 들어간다
+export const CONTACT_EMAIL = "whgusals4@gmail.com";
+export const CONTACT = { label: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` };
 
 // 문서를 고치면 날짜도 바꾼다
 export const POLICY_DATE = "2026년 10월 1일";

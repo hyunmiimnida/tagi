@@ -296,7 +296,7 @@ export function MyAccount({ schools, fieldTags, seriesInfo }: Props) {
         <Link href="/privacy">
           개인정보처리방침 <ChevronIcon size={18} />
         </Link>
-        <a href={CONTACT.href} target="_blank" rel="noreferrer">
+        <a href={CONTACT.href}>
           문의하기 <ChevronIcon size={18} />
         </a>
       </nav>

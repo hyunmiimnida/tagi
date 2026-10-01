@@ -55,7 +55,34 @@ export default function PrivacyPage() {
         <li>Vercel: 사이트 운영 (접속 기록이 일시적으로 남을 수 있음)</li>
         <li>카카오, 구글: 소셜 로그인</li>
       </ul>
-      <p>이 회사들의 서버는 해외에 있을 수 있습니다. 위 목적 밖으로 정보를 다른 곳에 주거나 팔지 않습니다.</p>
+      <p>위 목적 밖으로 정보를 다른 곳에 주거나 팔지 않습니다.</p>
+
+      <h2>3-1. 국외 이전</h2>
+      <table className="doc-table">
+        <tbody>
+          <tr>
+            <th>받는 곳</th>
+            <td>Supabase Inc.(로그인·계정 정보 저장), Vercel Inc.(사이트 운영)</td>
+          </tr>
+          <tr>
+            <th>나라</th>
+            <td>각 회사가 서버를 둔 나라 (미국 등)</td>
+          </tr>
+          <tr>
+            <th>옮기는 정보</th>
+            <td>1번 표의 정보(Supabase), 접속 기록(Vercel)</td>
+          </tr>
+          <tr>
+            <th>시기·방법</th>
+            <td>로그인하거나 설정을 저장할 때, 사이트를 열 때 암호화된 연결(HTTPS)로 전송</td>
+          </tr>
+          <tr>
+            <th>보관 기간</th>
+            <td>탈퇴할 때까지 (접속 기록은 각 회사 정책에 따름)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>국외 이전을 원하지 않으면 로그인하지 않고 쓸 수 있습니다. 이때 설정은 이 기기의 브라우저에만 저장됩니다.</p>
 
       <h2>4. 내 권리</h2>
       <p>
@@ -63,13 +90,14 @@ export default function PrivacyPage() {
         지울 수 있으며, 탈퇴하면 모두 지워집니다.
       </p>
 
-      <h2>5. 개인정보 문의</h2>
+      <h2>5. 개인정보 보호 책임자와 문의</h2>
       <p>
-        <a href={CONTACT.href} target="_blank" rel="noreferrer">
+        {SITE_NAME} 운영자 ·{" "}
+        <a href={CONTACT.href}>
           {CONTACT.label}
         </a>
-        로 알려 주세요.
       </p>
+      <p>열람·정정·삭제 요청은 이메일로 받고, 받은 날부터 10일 안에 처리하고 결과를 알려 드립니다.</p>
     </article>
   );
 }
