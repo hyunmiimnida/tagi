@@ -2232,7 +2232,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:08:26.038Z",
     "firstSeenAt": "2026-10-01T14:08:26.038Z",
-    "seriesId": "knu-startup-421"
+    "seriesId": "knu-startup-428"
   },
   {
     "id": "kmu-scholarship-266252",
@@ -3214,7 +3214,8 @@
     "postedAt": "2026-06-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:41:59.210Z",
-    "firstSeenAt": "2026-10-01T03:41:59.210Z"
+    "firstSeenAt": "2026-10-01T03:41:59.210Z",
+    "seriesId": "yu-news-83707"
   },
   {
     "id": "yu-news-230176340",
@@ -4621,7 +4622,8 @@
     "postedAt": "2026-06-02",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:08:00.686Z",
-    "firstSeenAt": "2026-10-01T14:08:00.686Z"
+    "firstSeenAt": "2026-10-01T14:08:00.686Z",
+    "seriesId": "knu-startup-702"
   },
   {
     "id": "kmu-scholarship-267051",
@@ -17084,7 +17086,8 @@
     "postedAt": "2026-03-04",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:32:29.136Z",
-    "firstSeenAt": "2026-10-01T14:32:29.136Z"
+    "firstSeenAt": "2026-10-01T14:32:29.136Z",
+    "seriesId": "kmu-scholarship-261907"
   },
   {
     "id": "kmu-scholarship-261901",
@@ -20121,7 +20124,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:09:48.775Z",
     "firstSeenAt": "2026-10-01T04:09:48.775Z",
-    "seriesId": "yu-news-224109094",
+    "seriesId": "yu-news-83707",
     "aliases": [
       "yu-news-228952078",
       "yu-news-228923689",
@@ -22781,7 +22784,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:07:12.001Z",
     "firstSeenAt": "2026-10-01T04:07:12.001Z",
-    "seriesId": "yu-news-224109094"
+    "seriesId": "yu-news-83707"
   },
   {
     "id": "yu-news-228629694",
@@ -23525,7 +23528,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:08:37.587Z",
     "firstSeenAt": "2026-10-01T14:08:37.587Z",
-    "seriesId": "knu-startup-421"
+    "seriesId": "knu-startup-428"
   },
   {
     "id": "yu-news-228434106",
@@ -31626,7 +31629,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:09:00.886Z",
     "firstSeenAt": "2026-10-01T14:09:00.886Z",
-    "seriesId": "knu-startup-421"
+    "seriesId": "knu-startup-428"
   },
   {
     "id": "kmu-scholarship-260398",
@@ -40155,7 +40158,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:22:04.291Z",
     "firstSeenAt": "2026-10-01T04:22:04.291Z",
-    "seriesId": "yu-news-224109094"
+    "seriesId": "yu-news-83707"
   },
   {
     "id": "yu-news-227304671",
@@ -43529,7 +43532,8 @@
     "postedAt": "2025-10-15",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:08:53.550Z",
-    "firstSeenAt": "2026-10-01T14:08:53.550Z"
+    "firstSeenAt": "2026-10-01T14:08:53.550Z",
+    "seriesId": "knu-startup-619"
   },
   {
     "id": "yu-career-2330",
@@ -67980,7 +67984,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:54:20.173Z",
     "firstSeenAt": "2026-10-01T04:54:20.173Z",
-    "seriesId": "yu-news-224109094",
+    "seriesId": "yu-news-83707",
     "aliases": [
       "yu-news-224512768",
       "yu-news-224377767",
@@ -74335,7 +74339,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:11:07.470Z",
     "firstSeenAt": "2026-10-01T14:11:07.470Z",
-    "seriesId": "knu-startup-421"
+    "seriesId": "knu-startup-428"
   },
   {
     "id": "yu-news-223626886",
@@ -96719,7 +96723,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:12:00.179Z",
     "firstSeenAt": "2026-10-01T14:12:00.179Z",
-    "seriesId": "knu-startup-421"
+    "seriesId": "knu-startup-428"
   },
   {
     "id": "knu-startup-550",
@@ -96768,7 +96772,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:12:01.276Z",
     "firstSeenAt": "2026-10-01T14:12:01.276Z",
-    "seriesId": "knu-startup-421"
+    "seriesId": "knu-startup-428"
   },
   {
     "id": "yu-news-221455786",
@@ -231852,7 +231856,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:19:42.546Z",
     "firstSeenAt": "2026-10-01T14:19:42.546Z",
-    "seriesId": "knu-startup-421"
+    "seriesId": "knu-startup-428"
   },
   {
     "id": "yu-news-1474578",
@@ -307247,7 +307251,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:21:54.459Z",
     "firstSeenAt": "2026-10-01T14:21:54.459Z",
-    "seriesId": "knu-startup-421"
+    "seriesId": "knu-startup-428"
   },
   {
     "id": "yu-news-85628",

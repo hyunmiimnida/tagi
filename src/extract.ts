@@ -25,8 +25,9 @@ export function parseDates(text: string, baseYear: number): string[] {
     const day = Number(m[3] ?? m[5]);
     if (month < 1 || month > 12 || day < 1 || day > 31) continue;
     let date = `${year}-${pad(month)}-${pad(day)}`;
-    // "12.20 ~ 1.10"처럼 해를 넘기는 기간
-    if (!m[1] && dates.length > 0 && date < dates[dates.length - 1]) {
+    // "12.20 ~ 1.10"처럼 해를 넘기는 기간 (달이 앞으로 돌아갈 때만. "4.23 → 4.21"처럼 같은 달에서 날짜만 줄면 일정 변경이다)
+    const prev = dates[dates.length - 1];
+    if (!m[1] && prev && month < Number(prev.slice(5, 7)) && date < prev) {
       date = `${++year}-${pad(month)}-${pad(day)}`;
     }
     dates.push(date);

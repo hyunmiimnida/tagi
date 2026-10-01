@@ -18663,8 +18663,8 @@
       "openTo": null
     },
     "recruitPeriod": {
-      "start": "2026-04-23",
-      "end": "2027-04-21"
+      "start": null,
+      "end": "2026-04-27"
     },
     "activityPeriod": {
       "start": null,
@@ -24142,7 +24142,8 @@
     "postedAt": "2026-08-26",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:05:46.305Z",
-    "firstSeenAt": "2026-10-01T11:05:46.305Z"
+    "firstSeenAt": "2026-10-01T11:05:46.305Z",
+    "seriesId": "kmu-scholarship-261907"
   },
   {
     "id": "kmu-scholarship-270072",
@@ -24776,7 +24777,8 @@
     "postedAt": "2026-10-01",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:46.662Z",
-    "firstSeenAt": "2026-10-01T11:25:46.662Z"
+    "firstSeenAt": "2026-10-01T11:25:46.662Z",
+    "seriesId": "knu-startup-619"
   },
   {
     "id": "knu-startup-746",
@@ -24903,7 +24905,8 @@
     "postedAt": "2026-08-26",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:25:52.715Z",
-    "firstSeenAt": "2026-10-01T11:25:52.715Z"
+    "firstSeenAt": "2026-10-01T11:25:52.715Z",
+    "seriesId": "knu-startup-702"
   },
   {
     "id": "knu-startup-735",
@@ -25125,7 +25128,8 @@
     "postedAt": "2026-07-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T11:26:00.757Z",
-    "firstSeenAt": "2026-10-01T11:26:00.757Z"
+    "firstSeenAt": "2026-10-01T11:26:00.757Z",
+    "seriesId": "knu-startup-395"
   },
   {
     "id": "yu-col-liberalart-231413805",
@@ -27827,7 +27831,7 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:34:46.419Z",
     "firstSeenAt": "2026-10-01T04:34:46.419Z",
-    "seriesId": "yu-news-224109094",
+    "seriesId": "yu-news-83707",
     "aliases": [
       "yu-news-228797221",
       "yu-news-228406128",
@@ -28828,51 +28832,6 @@
     "firstSeenAt": "2026-10-01T14:25:58.974Z"
   },
   {
-    "id": "kmu-notice-268153",
-    "title": "계명대학교 「2026년 RISE 기업애로기술 지원사업」 모집",
-    "organizer": "산학협력단 기업지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "kmu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-12-31"
-    },
-    "activityPeriod": {
-      "start": "2026-06-25",
-      "end": "2026-12-31"
-    },
-    "tags": [
-      "학교",
-      "장학·지원금",
-      "멘토링·컨설팅"
-    ],
-    "links": [
-      {
-        "sourceId": "kmu-notice",
-        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=268153&mnu_uid=143"
-      }
-    ],
-    "sources": [
-      "kmu-notice"
-    ],
-    "postedAt": "2026-06-25",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T14:26:00.925Z",
-    "firstSeenAt": "2026-10-01T14:26:00.925Z"
-  },
-  {
     "id": "kmu-scholarship-269978",
     "title": "[교외] 2026학년도 세종이도인재장학금 장학생 모집",
     "organizer": "장학복지팀",
@@ -29221,7 +29180,8 @@
     "postedAt": "2026-08-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:30:45.701Z",
-    "firstSeenAt": "2026-10-01T14:30:45.701Z"
+    "firstSeenAt": "2026-10-01T14:30:45.701Z",
+    "seriesId": "kmu-scholarship-261132"
   },
   {
     "id": "kmu-scholarship-269744",
