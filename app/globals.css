@@ -1873,6 +1873,16 @@ main {
   font-size: 0.8125rem;
 }
 
+.link-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .my-comments {
   margin: 8px 0 0;
   padding: 0;

@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import { GRADES, STUDENT_STATUSES } from "../src/types.ts";
 import type { SchoolOption } from "../lib/filter.ts";
 import { CONTACT } from "../lib/policy.ts";
-import { disablePush, enablePush, needsInstallForPush } from "../lib/push.ts";
+import { disablePush, enablePush, needsInstallForPush, pushOnThisDevice } from "../lib/push.ts";
 import { supabase, useUser } from "../lib/user.tsx";
 import type { Profile } from "../lib/user.tsx";
 import { ChevronIcon } from "./Icons.tsx";
@@ -42,6 +42,13 @@ export function MyAccount({ schools, fieldTags, seriesInfo }: Props) {
   const [pushNote, setPushNote] = useState<string | null>(null);
 
   useEffect(() => setNickname(profile.nickname ?? ""), [profile.nickname]);
+
+  // 다른 기기에서 알림을 켰다면 이 기기는 아직 알림을 받지 않는다 → "이 기기에서도 받기"를 보여 준다
+  const [otherDevice, setOtherDevice] = useState(false);
+  useEffect(() => {
+    if (!user.signedIn || !profile.notifyDeadline) return setOtherDevice(false);
+    void pushOnThisDevice().then((here) => setOtherDevice(!here));
+  }, [user.signedIn, profile.notifyDeadline]);
 
   // 내가 쓴 댓글 (최근 50개)
   const loadMyComments = useCallback(async () => {
@@ -108,7 +115,8 @@ export function MyAccount({ schools, fieldTags, seriesInfo }: Props) {
       );
       return;
     }
-    setPushNote(on ? "알림을 켰어요. 관심 공고 마감 하루 전에 이 기기로 알려 드려요." : "알림을 껐어요.");
+    if (on) setOtherDevice(false);
+    setPushNote(on ? "알림을 켰어요. 방금 확인 알림이 왔다면 이 기기로 잘 받을 수 있어요." : "알림을 껐어요.");
     await update({ notifyDeadline: on });
   }
 
@@ -269,6 +277,14 @@ export function MyAccount({ schools, fieldTags, seriesInfo }: Props) {
             onChange={(event) => void toggleDeadline(event.target.checked)}
           />
         </label>
+        {otherDevice && !pushNote && (
+          <div className="nickname-note">
+            다른 기기에서 켠 알림이에요. 이 기기로도 받으려면{" "}
+            <button className="link-button" disabled={pushBusy} onClick={() => void toggleDeadline(true)}>
+              이 기기에서도 받기
+            </button>
+          </div>
+        )}
         {pushNote && (
           <p className="nickname-note" role="status">
             {pushNote}

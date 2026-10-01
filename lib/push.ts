@@ -49,7 +49,16 @@ export async function enablePush(supabase: SupabaseClient, userId: string): Prom
       p256dh: json.keys?.p256dh,
       auth: json.keys?.auth,
     });
-    return error ? "failed" : "on";
+    if (error) return "failed";
+    // 이 기기에서 알림이 실제로 보이는지 바로 확인할 수 있게 확인 알림을 띄운다
+    await reg
+      .showNotification("캠퍼스모아 알림이 켜졌어요", {
+        body: "관심 공고 모집 마감 하루 전 아침 9시에 이렇게 알려 드릴게요.",
+        icon: "/icon-192.png",
+        data: { url: "/calendar" },
+      })
+      .catch(() => {});
+    return "on";
   } catch {
     return "failed";
   }
@@ -63,4 +72,11 @@ export async function disablePush(supabase: SupabaseClient): Promise<PushResult>
     await subscription.unsubscribe().catch(() => {});
   }
   return "off";
+}
+
+// 이 기기가 알림 받을 주소를 가지고 있는지 (다른 기기에서 알림을 켰으면 이 기기는 없을 수 있다)
+export async function pushOnThisDevice(): Promise<boolean> {
+  if (!pushSupported()) return false;
+  const reg = await navigator.serviceWorker.getRegistration();
+  return Boolean(await reg?.pushManager.getSubscription());
 }
