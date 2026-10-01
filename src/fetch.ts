@@ -43,11 +43,9 @@ export async function fetchHtml(url: string): Promise<string> {
 
 // 본문 그림(포스터) 받기. robots.txt가 막았거나, 그림이 아니거나, 너무 크면 null
 const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
+// (robots.txt가 막은 그림은 글이 아니라서 robotsBlocked에 남기지 않는다)
 export async function fetchImage(url: string): Promise<{ data: Buffer; type: string } | null> {
-  if (!(await isAllowedByRobots(url))) {
-    robotsBlocked.push(url);
-    return null;
-  }
+  if (!(await isAllowedByRobots(url))) return null;
   const res = await politeFetch(url).catch(() => null);
   const type = res?.headers.get("content-type")?.split(";")[0].trim() ?? "";
   if (!res?.ok || !/^image\/(png|jpeg|gif|webp)$/.test(type)) return null;
