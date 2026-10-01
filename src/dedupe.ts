@@ -140,7 +140,15 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
 // 이런 표시를 지운 제목이 같고 두 달 안에 올라온 글을 하나로 합친다.
 // 처음 글의 id를 남기고(관심 표시·주소 유지), 일정은 나중 글을 따르며(기간연장 반영), 원문 링크는 나중 글을 앞에 둔다.
 const REPOST_MARK = /재게시|재공지|재공고|기간\s*연장|마감\s*임박|일정\s*변경|장소\s*변경/g;
-const repostKey = (title: string) => normalize(title.replace(REPOST_MARK, ""));
+// 제목 앞의 마감·대상 머리말도 지운다. 예: "[(재게시) 8/17(월) 까지_인문사회 계열]", "[🚨9/9(화) 까지]", "[~9/30]"
+// (날짜나 "까지·마감"이 들어 있는 대괄호 묶음만 지운다. "[학생상담센터]" 같은 부서 이름은 남긴다)
+const DEADLINE_HEAD = /^\s*\[[^\]]*(\d{1,2}\s*[/.월]\s*\d{1,2}|까지|마감|접수)[^\]]*\]\s*/;
+export function stripDeadlineHead(title: string): string {
+  let rest = title;
+  while (DEADLINE_HEAD.test(rest)) rest = rest.replace(DEADLINE_HEAD, "");
+  return rest;
+}
+export const repostKey = (title: string) => normalize(stripDeadlineHead(title).replace(REPOST_MARK, ""));
 const REPOST_DAYS = 60;
 
 export function collapseReposts(programs: Program[]): Program[] {
@@ -173,6 +181,7 @@ export function collapseReposts(programs: Program[]): Program[] {
       }
       base.links = [...next.links, ...base.links.filter((l) => !next.links.some((n) => n.url === l.url))];
       base.postedAt = next.postedAt; // 기준 게시일을 옮겨 다음 재게시도 이어 붙인다
+      base.aliases = union(base.aliases ?? [], [next.id, ...(next.aliases ?? [])]); // 예전 주소·관심 표시를 이어 준다
       removed.add(next);
     }
   }

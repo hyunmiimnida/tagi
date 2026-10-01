@@ -7103,52 +7103,6 @@
     "firstSeenAt": "2026-10-01T03:34:12.534Z"
   },
   {
-    "id": "yu-news-231583228",
-    "title": "[🚨9/9(화) 까지] (주)구영테크 2026-2학기 국내 현장실습학기제 참여학생 모집안내",
-    "organizer": "(주)구영테크",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [
-        "경영대학"
-      ],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-09-09"
-    },
-    "activityPeriod": {
-      "start": "2026-09-14",
-      "end": "2026-12-31"
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231583228"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-09-09",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:34:17.445Z",
-    "firstSeenAt": "2026-10-01T03:34:17.445Z",
-    "seriesId": "yu-news-10547782"
-  },
-  {
     "id": "yu-news-231569161",
     "title": "51기 월드프렌즈코리아 청년봉사단 단원 모집 및 선발 계획 안내",
     "organizer": "사회공헌지원팀",
@@ -7628,7 +7582,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2026-09-07"
+      "end": "2026-09-09"
     },
     "activityPeriod": {
       "start": "2026-09-14",
@@ -7642,17 +7596,24 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231583228"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231512796"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-04",
+    "postedAt": "2026-09-09",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:34:35.780Z",
     "firstSeenAt": "2026-10-01T03:34:35.780Z",
-    "seriesId": "yu-news-10547782"
+    "seriesId": "yu-news-10547782",
+    "aliases": [
+      "yu-news-231583228"
+    ]
   },
   {
     "id": "yu-news-231512795",
@@ -8754,62 +8715,6 @@
     "seriesId": "yu-news-226449725"
   },
   {
-    "id": "yu-news-231456018",
-    "title": "[🚨9/4(금) 까지] (주)빔웍스 2026-2학기 국내 현장실습학기제 참여학생 모집안내",
-    "organizer": "(주)빔웍스",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [
-        "경영대학",
-        "생명응용과학대학",
-        "디지털융합대학",
-        "기계IT대학"
-      ],
-      "departments": [
-        "생명공학과",
-        "의생명공학과",
-        "컴퓨터학부",
-        "경영학과"
-      ],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-09-04"
-    },
-    "activityPeriod": {
-      "start": "2026-09-11",
-      "end": "2027-01-10"
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231456018"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-31",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:35:22.538Z",
-    "firstSeenAt": "2026-10-01T03:35:22.538Z",
-    "seriesId": "yu-news-231413827"
-  },
-  {
     "id": "yu-news-231456013",
     "title": "영남대 스포츠 홍보단 신입 부원을 추가 모집합니다! (Part 1. 축구/육상/레슬링)",
     "organizer": "영남대 스포츠 홍보단",
@@ -9331,20 +9236,26 @@
       ],
       "colleges": [
         "경영대학",
-        "생명응용과학대학"
+        "생명응용과학대학",
+        "디지털융합대학",
+        "기계IT대학"
       ],
       "departments": [
         "생명공학과",
-        "의생명공학과"
+        "의생명공학과",
+        "컴퓨터학부",
+        "경영학과"
       ],
       "grades": [],
-      "statuses": [],
+      "statuses": [
+        "재학생"
+      ],
       "excludedStatuses": [],
       "openTo": null
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2026-09-01"
+      "end": "2026-09-04"
     },
     "activityPeriod": {
       "start": "2026-09-11",
@@ -9358,17 +9269,24 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231456018"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231413827"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-08-28",
+    "postedAt": "2026-08-31",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:35:39.081Z",
     "firstSeenAt": "2026-10-01T03:35:39.081Z",
-    "seriesId": "yu-news-231413827"
+    "seriesId": "yu-news-231413827",
+    "aliases": [
+      "yu-news-231456018"
+    ]
   },
   {
     "id": "yu-news-231399733",
@@ -10587,52 +10505,6 @@
     "seriesId": "yu-career-1527"
   },
   {
-    "id": "yu-news-231216965",
-    "title": "[(재게시) 8/17(월) 까지] 🏙️대구도시개발공사 2026-2학기 및 겨울학기 국내 현장실습학기제 참여학생 모집 안내",
-    "organizer": "대구도시개발공사",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [
-        "인문대학",
-        "사회과학대학"
-      ],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-08-17"
-    },
-    "activityPeriod": {
-      "start": "2026-09-01",
-      "end": "2027-02-28"
-    },
-    "tags": [
-      "공공기관",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231216965"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-14",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:36:30.663Z",
-    "firstSeenAt": "2026-10-01T03:36:30.663Z",
-    "seriesId": "yu-news-10547782"
-  },
-  {
     "id": "yu-news-231202902",
     "title": "2026년 한국평생교육사협회 \"평생교육사의 날\" 참석 안내",
     "organizer": "한국평생교육사협회",
@@ -11135,13 +11007,10 @@
         "yu"
       ],
       "colleges": [
-        "공과대학",
         "인문대학",
         "사회과학대학"
       ],
-      "departments": [
-        "건축학부"
-      ],
+      "departments": [],
       "grades": [],
       "statuses": [],
       "excludedStatuses": [],
@@ -11149,7 +11018,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2026-08-12"
+      "end": "2026-08-17"
     },
     "activityPeriod": {
       "start": "2026-09-01",
@@ -11157,10 +11026,21 @@
     },
     "tags": [
       "공공기관",
-      "취업·채용",
       "인턴·일경험"
     ],
     "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231216965"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231188764"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231160578"
+      },
       {
         "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231076252"
@@ -11169,11 +11049,16 @@
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-08-04",
+    "postedAt": "2026-08-14",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:24.311Z",
     "firstSeenAt": "2026-10-01T03:37:24.311Z",
-    "seriesId": "yu-news-10547782"
+    "seriesId": "yu-news-10547782",
+    "aliases": [
+      "yu-news-231160578",
+      "yu-news-231188764",
+      "yu-news-231216965"
+    ]
   },
   {
     "id": "yu-news-231076249",
@@ -11338,7 +11223,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2026-08-10"
+      "end": "2026-08-12"
     },
     "activityPeriod": {
       "start": "2026-09-02",
@@ -11352,17 +11237,24 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231160625"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231076239"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-08-04",
+    "postedAt": "2026-08-10",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:28.257Z",
     "firstSeenAt": "2026-10-01T03:37:28.257Z",
-    "seriesId": "yu-news-84753"
+    "seriesId": "yu-news-84753",
+    "aliases": [
+      "yu-news-231160625"
+    ]
   },
   {
     "id": "yu-news-231076233",
@@ -11596,53 +11488,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:36:46.906Z",
     "firstSeenAt": "2026-10-01T03:36:46.906Z"
-  },
-  {
-    "id": "yu-news-231188764",
-    "title": "[(재게시) 8/14(금) 까지_인문사회 계열] 🏙️대구도시개발공사 2026-2학기 및 겨울학기 국내 현장실습학기제 참여학생 모집 안내",
-    "organizer": "대구도시개발공사",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [
-        "인문대학",
-        "사회과학대학"
-      ],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-08-14"
-    },
-    "activityPeriod": {
-      "start": "2026-09-01",
-      "end": "2027-02-28"
-    },
-    "tags": [
-      "공공기관",
-      "취업·채용",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231188764"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-12",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:36:48.460Z",
-    "firstSeenAt": "2026-10-01T03:36:48.460Z",
-    "seriesId": "yu-news-10547782"
   },
   {
     "id": "yu-news-231174712",
@@ -11921,53 +11766,6 @@
     "seriesId": "yu-news-228503912"
   },
   {
-    "id": "yu-news-231160625",
-    "title": "[모집기간연장 ~8/12 13:00 까지] 2026학년도 2학기 버디 프로그램(Buddy Program) 참가자 모집",
-    "organizer": "국제협력팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생",
-        "휴학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-08-12"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "해외·글로벌",
-      "봉사"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231160625"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-10",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:36:59.451Z",
-    "firstSeenAt": "2026-10-01T03:36:59.451Z",
-    "seriesId": "yu-news-84753"
-  },
-  {
     "id": "yu-news-231160607",
     "title": "2026년 8월 무료 모의 TOEIC / TOEIC Speaking / OPIc 시험 실시 안내",
     "organizer": "한국어‧국제언어교육원",
@@ -12160,53 +11958,6 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:37:03.474Z",
     "firstSeenAt": "2026-10-01T03:37:03.474Z"
-  },
-  {
-    "id": "yu-news-231160578",
-    "title": "[(재게시) 8/12(수) 까지_인문사회 계열] 🏙️대구도시개발공사 2026-2학기 및 겨울학기 국내 현장실습학기제 참여학생 모집 안내",
-    "organizer": "대구도시개발공사",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [
-        "인문대학",
-        "사회과학대학"
-      ],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-08-12"
-    },
-    "activityPeriod": {
-      "start": "2026-09-01",
-      "end": "2027-02-28"
-    },
-    "tags": [
-      "공공기관",
-      "취업·채용",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231160578"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-08-10",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:37:04.373Z",
-    "firstSeenAt": "2026-10-01T03:37:04.373Z",
-    "seriesId": "yu-news-10547782"
   },
   {
     "id": "yu-news-231160575",
@@ -12866,49 +12617,6 @@
     "aliases": [
       "yu-news-231104394"
     ]
-  },
-  {
-    "id": "yu-news-230907848",
-    "title": "[모집기간연장 ~8/2] 제 37기 한미친선서클(Korean-American Friendship Circle: KAFC) 참가 학생 모집 안내",
-    "organizer": "제19지원사령부 민사처",
-    "organizerType": "정부부처",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-08-02"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "정부부처",
-      "해외·글로벌"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230907848"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-23",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:38:04.493Z",
-    "firstSeenAt": "2026-10-01T03:38:04.493Z",
-    "seriesId": "yu-news-4212831"
   },
   {
     "id": "yu-news-230907840",
@@ -13744,16 +13452,21 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2026-07-22"
+      "end": "2026-08-02"
     },
     "activityPeriod": {
       "start": null,
       "end": null
     },
     "tags": [
-      "정부부처"
+      "정부부처",
+      "해외·글로벌"
     ],
     "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230907848"
+      },
       {
         "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230781261"
@@ -13762,11 +13475,14 @@
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-07-14",
+    "postedAt": "2026-07-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:39:18.799Z",
     "firstSeenAt": "2026-10-01T03:39:18.799Z",
-    "seriesId": "yu-news-4212831"
+    "seriesId": "yu-news-4212831",
+    "aliases": [
+      "yu-news-230907848"
+    ]
   },
   {
     "id": "yu-news-230781254",
