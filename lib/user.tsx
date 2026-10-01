@@ -1,7 +1,7 @@
 "use client";
 
 import { createClient } from "@supabase/supabase-js";
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { toDateString } from "./filter.ts";
 
 // 로그인, 학교 설정, 관심 표시를 한곳에서 관리한다.
@@ -185,6 +185,34 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     },
     [profile, userId, schoolId],
   );
+
+  // 관심 표시한 공고가 다른 공고에 합쳐져 id가 바뀌었으면 새 id로 옮긴다 (불러온 뒤 한 번만)
+  const migrated = useRef<string | null>(null);
+  useEffect(() => {
+    const owner = userId ?? "local";
+    if (!ready || favorites.size === 0 || migrated.current === owner) return;
+    migrated.current = owner;
+    fetch("/api/moved.json")
+      .then((response) => (response.ok ? (response.json() as Promise<{ moved: Record<string, string> }>) : null))
+      .then((data) => {
+        const moved = data?.moved ?? {};
+        const changes = [...favorites].filter((id) => moved[id]).map((id) => [id, moved[id]] as const);
+        if (changes.length === 0) return;
+        const next = new Set(favorites);
+        for (const [from, to] of changes) {
+          next.delete(from);
+          next.add(to);
+        }
+        setFavorites(next);
+        if (!supabase) {
+          writeLocal(FAVORITES_KEY, JSON.stringify([...next]));
+        } else if (userId) {
+          void supabase.from("favorites").upsert(changes.map(([, to]) => ({ user_id: userId, program_id: to }))).then();
+          void supabase.from("favorites").delete().eq("user_id", userId).in("program_id", changes.map(([from]) => from)).then();
+        }
+      })
+      .catch(() => {}); // 못 받으면 다음에 다시 한다
+  }, [ready, favorites, userId]);
 
   const toggleFavorite = useCallback(
     (programId: string) => {

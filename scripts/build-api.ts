@@ -8,6 +8,7 @@ import type { Program } from "../src/types.ts";
 //   api/programs.json        목록 공고 (최근 90일, 화면에 필요한 칸만)
 //   api/meta.json            수집 시각, 태그 카테고리, 학교·기관, 출처 이름
 //   api/series/<묶음id>.json  반복 프로그램의 모든 회차 (상세 화면을 열 때만 받는다)
+//   api/moved.json           합쳐져 없어진 공고 id → 지금 id (관심 표시를 새 공고로 옮길 때)
 //   api/ids.json             합쳐지거나 보관된 공고의 예전 id를 찾는 표 (없는 주소를 열었을 때만 받는다)
 
 const OUT = join(process.cwd(), "public", "api");
@@ -86,5 +87,7 @@ for (const program of archive) {
   for (const id of [program.id, ...(program.aliases ?? [])]) archived[id] = entry;
 }
 write("ids.json", { version: VERSION, moved, archived });
+// 관심 표시 옮기기용 (작은 파일): 합쳐져 없어진 id → 지금 id. 사이트·앱이 관심 목록을 불러올 때 읽는다
+write("moved.json", { version: VERSION, moved });
 
 console.log(`앱 데이터: 공고 ${programs.length}개, 반복 프로그램 ${members.size}개 → public/api/`);
