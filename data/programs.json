@@ -30646,7 +30646,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:38:48.341Z",
     "summary": "대학일자리플러스센터의 도움으로 취업을 준비하거나 성공한 경험을 수기로 공모해요",
-    "firstSeenAt": "2026-10-01T17:38:48.341Z"
+    "firstSeenAt": "2026-10-01T17:38:48.341Z",
+    "seriesId": "dcu-program-182135"
   },
   {
     "id": "dcu-program-187087",
@@ -31007,7 +31008,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:40:00.672Z",
     "summary": "입사지원챌린지 설명을 듣고 완성된 자기소개서 사례로 작성법을 배워요",
-    "firstSeenAt": "2026-10-01T17:40:00.672Z"
+    "firstSeenAt": "2026-10-01T17:40:00.672Z",
+    "seriesId": "dcu-program-179102"
   },
   {
     "id": "dcu-program-187190",
@@ -39825,5 +39827,4108 @@
     "summary": "학생자치기구 선거에 투표하고 지정된 순번에 해당하면 상품권을 받아요",
     "firstSeenAt": "2026-10-01T18:16:31.895Z",
     "seriesId": "dcu-notice-178581"
+  },
+  {
+    "id": "dcu-program-186877",
+    "title": "[특강][재맞고] 2026 미래직업탐색 프로젝트 「NEXT JOB」 참여자 모집",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-08-31",
+      "end": "2026-09-23"
+    },
+    "activityPeriod": {
+      "start": "2026-09-14",
+      "end": "2026-09-28"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4Njg3NyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-31",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:14.283Z",
+    "summary": "다양한 분야의 현직자에게 실제 업무를 듣고 새로운 직업을 탐색해요",
+    "firstSeenAt": "2026-10-01T19:11:14.283Z"
+  },
+  {
+    "id": "dcu-program-186848",
+    "title": "[특강]숨겨진 나를 찾고, 진심을 낙찰하라! 청년성장프로젝트[취트키] 3,4회차 참여자 모집",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-11",
+      "end": "2026-09-11"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4Njg0OCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-09-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:15.376Z",
+    "summary": "카드와 가치관 경매 활동으로 자신의 흥미와 강점, 직업가치를 찾아봐요",
+    "firstSeenAt": "2026-10-01T19:11:15.376Z"
+  },
+  {
+    "id": "dcu-program-186845",
+    "title": "2026 청년 GOOD JOB 일자리 박람회 (왕복 셔틀 운행)",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-09-10"
+    },
+    "activityPeriod": {
+      "start": "2026-09-11",
+      "end": "2026-09-11"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "박람회·설명회",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4Njg0NSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-09-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:16.823Z",
+    "summary": "일자리 박람회에서 기업 면접과 취업 상담, 모의면접에 참여해요",
+    "firstSeenAt": "2026-10-01T19:11:16.823Z"
+  },
+  {
+    "id": "dcu-program-186824",
+    "title": "[특강]마법처럼, 나를 해독하는 시간! 청년성장프로젝트?「취트키」 1·2회차 참여자 모집",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-04",
+      "end": "2026-09-04"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjgyNCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-19",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:17.972Z",
+    "summary": "청년고용정책을 배우고 직업선호도검사로 자신에게 맞는 진로를 탐색해요",
+    "firstSeenAt": "2026-10-01T19:11:17.972Z"
+  },
+  {
+    "id": "dcu-program-186822",
+    "title": "[특강]청년성장프로젝트 취트키 [재맞고X취창직전문관] (대구테크노파크 연계)",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-04",
+      "end": "2026-10-02"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjgyMiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-12",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:19.056Z",
+    "summary": "진로 설계와 면접 준비, 현직자 멘토링에 참여하고 재맞고 수당을 인정받아요",
+    "firstSeenAt": "2026-10-01T19:11:19.056Z"
+  },
+  {
+    "id": "dcu-program-186818",
+    "title": "[특강][졸업생 특화] 걸어서 직업속으로(EP4.한국도로공사 현직자편) 취업 토크쇼 참여자 모집!",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "청년층 누구나"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-19",
+      "end": "2026-09-19"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjgxOCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-09-02",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:20.317Z",
+    "summary": "한국도로공사 현직자에게 직무와 공기업 취업 준비법을 배우고 질문해요",
+    "firstSeenAt": "2026-10-01T19:11:20.317Z"
+  },
+  {
+    "id": "dcu-program-186808",
+    "title": "만 39세 이하 구직 청년 대상 「취업역량강화 지원사업」 안내",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "만 39세 이하 구직 청년"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjgwOCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-09-02",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:21.422Z",
+    "summary": "구직 청년을 위한 취업역량 강화 지원사업에 참여해요",
+    "firstSeenAt": "2026-10-01T19:11:21.422Z"
+  },
+  {
+    "id": "dcu-program-186792",
+    "title": "[박람회][대일플] 개강 후 첫번째로 해야할 일! 2026 경북 청년 이음 페스타 with 취업박람회 참가하기!!",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4Njc5MiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-09-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:24.107Z",
+    "summary": "청년 이음 페스타와 함께 열리는 취업박람회에 참가해요",
+    "firstSeenAt": "2026-10-01T19:11:24.107Z"
+  },
+  {
+    "id": "dcu-program-186782",
+    "title": "[상담]발표 울렁증 탈출 프로젝트(2기)",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-01",
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-28",
+      "end": "2026-11-30"
+    },
+    "tags": [
+      "학교",
+      "상담·심리",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4Njc4MiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:25.312Z",
+    "summary": "맞춤 코칭과 발표 연습으로 발표 불안을 줄이고 자신감을 키워요",
+    "firstSeenAt": "2026-10-01T19:11:25.312Z",
+    "seriesId": "dcu-program-184695"
+  },
+  {
+    "id": "dcu-program-186780",
+    "title": "[재맞고] 나의 취업 한마디, 컵홀더에 담다",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-14",
+      "end": "2026-09-23"
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4Njc4MCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-27",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:26.391Z",
+    "summary": "컵홀더에 취업 목표와 다짐을 적어 제출하고 경품 추첨에 참여해요",
+    "firstSeenAt": "2026-10-01T19:11:26.391Z"
+  },
+  {
+    "id": "dcu-program-186778",
+    "title": "[지역인재 7급] 「공직진출을 위한 첫걸음, PSAT 길라잡이」 특강 참여자 모집",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-01",
+      "end": "2026-09-15"
+    },
+    "activityPeriod": {
+      "start": "2026-09-16",
+      "end": "2026-09-16"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4Njc3OCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-09-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:27.563Z",
+    "summary": "지역인재 7급 지원 절차와 PSAT 과목별 준비 전략을 배워요",
+    "firstSeenAt": "2026-10-01T19:11:27.563Z"
+  },
+  {
+    "id": "dcu-program-186777",
+    "title": "[특강](스텔라)면접·비즈니스에 필요한 말하기 스킬 배우기!!",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "지역청년"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-10",
+      "end": "2026-09-10"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4Njc3NyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-09-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:29.134Z",
+    "summary": "면접과 비즈니스에 필요한 말투, 스토리텔링과 소통 기술을 배워요",
+    "firstSeenAt": "2026-10-01T19:11:29.134Z"
+  },
+  {
+    "id": "dcu-program-186751",
+    "title": "문서·PPT / 과제·보고서·자료 작업 실무에 바로 적용 가능한 Al 활용",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-01",
+      "end": "2026-09-14"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4Njc1MSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-09-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:30.581Z",
+    "summary": "온라인 강의로 문서와 PPT, 자료 작업에 AI를 활용하는 방법을 배워요",
+    "firstSeenAt": "2026-10-01T19:11:30.581Z"
+  },
+  {
+    "id": "dcu-program-186741",
+    "title": "2026년도 2학기 중소기업 취업연계 장학사업(희망사다리 1유형) 신규 장학생 모집(~9.18)",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-09-18"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4Njc0MSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-31",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:31.760Z",
+    "summary": "중소기업 취업과 연계된 희망사다리 1유형 장학금에 지원해요",
+    "firstSeenAt": "2026-10-01T19:11:31.760Z",
+    "seriesId": "dcu-program-173452"
+  },
+  {
+    "id": "dcu-program-186732",
+    "title": "[특강][재맞고] AI 프롬프트로 만드는 나의 면접노트",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-29",
+      "end": "2026-09-29"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjczMiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-31",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:34.307Z",
+    "summary": "AI 프롬프트로 모의면접을 연습하고 자신만의 면접 질문과 답변을 만들어요",
+    "firstSeenAt": "2026-10-01T19:11:34.307Z"
+  },
+  {
+    "id": "dcu-program-186728",
+    "title": "[특강][취창직전문관] 일 잘하는 사람의 창의적 문제해결법 특강",
+    "organizer": "취창직전문관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-08-31",
+      "end": "2026-09-08"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjcyOCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-31",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:35.931Z",
+    "summary": "문제를 다른 관점에서 바라보고 창의적으로 해결하는 방법을 배워요",
+    "firstSeenAt": "2026-10-01T19:11:35.931Z"
+  },
+  {
+    "id": "dcu-program-186642",
+    "title": "[특강][재맞고] ★AI 매칭으로 완성하는 1페이지 직무 분석서★",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-09-17"
+    },
+    "activityPeriod": {
+      "start": "2026-09-17",
+      "end": "2026-09-17"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjY0MiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-27",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:37.156Z",
+    "summary": "AI로 채용공고와 자신의 경험을 분석해 직무 분석서를 만들고 수당을 받아요",
+    "firstSeenAt": "2026-10-01T19:11:37.156Z"
+  },
+  {
+    "id": "dcu-program-186631",
+    "title": "[박람회][재맞고] 2026년 청년 굿잡 일자리 박람회 - 잡(job)아서 체험하자! (왕복셔틀운행)",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-09-10"
+    },
+    "activityPeriod": {
+      "start": "2026-09-11",
+      "end": "2026-09-11"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjYzMSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-27",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:38.726Z",
+    "summary": "일자리 박람회에서 기업 담당자를 만나 직무와 채용 정보를 알아봐요.",
+    "firstSeenAt": "2026-10-01T19:11:38.726Z"
+  },
+  {
+    "id": "dcu-program-186625",
+    "title": "[해외취업]2026-2027년도 경상북도 청년(대학생) 해외인턴 신청 안내(2차 추가모집)",
+    "organizer": "경상북도",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "청년(대학생)"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "취업·채용",
+      "해외·글로벌",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjYyNSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-26",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:40.127Z",
+    "summary": "경상북도 청년 해외인턴 프로그램에 지원해요.",
+    "firstSeenAt": "2026-10-01T19:11:40.127Z",
+    "seriesId": "dcu-notice-168361"
+  },
+  {
+    "id": "dcu-program-186602",
+    "title": "[특강][취창직전문관] 실무엑셀편집기술 특강",
+    "organizer": "취창직전문관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-09-10"
+    },
+    "activityPeriod": {
+      "start": "2026-09-11",
+      "end": "2026-09-11"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjYwMiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-26",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:41.426Z",
+    "summary": "실제 자료를 편집하는 시연을 보며 엑셀 활용법과 단축키를 배워요.",
+    "firstSeenAt": "2026-10-01T19:11:41.426Z"
+  },
+  {
+    "id": "dcu-program-186595",
+    "title": "[공모전]2026 DCU 신직업 공모전_세상에 없던 내 ‘JOB’을 찾아서(신청기간연장)",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-09-01",
+      "end": "2026-11-12"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjU5NSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-25",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:42.625Z",
+    "summary": "미래에 필요한 새 직업을 카드뉴스로 제안하고 수상하면 상금을 받아요.",
+    "firstSeenAt": "2026-10-01T19:11:42.625Z"
+  },
+  {
+    "id": "dcu-program-186594",
+    "title": "2026 취업준비콘서트_일자리톡톡[CJ 푸드빌]",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjU5NCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-25",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:43.788Z",
+    "summary": "CJ 푸드빌 취업준비콘서트에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:11:43.788Z"
+  },
+  {
+    "id": "dcu-program-186533",
+    "title": "[상담][재맞고 빌드업]미래직업 정주행, 다 보면 애플워치가?",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생",
+        "졸업생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-08-10",
+      "end": "2026-09-30"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjUzMyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:45.174Z",
+    "summary": "진로 상담과 미래직업 영상 학습에 참여하고 기념품을 받아요.",
+    "firstSeenAt": "2026-10-01T19:11:45.174Z"
+  },
+  {
+    "id": "dcu-program-186522",
+    "title": "[캠프][대일플] 대구교통공사와 함께하는 취업역량 강화 기업탐방 캠프",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "지역청년"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-09-10",
+      "end": "2026-09-11"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjUyMiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:46.585Z",
+    "summary": "숙식이 제공되는 캠프에서 자기소개서와 면접을 배우고 기업을 탐방해요.",
+    "firstSeenAt": "2026-10-01T19:11:46.585Z"
+  },
+  {
+    "id": "dcu-program-186505",
+    "title": "[대일플] 하계 졸업식 축하 부스 운영",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-08-21",
+      "end": "2026-08-21"
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjUwNSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:47.946Z",
+    "summary": "졸업 축하 부스에 방문해 다과와 기념품을 받아요.",
+    "firstSeenAt": "2026-10-01T19:11:47.946Z"
+  },
+  {
+    "id": "dcu-program-186497",
+    "title": "[상담][상담] 취업지원전담관과 함께하는 취업성공 올인원 참여자 모집",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "지역청년"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-08-18",
+      "end": "2026-11-09"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjQ5NyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-20",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:49.375Z",
+    "summary": "입사지원서, 모의면접, 취업 매칭, 취업 후 관리 중 원하는 상담을 받아요.",
+    "firstSeenAt": "2026-10-01T19:11:49.375Z",
+    "seriesId": "dcu-program-181049"
+  },
+  {
+    "id": "dcu-program-186496",
+    "title": "[특강][취창직전문관] NCS 면접의 정석 특강",
+    "organizer": "취창직전문관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-08-20",
+      "end": "2026-09-11"
+    },
+    "activityPeriod": {
+      "start": "2026-09-11",
+      "end": "2026-09-11"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjQ5NiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-20",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:50.598Z",
+    "summary": "온라인 특강에서 공기업 면접의 평가기준과 답변 전략을 배워요.",
+    "firstSeenAt": "2026-10-01T19:11:50.598Z"
+  },
+  {
+    "id": "dcu-program-186482",
+    "title": "[자격증][대일플] 2026학년도 취업역량강화프로그램 - 전산회계2급 자격증 과정 신청 안내",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "지역청년"
+    },
+    "recruitPeriod": {
+      "start": "2026-08-20",
+      "end": "2026-09-01"
+    },
+    "activityPeriod": {
+      "start": "2026-09-01",
+      "end": "2026-09-17"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjQ4MiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-20",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:52.665Z",
+    "summary": "전산회계 2급 교육을 받고 수료와 시험 응시 조건을 충족하면 응시료를 돌려받아요.",
+    "firstSeenAt": "2026-10-01T19:11:52.665Z"
+  },
+  {
+    "id": "dcu-program-186445",
+    "title": "[인턴및현장실습]미래내일일경험 공기업 프로젝트형 \"한국지능정보사회진흥원\"",
+    "organizer": "한국지능정보사회진흥원",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-08-23"
+    },
+    "activityPeriod": {
+      "start": "2026-08-27",
+      "end": "2026-10-25"
+    },
+    "tags": [
+      "공공기관",
+      "취업·채용",
+      "장학·지원금",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjQ0NSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-19",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:56.995Z",
+    "summary": "공기업 프로젝트로 일경험을 쌓고 참여수당과 수료증을 받아요.",
+    "firstSeenAt": "2026-10-01T19:11:56.995Z"
+  },
+  {
+    "id": "dcu-program-186400",
+    "title": "[성신여자대학교-졸업생특화] 2026학년도 하계방학 온라인 현직자 직무특강 및 멘토링 모집",
+    "organizer": "성신여자대학교",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "미취업 지역청년(고3 등)"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjQwMCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:11:59.190Z",
+    "summary": "온라인으로 현직자의 직무 특강과 멘토링에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:11:59.190Z"
+  },
+  {
+    "id": "dcu-program-186399",
+    "title": "경산시 「청년 취업날개 코디네이터」",
+    "organizer": "경산시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "경산시 거주 또는 경산지역 대학의 15~39세 청년"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjM5OSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:00.275Z",
+    "summary": "취업면접에 입을 남녀 정장을 무료로 빌려요.",
+    "firstSeenAt": "2026-10-01T19:12:00.275Z"
+  },
+  {
+    "id": "dcu-program-186389",
+    "title": "[특강][취창직전문관] 학업, 취업, 일상을 모두 잡는 스마트한 시간관리 특강",
+    "organizer": "취창직전문관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-08-13",
+      "end": "2026-08-25"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjM4OSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:01.442Z",
+    "summary": "시간 사용을 점검하고 우선순위와 하루 계획을 세우는 방법을 배워요.",
+    "firstSeenAt": "2026-10-01T19:12:01.442Z"
+  },
+  {
+    "id": "dcu-program-186368",
+    "title": "[인턴및현장실습][졸업생 특화] 경영사무/광고마케팅/IT 특화 미래내일일경험 참여 모집 (아직 이력서, 자소서를 미작성 했더라도 신청 가능!)",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "만 34세 이하 미취업 지역청년"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-08-20"
+    },
+    "activityPeriod": {
+      "start": "2026-08-27",
+      "end": "2026-11-20"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjM2OCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-12",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:02.533Z",
+    "summary": "사전직무교육을 받고 경영사무·광고마케팅·IT 분야에서 일경험을 쌓아요.",
+    "firstSeenAt": "2026-10-01T19:12:02.533Z"
+  },
+  {
+    "id": "dcu-program-186338",
+    "title": "자화전자㈜ 채용예정자 대상 「AI·빅데이터 부트캠프」 교육생 모집(~8.28)",
+    "organizer": "자화전자㈜",
+    "organizerType": "기업",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "4년제 대학 공학계열 관련 전공자"
+    },
+    "recruitPeriod": {
+      "start": "2026-07-27",
+      "end": "2026-08-28"
+    },
+    "activityPeriod": {
+      "start": "2026-08-31",
+      "end": "2027-03-18"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjMzOCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-11",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:03.651Z",
+    "summary": "AI·빅데이터 교육과 기술 멘토링을 받고 훈련장려금과 채용 연계 기회를 얻어요.",
+    "firstSeenAt": "2026-10-01T19:12:03.651Z"
+  },
+  {
+    "id": "dcu-program-186325",
+    "title": "[특강][졸업생 특화] 걸어서 직업속으로(EP3. 셀트리온 현직자편) 취업 토크쇼 참여자 모집!",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "청년층 누구나"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-08-29",
+      "end": "2026-08-29"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjMyNSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-10",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:04.848Z",
+    "summary": "셀트리온 현직자에게 제약업계 직무와 취업 경험을 듣고 질문해요.",
+    "firstSeenAt": "2026-10-01T19:12:04.848Z"
+  },
+  {
+    "id": "dcu-program-186294",
+    "title": "[특강][AI 마인드맵으로 그리는 나의 진로 로드맵] 참여자 모집",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-08-25",
+      "end": "2026-08-25"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjI5NCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:06.316Z",
+    "summary": "AI로 경험과 강점을 분석하고 나만의 진로 로드맵을 만들어요",
+    "firstSeenAt": "2026-10-01T19:12:06.316Z"
+  },
+  {
+    "id": "dcu-program-186286",
+    "title": "[특강][취창직전문관] 사인하기 전에 잠깐! 사회초년생 근로계약서 퀴즈 특강",
+    "organizer": "취창직전문관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-08-05",
+      "end": "2026-08-11"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjI4NiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-05",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:07.394Z",
+    "summary": "퀴즈로 근로계약서의 필수 항목과 불리한 조항을 배워요",
+    "firstSeenAt": "2026-10-01T19:12:07.394Z"
+  },
+  {
+    "id": "dcu-program-186278",
+    "title": "[특강][취창직전문관] 합격 엔딩을 향한 취업 플레이 특강",
+    "organizer": "취창직전문관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-08-05",
+      "end": "2026-08-12"
+    },
+    "activityPeriod": {
+      "start": "2026-08-12",
+      "end": "2026-08-12"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjI3OCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-05",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:08.855Z",
+    "summary": "취업 합격을 준비하는 온라인 특강에 참여해요",
+    "firstSeenAt": "2026-10-01T19:12:08.855Z"
+  },
+  {
+    "id": "dcu-program-186276",
+    "title": "[인턴및현장실습]경영사무(일반형, 국취연계형)/광고마케팅/IT 특화 미래내일일경험 참여 모집 안내",
+    "organizer": "행복인디제이",
+    "organizerType": "기업",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "만 34세 이하 미취업 지역청년"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-08-12"
+    },
+    "activityPeriod": {
+      "start": "2026-08-26",
+      "end": "2026-10-23"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjI3NiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-05",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:09.923Z",
+    "summary": "경영·사무·광고마케팅·IT 분야에서 직무교육과 일경험에 참여해요",
+    "firstSeenAt": "2026-10-01T19:12:09.923Z"
+  },
+  {
+    "id": "dcu-program-186270",
+    "title": "제주신화월드 2026년 2학기 현장실습 참여 학생 모집",
+    "organizer": "제주신화월드",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [
+        "호텔관광 관련 학과(전공)",
+        "외식조리 관련 학과(전공)"
+      ],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-08-10"
+    },
+    "activityPeriod": {
+      "start": "2026-08-31",
+      "end": "2026-12-31"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjI3MCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-05",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:11.539Z",
+    "summary": "제주신화월드에서 급여와 기숙사를 제공받으며 현장실습을 해요",
+    "firstSeenAt": "2026-10-01T19:12:11.539Z"
+  },
+  {
+    "id": "dcu-program-186263",
+    "title": "2026학년도 1학기 DCU직무역량인증제 신청 안내(~8/5 기간 연장)",
+    "organizer": "NCS지원전략센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-05-01",
+      "end": "2026-08-05"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjI2MyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:13.956Z",
+    "summary": "직무역량 인증을 받고 선발 기준에 따라 장학금을 받을 수 있어요",
+    "firstSeenAt": "2026-10-01T19:12:13.956Z",
+    "seriesId": "dcu-notice-167561"
+  },
+  {
+    "id": "dcu-program-186262",
+    "title": "[캠프]2026 영천상공회의소 온라인 취업캠프(~8.14)",
+    "organizer": "영천상공회의소",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjI2MiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-08-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:15.776Z",
+    "summary": "온라인 취업캠프에 참여해요",
+    "firstSeenAt": "2026-10-01T19:12:15.776Z"
+  },
+  {
+    "id": "dcu-program-186074",
+    "title": "[캠프]2026 대학생 멘토링 사업_우수기업 기업탐방 프로그램(세신정밀 본사)",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "대학생 및 대학원생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-07-28",
+      "end": "2026-07-28"
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjA3NCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:18.674Z",
+    "summary": "세신정밀 본사를 방문하는 기업탐방에 참여해요",
+    "firstSeenAt": "2026-10-01T19:12:18.674Z"
+  },
+  {
+    "id": "dcu-program-186071",
+    "title": "[인턴및현장실습]\"롯데 채용혜택 제공\" 롯데 청년 직무 아카데미 LIFT 교육생 모집",
+    "organizer": "롯데",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjA3MSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:19.855Z",
+    "summary": "롯데 직무 아카데미에서 교육을 받고 채용 혜택을 제공받아요",
+    "firstSeenAt": "2026-10-01T19:12:19.855Z"
+  },
+  {
+    "id": "dcu-program-186069",
+    "title": "[특강][코멘토] 제휴대학 대학생 서포터즈 “코멘티” 12기 모집",
+    "organizer": "코멘토",
+    "organizerType": "기업",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "제휴대학 대학생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "기업",
+      "서포터즈·기자단"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjA2OSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:21.166Z",
+    "summary": "코멘토 대학생 서포터즈 코멘티로 활동해요",
+    "firstSeenAt": "2026-10-01T19:12:21.166Z"
+  },
+  {
+    "id": "dcu-program-186068",
+    "title": "[특강][대한상공회의소] 첨단산업디지털 선도기업 아카데미 7월 훈련생 모집(KT 외 5개 기업)",
+    "organizer": "대한상공회의소",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-08-17"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjA2OCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:22.377Z",
+    "summary": "첨단산업 기업의 AI·디지털 분야 직무교육을 받아요",
+    "firstSeenAt": "2026-10-01T19:12:22.377Z"
+  },
+  {
+    "id": "dcu-program-186062",
+    "title": "[인턴및현장실습]힐튼경주 2026년도 2학기 인턴 모집",
+    "organizer": "힐튼경주",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjA2MiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:23.730Z",
+    "summary": "힐튼경주의 2학기 인턴에 지원해요",
+    "firstSeenAt": "2026-10-01T19:12:23.730Z",
+    "seriesId": "dcu-notice-173681"
+  },
+  {
+    "id": "dcu-program-186029",
+    "title": "[재맞고 점프업] 7월, 8월 온라인강의 10시간씩 수당 인정!",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-07-01",
+      "end": "2026-08-31"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjAyOSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:27.324Z",
+    "summary": "방학 온라인 강의를 월 10시간까지 점프업 수당 활동으로 인정받아요",
+    "firstSeenAt": "2026-10-01T19:12:27.324Z"
+  },
+  {
+    "id": "dcu-program-186014",
+    "title": "[상담][재맞고 빌드업] 2학년 뭐함? 이제 진로함",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "2학년"
+      ],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-07-13",
+      "end": "2026-11-27"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "상담·심리",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjAxNCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-10",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:28.577Z",
+    "summary": "일대일 진로상담을 받고 나만의 경력개발 로드맵을 만들어요",
+    "firstSeenAt": "2026-10-01T19:12:28.577Z"
+  },
+  {
+    "id": "dcu-program-186005",
+    "title": "[태닝디쿠][재맞고] 혼자 하기엔 아깝다! 친구랑 같이, 여름방학 점프업!",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "3학년",
+        "4학년"
+      ],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생",
+        "졸업생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-07-06",
+      "end": "2026-08-28"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "상담·심리",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NjAwNSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:29.654Z",
+    "summary": "친구와 점프업 진로·취업 상담에 참여하고 추천 선물을 받아요",
+    "firstSeenAt": "2026-10-01T19:12:29.654Z",
+    "seriesId": "dcu-program-180453"
+  },
+  {
+    "id": "dcu-program-185992",
+    "title": "직업상담사2급 자격증 필기시험 대비 캠프 (feat. 해운대 4성 호텔)",
+    "organizer": "대학일자리플러스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-20"
+    },
+    "activityPeriod": {
+      "start": "2026-08-13",
+      "end": "2026-08-14"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTk5MiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-16",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:30.755Z",
+    "summary": "직업상담사 2급 필기 문제풀이를 배우고 해운대 투어에 참여해요",
+    "firstSeenAt": "2026-10-01T19:12:30.755Z"
+  },
+  {
+    "id": "dcu-program-185991",
+    "title": "[인턴및현장실습]공기업 가고싶은데 자기소개서에 쓸 게 없다면? ▶미래내일일경험 프로젝트형",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-20"
+    },
+    "activityPeriod": {
+      "start": "2026-07-23",
+      "end": "2026-09-22"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTk5MSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-16",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:32.236Z",
+    "summary": "프로젝트형 일경험에 참여하고 수료증과 청년수당·팀활동비를 받아요",
+    "firstSeenAt": "2026-10-01T19:12:32.236Z"
+  },
+  {
+    "id": "dcu-program-185988",
+    "title": "[공모전]제 2회 DCU 진로취업 프로그램 아이디어 공모전",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "만 34세 이하 청년층 누구나"
+    },
+    "recruitPeriod": {
+      "start": "2026-07-16",
+      "end": "2026-09-02"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTk4OCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-16",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:33.671Z",
+    "summary": "진로·취업 프로그램 아이디어와 운영계획을 제안하고 상금에 도전해요",
+    "firstSeenAt": "2026-10-01T19:12:33.671Z",
+    "seriesId": "dcu-program-180990"
+  },
+  {
+    "id": "dcu-program-185987",
+    "title": "[인턴및현장실습]2026학년도 2학기 학기제 국내현장실습 참여 학생 모집 안내",
+    "organizer": "현장실습지원센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-07-16",
+      "end": "2026-08-06"
+    },
+    "activityPeriod": {
+      "start": "2026-09-01",
+      "end": "2026-12-31"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTk4NyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-16",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:34.795Z",
+    "summary": "기업에서 현장실습을 하고 12학점을 인정받아요.",
+    "firstSeenAt": "2026-10-01T19:12:34.795Z",
+    "seriesId": "dcu-notice-175235"
+  },
+  {
+    "id": "dcu-program-185945",
+    "title": "[캠프][선착순 10명][대일플] 2026년도 지역특화 산업분야 우수 기업탐방(대구텍, 새빗켐) 캠프 신청 안내",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTk0NSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:36.244Z",
+    "summary": "대구텍과 새빗켐을 탐방하는 캠프에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:12:36.244Z"
+  },
+  {
+    "id": "dcu-program-185932",
+    "title": "[해외취업]2026년 하반기 한·미대학생 연수(WEST) 프로그램 참가자 모집 안내(~8.5.)",
+    "organizer": "글로벌취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-08-05"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "해외·글로벌"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTkzMiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-10",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:37.311Z",
+    "summary": "한·미 대학생 연수 프로그램 WEST에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:12:37.311Z",
+    "seriesId": "dcu-notice-167729"
+  },
+  {
+    "id": "dcu-program-185914",
+    "title": "[공모전]한국드라마 70주년 기념 「창작 드라마 AI 트레일러 공모전」",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTkxNCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-10",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:38.492Z",
+    "summary": "AI로 창작 드라마 트레일러를 만들어 공모전에 응모해요.",
+    "firstSeenAt": "2026-10-01T19:12:38.492Z"
+  },
+  {
+    "id": "dcu-program-185913",
+    "title": "2026 서울고용노동청과 함께하는 취업준비콘서트_일자리톡톡[IBK 기업은행]",
+    "organizer": "서울고용노동청",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "정부부처",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTkxMyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-10",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:39.644Z",
+    "summary": "IBK 기업은행 편 취업준비콘서트에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:12:39.644Z"
+  },
+  {
+    "id": "dcu-program-185911",
+    "title": "[특강]2026 서울고용노동청과 함께하는 취업준비콘서트_일자리톡톡[청년 안심Talk]",
+    "organizer": "서울고용노동청",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "정부부처",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTkxMSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-10",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:41.089Z",
+    "summary": "청년 안심Talk 취업준비 특강에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:12:41.089Z"
+  },
+  {
+    "id": "dcu-program-185907",
+    "title": "[공모전][고용노동부] 2026년 장애인 고용확대 아이디어 공모전",
+    "organizer": "고용노동부",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "정부부처",
+      "취업·채용",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTkwNyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:42.327Z",
+    "summary": "장애인 고용을 늘릴 아이디어를 공모전에 제안해요.",
+    "firstSeenAt": "2026-10-01T19:12:42.327Z"
+  },
+  {
+    "id": "dcu-program-185906",
+    "title": "[인턴및현장실습][졸업생 특화][국취연계형] 경영사무/품질관리/광고마케팅 특화 미래내일일경험 참여 모집 안내",
+    "organizer": "일로이룸",
+    "organizerType": "기업",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "국민취업지원제도 참여 지역청년"
+    },
+    "recruitPeriod": {
+      "start": "2026-07-07",
+      "end": "2026-07-16"
+    },
+    "activityPeriod": {
+      "start": "2026-07-23",
+      "end": "2026-10-16"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTkwNiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:43.387Z",
+    "summary": "사전교육을 받고 경영사무·품질관리·광고마케팅 일경험에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:12:43.387Z"
+  },
+  {
+    "id": "dcu-program-185904",
+    "title": "[특강][취창직전문관] 알.잘.딱.깔.센 AI 취업 부스터(①대인관계&팔로워십 강점검사 ②스마트 취업준비법)",
+    "organizer": "취창직전문관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-07-09",
+      "end": "2026-07-15"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTkwNCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:44.524Z",
+    "summary": "강점검사와 스마트 취업준비법을 배우고 참여수당을 받아요.",
+    "firstSeenAt": "2026-10-01T19:12:44.524Z"
+  },
+  {
+    "id": "dcu-program-185903",
+    "title": "[공모전](스텔라)졸업생 특화 프로그램 사업 로고 디자인 및 슬로건 공모전 안내",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "누구나"
+    },
+    "recruitPeriod": {
+      "start": "2026-07-03",
+      "end": "2026-07-31"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTkwMyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:45.864Z",
+    "summary": "졸업생 특화 사업의 로고와 슬로건을 만들고 수상하면 상금을 받아요.",
+    "firstSeenAt": "2026-10-01T19:12:45.864Z"
+  },
+  {
+    "id": "dcu-program-185897",
+    "title": "(*모집기간연장)(DCU X 멋쟁이사자처럼) 캠퍼스 AX-Ton (AI 실무 일경험) 교육과정 안내",
+    "organizer": "멋쟁이 사자처럼",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-08-04",
+      "end": "2026-08-27"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTg5NyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-08",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:46.967Z",
+    "summary": "AI 실무교육과 프로젝트에 참여하고 최대 50만원의 수당을 받아요.",
+    "firstSeenAt": "2026-10-01T19:12:46.967Z"
+  },
+  {
+    "id": "dcu-program-185887",
+    "title": "[인턴및현장실습][K-디지털 트레이닝 AI 캠퍼스] 피지컬 AI 전문가 과정 교육생 모집",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTg4NyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:48.047Z",
+    "summary": "피지컬 AI 전문가 과정에서 교육을 받아요.",
+    "firstSeenAt": "2026-10-01T19:12:48.047Z"
+  },
+  {
+    "id": "dcu-program-185886",
+    "title": "[공모전]한국전시산업진흥회 주최 「2026 전시산업 대학생 경진대회」 참가자 모집(~7/21)",
+    "organizer": "한국전시산업진흥회",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "대학생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-21"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTg4NiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:51.391Z",
+    "summary": "전시산업을 주제로 대학생 경진대회에 참가해요.",
+    "firstSeenAt": "2026-10-01T19:12:51.391Z"
+  },
+  {
+    "id": "dcu-program-185885",
+    "title": "[특강][졸업생 특화] 걸어서 직업속으로(EP2.toss 현직자편) 취업 토크쇼 참여자 모집!",
+    "organizer": "대학일자리플러스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "청년층 누구나"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-07-25",
+      "end": "2026-07-25"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTg4NSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:54.667Z",
+    "summary": "현직자의 광고·마케팅 직무 이야기를 듣고 질문하는 취업 토크쇼에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:12:54.667Z"
+  },
+  {
+    "id": "dcu-program-185884",
+    "title": "[특강][취창직전문관] 썸머JOB데이(취업준비 편) 특강",
+    "organizer": "취창직전문관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-07-07",
+      "end": "2026-07-13"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTg4NCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:56.245Z",
+    "summary": "기업 선택 기준과 채용포털 활용법을 배우고 참여수당을 받아요.",
+    "firstSeenAt": "2026-10-01T19:12:56.245Z"
+  },
+  {
+    "id": "dcu-program-185850",
+    "title": "「사회연대경제 청년 일경험 시범사업」 참여청년 모집(~7.6)",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "청년"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-06"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTg1MCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:57.541Z",
+    "summary": "사회연대경제 분야의 청년 일경험 시범사업에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:12:57.541Z"
+  },
+  {
+    "id": "dcu-program-185843",
+    "title": "[인턴및현장실습][졸업생 특화] [긴급] 비상!! 경영사무/경영사무(국취연계형)/IT(훈련연계형) 특화 미래내일일경험 참여 모집 안내",
+    "organizer": "행복인디제이",
+    "organizerType": "기업",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "만 34세 이하 지역청년"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-05"
+    },
+    "activityPeriod": {
+      "start": "2026-07-15",
+      "end": "2026-09-11"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTg0MyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:58.741Z",
+    "summary": "사전교육을 받고 경영사무 또는 IT 분야에서 8주간 일경험을 해요.",
+    "firstSeenAt": "2026-10-01T19:12:58.741Z"
+  },
+  {
+    "id": "dcu-program-185826",
+    "title": "[졸업생 특화] 긴급!!선착순마감!! 경영사무/공공행정 미래내일일경험 참여 인턴 모집 안내",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "지역청년"
+    },
+    "recruitPeriod": {
+      "start": "2026-06-26",
+      "end": "2026-07-08"
+    },
+    "activityPeriod": {
+      "start": "2026-07-23",
+      "end": "2026-09-25"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTgyNiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-02",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:13:00.048Z",
+    "summary": "사전교육을 받고 경영사무·공공행정 분야의 인턴 일경험에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:13:00.048Z"
+  },
+  {
+    "id": "dcu-program-185822",
+    "title": "[특강][가톨릭공유대학X대일플] 꿈을 설계하는 6가지 코드[비대면]",
+    "organizer": "가톨릭공유대학",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-21"
+    },
+    "activityPeriod": {
+      "start": "2026-07-22",
+      "end": "2026-07-22"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTgyMiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-02",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:13:03.041Z",
+    "summary": "홀랜드 유형으로 성향을 분석하고 경험을 자기소개서 소재로 정리해요.",
+    "firstSeenAt": "2026-10-01T19:13:03.041Z"
+  },
+  {
+    "id": "dcu-program-185801",
+    "title": "[재맞고 점프업 EVENT] 7월 한정 온라인강의 10시간 수당 인정!",
+    "organizer": "재학생맞춤형고용서비스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-07-01",
+      "end": "2026-07-31"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTgwMSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:13:05.238Z",
+    "summary": "온라인 취업역량 강의를 최대 10시간 수강하고 수당을 인정받아요",
+    "firstSeenAt": "2026-10-01T19:13:05.238Z"
+  },
+  {
+    "id": "dcu-program-185600",
+    "title": "[캠프]K-뉴딜 아카데미 Hi-CEED 프로그램(~7/4)",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-04"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTYwMCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-06-17",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:13:20.621Z",
+    "summary": "K-뉴딜 아카데미 Hi-CEED 캠프에 참여해요",
+    "firstSeenAt": "2026-10-01T19:13:20.621Z"
+  },
+  {
+    "id": "dcu-program-185593",
+    "title": "(KDT) AI/로봇 전문가 양성훈련 과정 모집 안내",
+    "organizer": "경북산업직업전문학교",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-06-15",
+      "end": "2026-07-10"
+    },
+    "activityPeriod": {
+      "start": "2026-07-13",
+      "end": "2027-02-10"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTU5MyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-06-17",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:13:23.644Z",
+    "summary": "AI·로봇 전문가 훈련을 무료로 받고 월 최대 160만원 수당을 받아요",
+    "firstSeenAt": "2026-10-01T19:13:23.644Z"
+  },
+  {
+    "id": "dcu-program-185563",
+    "title": "청년 기술평가체험단 9기 모집공고(~7.3)",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-03"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTU2MyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-06-16",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:13:27.937Z",
+    "summary": "청년 기술평가체험단 9기로 기술평가를 체험해요",
+    "firstSeenAt": "2026-10-01T19:13:27.937Z"
+  },
+  {
+    "id": "dcu-program-185522",
+    "title": "[인턴및현장실습][졸업생 특화] [긴급] 초비상!! 경영사무/광고마케팅/호텔서비스 특화 미래내일일경험 참여 모집 안내",
+    "organizer": "일로이룸",
+    "organizerType": "기업",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "지역청년"
+    },
+    "recruitPeriod": {
+      "start": "2026-06-10",
+      "end": "2026-06-18"
+    },
+    "activityPeriod": {
+      "start": "2026-06-25",
+      "end": "2026-09-18"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTUyMiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-06-12",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:14:07.168Z",
+    "summary": "사전 직무교육을 받고 경영사무·광고마케팅·호텔서비스 일경험에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:14:07.168Z"
+  },
+  {
+    "id": "dcu-program-185457",
+    "title": "[인턴및현장실습][졸업생 특화] 경영사무/공공행정/광고마케팅 직무 미래내일 일경험 참여 모집 안내",
+    "organizer": "지에스씨넷",
+    "organizerType": "기업",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "지역청년"
+    },
+    "recruitPeriod": {
+      "start": "2026-06-09",
+      "end": "2026-06-14"
+    },
+    "activityPeriod": {
+      "start": "2026-06-18",
+      "end": "2026-09-11"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTQ1NyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-06-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:14:14.720Z",
+    "summary": "사전 직무교육을 받고 경영사무·공공행정·광고마케팅 일경험에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:14:14.720Z"
+  },
+  {
+    "id": "dcu-program-185399",
+    "title": "[자격증][대일플] 2026년 하계방학 컴퓨터활용능력(컴활) 1,2급 자격증 과정 신청 안내",
+    "organizer": "대학일자리플러스팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "지역청년"
+    },
+    "recruitPeriod": {
+      "start": "2026-06-02",
+      "end": "2026-06-18"
+    },
+    "activityPeriod": {
+      "start": "2026-06-22",
+      "end": "2026-07-24"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTM5OSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-06-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:14:22.152Z",
+    "summary": "컴활 1·2급 필기와 실기를 무료로 배우고 조건 충족 시 응시료를 환급받아요.",
+    "firstSeenAt": "2026-10-01T19:14:22.152Z"
+  },
+  {
+    "id": "dcu-program-185026",
+    "title": "[인턴및현장실습]2026 미래내일 일경험 프로젝트형 참여자 모집(제조·품질 분석, 글로벌 전략 기획, 콘텐츠 마케팅)",
+    "organizer": "행복인디제이 미래사업본부",
+    "organizerType": "기업",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "대구·경북 지역 만34세 이하 청년"
+    },
+    "recruitPeriod": {
+      "start": "2026-05-06",
+      "end": "2026-05-12"
+    },
+    "activityPeriod": {
+      "start": "2026-05-25",
+      "end": "2026-07-17"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "장학·지원금",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTAyNiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-05-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:15:13.120Z",
+    "summary": "기업 실무 프로젝트로 포트폴리오를 만들고 참여수당을 받아요",
+    "firstSeenAt": "2026-10-01T19:15:13.120Z"
+  },
+  {
+    "id": "dcu-program-184971",
+    "title": "[인턴및현장실습]2026 범일정보 미래내일일경험 IT/경영사무 직무 모집 안내",
+    "organizer": "(주)범일정보",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "3학년",
+        "4학년"
+      ],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-05-10"
+    },
+    "activityPeriod": {
+      "start": "2026-05-18",
+      "end": "2026-07-10"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NDk3MSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-05-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:15:16.493Z",
+    "summary": "범일정보에서 IT 또는 경영사무 직무의 일경험에 참여해요",
+    "firstSeenAt": "2026-10-01T19:15:16.493Z"
+  },
+  {
+    "id": "dcu-program-184954",
+    "title": "[인턴및현장실습]2026학년도 여름 계절제 국내현장실습생 모집 안내",
+    "organizer": "현장실습지원센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-05-04",
+      "end": "2026-05-15"
+    },
+    "activityPeriod": {
+      "start": "2026-06-16",
+      "end": "2026-08-31"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NDk1NCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-05-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:15:18.713Z",
+    "summary": "국내 기업에서 여름 현장실습을 하고 전공 또는 교양 학점을 인정받아요",
+    "firstSeenAt": "2026-10-01T19:15:18.713Z",
+    "seriesId": "dcu-notice-167549"
+  },
+  {
+    "id": "dcu-program-184906",
+    "title": "2026학년도 1학기 DCU직무역량인증제 신청 안내",
+    "organizer": "NCS지원전략센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-05-01",
+      "end": "2026-07-16"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NDkwNiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-04-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:15:28.965Z",
+    "summary": "직무역량을 인증받고 선발 기준에 따라 장학금을 받아요.",
+    "firstSeenAt": "2026-10-01T19:15:28.965Z",
+    "seriesId": "dcu-notice-167561"
+  },
+  {
+    "id": "dcu-program-184895",
+    "title": "[인턴및현장실습][졸업생 특화] [긴급] 초비상!! 경영/사무/IT 직무 특화 미래내일일경험 참여 모집 안내",
+    "organizer": "행복인디제이",
+    "organizerType": "기업",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "지역청년"
+    },
+    "recruitPeriod": {
+      "start": "2026-04-29",
+      "end": "2026-05-03"
+    },
+    "activityPeriod": {
+      "start": "2026-05-14",
+      "end": "2026-07-10"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NDg5NSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-04-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:15:30.066Z",
+    "summary": "사전 직무교육을 받고 경영·사무·IT 분야에서 일경험을 쌓아요.",
+    "firstSeenAt": "2026-10-01T19:15:30.066Z"
+  },
+  {
+    "id": "dcu-program-184819",
+    "title": "문화매일신문 시민대학 AI기자 역량강화 과정",
+    "organizer": "한국교육연구소",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-07-10",
+      "end": "2026-07-18"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NDgxOSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-04-27",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:15:54.259Z",
+    "summary": "생성형 AI로 기사와 홍보 콘텐츠를 만드는 실무 교육을 받아요.",
+    "firstSeenAt": "2026-10-01T19:15:54.259Z"
+  },
+  {
+    "id": "dcu-program-184584",
+    "title": "2026년 미래내일 일경험사업(ESG지원형) 바이오헬스케어 온보딩 프로그램(~4.30)",
+    "organizer": "고용노동부, 대한상공회의소",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "만 15세 이상 34세 미만 이공계 대학생"
+    },
+    "recruitPeriod": {
+      "start": "2026-04-10",
+      "end": "2026-04-30"
+    },
+    "activityPeriod": {
+      "start": "2026-05-16",
+      "end": "2026-11-14"
+    },
+    "tags": [
+      "정부부처",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NDU4NCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-04-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:16:19.776Z",
+    "summary": "제약바이오 취업을 준비하는 바이오헬스케어 일경험 프로그램에 참여해요",
+    "firstSeenAt": "2026-10-01T19:16:19.776Z"
+  },
+  {
+    "id": "dcu-program-184426",
+    "title": "『실무형 AI·SW 인재 육성 Lab』 교육생 모집",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "대구에 주민등록을 둔 미취업 청년"
+    },
+    "recruitPeriod": {
+      "start": "2026-04-01",
+      "end": "2026-05-14"
+    },
+    "activityPeriod": {
+      "start": "2026-06-01",
+      "end": "2026-10-30"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NDQyNiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-04-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:17:26.872Z",
+    "summary": "AI·SW 실무 교육을 무료로 받고 취업 연계 지원을 받아요.",
+    "firstSeenAt": "2026-10-01T19:17:26.872Z"
+  },
+  {
+    "id": "dcu-program-184343",
+    "title": "[인턴및현장실습]모집임박! [미래내일일경험] 항공분야 모집 안내(~3.30.)",
+    "organizer": "티웨이",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-03-30"
+    },
+    "activityPeriod": {
+      "start": "2026-04-02",
+      "end": "2026-07-26"
+    },
+    "tags": [
+      "기업",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NDM0MyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-03-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:17:37.938Z",
+    "summary": "사전교육을 받고 대구공항에서 항공분야 일경험에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:17:37.938Z"
+  },
+  {
+    "id": "dcu-program-184269",
+    "title": "[상담][혁신사업] 2026학년도 취창직전문관 1:1 상담실 운영",
+    "organizer": "취창직전문관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-03-01",
+      "end": "2027-02-28"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NDI2OSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-03-25",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:17:44.754Z",
+    "summary": "일대일 상담으로 자기소개서·면접 준비와 진로 탐색을 지원받아요.",
+    "firstSeenAt": "2026-10-01T19:17:44.754Z",
+    "seriesId": "dcu-program-178414"
+  },
+  {
+    "id": "dcu-program-183096",
+    "title": "2026년 경산시 대학생 행정인턴 선발 안내(~1/23)",
+    "organizer": "경산시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-02-09",
+      "end": "2026-07-31"
+    },
+    "tags": [
+      "지자체",
+      "취업·채용",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4MzA5NiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-01-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:18:44.727Z",
+    "summary": "경산시청과 행정복지센터에서 행정업무를 지원하며 급여를 받아요",
+    "firstSeenAt": "2026-10-01T19:18:44.727Z",
+    "seriesId": "dcu-program-177553"
+  },
+  {
+    "id": "dcu-program-180915",
+    "title": "[SAP Korea] CODE 아카데미 1기 모집",
+    "organizer": "SAP Korea",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2025-07-01",
+      "end": "2025-08-25"
+    },
+    "activityPeriod": {
+      "start": "2025-10-21",
+      "end": "2026-07-15"
+    },
+    "tags": [
+      "기업",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4MDkxNSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2025-08-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:24:37.465Z",
+    "summary": "SAP Korea CODE 아카데미 교육과정에 참여해요",
+    "firstSeenAt": "2026-10-01T19:24:37.465Z"
   }
 ]
