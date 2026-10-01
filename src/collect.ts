@@ -10,6 +10,8 @@ import {
   splitByAge,
   writeJson,
 } from "./archive.ts";
+import { mergeCollectLog } from "./collect-log.ts";
+import type { CollectLog, SourceLog } from "./collect-log.ts";
 import { collectors } from "./collectors/index.ts";
 import { collapseReposts, findAmbiguousPairs, mergePair, mergePrograms } from "./dedupe.ts";
 import { cleanPeriods, looksLikeNoticeOnly } from "./extract.ts";
@@ -37,7 +39,7 @@ const aiDoneUrls = new Set(refresh ? [] : urlsOf([...existing, ...archived].filt
 
 const incoming: Program[] = [];
 const excluded = new Set<string>(); // 학생 대상이 아니라서 뺀 게시물 id
-const log: { source: string; ok: boolean; count: number; message: string }[] = [];
+const log: SourceLog[] = [];
 
 // 1단계: 출처별로 새 게시물을 읽는다. 서로 다른 사이트는 동시에 읽는다 (같은 사이트는 fetch.ts가 1초씩 띄운다)
 // 한 출처가 실패해도 나머지 출처는 계속 수집한다
@@ -138,7 +140,9 @@ await mkdir(DATA_DIR, { recursive: true });
 await writeJson(PROGRAMS_FILE, merged);
 await writeJson(ARCHIVE_FILE, archive);
 await writeJson(EXCLUDED_FILE, [...excludedUrls].sort());
-await writeJson(new URL("collect-log.json", DATA_DIR), { ranAt: new Date().toISOString(), total: merged.length, sources: log });
+const LOG_FILE = new URL("collect-log.json", DATA_DIR);
+const previousLog = await readJson<CollectLog | null>(LOG_FILE, null).catch(() => null);
+await writeJson(LOG_FILE, mergeCollectLog(previousLog, log, new Date().toISOString(), merged.length));
 console.log(`새로 수집 ${incoming.length}개, 전체 ${merged.length}개를 data/programs.json에 저장`);
 
 // 실패한 출처가 있으면 자동 실행(GitHub Actions)에서 알림이 가도록 실패로 끝낸다

@@ -6,205 +6,273 @@
       "source": "yu-career",
       "ok": true,
       "count": 33,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 33
     },
     {
       "source": "yu-news",
       "ok": true,
       "count": 0,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 0
     },
     {
       "source": "yu-col-liberalart",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "yu-col-sci",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "yu-col-eng",
       "ok": true,
       "count": 12,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 12
     },
     {
       "source": "yu-col-digital",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "yu-rise",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "yu-col-politics",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "yu-col-yumc",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "yu-col-sob",
       "ok": true,
       "count": 12,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 12
     },
     {
       "source": "yu-col-life",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "yu-col-pharm",
       "ok": true,
       "count": 12,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 12
     },
     {
       "source": "yu-col-chek",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "yu-col-education",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "knu-notice",
       "ok": true,
       "count": 0,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 0
     },
     {
       "source": "knu-event",
       "ok": true,
       "count": 0,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 0
     },
     {
       "source": "knu-startup",
       "ok": true,
       "count": 0,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 0
     },
     {
       "source": "yu-col-arts",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "yu-col-gl",
       "ok": true,
       "count": 11,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 11
     },
     {
       "source": "yu-col-ccgs",
       "ok": true,
       "count": 11,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 11
     },
     {
       "source": "kmu-notice",
       "ok": true,
       "count": 0,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 0
     },
     {
       "source": "kmu-recruit",
       "ok": true,
       "count": 0,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 0
     },
     {
       "source": "kmu-scholarship",
       "ok": true,
       "count": 0,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 0
     },
     {
       "source": "kmu-startup",
       "ok": true,
       "count": 9,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 9
     },
     {
       "source": "kmu-col-arts",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "kmu-col-abeek",
       "ok": true,
       "count": 12,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 12
     },
     {
       "source": "kmu-col-coe",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "kmu-col-human",
       "ok": true,
       "count": 11,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 11
     },
     {
       "source": "kmu-col-kbs",
       "ok": true,
       "count": 11,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 11
     },
     {
       "source": "kmu-col-musicarts",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "kmu-col-pharmacyhome",
       "ok": true,
       "count": 11,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 11
     },
     {
       "source": "kmu-col-natural",
       "ok": true,
       "count": 12,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 12
     },
     {
       "source": "kmu-col-sports",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     },
     {
       "source": "kmu-col-ssc",
       "ok": true,
       "count": 10,
-      "message": ""
+      "message": "",
+      "lastSuccessAt": "2026-10-01T12:22:03.416Z",
+      "lastSuccessCount": 10
     }
   ]
 }
