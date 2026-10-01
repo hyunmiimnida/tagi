@@ -16,10 +16,35 @@ export function matchesTags(programTags: string[], selected: Set<string>, catego
   });
 }
 
-// 학교를 설정하면 내 학교 정보와 공통 정보만 보인다
-export function visibleForSchool(program: Program, schoolId: string | null): boolean {
-  return !schoolId || program.target.schools.length === 0 || program.target.schools.includes(schoolId);
+// 화면에서 쓰는 공고: 저장된 정보에 학교·기관을 빌드할 때 덧붙인 것
+export interface ProgramView extends Program {
+  schoolIds: string[]; // 출처가 속한 학교 + 모집 대상 학교
+  schoolLabels: string[]; // "영남대" 같은 짧은 이름
+  units: string[]; // 교내 기관 (사업단 등)
 }
+
+export interface SchoolOption {
+  id: string;
+  name: string;
+  shortName: string;
+  units: string[];
+}
+
+// 주최 유형이 학교이고 주최 이름에 기관 키워드가 들어 있으면 그 기관 소속이다
+export function unitsOf(program: Program, units: { name: string; keywords: string[] }[]): string[] {
+  const organizer = program.organizer;
+  if (!organizer || program.organizerType !== "학교") return [];
+  return units.filter((unit) => unit.keywords.some((keyword) => organizer.includes(keyword))).map((unit) => unit.name);
+}
+
+// 학교를 고르면 그 학교 정보와 모든 학교 공통 정보만 보인다
+export function visibleForSchool(program: ProgramView, schoolId: string | null): boolean {
+  return !schoolId || program.schoolIds.length === 0 || program.schoolIds.includes(schoolId);
+}
+
+// 고른 기관 중 하나라도 속하면 보인다 (아무것도 안 골랐으면 모두)
+export const matchesUnits = (program: ProgramView, units: Set<string>) =>
+  units.size === 0 || program.units.some((unit) => units.has(unit));
 
 // 마지막 일정. 모집 마감일이 있으면 그 날짜, 없으면 활동 종료일
 export const lastDay = (program: Program) => program.recruitPeriod.end ?? program.activityPeriod.end;

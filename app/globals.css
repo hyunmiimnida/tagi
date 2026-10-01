@@ -138,20 +138,6 @@ main {
   margin-left: auto;
 }
 
-.school-select {
-  max-width: 128px;
-  padding: 6px 28px 6px 12px;
-  border: 0;
-  border-radius: 999px;
-  background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238b95a1' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center;
-  color: var(--text-2);
-  font: inherit;
-  font-size: 0.875rem;
-  font-weight: 600;
-  appearance: none;
-  cursor: pointer;
-}
-
 .trial-label {
   color: var(--text-3);
   font-size: 0.8125rem;
@@ -394,10 +380,20 @@ main {
   font-weight: 500;
 }
 
-.row-meta span:first-of-type {
+.row-meta .row-org {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.row-school {
+  flex-shrink: 0;
+  padding: 0 6px;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
 }
 
 .row-type {
@@ -753,6 +749,31 @@ main {
     opacity: 0;
     transform: translateY(-4px);
   }
+}
+
+/* 학교 패널: 학교 줄과 교내 기관 줄을 위아래로 나눈다 */
+.tag-panel.stacked {
+  flex-direction: column;
+  gap: 14px;
+}
+
+.panel-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.panel-group + .panel-group {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.panel-label {
+  width: 100%;
+  margin: 0 0 2px;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+  font-weight: 600;
 }
 
 .tag-option {
@@ -1344,10 +1365,6 @@ main {
 
 /* ───────── 좁은 화면 ───────── */
 @media (max-width: 380px) {
-  .school-select {
-    max-width: 96px;
-  }
-
   .trial-label {
     display: none;
   }

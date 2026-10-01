@@ -23,3 +23,20 @@ test("날짜를 짧게 보여 준다", async () => {
   assert.equal(formatPeriod({ start: "2026-12-20", end: "2027-01-10" }, 2026), "12.20(일) ~ 2027.1.10(일)");
   assert.equal(formatPeriod({ start: null, end: null }, 2026), null);
 });
+
+test("교내 기관은 주최 유형이 학교일 때만 키워드로 맞춘다", async () => {
+  const { unitsOf } = await import("./filter.ts");
+  const units = [{ name: "창업지원단", keywords: ["창업지원단"] }];
+  const base = { organizer: "앵커사업단 YUnicorn창업지원단", organizerType: "학교" } as never;
+  assert.deepEqual(unitsOf(base, units), ["창업지원단"]);
+  assert.deepEqual(unitsOf({ organizer: "OO창업지원단", organizerType: "기업" } as never, units), []);
+  assert.deepEqual(unitsOf({ organizer: null, organizerType: "학교" } as never, units), []);
+});
+
+test("학교를 고르면 그 학교와 공통 공고만 보인다", async () => {
+  const { visibleForSchool } = await import("./filter.ts");
+  assert.ok(visibleForSchool({ schoolIds: ["yu"] } as never, "yu"));
+  assert.ok(visibleForSchool({ schoolIds: [] } as never, "yu"));
+  assert.ok(visibleForSchool({ schoolIds: ["yu"] } as never, null));
+  assert.ok(!visibleForSchool({ schoolIds: ["knu"] } as never, "yu"));
+});

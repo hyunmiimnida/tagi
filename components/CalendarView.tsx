@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { daysUntil, formatDate, toDateString } from "../lib/filter.ts";
 import { downloadIcs } from "../lib/ics.ts";
 import { useToday, useUser } from "../lib/user.tsx";
-import type { Program } from "../src/types.ts";
+import type { ProgramView as Program } from "../lib/filter.ts";
 import { CalendarIcon, CalendarPlusIcon, ChevronIcon } from "./Icons.tsx";
 
 interface CalendarEvent {

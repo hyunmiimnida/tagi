@@ -46,9 +46,17 @@ export interface Source {
   localOnly?: boolean; // 해외 서버에서 접속이 막혀 내 컴퓨터에서만 수집하는 출처
 }
 
+// 교내 기관(사업단 등). 주최 이름에 keywords 중 하나가 들어 있으면 그 기관으로 본다
+export interface Unit {
+  name: string;
+  keywords: string[];
+}
+
 export interface School {
   id: string;
   name: string;
+  shortName: string; // 목록에 붙는 짧은 이름 (예: 영남대)
+  units?: Unit[];
   sources: Source[];
 }
 

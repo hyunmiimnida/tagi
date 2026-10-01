@@ -13,7 +13,7 @@ import {
 } from "../lib/filter.ts";
 import type { FilterCategory } from "../lib/filter.ts";
 import { useToday, useUser } from "../lib/user.tsx";
-import type { Program } from "../src/types.ts";
+import type { ProgramView as Program } from "../lib/filter.ts";
 import { ChevronIcon } from "./Icons.tsx";
 import { ProgramRow } from "./ProgramRow.tsx";
 

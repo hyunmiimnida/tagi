@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { daysUntil, formatPeriod, isClosed, isNew } from "../lib/filter.ts";
-import type { Program } from "../src/types.ts";
+import type { ProgramView as Program } from "../lib/filter.ts";
 import { FavoriteButton } from "./FavoriteButton.tsx";
 
 // 남은 날을 배지로. 마감일을 모르면 표시하지 않는다
@@ -37,7 +37,12 @@ export function ProgramRow({
       <div className="row-body">
         <div className="row-meta">
           {isNew(program, today) && <span className="new-dot" aria-label="새 공고" />}
-          <span>{program.organizer ?? "주최 미확인"}</span>
+          {program.schoolLabels.map((label) => (
+            <span key={label} className="row-school">
+              {label}
+            </span>
+          ))}
+          <span className="row-org">{program.organizer ?? "주최 미확인"}</span>
           {program.organizerType && <span className="row-type">{program.organizerType}</span>}
         </div>
         <Link href={`/programs/${program.id}`} className="row-title">

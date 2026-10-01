@@ -1,25 +1,38 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { addedAt, compareDeadline, isClosed, matchesTags, visibleForSchool } from "../lib/filter.ts";
-import type { FilterCategory } from "../lib/filter.ts";
+import { addedAt, compareDeadline, isClosed, matchesTags, matchesUnits, visibleForSchool } from "../lib/filter.ts";
+import type { FilterCategory, ProgramView, SchoolOption } from "../lib/filter.ts";
 import { useToday, useUser } from "../lib/user.tsx";
-import type { Program } from "../src/types.ts";
 import { LIST_QUERY_KEY } from "./BackLink.tsx";
 import { ChevronIcon, CloseIcon, SearchIcon } from "./Icons.tsx";
 import { ProgramRow } from "./ProgramRow.tsx";
 
 interface Props {
-  programs: Program[];
+  programs: ProgramView[];
   categories: FilterCategory[];
+  schools: SchoolOption[];
 }
 
 type Sort = "deadline" | "recent";
 
-// 필터 상태를 주소(?tag=...&q=...)에 담아 뒤로 가기·공유 때도 유지한다
+interface Filters {
+  school: string | null;
+  units: Set<string>;
+  tags: Set<string>;
+  keyword: string;
+  showClosed: boolean;
+  sort: Sort;
+}
+
+const SCHOOL_PANEL = "school"; // 학교 칩을 열었을 때의 패널 id
+
+// 필터 상태를 주소(?school=...&tag=...&q=...)에 담아 뒤로 가기·공유 때도 유지한다
 function readQuery() {
   const params = new URLSearchParams(window.location.search);
   return {
+    school: params.get("school"),
+    units: new Set(params.getAll("unit")),
     tags: new Set(params.getAll("tag")),
     keyword: params.get("q") ?? "",
     showClosed: params.get("closed") === "1",
@@ -27,8 +40,10 @@ function readQuery() {
   };
 }
 
-function writeQuery(tags: Set<string>, keyword: string, showClosed: boolean, sort: Sort) {
+function writeQuery({ school, units, tags, keyword, showClosed, sort }: Filters) {
   const params = new URLSearchParams();
+  if (school) params.set("school", school);
+  for (const unit of units) params.append("unit", unit);
   for (const tag of tags) params.append("tag", tag);
   if (keyword) params.set("q", keyword);
   if (showClosed) params.set("closed", "1");
@@ -42,18 +57,26 @@ function writeQuery(tags: Set<string>, keyword: string, showClosed: boolean, sor
   }
 }
 
-export function Explorer({ programs, categories }: Props) {
-  const { schoolId } = useUser();
+export function Explorer({ programs, categories, schools }: Props) {
+  const user = useUser();
   const today = useToday();
   const [loaded, setLoaded] = useState(false);
+  const [school, setSchool] = useState<string | null>(null);
+  const [schoolFromUrl, setSchoolFromUrl] = useState(false);
+  const [units, setUnits] = useState<Set<string>>(new Set());
   const [selected, setSelected] = useState<Set<string>>(new Set());
-  const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [openPanel, setOpenPanel] = useState<string | null>(null);
   const [showClosed, setShowClosed] = useState(false);
   const [keyword, setKeyword] = useState("");
   const [sort, setSort] = useState<Sort>("deadline");
 
   useEffect(() => {
     const query = readQuery();
+    if (query.school) {
+      setSchool(query.school);
+      setSchoolFromUrl(true);
+      setUnits(query.units);
+    }
     setSelected(query.tags);
     setKeyword(query.keyword);
     setShowClosed(query.showClosed);
@@ -61,9 +84,14 @@ export function Explorer({ programs, categories }: Props) {
     setLoaded(true);
   }, []);
 
+  // 주소에 학교가 없으면 내 학교 설정을 기본으로 쓴다
   useEffect(() => {
-    if (loaded) writeQuery(selected, keyword, showClosed, sort);
-  }, [loaded, selected, keyword, showClosed, sort]);
+    if (loaded && !schoolFromUrl) setSchool(user.schoolId);
+  }, [loaded, schoolFromUrl, user.schoolId]);
+
+  useEffect(() => {
+    if (loaded) writeQuery({ school, units, tags: selected, keyword, showClosed, sort });
+  }, [loaded, school, units, selected, keyword, showClosed, sort]);
 
   // 주최 유형 태그는 주최 줄에 이미 보이므로 공고 태그에서는 뺀다
   const organizerTags = useMemo(
@@ -71,42 +99,73 @@ export function Explorer({ programs, categories }: Props) {
     [categories],
   );
 
-  const visible = useMemo(() => {
-    const word = keyword.trim().toLowerCase();
-    return programs
-      .filter((p) => visibleForSchool(p, schoolId))
-      .filter((p) => matchesTags(p.tags, selected, categories))
-      .filter((p) => !word || `${p.title} ${p.organizer ?? ""}`.toLowerCase().includes(word))
-      .filter((p) => showClosed || !isClosed(p, today))
-      .sort((a, b) => (sort === "recent" ? addedAt(b).localeCompare(addedAt(a)) : compareDeadline(a, b, today)));
-  }, [programs, categories, schoolId, selected, keyword, showClosed, sort, today]);
+  const word = keyword.trim().toLowerCase();
+  const open = useMemo(() => programs.filter((p) => showClosed || !isClosed(p, today)), [programs, showClosed, today]);
 
-  // 태그별 개수: 학교·마감 설정과 다른 카테고리에서 고른 태그를 반영한다
-  const tagCounts = useMemo(() => {
-    const counts = new Map<string, number>();
-    const base = programs.filter((p) => visibleForSchool(p, schoolId) && (showClosed || !isClosed(p, today)));
+  const visible = useMemo(
+    () =>
+      open
+        .filter((p) => visibleForSchool(p, school) && matchesUnits(p, units))
+        .filter((p) => matchesTags(p.tags, selected, categories))
+        .filter((p) => !word || `${p.title} ${p.organizer ?? ""}`.toLowerCase().includes(word))
+        .sort((a, b) => (sort === "recent" ? addedAt(b).localeCompare(addedAt(a)) : compareDeadline(a, b, today))),
+    [open, categories, school, units, selected, word, sort, today],
+  );
+
+  // 개수: 다른 필터는 반영하고, 자기 자신이 속한 필터만 빼고 센다
+  const counts = useMemo(() => {
+    const byTags = open.filter((p) => matchesTags(p.tags, selected, categories));
+    const inSchool = (id: string | null) => byTags.filter((p) => visibleForSchool(p, id));
+    const schoolCounts = new Map(schools.map((s) => [s.id, inSchool(s.id).length]));
+    const unitCounts = new Map<string, number>();
+    for (const p of inSchool(school)) for (const unit of p.units) unitCounts.set(unit, (unitCounts.get(unit) ?? 0) + 1);
+
+    const tagCounts = new Map<string, number>();
+    const base = open.filter((p) => visibleForSchool(p, school) && matchesUnits(p, units));
     for (const category of categories) {
       const others = categories.filter((c) => c.id !== category.id);
       const pool = base.filter((p) => matchesTags(p.tags, selected, others));
-      for (const tag of category.tags) counts.set(tag, pool.filter((p) => p.tags.includes(tag)).length);
+      for (const tag of category.tags) tagCounts.set(tag, pool.filter((p) => p.tags.includes(tag)).length);
     }
-    return counts;
-  }, [programs, categories, schoolId, selected, showClosed, today]);
+    return { all: inSchool(null).length, school: schoolCounts, unit: unitCounts, tag: tagCounts };
+  }, [open, categories, schools, school, units, selected]);
 
-  function toggleTag(tag: string) {
-    const next = new Set(selected);
-    if (next.has(tag)) next.delete(tag);
-    else next.add(tag);
-    setSelected(next);
+  function chooseSchool(id: string | null) {
+    setSchool(id);
+    setSchoolFromUrl(false);
+    setUnits(new Set());
+    user.setSchool(id); // 고른 학교는 내 학교 설정으로도 기억한다
   }
+
+  const toggle = (set: Set<string>, value: string) => {
+    const next = new Set(set);
+    if (next.has(value)) next.delete(value);
+    else next.add(value);
+    return next;
+  };
 
   function reset() {
     setSelected(new Set());
+    setUnits(new Set());
     setKeyword("");
   }
 
-  const opened = categories.find((category) => category.id === openCategory);
+  const currentSchool = schools.find((s) => s.id === school) ?? null;
+  const openedCategory = categories.find((category) => category.id === openPanel);
   const ready = loaded && today !== "";
+  const hasChips = selected.size > 0 || units.size > 0;
+
+  const option = (key: string, label: string, on: boolean, count: number | undefined, onClick: () => void) => (
+    <button
+      key={key}
+      className={`tag-option ${on ? "on" : ""} ${count === 0 && !on ? "dim" : ""}`}
+      aria-pressed={on}
+      onClick={onClick}
+    >
+      {label}
+      <span>{ready ? (count ?? 0) : ""}</span>
+    </button>
+  );
 
   return (
     <div className="explorer">
@@ -123,15 +182,24 @@ export function Explorer({ programs, categories }: Props) {
         </label>
 
         <div className="chip-scroll">
+          <button
+            className={`chip ${school ? "active" : ""} ${openPanel === SCHOOL_PANEL ? "open" : ""}`}
+            aria-expanded={openPanel === SCHOOL_PANEL}
+            onClick={() => setOpenPanel(openPanel === SCHOOL_PANEL ? null : SCHOOL_PANEL)}
+          >
+            {currentSchool ? currentSchool.shortName : "학교"}
+            {units.size > 0 && <span className="chip-count">{units.size}</span>}
+            <ChevronIcon dir="down" size={14} />
+          </button>
           {categories.map((category) => {
             const count = category.tags.filter((tag) => selected.has(tag)).length;
-            const isOpen = openCategory === category.id;
+            const isOpen = openPanel === category.id;
             return (
               <button
                 key={category.id}
                 className={`chip ${count > 0 ? "active" : ""} ${isOpen ? "open" : ""}`}
                 aria-expanded={isOpen}
-                onClick={() => setOpenCategory(isOpen ? null : category.id)}
+                onClick={() => setOpenPanel(isOpen ? null : category.id)}
               >
                 {category.name}
                 {count > 0 && <span className="chip-count">{count}</span>}
@@ -141,35 +209,56 @@ export function Explorer({ programs, categories }: Props) {
           })}
         </div>
 
-        {opened && (
-          <div className="tag-panel">
-            {opened.tags.map((tag) => {
-              const count = tagCounts.get(tag) ?? 0;
-              const on = selected.has(tag);
-              return (
-                <button
-                  key={tag}
-                  className={`tag-option ${on ? "on" : ""} ${count === 0 && !on ? "dim" : ""}`}
-                  aria-pressed={on}
-                  onClick={() => toggleTag(tag)}
-                >
-                  {tag}
-                  <span>{ready ? count : ""}</span>
-                </button>
-              );
-            })}
+        {openPanel === SCHOOL_PANEL && (
+          <div className="tag-panel stacked">
+            <div className="panel-group">
+              {option("all", "전체 학교", school === null, counts.all, () => chooseSchool(null))}
+              {schools.map((s) =>
+                option(s.id, s.name, school === s.id, counts.school.get(s.id), () =>
+                  chooseSchool(school === s.id ? null : s.id),
+                ),
+              )}
+            </div>
+            {currentSchool && currentSchool.units.length > 0 && (
+              <div className="panel-group">
+                <p className="panel-label">{currentSchool.shortName} 교내 기관</p>
+                {currentSchool.units.map((unit) =>
+                  option(unit, unit, units.has(unit), counts.unit.get(unit), () => setUnits(toggle(units, unit))),
+                )}
+              </div>
+            )}
           </div>
         )}
 
-        {selected.size > 0 && (
+        {openedCategory && (
+          <div className="tag-panel">
+            {openedCategory.tags.map((tag) =>
+              option(tag, tag, selected.has(tag), counts.tag.get(tag), () => setSelected(toggle(selected, tag))),
+            )}
+          </div>
+        )}
+
+        {hasChips && (
           <div className="selected-tags">
+            {[...units].map((unit) => (
+              <button key={unit} className="selected-tag" onClick={() => setUnits(toggle(units, unit))} aria-label={`${unit} 필터 해제`}>
+                {unit}
+                <CloseIcon size={14} />
+              </button>
+            ))}
             {[...selected].map((tag) => (
-              <button key={tag} className="selected-tag" onClick={() => toggleTag(tag)} aria-label={`${tag} 필터 해제`}>
+              <button key={tag} className="selected-tag" onClick={() => setSelected(toggle(selected, tag))} aria-label={`${tag} 필터 해제`}>
                 {tag}
                 <CloseIcon size={14} />
               </button>
             ))}
-            <button className="text-button" onClick={() => setSelected(new Set())}>
+            <button
+              className="text-button"
+              onClick={() => {
+                setSelected(new Set());
+                setUnits(new Set());
+              }}
+            >
               초기화
             </button>
           </div>
@@ -177,7 +266,7 @@ export function Explorer({ programs, categories }: Props) {
       </div>
 
       <div className="list-head">
-        <span className="list-count">{ready ? <>공고 <strong>{visible.length}</strong>개</> : " "}</span>
+        <span className="list-count">{ready ? <>공고 <strong>{visible.length}</strong>개</> : " "}</span>
         <div className="list-options">
           <div className="segmented" role="group" aria-label="정렬">
             <button className={sort === "deadline" ? "on" : ""} onClick={() => setSort("deadline")}>
@@ -204,7 +293,7 @@ export function Explorer({ programs, categories }: Props) {
         <div className="empty">
           <p className="empty-title">조건에 맞는 공고가 없어요</p>
           <p>필터를 줄이거나 다른 검색어를 써 보세요.</p>
-          {(selected.size > 0 || keyword) && (
+          {(hasChips || keyword) && (
             <button className="button" onClick={reset}>
               필터 초기화
             </button>

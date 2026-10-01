@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { BottomNav } from "../components/BottomNav.tsx";
 import { Header } from "../components/Header.tsx";
 import { LoginSheet } from "../components/LoginSheet.tsx";
-import { getLastCollected, getSchools, getSourceNames } from "../lib/data.ts";
+import { getLastCollected, getSourceNames } from "../lib/data.ts";
 import { SITE_NAME } from "../lib/filter.ts";
 import { UserProvider } from "../lib/user.tsx";
 import "./globals.css";
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <UserProvider>
-          <Header schools={getSchools()} />
+          <Header />
           <main>{children}</main>
           <footer className="footer">
             <p>
