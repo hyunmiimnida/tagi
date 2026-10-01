@@ -66,6 +66,8 @@ export interface TableBoard {
   pageParam: string; // 목록 쪽 번호 칸 이름 (1쪽부터)
   title: string; // 상세에서 제목 선택자
   content: string; // 상세에서 본문 선택자
+  listDate?: string; // 목록에서 등록일 칸 선택자 (기본: "td.date")
+  date?: string; // 상세에서 등록일 선택자 (기본: "등록일·일시" 이름표 옆 값)
 }
 
 // 교내 기관(사업단 등). 주최 이름에 keywords 중 하나가 들어 있으면 그 기관으로 본다

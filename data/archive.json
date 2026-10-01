@@ -6769,6 +6769,50 @@
     "seriesId": "yu-news-5995782"
   },
   {
+    "id": "knu-startup-692",
+    "title": "[크리에이티브팩토리] 제조 스케일업 캠프 참가기업 모집 공고",
+    "organizer": "크리에이티브팩토리",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-startup",
+        "url": "https://startup.knu.ac.kr/bbs/board.php?bo_table=noti2&wr_id=692"
+      }
+    ],
+    "sources": [
+      "knu-startup"
+    ],
+    "postedAt": "2026-05-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T11:25:44.651Z",
+    "firstSeenAt": "2026-10-01T11:25:44.651Z"
+  },
+  {
     "id": "yu-career-2474",
     "title": "[한국장학재단] 중소기업 취업업계 장학생 기업탐방",
     "organizer": "한국장학재단",

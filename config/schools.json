@@ -146,6 +146,12 @@
         "keywords": [
           "로봇부트캠프사업단"
         ]
+      },
+      {
+        "name": "창업지원단",
+        "keywords": [
+          "창업지원단"
+        ]
       }
     ],
     "sources": [
@@ -181,6 +187,26 @@
           "pageParam": "pageIndex",
           "title": ".board_view h2",
           "content": "#viewcontent"
+        }
+      },
+      {
+        "id": "knu-startup",
+        "name": "창업지원단",
+        "collector": "table-board",
+        "url": "https://startup.knu.ac.kr/bbs/board.php?bo_table=noti2",
+        "enabled": true,
+        "pages": 2,
+        "defaultOrganizer": "창업지원단",
+        "useAi": true,
+        "board": {
+          "link": "td.td_subject a",
+          "idParam": "wr_id",
+          "viewUrl": "https://startup.knu.ac.kr/bbs/board.php?bo_table=noti2&wr_id={id}",
+          "pageParam": "page",
+          "title": ".bo_v_tit",
+          "content": "#bo_v_con",
+          "listDate": "td.td_datetime",
+          "date": ".if_date"
         }
       }
     ]
@@ -244,23 +270,6 @@
           "link": "td.subject a",
           "idParam": "parm_bod_uid",
           "viewUrl": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid={id}&mnu_uid=145",
-          "pageParam": "pageNo",
-          "title": ".bbs_info dl.subject dd",
-          "content": ".bbs_con"
-        }
-      },
-      {
-        "id": "kmu-outside",
-        "name": "교외알림판",
-        "collector": "table-board",
-        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?mnu_uid=141",
-        "enabled": true,
-        "pages": 2,
-        "useAi": true,
-        "board": {
-          "link": "td.subject a",
-          "idParam": "parm_bod_uid",
-          "viewUrl": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid={id}&mnu_uid=141",
           "pageParam": "pageNo",
           "title": ".bbs_info dl.subject dd",
           "content": ".bbs_con"

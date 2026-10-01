@@ -41,7 +41,7 @@ async function listPage(ctx: CollectContext, page: number): Promise<ArchivePost[
       postId,
       title: clean($(a).attr("title") || $(a).text()),
       url: board.viewUrl.replace("{id}", postId),
-      postedAt: toIsoDate(row.find("td.date").first().text()),
+      postedAt: toIsoDate(row.find(board.listDate ?? "td.date").first().text()),
     });
   }
   return posts;
@@ -62,7 +62,8 @@ async function readPost(ctx: CollectContext, post: ArchivePost): Promise<Collect
   if (!title) return null;
 
   const program = emptyProgram(ctx.school, ctx.source, post.postId, title, post.url);
-  program.postedAt = toIsoDate(labeled($, /등록일|일시|작성일/)) ?? post.postedAt;
+  const posted = board.date ? $(board.date).first().text() : labeled($, /등록일|일시|작성일/);
+  program.postedAt = toIsoDate(posted) ?? post.postedAt;
   // 본문의 그림(글자 대신 이미지로 붙인 공고)은 글자가 아니므로 뺀다
   $(board.content).find("img, script, style").remove();
   return {

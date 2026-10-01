@@ -1,6 +1,6 @@
 {
-  "ranAt": "2026-10-01T11:16:47.657Z",
-  "total": 558,
+  "ranAt": "2026-10-01T11:31:31.585Z",
+  "total": 566,
   "sources": [
     {
       "source": "yu-career",
@@ -27,6 +27,12 @@
       "message": ""
     },
     {
+      "source": "knu-startup",
+      "ok": true,
+      "count": 30,
+      "message": ""
+    },
+    {
       "source": "kmu-notice",
       "ok": true,
       "count": 0,
@@ -40,12 +46,6 @@
     },
     {
       "source": "kmu-scholarship",
-      "ok": true,
-      "count": 0,
-      "message": ""
-    },
-    {
-      "source": "kmu-outside",
       "ok": true,
       "count": 0,
       "message": ""
