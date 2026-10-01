@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { BottomNav } from "../components/BottomNav.tsx";
 import { Header } from "../components/Header.tsx";
+import { LoginSheet } from "../components/LoginSheet.tsx";
 import { getLastCollected, getSchools, getSourceNames } from "../lib/data.ts";
 import { SITE_NAME } from "../lib/filter.ts";
 import { UserProvider } from "../lib/user.tsx";
@@ -11,20 +13,40 @@ export const metadata: Metadata = {
   openGraph: { siteName: SITE_NAME, locale: "ko_KR", type: "website" },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f2f4f6" },
+    { media: "(prefers-color-scheme: dark)", color: "#101113" },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const lastCollected = getLastCollected();
   return (
     <html lang="ko">
+      <head>
+        {/* 한글이 깔끔하게 보이는 프리텐다드 글꼴 */}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
+      </head>
       <body>
         <UserProvider>
           <Header schools={getSchools()} />
           <main>{children}</main>
           <footer className="footer">
             <p>
-              {getLastCollected() && `${getLastCollected()} 기준 · `}
-              출처: {Object.values(getSourceNames()).join(", ")} · 매일 자동으로 모아요
+              {lastCollected && `${lastCollected} 기준 · `}
+              {Object.values(getSourceNames()).join(", ")}에서 매일 모아요
             </p>
             <p>일정과 자격은 자동으로 정리한 정보라 틀릴 수 있어요. 신청 전에 꼭 원문을 확인하세요.</p>
           </footer>
+          <BottomNav />
+          <LoginSheet />
         </UserProvider>
       </body>
     </html>

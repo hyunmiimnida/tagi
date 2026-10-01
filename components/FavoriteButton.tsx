@@ -1,6 +1,7 @@
 "use client";
 
 import { useUser } from "../lib/user.tsx";
+import { StarIcon } from "./Icons.tsx";
 
 export function FavoriteButton({ programId, withLabel = false }: { programId: string; withLabel?: boolean }) {
   const { favorites, toggleFavorite } = useUser();
@@ -8,7 +9,7 @@ export function FavoriteButton({ programId, withLabel = false }: { programId: st
 
   return (
     <button
-      className={`favorite ${on ? "on" : ""}`}
+      className={`favorite ${on ? "on" : ""} ${withLabel ? "with-label" : ""}`}
       aria-pressed={on}
       aria-label={on ? "관심 해제" : "관심 표시"}
       onClick={(event) => {
@@ -16,8 +17,8 @@ export function FavoriteButton({ programId, withLabel = false }: { programId: st
         toggleFavorite(programId);
       }}
     >
-      {on ? "★" : "☆"}
-      {withLabel && (on ? " 관심 표시됨" : " 관심 표시")}
+      <StarIcon filled={on} />
+      {withLabel && <span>{on ? "관심 공고" : "관심 표시"}</span>}
     </button>
   );
 }

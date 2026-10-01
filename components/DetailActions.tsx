@@ -4,6 +4,7 @@ import { useState } from "react";
 import { downloadIcs } from "../lib/ics.ts";
 import type { Program } from "../src/types.ts";
 import { FavoriteButton } from "./FavoriteButton.tsx";
+import { CalendarPlusIcon, ShareIcon } from "./Icons.tsx";
 
 export function DetailActions({ program }: { program: Program }) {
   const [copied, setCopied] = useState(false);
@@ -25,13 +26,20 @@ export function DetailActions({ program }: { program: Program }) {
     <div className="detail-actions">
       <FavoriteButton programId={program.id} withLabel />
       {hasDates && (
-        <button className="button" onClick={() => downloadIcs([program], `${program.id}.ics`)}>
-          📅 내 캘린더 앱에 추가
+        <button className="action-button" onClick={() => downloadIcs([program], `${program.id}.ics`)}>
+          <CalendarPlusIcon />
+          <span>캘린더 추가</span>
         </button>
       )}
-      <button className="button" onClick={share}>
-        {copied ? "링크를 복사했어요" : "🔗 공유"}
+      <button className="action-button" onClick={share}>
+        <ShareIcon />
+        <span>{copied ? "복사됨" : "공유"}</span>
       </button>
+      {copied && (
+        <div className="toast" role="status">
+          링크를 복사했어요
+        </div>
+      )}
     </div>
   );
 }

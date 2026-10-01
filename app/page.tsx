@@ -1,6 +1,6 @@
-import { Explorer } from "../components/Explorer.tsx";
+import { Home } from "../components/Home.tsx";
 import { getCategories, getPrograms } from "../lib/data.ts";
 
 export default function HomePage() {
-  return <Explorer programs={getPrograms()} categories={getCategories()} />;
+  return <Home programs={getPrograms()} categories={getCategories()} />;
 }

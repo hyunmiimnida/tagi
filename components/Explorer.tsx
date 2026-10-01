@@ -1,13 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { daysUntil, formatPeriod, isClosed, lastDay, matchesTags, visibleForSchool } from "../lib/filter.ts";
+import { addedAt, compareDeadline, isClosed, matchesTags, visibleForSchool } from "../lib/filter.ts";
 import type { FilterCategory } from "../lib/filter.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import type { Program } from "../src/types.ts";
 import { LIST_QUERY_KEY } from "./BackLink.tsx";
-import { FavoriteButton } from "./FavoriteButton.tsx";
+import { ChevronIcon, CloseIcon, SearchIcon } from "./Icons.tsx";
+import { ProgramRow } from "./ProgramRow.tsx";
 
 interface Props {
   programs: Program[];
@@ -15,14 +15,6 @@ interface Props {
 }
 
 type Sort = "deadline" | "recent";
-
-// 올라온 날. 게시일 → 접수 시작일 → 처음 수집한 날 순으로 쓴다
-function addedAt(p: Program): string {
-  const firstSeen = (p.firstSeenAt ?? p.collectedAt).slice(0, 10);
-  const start = p.recruitPeriod.start;
-  return p.postedAt ?? (start && start < firstSeen ? start : firstSeen);
-}
-const NEW_DAYS = 3;
 
 // 필터 상태를 주소(?tag=...&q=...)에 담아 뒤로 가기·공유 때도 유지한다
 function readQuery() {
@@ -73,7 +65,7 @@ export function Explorer({ programs, categories }: Props) {
     if (loaded) writeQuery(selected, keyword, showClosed, sort);
   }, [loaded, selected, keyword, showClosed, sort]);
 
-  // 주최 유형 태그는 카드의 주최 줄에 이미 보이므로 카드 태그에서는 뺀다
+  // 주최 유형 태그는 주최 줄에 이미 보이므로 공고 태그에서는 뺀다
   const organizerTags = useMemo(
     () => new Set(categories.find((c) => c.id === "organizer-type")?.tags ?? []),
     [categories],
@@ -86,23 +78,10 @@ export function Explorer({ programs, categories }: Props) {
       .filter((p) => matchesTags(p.tags, selected, categories))
       .filter((p) => !word || `${p.title} ${p.organizer ?? ""}`.toLowerCase().includes(word))
       .filter((p) => showClosed || !isClosed(p, today))
-      .sort((a, b) => {
-        if (sort === "recent") {
-          return addedAt(b).localeCompare(addedAt(a));
-        }
-        // 마감이 가까운 순. 마감일을 모르는 항목은 최근 게시 순으로 뒤에 둔다
-        const x = lastDay(a);
-        const y = lastDay(b);
-        const xClosed = x !== null && x < today;
-        const yClosed = y !== null && y < today;
-        if (xClosed !== yClosed) return xClosed ? 1 : -1;
-        if (x && y) return xClosed ? y.localeCompare(x) : x.localeCompare(y);
-        if (x || y) return x ? -1 : 1;
-        return (b.postedAt ?? "").localeCompare(a.postedAt ?? "");
-      });
+      .sort((a, b) => (sort === "recent" ? addedAt(b).localeCompare(addedAt(a)) : compareDeadline(a, b, today)));
   }, [programs, categories, schoolId, selected, keyword, showClosed, sort, today]);
 
-  // 태그별 개수: 학교·마감 설정은 반영하고, 다른 카테고리에서 고른 태그도 반영한다
+  // 태그별 개수: 학교·마감 설정과 다른 카테고리에서 고른 태그를 반영한다
   const tagCounts = useMemo(() => {
     const counts = new Map<string, number>();
     const base = programs.filter((p) => visibleForSchool(p, schoolId) && (showClosed || !isClosed(p, today)));
@@ -121,161 +100,123 @@ export function Explorer({ programs, categories }: Props) {
     setSelected(next);
   }
 
+  function reset() {
+    setSelected(new Set());
+    setKeyword("");
+  }
+
   const opened = categories.find((category) => category.id === openCategory);
   const ready = loaded && today !== "";
 
   return (
-    <>
-      <section className="filters">
-        <input
-          type="search"
-          placeholder="제목이나 주최 기관으로 검색"
-          aria-label="제목이나 주최 기관으로 검색"
-          value={keyword}
-          onChange={(event) => setKeyword(event.target.value)}
-        />
-        <div className="chips">
+    <div className="explorer">
+      <div className="filter-bar">
+        <label className="search">
+          <SearchIcon />
+          <input
+            type="search"
+            placeholder="공고명, 주최 기관 검색"
+            aria-label="공고명이나 주최 기관으로 검색"
+            value={keyword}
+            onChange={(event) => setKeyword(event.target.value)}
+          />
+        </label>
+
+        <div className="chip-scroll">
           {categories.map((category) => {
             const count = category.tags.filter((tag) => selected.has(tag)).length;
+            const isOpen = openCategory === category.id;
             return (
               <button
                 key={category.id}
-                className={`chip category ${openCategory === category.id ? "open" : ""}`}
-                aria-expanded={openCategory === category.id}
-                onClick={() => setOpenCategory(openCategory === category.id ? null : category.id)}
+                className={`chip ${count > 0 ? "active" : ""} ${isOpen ? "open" : ""}`}
+                aria-expanded={isOpen}
+                onClick={() => setOpenCategory(isOpen ? null : category.id)}
               >
                 {category.name}
-                {count > 0 && <span className="count">{count}</span>}
+                {count > 0 && <span className="chip-count">{count}</span>}
+                <ChevronIcon dir="down" size={14} />
               </button>
             );
           })}
         </div>
+
         {opened && (
-          <div className="chips tag-panel">
+          <div className="tag-panel">
             {opened.tags.map((tag) => {
               const count = tagCounts.get(tag) ?? 0;
+              const on = selected.has(tag);
               return (
                 <button
                   key={tag}
-                  className={`chip ${selected.has(tag) ? "selected" : ""} ${count === 0 ? "empty-tag" : ""}`}
-                  aria-pressed={selected.has(tag)}
+                  className={`tag-option ${on ? "on" : ""} ${count === 0 && !on ? "dim" : ""}`}
+                  aria-pressed={on}
                   onClick={() => toggleTag(tag)}
                 >
-                  #{tag} <span className="tag-count">{ready ? count : ""}</span>
+                  {tag}
+                  <span>{ready ? count : ""}</span>
                 </button>
               );
             })}
           </div>
         )}
+
         {selected.size > 0 && (
-          <div className="chips">
+          <div className="selected-tags">
             {[...selected].map((tag) => (
-              <button key={tag} className="chip selected" onClick={() => toggleTag(tag)} aria-label={`${tag} 필터 해제`}>
-                #{tag} ✕
+              <button key={tag} className="selected-tag" onClick={() => toggleTag(tag)} aria-label={`${tag} 필터 해제`}>
+                {tag}
+                <CloseIcon size={14} />
               </button>
             ))}
-            <button className="link-button" onClick={() => setSelected(new Set())}>
-              모두 지우기
+            <button className="text-button" onClick={() => setSelected(new Set())}>
+              초기화
             </button>
           </div>
         )}
-        <div className="list-meta">
-          <span>{ready ? `${visible.length}개` : ""}</span>
-          <div className="list-options">
-            <label>
-              <input type="checkbox" checked={showClosed} onChange={(event) => setShowClosed(event.target.checked)} />
-              마감 포함
-            </label>
-            <select aria-label="정렬" value={sort} onChange={(event) => setSort(event.target.value as Sort)}>
-              <option value="deadline">마감 임박순</option>
-              <option value="recent">최근 등록순</option>
-            </select>
+      </div>
+
+      <div className="list-head">
+        <span className="list-count">{ready ? <>공고 <strong>{visible.length}</strong>개</> : " "}</span>
+        <div className="list-options">
+          <div className="segmented" role="group" aria-label="정렬">
+            <button className={sort === "deadline" ? "on" : ""} onClick={() => setSort("deadline")}>
+              마감순
+            </button>
+            <button className={sort === "recent" ? "on" : ""} onClick={() => setSort("recent")}>
+              최신순
+            </button>
           </div>
+          <label className="toggle">
+            <input type="checkbox" checked={showClosed} onChange={(event) => setShowClosed(event.target.checked)} />
+            <span>마감 포함</span>
+          </label>
         </div>
-      </section>
+      </div>
 
       {!ready ? (
-        <ul className="cards" aria-busy="true">
+        <ul className="rows" aria-busy="true">
           {Array.from({ length: 6 }, (_, i) => (
-            <li key={i} className="card skeleton" />
+            <li key={i} className="row skeleton-row" />
           ))}
         </ul>
       ) : visible.length === 0 ? (
         <div className="empty">
-          <p>조건에 맞는 정보가 없어요.</p>
+          <p className="empty-title">조건에 맞는 공고가 없어요</p>
+          <p>필터를 줄이거나 다른 검색어를 써 보세요.</p>
           {(selected.size > 0 || keyword) && (
-            <button
-              className="button"
-              onClick={() => {
-                setSelected(new Set());
-                setKeyword("");
-              }}
-            >
+            <button className="button" onClick={reset}>
               필터 초기화
             </button>
           )}
         </div>
       ) : (
-        <ul className="cards">
+        <ul className="rows">
           {visible.map((program) => (
-            <ProgramCard key={program.id} program={program} today={today} hiddenTags={organizerTags} />
+            <ProgramRow key={program.id} program={program} today={today} hiddenTags={organizerTags} />
           ))}
         </ul>
       )}
-    </>
-  );
-}
-
-function ProgramCard({ program, today, hiddenTags }: { program: Program; today: string; hiddenTags: Set<string> }) {
-  const year = Number(today.slice(0, 4));
-  const end = program.recruitPeriod.end;
-  const left = end ? daysUntil(end, today) : null;
-  const recruit = formatPeriod(program.recruitPeriod, year);
-  const activity = formatPeriod(program.activityPeriod, year);
-  const closed = isClosed(program, today);
-  const isNew = daysUntil(today, addedAt(program)) < NEW_DAYS;
-
-  return (
-    <li>
-      {/* 카드 전체를 누르면 상세로 가지만, 관심 버튼은 링크 밖에 둔다 */}
-      <article className={`card ${closed ? "closed" : ""}`}>
-        <div className="card-top">
-          <span className="muted small">
-            {isNew && <span className="new-badge">NEW</span>}
-            {program.organizer ?? "주최 미확인"}
-            {program.organizerType && ` · ${program.organizerType}`}
-          </span>
-          <FavoriteButton programId={program.id} />
-        </div>
-        <h2>
-          <Link href={`/programs/${program.id}`} className="card-link">
-            {program.title}
-          </Link>
-        </h2>
-        <dl>
-          <dt>모집</dt>
-          <dd>
-            {recruit ?? <span className="muted">원문에서 확인</span>}
-            {left !== null && left >= 0 && (
-              <span className={`dday ${left <= 3 ? "urgent" : ""}`}>{left === 0 ? "오늘 마감" : `D-${left}`}</span>
-            )}
-            {left !== null && left < 0 && <span className="dday closed">마감</span>}
-          </dd>
-          {activity && (
-            <>
-              <dt>활동</dt>
-              <dd>{activity}</dd>
-            </>
-          )}
-        </dl>
-        <div className="tags">
-          {program.tags
-            .filter((tag) => !hiddenTags.has(tag))
-            .map((tag) => (
-              <span key={tag}>#{tag}</span>
-            ))}
-        </div>
-      </article>
-    </li>
+    </div>
   );
 }

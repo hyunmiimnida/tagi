@@ -54,3 +54,26 @@ export function toDateString(date: Date): string {
   const pad = (n: number) => String(n).padStart(2, "0");
   return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
 }
+
+// 올라온 날. 게시일 → 접수 시작일 → 처음 수집한 날 순으로 쓴다
+export function addedAt(program: Program): string {
+  const firstSeen = (program.firstSeenAt ?? program.collectedAt).slice(0, 10);
+  const start = program.recruitPeriod.start;
+  return program.postedAt ?? (start && start < firstSeen ? start : firstSeen);
+}
+
+export const NEW_DAYS = 3;
+
+export const isNew = (program: Program, today: string) => daysUntil(today, addedAt(program)) < NEW_DAYS;
+
+// 마감이 가까운 순. 마감된 항목은 뒤로, 마감일을 모르는 항목은 최근 게시 순으로 그 사이에 둔다
+export function compareDeadline(a: Program, b: Program, today: string): number {
+  const x = lastDay(a);
+  const y = lastDay(b);
+  const xClosed = x !== null && x < today;
+  const yClosed = y !== null && y < today;
+  if (xClosed !== yClosed) return xClosed ? 1 : -1;
+  if (x && y) return xClosed ? y.localeCompare(x) : x.localeCompare(y);
+  if (x || y) return x ? -1 : 1;
+  return (b.postedAt ?? "").localeCompare(a.postedAt ?? "");
+}

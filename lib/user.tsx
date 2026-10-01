@@ -12,8 +12,8 @@ const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const supabase = url && key ? createClient(url, key) : null;
 
 export const LOGIN_PROVIDERS = [
-  { id: "google", name: "구글" },
   { id: "kakao", name: "카카오" },
+  { id: "google", name: "구글" },
 ] as const;
 
 type ProviderId = (typeof LOGIN_PROVIDERS)[number]["id"];

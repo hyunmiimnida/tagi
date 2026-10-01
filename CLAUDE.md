@@ -67,7 +67,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `src/types.ts` — 공통 데이터 형식
 - `src/collectors/` — 사이트별 수집기 (`index.ts`에 등록)
 - `data/programs.json` — 수집 결과, `data/collect-log.json` — 마지막 수집 기록
-- `app/` — 화면 (목록 `/`, 상세 `/programs/[id]`, 캘린더 `/calendar`)
+- `app/` — 화면. 하단 탭 바(`components/BottomNav.tsx`)로 홈 `/`, 공고 `/programs`, 캘린더 `/calendar`를 오간다. 상세는 `/programs/[id]`
   - 목록 필터는 주소(`?tag=...&q=...&closed=1&sort=recent`)에 저장된다
   - 상세·캘린더에서 `.ics` 캘린더 파일로 내보낼 수 있다 (`lib/ics.ts`)
 - `components/` — 화면 부품, `lib/` — 필터 규칙·데이터 읽기·로그인 상태
@@ -87,6 +87,13 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `npm run dev` — 내 컴퓨터에서 화면 실행 (http://localhost:3000)
 - `npm run collect` — 수집 실행
 - `npm test` — 자동 검사, `npm run typecheck` — 코드 오류 검사, `npm run build` — 배포용 빌드
+
+## 디자인 규칙
+
+- 토스·노션처럼 단순하게: 회색 바탕(`--bg`) 위 흰 카드(`--surface`), 큰 제목, 넉넉한 여백, 강조색은 파랑(`--accent`) 하나와 마감 빨강(`--warn`)
+- 색은 `app/globals.css`의 변수만 쓴다 (다크 모드가 자동으로 맞춰진다)
+- 공고 한 줄은 `components/ProgramRow.tsx`, 아이콘은 `components/Icons.tsx`를 재사용한다
+- 화면 전체를 덮는 창(로그인 시트 등)은 머리말 안에 두지 않는다 (반투명 효과 때문에 위치가 깨진다)
 
 ## 코드 규칙
 
