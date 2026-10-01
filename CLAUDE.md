@@ -50,7 +50,7 @@
 - 모집 대상 학교: 기본은 게시한 학교. AI가 다른 학교 학생도 지원할 수 있다고 보면 `target.openTo`(예: "전국 대학생")를 쓰고 `target.schools`를 비운다. 학교 배지는 게시한 학교 기준이고, 학교 필터는 openTo 공고도 기본으로 함께 보여 준다("다른 학교도 지원" 배지, 필터 안 스위치로 끄면 주소에 `open=0`)
 - 캘린더의 "지난 관심 공고": 보관함으로 간 관심 공고를 `public/api/ids.json`에서 찾아 제목·원문·이번 회차를 보여 준다 (`components/PastFavorites.tsx`)
 - 댓글 도배 막기: `supabase/spam.sql` 트리거(20초 안 재작성, 하루 20개, 같은 내용 반복, 링크 2개 이상). 걸리면 `spam:이유` 오류 → `components/Comments.tsx`가 안내
-- 마감 알림(웹 푸시): 프로필에서 켜면 `lib/push.ts`가 기기 알림 주소를 `push_subscriptions` 표에 저장. 매일 오전 9시 `.github/workflows/notify.yml`이 `scripts/notify.ts deadline`으로 내일 모집 마감인 관심 공고를 보낸다(`public/sw.js`가 받아 표시). 비밀 값 `SUPABASE_SERVICE_ROLE_KEY`·`VAPID_PRIVATE_KEY`는 GitHub Secrets에만
+- 마감 알림(웹 푸시): 프로필에서 켜면 `lib/push.ts`가 기기 알림 주소를 `push_subscriptions` 표에 저장. 매일 오전 9시 `.github/workflows/notify.yml`이 `scripts/notify.ts deadline`으로 내일 모집 마감인 관심 공고를 보낸다(`public/sw.js`가 받아 표시). 켜면 그 기기에 확인 알림을 바로 띄우고, 다른 기기에서 켠 알림이면 프로필에 "이 기기에서도 받기"가 보인다. 비밀 값 `SUPABASE_SERVICE_ROLE_KEY`·`VAPID_PRIVATE_KEY`는 GitHub Secrets에만
 - 신고 알림: 같은 워크플로가 새 댓글 신고·정보 오류 신고를 "신고 확인 필요" GitHub 이슈로 올린다(저장소 주인에게 메일). 알린 신고는 `alerted_at`에 표시
 - 운영 연락처: `lib/policy.ts`의 `CONTACT_EMAIL` (개인정보 보호 책임자·문의·권리 침해 신고). 수집기 이름(`src/fetch.ts`의 USER_AGENT)에도 같은 이메일을 적는다
 - 합쳐진 공고는 `aliases`에 예전 id를 남기고, 없는 공고 주소는 `app/not-found.tsx`가 `public/api/ids.json`으로 새 주소나 보관 안내를 찾아 준다
@@ -104,7 +104,8 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - 그림: 분야 아이콘 `components/FieldIcon.tsx`, 빈 화면 그림 `components/EmptyArt.tsx`. 원문 포스터는 쓰지 않는다(원문 복사·robots.txt의 첨부 경로 차단)
 - `app/` — 화면. 하단 탭 바(`components/BottomNav.tsx`)로 홈 `/`, 공고 `/programs`, 캘린더 `/calendar`, 프로필 `/my`를 오간다. 상세는 `/programs/[id]`
   - 목록 필터는 주소(`?school=yu&unit=...&tag=...&q=...&closed=1&sort=recent`)에 저장된다
-  - 상세·캘린더에서 `.ics` 캘린더 파일로 내보낼 수 있다 (`lib/ics.ts`)
+  - 상세·캘린더에서 `.ics` 캘린더 파일로 내보낼 수 있다 (`lib/ics.ts`, 마감 일정에는 하루 전 오전 9시 알림)
+  - 검색(`matchesKeyword`)은 제목·주최·한 줄 요약·태그에서 찾고, 띄어 쓴 단어는 모두 들어 있어야 한다(띄어쓰기 무시)
 - `components/` — 화면 부품, `lib/` — 필터 규칙·데이터 읽기·로그인 상태
 - `supabase/schema.sql` — 로그인 사용자 데이터 표(학교 설정, 관심 표시, 후기 댓글)
 - `supabase/moderation.sql` — 회원 탈퇴, 댓글 신고(`reports`)·숨기기(`blocks`), 이용 규칙 동의. 댓글은 `comment_feed` 뷰로만 읽는다(글쓴이 id 비공개)
