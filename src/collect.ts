@@ -160,4 +160,6 @@ if (robotsBlocked.length) console.log(`robots.txt가 막아 건너뛴 글 ${robo
 console.log(`새로 수집 ${incoming.length}개, 전체 ${merged.length}개를 data/programs.json에 저장`);
 
 // 실패한 출처가 있으면 자동 실행(GitHub Actions)에서 알림이 가도록 실패로 끝낸다
-if (log.some((entry) => !entry.ok)) process.exitCode = 1;
+// 출처 하나가 실패한 것은 점검 이슈(scripts/check-health.ts)로 알린다. 모든 출처가 실패했을 때만 실패로 끝낸다
+const attempted = log.filter((entry) => entry.message !== "내 컴퓨터에서만 수집");
+if (attempted.length > 0 && attempted.every((entry) => !entry.ok)) process.exitCode = 1;
