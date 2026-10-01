@@ -257,10 +257,10 @@ ${posts}`;
   }
 }
 
-// 두 게시물이 같은 프로그램인지 AI에게 묻는다. 같다고 답한 쌍의 번호를 돌려준다
-export async function confirmDuplicates(pairs: [Program, Program][]): Promise<number[]> {
+// 두 게시물이 같은 프로그램인지 AI에게 묻는다. 같다고 답한 쌍의 번호를 돌려준다. 묻지 못했으면 null
+export async function confirmDuplicates(pairs: [Program, Program][]): Promise<number[] | null> {
   const bin = findCodex();
-  if (!bin || pairs.length === 0) return [];
+  if (!bin || pairs.length === 0) return null;
   const describe = (p: Program) =>
     `${p.title} / 주최 ${p.organizer ?? "모름"} / 모집 ${p.recruitPeriod.start ?? "?"}~${p.recruitPeriod.end ?? "?"} / 활동 ${p.activityPeriod.start ?? "?"}~${p.activityPeriod.end ?? "?"}`;
   const prompt = `아래 각 쌍이 "같은 프로그램을 다른 사이트에 올린 것"인지 판단해라. 파일을 읽거나 명령을 실행하지 말고 JSON만 답해라.
@@ -271,10 +271,10 @@ ${pairs.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join
   try {
     const answer = await askCodex(bin, prompt);
     const same = (answer as { same?: unknown }).same;
-    return Array.isArray(same) ? same.filter((n): n is number => Number.isInteger(n) && n >= 0 && n < pairs.length) : [];
+    return Array.isArray(same) ? same.filter((n): n is number => Number.isInteger(n) && n >= 0 && n < pairs.length) : null;
   } catch (error) {
     console.error("  AI 중복 판단 실패:", error instanceof Error ? error.message : error);
-    return [];
+    return null;
   }
 }
 

@@ -116,10 +116,20 @@ combined.forEach(cleanPeriods);
 const { current, old } = splitByAge(combined);
 let merged = current;
 
-// 제목 표현이 달라 규칙으로 판단하기 애매한 중복은 AI에게 묻는다
+// 제목 표현이 달라 규칙으로 판단하기 애매한 중복은 AI에게 묻는다.
+// 답은 data/duplicate-decisions.json에 기억해서 같은 쌍을 다시 묻지 않는다 ("id1|id2": true/false, id는 사전순)
+const DUPLICATE_FILE = new URL("duplicate-decisions.json", DATA_DIR);
+const duplicateDecisions = await readJson<Record<string, boolean>>(DUPLICATE_FILE, {});
+const pairKey = ([a, b]: [Program, Program]) => [a.id, b.id].sort().join("|");
 const pairs = findAmbiguousPairs(merged);
-for (const index of await confirmDuplicates(pairs)) {
-  const [a, b] = pairs[index];
+const unknown = pairs.filter((pair) => duplicateDecisions[pairKey(pair)] === undefined);
+const same = await confirmDuplicates(unknown);
+if (same) {
+  unknown.forEach((pair, index) => (duplicateDecisions[pairKey(pair)] = same.includes(index)));
+  await writeJson(DUPLICATE_FILE, duplicateDecisions);
+}
+for (const pair of pairs.filter((pair) => duplicateDecisions[pairKey(pair)])) {
+  const [a, b] = pair;
   if (merged.includes(a) && merged.includes(b)) {
     merged = mergePair(merged, a, b);
     console.log(`중복으로 합침: ${a.title} ← ${b.title}`);
