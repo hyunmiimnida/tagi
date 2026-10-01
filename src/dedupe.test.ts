@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { mergePair } from "./dedupe.ts";
+import { mergePair, repostKey } from "./dedupe.ts";
 import type { Program } from "./types.ts";
 
 const program = (id: string, openTo?: string | null): Program => ({
@@ -80,4 +80,9 @@ test("재게시를 합치면 합쳐진 글의 id를 남긴다", async () => {
 test("'선발 연장 공고'도 재게시로 본다", async () => {
   const { repostKey } = await import("./dedupe.ts");
   assert.equal(repostKey("[교외]2026학년도 2학기 (재)대전청년내일재단 장학생 선발 연장 공고"), repostKey("[교외]2026학년도 2학기 (재)대전청년내일재단 장학생 선발 공고"));
+});
+
+test("재안내와 앞의 [홍보] 머리말은 같은 공고로 본다", () => {
+  assert.equal(repostKey("[혁신] 독서토론클럽 참여자 모집 재안내"), repostKey("[혁신] 독서토론클럽 참여자 모집 안내"));
+  assert.equal(repostKey("[홍보][체력증진센터] 운동처방 참여자 모집"), repostKey("[체력증진센터] 운동처방 참여자 모집"));
 });

@@ -151,7 +151,9 @@ export function stripDeadlineHead(title: string): string {
   while (DEADLINE_HEAD.test(rest)) rest = rest.replace(DEADLINE_HEAD, "");
   return rest;
 }
-export const repostKey = (title: string) => normalize(stripDeadlineHead(title).replace(REPOST_MARK, ""));
+// "재안내"는 "안내"로 본다("모집 재안내" = "모집 안내"), 앞의 [홍보] 머리말도 지운다
+export const repostKey = (title: string) =>
+  normalize(stripDeadlineHead(title).replace(/재안내/g, "안내").replace(/^\s*\[(재)?홍보\]\s*/, "").replace(REPOST_MARK, ""));
 const REPOST_DAYS = 60;
 
 export function collapseReposts(programs: Program[]): Program[] {

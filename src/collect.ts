@@ -14,7 +14,7 @@ import { mergeCollectLog } from "./collect-log.ts";
 import type { CollectLog, SourceLog } from "./collect-log.ts";
 import { collectors } from "./collectors/index.ts";
 import { collapseReposts, findAmbiguousPairs, mergePair, mergePrograms } from "./dedupe.ts";
-import { cleanPeriods, looksLikeNoticeOnly } from "./extract.ts";
+import { cleanPeriods, isStaffHiring, looksLikeNoticeOnly } from "./extract.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots, robotsBlocked } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
@@ -86,7 +86,7 @@ await Promise.all(
 // 2단계: AI 추출이 필요한 글을 모두 모아 한꺼번에 보낸다 (ai.ts가 여러 묶음을 동시에 보낸다)
 const needAi = results
   .filter(({ source }) => source.useAi)
-  .flatMap(({ items }) => items.filter((item) => !aiDoneUrls.has(item.program.links[0].url)));
+  .flatMap(({ items }) => items.filter((item) => !aiDoneUrls.has(item.program.links[0].url) && !isStaffHiring(item.program.title)));
 const ai = needAi.length > 0 ? await enrichWithAi(needAi, categories) : null;
 
 // 3단계: 출처별로 결과를 정리한다
@@ -94,9 +94,11 @@ for (const { source, label, items } of results) {
   // 학생이 신청·참가할 기회가 아닌 글은 저장하지 않는다
   // AI가 추출하지 못한 글(GitHub Actions 등)은 단순 안내로 보이는 제목만 이번에 건너뛴다.
   // 기록하지 않으므로 AI가 있을 때 다시 판단한다
-  const notForStudents = items.filter((item) => ai?.notForStudents.has(item.program.id));
+  // 직원·교원 채용 공고는 제목만 보고 AI 없이도 뺀다 (isStaffHiring)
+  const notFor = (item: (typeof items)[number]) => ai?.notForStudents.has(item.program.id) || isStaffHiring(item.program.title);
+  const notForStudents = items.filter(notFor);
   const studentItems = items.filter(
-    (item) => !ai?.notForStudents.has(item.program.id) && (item.program.extractedBy === "ai" || !looksLikeNoticeOnly(item.program.title)),
+    (item) => !notFor(item) && (item.program.extractedBy === "ai" || !looksLikeNoticeOnly(item.program.title)),
   );
   for (const item of notForStudents) {
     excluded.add(item.program.id);

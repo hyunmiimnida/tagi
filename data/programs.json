@@ -33182,49 +33182,6 @@
     "firstSeenAt": "2026-10-01T17:41:23.929Z"
   },
   {
-    "id": "dcu-scholarship-187078",
-    "title": "2026학년도 2학기 국가근로장학생 오리엔테이션 실시",
-    "organizer": "장학지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dcu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-scholarship",
-        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NzA3OCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
-      }
-    ],
-    "sources": [
-      "dcu-scholarship"
-    ],
-    "postedAt": "2026-09-16",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T17:41:31.019Z",
-    "summary": "국가근로장학생을 위한 오리엔테이션에 참여해요.",
-    "firstSeenAt": "2026-10-01T17:41:31.019Z"
-  },
-  {
     "id": "dcu-scholarship-187061",
     "title": "2026학년도 2학기+동계방학 국가근로장학 교외근로지 추가 신청 안내 [DCU e-Advisor시스템_일반2차 신청]",
     "organizer": "장학지원팀",
@@ -34214,92 +34171,6 @@
     "firstSeenAt": "2026-10-01T17:43:11.571Z"
   },
   {
-    "id": "dcu-notice-187254",
-    "title": "대구가톨릭대학교 행정지원직 직원 채용 공고(11월1부)",
-    "organizer": "대구가톨릭대학교",
-    "organizerType": "학교",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": [],
-      "openTo": "4년제 대학 출신"
-    },
-    "recruitPeriod": {
-      "start": "2026-09-30",
-      "end": "2026-10-06"
-    },
-    "activityPeriod": {
-      "start": "2026-11-01",
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-notice",
-        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzI1NCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-notice"
-    ],
-    "postedAt": "2026-09-30",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T17:38:31.010Z",
-    "summary": "대학의 여러 부서에서 행정지원직으로 일할 기회에 지원해요",
-    "firstSeenAt": "2026-10-01T17:38:31.010Z"
-  },
-  {
-    "id": "dcu-notice-187116",
-    "title": "대구가톨릭대학교 산학협력단 행정부서 계약직 채용 공고",
-    "organizer": "산학협력단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dcu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-notice",
-        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzExNiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-notice"
-    ],
-    "postedAt": "2026-09-17",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T17:38:41.819Z",
-    "summary": "산학협력단 행정부서에서 계약직으로 일할 기회에 지원해요",
-    "firstSeenAt": "2026-10-01T17:38:41.819Z"
-  },
-  {
     "id": "dcu-notice-187277",
     "title": "(2026-2) 체력증진센터 <헬퍼와 함께하는 1대1 PT> 참여자 모집",
     "organizer": "체력증진센터",
@@ -34429,50 +34300,6 @@
     "summary": "모두의창업 프로그램에 참여해요",
     "firstSeenAt": "2026-10-01T17:39:37.043Z",
     "seriesId": "dcu-notice-187010"
-  },
-  {
-    "id": "dcu-notice-187263",
-    "title": "2026학년도 2학기 총장님과 총동창회가 함께 쏜다! 간식배부 안내",
-    "organizer": "총동창회",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dcu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-10-07",
-      "end": "2026-10-07"
-    },
-    "activityPeriod": {
-      "start": "2026-10-07",
-      "end": "2026-10-07"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-notice",
-        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzI2MyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-notice"
-    ],
-    "postedAt": "2026-10-01",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T17:39:42.421Z",
-    "summary": "시험기간에 머핀 세트와 음료를 받아요",
-    "firstSeenAt": "2026-10-01T17:39:42.421Z"
   },
   {
     "id": "dcu-notice-187262",
@@ -34608,49 +34435,6 @@
     "firstSeenAt": "2026-10-01T17:39:58.405Z"
   },
   {
-    "id": "dcu-notice-187256",
-    "title": "[체력증진센터] 2026-2학기 <움직임 기능 증진을 위한 운동처방> 참여자 모집",
-    "organizer": "체력증진센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dcu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-notice",
-        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzI1NiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-notice"
-    ],
-    "postedAt": "2026-09-30",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T17:40:06.000Z",
-    "summary": "움직임 기능을 높이기 위한 운동처방 프로그램에 참여해요",
-    "firstSeenAt": "2026-10-01T17:40:06.000Z",
-    "seriesId": "dcu-notice-187187"
-  },
-  {
     "id": "dcu-notice-187247",
     "title": "[혁신] 라즈베리파이 시작하기 [비교과]",
     "organizer": "lib",
@@ -34692,49 +34476,6 @@
     "collectedAt": "2026-10-01T17:40:16.767Z",
     "summary": "라즈베리파이 입문 비교과 프로그램에 참여해요.",
     "firstSeenAt": "2026-10-01T17:40:16.767Z"
-  },
-  {
-    "id": "dcu-notice-187244",
-    "title": "[혁신] 2026-2학기 독서토론클럽(DCU 독서톡!톡!) 프로그램 참여자 모집 재안내",
-    "organizer": "이용자서비스팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dcu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-notice",
-        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzI0NCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-notice"
-    ],
-    "postedAt": "2026-09-29",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T17:40:21.475Z",
-    "summary": "책을 읽고 의견을 나누는 독서토론클럽에 참여해요.",
-    "firstSeenAt": "2026-10-01T17:40:21.475Z",
-    "seriesId": "dcu-notice-168706"
   },
   {
     "id": "dcu-notice-187241",
@@ -35342,18 +35083,25 @@
     "links": [
       {
         "sourceId": "dcu-notice",
+        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzI1NiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
+      },
+      {
+        "sourceId": "dcu-notice",
         "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzE4NyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
       }
     ],
     "sources": [
       "dcu-notice"
     ],
-    "postedAt": "2026-09-23",
+    "postedAt": "2026-09-30",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:51.170Z",
-    "summary": "움직임 기능을 높이는 운동처방 프로그램에 참여해요.",
+    "summary": "움직임 기능을 높이기 위한 운동처방 프로그램에 참여해요",
     "firstSeenAt": "2026-10-01T17:41:51.170Z",
-    "seriesId": "dcu-notice-187187"
+    "seriesId": "dcu-notice-187187",
+    "aliases": [
+      "dcu-notice-187256"
+    ]
   },
   {
     "id": "dcu-notice-187182",
@@ -36199,49 +35947,6 @@
     "firstSeenAt": "2026-10-01T17:43:20.665Z"
   },
   {
-    "id": "dcu-notice-187076",
-    "title": "대구가톨릭대학교 행정지원직 직원 채용 공고(10월1일부)(3차)",
-    "organizer": "대구가톨릭대학교",
-    "organizerType": "학교",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": [],
-      "openTo": "4년제 대학 졸업자 및 졸업예정자"
-    },
-    "recruitPeriod": {
-      "start": "2026-09-16",
-      "end": "2026-09-17"
-    },
-    "activityPeriod": {
-      "start": "2026-10-01",
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-notice",
-        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzA3NiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-notice"
-    ],
-    "postedAt": "2026-09-16",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T17:43:22.088Z",
-    "summary": "기숙사 야간사감으로 일하는 행정지원직 채용에 지원해요",
-    "firstSeenAt": "2026-10-01T17:43:22.088Z"
-  },
-  {
     "id": "dcu-notice-187070",
     "title": "[혁신] 2026-2학기 독서토론클럽(DCU 독서톡!톡!) 프로그램 참여자 모집 안내",
     "organizer": "이용자서비스팀",
@@ -36271,18 +35976,25 @@
     "links": [
       {
         "sourceId": "dcu-notice",
+        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzI0NCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
+      },
+      {
+        "sourceId": "dcu-notice",
         "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzA3MCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
       }
     ],
     "sources": [
       "dcu-notice"
     ],
-    "postedAt": "2026-09-16",
+    "postedAt": "2026-09-29",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:43:23.573Z",
-    "summary": "독서토론클럽에서 책을 읽고 이야기를 나눠요",
+    "summary": "책을 읽고 의견을 나누는 독서토론클럽에 참여해요.",
     "firstSeenAt": "2026-10-01T17:43:23.573Z",
-    "seriesId": "dcu-notice-168706"
+    "seriesId": "dcu-notice-168706",
+    "aliases": [
+      "dcu-notice-187244"
+    ]
   },
   {
     "id": "dcu-notice-187063",
@@ -36325,49 +36037,6 @@
     "collectedAt": "2026-10-01T17:43:24.678Z",
     "summary": "게임개발 동아리가 만든 게임을 체험하고 상품을 받아요",
     "firstSeenAt": "2026-10-01T17:43:24.678Z"
-  },
-  {
-    "id": "dcu-notice-187051",
-    "title": "대구가톨릭대학교 산학협력단(GLP센터) 특정사업계약직 직원 채용 공고",
-    "organizer": "산학협력단(GLP센터)",
-    "organizerType": "학교",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "졸업생"
-      ],
-      "excludedStatuses": [],
-      "openTo": "4년제 대학 출신"
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-09-30"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-notice",
-        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzA1MSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-notice"
-    ],
-    "postedAt": "2026-09-15",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T17:43:29.572Z",
-    "summary": "일반독성시험과 실험동물 사육·관리를 담당하는 계약직 채용에 지원해요",
-    "firstSeenAt": "2026-10-01T17:43:29.572Z"
   },
   {
     "id": "dcu-notice-186951",

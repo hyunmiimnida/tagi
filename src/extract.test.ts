@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { isDuplicate, titleSimilarity } from "./dedupe.ts";
-import { extractPeriods, parseDates } from "./extract.ts";
+import { extractPeriods, isStaffHiring, parseDates } from "./extract.ts";
 
 test("여러 형태의 날짜를 읽는다", () => {
   assert.deepEqual(parseDates("2026. 9. 30.(수) ~ 10. 14.(수)", 2026), ["2026-09-30", "2026-10-14"]);
@@ -147,4 +147,15 @@ test("끝나는 날이 게시일보다 한참 앞서면 연도 넘김을 고치�
   assert.deepEqual(plausiblePeriod({ start: null, end: "1954-06-01" }, "2026-02-20"), { start: null, end: null });
   // 60일 안쪽은 재게시일 수 있어 그대로
   assert.deepEqual(plausiblePeriod({ start: null, end: "2026-09-18" }, "2026-09-22"), { start: null, end: "2026-09-18" });
+});
+
+test("학교가 자기 직원을 뽑는 공고만 직원 채용으로 본다", () => {
+  assert.ok(isStaffHiring("대구가톨릭대학교 행정지원직 직원 채용 공고(11월1부)"));
+  assert.ok(isStaffHiring("[진로취업지원팀] 영남대학교 산학협력단 계약직원 채용(5월 4차)"));
+  assert.ok(isStaffHiring("2025년도 제2회 중소기업성장지원센터 기간제 계약직원 채용 공고"));
+  // 바깥 기관의 신입 채용, 채용 설명회, 교수 초빙 세미나는 학생 기회다
+  assert.ok(!isStaffHiring("2023년 한국부동산원 신입직원 및 경력직원 채용공고"));
+  assert.ok(!isStaffHiring("2026년도 「한국은행 대구경북본부」 종합기획직원(G5) 채용설명회"));
+  assert.ok(!isStaffHiring("[누구나 참가 가능] 미국 텍사스대학교 교수 초빙 세미나 안내"));
+  assert.ok(!isStaffHiring("[10/7(수) 12:00까지] 영남대학교 산학협력단 10월 1차 행정보조 학생 모집"));
 });

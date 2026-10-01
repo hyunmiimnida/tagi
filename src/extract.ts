@@ -133,3 +133,11 @@ export function cleanPeriods(program: Program): void {
 const NOTICE_ONLY =
   /규정|지침|의견\s*(조회|수렴)|입찰|납부|합격자|결과\s*(발표|안내|공고)|선정\s*결과|뉴스레터|소식지|주의\s*안내|사칭|공사\s*안내|휴무|정전|단수/;
 export const looksLikeNoticeOnly = (title: string) => NOTICE_ONLY.test(title);
+
+// 학교(산학협력단·사업단·센터 등)가 자기 직원·교원을 뽑는 공고 (AI가 가끔 놓쳐서 제목 규칙으로도 뺀다)
+// 바깥 회사·기관의 신입·신규 채용은 졸업생 취업 기회라서 남기고, "교수 초빙 세미나"처럼 행사는 걸리지 않게 좁게 잡는다
+const STAFF_HIRING = /(직원|교원|조교|계약직|기간제)[^\]]{0,4}?\s*(채용|임용)|(교원|교수)\s*(공개\s*)?초빙\s*공고/;
+const SCHOOL_BODY = /대학|산학협력단|사업단|센터|본부|교실|지원단/;
+const FOR_NEWCOMERS = /신입|신규|인턴|청년|체험형|학생|설명회|박람회|특강|세미나/;
+export const isStaffHiring = (title: string) =>
+  STAFF_HIRING.test(title) && SCHOOL_BODY.test(title) && !FOR_NEWCOMERS.test(title);
