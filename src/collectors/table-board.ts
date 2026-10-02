@@ -30,7 +30,7 @@ export const viewUrlOf = (board: TableBoard, id: string) =>
 // "작성자 : 진로취업지원팀", "작성자 [종합교원양성센터]" → 부서 이름만
 export const writerName = (text: string) =>
   text
-    .replace(/^(작성자|작성부서|부서|글쓴이)\s*:?\s*/, "")
+    .replace(/^(작성자|작성부서|담당부서|부서|글쓴이)\s*:?\s*/, "")
     .replace(/^\[(.*)\]$/, "$1")
     .replace(/^[가-힣]{2,4}\s*\((.+)\)$/, "$1") // "담당자 이름(학생지원팀)" → 개인 이름은 남기지 않는다
     .trim();
@@ -67,7 +67,8 @@ async function listPage(ctx: CollectContext, page: number): Promise<ArchivePost[
     const row = $(a).closest(board.row ?? "tr"); // 카드 모양 목록은 row로 게시물 하나의 범위를 정한다
     posts.push({
       postId,
-      title: clean($(a).attr("title") || $(a).text()),
+      // 링크 안에 번호·조회수까지 들어 있는 카드 목록은 listTitle로 제목 칸만 읽는다
+      title: clean((board.listTitle ? row.find(board.listTitle).first().text() : "") || $(a).attr("title") || $(a).text()),
       url: viewUrlOf(board, postId),
       postedAt: toIsoDate(row.find(board.listDate ?? "td.date").first().text()),
     });

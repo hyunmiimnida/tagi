@@ -80,6 +80,7 @@ export interface TableBoard {
   // viewUrl의 {id} 자리에는 감싼 view 값이 들어간다
   encoded?: { param: string; list: string; view: string };
   row?: string; // 목록에서 게시물 하나를 감싼 요소 (기본: "tr"). 카드(li·div) 모양 목록이면 그 선택자
+  listTitle?: string; // 목록 한 줄(row) 안의 제목 칸 선택자 (링크 글자에 번호·조회수가 섞일 때)
   idAttr?: string; // 게시물 번호를 찾을 링크 속성 (기본: "href"). 예: "onclick", "data-itsp-view-link"
 }
 

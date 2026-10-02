@@ -937,5 +937,54 @@
         }
       }
     ]
+  },
+  {
+    "id": "yonsei",
+    "name": "연세대학교",
+    "shortName": "연세대",
+    "sources": [
+      {
+        "id": "yonsei-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.yonsei.ac.kr/bbs/sc/58/artclList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "li a[href*=\"/artclView.do\"]",
+          "row": "li",
+          "idPattern": "/bbs/sc/58/(\\d+)/artclView",
+          "viewUrl": "https://www.yonsei.ac.kr/bbs/sc/58/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".board-view .viewCont .title strong",
+          "content": ".board-view .viewCont .txt",
+          "listDate": ".date-area",
+          "date": ".board-view .title ul.detail li:contains(\"작성일\")",
+          "writer": ".board-view .title ul.detail li:contains(\"담당부서\")",
+          "listTitle": ".title strong"
+        }
+      },
+      {
+        "id": "yonsei-startup",
+        "name": "창업지원단",
+        "collector": "table-board",
+        "url": "https://venture.yonsei.ac.kr/community/notice",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "창업지원단",
+        "board": {
+          "link": "table.covi-post__table tbody tr td.covi-post__title a.covi-post__text",
+          "idPattern": "/community/notice/(\\d+)",
+          "viewUrl": "https://venture.yonsei.ac.kr/community/notice/{id}",
+          "pageParam": "p",
+          "title": "h4.covi-post-view__header-title",
+          "content": "section.covi-post-view__contents",
+          "listDate": "td.covi-post__date",
+          "date": "p.covi-post-view__info-text[datetime]"
+        }
+      }
+    ]
   }
 ]
