@@ -6,6 +6,7 @@ import { DetailActions } from "../../../components/DetailActions.tsx";
 import { ExternalIcon } from "../../../components/Icons.tsx";
 import { getPastRounds, getPrograms, getSchools, getSourceNames } from "../../../lib/data.ts";
 import { describeTarget, formatDate, formatPeriod, recruitWord } from "../../../lib/filter.ts";
+import { jsonLdScript, programJsonLd } from "../../../lib/jsonld.ts";
 import type { Program } from "../../../src/types.ts";
 
 export const dynamicParams = false;
@@ -83,6 +84,8 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
 
   return (
     <article className="detail">
+      {/* 검색엔진용 구조화 데이터 (lib/jsonld.ts) */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdScript(programJsonLd(program)) }} />
       <BackLink />
 
       <header className="detail-head">
