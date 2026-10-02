@@ -1612,6 +1612,51 @@
     "seriesId": "dcu-scholarship-169944"
   },
   {
+    "id": "dongguk-startup-635",
+    "title": "2026년 협약대학 추천 혁신스타트업 지원계획 공고",
+    "organizer": "창업기술본부",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dongguk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dongguk-startup",
+        "url": "https://dvic.dongguk.edu/dvic2_2/635"
+      }
+    ],
+    "sources": [
+      "dongguk-startup"
+    ],
+    "postedAt": "2026-07-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T16:52:57.700Z",
+    "summary": "협약대학 추천 혁신스타트업 지원사업에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T16:52:57.700Z"
+  },
+  {
     "id": "yu-news-229219787",
     "title": "[YU Digital HUSS] 영남대 박물관 공동 프로젝트 <유물 속 동물, AI로 다시 태어나다> (콘텐츠 제작)참가자 모집",
     "organizer": "인문사회디지털융합인재양성사업단",
@@ -39143,6 +39188,50 @@
     "summary": "신입생 환영주간의 미니게임과 다양한 교내 이벤트에 참여해요",
     "firstSeenAt": "2026-10-01T18:14:11.924Z",
     "seriesId": "dcu-notice-178207"
+  },
+  {
+    "id": "khu-career-357",
+    "title": "서울 | [양진각X메가로스쿨] LEET 캠퍼스 현장 특강 안내",
+    "organizer": "양진각, 메가로스쿨",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "khu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-03-13",
+      "end": "2026-03-13"
+    },
+    "tags": [
+      "기업",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "khu-career",
+        "url": "https://goodjob.khu.ac.kr/bbs/board.php?bo_table=s2_5&wr_id=357"
+      }
+    ],
+    "sources": [
+      "khu-career"
+    ],
+    "postedAt": "2026-03-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T16:52:40.822Z",
+    "summary": "LEET 언어이해·추리논증 특강을 듣고 1:1 입시상담을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T16:52:40.822Z"
   },
   {
     "id": "kmu-scholarship-262179",
@@ -363441,6 +363530,51 @@
     "firstSeenAt": "2026-10-01T14:16:49.359Z"
   },
   {
+    "id": "khu-career-220",
+    "title": "서울 | ★★미래인재센터 프로그램 소개 및 이용방법 안내★★",
+    "organizer": "미래인재센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "khu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "khu-career",
+        "url": "https://goodjob.khu.ac.kr/bbs/board.php?bo_table=s2_5&wr_id=220"
+      }
+    ],
+    "sources": [
+      "khu-career"
+    ],
+    "postedAt": "2022-10-19",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T16:52:39.697Z",
+    "summary": "취업 준비반·특강·상담·추천채용 등 다양한 지원을 이용해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T16:52:39.697Z"
+  },
+  {
     "id": "yu-career-1544",
     "title": "2022학년도 10월 1차 진로 및 취업특강",
     "organizer": "학생성공처",
@@ -389619,6 +389753,50 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:18:58.622Z",
     "firstSeenAt": "2026-10-01T14:18:58.622Z"
+  },
+  {
+    "id": "khu-career-190",
+    "title": "서울 | {미래인재센터 취업 프로그램 안내 및 로드맵}",
+    "organizer": "미래인재센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "khu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "khu-career",
+        "url": "https://goodjob.khu.ac.kr/bbs/board.php?bo_table=s2_5&wr_id=190"
+      }
+    ],
+    "sources": [
+      "khu-career"
+    ],
+    "postedAt": "2022-05-20",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T16:52:38.575Z",
+    "summary": "미래인재센터의 연간 취업 프로그램을 안내받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T16:52:38.575Z"
   },
   {
     "id": "yu-career-1353",
@@ -539791,6 +539969,53 @@
     "collectedAt": "2026-10-01T09:12:50.790Z",
     "firstSeenAt": "2026-10-01T09:12:50.790Z",
     "seriesId": "yu-news-83943"
+  },
+  {
+    "id": "khu-career-19",
+    "title": "서울 | [상시] 현직자 동문 멘토링 안내 (신청 방법 변경)",
+    "organizer": "미래인재센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "khu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "멘토링·컨설팅",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "khu-career",
+        "url": "https://goodjob.khu.ac.kr/bbs/board.php?bo_table=s2_5&wr_id=19"
+      }
+    ],
+    "sources": [
+      "khu-career"
+    ],
+    "postedAt": "2020-03-12",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T16:52:37.461Z",
+    "summary": "현직자 동문 선배에게 희망 기업·직종 정보를 멘토링 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T16:52:37.461Z"
   },
   {
     "id": "yu-news-83941",
