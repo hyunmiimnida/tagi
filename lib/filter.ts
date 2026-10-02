@@ -31,6 +31,7 @@ export interface SchoolOption {
   id: string;
   name: string;
   shortName: string;
+  region: string; // 지역 (영남권·수도권 등). 학교 필터를 지역별로 나눈다
   units: string[];
 }
 

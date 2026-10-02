@@ -2671,3 +2671,16 @@ button.stat {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+/* 학교 패널의 지역 탭 (영남권·수도권) */
+.region-tabs {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.my-region {
+  margin: 10px 0 6px;
+  color: var(--text-2);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}

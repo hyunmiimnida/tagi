@@ -361,12 +361,22 @@ export function MyAccount({ schools, fieldTags, sources }: Props) {
           <button className={`tag-option ${user.schoolId === null ? "on" : ""}`} onClick={() => user.setSchool(null)}>
             전체 학교
           </button>
-          {schools.map((s) => (
-            <button key={s.id} className={`tag-option ${user.schoolId === s.id ? "on" : ""}`} onClick={() => user.setSchool(s.id)}>
-              {s.name}
-            </button>
-          ))}
         </div>
+        {/* 학교가 많아 지역별로 나눠 보여 준다 */}
+        {[...new Set(schools.map((s) => s.region))].map((region) => (
+          <div key={region}>
+            <p className="my-region">{region}</p>
+            <div className="my-options">
+              {schools
+                .filter((s) => s.region === region)
+                .map((s) => (
+                  <button key={s.id} className={`tag-option ${user.schoolId === s.id ? "on" : ""}`} onClick={() => user.setSchool(s.id)}>
+                    {s.name}
+                  </button>
+                ))}
+            </div>
+          </div>
+        ))}
 
         <h3 className="my-label">
           신분·학년 <em>{whoText}</em>

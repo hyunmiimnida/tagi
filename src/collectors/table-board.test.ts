@@ -24,7 +24,7 @@ test("카드 모양 목록(row)과 onclick 속성의 번호(idAttr)도 읽는다
     "https://u.example/list?page=2": "<ul></ul>",
     "https://u.example/view/000123": view,
   };
-  const school = { id: "x", name: "예시대학교", shortName: "예시대", sources: [] };
+  const school = { id: "x", name: "예시대학교", shortName: "예시대", region: "영남권", sources: [] };
   const source = {
     id: "x-notice", name: "공지", collector: "table-board", url: "https://u.example/list", enabled: true, pages: 2,
     board: { link: "li.card a", row: "li", idAttr: "onclick", idPattern: "jf_view\\('(\\d+)'\\)", viewUrl: "https://u.example/view/{id}",

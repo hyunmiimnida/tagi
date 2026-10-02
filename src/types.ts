@@ -115,6 +115,7 @@ export interface School {
   id: string;
   name: string;
   shortName: string; // 목록에 붙는 짧은 이름 (예: 영남대)
+  region: string; // 지역 (예: "영남권", "수도권"). 학교 필터를 지역별로 나눈다
   units?: Unit[];
   // 같은 게시판에 올라오는 다른 캠퍼스 글을 따로 분류한다. schoolId는 그 캠퍼스의 학교 설정 id(출처 없이 이름만 있는 학교).
   // 목록의 캠퍼스 표시가 labels 중 하나와 같거나, 제목에 titleKeywords 중 하나가 있으면 그 캠퍼스 글이다

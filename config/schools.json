@@ -3,6 +3,7 @@
     "id": "yu",
     "name": "영남대학교",
     "shortName": "영남대",
+    "region": "영남권",
     "units": [
       {
         "name": "미래자동차혁신부품사업단",
@@ -290,6 +291,7 @@
     "id": "knu",
     "name": "경북대학교",
     "shortName": "경북대",
+    "region": "영남권",
     "units": [
       {
         "name": "로봇부트캠프사업단",
@@ -365,6 +367,7 @@
     "id": "kmu",
     "name": "계명대학교",
     "shortName": "계명대",
+    "region": "영남권",
     "units": [
       {
         "name": "창업지원단",
@@ -641,6 +644,7 @@
     "id": "dcu",
     "name": "대구가톨릭대학교",
     "shortName": "대구가톨릭대",
+    "region": "영남권",
     "units": [
       {
         "name": "사랑나눔봉사단",
@@ -756,6 +760,7 @@
     "id": "pnu",
     "name": "부산대학교",
     "shortName": "부산대",
+    "region": "영남권",
     "sources": [
       {
         "id": "pnu-notice",
@@ -800,9 +805,46 @@
     ]
   },
   {
+    "id": "pknu",
+    "name": "국립부경대학교",
+    "shortName": "부경대",
+    "region": "영남권",
+    "sources": [
+      {
+        "id": "pknu-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.pknu.ac.kr/main/163",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.bdlTitle a",
+          "idParam": "no",
+          "viewUrl": "https://www.pknu.ac.kr/main/163?action=view&no={id}",
+          "pageParam": "pageIndex",
+          "title": "table.subbrd:not(.subbrd_m) tr.first_noti td.title_b",
+          "content": "div.bdvTxt",
+          "listDate": "td.bdlDate",
+          "date": "table.subbrd:not(.subbrd_m) tbody tr:nth-child(2) td:nth-child(4)",
+          "writer": "table.subbrd:not(.subbrd_m) tbody tr:nth-child(2) td:nth-child(2)"
+        }
+      }
+    ]
+  },
+  {
+    "id": "dongguk-wise",
+    "name": "동국대학교 WISE캠퍼스",
+    "shortName": "동국대 WISE",
+    "region": "영남권",
+    "campusOf": "dongguk",
+    "sources": []
+  },
+  {
     "id": "snu",
     "name": "서울대학교",
     "shortName": "서울대",
+    "region": "수도권",
     "sources": [
       {
         "id": "snu-career",
@@ -871,6 +913,7 @@
     "id": "sogang",
     "name": "서강대학교",
     "shortName": "서강대",
+    "region": "수도권",
     "sources": [
       {
         "id": "sogang-notice",
@@ -941,6 +984,7 @@
     "id": "korea",
     "name": "고려대학교",
     "shortName": "고려대",
+    "region": "수도권",
     "sources": [
       {
         "id": "korea-startup",
@@ -1012,6 +1056,7 @@
     "id": "yonsei",
     "name": "연세대학교",
     "shortName": "연세대",
+    "region": "수도권",
     "sources": [
       {
         "id": "yonsei-notice",
@@ -1061,6 +1106,7 @@
     "id": "konkuk",
     "name": "건국대학교",
     "shortName": "건국대",
+    "region": "수도권",
     "sources": [
       {
         "id": "konkuk-job",
@@ -1149,6 +1195,7 @@
     "id": "hanyang",
     "name": "한양대학교",
     "shortName": "한양대",
+    "region": "수도권",
     "sources": [
       {
         "id": "hanyang-notice",
@@ -1190,6 +1237,7 @@
     "id": "hanyang-erica",
     "name": "한양대학교 ERICA",
     "shortName": "한양대 ERICA",
+    "region": "수도권",
     "campusOf": "hanyang",
     "sources": []
   },
@@ -1197,6 +1245,7 @@
     "id": "hufs",
     "name": "한국외국어대학교",
     "shortName": "한국외대",
+    "region": "수도권",
     "sources": [
       {
         "id": "hufs-job",
@@ -1223,36 +1272,10 @@
     ]
   },
   {
-    "id": "pknu",
-    "name": "국립부경대학교",
-    "shortName": "부경대",
-    "sources": [
-      {
-        "id": "pknu-notice",
-        "name": "공지사항",
-        "collector": "table-board",
-        "url": "https://www.pknu.ac.kr/main/163",
-        "enabled": true,
-        "pages": 2,
-        "useAi": true,
-        "board": {
-          "link": "td.bdlTitle a",
-          "idParam": "no",
-          "viewUrl": "https://www.pknu.ac.kr/main/163?action=view&no={id}",
-          "pageParam": "pageIndex",
-          "title": "table.subbrd:not(.subbrd_m) tr.first_noti td.title_b",
-          "content": "div.bdvTxt",
-          "listDate": "td.bdlDate",
-          "date": "table.subbrd:not(.subbrd_m) tbody tr:nth-child(2) td:nth-child(4)",
-          "writer": "table.subbrd:not(.subbrd_m) tbody tr:nth-child(2) td:nth-child(2)"
-        }
-      }
-    ]
-  },
-  {
     "id": "cau",
     "name": "중앙대학교",
     "shortName": "중앙대",
+    "region": "수도권",
     "sources": [
       {
         "id": "cau-notice",
@@ -1334,6 +1357,7 @@
     "id": "cau-davinci",
     "name": "중앙대학교 다빈치캠퍼스",
     "shortName": "중앙대 다빈치",
+    "region": "수도권",
     "campusOf": "cau",
     "sources": []
   },
@@ -1341,6 +1365,7 @@
     "id": "skku",
     "name": "성균관대학교",
     "shortName": "성균관대",
+    "region": "수도권",
     "sources": [
       {
         "id": "skku-notice",
@@ -1396,6 +1421,7 @@
     "id": "khu",
     "name": "경희대학교",
     "shortName": "경희대",
+    "region": "수도권",
     "sources": [
       {
         "id": "khu-notice",
@@ -1481,6 +1507,7 @@
     "id": "khu-global",
     "name": "경희대학교 국제캠퍼스",
     "shortName": "경희대 국제",
+    "region": "수도권",
     "campusOf": "khu",
     "sources": []
   },
@@ -1488,6 +1515,7 @@
     "id": "uos",
     "name": "서울시립대학교",
     "shortName": "서울시립대",
+    "region": "수도권",
     "sources": [
       {
         "id": "uos-startup",
@@ -1516,6 +1544,7 @@
     "id": "dongguk",
     "name": "동국대학교",
     "shortName": "동국대",
+    "region": "수도권",
     "sources": [
       {
         "id": "dongguk-notice",
@@ -1618,12 +1647,5 @@
         ]
       }
     ]
-  },
-  {
-    "id": "dongguk-wise",
-    "name": "동국대학교 WISE캠퍼스",
-    "shortName": "동국대 WISE",
-    "campusOf": "dongguk",
-    "sources": []
   }
 ]

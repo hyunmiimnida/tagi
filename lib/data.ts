@@ -105,10 +105,11 @@ export const getCategories = (): FilterCategory[] =>
   }));
 
 export const getSchools = (): SchoolOption[] =>
-  readSchools().map(({ id, name, shortName, units }) => ({
+  readSchools().map(({ id, name, shortName, region, units }) => ({
     id,
     name,
     shortName,
+    region,
     units: (units ?? []).map((unit) => unit.name),
   }));
 
@@ -125,23 +126,31 @@ export function getSourceNames(): Record<string, string> {
 export function describeSources(): string {
   const schools = readSchools();
   const count = schools.reduce((n, school) => n + school.sources.filter((s) => s.enabled).length, 0);
-  return `${schools.map((school) => school.name).join("·")} 공지 ${count}곳`;
+  // 학교가 많아 이름 대신 지역별 학교 수로 보여 준다 (다른 캠퍼스는 본교와 같이 센다)
+  const byRegion = new Map<string, number>();
+  for (const school of schools.filter((s) => !s.campusOf)) byRegion.set(school.region, (byRegion.get(school.region) ?? 0) + 1);
+  return `${[...byRegion].map(([region, n]) => `${region} ${n}개`).join("·")} 대학 공지 ${count}곳`;
 }
 
-// 학교별 마지막 수집 시각. 학교 출처 중 가장 오래전에 성공한 시각을 보여 준다 (한 곳이라도 멈추면 드러나게)
+// 지역별 마지막 수집 시각. 지역 학교 출처 중 가장 오래전에 성공한 시각을 보여 주고,
+// 수집이 멈춘 학교는 이름을 따로 알린다 (학교가 많아 학교마다 늘어놓지 않는다)
 const STALE_DAYS = 3; // 이보다 오래 수집에 성공하지 못한 학교는 바닥글에 경고한다
 
-export function getCollectedBySchool(): { school: string; at: string; stale: boolean }[] {
+export function getCollectedByRegion(): { region: string; at: string; stale: string[] }[] {
   try {
     const log = readJson<{ sources: { source: string; lastSuccessAt?: string }[] }>("data/collect-log.json");
     const last = new Map(log.sources.map((s) => [s.source, s.lastSuccessAt]));
-    return readSchools().flatMap((school) => {
+    const regions = new Map<string, { oldest: string; stale: string[] }>();
+    for (const school of readSchools()) {
       const times = school.sources.filter((s) => s.enabled).map((s) => last.get(s.id));
-      if (times.length === 0 || times.some((t) => !t)) return [];
+      if (times.length === 0 || times.some((t) => !t)) continue; // 아직 한 번도 수집하지 않은 출처가 있는 학교는 뺀다
       const oldest = (times as string[]).sort()[0];
-      const stale = Date.now() - Date.parse(oldest) > STALE_DAYS * 86_400_000;
-      return [{ school: school.shortName, at: formatKoreanTime(oldest), stale }];
-    });
+      const entry = regions.get(school.region) ?? { oldest, stale: [] };
+      if (oldest < entry.oldest) entry.oldest = oldest;
+      if (Date.now() - Date.parse(oldest) > STALE_DAYS * 86_400_000) entry.stale.push(school.shortName);
+      regions.set(school.region, entry);
+    }
+    return [...regions].map(([region, { oldest, stale }]) => ({ region, at: formatKoreanTime(oldest), stale }));
   } catch {
     return [];
   }

@@ -9,6 +9,7 @@ const school: School = {
   id: "x",
   name: "예시대학교",
   shortName: "예시대",
+  region: "영남권",
   sources: [source],
   campuses: [{ schoolId: "x-global", labels: ["국제"], titleKeywords: ["[국제]"] }],
 };

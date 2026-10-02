@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ELIGIBILITY,
   addedAt,
@@ -30,6 +30,7 @@ type Sort = "deadline" | "recent";
 
 interface Filters {
   school: string | null;
+  region: string | null; // 학교 대신 지역 전체(예: 영남권)를 고른 경우
   units: Set<string>;
   who: Set<string>;
   tags: Set<string>;
@@ -57,6 +58,7 @@ function readQuery() {
   const params = new URLSearchParams(window.location.search);
   return {
     school: params.get("school"),
+    region: params.get("region"),
     units: new Set(params.getAll("unit")),
     who: new Set(params.getAll("who").filter((w) => ELIGIBILITY.includes(w))),
     tags: new Set(params.getAll("tag")),
@@ -67,9 +69,10 @@ function readQuery() {
   };
 }
 
-function writeQuery({ school, units, who, tags, keyword, showClosed, includeOpen, sort }: Filters) {
+function writeQuery({ school, region, units, who, tags, keyword, showClosed, includeOpen, sort }: Filters) {
   const params = new URLSearchParams();
   if (school) params.set("school", school);
+  else if (region) params.set("region", region);
   for (const unit of units) params.append("unit", unit);
   for (const w of who) params.append("who", w);
   for (const tag of tags) params.append("tag", tag);
@@ -95,6 +98,8 @@ export function Explorer({ categories, schools }: Props) {
   const [loaded, setLoaded] = useState(false);
   const [school, setSchool] = useState<string | null>(null);
   const [schoolFromUrl, setSchoolFromUrl] = useState(false);
+  const [region, setRegion] = useState<string | null>(null);
+  const [panelRegion, setPanelRegion] = useState<string | null>(null); // 학교 패널에서 보고 있는 지역 탭
   const [units, setUnits] = useState<Set<string>>(new Set());
   const [who, setWho] = useState<Set<string>>(new Set());
   const [whoFromUrl, setWhoFromUrl] = useState(false);
@@ -111,6 +116,9 @@ export function Explorer({ categories, schools }: Props) {
       setSchool(query.school);
       setSchoolFromUrl(true);
       setUnits(query.units);
+    } else if (query.region) {
+      setRegion(query.region);
+      setSchoolFromUrl(true); // 지역을 골라 둔 주소면 내 학교 설정으로 덮지 않는다
     }
     if (query.who.size > 0) {
       setWho(query.who);
@@ -138,11 +146,11 @@ export function Explorer({ categories, schools }: Props) {
   }, [loaded, whoFromUrl, status, grade]);
 
   useEffect(() => {
-    if (loaded) writeQuery({ school, units, who, tags: selected, keyword, showClosed, includeOpen, sort });
-  }, [loaded, school, units, who, selected, keyword, showClosed, includeOpen, sort]);
+    if (loaded) writeQuery({ school, region, units, who, tags: selected, keyword, showClosed, includeOpen, sort });
+  }, [loaded, school, region, units, who, selected, keyword, showClosed, includeOpen, sort]);
 
   // 필터·검색·정렬을 바꾸면 다시 처음 30개부터 그린다 (처음 불러올 때 주소에서 읽은 값은 빼고)
-  const filterKey = JSON.stringify([school, [...units], [...who], [...selected], keyword, showClosed, includeOpen, sort]);
+  const filterKey = JSON.stringify([school, region, [...units], [...who], [...selected], keyword, showClosed, includeOpen, sort]);
   const lastFilterKey = useRef<string | null>(null);
   useEffect(() => {
     if (!loaded) return;
@@ -188,13 +196,28 @@ export function Explorer({ categories, schools }: Props) {
     [programs, showClosed, today, word],
   );
 
+  // 지역 → 그 지역 학교 id. 지역을 고르면 그 지역 학교 공고만 (학교가 정해지지 않은 공통 공고는 함께)
+  const regions = useMemo(() => {
+    const map = new Map<string, Set<string>>();
+    for (const s of schools) map.set(s.region, (map.get(s.region) ?? new Set()).add(s.id));
+    return map;
+  }, [schools]);
+  const inPlace = useCallback(
+    (p: ProgramView, schoolId: string | null, regionName: string | null) => {
+      if (schoolId || !regionName) return visibleForSchool(p, schoolId, includeOpen);
+      const ids = regions.get(regionName);
+      return p.schoolIds.length === 0 || p.schoolIds.some((id) => ids?.has(id));
+    },
+    [regions, includeOpen],
+  );
+
   const visible = useMemo(
     () =>
       open
-        .filter((p) => visibleForSchool(p, school, includeOpen) && matchesUnits(p, units) && matchesEligibility(p, who))
+        .filter((p) => inPlace(p, school, region) && matchesUnits(p, units) && matchesEligibility(p, who))
         .filter((p) => matchesTags(p.tags, selected, categories))
         .sort((a, b) => (sort === "recent" ? addedAt(b).localeCompare(addedAt(a)) : compareDeadline(a, b, today))),
-    [open, categories, school, includeOpen, units, who, selected, sort, today],
+    [open, categories, school, region, inPlace, units, who, selected, sort, today],
   );
 
   // 개수: 다른 필터는 반영하고, 자기 자신이 속한 필터만 빼고 센다
@@ -202,31 +225,42 @@ export function Explorer({ categories, schools }: Props) {
     const byTags = open.filter((p) => matchesTags(p.tags, selected, categories));
     const inSchool = (id: string | null) => byTags.filter((p) => visibleForSchool(p, id, includeOpen));
     const schoolCounts = new Map(schools.map((s) => [s.id, inSchool(s.id).length]));
+    const regionCounts = new Map([...regions.keys()].map((name) => [name, byTags.filter((p) => inPlace(p, null, name)).length]));
+    const here = byTags.filter((p) => inPlace(p, school, region));
     const unitCounts = new Map<string, number>();
-    for (const p of inSchool(school).filter((p) => matchesEligibility(p, who))) {
+    for (const p of here.filter((p) => matchesEligibility(p, who))) {
       for (const unit of p.units) unitCounts.set(unit, (unitCounts.get(unit) ?? 0) + 1);
     }
     // 대상 개수: 그 대상 하나만 더 골랐을 때 남는 공고 수
-    const whoBase = inSchool(school).filter((p) => matchesUnits(p, units));
+    const whoBase = here.filter((p) => matchesUnits(p, units));
     const whoCounts = new Map(
       ELIGIBILITY.map((w) => [w, whoBase.filter((p) => matchesEligibility(p, new Set([...who, w]))).length]),
     );
 
     const tagCounts = new Map<string, number>();
-    const base = open.filter((p) => visibleForSchool(p, school, includeOpen) && matchesUnits(p, units) && matchesEligibility(p, who));
+    const base = open.filter((p) => inPlace(p, school, region) && matchesUnits(p, units) && matchesEligibility(p, who));
     for (const category of categories) {
       const others = categories.filter((c) => c.id !== category.id);
       const pool = base.filter((p) => matchesTags(p.tags, selected, others));
       for (const tag of category.tags) tagCounts.set(tag, pool.filter((p) => p.tags.includes(tag)).length);
     }
-    return { all: inSchool(null).length, school: schoolCounts, unit: unitCounts, who: whoCounts, tag: tagCounts };
-  }, [open, categories, schools, school, units, who, selected, includeOpen]);
+    return { all: inSchool(null).length, school: schoolCounts, region: regionCounts, unit: unitCounts, who: whoCounts, tag: tagCounts };
+  }, [open, categories, schools, regions, inPlace, school, region, units, who, selected, includeOpen]);
 
   function chooseSchool(id: string | null) {
     setSchool(id);
+    setRegion(null);
     setSchoolFromUrl(false);
     setUnits(new Set());
     user.setSchool(id); // 고른 학교는 내 학교 설정으로도 기억한다
+  }
+
+  // 지역 전체를 고른다 (내 학교 설정은 그대로 둔다)
+  function chooseRegion(name: string | null) {
+    setSchool(null);
+    setRegion(name);
+    setSchoolFromUrl(true);
+    setUnits(new Set());
   }
 
   const toggle = (set: Set<string>, value: string) => {
@@ -244,6 +278,8 @@ export function Explorer({ categories, schools }: Props) {
   }
 
   const currentSchool = schools.find((s) => s.id === school) ?? null;
+  const regionNames = [...regions.keys()];
+  const shownRegion = panelRegion ?? currentSchool?.region ?? region ?? regionNames[0] ?? null;
   const openedCategory = categories.find((category) => category.id === openPanel);
   const ready = loaded && today !== "" && loadedPrograms !== null;
   const hasChips = selected.size > 0 || units.size > 0 || who.size > 0;
@@ -277,11 +313,11 @@ export function Explorer({ categories, schools }: Props) {
 
         <div className="chip-scroll">
           <button
-            className={`chip ${school ? "active" : ""} ${openPanel === SCHOOL_PANEL ? "open" : ""}`}
+            className={`chip ${school || region ? "active" : ""} ${openPanel === SCHOOL_PANEL ? "open" : ""}`}
             aria-expanded={openPanel === SCHOOL_PANEL}
             onClick={() => setOpenPanel(openPanel === SCHOOL_PANEL ? null : SCHOOL_PANEL)}
           >
-            {currentSchool ? currentSchool.shortName : "학교"}
+            {currentSchool ? currentSchool.shortName : (region ?? "학교")}
             {schoolFilterCount > 0 && <span className="chip-count">{schoolFilterCount}</span>}
             <ChevronIcon dir="down" size={14} />
           </button>
@@ -306,13 +342,35 @@ export function Explorer({ categories, schools }: Props) {
         {openPanel === SCHOOL_PANEL && (
           <div className="tag-panel stacked">
             <div className="panel-group">
-              {option("all", "전체 학교", school === null, counts.all, () => chooseSchool(null))}
-              {schools.map((s) =>
-                option(s.id, s.name, school === s.id, counts.school.get(s.id), () =>
-                  chooseSchool(school === s.id ? null : s.id),
-                ),
-              )}
+              {option("all", "전체 학교", school === null && region === null, counts.all, () => chooseSchool(null))}
             </div>
+            {regionNames.length > 1 && (
+              <div className="segmented region-tabs" role="tablist" aria-label="지역">
+                {regionNames.map((name) => (
+                  <button
+                    key={name}
+                    role="tab"
+                    aria-selected={shownRegion === name}
+                    className={shownRegion === name ? "on" : ""}
+                    onClick={() => setPanelRegion(name)}
+                  >
+                    {name}
+                  </button>
+                ))}
+              </div>
+            )}
+            {shownRegion && (
+              <div className="panel-group">
+                {option(`region-${shownRegion}`, `${shownRegion} 전체`, region === shownRegion && !school, counts.region.get(shownRegion), () =>
+                  chooseRegion(region === shownRegion && !school ? null : shownRegion),
+                )}
+                {schools
+                  .filter((s) => s.region === shownRegion)
+                  .map((s) =>
+                    option(s.id, s.name, school === s.id, counts.school.get(s.id), () => chooseSchool(school === s.id ? null : s.id)),
+                  )}
+              </div>
+            )}
             <div className="panel-group">
               <p className="panel-label">대상</p>
               {ELIGIBILITY.map((w) => option(w, w, who.has(w), counts.who.get(w), () => setWho(toggle(who, w))))}
@@ -405,11 +463,12 @@ export function Explorer({ categories, schools }: Props) {
           <p>필터를 줄이거나 다른 검색어를 써 보세요.</p>
           <div className="empty-actions">
             {/* 학교를 골라 둔 것을 잊고 검색하는 경우가 많아, 다른 학교에 결과가 있으면 바로 넓혀 볼 수 있게 한다 (내 학교 설정은 그대로) */}
-            {school && (counts.all ?? 0) > 0 && (
+            {(school || region) && (counts.all ?? 0) > 0 && (
               <button
                 className="button primary"
                 onClick={() => {
                   setSchool(null);
+                  setRegion(null);
                   setSchoolFromUrl(true);
                   setUnits(new Set());
                 }}
