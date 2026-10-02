@@ -1949,6 +1949,11 @@ main {
 }
 
 /* 다른 학교 학생도 지원할 수 있는 공고 */
+.row-free {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .row-open {
   flex-shrink: 0;
   padding: 0 6px;

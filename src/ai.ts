@@ -55,6 +55,10 @@ const SUMMARY_RULE = `- summary: 학생이 무엇을 하거나 받는 기회인�
   날짜·신청 방법·문의처는 넣지 않는다(다른 칸에 있다). 예: "삼성 SW 교육을 1년 동안 무료로 받고 교육비를 지원받아요".
   무엇을 하는지 글에서 알 수 없으면 null.`;
 
+// 신청 없이 참여하는 행사·서비스. 본 추출과 다시 확인(recheckFields)이 함께 쓴다
+const NO_APPLICATION_RULE = `- noApplication: 미리 신청·접수하지 않고 기간 중에 그냥 방문·참여·이용하면 되는 행사나 서비스면 true.
+  예: 취업박람회 현장 방문, 상시 운영 상담실·라운지, 헌혈·홍보 캠페인, 전시 관람. 신청서·접수·선착순 신청·사전 등록이 필요하면 false. 글에서 알 수 없으면 false.`;
+
 const summary = (v: unknown) => (typeof v === "string" && v.trim() && v.length <= 90 ? v.trim() : null);
 
 function setOpenTo(program: Program, value: string | null) {
@@ -105,6 +109,7 @@ ${item.text.slice(0, maxText) || "(본문 없음, 이미지로만 안내됨)"}`,
 - excludedStatuses: 글에 "휴학생 제외"·"졸업생 제외"처럼 명시적으로 뺀 신분만 같은 이름으로 적는다.
 ${OPEN_TO_RULE}
 ${SUMMARY_RULE}
+${NO_APPLICATION_RULE}
 - tags: 아래 목록의 이름만. 그 프로그램의 핵심 내용일 때만 붙인다. 본문에 단어가 한 번 나온다고 붙이지 마라.
   - 장학·지원금: 학생이 장학금·지원금·상금·활동비를 직접 받는 경우에만.
   - 해외·글로벌: 해외 파견·해외 활동·유학생 교류가 핵심일 때만.
@@ -116,7 +121,7 @@ ${SUMMARY_RULE}
 ${tagList}
 
 출력 형식 (게시물 수만큼, 설명 없이 JSON만):
-{"items":[{"id":"...","forStudents":true,"organizer":null,"organizerType":null,"recruitStart":null,"recruitEnd":null,"activityStart":null,"activityEnd":null,"colleges":[],"departments":[],"grades":[],"statuses":[],"excludedStatuses":[],"openTo":null,"summary":null,"tags":[]}]}
+{"items":[{"id":"...","forStudents":true,"organizer":null,"organizerType":null,"recruitStart":null,"recruitEnd":null,"activityStart":null,"activityEnd":null,"colleges":[],"departments":[],"grades":[],"statuses":[],"excludedStatuses":[],"openTo":null,"summary":null,"noApplication":false,"tags":[]}]}
 
 게시물:
 
@@ -261,6 +266,7 @@ function apply(item: CollectedItem, data: Record<string, unknown>, categories: T
   program.target.excludedStatuses = strings(data.excludedStatuses).filter((s) => STUDENT_STATUSES.includes(s));
   if ("openTo" in data) setOpenTo(program, openTo(data.openTo));
   if ("summary" in data) program.summary = summary(data.summary);
+  if (typeof data.noApplication === "boolean") program.noApplication = data.noApplication;
 
   const tags = strings(data.tags).filter((t) => allowedTags.has(t) && !organizerTypes.includes(t));
   program.tags = [...new Set([...(program.organizerType ? [program.organizerType] : []), ...tags])];
@@ -280,8 +286,9 @@ export async function recheckFields(items: CollectedItem[], maxText = 1500): Pro
   const prompt = `너는 대학 공지에서 사실 정보만 뽑는 추출기다. 파일을 읽거나 명령을 실행하지 말고, 아래 글만 보고 JSON으로만 답해라.
 ${OPEN_TO_RULE}
 ${SUMMARY_RULE}
+${NO_APPLICATION_RULE}
 
-출력 형식 (게시물 수만큼, 설명 없이 JSON만): {"items":[{"id":"...","openTo":null,"summary":null}]}
+출력 형식 (게시물 수만큼, 설명 없이 JSON만): {"items":[{"id":"...","openTo":null,"summary":null,"noApplication":false}]}
 
 게시물:
 
@@ -295,6 +302,7 @@ ${posts}`;
       if (!program || !("openTo" in data)) continue;
       if (program.target.openTo === undefined) setOpenTo(program, openTo(data.openTo));
       if (program.summary === undefined && "summary" in data) program.summary = summary(data.summary);
+      if (program.noApplication === undefined && typeof data.noApplication === "boolean") program.noApplication = data.noApplication;
       answered++;
     }
     return answered;

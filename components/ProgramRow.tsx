@@ -31,6 +31,8 @@ export function ProgramRow({
   const recruit = formatPeriod(program.recruitPeriod, year);
   const activity = formatPeriod(program.activityPeriod, year);
   const tags = program.tags.filter((tag) => !hiddenTags?.has(tag));
+  // 신청 없이 참여하는 행사·서비스는 모집 기간 대신 "신청 없이 참여"와 운영 기간을 보여 준다
+  const walkIn = !recruit && program.noApplication === true;
 
   return (
     <li className={`row ${isClosed(program, today) ? "closed" : ""}`}>
@@ -55,8 +57,8 @@ export function ProgramRow({
         </Link>
         <div className="row-dates">
           <DdayBadge program={program} today={today} />
-          <span>{recruit ? `모집 ${recruit}` : "모집 일정은 원문 확인"}</span>
-          {!compact && activity && <span className="row-activity">활동 {activity}</span>}
+          {walkIn ? <span className="row-free">신청 없이 참여</span> : <span>{recruit ? `모집 ${recruit}` : "모집 일정은 원문 확인"}</span>}
+          {(!compact || walkIn) && activity && <span className="row-activity">{walkIn ? "기간" : "활동"} {activity}</span>}
         </div>
         {!compact && tags.length > 0 && (
           <div className="row-tags">

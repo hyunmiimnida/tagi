@@ -37,6 +37,8 @@ export interface Program {
   aliases?: string[]; // 이 공고에 합쳐져 없어진 공고 id (예전 주소를 이 공고로 연결한다)
   // 무엇을 하는(받는) 기회인지 AI가 쓴 한 문장 요약. null = 알 수 없음, 없음(undefined) = 아직 묻지 않음
   summary?: string | null;
+  // 사전 신청 없이 기간 중에 참여·이용하는 행사·서비스(박람회, 상설 상담실 등)인지 AI가 판단. 없음(undefined) = 아직 묻지 않음
+  noApplication?: boolean;
   seriesId?: string; // 해마다·학기마다 반복되는 같은 프로그램의 묶음 id (src/series.ts)
 }
 

@@ -16,9 +16,15 @@ export default async function Image({ params }: { params: Promise<{ id: string }
   const program = getPrograms().find((p) => p.id === id)!;
   const year = new Date().getFullYear();
   const recruit = formatPeriod(program.recruitPeriod, year);
+  const activity = formatPeriod(program.activityPeriod, year);
+  const when = recruit
+    ? `모집 ${recruit}`
+    : program.noApplication
+      ? `신청 없이 참여${activity ? ` · ${activity}` : ""}`
+      : "모집 일정은 원문 확인";
   return renderCard({
     badges: [...program.schoolLabels, ...(program.target.openTo ? ["다른 학교도 지원"] : [])],
     title: program.title,
-    lines: [recruit ? `모집 ${recruit}` : "모집 일정은 원문 확인", program.organizer ?? ""].filter(Boolean),
+    lines: [when, program.organizer ?? ""].filter(Boolean),
   });
 }

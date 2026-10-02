@@ -74,6 +74,7 @@ function mergeInto(base: Program, extra: Program): void {
   base.activityPeriod = fillPeriod(base.activityPeriod, extra.activityPeriod);
   base.postedAt ??= extra.postedAt;
   if (!base.summary && extra.summary !== undefined) base.summary = extra.summary ?? base.summary ?? null;
+  if (base.noApplication === undefined && extra.noApplication !== undefined) base.noApplication = extra.noApplication;
   // 주최 유형 태그는 base의 것만 남긴다
   base.tags = union(base.tags, extra.tags.filter((t) => t !== extra.organizerType || t === base.organizerType));
   base.sources = union(base.sources, extra.sources);
@@ -96,6 +97,7 @@ function keepAiFields(saved: Program, fresh: Program): Program {
     target: saved.target,
     tags: saved.tags,
     summary: saved.summary,
+    noApplication: saved.noApplication,
     recruitPeriod: fillPeriod(fresh.recruitPeriod, saved.recruitPeriod),
     activityPeriod: fillPeriod(fresh.activityPeriod, saved.activityPeriod),
     extractedBy: "ai",
@@ -120,6 +122,7 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
           fresh.target = { ...fresh.target, openTo: saved.target.openTo, schools: saved.target.schools };
         }
         if (fresh.summary === undefined && saved.summary !== undefined) fresh.summary = saved.summary;
+        if (fresh.noApplication === undefined && saved.noApplication !== undefined) fresh.noApplication = saved.noApplication;
         if (saved.aliases) fresh.aliases = [...new Set([...saved.aliases, ...(fresh.aliases ?? [])])];
         result[index] = fresh;
       } else {
@@ -183,6 +186,7 @@ export function collapseReposts(programs: Program[]): Program[] {
         base.organizer = next.organizer ?? base.organizer;
         base.organizerType = next.organizerType ?? base.organizerType;
         if (next.summary) base.summary = next.summary;
+        if (next.noApplication !== undefined) base.noApplication = next.noApplication;
         base.extractedBy = "ai";
       }
       base.links = [...next.links, ...base.links.filter((l) => !next.links.some((n) => n.url === l.url))];

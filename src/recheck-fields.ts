@@ -4,7 +4,7 @@ import { archivers } from "./collectors/index.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
 import type { CollectContext, CollectedItem, Program, School } from "./types.ts";
 
-// 목록(data/programs.json)의 공고 중 나중에 생긴 AI 칸(다른 학교 학생도 지원할 수 있는지, 한 줄 요약)을 확인하지 않은 글을 다시 읽어 AI에게 묻는다.
+// 목록(data/programs.json)의 공고 중 나중에 생긴 AI 칸(다른 학교 학생도 지원할 수 있는지, 한 줄 요약, 모집 기간이 없는 글의 신청 없이 참여 여부)을 확인하지 않은 글을 다시 읽어 AI에게 묻는다.
 //   npm run recheck
 // 본문이 있는 출처만 확인한다. 새로 수집하는 글은 수집할 때 함께 확인하므로 한 번만 돌리면 된다.
 
@@ -24,7 +24,7 @@ for (const school of schools) {
       continue;
     }
     const ctx: CollectContext = { school, source, fetchHtml, isKnown: () => false };
-    const todo = programs.filter((p) => (p.target.openTo === undefined || p.summary === undefined) && p.links.some((l) => l.sourceId === source.id));
+    const todo = programs.filter((p) => (p.target.openTo === undefined || p.summary === undefined || (p.noApplication === undefined && !p.recruitPeriod.start && !p.recruitPeriod.end)) && p.links.some((l) => l.sourceId === source.id));
     console.log(`${label} 확인할 공고 ${todo.length}개`);
 
     for (let i = 0; i < todo.length; i += BATCH) {
