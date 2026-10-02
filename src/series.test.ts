@@ -62,3 +62,13 @@ test("부서 머리말이 같아도 다른 프로그램은 묶지 않고, 사슬
   assert.equal(sid.c1, sid.c2);
   assert.notEqual(sid.d1, sid.c1);
 });
+
+test("titleInfo: 회차·연도를 지운 기본 제목과 글자쌍(유사도 계산용)", async () => {
+  const { titleInfo } = await import("./series.ts");
+  const a = titleInfo({ title: "2025학년도 제3회 창업 아이디어 경진대회" } as never);
+  const b = titleInfo({ title: "2026학년도 제4회 창업 아이디어 경진대회" } as never);
+  assert.equal(a.base, b.base);
+  assert.ok(a.base.length > 0 && !/\d/.test(a.base));
+  assert.ok(a.grams.size > 0);
+  assert.deepEqual([...a.grams].sort(), [...b.grams].sort());
+});
