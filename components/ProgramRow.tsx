@@ -38,7 +38,7 @@ export function ProgramRow({
     <li className={`row ${isClosed(program, today) ? "closed" : ""}`}>
       <div className="row-body">
         <div className="row-meta">
-          {isNew(program, today) && <span className="new-dot" aria-label="새 공고" />}
+          {isNew(program, today) && <span className="new-dot" role="img" aria-label="새 공고" />}
           {program.schoolLabels.map((label) => (
             <span key={label} className="row-school">
               {label}
