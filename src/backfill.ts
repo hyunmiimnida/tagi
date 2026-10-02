@@ -11,6 +11,7 @@ import {
 } from "./archive.ts";
 import { archivers } from "./collectors/index.ts";
 import { collapseReposts, mergePrograms } from "./dedupe.ts";
+import { applyCampus } from "./campus.ts";
 import { cleanPeriods, notForStudentsByTitle } from "./extract.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
@@ -142,7 +143,10 @@ async function extract(
         console.error(`  읽기 실패 ${post.url}:`, error instanceof Error ? error.message : error);
       }
     }
-    for (const item of items) enrich(item, ctx.source, categories);
+    for (const item of items) {
+      enrich(item, ctx.source, categories);
+      applyCampus(item.program, ctx.school, item.campusLabel); // 다른 캠퍼스 글은 그 캠퍼스로 (수집과 같게)
+    }
 
     const job = (async () => {
       // --rules: AI 없이 규칙 추출 결과만 쓴다 (AI 한도가 없을 때, 보관함에만 들어갈 오래된 글용)
