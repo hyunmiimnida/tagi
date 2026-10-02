@@ -19,6 +19,7 @@ import type { ProgramView as Program } from "../lib/filter.ts";
 import { ChevronIcon } from "./Icons.tsx";
 import { FieldIcon } from "./FieldIcon.tsx";
 import { InstallCard } from "./InstallCard.tsx";
+import { ProfileNudge } from "./ProfileNudge.tsx";
 import { ProgramRow } from "./ProgramRow.tsx";
 
 const URGENT_DAYS = 7;
@@ -142,6 +143,7 @@ export function Home({ programs, categories }: Props) {
         </div>
       </section>
 
+      <ProfileNudge />
       <InstallCard />
 
       <Section title="마감 임박 공고" href="/programs">

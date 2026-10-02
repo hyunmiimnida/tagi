@@ -113,7 +113,9 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `components/` — 화면 부품, `lib/` — 필터 규칙·데이터 읽기·로그인 상태
 - `supabase/schema.sql` — 로그인 사용자 데이터 표(학교 설정, 관심 표시, 후기 댓글)
 - `supabase/moderation.sql` — 회원 탈퇴, 댓글 신고(`reports`)·숨기기(`blocks`), 이용 규칙 동의. 댓글은 `comment_feed` 뷰로만 읽는다(글쓴이 id 비공개)
-- `/my`(프로필: 닉네임, 학교·신분·학년, 관심 분야, 알림 설정 자리, 내 댓글, 탈퇴. 설정은 `lib/user.tsx`의 `profile`, 로그인하면 `profiles` 표에도 저장, `supabase/profile.sql`). 신분·학년은 공고 목록 대상 필터의 기본값, 관심 분야는 홈 "내 관심 분야 공고"에 쓴다
+- `/my` 프로필 (`components/MyAccount.tsx`): 머리(닉네임 아바타·로그인 방법·닉네임 바로 고치기·활동 수 관심 공고/7일 안 마감/내 댓글. 로그인 전에는 숫자 대신 로그인 안내 — 로그인을 쓸 수 있으면 관심 표시는 로그인이 필요), 맞춤 설정 안내(학교·신분학년·관심 분야 중 안 고른 것), 다가오는 내 일정(`lib/filter.ts`의 `upcomingEvents`, 홈과 같이 씀), 내 정보·관심 분야(고른 값 표시, 관심 분야 공고 보기), 알림과 캘린더(마감 알림·.ics 내보내기·홈 화면 추가), 내 댓글, 숨긴 사용자(있을 때만), 서비스 안내, 로그아웃·탈퇴. 설정은 `lib/user.tsx`의 `profile`, 로그인하면 `profiles` 표에도 저장(`supabase/profile.sql`). 신분·학년은 공고 목록 대상 필터의 기본값, 관심 분야는 홈 "내 관심 분야 공고"에 쓴다
+  - 홈의 `components/ProfileNudge.tsx`: 학교·신분·관심 분야를 하나도 안 고른 사람에게 프로필로 가는 안내(닫으면 다시 안 보임)
+- 검색엔진 소유 확인 코드: `lib/policy.ts`의 `SITE_VERIFICATION`(공개값, 비어 있으면 안 넣음) → `app/layout.tsx` metadata
 - 약관: `/terms`(이용약관), `/privacy`(개인정보처리방침). 문의처·규칙 문구는 `lib/policy.ts`
 - PWA: `app/manifest.ts`, `public/sw.js`(오프라인 때 마지막 화면), 아이콘 `public/icon-*.png`, `app/apple-icon.png`
 - `mobile/` — 앱(Expo) 뼈대. **비용 문제로 잠시 멈춤** (스토어 개발자 등록비가 든다). 지금은 PWA(홈 화면에 추가)와 웹 푸시로 앱 역할을 대신한다. 앱 아이콘 시안은 `design/app-icon/` 사이트를 바꿀 때 앱 전환에 걸림돌이 생기지 않게 한다 (데이터는 `public/api`로 계속 제공)
