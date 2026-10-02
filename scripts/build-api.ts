@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { getCategories, getPrograms, getSchools, getSourceNames } from "../lib/data.ts";
+import { getCategories, getPrograms, getSchools, getSeriesInfo, getSourceNames } from "../lib/data.ts";
+import { LIST_VERSION, toListProgram } from "../lib/list.ts";
 import type { Program } from "../src/types.ts";
 
 // 앱이 받아 갈 데이터 파일을 만든다 (사이트 빌드 직전에 자동 실행: npm run build → prebuild).
@@ -10,6 +11,8 @@ import type { Program } from "../src/types.ts";
 //   api/series/<묶음id>.json  반복 프로그램의 모든 회차 (상세 화면을 열 때만 받는다)
 //   api/moved.json           합쳐져 없어진 공고 id → 지금 id (관심 표시를 새 공고로 옮길 때)
 //   api/ids.json             합쳐지거나 보관된 공고의 예전 id를 찾는 표 (없는 주소를 열었을 때만 받는다)
+//   api/list.json            사이트의 홈·목록·캘린더·프로필이 함께 쓰는 가벼운 목록 (lib/list.ts)
+//   api/series-info.json     반복 프로그램 묶음 → [최근 회차 제목, 지금 공고 id] (내 댓글·관리자 화면)
 
 const OUT = join(process.cwd(), "public", "api");
 const VERSION = 1; // 파일 형식을 바꾸면 올린다 (앱이 자기가 읽을 수 있는 형식인지 확인한다)
@@ -89,5 +92,9 @@ for (const program of archive) {
 write("ids.json", { version: VERSION, moved, archived });
 // 관심 표시 옮기기용 (작은 파일): 합쳐져 없어진 id → 지금 id. 사이트·앱이 관심 목록을 불러올 때 읽는다
 write("moved.json", { version: VERSION, moved });
+
+// 사이트 화면용 가벼운 목록과 반복 프로그램 이름표
+write("list.json", { version: LIST_VERSION, programs: programs.map(toListProgram) });
+write("series-info.json", getSeriesInfo());
 
 console.log(`앱 데이터: 공고 ${programs.length}개, 반복 프로그램 ${members.size}개 → public/api/`);

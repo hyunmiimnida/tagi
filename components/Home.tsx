@@ -8,24 +8,26 @@ import {
   daysUntil,
   formatDate,
   isClosed,
+  isCurrent,
   isNew,
   recruitWord,
   upcomingEvents,
   visibleForSchool,
 } from "../lib/filter.ts";
 import type { FilterCategory } from "../lib/filter.ts";
+import { useListPrograms } from "../lib/use-list.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import type { ProgramView as Program } from "../lib/filter.ts";
 import { ChevronIcon } from "./Icons.tsx";
 import { FieldIcon } from "./FieldIcon.tsx";
 import { InstallCard } from "./InstallCard.tsx";
 import { ProfileNudge } from "./ProfileNudge.tsx";
+import { ListError } from "./ListError.tsx";
 import { ProgramRow } from "./ProgramRow.tsx";
 
 const URGENT_DAYS = 7;
 
 interface Props {
-  programs: Program[];
   categories: FilterCategory[];
 }
 
@@ -45,9 +47,12 @@ function Section({ title, href, children }: { title: string; href?: string; chil
   );
 }
 
-export function Home({ programs, categories }: Props) {
+export function Home({ categories }: Props) {
   const { schoolId, favorites, signedIn, loginEnabled, profile } = useUser();
   const today = useToday();
+  // 홈은 아직 볼 만한 공고(마감 전이거나 남은 일정이 있는 것)만 쓴다
+  const { programs: loaded, failed, retry } = useListPrograms();
+  const programs: Program[] = useMemo(() => (loaded && today ? loaded.filter((p) => isCurrent(p, today)) : []), [loaded, today]);
 
   const open = useMemo(
     () => programs.filter((p) => visibleForSchool(p, schoolId) && !isClosed(p, today)),
@@ -82,7 +87,8 @@ export function Home({ programs, categories }: Props) {
 
   const field = categories.find((c) => c.id === "field");
 
-  if (!today) {
+  if (failed) return <ListError onRetry={retry} />;
+  if (!today || !loaded) {
     return (
       <div className="home">
         <div className="hero skeleton-block" />

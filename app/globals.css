@@ -2651,3 +2651,8 @@ button.stat {
   flex-shrink: 0;
   gap: 2px;
 }
+
+/* 공고 목록 "더 보기" (끝까지 내리면 자동으로 더 그린다) */
+.list-more {
+  margin-top: 12px;
+}

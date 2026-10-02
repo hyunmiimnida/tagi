@@ -4,9 +4,11 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { daysUntil, formatDate, recruitWord, toDateString } from "../lib/filter.ts";
 import { downloadIcs } from "../lib/ics.ts";
+import { useListPrograms } from "../lib/use-list.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import type { ProgramView as Program } from "../lib/filter.ts";
 import { CalendarIcon, CalendarPlusIcon, ChevronIcon } from "./Icons.tsx";
+import { ListError } from "./ListError.tsx";
 import { PastFavorites } from "./PastFavorites.tsx";
 
 interface CalendarEvent {
@@ -30,8 +32,10 @@ function eventsOf(program: Program): CalendarEvent[] {
 
 const isDeadline = (event: CalendarEvent) => event.kind.endsWith("마감"); // 모집 마감·접수 마감
 
-export function CalendarView({ programs }: { programs: Program[] }) {
+export function CalendarView() {
   const user = useUser();
+  const { programs: loaded, failed, retry } = useListPrograms();
+  const programs = useMemo(() => loaded ?? [], [loaded]);
   const today = useToday();
   const [offset, setOffset] = useState(0); // 이번 달에서 몇 달 떨어져 있는지
   const [picked, setPicked] = useState<string | null>(null); // 누른 날짜
@@ -41,7 +45,8 @@ export function CalendarView({ programs }: { programs: Program[] }) {
   const noDate = favorites.filter((p) => eventsOf(p).length === 0);
   const listedIds = useMemo(() => new Set(programs.map((p) => p.id)), [programs]);
 
-  if (!today || !user.ready) return <div className="skeleton-block tall" />;
+  if (failed) return <ListError onRetry={retry} />;
+  if (!today || !user.ready || !loaded) return <div className="skeleton-block tall" />;
 
   if (user.loginEnabled && !user.signedIn) {
     return (

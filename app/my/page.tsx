@@ -1,5 +1,5 @@
 import { MyAccount } from "../../components/MyAccount.tsx";
-import { describeSources, getCategories, getListPrograms, getSchools, getSeriesInfo } from "../../lib/data.ts";
+import { describeSources, getCategories, getSchools } from "../../lib/data.ts";
 
 export const metadata = { title: "프로필" };
 
@@ -11,8 +11,6 @@ export default function MyPage() {
       <MyAccount
         schools={getSchools()}
         fieldTags={fieldTags}
-        seriesInfo={getSeriesInfo()}
-        programs={getListPrograms({ current: true })}
         sources={describeSources()}
       />
     </>

@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { adminRpc } from "../../lib/admin.ts";
 import type { AdminStats } from "../../lib/admin.ts";
 import type { SourceStatus } from "../../lib/data.ts";
+import { useListPrograms, useSeriesInfo } from "../../lib/use-list.ts";
+import type { SeriesInfo } from "../../lib/use-list.ts";
 import { supabase, useUser } from "../../lib/user.tsx";
 import { AdminComments } from "./AdminComments.tsx";
 import { AdminDashboard } from "./AdminDashboard.tsx";
@@ -14,11 +16,14 @@ import { AdminNotices } from "./AdminNotices.tsx";
 import { AdminReports } from "./AdminReports.tsx";
 import { AdminUsers } from "./AdminUsers.tsx";
 
-export interface AdminContext {
+interface PageProps {
   schools: { id: string; shortName: string }[];
-  programTitles: Record<string, [title: string, id: string]>;
-  seriesInfo: Record<string, [title: string, currentId: string | null]>;
   collect: { ranAt: string | null; sources: SourceStatus[] };
+}
+
+export interface AdminContext extends PageProps {
+  programTitles: Record<string, [title: string, id: string]>; // 공고 id(합쳐진 예전 id 포함) → [제목, 지금 id]
+  seriesInfo: SeriesInfo;
 }
 
 const TABS = [
@@ -42,7 +47,7 @@ function pending(stats: AdminStats | null, tab: TabId): number {
   return 0;
 }
 
-export function AdminApp(context: AdminContext) {
+export function AdminApp(props: PageProps) {
   const user = useUser();
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
   const [setupMissing, setSetupMissing] = useState(false);
@@ -50,6 +55,24 @@ export function AdminApp(context: AdminContext) {
   const [stats, setStats] = useState<AdminStats | null>(null);
   const [statsError, setStatsError] = useState<string | null>(null);
   const [focusUser, setFocusUser] = useState<string | null>(null); // 다른 탭에서 "이 회원 보기"를 눌렀을 때
+
+  // 신고·관심 공고·댓글의 id를 제목으로 보여 주려고 목록 데이터와 합쳐진 id 표를 받는다 (관리자일 때만)
+  const { programs } = useListPrograms();
+  const seriesInfo = useSeriesInfo(isAdmin === true);
+  const [moved, setMoved] = useState<Record<string, string>>({});
+  useEffect(() => {
+    if (!isAdmin) return;
+    fetch("/api/moved.json")
+      .then((response) => (response.ok ? (response.json() as Promise<{ moved: Record<string, string> }>) : { moved: {} }))
+      .then((data) => setMoved(data.moved))
+      .catch(() => {});
+  }, [isAdmin]);
+  const context: AdminContext = useMemo(() => {
+    const programTitles: AdminContext["programTitles"] = {};
+    for (const p of programs ?? []) programTitles[p.id] = [p.title, p.id];
+    for (const [from, to] of Object.entries(moved)) if (programTitles[to]) programTitles[from] = programTitles[to];
+    return { ...props, programTitles, seriesInfo };
+  }, [props, programs, moved, seriesInfo]);
 
   // 주소 끝(#users 등)으로 탭을 기억한다. 새로 고침해도 같은 탭이 열린다
   useEffect(() => {
