@@ -51,7 +51,13 @@
 - 캘린더의 "지난 관심 공고": 보관함으로 간 관심 공고를 `public/api/ids.json`에서 찾아 제목·원문·이번 회차를 보여 준다 (`components/PastFavorites.tsx`)
 - 댓글 도배 막기: `supabase/spam.sql` 트리거(20초 안 재작성, 하루 20개, 같은 내용 반복, 링크 2개 이상). 걸리면 `spam:이유` 오류 → `components/Comments.tsx`가 안내
 - 마감 알림(웹 푸시): 프로필에서 켜면 `lib/push.ts`가 기기 알림 주소를 `push_subscriptions` 표에 저장. 매일 오전 9시 `.github/workflows/notify.yml`이 `scripts/notify.ts deadline`으로 내일 모집 마감인 관심 공고를 보낸다(`public/sw.js`가 받아 표시). 켜면 그 기기에 확인 알림을 바로 띄우고, 다른 기기에서 켠 알림이면 프로필에 "이 기기에서도 받기"가 보인다. 비밀 값 `SUPABASE_SERVICE_ROLE_KEY`·`VAPID_PRIVATE_KEY`는 GitHub Secrets에만
-- 신고 알림: 같은 워크플로가 새 댓글 신고·정보 오류 신고를 "신고 확인 필요" GitHub 이슈로 올린다(저장소 주인에게 메일). 알린 신고는 `alerted_at`에 표시
+- 신고 알림: 같은 워크플로가 새 의견·댓글 신고·정보 오류 신고를 "신고·의견 확인 필요" GitHub 이슈로 올린다(저장소 주인에게 메일). 알린 것은 `alerted_at`에 표시
+- 관리자 화면 `/admin` (`components/admin/`, 관리 함수는 `supabase/admin.sql`): `admins` 표에 있는 계정만 데이터가 보인다. 관리 함수(security definer)가 매번 `assert_admin()`으로 확인하므로 사이트에 비밀 키를 넣지 않는다. 탭은 주소 끝(`#users` 등)에 기억
+  - 대시보드(처리할 일·회원·활동 숫자·14일 가입 막대·학교/신분 분포·출처별 수집 상태 — 수집 상태는 빌드 때의 `collect-log.json`), 회원(찾기·보기, 한 명 자세히, 이용 정지 1/7/30일·영구, 닉네임 지우기, 댓글 모두 숨기기, 강제 탈퇴. 관리자 계정은 정지·탈퇴 불가), 의견함(상태 새 의견/확인 중/완료, 관리자 메모, 답장), 댓글(확인할 신고 먼저, 숨기기·다시 보이기·문제 없음·지우기), 정보 오류(해결함), 공지, 기록(`admin_log`)
+  - 이용 정지는 `suspensions` 표(본인이 못 고침). 정지된 사람은 댓글·의견을 못 쓴다(`spam:suspended` → 댓글 화면이 언제까지인지 안내). 댓글을 "문제 없음"으로 확인하면(`reviewed_at`) 그 뒤 새 신고 3건이 쌓여야 다시 자동 숨김
+  - 의견 보내기: 프로필의 `components/FeedbackBox.tsx` → `feedback` 표(로그인 안 해도 됨, 1시간 5개). 본인은 `my_feedback` 뷰로 자기 의견과 답장만 본다(관리자 메모는 안 보임)
+  - 사이트 공지: `announcements` 표의 켜진 공지 중 가장 최근 것 하나를 `components/SiteNotice.tsx`가 모든 화면 위에 띠로 보여 준다(닫으면 그 기기에서 안 보임)
+  - 관리자 추가: SQL Editor에서 `insert into admins (user_id) values ('계정 번호');` (관리자가 아닌 계정으로 `/admin`을 열면 그 줄이 보인다). 관리자면 프로필에 "관리자 화면" 링크
 - 운영 연락처: `lib/policy.ts`의 `CONTACT_EMAIL` (개인정보 보호 책임자·문의·권리 침해 신고). 수집기 이름(`src/fetch.ts`의 USER_AGENT)에도 같은 이메일을 적는다
 - 합쳐진 공고는 `aliases`에 예전 id를 남기고, 없는 공고 주소는 `app/not-found.tsx`가 `public/api/ids.json`으로 새 주소나 보관 안내를 찾아 준다
 
@@ -112,6 +118,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
   - 검색(`matchesKeyword`)은 제목·주최·한 줄 요약·태그에서 찾고, 띄어 쓴 단어는 모두 들어 있어야 한다(띄어쓰기 무시)
 - `components/` — 화면 부품, `lib/` — 필터 규칙·데이터 읽기·로그인 상태
 - `supabase/schema.sql` — 로그인 사용자 데이터 표(학교 설정, 관심 표시, 후기 댓글)
+- `supabase/admin.sql` — 관리자 화면: 관리자(`admins`), 이용 정지(`suspensions`), 의견함(`feedback`), 사이트 공지(`announcements`), 관리 기록(`admin_log`), 관리 함수(`admin_*`)
 - `supabase/moderation.sql` — 회원 탈퇴, 댓글 신고(`reports`)·숨기기(`blocks`), 이용 규칙 동의. 댓글은 `comment_feed` 뷰로만 읽는다(글쓴이 id 비공개)
 - `/my` 프로필 (`components/MyAccount.tsx`): 머리(닉네임 아바타·로그인 방법·닉네임 바로 고치기·활동 수 관심 공고/7일 안 마감/내 댓글. 로그인 전에는 숫자 대신 로그인 안내 — 로그인을 쓸 수 있으면 관심 표시는 로그인이 필요), 맞춤 설정 안내(학교·신분학년·관심 분야 중 안 고른 것), 다가오는 내 일정(`lib/filter.ts`의 `upcomingEvents`, 홈과 같이 씀), 내 정보·관심 분야(고른 값 표시, 관심 분야 공고 보기), 알림과 캘린더(마감 알림·.ics 내보내기·홈 화면 추가), 내 댓글, 숨긴 사용자(있을 때만), 서비스 안내, 로그아웃·탈퇴. 설정은 `lib/user.tsx`의 `profile`, 로그인하면 `profiles` 표에도 저장(`supabase/profile.sql`). 신분·학년은 공고 목록 대상 필터의 기본값, 관심 분야는 홈 "내 관심 분야 공고"에 쓴다
   - 홈의 `components/ProfileNudge.tsx`: 학교·신분·관심 분야를 하나도 안 고른 사람에게 프로필로 가는 안내(닫으면 다시 안 보임)

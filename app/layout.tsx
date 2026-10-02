@@ -4,6 +4,7 @@ import { BottomNav } from "../components/BottomNav.tsx";
 import { Header } from "../components/Header.tsx";
 import { PwaSetup } from "../components/InstallCard.tsx";
 import { LoginSheet } from "../components/LoginSheet.tsx";
+import { SiteNotice } from "../components/SiteNotice.tsx";
 import { describeSources, getCollectedBySchool } from "../lib/data.ts";
 import { SITE_NAME, SITE_URL } from "../lib/filter.ts";
 import { SITE_VERIFICATION } from "../lib/policy.ts";
@@ -46,7 +47,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <UserProvider>
           <Header />
-          <main>{children}</main>
+          <main>
+            <SiteNotice />
+            {children}
+          </main>
           <footer className="footer">
             <p>{describeSources()}에서 매일 모아요</p>
             {/* 학교마다 출처 중 가장 오래전에 성공한 시각. 한 곳이라도 수집이 멈추면 드러난다 */}

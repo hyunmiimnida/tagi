@@ -5,7 +5,7 @@ import type { Program } from "../src/types.ts";
 
 // 매일 아침 GitHub Actions(.github/workflows/notify.yml)가 실행한다.
 //   node scripts/notify.ts deadline        마감 알림: 내일 모집이 끝나는 관심 공고를 알림을 켠 사람에게 웹 푸시로 보낸다
-//   node scripts/notify.ts reports FILE    신고 알림: 아직 알리지 않은 신고를 FILE(마크다운)에 적는다 (워크플로가 GitHub 이슈로 올린다)
+//   node scripts/notify.ts reports FILE    신고 알림: 아직 알리지 않은 신고·새 의견을 FILE(마크다운)에 적는다 (워크플로가 GitHub 이슈로 올린다)
 //   node scripts/notify.ts mark-reported   FILE에 적은 신고를 "알림" 표시한다 (이슈를 만든 뒤에 실행)
 // 필요한 값(GitHub Secrets): SUPABASE_SERVICE_ROLE_KEY, VAPID_PRIVATE_KEY. 없으면 아무것도 하지 않고 끝난다.
 
@@ -90,28 +90,41 @@ async function reports(out: string) {
   const programs = await all<{ id: number; program_id: string; reason: string; note: string | null }>((a, b) =>
     db.from("program_reports").select("id, program_id, reason, note").is("alerted_at", null).eq("resolved", false).range(a, b),
   );
+  // 의견함(supabase/admin.sql). 아직 표를 만들지 않았으면 건너뛴다
+  const feedback = await all<{ id: number; category: string; body: string }>((a, b) =>
+    db.from("feedback").select("id, category, body").is("alerted_at", null).range(a, b),
+  ).catch(() => []);
   const lines: string[] = [];
+  if (feedback.length > 0) {
+    lines.push(`## 새 의견 ${feedback.length}건`, "", `관리자 화면 → 의견함에서 답장: ${SITE}/admin#feedback`, "");
+    for (const f of feedback) lines.push(`- (${f.category}) ${short(f.body, 200)}`);
+    lines.push("");
+  }
   if (comments.length > 0) {
-    lines.push(`## 댓글 신고 ${comments.length}건`, "", "Supabase → Table Editor → `reports`·`comments`에서 확인 (3건이 쌓이면 자동으로 숨겨져요)", "");
+    lines.push(`## 댓글 신고 ${comments.length}건`, "", `관리자 화면 → 댓글에서 확인: ${SITE}/admin#comments (3건이 쌓이면 자동으로 숨겨져요)`, "");
     for (const r of comments) {
       lines.push(`- 댓글 #${r.comment_id} (${r.reason})${r.comments?.hidden ? " **숨겨짐**" : ""}: ${short(r.comments?.body)}`);
     }
     lines.push("");
   }
   if (programs.length > 0) {
-    lines.push(`## 공고 정보 오류 신고 ${programs.length}건`, "", "고친 뒤 Supabase → Table Editor → `program_reports`에서 resolved를 true로", "");
+    lines.push(`## 공고 정보 오류 신고 ${programs.length}건`, "", `고친 뒤 관리자 화면 → 정보 오류에서 "해결함": ${SITE}/admin#reports`, "");
     for (const r of programs) lines.push(`- [${r.program_id}](${SITE}/programs/${r.program_id}) ${r.reason}${r.note ? `: ${short(r.note, 200)}` : ""}`);
   }
   writeFileSync(out, lines.join("\n"));
-  writeFileSync(IDS_FILE, JSON.stringify({ comments: comments.map((r) => r.comment_id), programs: programs.map((r) => r.id) }));
-  console.log(`신고 알림: 댓글 신고 ${comments.length}건, 정보 오류 신고 ${programs.length}건`);
+  writeFileSync(
+    IDS_FILE,
+    JSON.stringify({ comments: comments.map((r) => r.comment_id), programs: programs.map((r) => r.id), feedback: feedback.map((f) => f.id) }),
+  );
+  console.log(`신고 알림: 새 의견 ${feedback.length}건, 댓글 신고 ${comments.length}건, 정보 오류 신고 ${programs.length}건`);
 }
 
 async function markReported() {
-  const ids: { comments: number[]; programs: number[] } = JSON.parse(readFileSync(IDS_FILE, "utf8"));
+  const ids: { comments: number[]; programs: number[]; feedback?: number[] } = JSON.parse(readFileSync(IDS_FILE, "utf8"));
   const now = new Date().toISOString();
   if (ids.comments.length) await db.from("reports").update({ alerted_at: now }).in("comment_id", ids.comments).is("alerted_at", null);
   if (ids.programs.length) await db.from("program_reports").update({ alerted_at: now }).in("id", ids.programs);
+  if (ids.feedback?.length) await db.from("feedback").update({ alerted_at: now }).in("id", ids.feedback);
 }
 
 if (mode === "deadline") await deadline();

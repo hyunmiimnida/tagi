@@ -15,6 +15,7 @@ const SPAM_NOTICES: Record<string, string> = {
   daily: "오늘은 댓글을 더 쓸 수 없어요. 하루에 20개까지 쓸 수 있어요.",
   duplicate: "같은 내용의 댓글을 이미 썼어요.",
   links: "링크는 댓글 하나에 1개까지 넣을 수 있어요.",
+  suspended: "이용 규칙 위반으로 댓글 쓰기가 정지된 계정이에요.",
 };
 
 interface Comment {
@@ -93,7 +94,12 @@ export function Comments({ seriesId }: { seriesId: string }) {
     if (error) {
       // 도배 막기 규칙(supabase/spam.sql)에 걸리면 이유를 알려 주고, 쓴 글은 그대로 둔다
       const spam = error.message.match(/spam:(\w+)/)?.[1];
-      if (spam) setNotice(SPAM_NOTICES[spam] ?? SPAM_NOTICES.too_fast);
+      if (spam === "suspended") {
+        // 관리자가 정지한 계정 (supabase/admin.sql): 언제까지인지 함께 알린다
+        const { data } = await supabase.rpc("my_suspension");
+        const until = (data as { until: string | null } | null)?.until;
+        setNotice(`${SPAM_NOTICES.suspended} ${until ? `${new Date(until).toLocaleDateString("ko-KR")}까지 쓸 수 없어요.` : ""}`.trim());
+      } else if (spam) setNotice(SPAM_NOTICES[spam] ?? SPAM_NOTICES.too_fast);
       else setFailed(true);
       return;
     }

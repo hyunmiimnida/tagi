@@ -2230,3 +2230,424 @@ button.stat {
 .my-account-actions {
   padding: 8px 0 0;
 }
+
+/* ───────── 사이트 공지 (관리자 화면에서 켠다) ───────── */
+.site-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 8px;
+  padding: 12px 8px 12px 16px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.site-notice.warn {
+  background: var(--warn-soft);
+  color: var(--warn);
+}
+
+.site-notice > a,
+.site-notice > span {
+  flex: 1;
+  min-width: 0;
+}
+
+.site-notice > a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-notice-close {
+  display: inline-grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: inherit;
+  opacity: 0.7;
+}
+
+/* ───────── 의견 보내기 (프로필) ───────── */
+.feedback-text {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9375rem;
+  resize: vertical;
+}
+
+.feedback-reply {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  font-size: 0.875rem;
+}
+
+.feedback-reply strong {
+  color: var(--accent);
+  font-size: 0.8125rem;
+}
+
+/* ───────── 관리자 화면 ───────── */
+.admin-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-tabs {
+  margin: 0 -16px 12px;
+}
+
+.chip-count.admin-badge {
+  background: var(--warn);
+}
+
+.chip.active .chip-count.admin-badge {
+  color: #fff;
+}
+
+.admin-error {
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: var(--warn-soft);
+  color: var(--warn);
+  font-size: 0.875rem;
+}
+
+.admin-gate-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+  color: var(--text-2);
+  font-size: 0.9375rem;
+}
+
+.admin-gate-body .button {
+  margin-top: 4px;
+}
+
+.admin-code {
+  overflow-x: auto;
+  margin: 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  font-size: 0.8125rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.admin-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+
+@media (max-width: 520px) {
+  .admin-numbers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.admin-num {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--surface-2);
+  text-align: left;
+}
+
+.admin-num span,
+.admin-num small {
+  color: var(--text-3);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.admin-num strong {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.admin-chart {
+  margin: 20px 0 0;
+}
+
+.admin-chart figcaption {
+  color: var(--text-3);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.admin-chart figcaption strong {
+  color: var(--text);
+}
+
+.admin-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 80px;
+  margin-top: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.admin-bar {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.admin-bar span {
+  width: 100%;
+  min-height: 2px;
+  border-radius: 4px 4px 0 0;
+  background: var(--accent);
+}
+
+.admin-bar span.zero {
+  background: var(--line);
+}
+
+.admin-bar:hover span {
+  filter: brightness(1.15);
+}
+
+.admin-bars-axis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  color: var(--text-3);
+  font-size: 0.75rem;
+}
+
+.admin-list {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+
+.admin-list li {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.admin-list li:first-child {
+  border-top: 0;
+}
+
+.admin-list li.off {
+  opacity: 0.5;
+}
+
+.admin-list a {
+  color: var(--accent);
+}
+
+.admin-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.admin-meta {
+  color: var(--text-3);
+  font-size: 0.8125rem;
+}
+
+.admin-table {
+  overflow: hidden;
+}
+
+.admin-count {
+  padding: 16px 20px 0;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.admin-row {
+  cursor: pointer;
+  align-items: center;
+}
+
+.admin-row > svg {
+  flex-shrink: 0;
+  color: var(--text-3);
+}
+
+.admin-row-title {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-weight: 700;
+  text-align: left;
+}
+
+.admin-tag {
+  flex-shrink: 0;
+  padding: 0 6px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--text-2);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.admin-tag.warn {
+  background: var(--warn-soft);
+  color: var(--warn);
+}
+
+.admin-tag.accent-tag {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.admin-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px;
+  color: var(--text-3);
+  font-size: 0.875rem;
+}
+
+.admin-pager .button {
+  margin: 0;
+}
+
+.admin-facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 16px;
+  margin: 16px 0 0;
+  font-size: 0.875rem;
+}
+
+.admin-facts dt {
+  color: var(--text-3);
+}
+
+.admin-facts dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.admin-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+}
+
+.admin-spaced {
+  margin-top: 8px;
+}
+
+.my-card .button.admin-danger,
+.admin-danger {
+  color: var(--warn);
+}
+
+.my-card .my-row .button {
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+.admin-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.admin-feedback .row-meta {
+  flex-wrap: wrap;
+}
+
+.admin-body {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9375rem;
+  white-space: pre-wrap;
+}
+
+.admin-link {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.admin-quote {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-left: 3px solid var(--line);
+  color: var(--text-2);
+  font-size: 0.875rem;
+  white-space: pre-wrap;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 14px;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.admin-field textarea,
+.admin-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+
+.admin-preview {
+  margin-top: 14px;
+}
+
+.my-card code,
+.admin-gate code {
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  font-size: 0.8125rem;
+}
+
+.admin-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 2px;
+}

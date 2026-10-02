@@ -155,6 +155,46 @@ export function getCollectedBySchool(): { school: string; at: string; stale: boo
   }
 }
 
+// 관리자 화면의 출처별 수집 상태 (빌드할 때의 수집 기록)
+export interface SourceStatus {
+  id: string;
+  name: string; // "영남대학교 취업정보"
+  enabled: boolean;
+  localOnly: boolean; // 내 컴퓨터에서만 수집
+  ok: boolean | null; // 마지막 실행 결과 (기록이 없으면 null)
+  count: number | null; // 마지막 실행에서 가져온 새 글
+  message: string | null;
+  lastSuccessAt: string | null;
+  failStreak: number;
+}
+
+export function getCollectStatus(): { ranAt: string | null; sources: SourceStatus[] } {
+  let log: { ranAt?: string; sources?: { source: string; ok: boolean; count?: number; message?: string; lastSuccessAt?: string; failStreak?: number }[] } = {};
+  try {
+    log = readJson("data/collect-log.json");
+  } catch {
+    // 수집 기록이 없으면 빈 상태로 보여 준다
+  }
+  const bySource = new Map((log.sources ?? []).map((s) => [s.source, s]));
+  const sources = readSchools().flatMap((school) =>
+    school.sources.map((source) => {
+      const entry = bySource.get(source.id);
+      return {
+        id: source.id,
+        name: `${school.name} ${source.name}`,
+        enabled: source.enabled,
+        localOnly: Boolean(source.localOnly),
+        ok: entry ? entry.ok : null,
+        count: entry?.count ?? null,
+        message: entry?.message ?? null,
+        lastSuccessAt: entry?.lastSuccessAt ?? null,
+        failStreak: entry?.failStreak ?? 0,
+      };
+    }),
+  );
+  return { ranAt: log.ranAt ?? null, sources };
+}
+
 // 마지막 수집 시각을 "10.1 06:00" 형식(한국 시간)으로
 export function getLastCollected(): string | null {
   try {
