@@ -4,12 +4,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { GRADES, STUDENT_STATUSES } from "../src/types.ts";
-import { daysUntil, formatDate, recruitWord, upcomingEvents } from "../lib/filter.ts";
+import { daysUntil, formatDate, isCurrent, recruitWord, upcomingEvents } from "../lib/filter.ts";
 import type { ProgramView, SchoolOption } from "../lib/filter.ts";
 import { downloadIcs } from "../lib/ics.ts";
 import { CONTACT } from "../lib/policy.ts";
 import { disablePush, enablePush, needsInstallForPush, pushOnThisDevice } from "../lib/push.ts";
 import { canInstall, install, subscribeInstall } from "../lib/pwa.ts";
+import { useListPrograms, useSeriesInfo } from "../lib/use-list.ts";
 import { LOGIN_PROVIDERS, supabase, useToday, useUser } from "../lib/user.tsx";
 import type { Profile } from "../lib/user.tsx";
 import { FeedbackBox } from "./FeedbackBox.tsx";
@@ -18,8 +19,6 @@ import { CalendarPlusIcon, ChevronIcon, ProfileIcon } from "./Icons.tsx";
 interface Props {
   schools: SchoolOption[];
   fieldTags: string[]; // 관심 분야로 고를 수 있는 태그
-  seriesInfo: Record<string, [title: string, currentId: string | null]>; // 댓글이 달린 프로그램 이름·주소
-  programs: ProgramView[]; // 지금 목록 공고 (관심 공고 일정·관심 분야 공고 수)
   sources: string; // 모으는 곳 요약 (예: "영남대학교·경북대학교… 공지 40곳")
 }
 
@@ -34,10 +33,13 @@ const NICKNAME = /^.{2,12}$/u;
 const SOON_DAYS = 7; // "곧 마감"으로 셀 기간
 
 // 프로필: 머리(닉네임·활동 수), 맞춤 설정 안내, 다가오는 내 일정, 내 정보, 관심 분야, 알림·캘린더, 내 댓글, 숨긴 사용자, 안내, 계정
-export function MyAccount({ schools, fieldTags, seriesInfo, programs, sources }: Props) {
+export function MyAccount({ schools, fieldTags, sources }: Props) {
   const user = useUser();
   const router = useRouter();
   const today = useToday();
+  // 관심 공고 일정·관심 분야 공고 수: 아직 볼 만한 공고만 (목록 데이터는 홈·공고 화면과 같이 쓴다)
+  const { programs: loaded } = useListPrograms();
+  const programs: ProgramView[] = useMemo(() => (loaded && today ? loaded.filter((p) => isCurrent(p, today)) : []), [loaded, today]);
   const { profile } = user;
   const [blockCount, setBlockCount] = useState<number | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -75,6 +77,8 @@ export function MyAccount({ schools, fieldTags, seriesInfo, programs, sources }:
   useEffect(() => {
     void loadMyComments();
   }, [loadMyComments]);
+  // 댓글이 어느 프로그램에 달렸는지: 댓글이 있을 때만 받는다
+  const seriesInfo = useSeriesInfo(Boolean(myComments && myComments.length > 0));
 
   // 관리자 계정이면 "관리자 화면" 링크를 보여 준다 (supabase/admin.sql을 아직 실행하지 않았으면 오류 → 안 보임)
   const [isAdmin, setIsAdmin] = useState(false);

@@ -110,6 +110,15 @@ export function isClosed(program: Program, today: string): boolean {
   return daysUntil(today, addedAt(program)) > UNDATED_OPEN_DAYS;
 }
 
+// 아직 볼 만한 공고: 마감되지 않았거나 남은 일정이 있다 (홈·프로필용. 시간대 차이를 생각해 하루 여유를 둔다)
+export function isCurrent(program: Program, today: string): boolean {
+  const day = toDateString(new Date(Date.parse(today) - 86_400_000));
+  return (
+    !isClosed(program, day) ||
+    [program.recruitPeriod.end, program.activityPeriod.start, program.activityPeriod.end].some((d) => d !== null && d >= day)
+  );
+}
+
 export function daysUntil(date: string, today: string): number {
   return Math.round((Date.parse(date) - Date.parse(today)) / 86_400_000);
 }

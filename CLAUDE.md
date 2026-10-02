@@ -116,6 +116,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
   - 목록 필터는 주소(`?school=yu&unit=...&tag=...&q=...&closed=1&sort=recent`)에 저장된다
   - 상세·캘린더에서 `.ics` 캘린더 파일로 내보낼 수 있다 (`lib/ics.ts`, 마감 일정에는 하루 전 오전 9시 알림)
   - 검색(`matchesKeyword`)은 제목·주최·한 줄 요약·태그에서 찾고, 띄어 쓴 단어는 모두 들어 있어야 한다(띄어쓰기 무시)
+- 화면 데이터: 홈·목록·캘린더·프로필·관리자는 공고를 HTML에 넣지 않고 `public/api/list.json`(빌드 때 `scripts/build-api.ts`가 만드는 가벼운 목록, 형식 `lib/list.ts`)을 한 번 받아 같이 쓴다(`lib/use-list.ts`의 `useListPrograms`). 반복 프로그램 이름표는 `public/api/series-info.json`(댓글이 있을 때만). `npm run dev`도 시작 전에 이 파일을 만든다(`predev`). 목록은 30개씩 그리고 끝까지 내리면 더 그린다
 - `components/` — 화면 부품, `lib/` — 필터 규칙·데이터 읽기·로그인 상태
 - `supabase/schema.sql` — 로그인 사용자 데이터 표(학교 설정, 관심 표시, 후기 댓글)
 - `supabase/admin.sql` — 관리자 화면: 관리자(`admins`), 이용 정지(`suspensions`), 의견함(`feedback`), 사이트 공지(`announcements`), 관리 기록(`admin_log`), 관리 함수(`admin_*`)

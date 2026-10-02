@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ELIGIBILITY,
   addedAt,
@@ -13,14 +13,15 @@ import {
   visibleForSchool,
 } from "../lib/filter.ts";
 import type { FilterCategory, ProgramView, SchoolOption } from "../lib/filter.ts";
+import { useListPrograms } from "../lib/use-list.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import { LIST_QUERY_KEY } from "./BackLink.tsx";
 import { ChevronIcon, CloseIcon, SearchIcon } from "./Icons.tsx";
 import { EmptyArt } from "./EmptyArt.tsx";
+import { ListError } from "./ListError.tsx";
 import { ProgramRow } from "./ProgramRow.tsx";
 
 interface Props {
-  programs: ProgramView[];
   categories: FilterCategory[];
   schools: SchoolOption[];
 }
@@ -39,6 +40,17 @@ interface Filters {
 }
 
 const SCHOOL_PANEL = "school"; // 학교 칩을 열었을 때의 패널 id
+const PAGE_SIZE = 30; // 처음에 그리는 공고 수. 끝까지 내리면(또는 "더 보기") 이만큼씩 더 그린다
+const LIMIT_KEY = "listLimit"; // 상세에서 뒤로 왔을 때 보던 곳까지 다시 그리려고 기억한다
+
+function readLimit(): number {
+  try {
+    const value = Number(sessionStorage.getItem(LIMIT_KEY));
+    return Number.isFinite(value) && value > PAGE_SIZE ? value : PAGE_SIZE;
+  } catch {
+    return PAGE_SIZE;
+  }
+}
 
 // 필터 상태를 주소(?school=...&tag=...&q=...)에 담아 뒤로 가기·공유 때도 유지한다
 function readQuery() {
@@ -74,9 +86,12 @@ function writeQuery({ school, units, who, tags, keyword, showClosed, includeOpen
   }
 }
 
-export function Explorer({ programs, categories, schools }: Props) {
+export function Explorer({ categories, schools }: Props) {
   const user = useUser();
   const today = useToday();
+  const { programs: loadedPrograms, failed, retry } = useListPrograms();
+  const programs: ProgramView[] = useMemo(() => loadedPrograms ?? [], [loadedPrograms]);
+  const [limit, setLimit] = useState(PAGE_SIZE);
   const [loaded, setLoaded] = useState(false);
   const [school, setSchool] = useState<string | null>(null);
   const [schoolFromUrl, setSchoolFromUrl] = useState(false);
@@ -106,6 +121,7 @@ export function Explorer({ programs, categories, schools }: Props) {
     setShowClosed(query.showClosed);
     setIncludeOpen(query.includeOpen);
     setSort(query.sort);
+    setLimit(readLimit());
     setLoaded(true);
   }, []);
 
@@ -124,6 +140,38 @@ export function Explorer({ programs, categories, schools }: Props) {
   useEffect(() => {
     if (loaded) writeQuery({ school, units, who, tags: selected, keyword, showClosed, includeOpen, sort });
   }, [loaded, school, units, who, selected, keyword, showClosed, includeOpen, sort]);
+
+  // 필터·검색·정렬을 바꾸면 다시 처음 30개부터 그린다 (처음 불러올 때 주소에서 읽은 값은 빼고)
+  const filterKey = JSON.stringify([school, [...units], [...who], [...selected], keyword, showClosed, includeOpen, sort]);
+  const lastFilterKey = useRef<string | null>(null);
+  useEffect(() => {
+    if (!loaded) return;
+    if (lastFilterKey.current !== null && lastFilterKey.current !== filterKey) setLimit(PAGE_SIZE);
+    lastFilterKey.current = filterKey;
+  }, [loaded, filterKey]);
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem(LIMIT_KEY, String(limit));
+    } catch {
+      // 저장소를 못 쓰면 기억하지 않는다
+    }
+  }, [limit]);
+
+  // 목록 끝이 보이면 더 그린다
+  const moreRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const node = moreRef.current;
+    if (!node || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) setLimit((n) => n + PAGE_SIZE);
+      },
+      { rootMargin: "600px 0px" },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  });
 
   // 주최 유형 태그는 주최 줄에 이미 보이므로 공고 태그에서는 뺀다
   const organizerTags = useMemo(
@@ -195,7 +243,7 @@ export function Explorer({ programs, categories, schools }: Props) {
 
   const currentSchool = schools.find((s) => s.id === school) ?? null;
   const openedCategory = categories.find((category) => category.id === openPanel);
-  const ready = loaded && today !== "";
+  const ready = loaded && today !== "" && loadedPrograms !== null;
   const hasChips = selected.size > 0 || units.size > 0 || who.size > 0;
   const schoolFilterCount = units.size + who.size;
 
@@ -340,7 +388,9 @@ export function Explorer({ programs, categories, schools }: Props) {
         </div>
       </div>
 
-      {!ready ? (
+      {failed ? (
+        <ListError onRetry={retry} />
+      ) : !ready ? (
         <ul className="rows" aria-busy="true">
           {Array.from({ length: 6 }, (_, i) => (
             <li key={i} className="row skeleton-row" />
@@ -373,11 +423,20 @@ export function Explorer({ programs, categories, schools }: Props) {
           </div>
         </div>
       ) : (
-        <ul className="rows">
-          {visible.map((program) => (
-            <ProgramRow key={program.id} program={program} today={today} hiddenTags={organizerTags} />
-          ))}
-        </ul>
+        <>
+          <ul className="rows">
+            {visible.slice(0, limit).map((program) => (
+              <ProgramRow key={program.id} program={program} today={today} hiddenTags={organizerTags} />
+            ))}
+          </ul>
+          {visible.length > limit && (
+            <div ref={moreRef} className="list-more">
+              <button className="button wide" onClick={() => setLimit((n) => n + PAGE_SIZE)}>
+                더 보기 ({visible.length - limit}개 남음)
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
