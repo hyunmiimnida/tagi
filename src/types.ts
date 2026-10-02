@@ -79,6 +79,8 @@ export interface TableBoard {
   // list는 목록 칸 값({page} 자리에 쪽 번호), view는 상세 칸 값({id} 자리에 게시물 번호). 이때 idPattern은 풀어 낸 값에서 번호를 찾고,
   // viewUrl의 {id} 자리에는 감싼 view 값이 들어간다
   encoded?: { param: string; list: string; view: string };
+  row?: string; // 목록에서 게시물 하나를 감싼 요소 (기본: "tr"). 카드(li·div) 모양 목록이면 그 선택자
+  idAttr?: string; // 게시물 번호를 찾을 링크 속성 (기본: "href"). 예: "onclick", "data-itsp-view-link"
 }
 
 // 교내 기관(사업단 등). 주최 이름에 keywords 중 하나가 들어 있으면 그 기관으로 본다

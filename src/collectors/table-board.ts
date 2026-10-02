@@ -55,14 +55,15 @@ async function listPage(ctx: CollectContext, page: number): Promise<ArchivePost[
   const $ = cheerio.load(await ctx.fetchHtml(address));
   const posts: ArchivePost[] = [];
   for (const a of $(board.link).toArray()) {
-    const href = $(a).attr("href") ?? "";
+    // 번호가 링크 주소가 아닌 다른 속성(onclick="jf_view(...)", data-...)에 있는 게시판은 idAttr로 그 속성을 읽는다
+    const href = $(a).attr(board.idAttr ?? "href") ?? "";
     // 주소의 & 앞뒤가 깨져 있어도 번호를 찾도록 글자로 찾는다
     // 번호가 주소 경로에 있으면(idPattern) 그 규칙으로, 아니면 주소의 칸(idParam)에서 찾는다
     const pattern = board.idPattern ?? `[?&]${(board.idParam ?? "").replace(/\./g, "\\.")}=(\\d+)`;
     const target = board.encoded ? unb64(href.match(new RegExp(`[?&]${board.encoded.param}=([^&]+)`))?.[1] ?? "") : href;
     const postId = target.match(new RegExp(pattern))?.[1];
     if (!postId) continue;
-    const row = $(a).closest("tr");
+    const row = $(a).closest(board.row ?? "tr"); // 카드 모양 목록은 row로 게시물 하나의 범위를 정한다
     posts.push({
       postId,
       title: clean($(a).attr("title") || $(a).text()),

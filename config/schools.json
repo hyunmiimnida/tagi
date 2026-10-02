@@ -798,5 +798,73 @@
         }
       }
     ]
+  },
+  {
+    "id": "snu",
+    "name": "서울대학교",
+    "shortName": "서울대",
+    "sources": [
+      {
+        "id": "snu-career",
+        "name": "경력개발센터",
+        "collector": "table-board",
+        "url": "https://career.snu.ac.kr/center/community/notice",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "경력개발센터",
+        "board": {
+          "link": "tr td.tit_td a.tit",
+          "idParam": "no",
+          "viewUrl": "https://career.snu.ac.kr/center/community/notice/view?no={id}",
+          "pageParam": "page",
+          "title": "table.t_view tbody tr:nth-child(1) td",
+          "content": "table.t_view td.bt_none > div",
+          "listDate": "td.date",
+          "date": "table.t_view tbody tr:nth-child(2) td:nth-child(4)"
+        }
+      },
+      {
+        "id": "snu-startup",
+        "name": "창업지원단",
+        "collector": "table-board",
+        "url": "https://startup.snu.ac.kr/bbs/board.php?bo_table=sub5_1",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "창업지원단",
+        "board": {
+          "link": "tr td.td_subject a[href*=\"wr_id=\"]",
+          "idParam": "wr_id",
+          "viewUrl": "https://startup.snu.ac.kr/bbs/board.php?bo_table=sub5_1&wr_id={id}",
+          "pageParam": "page",
+          "title": "#bo_v_title .bo_v_tit",
+          "content": "#bo_v_con",
+          "listDate": "td.td_datetime",
+          "date": "#bo_v_info .if_date"
+        }
+      },
+      {
+        "id": "snu-student",
+        "name": "학생처",
+        "collector": "table-board",
+        "url": "https://student.snu.ac.kr/%ec%86%8c%ec%8b%9d%c2%b7%ec%95%8c%eb%a6%bc/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "학생처",
+        "board": {
+          "link": "ul.board_body li .subject a",
+          "row": "li",
+          "idParam": "uid",
+          "viewUrl": "https://student.snu.ac.kr/%ec%86%8c%ec%8b%9d%c2%b7%ec%95%8c%eb%a6%bc/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/?mod=document&uid={id}",
+          "pageParam": "pageid",
+          "title": ".kboard-header h1.tit",
+          "content": ".kboard-content .content-view",
+          "listDate": "span.date",
+          "date": ".kboard-info .date .value"
+        }
+      }
+    ]
   }
 ]
