@@ -34,6 +34,12 @@ export function FeedbackBox() {
   const [state, setState] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
   const [mine, setMine] = useState<MyFeedback[]>([]);
+  // supabase/admin.sql을 실행하기 전에는 의견을 받을 표가 없으니 상자를 숨긴다 (is_admin 함수가 있으면 실행한 것)
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    void supabase?.rpc("is_admin").then(({ error }) => setReady(!error));
+  }, []);
 
   const load = useCallback(async () => {
     if (!supabase || !user.userId) return setMine([]);
@@ -45,7 +51,7 @@ export function FeedbackBox() {
     void load();
   }, [load]);
 
-  if (!supabase) return null;
+  if (!supabase || !ready) return null;
 
   async function send(event: React.FormEvent) {
     event.preventDefault();
