@@ -866,6 +866,52 @@
     "seriesId": "dcu-service-180190"
   },
   {
+    "id": "konkuk-student-1174170",
+    "title": "[실감미디어혁신융합대학사업단] 제5회 CO-Week Academy(6/29~7/3, 평창 알펜시아 리조트) 개최 및 수강신청을 위한 회원가입 안내(~5/27(수), 선착순 모집)",
+    "organizer": "실감미디어혁신융합대학사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-05-27"
+    },
+    "activityPeriod": {
+      "start": "2026-06-29",
+      "end": "2026-07-03"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-student",
+        "url": "https://www.konkuk.ac.kr/bbs/konkuk/238/1174170/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-student"
+    ],
+    "postedAt": "2026-05-11",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:57:17.710Z",
+    "summary": "평창에서 열리는 CO-Week Academy 특강을 숙박·식사 지원받으며 들어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:57:17.710Z"
+  },
+  {
     "id": "yu-news-230612475",
     "title": "[해외인턴] 해외 인턴/일경험 프로그램 참여자 모집(미국, 영국)(IGE)",
     "organizer": "IGE Korea",
@@ -2864,6 +2910,53 @@
     "firstSeenAt": "2026-10-01T19:14:19.709Z"
   },
   {
+    "id": "konkuk-job-1175732",
+    "title": "[대학일자리+] (졸업생특화) 1학기 현직자 동문선배 멘토링 \"멘토래담 - 선배와의 브런치\"",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-06-27",
+      "end": "2026-06-27"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-job",
+        "url": "https://www.konkuk.ac.kr/bbs/job/4083/1175732/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-job"
+    ],
+    "postedAt": "2026-06-08",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:56:55.849Z",
+    "summary": "현직자 동문선배와 브런치를 하며 취업 노하우를 듣고 질문해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:56:55.849Z"
+  },
+  {
     "id": "yu-career-2510",
     "title": "[한국건설기술인협회] 스마트건설기술교육",
     "organizer": "한국건설기술인협회",
@@ -3202,6 +3295,50 @@
     "seriesId": "knu-startup-616"
   },
   {
+    "id": "konkuk-startup-556443",
+    "title": "Notion 공동 창업자와 직접 만나는 특별한 시간에 함께하세요!",
+    "organizer": "창업지원본부",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-startup",
+        "url": "https://startup.konkuk.ac.kr/BoardView.do?menuSeq=43842&configSeq=51096&seq=556443"
+      }
+    ],
+    "sources": [
+      "konkuk-startup"
+    ],
+    "postedAt": "2026-06-26",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:56:04.406Z",
+    "summary": "Notion 공동 창업자를 직접 만나는 특별한 행사에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:56:04.406Z"
+  },
+  {
     "id": "yu-news-230415663",
     "title": "[글로컬대학사업단 경북AI융합원] 3극 MIB 벨트 AX 혁신 1차년도 산학공동기술개발과제 공고",
     "organizer": "경북AI융합원",
@@ -3473,6 +3610,50 @@
     "collectedAt": "2026-10-01T19:14:23.234Z",
     "summary": "품질·안전보건 경영시스템을 배우고 ISO 9001·45001 자격증에 도전해요.",
     "firstSeenAt": "2026-10-01T19:14:23.234Z"
+  },
+  {
+    "id": "yonsei-notice-943527",
+    "title": "2026학년도 2학기 학부 휴학 및 복학 신청 안내 / Notice for Fall 2026 Semester Leave&Return",
+    "organizer": "교무처 학사지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-notice",
+        "url": "https://www.yonsei.ac.kr/bbs/sc/58/943527/artclView.do"
+      }
+    ],
+    "sources": [
+      "yonsei-notice"
+    ],
+    "postedAt": "2026-06-25",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:55:33.329Z",
+    "summary": "2학기 일반·입대휴학과 복학을 정해진 기간에 신청해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:55:33.329Z"
   },
   {
     "id": "yu-career-2512",
@@ -4330,6 +4511,55 @@
     "summary": "산촌여행 숲체험 프로그램을 돕는 봉사활동을 해요",
     "firstSeenAt": "2026-10-02T00:03:06.267Z",
     "seriesId": "dcu-service-184151"
+  },
+  {
+    "id": "konkuk-student-1175118",
+    "title": "[KLI] 2026학년도 1학기 2차 외국어특별장학생 신청 안내",
+    "organizer": "KLI",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-06-01",
+      "end": "2026-06-19"
+    },
+    "activityPeriod": {
+      "start": "2026-06-23",
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-student",
+        "url": "https://www.konkuk.ac.kr/bbs/konkuk/238/1175118/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-student"
+    ],
+    "postedAt": "2026-05-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:57:13.095Z",
+    "summary": "외국어 강좌를 장학금 지원으로 수강해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:57:13.095Z"
   },
   {
     "id": "yu-news-230471828",
@@ -7999,6 +8229,52 @@
     "firstSeenAt": "2026-10-02T00:03:13.428Z"
   },
   {
+    "id": "snu-startup-60",
+    "title": "[서울대학교 산학협력단] 2026년도 「실험실 특화형 창업선도대학」 사업 서울대학교 대학원생 창업동아리 하반기 모집공고(상시모집)",
+    "organizer": "서울대학교 산학협력단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "snu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "장학·지원금",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "snu-startup",
+        "url": "https://startup.snu.ac.kr/bbs/board.php?bo_table=sub5_1&wr_id=60"
+      }
+    ],
+    "sources": [
+      "snu-startup"
+    ],
+    "postedAt": "2026-06-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:55:11.736Z",
+    "summary": "대학원생 창업동아리로 선정되면 활동비와 멘토링을 지원받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:55:11.736Z"
+  },
+  {
     "id": "yu-career-2508",
     "title": "[우리은행] 상반기 신입행원 채용설명회 및 상담회(경북대학교)",
     "organizer": "우리은행",
@@ -10535,6 +10811,59 @@
     "seriesId": "dcu-service-186929"
   },
   {
+    "id": "konkuk-student-1173942",
+    "title": "[모집공고] 건국대학교 일우헌 언론사준비반‘KU-MCA’ 1기 신입실원 선발",
+    "organizer": "일우헌",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "3학년",
+        "4학년"
+      ],
+      "statuses": [
+        "재학생",
+        "휴학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-05-17"
+    },
+    "activityPeriod": {
+      "start": "2026-06-01",
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강",
+      "멘토링·컨설팅",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-student",
+        "url": "https://www.konkuk.ac.kr/bbs/konkuk/238/1173942/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-student"
+    ],
+    "postedAt": "2026-05-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:57:18.885Z",
+    "summary": "언론인 준비반에서 현직 언론인 멘토의 첨삭과 특강을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:57:18.885Z"
+  },
+  {
     "id": "yu-news-229838659",
     "title": "[실습생 모집_환경공학💧] 대구공공시설관리공단 2026-여름학기 국내 현장실습학기제 참여학생 모집안내",
     "organizer": "현장실습지원팀",
@@ -12012,6 +12341,54 @@
     "firstSeenAt": "2026-10-01T19:17:53.243Z"
   },
   {
+    "id": "konkuk-job-1174735",
+    "title": "[혁신사업] [KU Career Coaching] 직무 특강 신청 받습니다! 📢",
+    "organizer": "진로취업센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-05-24"
+    },
+    "activityPeriod": {
+      "start": "2026-05-27",
+      "end": "2026-05-28"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-job",
+        "url": "https://www.konkuk.ac.kr/bbs/job/4083/1174735/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-job"
+    ],
+    "postedAt": "2026-05-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:57:02.797Z",
+    "summary": "현직자에게 반도체 공정기술·인사 직무를 배우는 온라인 특강이에요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:57:02.797Z"
+  },
+  {
     "id": "yu-news-230106026",
     "title": "[모집중] 2026 병역진로설계 설명회(대구경북지방병무청)",
     "organizer": "대구경북지방병무청",
@@ -12882,6 +13259,51 @@
     "summary": "해외봉사에 참여하는 대학생 장학생으로 지원해요",
     "firstSeenAt": "2026-10-02T00:03:24.852Z",
     "seriesId": "dcu-scholarship-168456"
+  },
+  {
+    "id": "konkuk-startup-534703",
+    "title": "「ICT 규제 샌드박스」 활용을 위한 설명회& 1:1 상담 프로그램 [창업역량강화교육 2탄]",
+    "organizer": "창업지원본부",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-05-25"
+    },
+    "activityPeriod": {
+      "start": "2026-05-26",
+      "end": "2026-05-26"
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-startup",
+        "url": "https://startup.konkuk.ac.kr/BoardView.do?menuSeq=43842&configSeq=51096&seq=534703"
+      }
+    ],
+    "sources": [
+      "konkuk-startup"
+    ],
+    "postedAt": "2026-05-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:56:05.492Z",
+    "summary": "ICT 규제 샌드박스 제도 설명을 듣고 1:1 상담도 받을 수 있어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:56:05.492Z"
   },
   {
     "id": "dcu-notice-185011",
@@ -15401,6 +15823,51 @@
     "seriesId": "dcu-scholarship-180254"
   },
   {
+    "id": "konkuk-job-1174435",
+    "title": "[대학일자리+] 구글코리아-고용노동부 협력「Google AI Professional Certificate」수강생 모집 안내 (선착순!)",
+    "organizer": "구글코리아, 고용노동부",
+    "organizerType": "기업",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "수료생·졸업생 지역청년"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "기업",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-job",
+        "url": "https://www.konkuk.ac.kr/bbs/job/4083/1174435/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-job"
+    ],
+    "postedAt": "2026-05-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:56:10.825Z",
+    "summary": "구글 AI 도구 활용 교육을 듣고 수료증과 AI Pro 이용권을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:56:10.825Z"
+  },
+  {
     "id": "yu-news-229599605",
     "title": "[SCOUT사업단] 2026 Y-Star 대학생 창업경진대회(접수: ~5.17까지)",
     "organizer": "창업교육혁신선도대학사업단",
@@ -17768,6 +18235,50 @@
     "collectedAt": "2026-10-02T00:03:33.050Z",
     "summary": "한아름마을 둘레길 투어를 돕는 봉사에 참여해요",
     "firstSeenAt": "2026-10-02T00:03:33.050Z"
+  },
+  {
+    "id": "konkuk-student-1172858",
+    "title": "[한국대학사회봉사협의회]50기 WFK청년봉사단 단원모집 안내",
+    "organizer": "한국대학사회봉사협의회",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-05-13"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-student",
+        "url": "https://www.konkuk.ac.kr/bbs/konkuk/238/1172858/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-student"
+    ],
+    "postedAt": "2026-04-20",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:57:20.054Z",
+    "summary": "WFK 청년봉사단 단원으로 활동해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:57:20.054Z"
   },
   {
     "id": "yu-news-229894893",
@@ -27442,6 +27953,52 @@
     "seriesId": "dcu-service-184151"
   },
   {
+    "id": "konkuk-student-1171461",
+    "title": "[WE人교육센터] 2026-1학기 'AI튜터 닥터쿠(Dr.KU)' 맞춤형 학습 서비스 및 신규 콘텐츠 안내 [재학생 신청]",
+    "organizer": "대학교육혁신원 WE人교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-03-31",
+      "end": "2026-04-12"
+    },
+    "activityPeriod": {
+      "start": "2026-04-07",
+      "end": "2026-04-16"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-student",
+        "url": "https://www.konkuk.ac.kr/bbs/konkuk/238/1171461/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-student"
+    ],
+    "postedAt": "2026-04-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:57:23.424Z",
+    "summary": "AI 튜터로 진단 평가를 받고 맞춤형 학습 콘텐츠를 이용해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:57:23.424Z"
+  },
+  {
     "id": "yu-career-2455",
     "title": "[한미그룹] 채용설명회(학생지원센터 201호)",
     "organizer": "한미그룹",
@@ -31246,6 +31803,97 @@
     "seriesId": "dcu-service-184378"
   },
   {
+    "id": "konkuk-student-1171532",
+    "title": "[한국지속가능경영연구원] KU YOUNG MAKERS with 라이나생명 참여자 모집",
+    "organizer": "한국지속가능경영연구원",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "기업"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-student",
+        "url": "https://www.konkuk.ac.kr/bbs/konkuk/238/1171532/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-student"
+    ],
+    "postedAt": "2026-04-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:57:22.297Z",
+    "summary": null,
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:57:22.297Z",
+    "seriesId": "konkuk-student-1171532"
+  },
+  {
+    "id": "konkuk-student-1170067",
+    "title": "[메이커스페이스센터] 2026 Glocal Impact Living Lab 메이커스 프로그램 일정 안내",
+    "organizer": "메이커스페이스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-03-17",
+      "end": "2026-03-18"
+    },
+    "activityPeriod": {
+      "start": "2026-03-20",
+      "end": "2026-04-03"
+    },
+    "tags": [
+      "학교",
+      "교육·특강",
+      "창업"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-student",
+        "url": "https://www.konkuk.ac.kr/bbs/konkuk/238/1170067/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-student"
+    ],
+    "postedAt": "2026-03-17",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:57:24.570Z",
+    "summary": "스페인 학생과 협업해 지역 문제를 풀고 시제품을 만들어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:57:24.570Z"
+  },
+  {
     "id": "yu-news-229290105",
     "title": "[신청마감] 2026학년도 총장-재학생 간담회 참가학생 모집",
     "organizer": "학생지원팀",
@@ -31369,6 +32017,51 @@
     "collectedAt": "2026-10-01T19:17:39.159Z",
     "summary": "온라인 특강에서 청년고용정책과 지원 제도 활용법을 배워요.",
     "firstSeenAt": "2026-10-01T19:17:39.159Z"
+  },
+  {
+    "id": "konkuk-job-1171433",
+    "title": "[대학일자리+] (졸업생특화) 2026학년도 졸업생 맞춤형 취업컨설팅 & 잡매칭 프로그램",
+    "organizer": "대학일자리플러스사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "타대 졸업생 및 졸업예정자"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-job",
+        "url": "https://www.konkuk.ac.kr/bbs/job/4083/1171433/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-job"
+    ],
+    "postedAt": "2026-04-02",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:56:14.288Z",
+    "summary": "1:1 취업컨설팅을 5회 받고 채용정보도 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:56:14.288Z"
   },
   {
     "id": "yu-career-2450",
@@ -39786,6 +40479,52 @@
     "seriesId": "dcu-service-178513"
   },
   {
+    "id": "konkuk-job-1169287",
+    "title": "[건국대학교X마이다스] ☆잡다AI 역량검사 제휴해택☆",
+    "organizer": "대학일자리플러스센터, 마이다스인",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "타대생(지역청년)"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-job",
+        "url": "https://www.konkuk.ac.kr/bbs/job/4083/1169287/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-job"
+    ],
+    "postedAt": "2026-03-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:56:17.793Z",
+    "summary": "기업 전형에 쓰는 AI역량검사를 무료로 응시하고 결과 분석을 받아요",
+    "noApplication": true,
+    "firstSeenAt": "2026-10-02T12:56:17.793Z"
+  },
+  {
     "id": "yu-news-228937866",
     "title": "2026학년도 BOOST 전화&화상 외국어(3월 과정) 모집 안내",
     "organizer": "한국어‧국제언어교육원",
@@ -47286,6 +48025,50 @@
     "collectedAt": "2026-10-01T19:18:25.698Z",
     "summary": "취업과 연계한 졸업 행사에 참여하고 기념품과 간식을 받아요",
     "firstSeenAt": "2026-10-01T19:18:25.698Z"
+  },
+  {
+    "id": "konkuk-job-1167181",
+    "title": "[위인교육센터x대학혁신지원사업] 2026 건국대학교 인증 비교과 프로그램",
+    "organizer": "진로취업센터, 대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-job",
+        "url": "https://www.konkuk.ac.kr/bbs/job/4083/1167181/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-job"
+    ],
+    "postedAt": "2026-02-10",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:56:21.282Z",
+    "summary": "진로·취창업 비교과 프로그램을 수료하고 KUM마일리지를 적립해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:56:21.282Z"
   },
   {
     "id": "yu-news-228601735",
@@ -55696,55 +56479,6 @@
     "seriesId": "yu-news-227862473"
   },
   {
-    "id": "yu-news-227821221",
-    "title": "2025학년도 2학기 성적 조기열람 관련 폭력예방교육 수강 안내",
-    "organizer": "인권센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2025-12-31"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227931815"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227821221"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-12-23",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:14:30.689Z",
-    "firstSeenAt": "2026-10-01T04:14:30.689Z",
-    "seriesId": "yu-news-10261173",
-    "aliases": [
-      "yu-news-227931815"
-    ]
-  },
-  {
     "id": "yu-news-227725610",
     "title": "[마감][RISE-MEGA] 「2025학년도 현대 NGV 교육」 참가학생 모집",
     "organizer": "미래자동차혁신부품사업단",
@@ -55784,48 +56518,6 @@
     "collectedAt": "2026-10-01T04:15:45.136Z",
     "firstSeenAt": "2026-10-01T04:15:45.136Z",
     "seriesId": "yu-news-227862473"
-  },
-  {
-    "id": "yu-news-226612491",
-    "title": "2025학년도 2학기 폭력예방교육 수강 안내",
-    "organizer": "인권센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2025-12-31"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=226612491"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-09-17",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:31:44.899Z",
-    "firstSeenAt": "2026-10-01T04:31:44.899Z",
-    "seriesId": "yu-news-10261173"
   },
   {
     "id": "yu-news-226436147",
@@ -55869,65 +56561,6 @@
     "collectedAt": "2026-10-01T04:34:14.240Z",
     "firstSeenAt": "2026-10-01T04:34:14.240Z",
     "seriesId": "yu-news-224028827"
-  },
-  {
-    "id": "yu-news-224526213",
-    "title": "2025학년도 1학기 성적 조기열람 관련 폭력예방교육 수강 안내",
-    "organizer": "인권센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2025-12-31"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=225500837"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=225406047"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=225270321"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224526213"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-06-27",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:50:23.756Z",
-    "firstSeenAt": "2026-10-01T04:50:23.756Z",
-    "seriesId": "yu-news-10261173",
-    "aliases": [
-      "yu-news-225500837",
-      "yu-news-225406047",
-      "yu-news-225270321"
-    ]
   },
   {
     "id": "yu-news-224095659",
@@ -76262,47 +76895,6 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T04:23:34.219Z",
     "firstSeenAt": "2026-10-01T04:23:34.219Z"
-  },
-  {
-    "id": "yu-news-227209729",
-    "title": "[안내] 2025학년도 제안제도 시행",
-    "organizer": "기획조정팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227209729"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-10-31",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:23:36.479Z",
-    "firstSeenAt": "2026-10-01T04:23:36.479Z",
-    "seriesId": "yu-news-227209729"
   },
   {
     "id": "yu-news-227209723",
@@ -98410,6 +99002,51 @@
     "summary": "익산사랑 장학생 선발에 지원해 장학금을 받아요.",
     "firstSeenAt": "2026-10-01T23:50:39.183Z",
     "seriesId": "dcu-scholarship-174570"
+  },
+  {
+    "id": "konkuk-job-1156318",
+    "title": "[대학일자리+] 2026 졸업생 특화 프로그램 안내 ★ #취업준비",
+    "organizer": "대학일자리플러스사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "만 34세 이하 지역청년"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-job",
+        "url": "https://www.konkuk.ac.kr/bbs/job/4083/1156318/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-job"
+    ],
+    "postedAt": "2025-08-27",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:56:24.692Z",
+    "summary": "졸업생 인재풀에 등록해 1:1 상담과 취업 프로그램 우선 선발 혜택을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:56:24.692Z"
   },
   {
     "id": "yu-news-226313757",
@@ -128030,8 +128667,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T18:27:56.779Z",
     "summary": "실험동물 사용과 관리에 관한 법정교육을 온라인으로 이수해요.",
-    "firstSeenAt": "2026-10-01T18:27:56.779Z",
-    "seriesId": "dcu-notice-173807"
+    "firstSeenAt": "2026-10-01T18:27:56.779Z"
   },
   {
     "id": "dcu-notice-178833",
@@ -150023,6 +150659,51 @@
     "firstSeenAt": "2026-10-01T19:32:56.943Z"
   },
   {
+    "id": "snu-career-0000001305",
+    "title": "[안내] 온라인 입사 지원서 클리닉 <자기소개서 작성전략 미니특강>",
+    "organizer": "경력개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "snu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "snu-career",
+        "url": "https://career.snu.ac.kr/center/community/notice/view?no=0000001305"
+      }
+    ],
+    "sources": [
+      "snu-career"
+    ],
+    "postedAt": "2025-02-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:55:12.388Z",
+    "summary": "자기소개서 작성 전략을 영상 미니특강으로 배워요",
+    "noApplication": true,
+    "firstSeenAt": "2026-10-02T12:55:12.388Z"
+  },
+  {
     "id": "yu-career-2104",
     "title": "2024 동계방학 생산운영 관리실무",
     "organizer": "학생성공처",
@@ -150405,6 +151086,50 @@
     "summary": "대구광역시 일시청소년 쉼터에서 자원봉사해요",
     "firstSeenAt": "2026-10-02T00:08:08.195Z",
     "seriesId": "dcu-service-173766"
+  },
+  {
+    "id": "yonsei-startup-243",
+    "title": "★ 창업지원단 '스타트업 인사이트' 마이크로 전공제도 안내",
+    "organizer": "창업지원단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-startup",
+        "url": "https://venture.yonsei.ac.kr/community/notice/243"
+      }
+    ],
+    "sources": [
+      "yonsei-startup"
+    ],
+    "postedAt": "2025-02-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:55:32.225Z",
+    "summary": "스타트업 인사이트 마이크로 전공 제도를 안내하는 글이에요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:55:32.225Z"
   },
   {
     "id": "yu-news-223559986",
@@ -153092,6 +153817,51 @@
     "collectedAt": "2026-10-01T23:52:54.846Z",
     "summary": "여성 대학생 멘토로 시설보호 여성청소년의 자립을 도와요.",
     "firstSeenAt": "2026-10-01T23:52:54.846Z"
+  },
+  {
+    "id": "yonsei-startup-234",
+    "title": "★창업교과★ 창업지원단 개설 교과 알아보기(학부생) NEW",
+    "organizer": "창업지원단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-startup",
+        "url": "https://venture.yonsei.ac.kr/community/notice/234"
+      }
+    ],
+    "sources": [
+      "yonsei-startup"
+    ],
+    "postedAt": "2025-01-20",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:55:33.631Z",
+    "summary": "창업지원단이 개설한 학부생 대상 창업 교과목을 소개해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:55:33.631Z"
   },
   {
     "id": "yu-news-223292771",
@@ -157331,109 +158101,6 @@
     "seriesId": "yu-news-5289096"
   },
   {
-    "id": "yu-news-222801183",
-    "title": "2024학년도 2학기 성적 조기열람 관련 폭력예방교육 수강 안내",
-    "organizer": "인권성평등센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2024-12-31"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=223026158"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222840934"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222801183"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-12-27",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:04:51.331Z",
-    "firstSeenAt": "2026-10-01T05:04:51.331Z",
-    "seriesId": "yu-news-10261173",
-    "aliases": [
-      "yu-news-223026158",
-      "yu-news-222840934"
-    ]
-  },
-  {
-    "id": "yu-news-220557196",
-    "title": "2024학년도 1학기 성적조기열람 관련 폭력예방교육 수강 안내",
-    "organizer": "인권성평등센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2024-12-31"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=220648974"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=220557196"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-06-28",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:25:04.572Z",
-    "firstSeenAt": "2026-10-01T05:25:04.572Z",
-    "seriesId": "yu-news-10261173",
-    "aliases": [
-      "yu-news-220648974"
-    ]
-  },
-  {
     "id": "yu-news-220413775",
     "title": "[재게시][지방대학활성화사업(SW)][마감] 코딩러라면 꼭 알아야 할 프로그래머스",
     "organizer": "특성화전략기획부",
@@ -157473,48 +158140,6 @@
     "collectedAt": "2026-10-01T05:27:29.035Z",
     "firstSeenAt": "2026-10-01T05:27:29.035Z",
     "seriesId": "yu-news-8909402"
-  },
-  {
-    "id": "yu-news-10261173",
-    "title": "2024학년도 온라인 폭력예방교육 수강 안내(성적조기열람 가능)",
-    "organizer": "인권성평등센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2024-12-31"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=10261173"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-04-11",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:38:39.269Z",
-    "firstSeenAt": "2026-10-01T05:38:39.269Z",
-    "seriesId": "yu-news-10261173"
   },
   {
     "id": "yu-news-10261161",
@@ -203375,6 +204000,54 @@
     "firstSeenAt": "2026-10-01T19:39:08.507Z"
   },
   {
+    "id": "yonsei-startup-199",
+    "title": "☆2026 학생창업 법인설립·사업장 주소지 제공 프로그램(~11.30 모집)☆",
+    "organizer": "창업지원단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-startup",
+        "url": "https://venture.yonsei.ac.kr/community/notice/199"
+      }
+    ],
+    "sources": [
+      "yonsei-startup"
+    ],
+    "postedAt": "2024-07-26",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:55:35.047Z",
+    "summary": "학생 창업팀의 법인 설립 비용과 사업장 주소지를 지원받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:55:35.047Z"
+  },
+  {
     "id": "yu-news-220740068",
     "title": "2024학년도 영남대학교 제15회 독도 역사 바로 알기 탐방 참가학생 모집 안내",
     "organizer": "학생지원팀",
@@ -218454,48 +219127,6 @@
     "collectedAt": "2026-10-01T18:41:27.161Z",
     "summary": "교내 봄 축제에서 무대행사와 플리마켓 등을 즐겨요",
     "firstSeenAt": "2026-10-01T18:41:27.161Z"
-  },
-  {
-    "id": "dcu-notice-173807",
-    "title": "2024학년도 실험동물 사용·관리 등에 관한 법정교육 안내 (원격교육)",
-    "organizer": "영남대학교",
-    "organizerType": "학교",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": "동물실험 연구자·참여 예정자·종사자·윤리위원"
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2024-04-23"
-    },
-    "activityPeriod": {
-      "start": "2024-04-24",
-      "end": "2024-05-31"
-    },
-    "tags": [
-      "학교",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-notice",
-        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE3MzgwNyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-notice"
-    ],
-    "postedAt": "2024-04-17",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T18:43:11.773Z",
-    "summary": "실험동물 사용과 관리에 관한 법정교육을 원격으로 들어요.",
-    "firstSeenAt": "2026-10-01T18:43:11.773Z",
-    "seriesId": "dcu-notice-173807"
   },
   {
     "id": "dcu-notice-171789",
@@ -292287,6 +292918,51 @@
     "firstSeenAt": "2026-10-01T23:36:59.683Z"
   },
   {
+    "id": "yonsei-startup-237",
+    "title": "[연세대학교 창업지원단] 원스톱 창업상담 창구 운영 /수시접수",
+    "organizer": "창업지원단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-startup",
+        "url": "https://venture.yonsei.ac.kr/community/notice/237"
+      }
+    ],
+    "sources": [
+      "yonsei-startup"
+    ],
+    "postedAt": "2023-09-02",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:55:37.853Z",
+    "summary": "창업지원단의 원스톱 창업 상담을 수시로 신청해 받을 수 있어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:55:37.853Z"
+  },
+  {
     "id": "yu-news-7432855",
     "title": "[창업교육센터] 2023 [공공데이터 활용] YU 창업경진대회 공고",
     "organizer": "LINC 3.0사업단 행정지원팀",
@@ -329141,47 +329817,6 @@
     "firstSeenAt": "2026-10-01T06:27:36.537Z"
   },
   {
-    "id": "yu-news-5995675",
-    "title": "2023학년도 온라인 폭력예방교육 수강방법 및 이수증 출력 방법 안내",
-    "organizer": "인권성평등센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5995675"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-04-12",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:27:41.519Z",
-    "firstSeenAt": "2026-10-01T06:27:41.519Z"
-  },
-  {
     "id": "knu-startup-244",
     "title": "[상상마당부산] 2023 KT&G 상상마다 코코챌린지 뷰티 아이디어 창업 공모전",
     "organizer": "KT&G 상상마당",
@@ -338775,49 +339410,6 @@
     "collectedAt": "2026-10-01T19:02:00.089Z",
     "summary": "Cheer Up 집단상담 프로그램에 참여해요",
     "firstSeenAt": "2026-10-01T19:02:00.089Z"
-  },
-  {
-    "id": "dcu-notice-168206",
-    "title": "[스텔라] 2023학년도 1학기 폭력예방교육 수강안내",
-    "organizer": "인권센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dcu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-notice",
-        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE2ODIwNiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-notice"
-    ],
-    "postedAt": "2023-03-13",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T19:02:01.276Z",
-    "summary": "폭력 예방에 관한 교육을 수강해요",
-    "firstSeenAt": "2026-10-01T19:02:01.276Z"
   },
   {
     "id": "dcu-program-167805",
@@ -391293,6 +391885,56 @@
     "firstSeenAt": "2026-10-01T14:19:02.785Z"
   },
   {
+    "id": "snu-career-0000000877",
+    "title": "해외인턴십 지원금 안내",
+    "organizer": "경력개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "snu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "해외·글로벌",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "snu-career",
+        "url": "https://career.snu.ac.kr/center/community/notice/view?no=0000000877"
+      }
+    ],
+    "sources": [
+      "snu-career"
+    ],
+    "postedAt": "2022-05-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T12:55:14.563Z",
+    "summary": "해외 인턴십이 확정된 학부생이 인턴십 지원금을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T12:55:14.563Z"
+  },
+  {
     "id": "yu-career-1355",
     "title": "[희망자수요파악] 수성구 청년 해외취업 지원 사업",
     "organizer": "수성구",
@@ -396719,47 +397361,6 @@
       "yu-news-2007502"
     ],
     "seriesId": "yu-career-1335"
-  },
-  {
-    "id": "yu-news-2077652",
-    "title": "재학생 대상 폭력예방교육 온라인 강의 수강 안내",
-    "organizer": "인권성평등센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=2077652"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-04-05",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:22:57.014Z",
-    "firstSeenAt": "2026-10-01T07:22:57.014Z"
   },
   {
     "id": "yu-news-2030940",
