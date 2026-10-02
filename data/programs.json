@@ -2484,46 +2484,6 @@
     "summary": "반도체 직무교육과 취업 상담을 받고 자소서·면접 준비를 해요."
   },
   {
-    "id": "yu-career-2521",
-    "title": "2026 하계방학 반도체 직무 스프린트 교육",
-    "organizer": "학생성공처",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": []
-    },
-    "recruitPeriod": {
-      "start": "2026-06-09",
-      "end": "2026-06-19"
-    },
-    "activityPeriod": {
-      "start": "2026-06-22",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-career",
-        "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2521"
-      }
-    ],
-    "sources": [
-      "yu-career"
-    ],
-    "postedAt": null,
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T02:16:50.262Z",
-    "firstSeenAt": "2026-10-01T02:16:50.262Z"
-  },
-  {
     "id": "yu-career-2487",
     "title": "2026 청년고용 Dream 홍보단(청년 서포터즈) 모집",
     "organizer": "학생성공처",
@@ -4848,148 +4808,6 @@
     "collectedAt": "2026-10-01T02:16:52.179Z",
     "firstSeenAt": "2026-10-01T02:16:52.179Z",
     "seriesId": "yu-career-608"
-  },
-  {
-    "id": "yu-career-2518",
-    "title": "[재맞고] 2026 하계방학 대기업 및 공기업 직무적성검사 통합특강",
-    "organizer": "학생성공처",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-06-09",
-      "end": "2026-06-22"
-    },
-    "activityPeriod": {
-      "start": "2026-06-29",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-career",
-        "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2518"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230401502"
-      }
-    ],
-    "sources": [
-      "yu-career",
-      "yu-news"
-    ],
-    "postedAt": "2026-06-17",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T02:16:52.179Z",
-    "firstSeenAt": "2026-10-01T02:16:52.179Z",
-    "seriesId": "yu-career-672",
-    "aliases": [
-      "yu-news-230401502"
-    ],
-    "summary": "온라인 특강으로 대기업 GSAT와 공기업 NCS를 집중 학습하고 교재를 무료로 받아요"
-  },
-  {
-    "id": "yu-career-2522",
-    "title": "[재맞고] 2026 하계방학 생산운영관리 실무과정",
-    "organizer": "학생성공처",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": []
-    },
-    "recruitPeriod": {
-      "start": "2026-06-12",
-      "end": "2026-06-12"
-    },
-    "activityPeriod": {
-      "start": "2026-06-30",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-career",
-        "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2522"
-      }
-    ],
-    "sources": [
-      "yu-career"
-    ],
-    "postedAt": null,
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T02:16:52.179Z",
-    "firstSeenAt": "2026-10-01T02:16:52.179Z",
-    "seriesId": "yu-career-2104"
-  },
-  {
-    "id": "yu-career-2535",
-    "title": "2026년 하계방학 All-Day 실전모의면접(1차)",
-    "organizer": "학생성공처",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-06-24",
-      "end": "2026-07-01"
-    },
-    "activityPeriod": {
-      "start": "2026-07-03",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "멘토링·컨설팅"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-career",
-        "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2535"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230514065"
-      }
-    ],
-    "sources": [
-      "yu-career",
-      "yu-news"
-    ],
-    "postedAt": "2026-06-25",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T02:16:52.179Z",
-    "firstSeenAt": "2026-10-01T02:16:52.179Z",
-    "seriesId": "yu-career-798",
-    "aliases": [
-      "yu-news-230514065"
-    ],
-    "summary": "자기소개서 기반 모의면접을 하고 대기업 인사팀 출신 면접관의 개별 피드백을 받아요"
   },
   {
     "id": "yu-news-231893326",
@@ -14770,51 +14588,6 @@
     "summary": "가곡이나 판소리를 무료로 배워요."
   },
   {
-    "id": "yu-news-230626611",
-    "title": "[해외취업] 베트남 제조•경영 실무관리자 육성 프로그램",
-    "organizer": "현장실습지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "해외·글로벌",
-      "박람회·설명회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230626611"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-03",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:52.974Z",
-    "firstSeenAt": "2026-10-01T03:39:52.974Z",
-    "summary": "베트남 제조·경영 실무관리자 육성 프로그램 설명회에 참여해요."
-  },
-  {
     "id": "yu-news-230626595",
     "title": "[대학혁신지원사업]2026학년도 하계 학생주도형 전공 연계 해외 현지조사 프로그램 참가 학생 모집 안내",
     "organizer": "학생지원팀",
@@ -15870,51 +15643,6 @@
     "summary": "타이코에이엠피에서 인사총무 업무를 경험하는 채용연계 현장실습에 참여해요"
   },
   {
-    "id": "yu-news-230288903",
-    "title": "📢 2026학년도 하계방학 생산운영관리 실무교육 참가자 모집",
-    "organizer": "진로취업지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-06-12",
-      "end": "2026-06-23"
-    },
-    "activityPeriod": {
-      "start": "2026-06-30",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230288903"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-06-09",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:42:04.253Z",
-    "firstSeenAt": "2026-10-01T03:42:04.253Z",
-    "seriesId": "yu-career-2104",
-    "summary": "생산운영관리 실무교육에 참여해요"
-  },
-  {
     "id": "yu-news-230288891",
     "title": "친구들과 책 한 권 읽고, 지원금도 받자! [독서 연구회 참가팀 모집]",
     "organizer": "교육혁신센터",
@@ -16155,52 +15883,6 @@
     "collectedAt": "2026-10-01T03:42:10.707Z",
     "firstSeenAt": "2026-10-01T03:42:10.707Z",
     "summary": "에프알티에서 영상 편집과 브랜드 그래픽 디자인을 실습하며 채용 연계 기회를 얻어요."
-  },
-  {
-    "id": "yu-news-230274814",
-    "title": "[초거대AI사업]⭐2026년 AI전문인력양성 AI기술고급과정 2차 컴퓨터비전 수강생 모집⭐",
-    "organizer": "산학협력단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "3학년",
-        "4학년"
-      ],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": "경북 소재 대학생 및 AI·SW 기초역량 보유자"
-    },
-    "recruitPeriod": {
-      "start": "2026-06-08",
-      "end": "2026-06-17"
-    },
-    "activityPeriod": {
-      "start": "2026-06-29",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230274814"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-06-08",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:42:13.875Z",
-    "firstSeenAt": "2026-10-01T03:42:13.875Z",
-    "summary": "컴퓨터비전 교육을 받고 수료하면 AICE Basic 또는 ADsP 응시료를 지원받아요."
   },
   {
     "id": "yu-news-230274809",
@@ -16803,58 +16485,6 @@
     "collectedAt": "2026-10-01T03:43:01.551Z",
     "firstSeenAt": "2026-10-01T03:43:01.551Z",
     "summary": "코멘토 직무부트캠프 수강권을 받아 실무와 취업 역량을 키워요."
-  },
-  {
-    "id": "yu-news-230120156",
-    "title": "[글로벌공생HUSS] 「2026 HUSS 해커톤」참가자 모집",
-    "organizer": "인문사회글로벌공생융합인재양성사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [
-        "에너지화공전공",
-        "국제한국어교육전공",
-        "경영학과",
-        "무역학부",
-        "사회학과"
-      ],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생"
-      ],
-      "openTo": "글로벌공생HUSS 사업 참여대학 학생"
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-06-01"
-    },
-    "activityPeriod": {
-      "start": "2026-07-01",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230120156"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-28",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:43:03.569Z",
-    "firstSeenAt": "2026-10-01T03:43:03.569Z",
-    "seriesId": "yu-news-8429032",
-    "summary": "융합팀을 꾸려 미래사회 문제의 해결책을 만드는 경진대회에 참여해요."
   },
   {
     "id": "yu-news-230120151",
@@ -17726,111 +17356,6 @@
     "summary": "엘씨텍에서 연구개발·설계 분야의 채용 연계 현장실습에 참여해요."
   },
   {
-    "id": "yu-news-229979355",
-    "title": "(재게시)[YU Digital HUSS] 2026 HUSS융합캠프 아카데미(여름계절학기 1학점 부여) 참여자 모집 안내 N",
-    "organizer": "한국연구재단",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생"
-      ],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-05-08",
-      "end": "2026-05-20"
-    },
-    "activityPeriod": {
-      "start": "2026-06-30",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229979355"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-18",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:44:37.319Z",
-    "firstSeenAt": "2026-10-01T03:44:37.319Z",
-    "seriesId": "yu-news-10575232",
-    "summary": "융합캠프에서 다양한 분야의 강의를 듣고 이수 조건을 충족하면 1학점을 받아요."
-  },
-  {
-    "id": "yu-news-229979348",
-    "title": "(모집기간연장)2026 HUSS 융합캠프 참가자 모집 안내(계절학기 1학점 인정)",
-    "organizer": "한국연구재단",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [
-        "경영학과",
-        "글로벌교육학부",
-        "무역학부",
-        "사회학과",
-        "화학공학부 에너지화공전공",
-        "글로벌공생융합전공"
-      ],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생"
-      ],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-05-19"
-    },
-    "activityPeriod": {
-      "start": "2026-06-30",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229979348"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-18",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:44:39.932Z",
-    "firstSeenAt": "2026-10-01T03:44:39.932Z",
-    "seriesId": "yu-news-10575232",
-    "summary": "인문사회 융합캠프에서 강의와 교류 활동에 참여하고 이수하면 1학점을 받아요."
-  },
-  {
     "id": "yu-news-229937259",
     "title": "[YU Digital HUSS] 2026 Again 점핑 with 삼성현 프로젝트 <AI를 활용한 디지털 뮤지엄 큐레이팅 과정> 참가자 모집",
     "organizer": "인문사회디지털융합인재양성사업단",
@@ -18571,51 +18096,6 @@
     "summary": "국제홍보대사로 대학 홍보와 국제 업무를 돕고 활동 평가에 따라 장학금을 받아요."
   },
   {
-    "id": "yu-news-229838672",
-    "title": "[글로벌공생HUSS]2026 HUSS 융합캠프 참가자 모집 안내(계절학기 1학점 인정)",
-    "organizer": "인문사회글로벌공생융합인재양성사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-05-17"
-    },
-    "activityPeriod": {
-      "start": "2026-06-30",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교",
-      "해외·글로벌",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229838672"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-08",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T03:50:59.857Z",
-    "firstSeenAt": "2026-10-01T03:50:59.857Z",
-    "seriesId": "yu-news-10575232",
-    "summary": "융합캠프에서 강의와 교류 활동에 참여하고 이수하면 계절학기 1학점을 인정받아요."
-  },
-  {
     "id": "yu-news-229824631",
     "title": "[디지털융합대학] SW응용학부, 자동차SW학과 부/복수전공 학생 모집",
     "organizer": "디지털융합대학",
@@ -18656,50 +18136,6 @@
     "collectedAt": "2026-10-01T03:51:09.126Z",
     "firstSeenAt": "2026-10-01T03:51:09.126Z",
     "summary": "SW응용학부나 자동차SW학과를 부·복수전공하며 장학금 지원 기회를 얻어요."
-  },
-  {
-    "id": "yu-news-229824628",
-    "title": "[YU Digital HUSS] 2026 HUSS융합캠프 아카데미(여름계절학기 1학점 부여) 참여자 모집 안내",
-    "organizer": "인문사회디지털융합인재양성사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-05-08",
-      "end": "2026-05-20"
-    },
-    "activityPeriod": {
-      "start": "2026-06-30",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229824628"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-07",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T03:51:11.332Z",
-    "firstSeenAt": "2026-10-01T03:51:11.332Z",
-    "seriesId": "yu-news-10575232",
-    "summary": "다양한 주제의 캠프 강의를 듣고 이수 조건을 채우면 1학점과 수업료 환급을 받아요."
   },
   {
     "id": "yu-news-229810470",
@@ -25697,52 +25133,6 @@
     "summary": "반도체 산업과 기업을 공부하고 취업 아카데미와 연계해 취업을 준비해요."
   },
   {
-    "id": "yu-col-sci-230176275",
-    "title": "2026학년도 1학기 정규 성인지교육 특강 실시 안내",
-    "organizer": "교무팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "휴학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-06-01",
-      "end": "2026-06-12"
-    },
-    "activityPeriod": {
-      "start": "2026-06-25",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교",
-      "학사·행정",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-col-sci",
-        "url": "https://sci.yu.ac.kr/sci/community/notice.do?mode=view&articleNo=230176275"
-      }
-    ],
-    "sources": [
-      "yu-col-sci"
-    ],
-    "postedAt": "2026-06-01",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T12:11:03.394Z",
-    "firstSeenAt": "2026-10-01T12:11:03.394Z",
-    "summary": "온·오프라인 성인지교육을 모두 듣고 성인지교육 1회 이수를 인정받아요."
-  },
-  {
     "id": "yu-rise-231865038",
     "title": "[앵커사업단-REGO레전드] 2026년도 앵커사업단 레전드 50+ 기업맞춤 지능형 첨단소재 인력양성사업 steel Challenge 21 참가 지원 프로그램 안내",
     "organizer": "레전드 50+ 기업맞춤 지능형 첨단소재 인력양성사업단",
@@ -26222,49 +25612,6 @@
     "collectedAt": "2026-10-01T12:11:13.264Z",
     "firstSeenAt": "2026-10-01T12:11:13.264Z",
     "summary": "안티에이징·웰니스 분야의 컨퍼런스와 실무 교육, 전시에 무료로 참가해요."
-  },
-  {
-    "id": "yu-col-pharm-230626625",
-    "title": "[한국한의약진흥원] 2026 한의약 산업 분야별 인력 양성 교육",
-    "organizer": "한국한의약진흥원",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-col-pharm",
-        "url": "https://pharm.yu.ac.kr/pharm/community/notice.do?mode=view&articleNo=230626625"
-      }
-    ],
-    "sources": [
-      "yu-col-pharm"
-    ],
-    "postedAt": "2026-07-03",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T12:11:17.686Z",
-    "firstSeenAt": "2026-10-01T12:11:17.686Z",
-    "summary": "한의약 산업 분야별 인력 양성 교육을 받아요."
   },
   {
     "id": "yu-col-pharm-230584354",
@@ -30826,7 +30173,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:39:19.068Z",
     "summary": "온라인으로 생성형 AI 활용법을 배우고 구글 수료증과 제미나이 이용권을 받아요",
-    "firstSeenAt": "2026-10-01T17:39:19.068Z"
+    "firstSeenAt": "2026-10-01T17:39:19.068Z",
+    "seriesId": "dcu-program-180989"
   },
   {
     "id": "dcu-program-187275",
@@ -31473,7 +30821,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:07.837Z",
     "summary": "경영사무 직무교육을 받고 8주 동안 일경험에 참여해요",
-    "firstSeenAt": "2026-10-01T17:41:07.837Z"
+    "firstSeenAt": "2026-10-01T17:41:07.837Z",
+    "seriesId": "dcu-program-182666"
   },
   {
     "id": "dcu-program-186932",
@@ -31655,7 +31004,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:34.892Z",
     "summary": "동아리·스터디 팀 활동에 공간과 다과를 지원받고 우수팀은 상금을 받아요",
-    "firstSeenAt": "2026-10-01T17:41:34.892Z"
+    "firstSeenAt": "2026-10-01T17:41:34.892Z",
+    "seriesId": "dcu-program-170355"
   },
   {
     "id": "dcu-service-187152",
@@ -31742,7 +31092,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:38:45.901Z",
     "summary": "사회복지시설에서 일일 봉사활동에 참여해요.",
-    "firstSeenAt": "2026-10-01T17:38:45.901Z"
+    "firstSeenAt": "2026-10-01T17:38:45.901Z",
+    "seriesId": "dcu-notice-181110"
   },
   {
     "id": "dcu-service-187283",
@@ -31785,7 +31136,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:39:52.055Z",
     "summary": "경산시 평생학습 재능나눔 박람회에서 봉사해요",
-    "firstSeenAt": "2026-10-01T17:39:52.055Z"
+    "firstSeenAt": "2026-10-01T17:39:52.055Z",
+    "seriesId": "dcu-service-171162"
   },
   {
     "id": "dcu-service-187282",
@@ -31914,7 +31266,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:40:10.516Z",
     "summary": "산촌여행 숲체험 프로그램에서 봉사해요",
-    "firstSeenAt": "2026-10-01T17:40:10.516Z"
+    "firstSeenAt": "2026-10-01T17:40:10.516Z",
+    "seriesId": "dcu-service-184151"
   },
   {
     "id": "dcu-service-187131",
@@ -32000,7 +31353,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:40:25.395Z",
     "summary": "한글런 마라톤 대회에서 자원봉사자로 활동해요",
-    "firstSeenAt": "2026-10-01T17:40:25.395Z"
+    "firstSeenAt": "2026-10-01T17:40:25.395Z",
+    "seriesId": "dcu-service-181683"
   },
   {
     "id": "dcu-service-187124",
@@ -32346,7 +31700,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:25.910Z",
     "summary": "청년봉사단의 단원이나 단장으로 지원해요.",
-    "firstSeenAt": "2026-10-01T17:41:25.910Z"
+    "firstSeenAt": "2026-10-01T17:41:25.910Z",
+    "seriesId": "dcu-service-168864"
   },
   {
     "id": "dcu-service-186898",
@@ -32520,7 +31875,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:44.654Z",
     "summary": "산촌여행 숲체험 프로그램에서 봉사자로 활동해요.",
-    "firstSeenAt": "2026-10-01T17:41:44.654Z"
+    "firstSeenAt": "2026-10-01T17:41:44.654Z",
+    "seriesId": "dcu-service-184151"
   },
   {
     "id": "dcu-service-186816",
@@ -32607,7 +31963,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:54.579Z",
     "summary": "봉사동아리에서 성폭력 예방 인형극, 행정 지원, 홍보 캠페인을 해요.",
-    "firstSeenAt": "2026-10-01T17:41:54.579Z"
+    "firstSeenAt": "2026-10-01T17:41:54.579Z",
+    "seriesId": "dcu-service-177868"
   },
   {
     "id": "dcu-service-186783",
@@ -32650,7 +32007,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:58.725Z",
     "summary": "줍깅 일일 봉사 프로그램에 참여해요.",
-    "firstSeenAt": "2026-10-01T17:41:58.725Z"
+    "firstSeenAt": "2026-10-01T17:41:58.725Z",
+    "seriesId": "dcu-notice-181110"
   },
   {
     "id": "dcu-service-186758",
@@ -32747,7 +32105,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:15.549Z",
     "summary": "온누리장난감도서관 가족프로그램에서 자원봉사해요.",
-    "firstSeenAt": "2026-10-01T17:42:15.549Z"
+    "firstSeenAt": "2026-10-01T17:42:15.549Z",
+    "seriesId": "dcu-service-180190"
   },
   {
     "id": "dcu-service-186617",
@@ -32966,7 +32325,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:38:33.262Z",
     "summary": "청소년 교육을 지원하는 멘토로 참여해요.",
-    "firstSeenAt": "2026-10-01T17:38:33.262Z"
+    "firstSeenAt": "2026-10-01T17:38:33.262Z",
+    "seriesId": "dcu-scholarship-178259"
   },
   {
     "id": "dcu-scholarship-186314",
@@ -33009,7 +32369,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:39:34.312Z",
     "summary": "국가장학금을 신청해요.",
-    "firstSeenAt": "2026-10-01T17:39:34.312Z"
+    "firstSeenAt": "2026-10-01T17:39:34.312Z",
+    "seriesId": "dcu-scholarship-169199"
   },
   {
     "id": "dcu-scholarship-186292",
@@ -33052,7 +32413,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:39:39.666Z",
     "summary": "주거안정장학금을 신청해요.",
-    "firstSeenAt": "2026-10-01T17:39:39.666Z"
+    "firstSeenAt": "2026-10-01T17:39:39.666Z",
+    "seriesId": "dcu-scholarship-177801"
   },
   {
     "id": "dcu-scholarship-187234",
@@ -33138,7 +32500,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:18.171Z",
     "summary": "논산시장학회 장학생 선발에 지원해 장학금을 받을 수 있어요.",
-    "firstSeenAt": "2026-10-01T17:41:18.171Z"
+    "firstSeenAt": "2026-10-01T17:41:18.171Z",
+    "seriesId": "dcu-scholarship-168309"
   },
   {
     "id": "dcu-scholarship-187120",
@@ -33181,7 +32544,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:23.929Z",
     "summary": "봄내장학생 선발에 지원해 장학금을 받을 수 있어요.",
-    "firstSeenAt": "2026-10-01T17:41:23.929Z"
+    "firstSeenAt": "2026-10-01T17:41:23.929Z",
+    "seriesId": "dcu-scholarship-170708"
   },
   {
     "id": "dcu-scholarship-187061",
@@ -33224,7 +32588,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:36.379Z",
     "summary": "국가근로장학 교외근로지에 추가로 신청할 수 있어요.",
-    "firstSeenAt": "2026-10-01T17:41:36.379Z"
+    "firstSeenAt": "2026-10-01T17:41:36.379Z",
+    "seriesId": "dcu-scholarship-180305"
   },
   {
     "id": "dcu-scholarship-187060",
@@ -33267,7 +32632,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:40.129Z",
     "summary": "교내 시간제 국가근로장학생 일반근로에 신청할 수 있어요.",
-    "firstSeenAt": "2026-10-01T17:41:40.129Z"
+    "firstSeenAt": "2026-10-01T17:41:40.129Z",
+    "seriesId": "dcu-scholarship-178649"
   },
   {
     "id": "dcu-scholarship-187025",
@@ -33310,7 +32676,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:43.555Z",
     "summary": "수성인재장학생 선발에 지원해 장학금을 받아요",
-    "firstSeenAt": "2026-10-01T17:41:43.555Z"
+    "firstSeenAt": "2026-10-01T17:41:43.555Z",
+    "seriesId": "dcu-scholarship-168006"
   },
   {
     "id": "dcu-scholarship-187002",
@@ -33353,7 +32720,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:47.772Z",
     "summary": "고속도로장학생 선발에 지원해 장학금을 받아요",
-    "firstSeenAt": "2026-10-01T17:41:47.772Z"
+    "firstSeenAt": "2026-10-01T17:41:47.772Z",
+    "seriesId": "dcu-scholarship-175846"
   },
   {
     "id": "dcu-scholarship-186962",
@@ -33396,7 +32764,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:52.888Z",
     "summary": "김해시미래인재장학재단 장학생 선발에 지원해요",
-    "firstSeenAt": "2026-10-01T17:41:52.888Z"
+    "firstSeenAt": "2026-10-01T17:41:52.888Z",
+    "seriesId": "dcu-scholarship-175368"
   },
   {
     "id": "dcu-scholarship-186938",
@@ -33482,7 +32851,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:01.332Z",
     "summary": "인천인재평생교육진흥원 장학생 선발에 지원해요",
-    "firstSeenAt": "2026-10-01T17:42:01.332Z"
+    "firstSeenAt": "2026-10-01T17:42:01.332Z",
+    "seriesId": "dcu-scholarship-168456"
   },
   {
     "id": "dcu-scholarship-186859",
@@ -33525,7 +32895,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:06.551Z",
     "summary": "춘곡장학회 장학생 선발에 지원해 장학금을 받아요",
-    "firstSeenAt": "2026-10-01T17:42:06.551Z"
+    "firstSeenAt": "2026-10-01T17:42:06.551Z",
+    "seriesId": "dcu-scholarship-181751"
   },
   {
     "id": "dcu-scholarship-186858",
@@ -33568,7 +32939,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:14.307Z",
     "summary": "포항시장학회 대학생 장학생 선발에 지원해요",
-    "firstSeenAt": "2026-10-01T17:42:14.307Z"
+    "firstSeenAt": "2026-10-01T17:42:14.307Z",
+    "seriesId": "dcu-scholarship-170621"
   },
   {
     "id": "dcu-scholarship-186826",
@@ -33611,7 +32983,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:18.595Z",
     "summary": "거제시·통영시 수해 관련 재난피해지원장학금을 신청해요",
-    "firstSeenAt": "2026-10-01T17:42:18.595Z"
+    "firstSeenAt": "2026-10-01T17:42:18.595Z",
+    "seriesId": "dcu-scholarship-168690"
   },
   {
     "id": "dcu-scholarship-186813",
@@ -33654,7 +33027,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:22.645Z",
     "summary": "2학기 교내 장학금을 2차로 신청해요",
-    "firstSeenAt": "2026-10-01T17:42:22.645Z"
+    "firstSeenAt": "2026-10-01T17:42:22.645Z",
+    "seriesId": "dcu-scholarship-168026"
   },
   {
     "id": "dcu-scholarship-186795",
@@ -33697,7 +33071,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:32.170Z",
     "summary": "상반기 대학생 학자금 이자를 지원받는 기회예요",
-    "firstSeenAt": "2026-10-01T17:42:32.170Z"
+    "firstSeenAt": "2026-10-01T17:42:32.170Z",
+    "seriesId": "dcu-scholarship-168133"
   },
   {
     "id": "dcu-scholarship-186727",
@@ -33740,7 +33115,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:36.820Z",
     "summary": "학자금대출 부담을 줄이는 지원을 신청해요",
-    "firstSeenAt": "2026-10-01T17:42:36.820Z"
+    "firstSeenAt": "2026-10-01T17:42:36.820Z",
+    "seriesId": "dcu-scholarship-175623"
   },
   {
     "id": "dcu-scholarship-186719",
@@ -33783,7 +33159,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:39.159Z",
     "summary": "하반기 대학생 학자금 대출이자 지원을 신청해요",
-    "firstSeenAt": "2026-10-01T17:42:39.159Z"
+    "firstSeenAt": "2026-10-01T17:42:39.159Z",
+    "seriesId": "dcu-scholarship-169219"
   },
   {
     "id": "dcu-scholarship-186665",
@@ -33826,7 +33203,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:42.039Z",
     "summary": "경주시장학회 장학금을 받을 장학생 선발에 지원해요",
-    "firstSeenAt": "2026-10-01T17:42:42.039Z"
+    "firstSeenAt": "2026-10-01T17:42:42.039Z",
+    "seriesId": "dcu-scholarship-175813"
   },
   {
     "id": "dcu-scholarship-186663",
@@ -33869,7 +33247,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:44.336Z",
     "summary": "익산사랑 장학금을 받을 장학생 선발에 지원해요",
-    "firstSeenAt": "2026-10-01T17:42:44.336Z"
+    "firstSeenAt": "2026-10-01T17:42:44.336Z",
+    "seriesId": "dcu-scholarship-174570"
   },
   {
     "id": "dcu-scholarship-186661",
@@ -33912,7 +33291,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:47.154Z",
     "summary": "2학기 푸른등대 기부장학금을 받을 장학생 선발에 지원해요",
-    "firstSeenAt": "2026-10-01T17:42:47.154Z"
+    "firstSeenAt": "2026-10-01T17:42:47.154Z",
+    "seriesId": "dcu-scholarship-168636"
   },
   {
     "id": "dcu-scholarship-186596",
@@ -33955,7 +33335,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:49.572Z",
     "summary": "울산연구원의 하반기 장학생 선발에 지원해요",
-    "firstSeenAt": "2026-10-01T17:42:49.572Z"
+    "firstSeenAt": "2026-10-01T17:42:49.572Z",
+    "seriesId": "dcu-scholarship-168823"
   },
   {
     "id": "dcu-scholarship-186575",
@@ -33998,7 +33379,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:42:52.540Z",
     "summary": "선원가족을 위한 장학금을 받을 기회예요",
-    "firstSeenAt": "2026-10-01T17:42:52.540Z"
+    "firstSeenAt": "2026-10-01T17:42:52.540Z",
+    "seriesId": "dcu-scholarship-183742"
   },
   {
     "id": "dcu-scholarship-186563",
@@ -34084,7 +33466,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:43:06.008Z",
     "summary": "통영시 지원사업을 통해 대학 등록금 전액을 지원받아요",
-    "firstSeenAt": "2026-10-01T17:43:06.008Z"
+    "firstSeenAt": "2026-10-01T17:43:06.008Z",
+    "seriesId": "dcu-scholarship-170950"
   },
   {
     "id": "dcu-scholarship-186509",
@@ -34127,7 +33510,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:43:08.908Z",
     "summary": "광산장학회 장학생으로 선발되어 장학금을 받아요",
-    "firstSeenAt": "2026-10-01T17:43:08.908Z"
+    "firstSeenAt": "2026-10-01T17:43:08.908Z",
+    "seriesId": "dcu-scholarship-170707"
   },
   {
     "id": "dcu-scholarship-186457",
@@ -34170,7 +33554,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:43:11.571Z",
     "summary": "삼원 장학생으로 선발되어 장학금을 받아요",
-    "firstSeenAt": "2026-10-01T17:43:11.571Z"
+    "firstSeenAt": "2026-10-01T17:43:11.571Z",
+    "seriesId": "dcu-scholarship-175595"
   },
   {
     "id": "dcu-notice-187277",
@@ -35044,16 +34429,25 @@
       {
         "sourceId": "dcu-notice",
         "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzE4OSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
+      },
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE3ODkxMSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
       }
     ],
     "sources": [
-      "dcu-notice"
+      "dcu-notice",
+      "dcu-service"
     ],
     "postedAt": "2026-09-23",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T17:41:42.432Z",
     "summary": "달서 북소리 축제에서 자원봉사자로 활동해요.",
-    "firstSeenAt": "2026-10-01T17:41:42.432Z"
+    "firstSeenAt": "2026-10-01T17:41:42.432Z",
+    "aliases": [
+      "dcu-service-178911"
+    ],
+    "seriesId": "dcu-service-168407"
   },
   {
     "id": "dcu-notice-187187",
@@ -38226,7 +37620,7 @@
     "collectedAt": "2026-10-01T18:07:42.734Z",
     "summary": "중앙도서관 교내부직에 지원해요.",
     "firstSeenAt": "2026-10-01T18:07:42.734Z",
-    "seriesId": "dcu-notice-181052"
+    "seriesId": "dcu-scholarship-167900"
   },
   {
     "id": "dcu-notice-186323",
@@ -38940,50 +38334,6 @@
     "seriesId": "dcu-notice-168913"
   },
   {
-    "id": "dcu-notice-185858",
-    "title": "2026-하계 학사경고대상자 페널티 면제 Jumping Up 프로그램",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dcu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-notice",
-        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NTg1OCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-notice"
-    ],
-    "postedAt": "2026-07-03",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T18:08:17.007Z",
-    "summary": "Jumping Up 프로그램에 참여해 학사경고에 따른 불이익을 면제받아요.",
-    "firstSeenAt": "2026-10-01T18:08:17.007Z",
-    "seriesId": "dcu-notice-167433"
-  },
-  {
     "id": "dcu-notice-185842",
     "title": "[2차년도 앵커사업] '성공적인 직무 고도화 완성하기' 온라인 강의 수강(기간 연장)",
     "organizer": "앵커 평생교육체제혁신사업단",
@@ -39033,46 +38383,6 @@
     "aliases": [
       "dcu-notice-186148"
     ]
-  },
-  {
-    "id": "dcu-notice-185796",
-    "title": "2026년 대구가톨릭대학교 사회과학연구소 <협동조합의 날 기념 협동조합 정책간담회 \"「사회연대경제기본법」과 협동조합 활성화 방안\" >개최 안내",
-    "organizer": "사회과학연구소",
-    "organizerType": "학교",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": "관심 있는 누구나"
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-07-03",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-notice",
-        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NTc5NiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-notice"
-    ],
-    "postedAt": "2026-06-30",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T18:08:24.006Z",
-    "summary": "협동조합 정책간담회에서 사회연대경제와 협동조합 활성화를 논의해요",
-    "firstSeenAt": "2026-10-01T18:08:24.006Z"
   },
   {
     "id": "dcu-notice-185597",
@@ -40458,7 +39768,7 @@
     "collectedAt": "2026-10-01T19:11:31.760Z",
     "summary": "중소기업 취업과 연계된 희망사다리 1유형 장학금에 지원해요",
     "firstSeenAt": "2026-10-01T19:11:31.760Z",
-    "seriesId": "dcu-program-173452"
+    "seriesId": "dcu-scholarship-168386"
   },
   {
     "id": "dcu-program-186732",
@@ -40731,7 +40041,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T19:11:41.426Z",
     "summary": "실제 자료를 편집하는 시연을 보며 엑셀 활용법과 단축키를 배워요.",
-    "firstSeenAt": "2026-10-01T19:11:41.426Z"
+    "firstSeenAt": "2026-10-01T19:11:41.426Z",
+    "seriesId": "dcu-program-175969"
   },
   {
     "id": "dcu-program-186595",
@@ -42283,7 +41594,7 @@
     "collectedAt": "2026-10-01T19:12:34.795Z",
     "summary": "기업에서 현장실습을 하고 12학점을 인정받아요.",
     "firstSeenAt": "2026-10-01T19:12:34.795Z",
-    "seriesId": "dcu-notice-175235"
+    "seriesId": "dcu-notice-167549"
   },
   {
     "id": "dcu-program-185945",
@@ -43214,48 +42525,6 @@
     "firstSeenAt": "2026-10-01T19:13:23.644Z"
   },
   {
-    "id": "dcu-program-185563",
-    "title": "청년 기술평가체험단 9기 모집공고(~7.3)",
-    "organizer": "진로취업지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dcu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-03"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-program",
-        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTU2MyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-program"
-    ],
-    "postedAt": "2026-06-16",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T19:13:27.937Z",
-    "summary": "청년 기술평가체험단 9기로 기술평가를 체험해요",
-    "firstSeenAt": "2026-10-01T19:13:27.937Z"
-  },
-  {
     "id": "dcu-program-185522",
     "title": "[인턴및현장실습][졸업생 특화] [긴급] 초비상!! 경영사무/광고마케팅/호텔서비스 특화 미래내일일경험 참여 모집 안내",
     "organizer": "일로이룸",
@@ -43390,7 +42659,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T19:14:22.152Z",
     "summary": "컴활 1·2급 필기와 실기를 무료로 배우고 조건 충족 시 응시료를 환급받아요.",
-    "firstSeenAt": "2026-10-01T19:14:22.152Z"
+    "firstSeenAt": "2026-10-01T19:14:22.152Z",
+    "seriesId": "dcu-program-179781"
   },
   {
     "id": "dcu-program-185026",
@@ -43886,7 +43156,7 @@
     "collectedAt": "2026-10-01T19:18:44.727Z",
     "summary": "경산시청과 행정복지센터에서 행정업무를 지원하며 급여를 받아요",
     "firstSeenAt": "2026-10-01T19:18:44.727Z",
-    "seriesId": "dcu-program-177553"
+    "seriesId": "dcu-notice-172402"
   },
   {
     "id": "dcu-program-180915",
@@ -43930,5 +43200,1099 @@
     "collectedAt": "2026-10-01T19:24:37.465Z",
     "summary": "SAP Korea CODE 아카데미 교육과정에 참여해요",
     "firstSeenAt": "2026-10-01T19:24:37.465Z"
+  },
+  {
+    "id": "dcu-scholarship-186339",
+    "title": "2026년도 세종이도인재장학금 장학생 모집 안내",
+    "organizer": "장학지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NjMzOSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-08-11",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:46:54.261Z",
+    "summary": "세종이도인재장학금의 장학생으로 지원해요.",
+    "firstSeenAt": "2026-10-01T23:46:54.261Z",
+    "seriesId": "dcu-scholarship-185041"
+  },
+  {
+    "id": "dcu-scholarship-186311",
+    "title": "2026학년도 2학기 국가근로장학금 추가 신청기간 안내(한국장학재단 2차)",
+    "organizer": "한국장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NjMxMSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-08-10",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:46:55.729Z",
+    "summary": "국가근로장학금을 추가로 신청해요.",
+    "firstSeenAt": "2026-10-01T23:46:55.729Z",
+    "seriesId": "dcu-scholarship-167610"
+  },
+  {
+    "id": "dcu-scholarship-186290",
+    "title": "2026년 하반기 군산시 대학(원)생 학자금 대출 이자 지원 안내",
+    "organizer": "군산시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NjI5MCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-08-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:46:57.417Z",
+    "summary": "대학생과 대학원생이 학자금대출 이자를 지원받아요.",
+    "firstSeenAt": "2026-10-01T23:46:57.417Z",
+    "seriesId": "dcu-scholarship-167566"
+  },
+  {
+    "id": "dcu-scholarship-186206",
+    "title": "2026년 5·18희망장학생 모집 안내",
+    "organizer": "장학지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NjIwNiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-08-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:46:58.513Z",
+    "summary": "5·18희망장학생으로 지원해 장학금을 받아요.",
+    "firstSeenAt": "2026-10-01T23:46:58.513Z",
+    "seriesId": "dcu-scholarship-168783"
+  },
+  {
+    "id": "dcu-scholarship-186204",
+    "title": "2026년 하반기 울산광역시 대학(원)생 학자금대출 이자지원 사업 안내 공고",
+    "organizer": "울산광역시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NjIwNCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-08-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:46:59.572Z",
+    "summary": "대학생과 대학원생이 학자금대출 이자를 지원받아요.",
+    "firstSeenAt": "2026-10-01T23:46:59.572Z",
+    "seriesId": "dcu-scholarship-174907"
+  },
+  {
+    "id": "dcu-scholarship-186201",
+    "title": "2026년 하반기 서울인재대학장학금 장학생 선발 공고 안내",
+    "organizer": "장학지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NjIwMSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-08-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:47:00.841Z",
+    "summary": "서울인재대학장학금의 장학생으로 지원해요.",
+    "firstSeenAt": "2026-10-01T23:47:00.841Z",
+    "seriesId": "dcu-scholarship-184133"
+  },
+  {
+    "id": "dcu-scholarship-186099",
+    "title": "2026-2학기 + 동계방학 국가근로장학 일반근로 [DCU e-Advisor 시스템(구.학생지원포털)] 신청안내",
+    "organizer": "장학지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NjA5OSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-07-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:47:02.545Z",
+    "summary": "학기와 겨울방학에 참여할 국가근로장학 일반근로를 신청해요.",
+    "firstSeenAt": "2026-10-01T23:47:02.545Z",
+    "seriesId": "dcu-scholarship-167623"
+  },
+  {
+    "id": "dcu-scholarship-186036",
+    "title": "제3회 (재)김해시미래인재장학재단 장학수기 공모전 안내",
+    "organizer": "김해시미래인재장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NjAzNiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-07-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:47:04.977Z",
+    "summary": "장학금과 관련된 경험을 수기로 써서 공모전에 참여해요.",
+    "firstSeenAt": "2026-10-01T23:47:04.977Z",
+    "seriesId": "dcu-scholarship-175368"
+  },
+  {
+    "id": "dcu-scholarship-186033",
+    "title": "2026년 화성시인재육성재단 코나아이 소상공인 장학생 공고 안내",
+    "organizer": "화성시인재육성재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NjAzMyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-07-21",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:47:06.868Z",
+    "summary": "코나아이 소상공인 장학생으로 지원해요.",
+    "firstSeenAt": "2026-10-01T23:47:06.868Z"
+  },
+  {
+    "id": "dcu-scholarship-186022",
+    "title": "2026년 재단법인 서구인재육성재단 장학생 선발 공고 안내",
+    "organizer": "서구인재육성재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NjAyMiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-07-20",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:47:07.973Z",
+    "summary": "서구인재육성재단의 장학생으로 지원해요.",
+    "firstSeenAt": "2026-10-01T23:47:07.973Z",
+    "seriesId": "dcu-scholarship-168408"
+  },
+  {
+    "id": "dcu-scholarship-185946",
+    "title": "2026년 포스코비전장학생 선발 공고 안내",
+    "organizer": "장학지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NTk0NiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-07-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:47:09.332Z",
+    "summary": "포스코비전장학생으로 지원해 장학금을 받아요.",
+    "firstSeenAt": "2026-10-01T23:47:09.332Z"
+  },
+  {
+    "id": "dcu-scholarship-185917",
+    "title": "2026년 정읍시민장학재단 우수인재 장학금 장학생 선발 공고 안내",
+    "organizer": "정읍시민장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NTkxNyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-07-10",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:47:10.708Z",
+    "summary": "정읍시민장학재단의 우수인재 장학금을 신청해요.",
+    "firstSeenAt": "2026-10-01T23:47:10.708Z",
+    "seriesId": "dcu-scholarship-180515"
+  },
+  {
+    "id": "dcu-scholarship-185888",
+    "title": "<기간연장> [신규사업] 2026학년도 대학생 청소년 AI교육지원사업 멘토 모집 안내",
+    "organizer": "장학지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-scholarship",
+        "url": "https://www.cu.ac.kr/plaza/notice/scholarship?mode=view&mv_data=aWR4PTE4NTg4OCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWphbmdoYWsmbW9kZT12aWV3"
+      }
+    ],
+    "sources": [
+      "dcu-scholarship"
+    ],
+    "postedAt": "2026-07-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T23:47:12.479Z",
+    "summary": "청소년의 AI 교육을 돕는 대학생 멘토로 참여해요.",
+    "firstSeenAt": "2026-10-01T23:47:12.479Z"
+  },
+  {
+    "id": "dcu-service-186390",
+    "title": "[사랑나눔봉사] 경산시어르신종합복지관 일일봉사자 11월 모집 안내",
+    "organizer": "경산시어르신종합복지관",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NjM5MCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-08-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:02:47.276Z",
+    "summary": "경산시어르신종합복지관에서 하루 봉사활동을 해요",
+    "firstSeenAt": "2026-10-02T00:02:47.276Z",
+    "seriesId": "dcu-service-186425"
+  },
+  {
+    "id": "dcu-service-186374",
+    "title": "[사랑나눔봉사] 「캠퍼스 마음온도+감사 릴레이」",
+    "organizer": "사랑나눔봉사단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NjM3NCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-08-12",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:02:48.368Z",
+    "summary": null,
+    "firstSeenAt": "2026-10-02T00:02:48.368Z",
+    "seriesId": "dcu-service-185137"
+  },
+  {
+    "id": "dcu-service-186303",
+    "title": "［사랑나눔봉사］안심종합복지관 2026년 8월 마음돌봄 캠페인 자원봉사자 모집 안내",
+    "organizer": "안심종합복지관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NjMwMyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-08-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:02:49.456Z",
+    "summary": "안심종합복지관의 마음돌봄 캠페인에서 자원봉사를 해요",
+    "firstSeenAt": "2026-10-02T00:02:49.456Z",
+    "seriesId": "dcu-service-168293"
+  },
+  {
+    "id": "dcu-service-186288",
+    "title": "[개별] 2026 세종학당 이끄미(자원봉사자) 모집",
+    "organizer": "세종학당",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NjI4OCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-08-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:02:50.675Z",
+    "summary": "세종학당 이끄미로 자원봉사 활동을 해요",
+    "firstSeenAt": "2026-10-02T00:02:50.675Z"
+  },
+  {
+    "id": "dcu-service-186281",
+    "title": "[개별] 제14기 사랑의연탄나눔운동 서포터즈 모집",
+    "organizer": "사랑나눔봉사단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사",
+      "서포터즈·기자단"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NjI4MSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-08-05",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:02:51.991Z",
+    "summary": "사랑의연탄나눔운동을 돕는 서포터즈로 활동해요",
+    "firstSeenAt": "2026-10-02T00:02:51.991Z",
+    "seriesId": "dcu-service-170493"
+  },
+  {
+    "id": "dcu-service-186109",
+    "title": "[사랑나눔봉사] 경산시어르신종합복지관 일일봉사자 10월 모집 안내",
+    "organizer": "경산시어르신종합복지관",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NjEwOSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-07-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:02:53.078Z",
+    "summary": "경산시어르신종합복지관에서 하루 봉사활동을 해요",
+    "firstSeenAt": "2026-10-02T00:02:53.078Z",
+    "seriesId": "dcu-service-186425"
+  },
+  {
+    "id": "dcu-service-186108",
+    "title": "[사랑나눔봉사] 경산시어르신종합복지관 일일봉사자 9월 모집 안내",
+    "organizer": "경산시어르신종합복지관",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NjEwOCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-07-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:02:54.481Z",
+    "summary": "경산시어르신종합복지관에서 하루 봉사활동을 해요",
+    "firstSeenAt": "2026-10-02T00:02:54.481Z",
+    "seriesId": "dcu-service-186425"
+  },
+  {
+    "id": "dcu-service-186084",
+    "title": "[사랑나눔봉사단 주관] 경산시어르신종합복지관 숲체험 교육 프로그램 봉사자 모집",
+    "organizer": "사랑나눔봉사단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NjA4NCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-07-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:02:56.072Z",
+    "summary": "경산시어르신종합복지관의 숲체험 교육을 돕는 봉사를 해요",
+    "firstSeenAt": "2026-10-02T00:02:56.072Z",
+    "seriesId": "dcu-service-186425"
+  },
+  {
+    "id": "dcu-service-185969",
+    "title": "2026 달서구 희망 멘토링 봉사단 모집",
+    "organizer": "사랑나눔봉사단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NTk2OSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-07-16",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:02:57.470Z",
+    "summary": "달서구 희망 멘토링 봉사단에서 멘토링 봉사를 해요",
+    "firstSeenAt": "2026-10-02T00:02:57.470Z"
+  },
+  {
+    "id": "dcu-service-185956",
+    "title": "[사랑나눔봉사단 주관］ 2026년 중복맞이 정(情)나눔 캠페인 자원봉사자 모집 안내",
+    "organizer": "사랑나눔봉사단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NTk1NiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-07-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:02:58.601Z",
+    "summary": "중복을 맞아 열리는 정나눔 캠페인에서 자원봉사를 해요",
+    "firstSeenAt": "2026-10-02T00:02:58.601Z"
+  },
+  {
+    "id": "dcu-service-185941",
+    "title": "[사랑나눔봉사단] 「캠퍼스 마음온도+감사 릴레이」 '당신에게 닿는 편지' 프로그램 자원봉사자 모집 안내",
+    "organizer": "사랑나눔봉사단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NTk0MSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:03:00.231Z",
+    "summary": "당신에게 닿는 편지 프로그램을 돕는 자원봉사를 해요",
+    "firstSeenAt": "2026-10-02T00:03:00.231Z"
+  },
+  {
+    "id": "dcu-service-185898",
+    "title": "제 11회 울산울주세계산악영화제 자원봉사자 모집",
+    "organizer": "사랑나눔봉사단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NTg5OCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-07-08",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:03:01.616Z",
+    "summary": "울산울주세계산악영화제 운영을 돕는 자원봉사를 해요",
+    "firstSeenAt": "2026-10-02T00:03:01.616Z",
+    "seriesId": "dcu-service-170777"
   }
 ]
