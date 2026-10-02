@@ -12,6 +12,7 @@ import { disablePush, enablePush, needsInstallForPush, pushOnThisDevice } from "
 import { canInstall, install, subscribeInstall } from "../lib/pwa.ts";
 import { LOGIN_PROVIDERS, supabase, useToday, useUser } from "../lib/user.tsx";
 import type { Profile } from "../lib/user.tsx";
+import { FeedbackBox } from "./FeedbackBox.tsx";
 import { CalendarPlusIcon, ChevronIcon, ProfileIcon } from "./Icons.tsx";
 
 interface Props {
@@ -74,6 +75,13 @@ export function MyAccount({ schools, fieldTags, seriesInfo, programs, sources }:
   useEffect(() => {
     void loadMyComments();
   }, [loadMyComments]);
+
+  // 관리자 계정이면 "관리자 화면" 링크를 보여 준다 (supabase/admin.sql을 아직 실행하지 않았으면 오류 → 안 보임)
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    if (!supabase || !user.userId) return setIsAdmin(false);
+    void supabase.rpc("is_admin").then(({ data, error }) => setIsAdmin(!error && data === true));
+  }, [user.userId]);
 
   useEffect(() => {
     if (!supabase || !user.userId) return;
@@ -518,7 +526,10 @@ export function MyAccount({ schools, fieldTags, seriesInfo, programs, sources }:
         </section>
       )}
 
-      {/* 9. 안내 */}
+      {/* 9. 의견 보내기 (운영자 답장도 여기에) */}
+      <FeedbackBox />
+
+      {/* 10. 안내 */}
       <section className="card my-card my-about">
         <h2 className="card-title">캠퍼스모아</h2>
         <p className="card-sub">
@@ -536,6 +547,11 @@ export function MyAccount({ schools, fieldTags, seriesInfo, programs, sources }:
         <a href={CONTACT.href}>
           문의하기 <ChevronIcon size={18} />
         </a>
+        {isAdmin && (
+          <Link href="/admin">
+            관리자 화면 <ChevronIcon size={18} />
+          </Link>
+        )}
       </nav>
 
       {message && (
