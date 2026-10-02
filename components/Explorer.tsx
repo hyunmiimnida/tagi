@@ -150,13 +150,15 @@ export function Explorer({ categories, schools }: Props) {
     lastFilterKey.current = filterKey;
   }, [loaded, filterKey]);
 
+  // 기억한 개수를 읽기(위 effect) 전에 처음 값 30으로 덮어쓰지 않게, 불러온 뒤에만 저장한다
   useEffect(() => {
+    if (!loaded) return;
     try {
       sessionStorage.setItem(LIMIT_KEY, String(limit));
     } catch {
       // 저장소를 못 쓰면 기억하지 않는다
     }
-  }, [limit]);
+  }, [loaded, limit]);
 
   // 목록 끝이 보이면 더 그린다
   const moreRef = useRef<HTMLDivElement | null>(null);
