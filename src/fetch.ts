@@ -1,5 +1,8 @@
-// 수집기 이름. 학교가 연락할 수 있게 운영 연락처를 함께 적는다 (lib/policy.ts의 CONTACT_EMAIL과 같게)
-const USER_AGENT = "campus-info-hub-collector/0.1 (+mailto:whgusals4@gmail.com; https://tagi-ten.vercel.app)";
+import { SITE_URL } from "../lib/filter.ts";
+import { CONTACT_EMAIL } from "../lib/policy.ts";
+
+// 수집기 이름. 학교가 연락할 수 있게 운영 연락처(lib/policy.ts)와 사이트 주소(lib/filter.ts)를 함께 적는다
+const USER_AGENT = `campus-info-hub-collector/0.1 (+mailto:${CONTACT_EMAIL}; ${SITE_URL})`;
 const DELAY_MS = 1000; // 사이트에 부담을 주지 않도록 요청 사이에 쉬는 시간
 
 // 사이트(호스트)마다 요청을 한 줄로 세워 1초씩 띄운다. 서로 다른 학교 사이트는 동시에 읽어도 된다

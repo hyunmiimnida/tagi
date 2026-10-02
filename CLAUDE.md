@@ -133,7 +133,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 
 ## 배포 정보
 
-- 사이트: https://tagi-ten.vercel.app (main에 push하면 자동 배포)
+- 사이트: https://tagi-ten.vercel.app (main에 push하면 자동 배포). 주소는 `lib/filter.ts`의 `SITE_URL` 한 곳에서 정한다(사이트맵·공유 미리보기·알림 링크·수집기 USER_AGENT·앱 `API_BASE`가 따라감). 도메인을 옮기면 그 기본값 한 줄만 바꾼다
 - 저장소: https://github.com/hyunmiimnida/tagi
 - Supabase 프로젝트 id: rytvncrksqcrxhsojmpj
 

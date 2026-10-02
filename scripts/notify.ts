@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { createClient } from "@supabase/supabase-js";
 import webpush from "web-push";
+import { SITE_URL } from "../lib/filter.ts";
 import type { Program } from "../src/types.ts";
 
 // 매일 아침 GitHub Actions(.github/workflows/notify.yml)가 실행한다.
@@ -11,7 +12,7 @@ import type { Program } from "../src/types.ts";
 
 const SUPABASE_URL = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const SITE = "https://tagi-ten.vercel.app";
+const SITE = SITE_URL;
 const VAPID_PUBLIC_KEY = readFileSync(new URL("../lib/push.ts", import.meta.url), "utf8").match(/VAPID_PUBLIC_KEY = "([^"]+)"/)![1];
 const IDS_FILE = "reported-ids.json";
 
