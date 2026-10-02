@@ -4562,6 +4562,51 @@
     "firstSeenAt": "2026-10-02T12:57:13.095Z"
   },
   {
+    "id": "hufs-job-1001689",
+    "title": "(한국산업인력공단)태국 취업 전략설명회('26.6.23(화) 15:30 온라인진행)",
+    "organizer": "한국산업인력공단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "hufs"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-06-23",
+      "end": "2026-06-23"
+    },
+    "tags": [
+      "공공기관",
+      "취업·채용",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "hufs-job",
+        "url": "https://job.hufs.ac.kr/job/comm/board/d9acb88b1a000472132dd8b0c1e1cf65/view.do?dataSeq=1001689"
+      }
+    ],
+    "sources": [
+      "hufs-job"
+    ],
+    "postedAt": "2026-06-16",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T15:22:12.325Z",
+    "summary": "태국 취업 전략을 알려 주는 온라인 설명회에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T15:22:12.325Z"
+  },
+  {
     "id": "yu-news-230471828",
     "title": "2026 대한민국 국제 첨단 디지털 의료기기 및 의료 산업전 취업박람회(KOADMEX JOB FAIR 2026) 개최 안내",
     "organizer": "홍보팀",
@@ -4832,6 +4877,50 @@
     "collectedAt": "2026-10-01T19:13:10.783Z",
     "summary": "현대오토에버 관련 취업준비 콘서트에 참여해요",
     "firstSeenAt": "2026-10-01T19:13:10.783Z"
+  },
+  {
+    "id": "pknu-notice-725285",
+    "title": "[학생성공지원과] 2026년 온라인 취업지원 콘텐츠 취업토탈솔루션 이용 안내",
+    "organizer": "학생성공지원과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725285"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-06-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T15:22:14.446Z",
+    "summary": "온라인 취업지원 콘텐츠 취업토탈솔루션을 이용할 수 있어요",
+    "noApplication": true,
+    "firstSeenAt": "2026-10-02T15:22:14.446Z"
   },
   {
     "id": "dcu-notice-184920",
@@ -10417,6 +10506,50 @@
     "seriesId": "dcu-service-186425"
   },
   {
+    "id": "hufs-job-1001686",
+    "title": "(외교부)2026년도 제19회 국제기구 진출 설명회 개최",
+    "organizer": "외교부",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [
+        "hufs"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "정부부처",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "hufs-job",
+        "url": "https://job.hufs.ac.kr/job/comm/board/d9acb88b1a000472132dd8b0c1e1cf65/view.do?dataSeq=1001686"
+      }
+    ],
+    "sources": [
+      "hufs-job"
+    ],
+    "postedAt": "2026-06-02",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T15:22:13.408Z",
+    "summary": "국제기구 진출 방법을 알려 주는 설명회에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T15:22:13.408Z"
+  },
+  {
     "id": "yu-news-230176281",
     "title": "[재게시][[교육개발센터] 2026학년도 온라인 학습진단검사 및 결과해석 강의 안내",
     "organizer": "교육개발센터",
@@ -10862,6 +10995,50 @@
     "summary": "언론인 준비반에서 현직 언론인 멘토의 첨삭과 특강을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T12:57:18.885Z"
+  },
+  {
+    "id": "hufs-job-1001682",
+    "title": "AI 학술검색 실전 강연(Liner)",
+    "organizer": "진로취업지원센터(글로벌)",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "hufs"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "hufs-job",
+        "url": "https://job.hufs.ac.kr/job/comm/board/d9acb88b1a000472132dd8b0c1e1cf65/view.do?dataSeq=1001682"
+      }
+    ],
+    "sources": [
+      "hufs-job"
+    ],
+    "postedAt": "2026-06-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T15:22:14.476Z",
+    "summary": "AI 학술검색 도구를 실전으로 배우는 강연을 들어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T15:22:14.476Z"
   },
   {
     "id": "yu-news-229838659",
@@ -41199,7 +41376,7 @@
     "collectedAt": "2026-10-01T23:48:23.743Z",
     "summary": "대학생 멘토로 참여해 청소년에게 화상 튜터링을 해요.",
     "firstSeenAt": "2026-10-01T23:48:23.743Z",
-    "seriesId": "dcu-scholarship-174170"
+    "seriesId": "dcu-scholarship-178259"
   },
   {
     "id": "dcu-scholarship-183911",
@@ -93822,8 +93999,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T18:32:18.468Z",
     "summary": "교원자격 취득에 필요한 적인성검사와 성인지·응급처치 교육에 참여해요.",
-    "firstSeenAt": "2026-10-01T18:32:18.468Z",
-    "seriesId": "dcu-notice-177216"
+    "firstSeenAt": "2026-10-01T18:32:18.468Z"
   },
   {
     "id": "dcu-notice-180902",
@@ -118160,8 +118336,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T18:25:36.026Z",
     "summary": "신입생이 학습진단 검사를 받아요",
-    "firstSeenAt": "2026-10-01T18:25:36.026Z",
-    "seriesId": "dcu-notice-179790"
+    "firstSeenAt": "2026-10-01T18:25:36.026Z"
   },
   {
     "id": "dcu-program-179877",
@@ -121553,8 +121728,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T18:30:02.232Z",
     "summary": "신입생 학습진단 검사를 받고 추첨으로 커피 쿠폰도 받아요.",
-    "firstSeenAt": "2026-10-01T18:30:02.232Z",
-    "seriesId": "dcu-notice-179790"
+    "firstSeenAt": "2026-10-01T18:30:02.232Z"
   },
   {
     "id": "dcu-program-179646",
@@ -139997,8 +140171,7 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T18:29:09.841Z",
     "summary": "학생자치기구 선거에 투표하고 지정된 순번이면 상품권을 받아요",
-    "firstSeenAt": "2026-10-01T18:29:09.841Z",
-    "seriesId": "dcu-notice-178581"
+    "firstSeenAt": "2026-10-01T18:29:09.841Z"
   },
   {
     "id": "dcu-program-178552",
@@ -145829,7 +146002,7 @@
     "collectedAt": "2026-10-01T23:52:33.895Z",
     "summary": "대학생 멘토로 청소년에게 화상 튜터링을 제공해요",
     "firstSeenAt": "2026-10-01T23:52:33.895Z",
-    "seriesId": "dcu-scholarship-174170"
+    "seriesId": "dcu-scholarship-178259"
   },
   {
     "id": "dcu-scholarship-178262",
@@ -210755,7 +210928,7 @@
     "collectedAt": "2026-10-01T23:54:36.154Z",
     "summary": "여름방학에 청소년 교육을 지원하는 다품멘토링에 참여해요",
     "firstSeenAt": "2026-10-01T23:54:36.154Z",
-    "seriesId": "dcu-scholarship-168030"
+    "seriesId": "dcu-scholarship-178259"
   },
   {
     "id": "yu-news-220622191",
@@ -213338,7 +213511,7 @@
     "collectedAt": "2026-10-01T23:54:46.729Z",
     "summary": "대학생 멘토로 청소년의 학습을 화상으로 도와요",
     "firstSeenAt": "2026-10-01T23:54:46.729Z",
-    "seriesId": "dcu-scholarship-174170"
+    "seriesId": "dcu-scholarship-178259"
   },
   {
     "id": "yu-news-220426867",
@@ -226492,7 +226665,7 @@
     "collectedAt": "2026-10-01T23:55:06.882Z",
     "summary": "대학생 멘토로 청소년의 학습을 화상으로 도와요",
     "firstSeenAt": "2026-10-01T23:55:06.882Z",
-    "seriesId": "dcu-scholarship-174170"
+    "seriesId": "dcu-scholarship-178259"
   },
   {
     "id": "dcu-service-174046",
@@ -262244,7 +262417,7 @@
     "collectedAt": "2026-10-01T23:56:22.385Z",
     "summary": "청소년 교육 지원 사업의 장학생 추가 선발에 지원해요.",
     "firstSeenAt": "2026-10-01T23:56:22.385Z",
-    "seriesId": "dcu-scholarship-168030"
+    "seriesId": "dcu-scholarship-178259"
   },
   {
     "id": "yu-news-8694152",
@@ -336638,7 +336811,7 @@
     "collectedAt": "2026-10-01T23:58:47.786Z",
     "summary": "청소년 교육을 지원하는 사업의 장학생으로 참여해요.",
     "firstSeenAt": "2026-10-01T23:58:47.786Z",
-    "seriesId": "dcu-scholarship-168030"
+    "seriesId": "dcu-scholarship-178259"
   },
   {
     "id": "dcu-scholarship-168354",
@@ -338342,7 +338515,7 @@
     "collectedAt": "2026-10-01T23:58:53.691Z",
     "summary": "청소년 교육을 지원하는 사업의 장학생으로 참여해요.",
     "firstSeenAt": "2026-10-01T23:58:53.691Z",
-    "seriesId": "dcu-scholarship-168030"
+    "seriesId": "dcu-scholarship-178259"
   },
   {
     "id": "yu-news-5994004",
@@ -341588,7 +341761,7 @@
     "collectedAt": "2026-10-01T23:59:03.539Z",
     "summary": "대학생으로서 청소년 교육을 지원하는 사업에 참여해요",
     "firstSeenAt": "2026-10-01T23:59:03.539Z",
-    "seriesId": "dcu-scholarship-168030"
+    "seriesId": "dcu-scholarship-178259"
   },
   {
     "id": "dcu-scholarship-168078",
@@ -342539,7 +342712,7 @@
     "collectedAt": "2026-10-01T23:59:06.178Z",
     "summary": "대학생으로서 청소년 교육을 지원하는 사업에 참여해요",
     "firstSeenAt": "2026-10-01T23:59:06.178Z",
-    "seriesId": "dcu-scholarship-168030"
+    "seriesId": "dcu-scholarship-178259"
   },
   {
     "id": "dcu-scholarship-168026",
@@ -539828,7 +540001,8 @@
     "postedAt": "2020-03-09",
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T09:13:00.254Z",
-    "firstSeenAt": "2026-10-01T09:13:00.254Z"
+    "firstSeenAt": "2026-10-01T09:13:00.254Z",
+    "seriesId": "yu-news-84001"
   },
   {
     "id": "yu-news-83936",
