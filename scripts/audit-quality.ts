@@ -22,6 +22,9 @@ for (let i = 0; i < open.length; i++) {
   for (let j = i + 1; j < open.length; j++) {
     const [a, b] = [open[i], open[j]];
     if (!sameSchool(a, b)) continue;
+    // 숫자(달·회차·연도)만 다른 제목은 매달·회차마다 여는 다른 공고다 ("일일봉사자 9월/10월 모집")
+    const numbers = (title: string) => (title.match(/\d+/g) ?? []).join(",");
+    if (repostKey(a.title) !== repostKey(b.title) && numbers(a.title) !== numbers(b.title)) continue;
     if (repostKey(a.title) === repostKey(b.title) || titleSimilarity(a.title, b.title) >= 0.9) duplicates.push([a.title, b.title]);
   }
 }
