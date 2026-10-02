@@ -85,7 +85,7 @@
 - AI 한도가 없으면 `--rules`를 붙여 AI 없이 규칙으로만 추출한다 (보관함에만 들어갈 오래된 글은 이것으로 충분하다)
 - 반복 프로그램인지 애매한 쌍을 AI가 판단하지 못하면, 지금 목록 공고와 관련된 쌍만 뽑아 직접 판단해 `data/series-decisions.json`에 `"id1|id2": true/false`로 적는다 (id는 사전순 정렬). 다음 저장 때 반영된다
 
-Claude CLI·Codex CLI는 PATH에 없어도 각 앱이 설치한 곳(Claude `%APPDATA%\Claude\claude-code\*\claude.exe`, Codex `%LOCALAPPDATA%\OpenAI\Codex\bin\*\codex.exe`)에서 최신 버전을 찾는다.
+Claude CLI·Codex CLI는 PATH에 없어도 각 앱이 설치한 곳(Claude `%APPDATA%\Claude\claude-code\*\claude.exe` — Store 앱이라 앱 밖에서는 `%LOCALAPPDATA%\Packages\Claude_*\LocalCache\Roaming\Claude\claude-code`, Codex `%LOCALAPPDATA%\OpenAI\Codex\bin\*\codex.exe`)에서 최신 버전을 찾는다.
 AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜 연도, 신청/제출 기한 구분, 태그 남발, 주최 유형).
 
 ## 폴더 구조

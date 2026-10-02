@@ -24,17 +24,17 @@ const DATE = /^\d{4}-\d{2}-\d{2}$/;
 
 // PATH에 없으면 앱이 설치한 위치에서 찾는다 (가장 최근 버전 폴더부터).
 // 앱이 실행 중에 스스로 업데이트하면 예전 폴더가 지워지므로, 기억한 파일이 없어졌으면 다시 찾는다
-function finder(envVar: string, command: string, appDir: string | undefined, exe: string) {
+function finder(envVar: string, command: string, appDirs: (string | undefined)[], exe: string) {
   let found: string | null | undefined;
   return (): string | null => {
     const gone = found && /[\\/]/.test(found) && !existsSync(found);
     if (found !== undefined && !gone) return found;
     const candidates = [process.env[envVar], command];
-    if (appDir && existsSync(appDir)) {
-      const dirs = readdirSync(appDir).map((dir) => join(appDir, dir));
-      dirs.sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs);
-      for (const dir of dirs) candidates.push(join(dir, exe));
-    }
+    const dirs = appDirs
+      .filter((appDir): appDir is string => Boolean(appDir && existsSync(appDir)))
+      .flatMap((appDir) => readdirSync(appDir).map((dir) => join(appDir, dir)));
+    dirs.sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs);
+    for (const dir of dirs) candidates.push(join(dir, exe));
     found = null;
     for (const candidate of candidates) {
       if (!candidate) continue;
@@ -51,8 +51,16 @@ function finder(envVar: string, command: string, appDir: string | undefined, exe
 }
 
 const { LOCALAPPDATA, APPDATA } = process.env;
-export const findCodex = finder("CODEX_BIN", "codex", LOCALAPPDATA && join(LOCALAPPDATA, "OpenAI", "Codex", "bin"), "codex.exe");
-export const findClaude = finder("CLAUDE_BIN", "claude", APPDATA && join(APPDATA, "Claude", "claude-code"), "claude.exe");
+export const findCodex = finder("CODEX_BIN", "codex", [LOCALAPPDATA && join(LOCALAPPDATA, "OpenAI", "Codex", "bin")], "codex.exe");
+// Claude 앱은 Microsoft Store 앱이라 실제 파일은 Packages 안에 있다. 앱 안에서 실행하면 %APPDATA%\Claude로도 보인다
+const claudeStoreDirs = () => {
+  const packages = LOCALAPPDATA && join(LOCALAPPDATA, "Packages");
+  if (!packages || !existsSync(packages)) return [];
+  return readdirSync(packages)
+    .filter((name) => name.startsWith("Claude_"))
+    .map((name) => join(packages, name, "LocalCache", "Roaming", "Claude", "claude-code"));
+};
+export const findClaude = finder("CLAUDE_BIN", "claude", [APPDATA && join(APPDATA, "Claude", "claude-code"), ...claudeStoreDirs()], "claude.exe");
 // 지금 엔진의 실행 파일 (없으면 null → 규칙 결과만 쓴다)
 export const findAi = () => (AI_ENGINE === "codex" ? findCodex() : findClaude());
 export const AI_MISSING =
