@@ -4,6 +4,10 @@
 export const CONTACT_EMAIL = "whgusals4@gmail.com";
 export const CONTACT = { label: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` };
 
+// 검색엔진 소유 확인 코드 (공개값). 구글 서치 콘솔·네이버 서치어드바이저의 "HTML 태그" 방식에서 content="..." 안의 값만 넣는다.
+// 비어 있으면 페이지에 넣지 않는다 (docs/설정-안내.md "검색 등록" 참고)
+export const SITE_VERIFICATION = { google: "", naver: "" };
+
 // 문서를 고치면 날짜도 바꾼다
 export const POLICY_DATE = "2026년 10월 2일";
 

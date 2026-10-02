@@ -6,6 +6,7 @@ import { PwaSetup } from "../components/InstallCard.tsx";
 import { LoginSheet } from "../components/LoginSheet.tsx";
 import { describeSources, getCollectedBySchool } from "../lib/data.ts";
 import { SITE_NAME, SITE_URL } from "../lib/filter.ts";
+import { SITE_VERIFICATION } from "../lib/policy.ts";
 import { UserProvider } from "../lib/user.tsx";
 import "./globals.css";
 
@@ -14,6 +15,11 @@ export const metadata: Metadata = {
   title: { default: SITE_NAME, template: `%s | ${SITE_NAME}` },
   description: "학교 공지, 취업, 대외활동 정보를 한곳에 모아 태그로 찾아보는 대학생 정보 서비스",
   openGraph: { siteName: SITE_NAME, locale: "ko_KR", type: "website" },
+  // 검색엔진 소유 확인 (lib/policy.ts에 코드를 넣었을 때만)
+  verification: {
+    ...(SITE_VERIFICATION.google && { google: SITE_VERIFICATION.google }),
+    ...(SITE_VERIFICATION.naver && { other: { "naver-site-verification": SITE_VERIFICATION.naver } }),
+  },
 };
 
 export const viewport: Viewport = {

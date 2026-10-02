@@ -181,6 +181,7 @@ export function MyAccount({ schools, fieldTags, seriesInfo, programs, sources }:
   const schoolName = schools.find((s) => s.id === user.schoolId)?.name ?? "전체 학교";
   const whoText = [profile.status, profile.status !== "졸업생" ? profile.grade : null].filter(Boolean).join(" ") || "선택 안 함";
   const year = today ? Number(today.slice(0, 4)) : new Date().getFullYear();
+  const guest = user.loginEnabled && user.ready && !user.signedIn; // 로그인을 쓸 수 있는데 아직 안 함
 
   return (
     <div className="my">
@@ -194,7 +195,7 @@ export function MyAccount({ schools, fieldTags, seriesInfo, programs, sources }:
             {!user.loginEnabled || (user.ready && !user.signedIn) ? (
               <>
                 <strong>{user.loginEnabled ? "로그인하지 않았어요" : "체험 모드"}</strong>
-                <span>설정과 관심 공고를 이 기기에만 저장하고 있어요</span>
+                <span>{user.loginEnabled ? "학교·관심 분야 설정은 이 기기에 저장돼요" : "설정과 관심 공고를 이 기기에만 저장하고 있어요"}</span>
               </>
             ) : !user.ready ? (
               <strong>불러오는 중…</strong>
@@ -239,29 +240,32 @@ export function MyAccount({ schools, fieldTags, seriesInfo, programs, sources }:
           </p>
         )}
 
-        <div className="hero-stats my-stats">
-          <Link href="/calendar" className="stat">
-            <span>관심 공고</span>
-            <strong>{user.favorites.size}</strong>
-          </Link>
-          <Link href="/calendar" className="stat">
-            <span>{SOON_DAYS}일 안 마감</span>
-            <strong className={soonCount > 0 ? "warn" : ""}>{soonCount}</strong>
-          </Link>
-          {user.signedIn ? (
-            <button type="button" className="stat" onClick={() => scrollTo("my-comments")}>
-              <span>내 댓글</span>
-              <strong>{myComments?.length ?? 0}</strong>
-            </button>
-          ) : (
-            <button type="button" className="stat" onClick={() => scrollTo("my-info")}>
-              <span>내 학교</span>
-              <strong className="stat-text">{schools.find((s) => s.id === user.schoolId)?.shortName ?? "전체"}</strong>
-            </button>
-          )}
-        </div>
+        {/* 로그인을 쓸 수 있는데 로그인하지 않았으면 관심 공고를 모을 수 없어 숫자 대신 로그인 안내를 보여 준다 */}
+        {!guest && (
+          <div className="hero-stats my-stats">
+            <Link href="/calendar" className="stat">
+              <span>관심 공고</span>
+              <strong>{user.favorites.size}</strong>
+            </Link>
+            <Link href="/calendar" className="stat">
+              <span>{SOON_DAYS}일 안 마감</span>
+              <strong className={soonCount > 0 ? "warn" : ""}>{soonCount}</strong>
+            </Link>
+            {user.signedIn ? (
+              <button type="button" className="stat" onClick={() => scrollTo("my-comments")}>
+                <span>내 댓글</span>
+                <strong>{myComments?.length ?? 0}</strong>
+              </button>
+            ) : (
+              <button type="button" className="stat" onClick={() => scrollTo("my-info")}>
+                <span>내 학교</span>
+                <strong className="stat-text">{schools.find((s) => s.id === user.schoolId)?.shortName ?? "전체"}</strong>
+              </button>
+            )}
+          </div>
+        )}
 
-        {user.loginEnabled && user.ready && !user.signedIn && (
+        {guest && (
           <>
             <p className="card-sub my-login-why">로그인하면 어느 기기에서든 같은 관심 공고를 보고, 마감 알림을 받고, 후기를 남길 수 있어요.</p>
             <button className="button primary wide" onClick={() => user.setLoginOpen(true)}>
@@ -297,7 +301,11 @@ export function MyAccount({ schools, fieldTags, seriesInfo, programs, sources }:
         </div>
         {events.length === 0 ? (
           <p className="card-sub">
-            {user.favorites.size === 0 ? "공고에서 ☆를 누르면 마감일과 활동 일정이 여기 모여요." : "관심 공고에 다가오는 일정이 없어요."}
+            {guest
+              ? "로그인하고 공고에서 ☆를 누르면 마감일과 활동 일정이 여기 모여요."
+              : user.favorites.size === 0
+                ? "공고에서 ☆를 누르면 마감일과 활동 일정이 여기 모여요."
+                : "관심 공고에 다가오는 일정이 없어요."}
           </p>
         ) : (
           <ul className="rows my-events">
@@ -443,7 +451,7 @@ export function MyAccount({ schools, fieldTags, seriesInfo, programs, sources }:
         <div className="my-row">
           <span>
             <strong>캘린더 앱으로 내보내기</strong>
-            <small>관심 공고 일정을 구글·애플·삼성 캘린더에 넣어요. 마감 하루 전 알림도 함께 들어가요. 로그인 없이 쓸 수 있어요.</small>
+            <small>관심 공고 일정을 구글·애플·삼성 캘린더에 넣어요. 마감 하루 전 알림도 함께 들어가요.{favoritePrograms.length === 0 && " 관심 공고가 있으면 켜져요."}</small>
           </span>
           <button
             className="button small"
