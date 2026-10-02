@@ -5,11 +5,12 @@
   --surface-2: #f9fafb;
   --text: #191f28;
   --text-2: #4e5968;
-  --text-3: #8b95a1;
+  --text-3: #636c78; /* 회색 글씨도 바탕과 대비 4.5:1 이상 (읽기 쉬움 기준) */
   --line: #e5e8eb;
-  --accent: #3182f6;
+  --accent: #1c68e3; /* 파란 글씨·파란 버튼의 흰 글씨 모두 대비 4.5:1 이상 */
+  --accent-fill: var(--accent); /* 흰 글씨를 올리는 파란 바탕 (버튼 등) */
   --accent-soft: #e8f3ff;
-  --warn: #f04452;
+  --warn: #d22636; /* 마감 빨강도 연한 빨강 바탕 위에서 대비 4.5:1 이상 */
   --warn-soft: #ffeeee;
   --star: #ffb800;
   --radius: 20px;
@@ -27,6 +28,7 @@
     --text-3: #8b919a;
     --line: #2c2e33;
     --accent: #4c94ff;
+    --accent-fill: #2a6ad0; /* 다크 모드의 밝은 파랑에 흰 글씨는 대비가 낮아 버튼 바탕은 짙게 */
     --accent-soft: #1a2a44;
     --warn: #ff5c6c;
     --warn-soft: #3a1d22;
@@ -45,6 +47,9 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  /* 키보드(Tab)로 옮겨 간 항목이 위 머리말·아래 탭 바에 가려지지 않게 */
+  scroll-padding-top: 64px;
+  scroll-padding-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom) + 16px);
 }
 
 body {
@@ -147,7 +152,7 @@ main {
   padding: 6px 14px;
   border: 0;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--accent-fill);
   color: #fff;
   font-size: 0.875rem;
   font-weight: 600;
@@ -314,7 +319,7 @@ main {
 }
 
 .button.primary {
-  background: var(--accent);
+  background: var(--accent-fill);
   color: #fff;
 }
 
@@ -725,7 +730,7 @@ main {
   min-width: 18px;
   padding: 0 5px;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--accent-fill);
   color: #fff;
   font-size: 0.6875rem;
   line-height: 18px;
@@ -865,7 +870,7 @@ main {
   border: 0;
   border-radius: 8px;
   background: none;
-  color: var(--text-3);
+  color: var(--text-2);
   font-size: 0.8125rem;
   font-weight: 600;
 }
@@ -1431,7 +1436,7 @@ main {
 }
 
 .day.today .day-number {
-  background: var(--accent);
+  background: var(--accent-fill);
   color: #fff;
 }
 
@@ -2655,4 +2660,14 @@ button.stat {
 /* 공고 목록 "더 보기" (끝까지 내리면 자동으로 더 그린다) */
 .list-more {
   margin-top: 12px;
+}
+
+/* 화면에는 안 보이고 화면 읽기 프로그램에만 읽히는 글 (페이지 제목 등) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
