@@ -29879,6 +29879,48 @@
     "firstSeenAt": "2026-10-02T00:03:56.475Z"
   },
   {
+    "id": "sogang-student-549670",
+    "title": "[서울특별시] 「내 안전 지키는 안심헬프미」 지원 사업 안내(연중 상시 모집)",
+    "organizer": "서울특별시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "서울 거주 또는 서울 소재 학교·직장 소속자"
+    },
+    "recruitPeriod": {
+      "start": "2026-02-13",
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체"
+    ],
+    "links": [
+      {
+        "sourceId": "sogang-student",
+        "url": "https://www.sogang.ac.kr/ko/detail/549670?bbsConfigFk=34"
+      }
+    ],
+    "sources": [
+      "sogang-student"
+    ],
+    "postedAt": "2026-04-10",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T17:34:34.717Z",
+    "summary": "위급할 때 긴급신고가 가능한 호신용 안심벨을 무료로 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T17:34:34.717Z",
+    "seriesId": "sogang-student-548243"
+  },
+  {
     "id": "yu-career-2457",
     "title": "2026 1차 국민연금공단 취업·미래설계 아카데미",
     "organizer": "국민연금공단",
@@ -36955,6 +36997,49 @@
     "summary": "진학장학생 선발에 지원해요",
     "firstSeenAt": "2026-10-01T23:48:10.127Z",
     "seriesId": "dcu-scholarship-168280"
+  },
+  {
+    "id": "sogang-student-549381",
+    "title": "(총동문회) 2026 새내기키트 언박싱 이벤트(3.20 마감)",
+    "organizer": "서강대학교 총동문회",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "sogang"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-03-10",
+      "end": "2026-03-20"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "sogang-student",
+        "url": "https://www.sogang.ac.kr/ko/detail/549381?bbsConfigFk=34"
+      }
+    ],
+    "sources": [
+      "sogang-student"
+    ],
+    "postedAt": "2026-03-10",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T17:34:37.970Z",
+    "summary": "새내기키트 언박싱 인스타그램 이벤트에 참여하고 경품을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T17:34:37.970Z"
   },
   {
     "id": "yu-career-2454",
@@ -66877,6 +66962,48 @@
     "summary": "헌혈 봉사에 참여해요",
     "firstSeenAt": "2026-10-02T00:05:05.457Z",
     "seriesId": "dcu-service-186929"
+  },
+  {
+    "id": "sogang-student-548243",
+    "title": "[서울특별시] 「내 안전 지키는 안심헬프미」 지원 사업 안내(~11/28)",
+    "organizer": "서울특별시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "서울 거주 또는 서울 소재 학교·직장 소속자"
+    },
+    "recruitPeriod": {
+      "start": "2025-11-04",
+      "end": "2025-11-28"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체"
+    ],
+    "links": [
+      {
+        "sourceId": "sogang-student",
+        "url": "https://www.sogang.ac.kr/ko/detail/548243?bbsConfigFk=34"
+      }
+    ],
+    "sources": [
+      "sogang-student"
+    ],
+    "postedAt": "2025-11-12",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T17:34:44.321Z",
+    "summary": "위급할 때 긴급신고가 가능한 호신용 안심벨을 무료로 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T17:34:44.321Z",
+    "seriesId": "sogang-student-548243"
   },
   {
     "id": "yu-career-2365",
@@ -205785,6 +205912,53 @@
     "collectedAt": "2026-10-02T00:09:51.394Z",
     "summary": "청소년 자원봉사를 주제로 한 영상 공모전에 참여해요",
     "firstSeenAt": "2026-10-02T00:09:51.394Z"
+  },
+  {
+    "id": "sogang-student-544115",
+    "title": "제7기 국립외교원 국민외교아카데미 대학생 외교연수과정 참가자 모집",
+    "organizer": "국립외교원",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [
+        "sogang"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2024-06-11"
+    },
+    "activityPeriod": {
+      "start": "2024-07-08",
+      "end": "2024-07-19"
+    },
+    "tags": [
+      "정부부처",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "sogang-student",
+        "url": "https://www.sogang.ac.kr/ko/detail/544115?bbsConfigFk=34"
+      }
+    ],
+    "sources": [
+      "sogang-student"
+    ],
+    "postedAt": "2024-06-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T17:35:00.315Z",
+    "summary": "외교 전반을 배우는 국립외교원 대학생 외교연수과정에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T17:35:00.315Z"
   },
   {
     "id": "yu-news-220909332",
