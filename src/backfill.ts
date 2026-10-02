@@ -1,5 +1,5 @@
 import { mkdir } from "node:fs/promises";
-import { enrichWithAi, findCodex, fixOrganizerType, normalizeGrades, pickProgramTitles } from "./ai.ts";
+import { AI_MISSING, enrichWithAi, findAi, fixOrganizerType, normalizeGrades, pickProgramTitles } from "./ai.ts";
 import {
   ARCHIVE_FILE,
   EXCLUDED_FILE,
@@ -20,7 +20,7 @@ import type { ArchivePost, CollectContext, CollectedItem, Program, School, TagCa
 // 과거 글 수집 (내 컴퓨터에서 한 번 실행, 몇 시간 걸린다. 끊겨도 다시 실행하면 이어서 한다)
 //   npm run backfill -- --since 2020-01-01   목록 훑기 → 제목으로 거르기 → 본문 읽고 추출
 //   npm run backfill -- --save               결과를 data/programs.json·archive.json에 합치기
-//   --rules를 붙이면 AI 없이 규칙으로만 추출한다 (Codex 한도가 없을 때)
+//   --rules를 붙이면 AI 없이 규칙으로만 추출한다 (AI 한도가 없을 때)
 //   --school knu,kmu 를 붙이면 그 학교만 한다
 //   --posters를 붙이면 본문이 그림뿐인 글의 포스터도 AI가 읽는다 (느려서 기본은 끔)
 // 진행 상황은 .cache/backfill/에 둔다 (git에 올리지 않음). 원문 본문은 저장하지 않는다.
@@ -70,7 +70,7 @@ async function knownUrls(): Promise<Set<string>> {
 }
 
 async function run() {
-  if (!rulesOnly && !findCodex()) throw new Error("Codex CLI가 없어 과거 글을 거를 수 없습니다 (npm install -g @openai/codex)");
+  if (!rulesOnly && !findAi()) throw new Error(`과거 글을 거를 수 없습니다: ${AI_MISSING}`);
   const known = await knownUrls();
 
   for (const school of schools) {
@@ -145,7 +145,7 @@ async function extract(
     for (const item of items) enrich(item, ctx.source, categories);
 
     const job = (async () => {
-      // --rules: AI 없이 규칙 추출 결과만 쓴다 (Codex 한도가 없을 때, 보관함에만 들어갈 오래된 글용)
+      // --rules: AI 없이 규칙 추출 결과만 쓴다 (AI 한도가 없을 때, 보관함에만 들어갈 오래된 글용)
       if (rulesOnly) {
         for (const item of items) {
           fixOrganizerType(item.program, categories);

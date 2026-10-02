@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { daysUntil, formatPeriod, isClosed, isNew } from "../lib/filter.ts";
+import { daysUntil, formatPeriod, isClosed, isNew, recruitWord } from "../lib/filter.ts";
 import type { ProgramView as Program } from "../lib/filter.ts";
 import { FavoriteButton } from "./FavoriteButton.tsx";
 
@@ -57,7 +57,7 @@ export function ProgramRow({
         </Link>
         <div className="row-dates">
           <DdayBadge program={program} today={today} />
-          {walkIn ? <span className="row-free">신청 없이 참여</span> : <span>{recruit ? `모집 ${recruit}` : "모집 일정은 원문 확인"}</span>}
+          {walkIn ? <span className="row-free">신청 없이 참여</span> : <span>{recruit ? `${recruitWord(program)} ${recruit}` : `${recruitWord(program)} 일정은 원문 확인`}</span>}
           {(!compact || walkIn) && activity && <span className="row-activity">{walkIn ? "기간" : "활동"} {activity}</span>}
         </div>
         {!compact && tags.length > 0 && (

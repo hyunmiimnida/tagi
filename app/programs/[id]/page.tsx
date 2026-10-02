@@ -5,7 +5,7 @@ import { Comments } from "../../../components/Comments.tsx";
 import { DetailActions } from "../../../components/DetailActions.tsx";
 import { ExternalIcon } from "../../../components/Icons.tsx";
 import { getPastRounds, getPrograms, getSchools, getSourceNames } from "../../../lib/data.ts";
-import { describeTarget, formatDate, formatPeriod } from "../../../lib/filter.ts";
+import { describeTarget, formatDate, formatPeriod, recruitWord } from "../../../lib/filter.ts";
 import type { Program } from "../../../src/types.ts";
 
 export const dynamicParams = false;
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const program = getPrograms().find((p) => p.id === id);
   if (!program) return {};
   const recruit = formatPeriod(program.recruitPeriod, new Date().getFullYear());
-  const description = [program.summary, program.organizer, recruit && `모집 ${recruit}`, program.tags.map((t) => `#${t}`).join(" ")]
+  const description = [program.summary, program.organizer, recruit && `${recruitWord(program)} ${recruit}`, program.tags.map((t) => `#${t}`).join(" ")]
     .filter(Boolean)
     .join(" · ");
   return { title: program.title, description, openGraph: { title: program.title, description } };
@@ -42,7 +42,7 @@ function historyRow(round: Program) {
   const year = roundYear(round);
   const recruitText = formatPeriod(round.recruitPeriod, year);
   const period = recruitText
-    ? `모집 ${recruitText}`
+    ? `${recruitWord(round)} ${recruitText}`
     : round.postedAt && `게시 ${formatDate(round.postedAt, year)}`;
   return (
     <li key={round.id}>
@@ -74,7 +74,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
 
   const walkIn = !recruit && program.noApplication === true; // 신청 없이 참여하는 행사·서비스
   const rows: [string, string | null][] = [
-    ["모집 기간", recruit ?? (walkIn ? "신청 없이 참여할 수 있어요" : null)],
+    [`${recruitWord(program)} 기간`, recruit ?? (walkIn ? "신청 없이 참여할 수 있어요" : null)],
     [walkIn ? "운영 기간" : "활동 기간", activity],
     ["모집 대상", targetText],
     ["주최", program.organizer && `${program.organizer}${program.organizerType ? ` (${program.organizerType})` : ""}`],
@@ -147,11 +147,11 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
             rel="noopener noreferrer"
             className={`button ${index === 0 ? "primary" : ""} wide`}
           >
-            {links.length > 1 ? `${sourceNames[link.sourceId] ?? link.sourceId}에서 보기` : "원문에서 신청하기"}
+            {links.length > 1 ? `${sourceNames[link.sourceId] ?? link.sourceId}에서 보기` : walkIn ? "원문 보기" : "원문에서 신청하기"}
             <ExternalIcon />
           </a>
         ))}
-        <p className="cta-note">신청과 자세한 내용은 원래 사이트에서 확인하세요.</p>
+        <p className="cta-note">{walkIn ? "자세한 내용은 원래 사이트에서 확인하세요." : "신청과 자세한 내용은 원래 사이트에서 확인하세요."}</p>
       </div>
     </article>
   );

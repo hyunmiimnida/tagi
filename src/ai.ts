@@ -1,46 +1,64 @@
 import { execFile, execFileSync } from "node:child_process";
-import { existsSync, readdirSync } from "node:fs";
+import { existsSync, readdirSync, statSync } from "node:fs";
 import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { dirname, join } from "node:path";
+import { basename, join } from "node:path";
 import { cleanPeriods } from "./extract.ts";
 import { fetchImage } from "./fetch.ts";
 import { SCHOOL_NAMES } from "./school-of.ts";
 import { GRADES, STUDENT_STATUSES } from "./types.ts";
 import type { CollectedItem, Program, TagCategory } from "./types.ts";
 
-// AI 정보 추출: Codex CLI가 있으면 게시물 본문을 읽혀서 규칙으로 못 찾은 정보를 보완한다.
+// AI 정보 추출: AI CLI가 있으면 게시물 본문을 읽혀서 규칙으로 못 찾은 정보를 보완한다.
 // 게시물 여러 개를 한 번에 보내 비용을 줄인다. 실패하면 규칙 기반 결과를 그대로 쓴다.
+// 엔진: 기본은 Claude (Claude 앱에 들어 있는 Claude Code CLI, 모델 CLAUDE_MODEL=sonnet).
+//       AI_ENGINE=codex 로 실행하면 Codex CLI를 쓴다.
 
-const MODELS = ["gpt-6.1-sol"]; // 실패하면 다음 모델로 (gpt-6.0-astra는 ChatGPT 계정에서 쓸 수 없어 뺐다)
-const BATCH_SIZE = 8;
-const AI_PARALLEL = 5; // 동시에 Codex에 보내는 묶음 수
+export const AI_ENGINE: "claude" | "codex" = process.env.AI_ENGINE === "codex" ? "codex" : "claude";
+const CLAUDE_MODEL = process.env.CLAUDE_MODEL ?? "sonnet";
+const CODEX_MODEL = "gpt-6.1-sol";
+const BATCH_SIZE = 15; // 한 번에 보내는 게시물 수 (한 번 부를 때마다 드는 기본 비용을 줄이려고 크게)
+const AI_PARALLEL = 5; // 동시에 AI에 보내는 묶음 수
 const MAX_TEXT = 2500; // 게시물 하나당 본문 글자 수
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 
-let codexPath: string | null | undefined;
-
-// PATH에 없으면 Codex 앱이 설치한 위치에서 찾는다
-export function findCodex(): string | null {
-  if (codexPath !== undefined) return codexPath;
-  const candidates = [process.env.CODEX_BIN, "codex"];
-  const appBin = process.env.LOCALAPPDATA && join(process.env.LOCALAPPDATA, "OpenAI", "Codex", "bin");
-  if (appBin && existsSync(appBin)) {
-    for (const dir of readdirSync(appBin)) candidates.push(join(appBin, dir, "codex.exe"));
-  }
-  codexPath = null;
-  for (const candidate of candidates) {
-    if (!candidate) continue;
-    try {
-      execFileSync(candidate, ["--version"], { stdio: "ignore" });
-      codexPath = candidate;
-      break;
-    } catch {
-      // 다음 후보
+// PATH에 없으면 앱이 설치한 위치에서 찾는다 (가장 최근 버전 폴더부터).
+// 앱이 실행 중에 스스로 업데이트하면 예전 폴더가 지워지므로, 기억한 파일이 없어졌으면 다시 찾는다
+function finder(envVar: string, command: string, appDir: string | undefined, exe: string) {
+  let found: string | null | undefined;
+  return (): string | null => {
+    const gone = found && /[\\/]/.test(found) && !existsSync(found);
+    if (found !== undefined && !gone) return found;
+    const candidates = [process.env[envVar], command];
+    if (appDir && existsSync(appDir)) {
+      const dirs = readdirSync(appDir).map((dir) => join(appDir, dir));
+      dirs.sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs);
+      for (const dir of dirs) candidates.push(join(dir, exe));
     }
-  }
-  return codexPath;
+    found = null;
+    for (const candidate of candidates) {
+      if (!candidate) continue;
+      try {
+        execFileSync(candidate, ["--version"], { stdio: "ignore" });
+        found = candidate;
+        break;
+      } catch {
+        // 다음 후보
+      }
+    }
+    return found;
+  };
 }
+
+const { LOCALAPPDATA, APPDATA } = process.env;
+export const findCodex = finder("CODEX_BIN", "codex", LOCALAPPDATA && join(LOCALAPPDATA, "OpenAI", "Codex", "bin"), "codex.exe");
+export const findClaude = finder("CLAUDE_BIN", "claude", APPDATA && join(APPDATA, "Claude", "claude-code"), "claude.exe");
+// 지금 엔진의 실행 파일 (없으면 null → 규칙 결과만 쓴다)
+export const findAi = () => (AI_ENGINE === "codex" ? findCodex() : findClaude());
+export const AI_MISSING =
+  AI_ENGINE === "codex"
+    ? "Codex CLI가 없습니다 (npm install -g @openai/codex)"
+    : "Claude CLI가 없습니다 (Claude 앱 설치 후, 터미널에서 claude.exe를 한 번 실행해 /login)";
 
 // 다른 학교 학생도 지원할 수 있는지. 본 추출과 이미 추출한 글 다시 확인(recheckFields)이 함께 쓴다
 const OPEN_TO_RULE = `- openTo: 글을 올린 학교의 학생이 아니어도 지원할 수 있으면, 지원할 수 있는 사람을 글에 적힌 대로 30자 안으로 짧게 쓴다.
@@ -128,16 +146,30 @@ ${tagList}
 ${posts}`;
 }
 
-function runCodex(bin: string, model: string, prompt: string, outFile: string, images: string[] = []): Promise<void> {
+// AI에게 한 번 묻고 답 글자를 돌려준다. images: 같은 임시 폴더에 둔 그림 파일 (포스터 읽기)
+// 프로젝트 폴더가 아닌 빈 임시 폴더에서 실행한다 (게시물 본문에 숨은 지시가 있어도 프로젝트 파일에 손대지 못하게)
+function runAi(bin: string, prompt: string, dir: string, images: string[] = []): Promise<string> {
+  const exe = existsSync(bin) ? bin : (findAi() ?? bin); // 실행 중 앱 업데이트로 경로가 바뀌었으면 다시 찾는다
+  const outFile = join(dir, "answer.txt");
+  const args =
+    AI_ENGINE === "codex"
+      ? ["exec", "--skip-git-repo-check", "--sandbox", "read-only", "-m", CODEX_MODEL, ...images.flatMap((image) => ["-i", image]), "--output-last-message", outFile, "-"]
+      : // Claude: 도구는 그림을 열 때만 Read 하나만 쓴다 (명령 실행·파일 수정·인터넷 도구 없음). 대화 기록은 남기지 않는다
+        ["-p", "--model", CLAUDE_MODEL, "--no-session-persistence", "--output-format", "text", "--tools", images.length ? "Read" : "", ...(images.length ? ["--allowedTools", "Read"] : [])];
+  const input =
+    AI_ENGINE === "claude" && images.length
+      ? `${prompt}\n\n그림 파일(Read 도구로 열어 봐라): ${images.map((image) => basename(image)).join(", ")}`
+      : prompt;
   return new Promise((resolve, reject) => {
-    const child = execFile(
-      bin,
-      ["exec", "--skip-git-repo-check", "--sandbox", "read-only", "-m", model, ...images.flatMap((image) => ["-i", image]), "--output-last-message", outFile, "-"],
-      // 프로젝트 폴더가 아닌 빈 임시 폴더에서 실행한다 (게시물 본문에 숨은 지시가 있어도 프로젝트 파일에 손대지 못하게)
-      { timeout: 600_000, maxBuffer: 20 * 1024 * 1024, cwd: dirname(outFile) },
-      (error) => (error ? reject(error) : resolve()),
-    );
-    child.stdin?.end(prompt);
+    const child = execFile(exe, args, { timeout: 600_000, maxBuffer: 20 * 1024 * 1024, cwd: dir }, async (error, stdout) => {
+      if (error) return reject(error);
+      try {
+        resolve(AI_ENGINE === "codex" ? await readFile(outFile, "utf8") : stdout);
+      } catch (readError) {
+        reject(readError);
+      }
+    });
+    child.stdin?.end(input);
   });
 }
 
@@ -146,22 +178,14 @@ const date = (v: unknown) =>
   typeof v === "string" && DATE.test(v) && new Date(`${v}T00:00:00Z`).toISOString().startsWith(v) ? v : null;
 const strings = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : []);
 
-async function askCodex(bin: string, prompt: string): Promise<{ items?: Record<string, unknown>[]; same?: unknown }> {
-  const dir = await mkdtemp(join(tmpdir(), "codex-"));
+async function askAi(bin: string, prompt: string): Promise<{ items?: Record<string, unknown>[]; same?: unknown }> {
+  const dir = await mkdtemp(join(tmpdir(), "ai-"));
   try {
-    const outFile = join(dir, "answer.txt");
-    let lastError: unknown;
-    for (const model of MODELS) {
-      try {
-        await runCodex(bin, model, prompt, outFile);
-        const answer = await readFile(outFile, "utf8");
-        return JSON.parse(answer.slice(answer.indexOf("{"), answer.lastIndexOf("}") + 1));
-      } catch (error) {
-        lastError = error;
-        console.error(`  AI(${model}) 실패, 다음 모델로 시도`);
-      }
-    }
-    throw lastError;
+    const answer = await runAi(bin, prompt, dir);
+    return JSON.parse(answer.slice(answer.indexOf("{"), answer.lastIndexOf("}") + 1));
+  } catch (error) {
+    console.error(`  AI(${AI_ENGINE}) 실패`);
+    throw error;
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
@@ -171,11 +195,20 @@ async function askCodex(bin: string, prompt: string): Promise<{ items?: Record<s
 // 읽은 글자는 정보 추출에만 쓰고 저장하지 않는다 (원문을 복사하지 않는다)
 const POSTER_TEXT_MIN = 150; // 본문 글자(공백 제외)가 이보다 적으면 포스터를 읽는다
 const POSTER_MAX = 2;
+// 포스터는 한 번에 하나씩 AI를 불러 비용이 커서, 한 번 실행(수집 1회)에 이만큼만 읽는다
+const POSTER_LIMIT = Number(process.env.POSTER_LIMIT ?? 10);
+let postersRead = 0;
 const EXT: Record<string, string> = { "image/png": "png", "image/jpeg": "jpg", "image/gif": "gif", "image/webp": "webp" };
+// 본문 글자가 거의 없고, 규칙으로 날짜를 하나도 못 찾은 글만 포스터를 읽는다
 export const needsPoster = (item: CollectedItem) =>
-  (item.images?.length ?? 0) > 0 && item.text.replace(/\s/g, "").length < POSTER_TEXT_MIN;
+  (item.images?.length ?? 0) > 0 &&
+  item.text.replace(/\s/g, "").length < POSTER_TEXT_MIN &&
+  !item.program.recruitPeriod.end &&
+  !item.program.activityPeriod.start;
 
 async function readPoster(bin: string, item: CollectedItem): Promise<void> {
+  if (postersRead >= POSTER_LIMIT) return;
+  postersRead++;
   const dir = await mkdtemp(join(tmpdir(), "poster-"));
   try {
     const files: string[] = [];
@@ -187,12 +220,10 @@ async function readPoster(bin: string, item: CollectedItem): Promise<void> {
       files.push(file);
     }
     if (files.length === 0) return;
-    const outFile = join(dir, "answer.txt");
     const prompt = `첨부한 그림은 대학 공지 "${item.program.title}"의 포스터다. 파일을 읽거나 명령을 실행하지 말고, 그림에 적힌 글자 중
 공고 내용(제목, 대상, 모집·신청 기간, 활동 일정, 장소, 신청 방법, 주최·주관, 혜택)만 줄마다 그대로 옮겨 적어라. 설명 없이 글자만.
 공고와 관계없는 그림이거나 글자가 없으면 "없음"이라고만 써라.`;
-    await runCodex(bin, MODELS[0], prompt, outFile, files);
-    const text = (await readFile(outFile, "utf8")).trim();
+    const text = (await runAi(bin, prompt, dir, files)).trim();
     if (text && text !== "없음") item.text = `${item.text}\n[포스터에 적힌 글자]\n${text.slice(0, 2000)}`;
   } catch (error) {
     console.error("  포스터 읽기 실패:", error instanceof Error ? error.message : error);
@@ -277,7 +308,7 @@ function apply(item: CollectedItem, data: Record<string, unknown>, categories: T
 
 // 이미 추출한 글에 나중에 생긴 칸(다른 학교 지원 가능 여부, 요약)만 다시 묻는다. 확인하지 않은 칸만 채운다. 답을 받은 글 수를 돌려준다
 export async function recheckFields(items: CollectedItem[], maxText = 1500): Promise<number> {
-  const bin = findCodex();
+  const bin = findAi();
   if (!bin || items.length === 0) return 0;
   await Promise.all(items.filter(needsPoster).map((item) => readPoster(bin, item)));
   const posts = items
@@ -294,7 +325,7 @@ ${NO_APPLICATION_RULE}
 
 ${posts}`;
   try {
-    const answer = await askCodex(bin, prompt);
+    const answer = await askAi(bin, prompt);
     const byId = new Map(items.map((item) => [item.program.id, item.program]));
     let answered = 0;
     for (const data of answer.items ?? []) {
@@ -314,7 +345,7 @@ ${posts}`;
 
 // 두 게시물이 같은 프로그램인지 AI에게 묻는다. 같다고 답한 쌍의 번호를 돌려준다. 묻지 못했으면 null
 export async function confirmDuplicates(pairs: [Program, Program][]): Promise<number[] | null> {
-  const bin = findCodex();
+  const bin = findAi();
   if (!bin || pairs.length === 0) return null;
   const describe = (p: Program) =>
     `${p.title} / 주최 ${p.organizer ?? "모름"} / 모집 ${p.recruitPeriod.start ?? "?"}~${p.recruitPeriod.end ?? "?"} / 활동 ${p.activityPeriod.start ?? "?"}~${p.activityPeriod.end ?? "?"}`;
@@ -324,7 +355,7 @@ export async function confirmDuplicates(pairs: [Program, Program][]): Promise<nu
 
 ${pairs.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join("\n")}`;
   try {
-    const answer = await askCodex(bin, prompt);
+    const answer = await askAi(bin, prompt);
     const same = (answer as { same?: unknown }).same;
     return Array.isArray(same) ? same.filter((n): n is number => Number.isInteger(n) && n >= 0 && n < pairs.length) : null;
   } catch (error) {
@@ -335,7 +366,7 @@ ${pairs.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join
 
 // 두 공고가 "같은 프로그램이 다른 해·학기·회차에 다시 열린 것"인지 묻는다. 쌍마다 true/false, 실패하면 null
 export async function confirmSameSeries(pairs: [Program, Program][]): Promise<boolean[] | null> {
-  const bin = findCodex();
+  const bin = findAi();
   if (!bin) return null;
   const describe = (p: Program) => `${p.title} / 주최 ${p.organizer ?? "모름"} / 게시 ${p.postedAt ?? "?"}`;
   const answers: boolean[] = [];
@@ -349,7 +380,7 @@ export async function confirmSameSeries(pairs: [Program, Program][]): Promise<bo
 
 ${batch.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join("\n")}`;
     try {
-      const same = (await askCodex(bin, prompt)).same;
+      const same = (await askAi(bin, prompt)).same;
       const set = new Set(Array.isArray(same) ? same : []);
       batch.forEach((_, i) => answers.push(set.has(i)));
       console.log(`  AI 반복 프로그램 판단 ${Math.min(start + 60, pairs.length)}/${pairs.length}`);
@@ -363,7 +394,7 @@ ${batch.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join
 
 // 과거 글 1차 거르기: 제목만 보고 "학생이 신청·참여하는 공고"인 글의 번호를 돌려준다. 실패하면 null
 export async function pickProgramTitles(titles: string[]): Promise<number[] | null> {
-  const bin = findCodex();
+  const bin = findAi();
   if (!bin) return null;
   const prompt = `아래는 대학 홈페이지 소식 게시판의 글 제목이다. 파일을 읽거나 명령을 실행하지 말고 JSON만 답해라.
 학생(학부생·대학원생·유학생)이 신청·참여·지원할 수 있는 모집 공고의 번호만 골라라.
@@ -374,7 +405,7 @@ export async function pickProgramTitles(titles: string[]): Promise<number[] | nu
 
 ${titles.map((title, i) => `${i}. ${title}`).join("\n")}`;
   try {
-    const answer = (await askCodex(bin, prompt)) as { pick?: unknown };
+    const answer = (await askAi(bin, prompt)) as { pick?: unknown };
     if (!Array.isArray(answer.pick)) return null;
     return answer.pick.filter((n): n is number => Number.isInteger(n) && n >= 0 && n < titles.length);
   } catch (error) {
@@ -391,7 +422,7 @@ export async function enrichWithAi(
   { batchSize = BATCH_SIZE, maxText = MAX_TEXT, posters = true } = {},
 ): Promise<{ done: number; notForStudents: Set<string> }> {
   const notForStudents = new Set<string>();
-  const bin = findCodex();
+  const bin = findAi();
   if (!bin || items.length === 0) return { done: 0, notForStudents };
 
   // 묶음 여러 개를 동시에 Codex에 보낸다 (묶음마다 1분쯤 걸려서 차례로 보내면 오래 걸린다)
@@ -409,7 +440,7 @@ export async function enrichWithAi(
         console.log(`  포스터 읽기 ${withPoster.length}개`);
       }
       try {
-        const answer = await askCodex(bin, buildPrompt(batch, categories, maxText));
+        const answer = await askAi(bin, buildPrompt(batch, categories, maxText));
         for (const data of answer.items ?? []) {
           const item = batch.find((b) => b.program.id === data.id);
           if (!item) continue;

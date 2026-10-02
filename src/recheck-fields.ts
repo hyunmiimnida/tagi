@@ -1,4 +1,4 @@
-import { findCodex, recheckFields } from "./ai.ts";
+import { AI_MISSING, findAi, recheckFields } from "./ai.ts";
 import { PROGRAMS_FILE, readJson, writeJson } from "./archive.ts";
 import { archivers } from "./collectors/index.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
@@ -10,7 +10,7 @@ import type { CollectContext, CollectedItem, Program, School } from "./types.ts"
 
 const BATCH = 20;
 
-if (!findCodex()) throw new Error("Codex CLI가 없어 확인할 수 없습니다 (npm install -g @openai/codex)");
+if (!findAi()) throw new Error(`확인할 수 없습니다: ${AI_MISSING}`);
 const schools = await readJson<School[]>(new URL("../config/schools.json", import.meta.url));
 const programs = await readJson<Program[]>(PROGRAMS_FILE, []);
 

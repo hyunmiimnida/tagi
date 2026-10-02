@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { daysUntil, formatDate, toDateString } from "../lib/filter.ts";
+import { daysUntil, formatDate, recruitWord, toDateString } from "../lib/filter.ts";
 import { downloadIcs } from "../lib/ics.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import type { ProgramView as Program } from "../lib/filter.ts";
@@ -20,15 +20,15 @@ const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
 function eventsOf(program: Program): CalendarEvent[] {
   const { recruitPeriod: recruit, activityPeriod: activity } = program;
   const events: [string | null, string][] = [
-    [recruit.start, "모집 시작"],
-    [recruit.end, "모집 마감"],
+    [recruit.start, `${recruitWord(program)} 시작`],
+    [recruit.end, `${recruitWord(program)} 마감`],
     [activity.start, activity.start === activity.end ? "활동" : "활동 시작"],
     [activity.start === activity.end ? null : activity.end, "활동 종료"],
   ];
   return events.flatMap(([date, kind]) => (date ? [{ date, kind, program }] : []));
 }
 
-const isDeadline = (event: CalendarEvent) => event.kind === "모집 마감";
+const isDeadline = (event: CalendarEvent) => event.kind.endsWith("마감"); // 모집 마감·접수 마감
 
 export function CalendarView({ programs }: { programs: Program[] }) {
   const user = useUser();
@@ -121,10 +121,10 @@ export function CalendarView({ programs }: { programs: Program[] }) {
         </div>
         <div className="legend">
           <span>
-            <i className="warn" /> 모집 마감
+            <i className="warn" /> 모집·접수 마감
           </span>
           <span>
-            <i /> 모집·활동 일정
+            <i /> 모집·접수·활동 일정
           </span>
         </div>
       </section>

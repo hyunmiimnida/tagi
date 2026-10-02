@@ -9,6 +9,7 @@ import {
   formatDate,
   isClosed,
   isNew,
+  recruitWord,
   visibleForSchool,
 } from "../lib/filter.ts";
 import type { FilterCategory } from "../lib/filter.ts";
@@ -225,7 +226,7 @@ export function Home({ programs, categories }: Props) {
                   </div>
                   <div className="row-body">
                     <div className="row-meta">
-                      <span className={kind === "마감" ? "warn" : "accent"}>{kind === "마감" ? "모집 마감" : "활동 시작"}</span>
+                      <span className={kind === "마감" ? "warn" : "accent"}>{kind === "마감" ? `${recruitWord(program)} 마감` : "활동 시작"}</span>
                     </div>
                     <Link href={`/programs/${program.id}`} className="row-title">
                       {program.title}

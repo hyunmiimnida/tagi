@@ -60,8 +60,9 @@
 1. 출처별 수집기가 새 게시물을 가져온다. 서로 다른 사이트는 동시에 읽고, 같은 사이트는 요청 사이 1초 쉰다
    - robots.txt는 사이트마다 한 번 받아 기억하고, 목록·상세 등 **읽는 모든 주소**를 `fetchHtml`이 확인한다. 막힌 글은 건너뛰고 `collect-log.json`의 `robotsBlocked`에 남긴다
 2. `src/extract.ts`가 규칙으로 주최·기간·태그를 채운다
-3. `useAi` 출처는 Codex CLI가 있으면 `src/ai.ts`가 게시물 8개씩 묶어 추출한다 (gpt-6.1-sol, 실패하면 규칙 결과를 그대로 쓴다)
-   - 본문 글자가 거의 없고 그림만 있는 글은 그림(최대 2장)을 받아 Codex가 포스터 글자를 읽고 본문 뒤에 붙인다 (`needsPoster`). 그림 주소도 robots.txt를 따른다(영남대 `/_attach`, 계명대 본부 `/upload`는 막혀 있어 못 읽음). 읽은 글자는 저장하지 않는다
+3. `useAi` 출처는 AI CLI가 있으면 `src/ai.ts`가 게시물 15개씩 묶어 추출한다 (실패하면 규칙 결과를 그대로 쓴다)
+   - 엔진: 기본은 **Claude** (Claude 앱에 들어 있는 Claude Code CLI, `%APPDATA%\Claude\claude-code\*\claude.exe`, 모델 `CLAUDE_MODEL`=sonnet). 도구 없이(포스터만 Read) 빈 임시 폴더에서 실행한다. `AI_ENGINE=codex`로 실행하면 Codex CLI(gpt-6.1-sol)
+   - 본문 글자가 거의 없고 그림만 있는 글은 그림(최대 2장)을 받아 AI가 포스터 글자를 읽고 본문 뒤에 붙인다 (`needsPoster`). 그림 주소도 robots.txt를 따른다(영남대 `/_attach`, 계명대 본부 `/upload`는 막혀 있어 못 읽음). 읽은 글자는 저장하지 않는다. 규칙으로 날짜를 하나도 못 찾은 글만, 한 번 실행에 10개까지(`POSTER_LIMIT`)
    - AI는 상세 화면 맨 위 한 줄 요약(`summary`, 원문을 베끼지 않고 자기 말로 60자 안)도 쓴다
    - AI는 사전 신청 없이 기간 중에 참여·이용하는 행사·서비스(박람회, 상설 상담실 등)인지(`noApplication`)도 판단한다. 모집 기간이 없고 이 값이 true면 목록에 "신청 없이 참여"와 기간, 상세에 "신청 없이 참여할 수 있어요"·"운영 기간"을 보여 준다
    - 학교(산학협력단·사업단·센터 등)가 자기 직원·교원을 뽑는 공고는 제목 규칙(`isStaffHiring`)으로 AI에 보내기 전에 뺀다. 바깥 기관의 신입 채용·채용 설명회는 남긴다
@@ -81,10 +82,10 @@
 
 과거 글 쌓기 (`src/backfill.ts`, 내 컴퓨터에서만): `npm run backfill -- --since 2020-01-01`로 목록 훑기 → 제목으로 1차 거르기(AI) → 본문 읽고 추출(AI),
 끝나면 `npm run backfill -- --save`로 목록·보관함에 합친다. 진행 상황은 `.cache/backfill/`에 있어 끊겨도 이어서 한다
-- Codex 한도가 없으면 `--rules`를 붙여 AI 없이 규칙으로만 추출한다 (보관함에만 들어갈 오래된 글은 이것으로 충분하다)
+- AI 한도가 없으면 `--rules`를 붙여 AI 없이 규칙으로만 추출한다 (보관함에만 들어갈 오래된 글은 이것으로 충분하다)
 - 반복 프로그램인지 애매한 쌍을 AI가 판단하지 못하면, 지금 목록 공고와 관련된 쌍만 뽑아 직접 판단해 `data/series-decisions.json`에 `"id1|id2": true/false`로 적는다 (id는 사전순 정렬). 다음 저장 때 반영된다
 
-Codex CLI는 PATH에 없어도 `%LOCALAPPDATA%\OpenAI\Codex\bin\*\codex.exe`에서 찾는다.
+Claude CLI·Codex CLI는 PATH에 없어도 각 앱이 설치한 곳(Claude `%APPDATA%\Claude\claude-code\*\claude.exe`, Codex `%LOCALAPPDATA%\OpenAI\Codex\bin\*\codex.exe`)에서 최신 버전을 찾는다.
 AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜 연도, 신청/제출 기한 구분, 태그 남발, 주최 유형).
 
 ## 폴더 구조
@@ -129,7 +130,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 
 - `npm run dev` — 내 컴퓨터에서 화면 실행 (http://localhost:3000)
 - `npm run collect` — 수집 실행, `npm run backfill` — 과거 글 쌓기 (위 설명 참고)
-- `npm run recheck` — 목록 공고 중 나중에 생긴 AI 칸(다른 학교 학생도 지원 가능한지 `openTo`, 한 줄 요약 `summary`)을 확인하지 않은 글만 다시 읽어 AI에게 묻는다 (Codex 필요)
+- `npm run recheck` — 목록 공고 중 나중에 생긴 AI 칸(다른 학교 학생도 지원 가능한지 `openTo`, 한 줄 요약 `summary`)·모집 기간이 없는 글의 신청 없이 참여 여부 `noApplication`)을 확인하지 않은 글만 다시 읽어 AI에게 묻는다
 - `node scripts/audit-quality.ts` — 품질 점검: 중복 줄, 잡음(신청할 것 없는 글) 비율, 마감일 대조 샘플(원문의 날짜 줄을 사람이 보고 대조) → `logs/quality-audit.json`. 출시 기준: 마감일 정확도 90%↑, 잡음 5%↓, 중복 0
 - `node scripts/review-excluded.ts` — "학생 대상 아님"으로 뺀 글을 다시 읽어 AI에게 다시 판단받기 (`--apply`로 되살리기. 되살리기 전에 사람이 목록 확인)
 - `node scripts/save-fixtures.ts` — 수집기 테스트용 HTML 샘플 만들기·갱신 (`test/fixtures/`, 학교 사이트 구조가 바뀌었을 때). 원문 글이 들어 있어 GitHub에 올리지 않는다(.gitignore). 샘플이 없으면 그 테스트는 건너뛴다
@@ -155,3 +156,4 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - 맡기기 전에 설치 여부를 확인하고(`codex --version`), 없으면 설치 방법을 알려준다
   (`npm install -g @openai/codex`).
 - 어떤 작업을 Codex에 맡기는지 매번 한 줄로 알려준다.
+- Codex 토큰은 적정히 쓴다 (2026-10-02 사용자 결정). 수집기의 AI 추출은 Claude로 옮겼고, 큰 일괄 작업(수천 개 다시 읽기 등)은 꼭 필요할 때만 한다.

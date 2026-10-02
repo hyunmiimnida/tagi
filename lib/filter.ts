@@ -123,6 +123,9 @@ export function formatDate(date: string, currentYear: number): string {
   return `${year === currentYear ? "" : `${year}.`}${month}.${day}(${weekday})`;
 }
 
+// 공모전·대회는 "모집" 대신 "접수"라고 쓴다 (작품·참가 신청을 받는 것이라서)
+export const recruitWord = (program: Pick<Program, "tags">) => (program.tags.includes("공모전·대회") ? "접수" : "모집");
+
 export function formatPeriod(period: { start: string | null; end: string | null }, currentYear: number): string | null {
   const { start, end } = period;
   if (!start && !end) return null;

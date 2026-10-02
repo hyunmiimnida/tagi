@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { matchesKeyword, matchesTags } from "./filter.ts";
+import { matchesKeyword, matchesTags, recruitWord } from "./filter.ts";
 
 const categories = [
   { id: "field", name: "분야", tags: ["취업·채용", "창업"] },
@@ -115,4 +115,9 @@ test("검색은 제목·주최·요약·태그에서 띄어쓰기를 무시하�
   assert.ok(matchesKeyword(p, "교육·특강"));
   assert.ok(matchesKeyword(p, "  "));
   assert.ok(!matchesKeyword(p, "삼성 해외"));
+});
+
+test("공모전·대회는 '접수', 나머지는 '모집'이라고 쓴다", () => {
+  assert.equal(recruitWord({ tags: ["공모전·대회", "학교"] }), "접수");
+  assert.equal(recruitWord({ tags: ["교육·특강"] }), "모집");
 });
