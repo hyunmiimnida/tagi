@@ -1074,5 +1074,89 @@
         }
       }
     ]
+  },
+  {
+    "id": "hanyang",
+    "name": "한양대학교",
+    "shortName": "한양대",
+    "sources": [
+      {
+        "id": "hanyang-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.hanyang.ac.kr/notice_all?p_p_id=kr_ac_hanyang_noticeBoard_web_portlet_NoticeBoardPortlet&p_p_lifecycle=0&_kr_ac_hanyang_noticeBoard_web_portlet_NoticeBoardPortlet_action=view",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "row": ".noticeBoard-view .hyu-list-body-inner[role=\"list\"] > .hyu-list-body-item",
+          "link": "h4 a",
+          "idParam": "_kr_ac_hanyang_noticeBoard_web_portlet_NoticeBoardPortlet_entryId",
+          "viewUrl": "https://www.hanyang.ac.kr/notice_all?p_p_id=kr_ac_hanyang_noticeBoard_web_portlet_NoticeBoardPortlet&p_p_lifecycle=0&_kr_ac_hanyang_noticeBoard_web_portlet_NoticeBoardPortlet_action=view_message&_kr_ac_hanyang_noticeBoard_web_portlet_NoticeBoardPortlet_entryId={id}",
+          "pageParam": "_kr_ac_hanyang_noticeBoard_web_portlet_NoticeBoardPortlet_cur",
+          "title": ".noticeBoard-view-message .hyu-list-body-inner[role=\"article\"] h4",
+          "content": ".noticeBoard-view-message .entry-content",
+          "listDate": ".hyu-list-body-item-col:nth-child(2) > span",
+          "date": ".noticeBoard-view-message .hyu-meta-inner:nth-child(1) > .hyu-meta-item:nth-child(2) > span:nth-child(2)",
+          "writer": ".noticeBoard-view-message .hyu-meta-inner:nth-child(1) > .hyu-meta-item:nth-child(1) > span:nth-child(2)"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hufs",
+    "name": "한국외국어대학교",
+    "shortName": "한국외대",
+    "sources": [
+      {
+        "id": "hufs-job",
+        "name": "진로취업지원센터 공지",
+        "collector": "table-board",
+        "url": "https://job.hufs.ac.kr/job/comm/board/d9acb88b1a000472132dd8b0c1e1cf65/index.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "진로취업지원센터",
+        "board": {
+          "link": "table.t_list tbody tr td.title a.ell",
+          "idAttr": "onclick",
+          "idPattern": "global\\.write\\('([0-9]+)'",
+          "viewUrl": "https://job.hufs.ac.kr/job/comm/board/d9acb88b1a000472132dd8b0c1e1cf65/view.do?dataSeq={id}",
+          "pageParam": "currentPageNo",
+          "title": "table.board_view thead td.title",
+          "content": "table.board_view .ck-contentEditDiv",
+          "listDate": "td[data-th=\"작성일\"]",
+          "date": "table.board_view thead li.f_right",
+          "writer": "table.board_view thead li.f_left"
+        }
+      }
+    ]
+  },
+  {
+    "id": "pknu",
+    "name": "국립부경대학교",
+    "shortName": "부경대",
+    "sources": [
+      {
+        "id": "pknu-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.pknu.ac.kr/main/163",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.bdlTitle a",
+          "idParam": "no",
+          "viewUrl": "https://www.pknu.ac.kr/main/163?action=view&no={id}",
+          "pageParam": "pageIndex",
+          "title": "table.subbrd:not(.subbrd_m) tr.first_noti td.title_b",
+          "content": "div.bdvTxt",
+          "listDate": "td.bdlDate",
+          "date": "table.subbrd:not(.subbrd_m) tbody tr:nth-child(2) td:nth-child(4)",
+          "writer": "table.subbrd:not(.subbrd_m) tbody tr:nth-child(2) td:nth-child(2)"
+        }
+      }
+    ]
   }
 ]

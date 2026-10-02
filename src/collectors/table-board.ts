@@ -10,7 +10,7 @@ import { htmlToText, imagesIn } from "./news-board.ts";
 
 // "2026/10/01", "2026-10-01 15:34", "26-09-30", "2026.10.01" 모두 받는다
 export function toIsoDate(text: string): string | null {
-  const m = text.match(/(\d{2,4})[./-](\d{1,2})[./-](\d{1,2})/);
+  const m = text.match(/(\d{2,4})\s*[./-]\s*(\d{1,2})\s*[./-]\s*(\d{1,2})/);
   if (!m) return null;
   const year = m[1].length === 2 ? `20${m[1]}` : m[1];
   return `${year}-${m[2].padStart(2, "0")}-${m[3].padStart(2, "0")}`;
@@ -87,7 +87,7 @@ function labeled($: cheerio.CheerioAPI, label: RegExp): string {
 async function readPost(ctx: CollectContext, post: ArchivePost): Promise<CollectedItem | null> {
   const board = boardOf(ctx);
   const $ = cheerio.load(await ctx.fetchHtml(post.url));
-  const title = clean($(board.title).first().text()) || post.title;
+  const title = clean($(board.title).first().text()).replace(/^제목\s*:\s*/, "") || post.title; // "제목 : …" 머리말은 지운다
   if (!title) return null;
 
   const program = emptyProgram(ctx.school, ctx.source, post.postId, title, post.url);

@@ -13,6 +13,7 @@ test("여러 모양의 등록일을 읽는다", () => {
   assert.equal(toIsoDate("2026.09.28"), "2026-09-28");
   assert.equal(toIsoDate("작성일자 2026-09-30"), "2026-09-30");
   assert.equal(toIsoDate("26-09-30"), "2026-09-30");
+  assert.equal(toIsoDate("2026. 10. 2"), "2026-10-02");
 });
 
 test("카드 모양 목록(row)과 onclick 속성의 번호(idAttr)도 읽는다", async () => {
