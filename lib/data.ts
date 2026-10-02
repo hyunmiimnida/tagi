@@ -15,9 +15,12 @@ const readSchools = () => readJson<School[]>("config/schools.json");
 // 저장된 공고에 학교(출처가 속한 학교 + 모집 대상 학교)와 교내 기관을 덧붙인다
 function toView(program: Program, schools: School[]): ProgramView {
   const schoolIds = new Set(program.target.schools);
-  for (const school of schools) {
-    if (school.sources.some((source) => program.sources.includes(source.id))) schoolIds.add(school.id);
-  }
+  // 다른 캠퍼스 글은 출처 학교(본교) 대신 그 캠퍼스로 보인다
+  if (program.campus) schoolIds.add(program.campus);
+  else
+    for (const school of schools) {
+      if (school.sources.some((source) => program.sources.includes(source.id))) schoolIds.add(school.id);
+    }
   const mine = schools.filter((school) => schoolIds.has(school.id));
   return {
     ...program,

@@ -54609,7 +54609,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "hanyang"
+        "hanyang-erica"
       ],
       "colleges": [],
       "departments": [],
@@ -54648,7 +54648,8 @@
     "collectedAt": "2026-10-02T15:22:10.259Z",
     "summary": "현장실습 경험을 영상·웹툰·발표·수기로 만들어 상금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T15:22:10.259Z"
+    "firstSeenAt": "2026-10-02T15:22:10.259Z",
+    "campus": "hanyang-erica"
   },
   {
     "id": "hanyang-notice-119801",
@@ -54701,7 +54702,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "hanyang"
+        "hanyang-erica"
       ],
       "colleges": [],
       "departments": [],
@@ -54741,7 +54742,8 @@
     "collectedAt": "2026-10-02T15:22:15.963Z",
     "summary": "ERICA 학습법 프로그램 기획안을 내고 상금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T15:22:15.963Z"
+    "firstSeenAt": "2026-10-02T15:22:15.963Z",
+    "campus": "hanyang-erica"
   },
   {
     "id": "hanyang-notice-119601",
@@ -55222,7 +55224,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "hanyang"
+        "hanyang-erica"
       ],
       "colleges": [],
       "departments": [],
@@ -55257,7 +55259,8 @@
     "collectedAt": "2026-10-02T15:22:48.079Z",
     "summary": "자기주도학습 전략을 배우는 온라인 학습법 특강에 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T15:22:48.079Z"
+    "firstSeenAt": "2026-10-02T15:22:48.079Z",
+    "campus": "hanyang-erica"
   },
   {
     "id": "hanyang-notice-118201",
@@ -55550,7 +55553,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "hanyang"
+        "hanyang-erica"
       ],
       "colleges": [],
       "departments": [],
@@ -55586,7 +55589,8 @@
     "collectedAt": "2026-10-02T15:23:01.066Z",
     "summary": "국외 현장실습학기제 12기에 참가하고 설명회에도 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T15:23:01.066Z"
+    "firstSeenAt": "2026-10-02T15:23:01.066Z",
+    "campus": "hanyang-erica"
   },
   {
     "id": "hanyang-notice-117301",
@@ -57614,7 +57618,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "khu"
+        "khu-global"
       ],
       "colleges": [],
       "departments": [],
@@ -57649,7 +57653,8 @@
     "collectedAt": "2026-10-02T16:52:35.652Z",
     "summary": "학습전략검사를 받고 맞춤형 학습 상담을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T16:52:35.652Z"
+    "firstSeenAt": "2026-10-02T16:52:35.652Z",
+    "campus": "khu-global"
   },
   {
     "id": "khu-notice-323229",
@@ -57832,7 +57837,7 @@
     "organizerType": "기업",
     "target": {
       "schools": [
-        "khu"
+        "khu-global"
       ],
       "colleges": [],
       "departments": [],
@@ -57868,7 +57873,8 @@
     "collectedAt": "2026-10-02T16:52:43.628Z",
     "summary": "해외영업(일본) 전환형 인턴에 학교 추천으로 지원해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T16:52:43.628Z"
+    "firstSeenAt": "2026-10-02T16:52:43.628Z",
+    "campus": "khu-global"
   },
   {
     "id": "khu-notice-323221",
@@ -58058,7 +58064,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "khu"
+        "khu-global"
       ],
       "colleges": [],
       "departments": [],
@@ -58095,7 +58101,8 @@
     "collectedAt": "2026-10-02T16:52:51.502Z",
     "summary": "물리·정보 학습지원 튜터로 활동하고 시간당 장학금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T16:52:51.502Z"
+    "firstSeenAt": "2026-10-02T16:52:51.502Z",
+    "campus": "khu-global"
   },
   {
     "id": "khu-notice-323205",
@@ -58239,7 +58246,7 @@
     "organizerType": "기업",
     "target": {
       "schools": [
-        "khu"
+        "khu-global"
       ],
       "colleges": [],
       "departments": [],
@@ -58274,7 +58281,8 @@
     "collectedAt": "2026-10-02T16:52:58.130Z",
     "summary": "이카운트 개발본부 신입 개발자 추천채용에 지원해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T16:52:58.130Z"
+    "firstSeenAt": "2026-10-02T16:52:58.130Z",
+    "campus": "khu-global"
   },
   {
     "id": "khu-notice-323184",

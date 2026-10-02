@@ -75,6 +75,8 @@ async function listPage(ctx: CollectContext, page: number): Promise<ArchivePost[
       title: clean((board.listTitle ? row.find(board.listTitle).first().text() : "") || $(a).attr("title") || $(a).text()),
       url: viewUrlOf(board, postId),
       postedAt: toIsoDate(row.find(board.listDate ?? "td.date").first().text()),
+      // 배지가 여러 개면 하나씩 띄어 읽는다 ("주요알림 ERICA 행사")
+      campus: board.campus ? row.find(board.campus).toArray().map((el) => clean($(el).text())).join(" ") : undefined,
     });
   }
   return posts;
@@ -103,8 +105,10 @@ async function readPost(ctx: CollectContext, post: ArchivePost): Promise<Collect
   return {
     program,
     writer: (board.writer ? writerName(clean($(board.writer).first().text())) : labeled($, /작성자|부서/)) || null,
-    text: htmlToText($(board.content).first().html() ?? ""),
+    // 본문 HTML이 글자로 한 번 더 감싸여 오는 게시판(contentEscaped)은 글자를 다시 HTML로 읽는다
+    text: htmlToText(board.contentEscaped ? $(board.content).first().text() : ($(board.content).first().html() ?? "")),
     images,
+    campusLabel: post.campus,
   };
 }
 

@@ -39,6 +39,7 @@ export interface Program {
   summary?: string | null;
   // 사전 신청 없이 기간 중에 참여·이용하는 행사·서비스(박람회, 상설 상담실 등)인지 AI가 판단. 없음(undefined) = 아직 묻지 않음
   noApplication?: boolean;
+  campus?: string; // 다른 캠퍼스 글이면 그 캠퍼스(학교 설정의 id, 예: "hanyang-erica"). 학교 배지·필터가 출처 학교 대신 이 캠퍼스를 쓴다
   seriesId?: string; // 해마다·학기마다 반복되는 같은 프로그램의 묶음 id (src/series.ts)
 }
 
@@ -48,6 +49,7 @@ export interface CollectedItem {
   writer: string | null; // 게시물 작성 부서
   text: string;
   images?: string[]; // 본문 그림 주소 (본문 글자가 거의 없으면 AI가 포스터 글자를 읽는다). 저장하지 않는다
+  campusLabel?: string; // 목록에 붙은 캠퍼스 표시 (예: "ERICA", "국제", "다빈치"). 학교의 campuses 설정으로 다른 캠퍼스를 가린다
 }
 
 export interface Source {
@@ -61,6 +63,22 @@ export interface Source {
   useAi?: boolean; // 본문이 길어 AI 추출이 필요한 출처
   localOnly?: boolean; // 해외 서버에서 접속이 막혀 내 컴퓨터에서만 수집하는 출처
   board?: TableBoard; // "table-board" 수집기의 사이트별 설정
+  json?: JsonBoard; // "json-board" 수집기의 사이트별 설정
+}
+
+// 목록을 데이터 주소(JSON)로 불러오는 게시판 설정. 칸 이름은 "data.list"처럼 점으로 잇는다
+export interface JsonBoard {
+  listUrl: string; // 목록 데이터 주소. {page} 자리에 쪽 번호(1부터)
+  items: string; // 목록 JSON에서 게시물 배열이 있는 칸
+  id: string; // 게시물 번호 칸
+  title: string; // 제목 칸
+  date: string; // 등록일 칸
+  campus?: string; // 캠퍼스 표시 칸 (학교의 campuses 설정과 맞춰 본다)
+  viewUrl: string; // 사람이 보는 상세 화면 주소 (원문 링크로 저장). {id} 자리에 번호
+  detailUrl?: string; // 상세 데이터 주소. 있으면 본문을 여기서(content·writer·detailTitle 칸), 없으면 viewUrl 화면에서(content·writer 선택자) 읽는다
+  content?: string;
+  writer?: string;
+  detailTitle?: string;
 }
 
 // 표 모양 게시판(번호·제목·작성자·등록일) 설정. 학교마다 다른 부분만 적는다
@@ -73,6 +91,7 @@ export interface TableBoard {
   pageOffset?: number; // 쪽 번호 대신 시작 글 순서(0, 10, 20…)를 넣는 게시판의 한 쪽 글 수 (예: 성균관대 article.offset)
   title: string; // 상세에서 제목 선택자
   content: string; // 상세에서 본문 선택자
+  contentEscaped?: boolean; // 본문 HTML이 글자로 감싸여 오는 게시판 (예: 성균관대 본부 공지의 pre)
   listDate?: string; // 목록에서 등록일 칸 선택자 (기본: "td.date")
   date?: string; // 상세에서 등록일 선택자 (기본: "등록일·일시" 이름표 옆 값)
   writer?: string; // 상세에서 작성 부서 선택자 (기본: "작성자·부서" 이름표 옆 값). "작성자 :" 같은 머리말은 지운다
@@ -81,6 +100,7 @@ export interface TableBoard {
   // viewUrl의 {id} 자리에는 감싼 view 값이 들어간다
   encoded?: { param: string; list: string; view: string };
   row?: string; // 목록에서 게시물 하나를 감싼 요소 (기본: "tr"). 카드(li·div) 모양 목록이면 그 선택자
+  campus?: string; // 목록 한 줄 안의 캠퍼스 표시 칸 선택자 (예: 한양대 배지 "ERICA")
   listTitle?: string; // 목록 한 줄(row) 안의 제목 칸 선택자 (링크 글자에 번호·조회수가 섞일 때)
   idAttr?: string; // 게시물 번호를 찾을 링크 속성 (기본: "href"). 예: "onclick", "data-itsp-view-link"
 }
@@ -96,6 +116,10 @@ export interface School {
   name: string;
   shortName: string; // 목록에 붙는 짧은 이름 (예: 영남대)
   units?: Unit[];
+  // 같은 게시판에 올라오는 다른 캠퍼스 글을 따로 분류한다. schoolId는 그 캠퍼스의 학교 설정 id(출처 없이 이름만 있는 학교).
+  // 목록의 캠퍼스 표시가 labels 중 하나와 같거나, 제목에 titleKeywords 중 하나가 있으면 그 캠퍼스 글이다
+  campuses?: { schoolId: string; labels?: string[]; titleKeywords?: string[] }[];
+  campusOf?: string; // 이 학교가 다른 학교의 캠퍼스일 때 본교 id (예: 한양대 ERICA → "hanyang")
   sources: Source[];
 }
 
@@ -126,6 +150,7 @@ export interface ArchivePost {
   title: string;
   url: string;
   postedAt: string | null;
+  campus?: string; // 목록의 캠퍼스 표시
   item?: CollectedItem;
 }
 

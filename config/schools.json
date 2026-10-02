@@ -868,6 +868,76 @@
     ]
   },
   {
+    "id": "sogang",
+    "name": "서강대학교",
+    "shortName": "서강대",
+    "sources": [
+      {
+        "id": "sogang-notice",
+        "name": "일반공지",
+        "collector": "json-board",
+        "url": "https://www.sogang.ac.kr/api/api/v1/mainKo/BbsData/boardList?bbsConfigFk=1",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "json": {
+          "listUrl": "https://www.sogang.ac.kr/api/api/v1/mainKo/BbsData/boardList?pageNum={page}&pageSize=15&bbsConfigFk=1",
+          "items": "data.list",
+          "id": "pkId",
+          "title": "title",
+          "date": "regDate",
+          "viewUrl": "https://www.sogang.ac.kr/ko/detail/{id}?bbsConfigFk=1",
+          "detailUrl": "https://www.sogang.ac.kr/api/api/v1/mainKo/BbsData?pkId={id}",
+          "content": "data.content",
+          "writer": "data.displayName",
+          "detailTitle": "data.title"
+        }
+      },
+      {
+        "id": "sogang-student",
+        "name": "학생지원 공지",
+        "collector": "json-board",
+        "url": "https://www.sogang.ac.kr/api/api/v1/mainKo/BbsData/boardList?bbsConfigFk=34",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "json": {
+          "listUrl": "https://www.sogang.ac.kr/api/api/v1/mainKo/BbsData/boardList?pageNum={page}&pageSize=15&bbsConfigFk=34",
+          "items": "data.list",
+          "id": "pkId",
+          "title": "title",
+          "date": "regDate",
+          "viewUrl": "https://www.sogang.ac.kr/ko/detail/{id}?bbsConfigFk=34",
+          "detailUrl": "https://www.sogang.ac.kr/api/api/v1/mainKo/BbsData?pkId={id}",
+          "content": "data.content",
+          "writer": "data.displayName",
+          "detailTitle": "data.title"
+        }
+      },
+      {
+        "id": "sogang-scholarship",
+        "name": "장학공지",
+        "collector": "json-board",
+        "url": "https://www.sogang.ac.kr/api/api/v1/mainKo/BbsData/boardList?bbsConfigFk=141",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "json": {
+          "listUrl": "https://www.sogang.ac.kr/api/api/v1/mainKo/BbsData/boardList?pageNum={page}&pageSize=15&bbsConfigFk=141",
+          "items": "data.list",
+          "id": "pkId",
+          "title": "title",
+          "date": "regDate",
+          "viewUrl": "https://www.sogang.ac.kr/ko/detail/{id}?bbsConfigFk=141",
+          "detailUrl": "https://www.sogang.ac.kr/api/api/v1/mainKo/BbsData?pkId={id}",
+          "content": "data.content",
+          "writer": "data.displayName",
+          "detailTitle": "data.title"
+        }
+      }
+    ]
+  },
+  {
     "id": "korea",
     "name": "고려대학교",
     "shortName": "고려대",
@@ -1098,10 +1168,30 @@
           "content": ".noticeBoard-view-message .entry-content",
           "listDate": ".hyu-list-body-item-col:nth-child(2) > span",
           "date": ".noticeBoard-view-message .hyu-meta-inner:nth-child(1) > .hyu-meta-item:nth-child(2) > span:nth-child(2)",
-          "writer": ".noticeBoard-view-message .hyu-meta-inner:nth-child(1) > .hyu-meta-item:nth-child(1) > span:nth-child(2)"
+          "writer": ".noticeBoard-view-message .hyu-meta-inner:nth-child(1) > .hyu-meta-item:nth-child(1) > span:nth-child(2)",
+          "campus": ".hyu-badge"
         }
       }
+    ],
+    "campuses": [
+      {
+        "schoolId": "hanyang-erica",
+        "labels": [
+          "ERICA"
+        ],
+        "titleKeywords": [
+          "ERICA",
+          "에리카"
+        ]
+      }
     ]
+  },
+  {
+    "id": "hanyang-erica",
+    "name": "한양대학교 ERICA",
+    "shortName": "한양대 ERICA",
+    "campusOf": "hanyang",
+    "sources": []
   },
   {
     "id": "hufs",
@@ -1165,6 +1255,26 @@
     "shortName": "중앙대",
     "sources": [
       {
+        "id": "cau-notice",
+        "name": "CAU 공지",
+        "collector": "json-board",
+        "url": "https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=100",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "json": {
+          "listUrl": "https://www.cau.ac.kr/ajax/FR_SVC/BBSViewList2.do?MENU_ID=100&SITE_NO=2&BOARD_SEQ=4&BOARD_CATEGORY_NO=&pageNo={page}&pagePerCnt=15",
+          "items": "data.list",
+          "id": "BBS_SEQ",
+          "title": "SUBJECT",
+          "date": "WRITE_DT",
+          "campus": "CATEGORY_NM2",
+          "viewUrl": "https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=4&BBS_SEQ={id}",
+          "content": "dd:has(p.view_txt)",
+          "writer": ".txtInfo .writer"
+        }
+      },
+      {
         "id": "cau-startup",
         "name": "창업지원단 공지",
         "collector": "table-board",
@@ -1205,13 +1315,57 @@
           "row": "ul.gallery-list > li.gallery-item"
         }
       }
+    ],
+    "campuses": [
+      {
+        "schoolId": "cau-davinci",
+        "labels": [
+          "다빈치"
+        ],
+        "titleKeywords": [
+          "다빈치캠퍼스",
+          "[다빈치]",
+          "(다빈치)"
+        ]
+      }
     ]
+  },
+  {
+    "id": "cau-davinci",
+    "name": "중앙대학교 다빈치캠퍼스",
+    "shortName": "중앙대 다빈치",
+    "campusOf": "cau",
+    "sources": []
   },
   {
     "id": "skku",
     "name": "성균관대학교",
     "shortName": "성균관대",
     "sources": [
+      {
+        "id": "skku-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do",
+        "enabled": true,
+        "pages": 3,
+        "useAi": true,
+        "board": {
+          "row": "ul.board-list-wrap > li",
+          "link": ".board-list-content-title a",
+          "idParam": "articleNo",
+          "viewUrl": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "title": ".board-view-title-wrap h4",
+          "content": "dl.board-write-box pre.pre",
+          "listDate": ".board-list-content-info > ul > li:nth-child(3)",
+          "date": ".board-etc-wrap > li:nth-child(3)",
+          "writer": ".board-etc-wrap > li:first-child",
+          "listTitle": ".board-list-content-title a",
+          "contentEscaped": true
+        }
+      },
       {
         "id": "skku-success",
         "name": "학생성공센터",
@@ -1260,7 +1414,8 @@
           "content": ".board02 .row.contents",
           "listDate": "td:nth-child(4)",
           "date": ".board02 .dateBox .date",
-          "writer": ".board02 .txtWriter"
+          "writer": ".board02 .txtWriter",
+          "campus": "span.txtBox01"
         }
       },
       {
@@ -1306,7 +1461,28 @@
           "writer": ".bbs-view .info .sv_member"
         }
       }
+    ],
+    "campuses": [
+      {
+        "schoolId": "khu-global",
+        "labels": [
+          "국제"
+        ],
+        "titleKeywords": [
+          "[국제]",
+          "(국제)",
+          "국제캠퍼스",
+          "국제C "
+        ]
+      }
     ]
+  },
+  {
+    "id": "khu-global",
+    "name": "경희대학교 국제캠퍼스",
+    "shortName": "경희대 국제",
+    "campusOf": "khu",
+    "sources": []
   },
   {
     "id": "uos",
@@ -1430,6 +1606,24 @@
           "writer": "#bo_v_info .sv_member"
         }
       }
+    ],
+    "campuses": [
+      {
+        "schoolId": "dongguk-wise",
+        "titleKeywords": [
+          "WISE캠퍼스",
+          "[WISE]",
+          "(WISE)",
+          "경주캠퍼스"
+        ]
+      }
     ]
+  },
+  {
+    "id": "dongguk-wise",
+    "name": "동국대학교 WISE캠퍼스",
+    "shortName": "동국대 WISE",
+    "campusOf": "dongguk",
+    "sources": []
   }
 ]

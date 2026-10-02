@@ -36,3 +36,11 @@ test("카드 모양 목록(row)과 onclick 속성의 번호(idAttr)도 읽는다
   assert.equal(items[0].program.links[0].url, "https://u.example/view/000123");
   assert.equal(items[0].program.postedAt, "2026-10-01");
 });
+
+test("JSON 게시판: 점 경로로 값을 꺼내고 붙여 쓴 날짜도 읽는다", async () => {
+  const { jsonDate, pick } = await import("./json-board.ts");
+  assert.deepEqual(pick({ data: { list: [1, 2] } }, "data.list"), [1, 2]);
+  assert.equal(pick({ data: null }, "data.list"), undefined);
+  assert.equal(jsonDate("20261001150309"), "2026-10-01");
+  assert.equal(jsonDate("2026-10-02 17:07:00.0"), "2026-10-02");
+});

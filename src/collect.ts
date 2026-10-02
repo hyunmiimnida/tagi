@@ -14,6 +14,7 @@ import { mergeCollectLog } from "./collect-log.ts";
 import type { CollectLog, SourceLog } from "./collect-log.ts";
 import { collectors } from "./collectors/index.ts";
 import { collapseReposts, findAmbiguousPairs, mergePair, mergePrograms } from "./dedupe.ts";
+import { applyCampus } from "./campus.ts";
 import { cleanPeriods, looksLikeNoticeOnly, notForStudentsByTitle } from "./extract.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots, robotsBlocked } from "./fetch.ts";
@@ -64,7 +65,10 @@ async function readSource({ school, source }: (typeof tasks)[number]) {
       return;
     }
     const items = await collector({ school, source, fetchHtml, isKnown: (url) => knownUrls.has(url) });
-    for (const item of items) enrich(item, source, categories);
+    for (const item of items) {
+      enrich(item, source, categories);
+      applyCampus(item.program, school, item.campusLabel); // 같은 게시판의 다른 캠퍼스 글은 그 캠퍼스로 분류한다
+    }
     console.log(`${label} ${items.length}개 읽음`);
     results.push({ source, label, items });
   } catch (error) {
@@ -118,6 +122,12 @@ for (const { source, label, items } of results) {
 // 제목 규칙이 나중에 늘어도 이미 저장된 글까지 빠지도록 여기서도 거른다
 const keep = (p: Program) => !excluded.has(p.id) && !notForStudentsByTitle(p.title);
 const combined = collapseReposts(mergePrograms(existing, incoming).filter(keep));
+// 이미 저장된 공고도 제목으로 다른 캠퍼스를 가린다 (캠퍼스 설정을 나중에 더했을 때)
+const schoolOfSource = new Map(schools.flatMap((school) => school.sources.map((source) => [source.id, school] as const)));
+for (const program of combined) {
+  const school = schoolOfSource.get(program.sources[0]);
+  if (school) applyCampus(program, school);
+}
 combined.forEach(cleanPeriods);
 const { current, old } = splitByAge(combined);
 let merged = current;
