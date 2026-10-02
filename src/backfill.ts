@@ -11,7 +11,7 @@ import {
 } from "./archive.ts";
 import { archivers } from "./collectors/index.ts";
 import { collapseReposts, mergePrograms } from "./dedupe.ts";
-import { cleanPeriods, isStaffHiring } from "./extract.ts";
+import { cleanPeriods, notForStudentsByTitle } from "./extract.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
@@ -189,7 +189,7 @@ async function save() {
   const excludedUrls = new Set(await readJson<string[]>(EXCLUDED_FILE, []));
   const sourceIds = new Set(schools.filter((s) => !onlySchools || onlySchools.has(s.id)).flatMap((s) => s.sources.map((src) => src.id)));
   const incoming = results.filter(
-    (p) => p.sources.some((id) => sourceIds.has(id)) && !p.links.some((l) => excludedUrls.has(l.url)) && !isStaffHiring(p.title),
+    (p) => p.sources.some((id) => sourceIds.has(id)) && !p.links.some((l) => excludedUrls.has(l.url)) && !notForStudentsByTitle(p.title),
   );
   console.log(`합칠 결과 ${incoming.length}개 (전체 ${results.length}개 중)`);
   const all = collapseReposts(mergePrograms(saved, incoming));

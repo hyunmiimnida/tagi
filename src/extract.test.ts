@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { isDuplicate, titleSimilarity } from "./dedupe.ts";
-import { extractPeriods, isStaffHiring, parseDates } from "./extract.ts";
+import { extractPeriods, isMandatoryNotice, isStaffHiring, parseDates } from "./extract.ts";
 
 test("여러 형태의 날짜를 읽는다", () => {
   assert.deepEqual(parseDates("2026. 9. 30.(수) ~ 10. 14.(수)", 2026), ["2026-09-30", "2026-10-14"]);
@@ -158,4 +158,14 @@ test("학교가 자기 직원을 뽑는 공고만 직원 채용으로 본다", (
   assert.ok(!isStaffHiring("2026년도 「한국은행 대구경북본부」 종합기획직원(G5) 채용설명회"));
   assert.ok(!isStaffHiring("[누구나 참가 가능] 미국 텍사스대학교 교수 초빙 세미나 안내"));
   assert.ok(!isStaffHiring("[10/7(수) 12:00까지] 영남대학교 산학협력단 10월 1차 행정보조 학생 모집"));
+});
+
+test("의무 교육·제도 안내는 빼고, 그 주제의 공모전·참여자 모집은 남긴다", () => {
+  assert.ok(isMandatoryNotice("2026학년도 2학기 폭력예방교육 수강 안내"));
+  assert.ok(isMandatoryNotice("[필수(법정)교육] 2026학년도 2학기 학생 대상 온라인 폭력예방교육 수강 안내"));
+  assert.ok(isMandatoryNotice("[안내] 2026학년도 제안제도 시행"));
+  assert.ok(isMandatoryNotice("2024학년도 실험동물 사용·관리 등에 관한 법정교육 안내 (원격교육)"));
+  assert.ok(!isMandatoryNotice("💰상금100만원💰폭력예방교육 수강 후기 공모전"));
+  assert.ok(!isMandatoryNotice("찾아가는 폭력예방교육 참여자 모집 [비교과]"));
+  assert.ok(!isMandatoryNotice("2026 중독예방교육 웹툰·숏폼 공모전 참가자 모집"));
 });

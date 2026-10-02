@@ -14,7 +14,7 @@ import { mergeCollectLog } from "./collect-log.ts";
 import type { CollectLog, SourceLog } from "./collect-log.ts";
 import { collectors } from "./collectors/index.ts";
 import { collapseReposts, findAmbiguousPairs, mergePair, mergePrograms } from "./dedupe.ts";
-import { cleanPeriods, isStaffHiring, looksLikeNoticeOnly } from "./extract.ts";
+import { cleanPeriods, looksLikeNoticeOnly, notForStudentsByTitle } from "./extract.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots, robotsBlocked } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
@@ -86,7 +86,7 @@ await Promise.all(
 // 2단계: AI 추출이 필요한 글을 모두 모아 한꺼번에 보낸다 (ai.ts가 여러 묶음을 동시에 보낸다)
 const needAi = results
   .filter(({ source }) => source.useAi)
-  .flatMap(({ items }) => items.filter((item) => !aiDoneUrls.has(item.program.links[0].url) && !isStaffHiring(item.program.title)));
+  .flatMap(({ items }) => items.filter((item) => !aiDoneUrls.has(item.program.links[0].url) && !notForStudentsByTitle(item.program.title)));
 // 어떤 AI로 정리하는지 기록에 남긴다 (작업 스케줄러처럼 앱 밖에서 돌 때 AI를 못 찾으면 규칙으로만 정리된다)
 if (needAi.length > 0) console.log(`AI 정리: ${AI_ENGINE} ${findAi() ?? "→ 찾지 못해 규칙으로만 정리"} (${needAi.length}개)`);
 const ai = needAi.length > 0 ? await enrichWithAi(needAi, categories) : null;
@@ -96,8 +96,8 @@ for (const { source, label, items } of results) {
   // 학생이 신청·참가할 기회가 아닌 글은 저장하지 않는다
   // AI가 추출하지 못한 글(GitHub Actions 등)은 단순 안내로 보이는 제목만 이번에 건너뛴다.
   // 기록하지 않으므로 AI가 있을 때 다시 판단한다
-  // 직원·교원 채용 공고는 제목만 보고 AI 없이도 뺀다 (isStaffHiring)
-  const notFor = (item: (typeof items)[number]) => ai?.notForStudents.has(item.program.id) || isStaffHiring(item.program.title);
+  // 직원·교원 채용, 의무 교육·제도 안내는 제목만 보고 AI 없이도 뺀다 (notForStudentsByTitle)
+  const notFor = (item: (typeof items)[number]) => ai?.notForStudents.has(item.program.id) || notForStudentsByTitle(item.program.title);
   const notForStudents = items.filter(notFor);
   const studentItems = items.filter(
     (item) => !notFor(item) && (item.program.extractedBy === "ai" || !looksLikeNoticeOnly(item.program.title)),
@@ -115,7 +115,9 @@ for (const { source, label, items } of results) {
 
 // 마지막 일정이 오래 지난 항목은 지우지 않고 보관함(archive.json)으로 옮긴다
 // 같은 게시판에 다시 올린 글은 하나로 합치고, 말이 안 되는 기간은 지운다
-const combined = collapseReposts(mergePrograms(existing, incoming).filter((p) => !excluded.has(p.id)));
+// 제목 규칙이 나중에 늘어도 이미 저장된 글까지 빠지도록 여기서도 거른다
+const keep = (p: Program) => !excluded.has(p.id) && !notForStudentsByTitle(p.title);
+const combined = collapseReposts(mergePrograms(existing, incoming).filter(keep));
 combined.forEach(cleanPeriods);
 const { current, old } = splitByAge(combined);
 let merged = current;
@@ -144,7 +146,7 @@ for (const pair of pairs.filter((pair) => duplicateDecisions[pairKey(pair)])) {
 // 목록에 다시 올라온 공고(예: 다시 읽어 새 일정을 찾은 글)는 보관함에서 뺀다
 const listedUrls = new Set(merged.flatMap((p) => p.links.map((l) => l.url)));
 const archive = mergeArchive(
-  archived.filter((p) => !p.links.some((l) => listedUrls.has(l.url)) && !excluded.has(p.id)),
+  archived.filter((p) => !p.links.some((l) => listedUrls.has(l.url)) && keep(p)),
   old,
 );
 const seriesCount = await assignSeries(merged, archive);

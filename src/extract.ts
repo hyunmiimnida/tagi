@@ -141,3 +141,12 @@ const SCHOOL_BODY = /대학|산학협력단|사업단|센터|본부|교실|지�
 const FOR_NEWCOMERS = /신입|신규|인턴|청년|체험형|학생|설명회|박람회|특강|세미나/;
 export const isStaffHiring = (title: string) =>
   STAFF_HIRING.test(title) && SCHOOL_BODY.test(title) && !FOR_NEWCOMERS.test(title);
+
+// 누구나 들어야 하는 의무 교육(폭력예방교육·법정교육 수강 안내)과 학교 제도 안내(제안제도 등).
+// 기회가 아니라 해야 할 일·제도 소개라서 뺀다. 그 교육을 주제로 한 공모전·참여자 모집은 남긴다
+const MANDATORY_OR_SYSTEM = /(폭력\s*예방|법정|필수|의무)[^\]]{0,6}교육.*(수강|이수|안내)|제안\s*제도/;
+const OPPORTUNITY = /공모전|모집|참가자|참여자/;
+export const isMandatoryNotice = (title: string) => MANDATORY_OR_SYSTEM.test(title) && !OPPORTUNITY.test(title);
+
+// AI 없이 제목만 보고 확실히 학생 기회가 아닌 글
+export const notForStudentsByTitle = (title: string) => isStaffHiring(title) || isMandatoryNotice(title);
