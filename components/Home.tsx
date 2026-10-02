@@ -10,6 +10,7 @@ import {
   isClosed,
   isNew,
   recruitWord,
+  upcomingEvents,
   visibleForSchool,
 } from "../lib/filter.ts";
 import type { FilterCategory } from "../lib/filter.ts";
@@ -76,14 +77,7 @@ export function Home({ programs, categories }: Props) {
   const todayCount = fresh.filter((p) => addedAt(p) === today).length;
 
   // 내 관심 공고의 다가오는 일정 3개
-  const myEvents = useMemo(() => {
-    const events: { date: string; kind: string; program: Program }[] = [];
-    for (const p of programs.filter((p) => favorites.has(p.id))) {
-      if (p.recruitPeriod.end && p.recruitPeriod.end >= today) events.push({ date: p.recruitPeriod.end, kind: "마감", program: p });
-      if (p.activityPeriod.start && p.activityPeriod.start >= today) events.push({ date: p.activityPeriod.start, kind: "활동", program: p });
-    }
-    return events.sort((a, b) => a.date.localeCompare(b.date)).slice(0, 3);
-  }, [programs, favorites, today]);
+  const myEvents = useMemo(() => upcomingEvents(programs, favorites, today), [programs, favorites, today]);
 
   const field = categories.find((c) => c.id === "field");
 

@@ -36,6 +36,7 @@ interface UserState {
   signedIn: boolean;
   userId: string | null;
   email: string | null; // 카카오는 이메일을 주지 않을 수 있다
+  provider: string | null; // 로그인한 방법 ("kakao", "google")
   schoolId: string | null;
   profile: Profile;
   setProfile: (patch: Partial<Profile>) => Promise<boolean>; // 계정에 저장하지 못하면 false (브라우저에는 저장됨)
@@ -95,6 +96,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
   const [userId, setUserId] = useState<string | null>(null);
   const [email, setEmail] = useState<string | null>(null);
+  const [provider, setProvider] = useState<string | null>(null);
   const [schoolId, setSchoolId] = useState<string | null>(null);
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
   const [profile, setProfileState] = useState<Profile>(EMPTY_PROFILE);
@@ -113,6 +115,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     const { data } = supabase.auth.onAuthStateChange((_event, session) => {
       setUserId(session?.user.id ?? null);
       setEmail(session?.user.email ?? null);
+      setProvider((session?.user.app_metadata.provider as string | undefined) ?? null);
       if (!session) {
         setFavorites(new Set());
         setReady(true);
@@ -245,6 +248,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       signedIn: userId !== null,
       userId,
       email,
+      provider,
       schoolId,
       profile,
       setProfile,
@@ -273,7 +277,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         return true;
       },
     }),
-    [ready, userId, email, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite],
+    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite],
   );
 
   return <UserContext value={value}>{children}</UserContext>;

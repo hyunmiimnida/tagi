@@ -2062,3 +2062,171 @@ main {
 .empty-art {
   margin-bottom: 8px;
 }
+
+/* 프로필 (components/MyAccount.tsx) */
+.my-identity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.my-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.my-identity-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.my-identity-text strong {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.my-identity-text span {
+  color: var(--text-3);
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}
+
+.my-edit {
+  font-size: 0.8125rem;
+}
+
+.my-stats {
+  margin-top: 18px;
+}
+
+button.stat {
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.stat strong.warn {
+  color: var(--warn);
+}
+
+.stat strong.stat-text {
+  font-size: 1.0625rem;
+  line-height: 1.9;
+}
+
+.my-login-why {
+  margin-top: 16px;
+}
+
+.my-setup {
+  background: var(--accent-soft);
+}
+
+.my-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.my-step {
+  height: 34px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.my-step.done {
+  color: var(--text-3);
+}
+
+.my-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.my-more {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-3);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.my-events {
+  margin: 8px -20px 0;
+}
+
+.my-label em {
+  margin-left: 6px;
+  color: var(--accent);
+  font-style: normal;
+}
+
+.my-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.my-row + .my-row,
+.my-row + .nickname-note + .my-row,
+.my-row + div + .my-row {
+  border-top: 1px solid var(--line);
+}
+
+.my-row > span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.my-row strong {
+  font-size: 1rem;
+}
+
+.my-row small {
+  color: var(--text-3);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.my-row .button.small {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 0;
+}
+
+.my-about .card-sub {
+  line-height: 1.6;
+}
+
+.my-account-actions {
+  padding: 8px 0 0;
+}

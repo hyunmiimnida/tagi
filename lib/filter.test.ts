@@ -121,3 +121,11 @@ test("공모전·대회는 '접수', 나머지는 '모집'이라고 쓴다", () 
   assert.equal(recruitWord({ tags: ["공모전·대회", "학교"] }), "접수");
   assert.equal(recruitWord({ tags: ["교육·특강"] }), "모집");
 });
+
+test("관심 공고의 다가오는 일정을 가까운 순으로 고른다", async () => {
+  const { upcomingEvents } = await import("./filter.ts");
+  const p = (id: string, end: string | null, start: string | null) => ({ id, recruitPeriod: { start: null, end }, activityPeriod: { start, end: null } });
+  const programs = [p("a", "2026-10-10", "2026-10-20"), p("b", "2026-10-05", null), p("c", "2026-09-01", null), p("d", "2026-10-03", null)];
+  const events = upcomingEvents(programs, new Set(["a", "b", "c"]), "2026-10-02");
+  assert.deepEqual(events.map((e) => `${e.program.id}:${e.kind}`), ["b:마감", "a:마감", "a:활동"]);
+});

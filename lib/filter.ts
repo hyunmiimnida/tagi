@@ -123,6 +123,21 @@ export function formatDate(date: string, currentYear: number): string {
   return `${year === currentYear ? "" : `${year}.`}${month}.${day}(${weekday})`;
 }
 
+// 관심 공고의 다가오는 일정 (모집 마감·활동 시작), 가까운 순으로 limit개
+export function upcomingEvents<P extends Pick<Program, "id" | "recruitPeriod" | "activityPeriod">>(
+  programs: P[],
+  favorites: Set<string>,
+  today: string,
+  limit = 3,
+): { date: string; kind: "마감" | "활동"; program: P }[] {
+  const events: { date: string; kind: "마감" | "활동"; program: P }[] = [];
+  for (const p of programs.filter((p) => favorites.has(p.id))) {
+    if (p.recruitPeriod.end && p.recruitPeriod.end >= today) events.push({ date: p.recruitPeriod.end, kind: "마감", program: p });
+    if (p.activityPeriod.start && p.activityPeriod.start >= today) events.push({ date: p.activityPeriod.start, kind: "활동", program: p });
+  }
+  return events.sort((a, b) => a.date.localeCompare(b.date)).slice(0, limit);
+}
+
 // 공모전·대회는 "모집" 대신 "접수"라고 쓴다 (작품·참가 신청을 받는 것이라서)
 export const recruitWord = (program: Pick<Program, "tags">) => (program.tags.includes("공모전·대회") ? "접수" : "모집");
 
