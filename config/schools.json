@@ -986,5 +986,93 @@
         }
       }
     ]
+  },
+  {
+    "id": "konkuk",
+    "name": "건국대학교",
+    "shortName": "건국대",
+    "sources": [
+      {
+        "id": "konkuk-job",
+        "name": "취창업 공지",
+        "collector": "table-board",
+        "url": "https://www.konkuk.ac.kr/bbs/job/4083/artclList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "table.board-table tr td.td-subject a[href*=\"/artclView.do\"]",
+          "idPattern": "/bbs/job/4083/(\\d+)/artclView",
+          "viewUrl": "https://www.konkuk.ac.kr/bbs/job/4083/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.view-title",
+          "content": "div.view-con",
+          "listDate": "td.td-date",
+          "date": "dl.write dd",
+          "writer": "dl.writer dd"
+        }
+      },
+      {
+        "id": "konkuk-student",
+        "name": "학생 공지",
+        "collector": "table-board",
+        "url": "https://www.konkuk.ac.kr/bbs/konkuk/238/artclList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "table.board-table tr td.td-subject a[href*=\"/artclView.do\"]",
+          "idPattern": "/bbs/konkuk/238/(\\d+)/artclView",
+          "viewUrl": "https://www.konkuk.ac.kr/bbs/konkuk/238/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.view-title",
+          "content": "div.view-con",
+          "listDate": "td.td-date",
+          "date": "dl.write dd",
+          "writer": "dl.writer dd"
+        }
+      },
+      {
+        "id": "konkuk-general",
+        "name": "일반 공지",
+        "collector": "table-board",
+        "url": "https://www.konkuk.ac.kr/bbs/konkuk/240/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "table.board-table tr td.td-subject a[href*=\"/artclView.do\"]",
+          "idPattern": "/bbs/konkuk/240/(\\d+)/artclView",
+          "viewUrl": "https://www.konkuk.ac.kr/bbs/konkuk/240/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.view-title",
+          "content": "div.view-con",
+          "listDate": "td.td-date",
+          "date": "dl.write dd",
+          "writer": "dl.writer dd"
+        }
+      },
+      {
+        "id": "konkuk-startup",
+        "name": "창업지원본부",
+        "collector": "table-board",
+        "url": "https://startup.konkuk.ac.kr/BoardList.do?menuSeq=43842&configSeq=51096",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "창업지원본부",
+        "board": {
+          "link": "a.subject_click",
+          "idAttr": "data-itsp-view-link",
+          "idPattern": "(\\d+)",
+          "viewUrl": "https://startup.konkuk.ac.kr/BoardView.do?menuSeq=43842&configSeq=51096&seq={id}",
+          "pageParam": "pageNum",
+          "title": ".post_view_head dt.subject",
+          "content": ".post_view_body",
+          "listDate": ".write_date",
+          "date": ".post_view_head .write_date"
+        }
+      }
+    ]
   }
 ]
