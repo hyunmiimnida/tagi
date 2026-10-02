@@ -1,5 +1,5 @@
 import { mkdir } from "node:fs/promises";
-import { confirmDuplicates, enrichWithAi } from "./ai.ts";
+import { AI_ENGINE, confirmDuplicates, enrichWithAi, findAi } from "./ai.ts";
 import {
   ARCHIVE_FILE,
   DATA_DIR,
@@ -87,6 +87,8 @@ await Promise.all(
 const needAi = results
   .filter(({ source }) => source.useAi)
   .flatMap(({ items }) => items.filter((item) => !aiDoneUrls.has(item.program.links[0].url) && !isStaffHiring(item.program.title)));
+// 어떤 AI로 정리하는지 기록에 남긴다 (작업 스케줄러처럼 앱 밖에서 돌 때 AI를 못 찾으면 규칙으로만 정리된다)
+if (needAi.length > 0) console.log(`AI 정리: ${AI_ENGINE} ${findAi() ?? "→ 찾지 못해 규칙으로만 정리"} (${needAi.length}개)`);
 const ai = needAi.length > 0 ? await enrichWithAi(needAi, categories) : null;
 
 // 3단계: 출처별로 결과를 정리한다

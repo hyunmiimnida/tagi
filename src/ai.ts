@@ -30,10 +30,20 @@ function finder(envVar: string, command: string, appDirs: (string | undefined)[]
     const gone = found && /[\\/]/.test(found) && !existsSync(found);
     if (found !== undefined && !gone) return found;
     const candidates = [process.env[envVar], command];
+    // 버전 폴더 바로 안(버전\exe) 또는 한 단계 더 안(버전\코드\exe)에 있다 (앱 업데이트로 구조가 바뀌기도 한다)
+    const subdirs = (dir: string) => {
+      try {
+        return readdirSync(dir, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => join(dir, d.name));
+      } catch {
+        return [];
+      }
+    };
     const dirs = appDirs
       .filter((appDir): appDir is string => Boolean(appDir && existsSync(appDir)))
-      .flatMap((appDir) => readdirSync(appDir).map((dir) => join(appDir, dir)));
-    dirs.sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs);
+      .flatMap((appDir) => subdirs(appDir))
+      .flatMap((dir) => [dir, ...subdirs(dir)])
+      .filter((dir) => existsSync(join(dir, exe)));
+    dirs.sort((a, b) => statSync(join(b, exe)).mtimeMs - statSync(join(a, exe)).mtimeMs);
     for (const dir of dirs) candidates.push(join(dir, exe));
     found = null;
     for (const candidate of candidates) {
