@@ -32,6 +32,7 @@ export const writerName = (text: string) =>
   text
     .replace(/^(작성자|작성부서|부서|글쓴이)\s*:?\s*/, "")
     .replace(/^\[(.*)\]$/, "$1")
+    .replace(/^[가-힣]{2,4}\s*\((.+)\)$/, "$1") // "담당자 이름(학생지원팀)" → 개인 이름은 남기지 않는다
     .trim();
 
 function boardOf({ source }: CollectContext): TableBoard {

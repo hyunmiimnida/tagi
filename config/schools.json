@@ -866,5 +866,76 @@
         }
       }
     ]
+  },
+  {
+    "id": "korea",
+    "name": "고려대학교",
+    "shortName": "고려대",
+    "sources": [
+      {
+        "id": "korea-startup",
+        "name": "크림슨창업지원단 프로그램",
+        "collector": "table-board",
+        "url": "https://kustartup.korea.ac.kr/program/program.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "크림슨창업지원단",
+        "board": {
+          "link": "div.linePost div.postTitle",
+          "row": "div.linePost",
+          "idAttr": "onclick",
+          "idPattern": "seq=(\\d+)",
+          "viewUrl": "https://kustartup.korea.ac.kr/program/programView.do?seq={id}",
+          "pageParam": "currentPage",
+          "title": "span.detailTitle",
+          "content": ".proView",
+          "listDate": ".postPerid2",
+          "date": ".postPeriod .addDay"
+        }
+      },
+      {
+        "id": "korea-notice",
+        "name": "일반공지",
+        "collector": "table-board",
+        "url": "https://www.korea.ac.kr/portalBoard/ko/1/portalBoardList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idAttr": "onclick",
+          "idPattern": "jf_view\\('(\\d+)'",
+          "viewUrl": "https://www.korea.ac.kr/portalBoard/ko/1/{id}/portalBoardView.do",
+          "pageParam": "page",
+          "title": ".board-view .view .title strong",
+          "content": ".board-view .txt.mt10",
+          "listDate": "td.td-date",
+          "date": ".board-view .title ul.detail li:first-child",
+          "writer": ".board-view .title ul.detail li:nth-child(2)"
+        }
+      },
+      {
+        "id": "korea-scholarship",
+        "name": "장학금공지",
+        "collector": "table-board",
+        "url": "https://www.korea.ac.kr/portalBoard/ko/3/portalBoardList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a",
+          "idAttr": "onclick",
+          "idPattern": "jf_view\\('(\\d+)'",
+          "viewUrl": "https://www.korea.ac.kr/portalBoard/ko/3/{id}/portalBoardView.do",
+          "pageParam": "page",
+          "title": ".board-view .view .title strong",
+          "content": ".board-view .txt.mt10",
+          "listDate": "td.td-date",
+          "date": ".board-view .title ul.detail li:first-child",
+          "writer": ".board-view .title ul.detail li:nth-child(2)"
+        }
+      }
+    ]
   }
 ]

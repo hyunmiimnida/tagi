@@ -6,6 +6,7 @@ test("작성자 칸에서 부서 이름만 남긴다", () => {
   assert.equal(writerName("작성자 : 진로취업지원팀"), "진로취업지원팀");
   assert.equal(writerName("작성자 [종합교원양성센터]"), "종합교원양성센터");
   assert.equal(writerName("글로컬대학30"), "글로컬대학30");
+  assert.equal(writerName("김민정(학생지원팀)"), "학생지원팀");
 });
 
 test("여러 모양의 등록일을 읽는다", () => {
