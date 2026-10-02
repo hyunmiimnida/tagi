@@ -129,3 +129,72 @@ test("관심 공고의 다가오는 일정을 가까운 순으로 고른다", as
   const events = upcomingEvents(programs, new Set(["a", "b", "c"]), "2026-10-02");
   assert.deepEqual(events.map((e) => `${e.program.id}:${e.kind}`), ["b:마감", "a:마감", "a:활동"]);
 });
+
+test("교내 기관 필터: 하나도 안 고르면 모두, 고르면 그중 하나라도 맞는 공고", async () => {
+  const { matchesUnits } = await import("./filter.ts");
+  const program = { units: ["RISE사업단"] };
+  assert.ok(matchesUnits(program as never, new Set()));
+  assert.ok(matchesUnits(program as never, new Set(["RISE사업단", "창업지원단"])));
+  assert.ok(!matchesUnits(program as never, new Set(["창업지원단"])));
+});
+
+test("마감일은 모집 마감, 없으면 활동 종료일", async () => {
+  const { lastDay } = await import("./filter.ts");
+  const p = (recruitEnd: string | null, activityEnd: string | null) =>
+    ({ recruitPeriod: { start: null, end: recruitEnd }, activityPeriod: { start: null, end: activityEnd } }) as never;
+  assert.equal(lastDay(p("2026-10-10", "2026-12-01")), "2026-10-10");
+  assert.equal(lastDay(p(null, "2026-12-01")), "2026-12-01");
+  assert.equal(lastDay(p(null, null)), null);
+});
+
+test("날짜 사이 일수와 요일이 붙은 짧은 날짜", async () => {
+  const { daysUntil, formatDate } = await import("./filter.ts");
+  assert.equal(daysUntil("2026-10-12", "2026-10-02"), 10);
+  assert.equal(daysUntil("2026-10-02", "2026-10-02"), 0);
+  assert.equal(daysUntil("2026-09-30", "2026-10-02"), -2);
+  assert.equal(daysUntil("2026-03-30", "2026-03-28"), 2); // 서머타임이 있는 곳에서도 반올림해 맞춘다
+  assert.equal(formatDate("2026-10-02", 2026), "10.2(금)");
+  assert.equal(formatDate("2027-01-01", 2026), "2027.1.1(금)");
+});
+
+const dated = (over: Record<string, unknown>) =>
+  ({
+    id: "x",
+    title: "t",
+    recruitPeriod: { start: null, end: null },
+    activityPeriod: { start: null, end: null },
+    postedAt: null,
+    collectedAt: "2026-09-01T03:00:00Z",
+    ...over,
+  }) as never;
+
+test("새 공고는 올라온 지 3일 안", async () => {
+  const { isNew } = await import("./filter.ts");
+  assert.ok(isNew(dated({ postedAt: "2026-10-01" }), "2026-10-02"));
+  assert.ok(isNew(dated({ postedAt: "2026-09-30" }), "2026-10-02"));
+  assert.ok(!isNew(dated({ postedAt: "2026-09-29" }), "2026-10-02"));
+});
+
+test("아직 볼 만한 공고: 마감 전이거나, 마감이 지나도 활동 일정이 남은 것 (하루 여유)", async () => {
+  const { isCurrent } = await import("./filter.ts");
+  const today = "2026-10-02";
+  assert.ok(isCurrent(dated({ recruitPeriod: { start: null, end: "2026-10-05" } }), today));
+  assert.ok(isCurrent(dated({ recruitPeriod: { start: null, end: "2026-10-01" } }), today)); // 어제 마감은 하루 여유로 남긴다
+  assert.ok(!isCurrent(dated({ recruitPeriod: { start: null, end: "2026-09-20" } }), today));
+  assert.ok(isCurrent(dated({ recruitPeriod: { start: null, end: "2026-09-20" }, activityPeriod: { start: "2026-10-20", end: null } }), today));
+});
+
+test("마감순 정렬: 마감 전(가까운 순) → 마감일 모름(최근 게시 순) → 마감 지남(최근 마감 순)", async () => {
+  const { compareDeadline } = await import("./filter.ts");
+  const today = "2026-10-02";
+  const list = [
+    dated({ id: "closed-old", recruitPeriod: { start: null, end: "2026-09-01" } }),
+    dated({ id: "undated-old", postedAt: "2026-09-25" }),
+    dated({ id: "soon", recruitPeriod: { start: null, end: "2026-10-03" } }),
+    dated({ id: "closed-recent", recruitPeriod: { start: null, end: "2026-09-30" } }),
+    dated({ id: "later", recruitPeriod: { start: null, end: "2026-10-20" } }),
+    dated({ id: "undated-new", postedAt: "2026-10-01" }),
+  ];
+  const order = [...list].sort((a, b) => compareDeadline(a, b, today)).map((p: { id: string }) => p.id);
+  assert.deepEqual(order, ["soon", "later", "undated-new", "undated-old", "closed-recent", "closed-old"]);
+});

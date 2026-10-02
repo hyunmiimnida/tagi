@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { adminRpc, formatDateTime, PAGE_SIZE } from "../../lib/admin.ts";
+import { adminRpc } from "../../lib/admin-rpc.ts";
+import { formatDateTime, PAGE_SIZE } from "../../lib/admin.ts";
 import type { AdminComment, Page } from "../../lib/admin.ts";
 import type { AdminContext } from "./AdminApp.tsx";
 import { Pager } from "./AdminUsers.tsx";

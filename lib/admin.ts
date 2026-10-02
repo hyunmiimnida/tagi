@@ -1,7 +1,7 @@
 import type { PostgrestError } from "@supabase/supabase-js";
-import { supabase } from "./user.tsx";
 
-// 관리자 화면(/admin)에서 함께 쓰는 형식과 도우미. 관리 함수는 supabase/admin.sql에 있다
+// 관리자 화면(/admin)에서 함께 쓰는 형식과 도우미(서버를 부르지 않는 순수 계산이라 자동 검사한다).
+// 관리 함수 부르기는 lib/admin-rpc.ts, 관리 함수 자체는 supabase/admin.sql에 있다
 
 export interface AdminStats {
   users: number;
@@ -135,13 +135,6 @@ export const FEEDBACK_STATUS: Record<FeedbackStatus, string> = { new: "새 의�
 export const PROVIDER_NAMES: Record<string, string> = { kakao: "카카오", google: "구글" };
 export const PAGE_SIZE = 30;
 
-// 관리 함수 부르기. 오류는 사람이 읽을 수 있는 문장으로 바꾼다
-export async function adminRpc<T>(name: string, args?: Record<string, unknown>): Promise<{ data: T | null; error: string | null }> {
-  if (!supabase) return { data: null, error: "Supabase가 설정되지 않았어요." };
-  const { data, error } = await supabase.rpc(name, args);
-  return { data: (data as T | null) ?? null, error: error ? describeError(error) : null };
-}
-
 export function describeError(error: PostgrestError | { message: string; code?: string }): string {
   const message = error.message ?? "";
   if (message.includes("not_admin")) return "관리자 계정이 아니에요.";
@@ -181,4 +174,24 @@ export function timeAgo(iso: string | null | undefined): string {
   if (minutes < 60 * 24) return `${Math.floor(minutes / 60)}시간 전`;
   if (minutes < 60 * 24 * 30) return `${Math.floor(minutes / 60 / 24)}일 전`;
   return formatDateTime(iso).split(" ")[0];
+}
+
+// 탭 이름 옆 빨간 숫자: 그 탭에서 처리할 일이 몇 개 남았는지
+export function pendingCount(stats: AdminStats | null, tab: string): number {
+  if (!stats) return 0;
+  if (tab === "feedback") return stats.newFeedback;
+  if (tab === "comments") return stats.openReports;
+  if (tab === "reports") return stats.openProgramReports;
+  return 0;
+}
+
+// 살펴볼 수집 출처: 켜져 있는데 마지막 실행이 실패했거나, 성공 기록이 없거나, staleDays일 넘게 성공하지 못한 곳
+export function sourceProblems<S extends { enabled: boolean; ok: boolean | null; lastSuccessAt: string | null }>(
+  sources: S[],
+  now: number,
+  staleDays = 3,
+): S[] {
+  return sources.filter(
+    (s) => s.enabled && (s.ok === false || !s.lastSuccessAt || now - Date.parse(s.lastSuccessAt) > staleDays * 86_400_000),
+  );
 }

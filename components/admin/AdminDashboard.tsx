@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { formatDateTime, timeAgo } from "../../lib/admin.ts";
+import { formatDateTime, sourceProblems, timeAgo } from "../../lib/admin.ts";
 import type { AdminStats } from "../../lib/admin.ts";
 import type { AdminContext, TabId } from "./AdminApp.tsx";
 
@@ -18,9 +18,7 @@ export function AdminDashboard({ stats, context, goTo }: Props) {
   const { collect, schools } = context;
   const [allSources, setAllSources] = useState(false);
   const now = Date.now();
-  const problems = collect.sources.filter(
-    (s) => s.enabled && (s.ok === false || !s.lastSuccessAt || now - Date.parse(s.lastSuccessAt) > STALE_DAYS * 86_400_000),
-  );
+  const problems = sourceProblems(collect.sources, now, STALE_DAYS);
 
   const todo = stats
     ? [

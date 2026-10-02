@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { adminRpc } from "../../lib/admin.ts";
+import { adminRpc } from "../../lib/admin-rpc.ts";
+import { pendingCount } from "../../lib/admin.ts";
 import type { AdminStats } from "../../lib/admin.ts";
 import type { SourceStatus } from "../../lib/data.ts";
 import { useListPrograms, useSeriesInfo } from "../../lib/use-list.ts";
@@ -37,15 +38,6 @@ const TABS = [
 ] as const;
 
 export type TabId = (typeof TABS)[number]["id"];
-
-// 탭마다 처리할 일이 몇 개 남았는지 (탭 이름 옆 빨간 숫자)
-function pending(stats: AdminStats | null, tab: TabId): number {
-  if (!stats) return 0;
-  if (tab === "feedback") return stats.newFeedback;
-  if (tab === "comments") return stats.openReports;
-  if (tab === "reports") return stats.openProgramReports;
-  return 0;
-}
 
 export function AdminApp(props: PageProps) {
   const user = useUser();
@@ -164,7 +156,7 @@ export function AdminApp(props: PageProps) {
       </div>
       <nav className="chip-scroll admin-tabs" aria-label="관리 메뉴">
         {TABS.map((t) => {
-          const count = pending(stats, t.id);
+          const count = pendingCount(stats, t.id);
           return (
             <button
               key={t.id}
