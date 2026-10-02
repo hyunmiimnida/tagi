@@ -76,7 +76,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
   const rows: [string, string | null][] = [
     [`${recruitWord(program)} 기간`, recruit ?? (walkIn ? "신청 없이 참여할 수 있어요" : null)],
     [walkIn ? "운영 기간" : "활동 기간", activity],
-    ["모집 대상", targetText],
+    [recruitWord(program) === "접수" ? "참가 대상" : "모집 대상", targetText],
     ["주최", program.organizer && `${program.organizer}${program.organizerType ? ` (${program.organizerType})` : ""}`],
     ["출처", program.sources.map((sourceId) => sourceNames[sourceId] ?? sourceId).join(", ")],
   ];

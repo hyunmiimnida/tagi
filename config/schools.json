@@ -751,5 +751,52 @@
         }
       }
     ]
+  },
+  {
+    "id": "pnu",
+    "name": "부산대학교",
+    "shortName": "부산대",
+    "sources": [
+      {
+        "id": "pnu-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.subject a",
+          "idParam": "board_seq",
+          "viewUrl": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq={id}",
+          "pageParam": "page",
+          "title": "h4.vtitle",
+          "content": "#boardContents",
+          "listDate": "td.date",
+          "date": ".vtitle-winfo span.txt:nth-child(2)",
+          "writer": ".vtitle-winfo span.txt:nth-child(1)"
+        }
+      },
+      {
+        "id": "pnu-glocal",
+        "name": "글로컬대학30 공지",
+        "collector": "table-board",
+        "url": "https://glocal.pusan.ac.kr/bbs/glocal/18450/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "td._artclTdTitle a.artclLinkView",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://glocal.pusan.ac.kr/bbs/glocal/18450/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.artclViewTitle",
+          "content": ".artclView",
+          "listDate": "td._artclTdRdate",
+          "date": ".artclViewHead dt:contains(\"date\") + dd",
+          "writer": ".artclViewHead dt:contains(\"name\") + dd"
+        }
+      }
+    ]
   }
 ]

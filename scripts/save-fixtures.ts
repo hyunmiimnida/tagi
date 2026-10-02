@@ -7,7 +7,7 @@ import type { School } from "../src/types.ts";
 // 샘플에는 원문 글이 들어 있어 GitHub에 올리지 않는다 (.gitignore). 새 컴퓨터에서는 한 번 실행해 만든다
 //   node scripts/save-fixtures.ts [출처 id ...]
 // 출처마다 목록 1쪽과 처음 상세 1개만 받는다. 스크립트·스타일·글 안 그림 데이터는 지워 파일을 작게 만든다
-const ALL = ["yu-news", "yu-career", "knu-notice", "knu-startup", "kmu-notice", "kmu-col-coe", "dcu-program"];
+const ALL = ["yu-news", "yu-career", "knu-notice", "knu-startup", "kmu-notice", "kmu-col-coe", "dcu-program", "pnu-notice"];
 const CASES = process.argv.length > 2 ? process.argv.slice(2) : ALL; // 출처 id를 주면 그것만 다시 저장
 const OUT = new URL("../test/fixtures/", import.meta.url);
 mkdirSync(OUT, { recursive: true });

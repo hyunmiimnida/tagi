@@ -27,6 +27,13 @@ const unb64 = (text: string) => Buffer.from(text.replace(/\|+$/, ""), "base64").
 export const viewUrlOf = (board: TableBoard, id: string) =>
   board.viewUrl.replace("{id}", board.encoded ? b64(board.encoded.view.replace("{id}", id)) : id);
 
+// "작성자 : 진로취업지원팀", "작성자 [종합교원양성센터]" → 부서 이름만
+export const writerName = (text: string) =>
+  text
+    .replace(/^(작성자|작성부서|부서|글쓴이)\s*:?\s*/, "")
+    .replace(/^\[(.*)\]$/, "$1")
+    .trim();
+
 function boardOf({ source }: CollectContext): TableBoard {
   if (!source.board) throw new Error(`${source.id}: config/schools.json에 "board" 설정이 없음`);
   return source.board;
@@ -88,7 +95,7 @@ async function readPost(ctx: CollectContext, post: ArchivePost): Promise<Collect
   $(board.content).find("img, script, style").remove();
   return {
     program,
-    writer: (board.writer ? clean($(board.writer).first().text()).replace(/^[^:]*:\s*/, "") : labeled($, /작성자|부서/)) || null,
+    writer: (board.writer ? writerName(clean($(board.writer).first().text())) : labeled($, /작성자|부서/)) || null,
     text: htmlToText($(board.content).first().html() ?? ""),
     images,
   };

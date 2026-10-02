@@ -9,7 +9,7 @@ import { collectors } from "./index.ts";
 // 샘플에는 원문 글이 들어 있어 GitHub에 올리지 않는다(.gitignore). 샘플이 없는 컴퓨터에서는 이 테스트를 건너뛴다
 const schools: School[] = JSON.parse(readFileSync(new URL("../../config/schools.json", import.meta.url), "utf8"));
 
-for (const id of ["yu-news", "yu-career", "knu-notice", "knu-startup", "kmu-notice", "kmu-col-coe", "dcu-program"]) {
+for (const id of ["yu-news", "yu-career", "knu-notice", "knu-startup", "kmu-notice", "kmu-col-coe", "dcu-program", "pnu-notice"]) {
   const file = new URL(`../../test/fixtures/${id}.json`, import.meta.url);
   const skip = existsSync(file) ? false : "샘플 없음 (node scripts/save-fixtures.ts로 만들기)";
   test(`수집기가 저장된 ${id} 페이지를 읽는다`, { skip }, async () => {
