@@ -2,8 +2,9 @@ import { GRADES, STUDENT_STATUSES } from "../src/types.ts";
 import type { Program } from "../src/types.ts";
 
 export const SITE_NAME = "캠퍼스모아";
-// 배포 주소 (사이트맵·공유 미리보기에 쓴다). 주소를 바꾸면 NEXT_PUBLIC_SITE_URL 로 덮어쓴다
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tagi-ten.vercel.app";
+// 사이트 주소. 사이트맵·공유 미리보기·알림 링크·수집기 이름(User-Agent)·앱의 데이터 주소가 모두 이 값을 쓴다.
+// 도메인을 옮기면 아래 기본값 한 줄만 바꾼다 (잠깐 다른 주소로 시험할 때는 환경 변수 NEXT_PUBLIC_SITE_URL로 덮어쓸 수 있다)
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://tagi-ten.vercel.app").replace(/\/+$/, "");
 
 export interface FilterCategory {
   id: string;

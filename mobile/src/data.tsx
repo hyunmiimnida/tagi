@@ -1,11 +1,12 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { SITE_URL } from "@shared/filter.ts";
 import type { FilterCategory, ProgramView, SchoolOption } from "@shared/filter.ts";
 
 // 공고 데이터는 사이트가 매일 만들어 두는 파일(public/api)을 받아 온다.
 // 받은 데이터는 휴대폰에 저장해 두고, 다음에 켤 때 먼저 보여 준 뒤 새 데이터로 바꾼다 (인터넷이 없어도 마지막 데이터가 보인다)
 
-export const API_BASE = "https://tagi-ten.vercel.app/api";
+export const API_BASE = `${SITE_URL}/api`; // 사이트 주소는 lib/filter.ts의 SITE_URL 한 곳에서 정한다
 const SUPPORTED_VERSION = 1;
 const CACHE_KEY = "data-cache-v1";
 

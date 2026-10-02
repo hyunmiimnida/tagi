@@ -5,7 +5,7 @@ import { LIST_VERSION, toListProgram } from "../lib/list.ts";
 import type { Program } from "../src/types.ts";
 
 // 앱이 받아 갈 데이터 파일을 만든다 (사이트 빌드 직전에 자동 실행: npm run build → prebuild).
-// 배포되면 https://tagi-ten.vercel.app/api/... 로 열린다. 앱은 앱을 다시 내지 않아도 매일 새 데이터를 받는다.
+// 배포되면 사이트 주소(lib/filter.ts의 SITE_URL)/api/... 로 열린다. 앱은 앱을 다시 내지 않아도 매일 새 데이터를 받는다.
 //   api/programs.json        목록 공고 (최근 90일, 화면에 필요한 칸만)
 //   api/meta.json            수집 시각, 태그 카테고리, 학교·기관, 출처 이름
 //   api/series/<묶음id>.json  반복 프로그램의 모든 회차 (상세 화면을 열 때만 받는다)
