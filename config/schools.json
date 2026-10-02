@@ -1158,5 +1158,278 @@
         }
       }
     ]
+  },
+  {
+    "id": "cau",
+    "name": "중앙대학교",
+    "shortName": "중앙대",
+    "sources": [
+      {
+        "id": "cau-startup",
+        "name": "창업지원단 공지",
+        "collector": "table-board",
+        "url": "https://startup.cau.ac.kr/pages/fm/fm_1.php",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "창업지원단",
+        "board": {
+          "link": "table.board-table tbody tr a.board-page-link",
+          "viewUrl": "https://startup.cau.ac.kr/pages/fm/fm_1.php?p_mode=view&p_idx={id}",
+          "idPattern": "javascript:view\\('([0-9]+)'",
+          "listDate": "td:nth-child(4)",
+          "pageParam": "p_page",
+          "title": ".board-view-heading h3.board-view-tit",
+          "content": ".board-view-content .content--module",
+          "date": ".board-view-add-txt dd.desc"
+        }
+      },
+      {
+        "id": "cau-startup-event",
+        "name": "창업지원단 교외행사",
+        "collector": "table-board",
+        "url": "https://startup.cau.ac.kr/pages/fm/fm_4.php",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": ".gallery-item-info a.link",
+          "viewUrl": "https://startup.cau.ac.kr/pages/fm/fm_4.php?p_mode=view&p_idx={id}",
+          "idPattern": "javascript:view\\('([0-9]+)'",
+          "listDate": ".gallery-item-info p.date",
+          "pageParam": "p_page",
+          "listTitle": ".gallery-item-info p.title",
+          "title": ".board-view-heading h3.board-view-tit",
+          "content": ".board-view-content .content--module",
+          "date": ".board-view-add-txt dd.desc",
+          "row": "ul.gallery-list > li.gallery-item"
+        }
+      }
+    ]
+  },
+  {
+    "id": "skku",
+    "name": "성균관대학교",
+    "shortName": "성균관대",
+    "sources": [
+      {
+        "id": "skku-success",
+        "name": "학생성공센터",
+        "collector": "table-board",
+        "url": "https://success.skku.edu/success/notice.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "defaultOrganizer": "학생성공센터",
+        "board": {
+          "row": "ul.board-list-wrap > li",
+          "link": ".board-list-content-title a",
+          "idParam": "articleNo",
+          "viewUrl": "https://success.skku.edu/success/notice.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "title": ".board-view-title-wrap h4",
+          "content": ".board-view-content-wrap",
+          "listDate": ".board-list-content-info > ul > li:nth-child(3)",
+          "date": ".board-etc-wrap > li:nth-child(3)",
+          "writer": ".board-etc-wrap > li:first-child",
+          "listTitle": ".board-list-content-title a"
+        }
+      }
+    ]
+  },
+  {
+    "id": "khu",
+    "name": "경희대학교",
+    "shortName": "경희대",
+    "sources": [
+      {
+        "id": "khu-notice",
+        "name": "공지사항(일반)",
+        "collector": "table-board",
+        "url": "https://www.khu.ac.kr/kor/user/bbs/BMSR00040/list.do?menuNo=200316",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "table.board01 tbody td.tal a",
+          "idPattern": "view\\('(\\d+)'",
+          "viewUrl": "https://www.khu.ac.kr/kor/user/bbs/BMSR00040/view.do?menuNo=200316&boardId={id}",
+          "pageParam": "pageIndex",
+          "title": ".board02 .tit p.txt06",
+          "content": ".board02 .row.contents",
+          "listDate": "td:nth-child(4)",
+          "date": ".board02 .dateBox .date",
+          "writer": ".board02 .txtWriter"
+        }
+      },
+      {
+        "id": "khu-career",
+        "name": "미래인재센터 프로그램",
+        "collector": "table-board",
+        "url": "https://goodjob.khu.ac.kr/bbs/board.php?bo_table=s2_5",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "미래인재센터",
+        "board": {
+          "row": "#bo_list .div_tb_tr",
+          "link": "#bo_list .col_subject a[href*=\"wr_id=\"]",
+          "idParam": "wr_id",
+          "viewUrl": "https://goodjob.khu.ac.kr/bbs/board.php?bo_table=s2_5&wr_id={id}",
+          "pageParam": "page",
+          "title": "#bo_v_title",
+          "content": "#bo_v_con",
+          "listDate": ".col_date",
+          "date": "#bo_v_info li:nth-child(2) strong",
+          "writer": "#bo_v_info .sv_member"
+        }
+      },
+      {
+        "id": "khu-startup",
+        "name": "창업지원단 프로그램",
+        "collector": "table-board",
+        "url": "https://startup.khu.ac.kr/startup_kor/user/bbs/BMSR00052/list.do?menuNo=15200048",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "창업지원단",
+        "board": {
+          "link": ".bbs_tbl-st1 tbody td.tal a",
+          "idPattern": "view\\('(\\d+)'",
+          "viewUrl": "https://startup.khu.ac.kr/startup_kor/user/bbs/BMSR00052/view.do?menuNo=15200048&boardId={id}",
+          "pageParam": "pageIndex",
+          "title": ".bbs-view .top h2.t",
+          "content": ".bbs-view_c",
+          "listDate": "td:nth-child(4)",
+          "date": ".bbs-view .info .item.l",
+          "writer": ".bbs-view .info .sv_member"
+        }
+      }
+    ]
+  },
+  {
+    "id": "uos",
+    "name": "서울시립대학교",
+    "shortName": "서울시립대",
+    "sources": [
+      {
+        "id": "uos-startup",
+        "name": "창업지원단 공지",
+        "collector": "table-board",
+        "url": "https://startup.uos.ac.kr/cm/cm-1.php",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "창업지원단",
+        "board": {
+          "link": "table.tb2 tbody tr td:nth-child(2) a",
+          "idPattern": "view\\('([0-9]+)'",
+          "viewUrl": "https://startup.uos.ac.kr/cm/cm-1.php?p_mode=view&p_idx={id}",
+          "pageParam": "p_page",
+          "title": "table.td-normal-view thead h4",
+          "content": "#bo-cont",
+          "listDate": "td:nth-child(3)",
+          "date": "table.td-normal-view .in-info span:nth-child(2)",
+          "writer": "table.td-normal-view .in-info span:nth-child(1)"
+        }
+      }
+    ]
+  },
+  {
+    "id": "dongguk",
+    "name": "동국대학교",
+    "shortName": "동국대",
+    "sources": [
+      {
+        "id": "dongguk-notice",
+        "name": "일반공지",
+        "collector": "table-board",
+        "url": "https://www.dongguk.edu/article/GENERALNOTICES/list",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "row": ".board_list > ul > li",
+          "link": "a[onclick]",
+          "idAttr": "onclick",
+          "idPattern": "goDetail\\((\\d+)\\)",
+          "viewUrl": "https://www.dongguk.edu/article/GENERALNOTICES/detail/{id}",
+          "pageParam": "pageIndex",
+          "listTitle": ".top > .tit",
+          "title": ".board_view > .tit > p",
+          "content": ".board_view .view_cont",
+          "listDate": ".info > span:first-child",
+          "date": ".board_view > .tit > .info > span:first-child"
+        }
+      },
+      {
+        "id": "dongguk-haksa",
+        "name": "학사공지",
+        "collector": "table-board",
+        "url": "https://www.dongguk.edu/article/HAKSANOTICE/list",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "row": ".board_list > ul > li",
+          "link": "a[onclick]",
+          "idAttr": "onclick",
+          "idPattern": "goDetail\\((\\d+)\\)",
+          "viewUrl": "https://www.dongguk.edu/article/HAKSANOTICE/detail/{id}",
+          "pageParam": "pageIndex",
+          "listTitle": ".top > .tit",
+          "title": ".board_view > .tit > p",
+          "content": ".board_view .view_cont",
+          "listDate": ".info > span:first-child",
+          "date": ".board_view > .tit > .info > span:first-child"
+        }
+      },
+      {
+        "id": "dongguk-scholarship",
+        "name": "장학공지",
+        "collector": "table-board",
+        "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/list",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "row": ".board_list > ul > li",
+          "link": "a[onclick]",
+          "idAttr": "onclick",
+          "idPattern": "goDetail\\((\\d+)\\)",
+          "viewUrl": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/{id}",
+          "pageParam": "pageIndex",
+          "listTitle": ".top > .tit",
+          "title": ".board_view > .tit > p",
+          "content": ".board_view .view_cont",
+          "listDate": ".info > span:first-child",
+          "date": ".board_view > .tit > .info > span:first-child"
+        }
+      },
+      {
+        "id": "dongguk-startup",
+        "name": "창업기술원 사업공고",
+        "collector": "table-board",
+        "url": "https://dvic.dongguk.edu/dvic2_2",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "창업기술원",
+        "board": {
+          "row": "#bo_list .bo_list > ul > li",
+          "link": ".bo_tit > a",
+          "idPattern": "/dvic2_2/(\\d+)",
+          "viewUrl": "https://dvic.dongguk.edu/dvic2_2/{id}",
+          "pageParam": "page",
+          "listTitle": ".bo_tit > a",
+          "title": "#bo_v_title .bo_v_tit",
+          "content": "#bo_v_con",
+          "listDate": ".s-day",
+          "date": "#bo_v_info .if_date",
+          "writer": "#bo_v_info .sv_member"
+        }
+      }
+    ]
   }
 ]

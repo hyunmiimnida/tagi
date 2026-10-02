@@ -70,6 +70,7 @@ export interface TableBoard {
   idPattern?: string; // 번호가 주소 경로에 있을 때 찾는 규칙 (예: "/(\d+)/artclView")
   viewUrl: string; // 상세 주소. {id} 자리에 게시물 번호가 들어간다
   pageParam: string; // 목록 쪽 번호 칸 이름 (1쪽부터)
+  pageOffset?: number; // 쪽 번호 대신 시작 글 순서(0, 10, 20…)를 넣는 게시판의 한 쪽 글 수 (예: 성균관대 article.offset)
   title: string; // 상세에서 제목 선택자
   content: string; // 상세에서 본문 선택자
   listDate?: string; // 목록에서 등록일 칸 선택자 (기본: "td.date")

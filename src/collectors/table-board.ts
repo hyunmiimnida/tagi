@@ -17,7 +17,10 @@ export function toIsoDate(text: string): string | null {
 }
 
 // 눈에 안 보이는 글자(폭 없는 공백)도 지운다
-const clean = (text: string) => text.replace(/[​-‍﻿]/g, "").replace(/\s+/g, " ").trim();
+// 두 번 감싼 기호(&#039; 등)가 글자로 남는 게시판도 있어 한 번 더 푼다
+const ENTITIES: Record<string, string> = { "&#039;": "'", "&#39;": "'", "&quot;": '"', "&lt;": "<", "&gt;": ">", "&amp;": "&" };
+const clean = (text: string) =>
+  text.replace(/[​-‍﻿]/g, "").replace(/&(#0?39|quot|lt|gt|amp);/g, (m) => ENTITIES[m]).replace(/\s+/g, " ").trim();
 
 // 감싼 값은 주소에 그대로 넣는다 (이 게시판들은 %3D 같은 주소 인코딩을 풀지 않는다). 끝의 = 채움은 빼도 읽는다
 const b64 = (text: string) => Buffer.from(text).toString("base64").replace(/=+$/, "");
@@ -49,7 +52,8 @@ async function listPage(ctx: CollectContext, page: number): Promise<ArchivePost[
     const value = b64(board.encoded.list.replace("{page}", String(page)));
     address = `${listUrl.href}${listUrl.search ? "&" : "?"}${board.encoded.param}=${value}`;
   } else {
-    listUrl.searchParams.set(board.pageParam, String(page));
+    // 쪽 번호 대신 "몇 번째 글부터"(0, 10, 20…)로 넘기는 게시판은 pageOffset(한 쪽 글 수)을 곱한다
+    listUrl.searchParams.set(board.pageParam, String(board.pageOffset ? (page - 1) * board.pageOffset : page));
     address = listUrl.href;
   }
 
