@@ -86,25 +86,30 @@ async function run() {
       }
       const ctx: CollectContext = { school, source, fetchHtml, isKnown: (url) => known.has(url) };
 
-      // 1. 목록 훑기 (한 번 훑은 목록은 저장해 두고 다시 쓴다)
-      let posts = await readJson<ArchivePost[] | null>(listFile(source.id), null).catch(() => null);
-      if (!posts) {
-        console.log(`${label} ${since} 이후 목록 훑는 중`);
-        posts = await archiver.list(ctx, since);
-        await writeJson(listFile(source.id), posts);
+      try {
+        // 1. 목록 훑기 (한 번 훑은 목록은 저장해 두고 다시 쓴다)
+        let posts = await readJson<ArchivePost[] | null>(listFile(source.id), null).catch(() => null);
+        if (!posts) {
+          console.log(`${label} ${since} 이후 목록 훑는 중`);
+          posts = await archiver.list(ctx, since);
+          await writeJson(listFile(source.id), posts);
+        }
+        const unique = [...new Map(posts.map((post) => [post.url, post])).values()];
+        const todo = unique.filter((post) => !known.has(post.url));
+        console.log(`${label} 목록 ${unique.length}개 중 새로 볼 글 ${todo.length}개`);
+
+        // 2. 상세를 읽어야 하는 출처는 제목으로 먼저 거른다
+        // --rules일 때는 AI 없이 진행하므로, 아직 거르지 않은 글은 일단 모두 후보로 본다
+        if (archiver.read && !rulesOnly) await triageTitles(label, todo);
+        const candidates = archiver.read ? todo.filter((post) => triage[post.url] ?? rulesOnly) : todo;
+        console.log(`${label} 추출할 글 ${candidates.length}개`);
+
+        // 3. 본문 읽고 AI로 추출
+        await extract(label, ctx, candidates, archiver.read);
+      } catch (error) {
+        // 한 출처가 실패해도(일시적인 접속 오류 등) 다른 출처는 계속한다. 다음 실행 때 이 출처부터 다시 한다
+        console.error(`${label} 건너뜀: ${error instanceof Error ? error.message : error}`);
       }
-      const unique = [...new Map(posts.map((post) => [post.url, post])).values()];
-      const todo = unique.filter((post) => !known.has(post.url));
-      console.log(`${label} 목록 ${unique.length}개 중 새로 볼 글 ${todo.length}개`);
-
-      // 2. 상세를 읽어야 하는 출처는 제목으로 먼저 거른다
-      // --rules일 때는 AI 없이 진행하므로, 아직 거르지 않은 글은 일단 모두 후보로 본다
-      if (archiver.read && !rulesOnly) await triageTitles(label, todo);
-      const candidates = archiver.read ? todo.filter((post) => triage[post.url] ?? rulesOnly) : todo;
-      console.log(`${label} 추출할 글 ${candidates.length}개`);
-
-      // 3. 본문 읽고 AI로 추출
-      await extract(label, ctx, candidates, archiver.read);
     }
   }
   console.log(`끝. 추출 ${results.length}개, 학생 대상 아님 ${rejected.size}개. 이제 npm run backfill -- --save`);
