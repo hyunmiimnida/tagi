@@ -67,8 +67,8 @@
 1. 출처별 수집기가 새 게시물을 가져온다. 서로 다른 사이트는 동시에 읽고, 같은 사이트는 요청 사이 1초 쉰다
    - robots.txt는 사이트마다 한 번 받아 기억하고, 목록·상세 등 **읽는 모든 주소**를 `fetchHtml`이 확인한다. 막힌 글은 건너뛰고 `collect-log.json`의 `robotsBlocked`에 남긴다
 2. `src/extract.ts`가 규칙으로 주최·기간·태그를 채운다
-3. `useAi` 출처는 AI CLI가 있으면 `src/ai.ts`가 게시물 15개씩 묶어 추출한다 (실패하면 규칙 결과를 그대로 쓴다)
-   - 엔진: 기본은 **Claude** (Claude 앱에 들어 있는 Claude Code CLI, `%APPDATA%\Claude\claude-code\*\claude.exe`, 모델 `CLAUDE_MODEL`=sonnet). 도구 없이(포스터만 Read) 빈 임시 폴더에서 실행한다. `AI_ENGINE=codex`로 실행하면 Codex CLI(gpt-6.1-sol)
+3. `useAi` 출처는 AI CLI가 있으면 `src/ai.ts`가 게시물을 묶어(Codex 10개·Claude 15개씩) 추출한다 (실패하면 규칙 결과를 그대로 쓴다)
+   - 엔진: 기본은 **Codex** CLI (`CODEX_MODEL`=gpt-6.1-sol, 정확도를 위해 생각 깊이 `CODEX_EFFORT`=high, read-only 샌드박스). Codex가 없거나 실패하면(한도 등) **Claude**(Claude 앱의 Claude Code CLI, `%APPDATA%\Claude\claude-code\*\claude.exe`, `CLAUDE_MODEL`=sonnet)가 이어받고, 한도에 걸리면 그 실행 동안은 Claude만 쓴다. `AI_ENGINE=claude`면 처음부터 Claude만. 둘 다 빈 임시 폴더에서 도구 없이(포스터만 그림 읽기) 실행한다
    - 본문 글자가 거의 없고 그림만 있는 글은 그림(최대 2장)을 받아 AI가 포스터 글자를 읽고 본문 뒤에 붙인다 (`needsPoster`). 그림 주소도 robots.txt를 따른다(영남대 `/_attach`, 계명대 본부 `/upload`는 막혀 있어 못 읽음). 읽은 글자는 저장하지 않는다. 규칙으로 날짜를 하나도 못 찾은 글만, 한 번 실행에 10개까지(`POSTER_LIMIT`)
    - AI는 상세 화면 맨 위 한 줄 요약(`summary`, 원문을 베끼지 않고 자기 말로 60자 안)도 쓴다
    - AI는 사전 신청 없이 기간 중에 참여·이용하는 행사·서비스(박람회, 상설 상담실 등)인지(`noApplication`)도 판단한다. 모집 기간이 없고 이 값이 true면 목록에 "신청 없이 참여"와 기간, 상세에 "신청 없이 참여할 수 있어요"·"운영 기간"을 보여 준다
@@ -176,4 +176,4 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - 맡기기 전에 설치 여부를 확인하고(`codex --version`), 없으면 설치 방법을 알려준다
   (`npm install -g @openai/codex`).
 - 어떤 작업을 Codex에 맡기는지 매번 한 줄로 알려준다.
-- Codex 토큰은 적정히 쓴다 (2026-10-02 사용자 결정). 수집기의 AI 추출은 Claude로 옮겼고, 큰 일괄 작업(수천 개 다시 읽기 등)은 꼭 필요할 때만 한다.
+- AI 추출은 Codex 토큰을 주로 쓰되 정확도를 높게 (2026-10-03 사용자 결정): 생각 깊이 high, 작은 묶음. 정확도를 낮추는 설정으로 아끼지 않는다. Codex가 막히면 Claude가 이어받는다.

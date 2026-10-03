@@ -17,3 +17,9 @@ export function sameSchool(a: Program, b: Program): boolean {
   if (x.length === 0 || y.length === 0) return true; // 출처를 모르면 막지 않는다
   return x.some((school) => y.includes(school));
 }
+
+// 공고를 올린 학교의 정식 이름들 (예: 주최 "서울대학교 경력개발센터"에서 올린 학교 이름을 뗄 때)
+export function postingSchoolNames(program: Program): string[] {
+  const ids = new Set(schoolsOf(program));
+  return schools.filter((school) => ids.has(school.id)).map((school) => school.name);
+}

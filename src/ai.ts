@@ -5,19 +5,24 @@ import { tmpdir } from "node:os";
 import { basename, join } from "node:path";
 import { cleanPeriods } from "./extract.ts";
 import { fetchImage } from "./fetch.ts";
-import { SCHOOL_NAMES } from "./school-of.ts";
+import { postingSchoolNames, SCHOOL_NAMES } from "./school-of.ts";
 import { GRADES, STUDENT_STATUSES } from "./types.ts";
 import type { CollectedItem, Program, TagCategory } from "./types.ts";
 
 // AI 정보 추출: AI CLI가 있으면 게시물 본문을 읽혀서 규칙으로 못 찾은 정보를 보완한다.
 // 게시물 여러 개를 한 번에 보내 비용을 줄인다. 실패하면 규칙 기반 결과를 그대로 쓴다.
-// 엔진: 기본은 Claude (Claude 앱에 들어 있는 Claude Code CLI, 모델 CLAUDE_MODEL=sonnet).
-//       AI_ENGINE=codex 로 실행하면 Codex CLI를 쓴다.
+// 엔진: 기본은 Codex CLI (모델 CODEX_MODEL, 정확도를 위해 생각 깊이 CODEX_EFFORT=high, 한 번에 10개씩).
+//       Codex가 없거나 한도 등으로 실패하면 Claude(Claude 앱의 Claude Code CLI, CLAUDE_MODEL=sonnet)가 이어받는다.
+//       AI_ENGINE=claude 로 실행하면 처음부터 Claude만 쓴다.
 
-export const AI_ENGINE: "claude" | "codex" = process.env.AI_ENGINE === "codex" ? "codex" : "claude";
+type Engine = "claude" | "codex";
+export const AI_ENGINE: Engine = process.env.AI_ENGINE === "claude" ? "claude" : "codex";
+const FALLBACK: Engine | null = AI_ENGINE === "codex" ? "claude" : null;
 const CLAUDE_MODEL = process.env.CLAUDE_MODEL ?? "sonnet";
-const CODEX_MODEL = "gpt-6.1-sol";
-const BATCH_SIZE = 15; // 한 번에 보내는 게시물 수 (한 번 부를 때마다 드는 기본 비용을 줄이려고 크게)
+const CODEX_MODEL = process.env.CODEX_MODEL ?? "gpt-6.1-sol";
+const CODEX_EFFORT = process.env.CODEX_EFFORT ?? "high"; // 생각 깊이 (low·medium·high). 날짜·대상 판단이 정확하도록 높게
+// 한 번에 보내는 게시물 수 (한 번 부를 때마다 드는 기본 비용을 줄이려고 묶되, Codex는 정확도를 위해 조금 작게)
+const BATCH_SIZE = AI_ENGINE === "codex" ? 10 : 15;
 const AI_PARALLEL = 5; // 동시에 AI에 보내는 묶음 수
 const MAX_TEXT = 2500; // 게시물 하나당 본문 글자 수
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
@@ -71,18 +76,23 @@ const claudeStoreDirs = () => {
     .map((name) => join(packages, name, "LocalCache", "Roaming", "Claude", "claude-code"));
 };
 export const findClaude = finder("CLAUDE_BIN", "claude", [APPDATA && join(APPDATA, "Claude", "claude-code"), ...claudeStoreDirs()], "claude.exe");
-// 지금 엔진의 실행 파일 (없으면 null → 규칙 결과만 쓴다)
-export const findAi = () => (AI_ENGINE === "codex" ? findCodex() : findClaude());
+const finderOf = (engine: Engine) => (engine === "codex" ? findCodex : findClaude);
+// 실행 파일 이름으로 어느 엔진인지 안다
+const engineOf = (bin: string): Engine => (/codex/i.test(basename(bin)) ? "codex" : "claude");
+// 쓸 실행 파일: 기본 엔진, 없으면 이어받을 엔진 (둘 다 없으면 null → 규칙 결과만 쓴다)
+export const findAi = () => finderOf(AI_ENGINE)() ?? (FALLBACK ? finderOf(FALLBACK)() : null);
 export const AI_MISSING =
-  AI_ENGINE === "codex"
-    ? "Codex CLI가 없습니다 (npm install -g @openai/codex)"
-    : "Claude CLI가 없습니다 (Claude 앱 설치 후, 터미널에서 claude.exe를 한 번 실행해 /login)";
+  "AI CLI가 없습니다 (Codex: npm install -g @openai/codex / Claude: Claude 앱 설치 후 터미널에서 claude.exe를 한 번 실행해 /login)";
+// 기본 엔진이 한도에 걸리면 이번 실행 동안은 이어받을 엔진만 쓴다 (실패할 줄 아는 호출을 반복하지 않게)
+let primaryDown = false;
 
 // 다른 학교 학생도 지원할 수 있는지. 본 추출과 이미 추출한 글 다시 확인(recheckFields)이 함께 쓴다
 const OPEN_TO_RULE = `- openTo: 글을 올린 학교의 학생이 아니어도 지원할 수 있으면, 지원할 수 있는 사람을 글에 적힌 대로 30자 안으로 짧게 쓴다.
   예: "전국 대학생", "대구·경북 지역 대학생", "만 19~34세 청년", "대학생 및 대학원생 누구나".
   글을 올린 학교 학생만 대상이거나, 다른 학교 학생도 되는지 글에서 알 수 없으면 null. 학교 부서가 여는 교내 프로그램은 대부분 null이다.
-  학년·신분(재학생 등)은 grades·statuses에 쓰고 openTo에는 반복하지 않는다.`;
+  학년·신분(재학생 등)은 grades·statuses에 쓰고 openTo에는 반복하지 않는다.
+  openTo는 "어느 학교·지역·나이의 누가 지원할 수 있는가"만 쓴다. 관심사·직무·희망 분야("○○에 관심 있는 분", "하드웨어 엔지니어", "해외 근무 희망자")는 openTo가 아니다 → null.
+  채용 공고·설명회처럼 자격을 학교로 정하지 않은 글도, 글에 "누구나"·"전국"·"대학생 전체" 같은 말이 없으면 null.`;
 
 const openTo = (v: unknown) => (typeof v === "string" && v.trim() && v.length <= 40 ? v.trim() : null);
 
@@ -129,7 +139,7 @@ ${item.text.slice(0, maxText) || "(본문 없음, 이미지로만 안내됨)"}`,
   - end가 start보다 앞서면 안 된다.
 - forStudents: 학생(학부생·대학원생·유학생 포함)이 신청·지원·참가할 수 있는 기회이면 true.
   기회 = 프로그램·교육·특강·행사 참가자 모집, 공모전·대회, 장학·지원금, 채용·인턴·현장실습, 봉사·서포터즈, 교환·해외 프로그램, 상담·멘토링 신청 등.
-  다음은 false: 교원·직원만 대상인 글, 학교(학과·대학원·연구소·사업단 포함)가 자기 직원·행정 인력·행정조교·계약직을 뽑는 채용 공고(신입 직원 채용 포함. 바깥 회사·기관의 채용은 기회다), 학생이 신청·참가할 것이 없는 단순 안내(규정 제정·개정·의견 조회, 예산·행정 공지, 등록금 납부·서류 제출 안내, 합격자·결과 발표, 뉴스레터·소식지, 사기·안전 주의, 시설 공사·이용 안내), 모든 학생이 들어야 하는 의무 교육 안내(폭력예방교육·법정 필수교육·안전교육 수강·이수 안내), 학교 제도 소개·시행 안내(제안제도·신문고·학사 제도 변경 등), 모든 학생이 거치는 학사 절차 안내(수강신청·수강 철회·성적 평가 방식 선택·졸업 신청·학위 수여·졸업앨범 촬영·등록·휴복학·계절학기 수강 수요조사), 의무 검사·선거 안내, 일반인 대상 관광·축제·전시 홍보와 설문조사.
+  다음은 false: 교원·직원만 대상인 글, 학교(학과·대학원·연구소·사업단 포함)가 자기 직원·행정 인력·행정조교·계약직을 뽑는 채용 공고(신입 직원 채용 포함. 바깥 회사·기관의 채용은 기회다), 학생이 신청·참가할 것이 없는 단순 안내(규정 제정·개정·의견 조회, 예산·행정 공지, 등록금 납부·서류 제출 안내, 합격자·결과 발표, 뉴스레터·소식지, 사기·안전 주의, 시설 공사·이용 안내), 모든 학생이 반드시 들어야 하는 의무 교육 안내(폭력예방교육·법정 필수교육·안전교육 수강·이수 안내. 마일리지·상품을 주는 선택 참여 교육은 기회라서 true), 학교 제도 소개·시행 안내(제안제도·신문고·학사 제도 변경 등), 모든 학생이 거치는 학사 절차 안내(수강신청·수강 철회·성적 평가 방식 선택·졸업 신청·학위 수여·졸업앨범 촬영·등록·휴복학·계절학기 수강 수요조사), 의무 검사·선거 안내, 일반인 대상 관광·축제·전시 홍보와 설문조사.
   본문이 없거나 아주 짧으면(내용이 그림으로만 올라온 글) 제목으로 판단한다. 제목이 특강·행사·모집·참가·신청처럼 학생이 참여할 수 있는 것이면 true다. 학교 박물관·도서관 등이 여는 공개 특강·행사도 학생이 참여할 수 있으면 true다.
 - organizer: 글에 적힌 기관명을 그대로 짧게 쓴다. 글을 올린 학교 이름(예: ○○대학교)을 앞에 붙이지 마라.
   기관(부서·회사·공공기관) 이름만 쓴다. 제목의 「」『』‘’ 안에 있는 프로그램·사업·행사 이름(예: "청년카페 취트키", "청년성장프로젝트")은 주최가 아니다. 본문에서 주최를 알 수 없으면 작성 부서를 쓴다.
@@ -172,22 +182,23 @@ ${posts}`;
 // AI에게 한 번 묻고 답 글자를 돌려준다. images: 같은 임시 폴더에 둔 그림 파일 (포스터 읽기)
 // 프로젝트 폴더가 아닌 빈 임시 폴더에서 실행한다 (게시물 본문에 숨은 지시가 있어도 프로젝트 파일에 손대지 못하게)
 function runAi(bin: string, prompt: string, dir: string, images: string[] = []): Promise<string> {
-  const exe = existsSync(bin) ? bin : (findAi() ?? bin); // 실행 중 앱 업데이트로 경로가 바뀌었으면 다시 찾는다
+  const engine = engineOf(bin);
+  const exe = existsSync(bin) ? bin : (finderOf(engine)() ?? bin); // 실행 중 앱 업데이트로 경로가 바뀌었으면 다시 찾는다
   const outFile = join(dir, "answer.txt");
   const args =
-    AI_ENGINE === "codex"
-      ? ["exec", "--skip-git-repo-check", "--sandbox", "read-only", "-m", CODEX_MODEL, ...images.flatMap((image) => ["-i", image]), "--output-last-message", outFile, "-"]
+    engine === "codex"
+      ? ["exec", "--skip-git-repo-check", "--sandbox", "read-only", "-m", CODEX_MODEL, "-c", `model_reasoning_effort=${CODEX_EFFORT}`, ...images.flatMap((image) => ["-i", image]), "--output-last-message", outFile, "-"]
       : // Claude: 도구는 그림을 열 때만 Read 하나만 쓴다 (명령 실행·파일 수정·인터넷 도구 없음). 대화 기록은 남기지 않는다
         ["-p", "--model", CLAUDE_MODEL, "--no-session-persistence", "--output-format", "text", "--tools", images.length ? "Read" : "", ...(images.length ? ["--allowedTools", "Read"] : [])];
   const input =
-    AI_ENGINE === "claude" && images.length
+    engine === "claude" && images.length
       ? `${prompt}\n\n그림 파일(Read 도구로 열어 봐라): ${images.map((image) => basename(image)).join(", ")}`
       : prompt;
   return new Promise((resolve, reject) => {
     const child = execFile(exe, args, { timeout: 600_000, maxBuffer: 20 * 1024 * 1024, cwd: dir }, async (error, stdout) => {
       if (error) return reject(error);
       try {
-        resolve(AI_ENGINE === "codex" ? await readFile(outFile, "utf8") : stdout);
+        resolve(engine === "codex" ? await readFile(outFile, "utf8") : stdout);
       } catch (readError) {
         reject(readError);
       }
@@ -201,16 +212,33 @@ const date = (v: unknown) =>
   typeof v === "string" && DATE.test(v) && new Date(`${v}T00:00:00Z`).toISOString().startsWith(v) ? v : null;
 const strings = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : []);
 
-async function askAi(bin: string, prompt: string): Promise<{ items?: Record<string, unknown>[]; same?: unknown }> {
+async function askOnce(bin: string, prompt: string): Promise<{ items?: Record<string, unknown>[]; same?: unknown }> {
   const dir = await mkdtemp(join(tmpdir(), "ai-"));
   try {
     const answer = await runAi(bin, prompt, dir);
     return JSON.parse(answer.slice(answer.indexOf("{"), answer.lastIndexOf("}") + 1));
   } catch (error) {
-    console.error(`  AI(${AI_ENGINE}) 실패`);
+    console.error(`  AI(${engineOf(bin)}) 실패`);
     throw error;
   } finally {
     await rm(dir, { recursive: true, force: true });
+  }
+}
+
+// 기본 엔진으로 묻고, 실패하면(한도·형식 오류 등) 이어받을 엔진으로 한 번 더 묻는다
+async function askAi(bin: string, prompt: string): Promise<{ items?: Record<string, unknown>[]; same?: unknown }> {
+  const backup = FALLBACK && engineOf(bin) !== FALLBACK ? finderOf(FALLBACK)() : null;
+  if (primaryDown && backup) return askOnce(backup, prompt);
+  try {
+    return await askOnce(bin, prompt);
+  } catch (error) {
+    if (!backup) throw error;
+    const message = error instanceof Error ? error.message : String(error);
+    if (/usage limit|rate limit|quota|429/i.test(message) && !primaryDown) {
+      primaryDown = true;
+      console.error(`  ${engineOf(bin)} 한도에 걸려 이번 실행은 ${FALLBACK}로 이어서 한다`);
+    }
+    return askOnce(backup, prompt);
   }
 }
 
@@ -292,6 +320,14 @@ export function fixOrganizerType(program: Program, categories: TagCategory[]): v
   program.organizerType = fixed;
 }
 
+// 주최 앞에 붙은 "올린 학교 이름"을 뗀다 ("서울대학교 경력개발센터" → "경력개발센터"). 규칙에 적어도 가끔 붙여서 코드로도 지운다
+export function withoutOwnSchool(program: Program, organizer: string): string {
+  for (const name of postingSchoolNames(program)) {
+    if (organizer.startsWith(name + " ")) return organizer.slice(name.length + 1).trim();
+  }
+  return organizer;
+}
+
 // 반영하면 true, 학생 대상이 아니면 false, 응답이 불완전해 반영하지 않으면 null (다음에 다시 추출한다)
 function apply(item: CollectedItem, data: Record<string, unknown>, categories: TagCategory[]): boolean | null {
   const { program } = item;
@@ -302,7 +338,7 @@ function apply(item: CollectedItem, data: Record<string, unknown>, categories: T
   const organizerTypes = categories.find((c) => c.matchOn === "organizer")?.tags.map((t) => t.name) ?? [];
 
   // 기관 이름은 짧은 이름만 받는다 (본문의 엉뚱한 긴 글이 들어오지 않게)
-  if (typeof data.organizer === "string" && data.organizer.trim() && data.organizer.length <= 60) program.organizer = data.organizer.trim();
+  if (typeof data.organizer === "string" && data.organizer.trim() && data.organizer.length <= 60) program.organizer = withoutOwnSchool(program, data.organizer.trim());
   if (organizerTypes.includes(data.organizerType as string)) program.organizerType = data.organizerType as string;
 
   // AI가 날짜를 하나라도 찾았으면 그 기간은 AI 결과를 따른다
