@@ -184,14 +184,14 @@ export async function assignSeries(current: Program[], archive: Program[], { use
   // 애매한 쌍은 AI에게 묻고 답을 기억한다 (다음에는 다시 묻지 않는다)
   if (useAi && ask.length > 0) {
     const pairs = ask.map(([i, j]) => [all[i], all[j]] as [Program, Program]);
-    const answers = await confirmSameSeries(pairs);
-    if (answers) {
-      ask.forEach(([i, j], k) => {
-        decisions[pairKey(all[i], all[j])] = answers[k];
-        if (answers[k]) edges.push({ i, j, score: score(i, j), byAi: true });
-      });
+    // 묶음마다 답을 바로 기억해 둔다 (끊겨도 다음 실행 때 이어서 묻는다)
+    const answers = await confirmSameSeries(pairs, async (part) => {
+      for (const [k, same] of part) decisions[pairKey(all[ask[k][0]], all[ask[k][1]])] = same;
       await writeJson(DECISIONS_FILE, decisions);
-    }
+    });
+    ask.forEach(([i, j], k) => {
+      if (answers?.[k]) edges.push({ i, j, score: score(i, j), byAi: true });
+    });
   }
 
   edges.sort((a, b) => b.score - a.score).forEach(({ i, j, byAi }) => join(i, j, byAi));

@@ -427,11 +427,16 @@ ${pairs.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join
 }
 
 // 두 공고가 "같은 프로그램이 다른 해·학기·회차에 다시 열린 것"인지 묻는다. 쌍마다 true/false, 실패하면 null
-export async function confirmSameSeries(pairs: [Program, Program][]): Promise<boolean[] | null> {
+// 묶음마다 답을 onBatch로 넘겨 바로 저장하게 한다 (수천 쌍을 묻다가 끊겨도 처음부터 다시 묻지 않게).
+// 한 묶음이 실패하면 그 쌍은 비워 두고(undefined) 다음 묶음을 계속 묻는다 → 다음 실행 때 다시 묻는다
+export async function confirmSameSeries(
+  pairs: [Program, Program][],
+  onBatch?: (answers: Map<number, boolean>) => Promise<void>,
+): Promise<(boolean | undefined)[] | null> {
   const bin = findAi();
   if (!bin) return null;
   const describe = (p: Program) => `${p.title} / 주최 ${p.organizer ?? "모름"} / 게시 ${p.postedAt ?? "?"}`;
-  const answers: boolean[] = [];
+  const answers: (boolean | undefined)[] = [];
   for (let start = 0; start < pairs.length; start += 60) {
     const batch = pairs.slice(start, start + 60);
     const prompt = `아래 각 쌍이 "같은 프로그램이 다른 해·학기·회차에 다시 열린 것"인지 판단해라. 파일을 읽거나 명령을 실행하지 말고 JSON만 답해라.
@@ -444,11 +449,13 @@ ${batch.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join
     try {
       const same = (await askAi(bin, prompt)).same;
       const set = new Set(Array.isArray(same) ? same : []);
+      const part = new Map(batch.map((_, i) => [start + i, set.has(i)] as const));
       batch.forEach((_, i) => answers.push(set.has(i)));
+      await onBatch?.(part);
       console.log(`  AI 반복 프로그램 판단 ${Math.min(start + 60, pairs.length)}/${pairs.length}`);
     } catch (error) {
-      console.error("  AI 반복 프로그램 판단 실패:", error instanceof Error ? error.message : error);
-      return null;
+      console.error("  AI 반복 프로그램 판단 실패(이 묶음은 다음에 다시):", error instanceof Error ? error.message.split("\n").at(-1) : error);
+      batch.forEach(() => answers.push(undefined));
     }
   }
   return answers;
