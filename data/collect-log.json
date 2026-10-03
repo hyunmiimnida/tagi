@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-03T04:01:10.595Z",
+  "ranAt": "2026-10-03T13:34:53.981Z",
   "total": 1378,
   "sources": [
     {
@@ -156,20 +156,20 @@
       "failStreak": 0
     },
     {
-      "source": "yu-col-sci",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
       "source": "yu-col-liberalart",
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "yu-col-sci",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -178,7 +178,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -187,7 +187,7 @@
       "ok": true,
       "count": 29,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 29,
       "failStreak": 0
     },
@@ -196,25 +196,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "yu-col-digital",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "yu-col-politics",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -223,7 +205,25 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "yu-col-digital",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "yu-col-politics",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -232,7 +232,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -241,7 +241,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -250,7 +250,7 @@
       "ok": true,
       "count": 1,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 1,
       "failStreak": 0
     },
@@ -259,7 +259,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -268,7 +268,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -277,7 +277,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -286,7 +286,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -295,7 +295,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -304,7 +304,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -313,7 +313,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -322,7 +322,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -331,7 +331,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -340,17 +340,17 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
     {
       "source": "pnu-notice",
       "ok": true,
-      "count": 0,
+      "count": 1,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
-      "lastSuccessCount": 0,
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
+      "lastSuccessCount": 1,
       "failStreak": 0
     },
     {
@@ -358,16 +358,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "snu-career",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -376,7 +367,16 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "snu-career",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -385,7 +385,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -394,7 +394,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -403,16 +403,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "snu-student",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -421,7 +412,16 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "snu-student",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -430,16 +430,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "yonsei-startup",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -448,7 +439,16 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "yonsei-startup",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -457,7 +457,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -466,7 +466,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -475,7 +475,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -484,16 +484,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "konkuk-job",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -502,7 +493,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -511,7 +502,16 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "konkuk-job",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -520,16 +520,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "konkuk-student",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -538,7 +529,16 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "konkuk-student",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -547,7 +547,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -556,16 +556,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "khu-startup",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -574,7 +565,16 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "khu-startup",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -583,16 +583,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "skku-notice",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -601,8 +592,17 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "skku-notice",
+      "ok": true,
+      "count": 1,
+      "message": "",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
+      "lastSuccessCount": 1,
       "failStreak": 0
     },
     {
@@ -610,7 +610,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -619,7 +619,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -628,7 +628,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -637,7 +637,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-03T04:01:10.595Z",
+      "lastSuccessAt": "2026-10-03T13:34:53.981Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     }
