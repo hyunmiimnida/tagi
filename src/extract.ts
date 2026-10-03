@@ -148,5 +148,15 @@ const MANDATORY_OR_SYSTEM = /(폭력\s*예방|법정|필수|의무)[^\]]{0,6}교
 const OPPORTUNITY = /공모전|모집|참가자|참여자/;
 export const isMandatoryNotice = (title: string) => MANDATORY_OR_SYSTEM.test(title) && !OPPORTUNITY.test(title);
 
+// 행정·생활 안내: 학자금 대출, 병역(현역병 모집 계획·예비군), 예방접종, 학생회 선거 입후보 안내.
+// 학생이 고르는 기회가 아니라 해야 할 절차·안내라서 뺀다 ("장학생 모집"은 걸리지 않는다)
+// 학자금 "대출이자 지원·부담 경감·신용회복 지원", 예방접종비 지원·할인은 신청하면 돈·혜택을 받는 지원사업이라 기회로 남긴다
+const LOAN = /학자금\s*대출/;
+const VACCINE = /예방\s*접종/;
+const SUPPORT = /지원|이자|경감|할인|장학금/;
+const MILITARY_OR_ELECTION = /현역병\s*모집\s*계획|예비군|입후보|후보자\s*등록/;
+export const isAdminNotice = (title: string) =>
+  ((LOAN.test(title) || VACCINE.test(title)) && !SUPPORT.test(title)) || MILITARY_OR_ELECTION.test(title);
+
 // AI 없이 제목만 보고 확실히 학생 기회가 아닌 글
-export const notForStudentsByTitle = (title: string) => isStaffHiring(title) || isMandatoryNotice(title);
+export const notForStudentsByTitle = (title: string) => isStaffHiring(title) || isMandatoryNotice(title) || isAdminNotice(title);

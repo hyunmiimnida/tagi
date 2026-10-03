@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { isDuplicate, titleSimilarity } from "./dedupe.ts";
-import { extractPeriods, isMandatoryNotice, isStaffHiring, parseDates } from "./extract.ts";
+import { extractPeriods, isMandatoryNotice, isStaffHiring, notForStudentsByTitle, parseDates } from "./extract.ts";
 
 test("여러 형태의 날짜를 읽는다", () => {
   assert.deepEqual(parseDates("2026. 9. 30.(수) ~ 10. 14.(수)", 2026), ["2026-09-30", "2026-10-14"]);
@@ -168,4 +168,18 @@ test("의무 교육·제도 안내는 빼고, 그 주제의 공모전·참여자
   assert.ok(!isMandatoryNotice("💰상금100만원💰폭력예방교육 수강 후기 공모전"));
   assert.ok(!isMandatoryNotice("찾아가는 폭력예방교육 참여자 모집 [비교과]"));
   assert.ok(!isMandatoryNotice("2026 중독예방교육 웹툰·숏폼 공모전 참가자 모집"));
+});
+
+test("학자금 대출·병역·예방접종·선거 입후보 안내는 빼고, 장학생 모집은 남긴다", () => {
+  assert.ok(notForStudentsByTitle("2026-2학기 정부 학자금대출 안내(7/1(수)~)"));
+  assert.ok(notForStudentsByTitle("(예비군연대) 2026년 9월 각 군 현역병 모집계획 안내"));
+  assert.ok(notForStudentsByTitle("[보건실] 2026학년도 인플루엔자(독감) 예방접종 안내"));
+  assert.ok(notForStudentsByTitle("2027학년도 총학생회장 후보자 및 입후보 예정자 지원 안내"));
+  assert.ok(!notForStudentsByTitle("2026년 5.18 기념재단 '5.18 희망장학생' 모집 안내"));
+});
+
+test("학자금 대출이자 지원·부담 경감 사업은 지원금이라 남긴다", () => {
+  assert.ok(!notForStudentsByTitle("[학자금대출] 2026년 하반기 익산시 대학생 학자금 대출이자 지원 (9/18 마감)"));
+  assert.ok(!notForStudentsByTitle("2026년 대학생 학자금대출 부담경감 지원 신청 안내"));
+  assert.ok(notForStudentsByTitle("2026학년도 2학기 한국장학재단 학자금대출 안내[재학생]"));
 });

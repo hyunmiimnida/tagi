@@ -86,3 +86,9 @@ test("재안내와 앞의 [홍보] 머리말은 같은 공고로 본다", () => 
   assert.equal(repostKey("[혁신] 독서토론클럽 참여자 모집 재안내"), repostKey("[혁신] 독서토론클럽 참여자 모집 안내"));
   assert.equal(repostKey("[홍보][체력증진센터] 운동처방 참여자 모집"), repostKey("[체력증진센터] 운동처방 참여자 모집"));
 });
+
+test("추가 모집·상시 모집·(조기 마감)은 같은 공고를 다시 올린 것으로 본다", () => {
+  assert.equal(repostKey("부트캠프 교육생 추가 모집 안내"), repostKey("부트캠프 교육생 모집 안내"));
+  assert.equal(repostKey("튜터 추가모집(조기 마감)"), repostKey("튜터 모집"));
+  assert.notEqual(repostKey("영어권 교환학생 선발"), repostKey("일어권 교환학생 선발"));
+});
