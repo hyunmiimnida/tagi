@@ -218,7 +218,9 @@ async function askOnce(bin: string, prompt: string): Promise<{ items?: Record<st
     const answer = await runAi(bin, prompt, dir);
     return JSON.parse(answer.slice(answer.indexOf("{"), answer.lastIndexOf("}") + 1));
   } catch (error) {
-    console.error(`  AI(${engineOf(bin)}) 실패`);
+    // 실패 이유를 한 줄 남긴다 (Codex는 MCP 연결 오류 같은 잡음도 함께 내보내므로 마지막 줄만)
+    const reason = (error instanceof Error ? error.message : String(error)).trim().split(/\r?\n/).filter(Boolean).at(-1)?.slice(0, 160);
+    console.error(`  AI(${engineOf(bin)}) 실패: ${reason}`);
     throw error;
   } finally {
     await rm(dir, { recursive: true, force: true });
@@ -234,7 +236,8 @@ async function askAi(bin: string, prompt: string): Promise<{ items?: Record<stri
   } catch (error) {
     if (!backup) throw error;
     const message = error instanceof Error ? error.message : String(error);
-    if (/usage limit|rate limit|quota|429/i.test(message) && !primaryDown) {
+    // 진짜 사용 한도 안내일 때만 이번 실행 동안 넘긴다 (한 번 실패한 것만으로는 다음 묶음에서 다시 Codex를 쓴다)
+    if (/hit your usage limit|usage limit reached|rate_limit_exceeded/i.test(message) && !primaryDown) {
       primaryDown = true;
       console.error(`  ${engineOf(bin)} 한도에 걸려 이번 실행은 ${FALLBACK}로 이어서 한다`);
     }
