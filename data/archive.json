@@ -1,5 +1,48 @@
 [
   {
+    "id": "dcu-program-185600",
+    "title": "[캠프]K-뉴딜 아카데미 Hi-CEED 프로그램(~7/4)",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-04"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTYwMCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-06-17",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:13:20.621Z",
+    "summary": "K-뉴딜 아카데미 Hi-CEED 캠프에 참여해요",
+    "firstSeenAt": "2026-10-01T19:13:20.621Z"
+  },
+  {
     "id": "yu-career-2521",
     "title": "2026 하계방학 반도체 직무 스프린트 교육",
     "organizer": "학생성공처",
