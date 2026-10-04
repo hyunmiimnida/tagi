@@ -48431,7 +48431,8 @@
     "firstSeenAt": "2026-10-02T12:55:44.188Z",
     "aliases": [
       "yonsei-startup-333"
-    ]
+    ],
+    "seriesId": "yonsei-notice-923139"
   },
   {
     "id": "yonsei-notice-944150",
@@ -51771,7 +51772,8 @@
     "collectedAt": "2026-10-02T12:55:42.798Z",
     "summary": "지역사회와 함께 김장 담그기 봉사에 참여하고 봉사시간을 인정받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T12:55:42.798Z"
+    "firstSeenAt": "2026-10-02T12:55:42.798Z",
+    "seriesId": "konkuk-student-1136953"
   },
   {
     "id": "konkuk-student-1208794",
@@ -53078,7 +53080,8 @@
     "collectedAt": "2026-10-02T15:22:06.936Z",
     "summary": "여러 기업의 채용설명회와 채용상담회에 참여해 채용 정보를 얻어요",
     "noApplication": true,
-    "firstSeenAt": "2026-10-02T15:22:06.936Z"
+    "firstSeenAt": "2026-10-02T15:22:06.936Z",
+    "seriesId": "hufs-job-1001159"
   },
   {
     "id": "hufs-job-1001697",
@@ -53352,7 +53355,7 @@
     "summary": "10월에 열리는 심리검사를 안내받고 신청할 수 있어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T15:22:10.280Z",
-    "seriesId": "pknu-notice-722100"
+    "seriesId": "pknu-notice-714062"
   },
   {
     "id": "pknu-notice-724647",
@@ -54084,7 +54087,8 @@
     "summary": "현장실습 경험을 영상·웹툰·발표·수기로 만들어 상금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T15:22:10.259Z",
-    "campus": "hanyang-erica"
+    "campus": "hanyang-erica",
+    "seriesId": "hanyang-notice-98432"
   },
   {
     "id": "hanyang-notice-119801",
@@ -55025,7 +55029,7 @@
     "summary": "2026년에 사업자등록을 한 학생이 추첨으로 기프티콘을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T15:23:02.466Z",
-    "seriesId": "hanyang-notice-94229"
+    "seriesId": "hanyang-notice-94601"
   },
   {
     "id": "cau-startup-3",
@@ -57726,7 +57730,8 @@
     "summary": "이카운트 개발본부 신입 개발자 추천채용에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T16:52:58.130Z",
-    "campus": "khu-global"
+    "campus": "khu-global",
+    "seriesId": "khu-notice-314577"
   },
   {
     "id": "khu-notice-323184",
@@ -62537,7 +62542,8 @@
     "collectedAt": "2026-10-02T17:35:11.978Z",
     "summary": "국제학생 신입생을 위한 학사지도 간담회에 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T17:35:11.978Z"
+    "firstSeenAt": "2026-10-02T17:35:11.978Z",
+    "seriesId": "sogang-notice-543495"
   },
   {
     "id": "sogang-notice-551450",
@@ -62942,7 +62948,7 @@
     "summary": "중소·중견기업 재직 대학생이 등록금을 지원받는 장학금이에요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T17:59:13.065Z",
-    "seriesId": "pknu-notice-719118"
+    "seriesId": "pknu-notice-714558"
   },
   {
     "id": "pknu-notice-726368",
@@ -63258,7 +63264,7 @@
     "summary": "3주 동안 외국어 집중 강좌를 수강해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T17:59:24.396Z",
-    "seriesId": "pknu-notice-718375"
+    "seriesId": "pknu-notice-714573"
   },
   {
     "id": "pknu-notice-726343",
@@ -63481,7 +63487,7 @@
     "summary": "자궁경부암 예방 백신을 할인된 가격으로 접종해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T17:59:31.358Z",
-    "seriesId": "pknu-notice-724897"
+    "seriesId": "pknu-notice-715177"
   },
   {
     "id": "pknu-notice-726323",
@@ -63526,7 +63532,7 @@
     "summary": "전국 에너지 공동학점과정을 수강할 학생을 모집해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T17:59:34.181Z",
-    "seriesId": "pknu-notice-719538"
+    "seriesId": "pknu-notice-715101"
   },
   {
     "id": "pknu-notice-726305",
@@ -63616,7 +63622,7 @@
     "summary": "선배 멘토에게 전공학습·대학생활·진로 고민을 상담받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T17:59:41.170Z",
-    "seriesId": "pknu-notice-719090"
+    "seriesId": "pknu-notice-714916"
   },
   {
     "id": "pknu-notice-726298",
@@ -63850,7 +63856,8 @@
     "collectedAt": "2026-10-02T17:59:48.213Z",
     "summary": "해군·해병대 학군사관후보생(ROTC) 후반기에 지원해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T17:59:48.213Z"
+    "firstSeenAt": "2026-10-02T17:59:48.213Z",
+    "seriesId": "pknu-notice-714595"
   },
   {
     "id": "pknu-notice-726271",
@@ -63899,7 +63906,7 @@
     "summary": "시·소설·수필·서평 작품을 응모하는 문학상이에요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T17:59:49.657Z",
-    "seriesId": "pknu-notice-721559"
+    "seriesId": "pknu-notice-716932"
   },
   {
     "id": "pknu-notice-726268",
@@ -64172,7 +64179,7 @@
     "summary": "국제학생증(ISIC) 발급비를 지원받아 무료로 발급해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:00:06.302Z",
-    "seriesId": "pknu-notice-719531"
+    "seriesId": "pknu-notice-714994"
   },
   {
     "id": "pknu-notice-726220",
@@ -64309,7 +64316,7 @@
     "summary": "2학기 학생생활관 입실생 추가모집에 선착순으로 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:00:10.466Z",
-    "seriesId": "pknu-notice-720109"
+    "seriesId": "pknu-notice-714806"
   },
   {
     "id": "pknu-notice-726210",
@@ -64442,7 +64449,8 @@
     "collectedAt": "2026-10-02T18:00:17.441Z",
     "summary": "국가장학금 2차 신청으로 등록금 지원을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:00:17.441Z"
+    "firstSeenAt": "2026-10-02T18:00:17.441Z",
+    "seriesId": "pknu-notice-715489"
   },
   {
     "id": "pknu-notice-726198",
@@ -64576,7 +64584,8 @@
     "collectedAt": "2026-10-02T18:00:24.374Z",
     "summary": "사업단 참여학생 모집설명회에서 장학 제도와 지원 프로그램을 안내받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:00:24.374Z"
+    "firstSeenAt": "2026-10-02T18:00:24.374Z",
+    "seriesId": "pknu-notice-717568"
   },
   {
     "id": "pknu-notice-726176",
@@ -64620,7 +64629,8 @@
     "collectedAt": "2026-10-02T18:00:25.795Z",
     "summary": "마음건강 진단검사를 받고 결과 해석 상담도 신청할 수 있어요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:00:25.795Z"
+    "firstSeenAt": "2026-10-02T18:00:25.795Z",
+    "seriesId": "pknu-notice-716843"
   },
   {
     "id": "pknu-notice-726175",
@@ -64710,7 +64720,8 @@
     "collectedAt": "2026-10-02T18:00:28.641Z",
     "summary": "교내 특별장학금을 추가로 신청해 받을 수 있어요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:00:28.641Z"
+    "firstSeenAt": "2026-10-02T18:00:28.641Z",
+    "seriesId": "pknu-notice-714588"
   },
   {
     "id": "pknu-notice-726167",
@@ -64848,7 +64859,7 @@
     "summary": "2학기 선배 멘토링 프로그램에서 멘토로 활동해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:00:32.809Z",
-    "seriesId": "pknu-notice-719090"
+    "seriesId": "pknu-notice-714916"
   },
   {
     "id": "pknu-notice-726160",
@@ -64901,7 +64912,8 @@
     "collectedAt": "2026-10-02T18:00:34.230Z",
     "summary": "기업 현장을 견학하고 현직자 Q&A로 직무를 탐색해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:00:34.230Z"
+    "firstSeenAt": "2026-10-02T18:00:34.230Z",
+    "seriesId": "pknu-notice-716497"
   },
   {
     "id": "pknu-notice-726159",
@@ -64946,7 +64958,7 @@
     "summary": null,
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:00:35.639Z",
-    "seriesId": "pknu-notice-722100"
+    "seriesId": "pknu-notice-714062"
   },
   {
     "id": "pknu-notice-726158",
@@ -65317,7 +65329,7 @@
     "summary": "중소·중견기업 취업·창업 희망 재학생이 등록금 전액과 취·창업지원금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:00:51.170Z",
-    "seriesId": "pknu-notice-719119"
+    "seriesId": "pknu-notice-714502"
   },
   {
     "id": "pknu-notice-726126",
@@ -65408,7 +65420,7 @@
     "summary": "중소·중견기업 재직 중인 고졸 후학습자 재학생이 등록금을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:00:53.950Z",
-    "seriesId": "pknu-notice-719118"
+    "seriesId": "pknu-notice-714558"
   },
   {
     "id": "pknu-notice-726124",
@@ -65453,7 +65465,7 @@
     "summary": "푸른등대 기부장학금 신규장학생을 선발해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:00:55.372Z",
-    "seriesId": "pknu-notice-719674"
+    "seriesId": "pknu-notice-715044"
   },
   {
     "id": "pknu-notice-726123",
@@ -65630,7 +65642,7 @@
     "summary": "17기 또래상담자로 참여할 학생을 모집해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:01:02.634Z",
-    "seriesId": "pknu-notice-721300"
+    "seriesId": "pknu-notice-716790"
   },
   {
     "id": "pknu-notice-726092",
@@ -65726,7 +65738,7 @@
     "summary": "생성형 AI로 시험을 준비하는 전략을 배우는 학습법 특강을 들어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:01:05.478Z",
-    "seriesId": "pknu-notice-719804"
+    "seriesId": "pknu-notice-713851"
   },
   {
     "id": "pknu-notice-726081",
@@ -65907,7 +65919,7 @@
     "summary": "토익·토익스피킹·토플 외국어 강좌를 수강해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:01:12.493Z",
-    "seriesId": "pknu-notice-721307"
+    "seriesId": "pknu-notice-714517"
   },
   {
     "id": "pknu-notice-726067",
@@ -66137,7 +66149,7 @@
     "summary": "대기업 직무적성검사 영역별 문제풀이 노하우를 배워요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:01:26.581Z",
-    "seriesId": "pknu-notice-721120"
+    "seriesId": "pknu-notice-714832"
   },
   {
     "id": "pknu-notice-726045",
@@ -66365,7 +66377,7 @@
     "summary": "선후배·동기와 팀을 이뤄 교과목 튜터링으로 함께 공부해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:01:39.228Z",
-    "seriesId": "pknu-notice-719558"
+    "seriesId": "pknu-notice-716705"
   },
   {
     "id": "pknu-notice-726001",
@@ -66455,7 +66467,7 @@
     "summary": "원어민과 영어로 무료 프리토킹을 해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:01:42.033Z",
-    "seriesId": "pknu-notice-719084"
+    "seriesId": "pknu-notice-714726"
   },
   {
     "id": "pknu-notice-725974",
@@ -66500,7 +66512,7 @@
     "summary": "영어권·일본권 대학으로 한 학기 교환학생을 다녀와요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:01:44.818Z",
-    "seriesId": "pknu-notice-718532"
+    "seriesId": "pknu-notice-720997"
   },
   {
     "id": "pknu-notice-725960",
@@ -67128,7 +67140,7 @@
     "summary": "또래상담자 양성교육을 받고 또래상담자로 활동해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:02:14.408Z",
-    "seriesId": "pknu-notice-721082"
+    "seriesId": "pknu-notice-716574"
   },
   {
     "id": "pknu-notice-725885",
@@ -67214,7 +67226,7 @@
     "summary": "해양로봇 교육을 받고 챌린지에 참가해 수상 기회를 얻어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:02:18.601Z",
-    "seriesId": "pknu-notice-720366"
+    "seriesId": "pknu-notice-716145"
   },
   {
     "id": "pknu-notice-725875",
@@ -67437,7 +67449,7 @@
     "summary": "부경 더채움 장학금을 받을 수 있어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:02:28.606Z",
-    "seriesId": "pknu-notice-720265"
+    "seriesId": "pknu-notice-715632"
   },
   {
     "id": "pknu-notice-725856",
@@ -67528,7 +67540,7 @@
     "summary": "부경대신문 수습기자로 취재·기사 작성을 하며 활동 수당을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:02:32.818Z",
-    "seriesId": "pknu-notice-718563"
+    "seriesId": "pknu-notice-714376"
   },
   {
     "id": "pknu-notice-725818",
@@ -67574,7 +67586,7 @@
     "summary": "2학기 학생생활관 입실을 선착순으로 추가 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:02:34.210Z",
-    "seriesId": "pknu-notice-720109"
+    "seriesId": "pknu-notice-714806"
   },
   {
     "id": "pknu-notice-725816",
@@ -67661,7 +67673,7 @@
     "summary": "5·18희망장학금을 받을 장학생을 모집해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:02:37.037Z",
-    "seriesId": "pknu-notice-720855"
+    "seriesId": "pknu-notice-716148"
   },
   {
     "id": "pknu-notice-725804",
@@ -67803,7 +67815,7 @@
     "summary": "AI 영어 튜터 활용법을 온라인 학습법 특강으로 배워요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:02:41.213Z",
-    "seriesId": "pknu-notice-719804"
+    "seriesId": "pknu-notice-713851"
   },
   {
     "id": "pknu-notice-725777",
@@ -68053,7 +68065,7 @@
     "summary": "학생모니터링단 부경나르미 제8기에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:02:51.040Z",
-    "seriesId": "pknu-notice-719443"
+    "seriesId": "pknu-notice-714990"
   },
   {
     "id": "pknu-notice-725760",
@@ -68145,7 +68157,7 @@
     "summary": "해양로봇 교육을 받고 로봇 챌린지에서 시상에 도전해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:02:55.252Z",
-    "seriesId": "pknu-notice-720366"
+    "seriesId": "pknu-notice-716145"
   },
   {
     "id": "pknu-notice-725746",
@@ -68561,7 +68573,7 @@
     "summary": "예비·초기 창업자가 창업보육센터에 입주해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:03:09.502Z",
-    "seriesId": "pknu-notice-719690"
+    "seriesId": "pknu-notice-714037"
   },
   {
     "id": "pknu-notice-725703",
@@ -69150,7 +69162,7 @@
     "summary": "미국에서 어학연수와 인턴십을 경험해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:03:33.416Z",
-    "seriesId": "pknu-notice-718853"
+    "seriesId": "pknu-notice-714263"
   },
   {
     "id": "pknu-notice-725611",
@@ -69239,7 +69251,7 @@
     "summary": "농촌 출신 대학(원)생이 등록금을 무이자로 대출받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:03:36.318Z",
-    "seriesId": "pknu-notice-718424"
+    "seriesId": "pknu-notice-713730"
   },
   {
     "id": "pknu-notice-725605",
@@ -69506,7 +69518,7 @@
     "summary": "초·중·고생에게 AI를 가르치는 멘토로 활동하고 시간당 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:03:46.171Z",
-    "seriesId": "pknu-notice-719429"
+    "seriesId": "pknu-notice-714805"
   },
   {
     "id": "pknu-notice-725586",
@@ -69817,7 +69829,7 @@
     "summary": "일반대학원 후기 편입생으로 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:04:00.231Z",
-    "seriesId": "pknu-notice-720742"
+    "seriesId": "pknu-notice-714058"
   },
   {
     "id": "pknu-notice-725555",
@@ -69907,7 +69919,7 @@
     "summary": "일반대학원 후기 추가 신입생으로 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:04:03.018Z",
-    "seriesId": "pknu-notice-720743"
+    "seriesId": "pknu-notice-716198"
   },
   {
     "id": "pknu-notice-725553",
@@ -70002,7 +70014,7 @@
     "summary": "듣고 싶은 융복합 교양교과목을 제안하고 총장상과 상금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:04:07.242Z",
-    "seriesId": "pknu-notice-720209"
+    "seriesId": "pknu-notice-715414"
   },
   {
     "id": "pknu-notice-725537",
@@ -70095,7 +70107,7 @@
     "summary": "AI를 활용한 영어 학습법 특강을 온라인으로 들어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:04:10.039Z",
-    "seriesId": "pknu-notice-719804"
+    "seriesId": "pknu-notice-713851"
   },
   {
     "id": "pknu-notice-725524",
@@ -70184,7 +70196,7 @@
     "summary": "수상레저관에서 8월 수상 스포츠 강습을 신청해 배워요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:04:12.861Z",
-    "seriesId": "pknu-notice-723806"
+    "seriesId": "pknu-notice-714069"
   },
   {
     "id": "pknu-notice-725521",
@@ -70403,7 +70415,7 @@
     "summary": "해양로봇 교육을 받고 챌린지에서 시상 기회도 노려요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:04:22.742Z",
-    "seriesId": "pknu-notice-720366"
+    "seriesId": "pknu-notice-716145"
   },
   {
     "id": "pknu-notice-725477",
@@ -70815,7 +70827,7 @@
     "summary": "국립외교원에서 2주간 외교 전반을 배우는 대학생 연수 과정에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:04:44.029Z",
-    "seriesId": "pknu-notice-720368"
+    "seriesId": "pknu-notice-715647"
   },
   {
     "id": "pknu-notice-725407",
@@ -70863,7 +70875,7 @@
     "summary": "AI를 활용한 비교과 프로그램 아이디어를 제안하고 상금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:04:45.427Z",
-    "seriesId": "pknu-notice-720543"
+    "seriesId": "pknu-notice-716864"
   },
   {
     "id": "pknu-notice-725403",
@@ -70912,7 +70924,7 @@
     "summary": "6시그마 GB+BB 통합 직무자격증 교육을 4일간 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:04:48.224Z",
-    "seriesId": "pknu-notice-722215"
+    "seriesId": "pknu-notice-717906"
   },
   {
     "id": "pknu-notice-725378",
@@ -71202,7 +71214,7 @@
     "summary": "ICT 기업에서 4개월간 인턴으로 일하며 실습지원비와 학점을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:05:13.810Z",
-    "seriesId": "pknu-notice-719153"
+    "seriesId": "pknu-notice-714063"
   },
   {
     "id": "pknu-notice-725281",
@@ -71250,7 +71262,7 @@
     "summary": "비교과 참여 경험을 에세이·숏폼·UCC로 만들어 공모전에 내고 상금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:05:15.236Z",
-    "seriesId": "pknu-notice-720370"
+    "seriesId": "pknu-notice-715953"
   },
   {
     "id": "pknu-notice-725212",
@@ -71431,7 +71443,7 @@
     "summary": "특별장학 대상 학생이 2학기 등록금 감면 장학금을 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:05:31.221Z",
-    "seriesId": "pknu-notice-720361"
+    "seriesId": "pknu-notice-714588"
   },
   {
     "id": "pknu-notice-725180",
@@ -71569,7 +71581,7 @@
     "summary": "여름방학 동안 토익·토익스피킹 비대면 강좌를 들어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:05:42.876Z",
-    "seriesId": "pknu-notice-721307"
+    "seriesId": "pknu-notice-714517"
   },
   {
     "id": "pknu-notice-725116",
@@ -71755,7 +71767,7 @@
     "summary": "방학 중 교내외에서 국가근로 학생으로 일할 후보자로 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:06:00.507Z",
-    "seriesId": "pknu-notice-720449"
+    "seriesId": "pknu-notice-715875"
   },
   {
     "id": "pknu-notice-725070",
@@ -71807,7 +71819,7 @@
     "summary": "환경·해양 기관에서 6주간 현장실습을 하고 지원금과 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:06:01.985Z",
-    "seriesId": "pknu-notice-720274"
+    "seriesId": "pknu-notice-718063"
   },
   {
     "id": "pknu-notice-725016",
@@ -71857,7 +71869,7 @@
     "summary": "현직자 동문 멘토와 팀을 이뤄 직무별 취업 멘토링을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:06:12.190Z",
-    "seriesId": "pknu-notice-721552"
+    "seriesId": "pknu-notice-716461"
   },
   {
     "id": "pknu-notice-725015",
@@ -72133,7 +72145,7 @@
     "summary": "국가근로장학금 1차 신청으로 근로장학생 선발 기회를 얻어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:06:57.255Z",
-    "seriesId": "pknu-notice-720124"
+    "seriesId": "pknu-notice-718716"
   },
   {
     "id": "pknu-notice-724813",
@@ -72180,7 +72192,8 @@
     "collectedAt": "2026-10-02T18:07:12.965Z",
     "summary": "현직자 졸업생이 재학생 후배에게 취업 멘토링을 해줘요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:07:12.965Z"
+    "firstSeenAt": "2026-10-02T18:07:12.965Z",
+    "seriesId": "pknu-notice-716461"
   },
   {
     "id": "pknu-notice-724808",
@@ -72276,7 +72289,7 @@
     "summary": "여름방학 동안 국가근로로 일하며 급여를 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:07:31.517Z",
-    "seriesId": "pknu-notice-720044"
+    "seriesId": "pknu-notice-715537"
   },
   {
     "id": "pknu-notice-724752",
@@ -72420,7 +72433,7 @@
     "summary": "해양과학기술원에서 여름방학 현장실습을 하며 실습비를 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:07:59.436Z",
-    "seriesId": "pknu-notice-719847"
+    "seriesId": "pknu-notice-715190"
   },
   {
     "id": "pknu-notice-724632",
@@ -72465,7 +72478,7 @@
     "summary": "초중등 창업 체험교육을 홍보하고 멘토링하는 서포터즈로 활동비를 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:08:00.851Z",
-    "seriesId": "pknu-notice-719835"
+    "seriesId": "pknu-notice-715361"
   },
   {
     "id": "pknu-notice-724408",
@@ -72654,7 +72667,7 @@
     "summary": "기업 연계 팀프로젝트를 하며 팀당 100만 원까지 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:09:18.477Z",
-    "seriesId": "pknu-notice-719513"
+    "seriesId": "pknu-notice-714978"
   },
   {
     "id": "pknu-notice-724274",
@@ -72793,7 +72806,7 @@
     "summary": "인도네시아에서 외국 학생과 팀을 이뤄 디지털 문제해결 프로젝트를 해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:10:01.709Z",
-    "seriesId": "pknu-notice-719624"
+    "seriesId": "pknu-notice-715024"
   },
   {
     "id": "pknu-notice-724143",
@@ -72840,7 +72853,8 @@
     "collectedAt": "2026-10-02T18:10:03.121Z",
     "summary": "웨어러블 AI 엣지 컴퓨팅 심화 교육을 듣고 재료비와 학점을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:10:03.121Z"
+    "firstSeenAt": "2026-10-02T18:10:03.121Z",
+    "seriesId": "pknu-notice-717927"
   },
   {
     "id": "pknu-notice-724134",
@@ -72890,7 +72904,7 @@
     "summary": "캡스톤디자인 팀 과제를 수행하며 지원금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:10:06.079Z",
-    "seriesId": "pknu-notice-719226"
+    "seriesId": "pknu-notice-714701"
   },
   {
     "id": "pknu-notice-724039",
@@ -72918,7 +72932,8 @@
     },
     "tags": [
       "학교",
-      "공모전·대회"
+      "공모전·대회",
+      "장학·지원금"
     ],
     "links": [
       {
@@ -72996,7 +73011,7 @@
     "summary": "초·중·고 학생의 학습과 상담을 도우며 시간당 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:10:59.584Z",
-    "seriesId": "pknu-notice-719429"
+    "seriesId": "pknu-notice-714805"
   },
   {
     "id": "pknu-notice-723897",
@@ -73046,7 +73061,7 @@
     "summary": "캡스톤디자인 프로젝트를 하면서 팀별 지원금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:11:08.218Z",
-    "seriesId": "pknu-notice-719226"
+    "seriesId": "pknu-notice-714701"
   },
   {
     "id": "pknu-notice-723822",
@@ -73099,7 +73114,7 @@
     "summary": "미국 실리콘밸리 기업에서 6개월 동안 ICT 인턴십을 하고 지원금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:11:19.708Z",
-    "seriesId": "pknu-notice-719153"
+    "seriesId": "pknu-notice-714063"
   },
   {
     "id": "pknu-notice-723710",
@@ -73497,7 +73512,7 @@
     "summary": "미국 실리콘밸리 기업에서 6개월간 ICT 인턴십을 하며 지원금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:14:38.917Z",
-    "seriesId": "pknu-notice-719153"
+    "seriesId": "pknu-notice-714063"
   },
   {
     "id": "pknu-notice-722846",
@@ -73584,7 +73599,8 @@
     "collectedAt": "2026-10-02T18:14:47.723Z",
     "summary": "코드트리 코딩 학습 서비스를 1년간 무료로 이용해요",
     "noApplication": true,
-    "firstSeenAt": "2026-10-02T18:14:47.723Z"
+    "firstSeenAt": "2026-10-02T18:14:47.723Z",
+    "seriesId": "pknu-notice-717735"
   },
   {
     "id": "pknu-notice-722619",
@@ -73735,7 +73751,7 @@
     "summary": "한국장학재단 국가근로장학생으로 6개월간 근로하고 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:16:36.149Z",
-    "seriesId": "pknu-notice-720124"
+    "seriesId": "pknu-notice-718716"
   },
   {
     "id": "pknu-notice-721929",
@@ -73917,7 +73933,7 @@
     "summary": "자소서 첨삭, 모의면접, 1:1 컨설팅으로 취업 역량을 키워요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:37:56.823Z",
-    "seriesId": "snu-career-0000001331"
+    "seriesId": "snu-career-0000001177"
   },
   {
     "id": "snu-career-0000001452",
@@ -74009,7 +74025,7 @@
     "summary": "영문 이력서와 영어 모의면접으로 외국계 취업을 준비해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:37:58.948Z",
-    "seriesId": "snu-career-0000001353"
+    "seriesId": "snu-career-0000001259"
   },
   {
     "id": "snu-career-0000001450",
@@ -74149,7 +74165,7 @@
     "summary": "동문 인터뷰 기사를 쓰고 활동비를 받는 커리어기자단이에요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:38:04.476Z",
-    "seriesId": "snu-career-0000001318"
+    "seriesId": "snu-career-0000001157"
   },
   {
     "id": "snu-startup-71",
@@ -77251,7 +77267,7 @@
     "summary": "대학혁신지원사업을 알리는 서포터즈 3기로 활동해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:45:46.785Z",
-    "seriesId": "sogang-notice-546248"
+    "seriesId": "sogang-notice-541707"
   },
   {
     "id": "sogang-notice-551115",
@@ -77562,7 +77578,7 @@
     "summary": "학술적 글쓰기를 집중적으로 지도받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:45:55.235Z",
-    "seriesId": "sogang-notice-546353"
+    "seriesId": "sogang-notice-541891"
   },
   {
     "id": "sogang-notice-550875",
@@ -78426,7 +78442,7 @@
     "summary": "현수막에 걸릴 문구를 공모하고 당선되면 표창장과 기념품을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:45:59.522Z",
-    "seriesId": "sogang-notice-547751"
+    "seriesId": "sogang-notice-544935"
   },
   {
     "id": "sogang-notice-551018",
@@ -78738,7 +78754,8 @@
     "collectedAt": "2026-10-02T18:46:08.259Z",
     "summary": "주제별 집단상담에 8주간 참여해 고민을 나누고 마음을 돌봐요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:46:08.259Z"
+    "firstSeenAt": "2026-10-02T18:46:08.259Z",
+    "seriesId": "sogang-notice-541647"
   },
   {
     "id": "sogang-notice-550957",
@@ -79206,7 +79223,7 @@
     "summary": "일본 조치대 학생들과 예수회 교육 수업을 듣고 서로 학교를 방문해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:47:06.330Z",
-    "seriesId": "sogang-notice-547315"
+    "seriesId": "sogang-notice-544034"
   },
   {
     "id": "sogang-notice-550366",
@@ -79518,7 +79535,7 @@
     "summary": "사회구조사업단 홍보대사로 활동하며 비교과 프로그램을 알려요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:46:43.142Z",
-    "seriesId": "sogang-notice-546119"
+    "seriesId": "sogang-notice-544757"
   },
   {
     "id": "sogang-notice-550534",
@@ -79696,7 +79713,7 @@
     "summary": "구당서 원문을 함께 읽는 인문고전 강독에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:46:47.333Z",
-    "seriesId": "sogang-notice-550027"
+    "seriesId": "sogang-notice-545132"
   },
   {
     "id": "sogang-notice-550507",
@@ -79962,7 +79979,7 @@
     "summary": "인문학술 콜로키움에서 연구를 발표할 사람을 모집해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:46:56.819Z",
-    "seriesId": "sogang-notice-547133"
+    "seriesId": "sogang-notice-543945"
   },
   {
     "id": "sogang-notice-550444",
@@ -80004,7 +80021,8 @@
     "collectedAt": "2026-10-02T18:46:57.862Z",
     "summary": "창업보육센터 사무공간에 입주하고 경영·기술 지원을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:46:57.862Z"
+    "firstSeenAt": "2026-10-02T18:46:57.862Z",
+    "seriesId": "sogang-notice-541549"
   },
   {
     "id": "sogang-notice-550430",
@@ -80056,7 +80074,7 @@
     "summary": "일본 조치대 학생들과 예수회 교육을 배우고 서로 학교를 방문해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:46:58.915Z",
-    "seriesId": "sogang-notice-547315"
+    "seriesId": "sogang-notice-544034"
   },
   {
     "id": "sogang-notice-550278",
@@ -80298,7 +80316,7 @@
     "summary": "일본 조치대 학생과 예수회 교육을 주제로 수업하고 상호 방문해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:47:33.683Z",
-    "seriesId": "sogang-notice-547315"
+    "seriesId": "sogang-notice-544034"
   },
   {
     "id": "sogang-notice-550018",
@@ -80387,7 +80405,7 @@
     "summary": "청년 창업 교육을 무료로 받고 수당과 창업 지원금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:47:50.640Z",
-    "seriesId": "sogang-notice-546707"
+    "seriesId": "sogang-notice-543845"
   },
   {
     "id": "sogang-notice-549964",
@@ -80481,7 +80499,8 @@
     "collectedAt": "2026-10-02T18:47:56.956Z",
     "summary": "컬럼비아대 여름 어학연수 경비를 지원받아 다녀와요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:47:56.956Z"
+    "firstSeenAt": "2026-10-02T18:47:56.956Z",
+    "seriesId": "sogang-scholarship-541211"
   },
   {
     "id": "sogang-notice-549668",
@@ -80726,7 +80745,7 @@
     "summary": "예수회 대학 학생들과 글로벌 시민의식을 주제로 일주일간 함께 활동해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:48:31.995Z",
-    "seriesId": "sogang-notice-546589"
+    "seriesId": "sogang-notice-543707"
   },
   {
     "id": "sogang-notice-549252",
@@ -80772,7 +80791,7 @@
     "summary": "일본군 '위안부' 문제를 알리는 예술 작품을 만들고 제작비를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:48:46.734Z",
-    "seriesId": "sogang-notice-546186"
+    "seriesId": "sogang-notice-541293"
   },
   {
     "id": "sogang-notice-548986",
@@ -80819,7 +80838,7 @@
     "summary": "사업단 홍보대사로 활동해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:48:57.362Z",
-    "seriesId": "sogang-notice-546119"
+    "seriesId": "sogang-notice-544757"
   },
   {
     "id": "sogang-notice-548907",
@@ -80864,7 +80883,7 @@
     "summary": "멘토·멘티로 짝을 이뤄 학업을 함께 도와요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:49:01.572Z",
-    "seriesId": "sogang-notice-545977"
+    "seriesId": "sogang-notice-541179"
   },
   {
     "id": "sogang-notice-548874",
@@ -80957,7 +80976,7 @@
     "summary": "동교인재상에 선발되면 최대 500만원을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:52:45.369Z",
-    "seriesId": "sogang-scholarship-547794"
+    "seriesId": "sogang-scholarship-544890"
   },
   {
     "id": "sogang-scholarship-551038",
@@ -81001,7 +81020,7 @@
     "summary": "해외 교환학생으로 가는 학기의 생활비를 장학금으로 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:52:46.448Z",
-    "seriesId": "sogang-scholarship-546374"
+    "seriesId": "sogang-scholarship-541857"
   },
   {
     "id": "sogang-scholarship-550981",
@@ -81140,7 +81159,7 @@
     "summary": "국가근로장학생으로 일할 희망 근로기관에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:52:50.663Z",
-    "seriesId": "sogang-scholarship-545878"
+    "seriesId": "sogang-scholarship-541401"
   },
   {
     "id": "sogang-scholarship-551303",
@@ -81189,7 +81208,7 @@
     "summary": "신입생이 두 학기 등록금 전액을 장학금으로 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:52:51.728Z",
-    "seriesId": "sogang-scholarship-547884"
+    "seriesId": "sogang-scholarship-545092"
   },
   {
     "id": "sogang-scholarship-551250",
@@ -81240,7 +81259,7 @@
     "summary": "초·중·고 학생의 학습과 상담을 돕는 멘토로 활동하고 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:52:52.801Z",
-    "seriesId": "sogang-scholarship-545913"
+    "seriesId": "sogang-scholarship-543477"
   },
   {
     "id": "sogang-scholarship-551197",
@@ -81283,7 +81302,7 @@
     "summary": "포항시 거주 대학생이 등록금을 최대 200만원 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:52:53.845Z",
-    "seriesId": "sogang-scholarship-547753"
+    "seriesId": "sogang-scholarship-544874"
   },
   {
     "id": "sogang-scholarship-551195",
@@ -81339,7 +81358,8 @@
     "collectedAt": "2026-10-02T18:52:54.900Z",
     "summary": "경영학부 재학생이 성적 우수 장학금으로 등록금 전액을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:52:54.900Z"
+    "firstSeenAt": "2026-10-02T18:52:54.900Z",
+    "seriesId": "sogang-scholarship-543816"
   },
   {
     "id": "sogang-scholarship-551193",
@@ -81395,7 +81415,7 @@
     "summary": "경영학부 3학년 이상 학생이 등록금 전액 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:52:55.938Z",
-    "seriesId": "sogang-scholarship-546533"
+    "seriesId": "sogang-scholarship-545494"
   },
   {
     "id": "sogang-scholarship-551074",
@@ -81488,7 +81508,7 @@
     "summary": "한국장학재단 학자금대출의 이자를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:52:58.025Z",
-    "seriesId": "sogang-scholarship-547778"
+    "seriesId": "sogang-scholarship-541966"
   },
   {
     "id": "sogang-scholarship-551052",
@@ -81535,7 +81555,7 @@
     "summary": "북한이탈주민 학생이 생활비 장학금을 100만~200만원 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:52:59.061Z",
-    "seriesId": "sogang-scholarship-546355"
+    "seriesId": "sogang-scholarship-541246"
   },
   {
     "id": "sogang-scholarship-551051",
@@ -81583,7 +81603,7 @@
     "summary": "형제자매가 함께 재적 중이면 수업료의 3분의 1을 장학금으로 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:00.116Z",
-    "seriesId": "sogang-scholarship-546356"
+    "seriesId": "sogang-scholarship-541628"
   },
   {
     "id": "sogang-scholarship-551050",
@@ -81671,7 +81691,7 @@
     "summary": "경주시 거주 대학생이 생활비 200만원을 장학금으로 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:02.200Z",
-    "seriesId": "sogang-scholarship-547780"
+    "seriesId": "sogang-scholarship-544915"
   },
   {
     "id": "sogang-scholarship-551036",
@@ -81764,7 +81784,7 @@
     "summary": "1학년 여학생이 등록금 전액과 자기계발비 90만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:04.277Z",
-    "seriesId": "sogang-scholarship-547752"
+    "seriesId": "sogang-scholarship-544876"
   },
   {
     "id": "sogang-scholarship-551021",
@@ -81807,7 +81827,7 @@
     "summary": "한국장학재단 학자금대출의 이자를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:05.314Z",
-    "seriesId": "sogang-scholarship-547782"
+    "seriesId": "sogang-scholarship-543456"
   },
   {
     "id": "sogang-scholarship-551010",
@@ -81852,7 +81872,7 @@
     "summary": "성남시 다자녀가구 대학생이 등록금 100만원을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:06.356Z",
-    "seriesId": "sogang-scholarship-546802"
+    "seriesId": "sogang-scholarship-543753"
   },
   {
     "id": "sogang-scholarship-551006",
@@ -81897,7 +81917,7 @@
     "summary": "중소기업 취업연계 창업지원형 장학금을 신청해 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:07.399Z",
-    "seriesId": "sogang-scholarship-546509"
+    "seriesId": "sogang-scholarship-544932"
   },
   {
     "id": "sogang-scholarship-551005",
@@ -81942,7 +81962,7 @@
     "summary": "고졸 재직자가 대학 등록금을 전액 또는 반액 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:08.443Z",
-    "seriesId": "sogang-scholarship-546477"
+    "seriesId": "sogang-scholarship-544980"
   },
   {
     "id": "sogang-scholarship-551004",
@@ -81992,7 +82012,7 @@
     "summary": "국가근로장학생으로 일할 희망 근로기관을 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:09.504Z",
-    "seriesId": "sogang-scholarship-545878"
+    "seriesId": "sogang-scholarship-541401"
   },
   {
     "id": "sogang-scholarship-550991",
@@ -82039,7 +82059,7 @@
     "summary": "익산사랑 장학생으로 선발되어 최대 200만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:10.566Z",
-    "seriesId": "sogang-scholarship-547731"
+    "seriesId": "sogang-scholarship-544110"
   },
   {
     "id": "sogang-scholarship-550990",
@@ -82084,7 +82104,7 @@
     "summary": "푸른등대 기부장학생으로 생활비 150~400만원을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:11.647Z",
-    "seriesId": "sogang-scholarship-545885"
+    "seriesId": "sogang-scholarship-543628"
   },
   {
     "id": "sogang-scholarship-550985",
@@ -82127,7 +82147,7 @@
     "summary": "울산 출신 대학생이 등록금 또는 생활비 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:12.694Z",
-    "seriesId": "sogang-scholarship-546444"
+    "seriesId": "sogang-scholarship-541954"
   },
   {
     "id": "sogang-scholarship-550976",
@@ -82174,7 +82194,7 @@
     "summary": "축제날 캠퍼스 안전관리와 교통통제를 도우며 근로장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:13.740Z",
-    "seriesId": "sogang-scholarship-546826"
+    "seriesId": "sogang-scholarship-545042"
   },
   {
     "id": "sogang-scholarship-550959",
@@ -82264,7 +82284,7 @@
     "summary": "광산구 주민과 자녀 대학생이 등록금 200만원을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:15.832Z",
-    "seriesId": "sogang-scholarship-547709"
+    "seriesId": "sogang-scholarship-544759"
   },
   {
     "id": "sogang-scholarship-550945",
@@ -82367,7 +82387,7 @@
     "summary": "공학계 저학년 학생이 생활비 400만원을 장학금으로 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:17.909Z",
-    "seriesId": "sogang-scholarship-547793"
+    "seriesId": "sogang-scholarship-544884"
   },
   {
     "id": "sogang-scholarship-550943",
@@ -82456,7 +82476,7 @@
     "summary": "성적우수 또는 학업장려 유형으로 200만원 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:19.997Z",
-    "seriesId": "sogang-scholarship-547511"
+    "seriesId": "sogang-scholarship-544629"
   },
   {
     "id": "sogang-scholarship-550771",
@@ -82546,7 +82566,7 @@
     "summary": "2학기 국가장학금을 소득구간에 따라 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:22.089Z",
-    "seriesId": "sogang-scholarship-546076"
+    "seriesId": "sogang-scholarship-541306"
   },
   {
     "id": "sogang-scholarship-550743",
@@ -82596,7 +82616,7 @@
     "summary": "국가근로장학사업에 참여해 근로하며 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:23.139Z",
-    "seriesId": "sogang-scholarship-546068"
+    "seriesId": "sogang-scholarship-541164"
   },
   {
     "id": "sogang-scholarship-550679",
@@ -82643,7 +82663,7 @@
     "summary": "한국장학재단 학자금 대출이자를 군산시에서 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:24.207Z",
-    "seriesId": "sogang-scholarship-547629"
+    "seriesId": "sogang-scholarship-540963"
   },
   {
     "id": "sogang-scholarship-550660",
@@ -82692,7 +82712,8 @@
     "collectedAt": "2026-10-02T18:53:25.260Z",
     "summary": "컴퓨터·전자공학 전공생이 졸업까지 등록금 전액을 지원받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:53:25.260Z"
+    "firstSeenAt": "2026-10-02T18:53:25.260Z",
+    "seriesId": "sogang-scholarship-541391"
   },
   {
     "id": "sogang-scholarship-550659",
@@ -82839,7 +82860,7 @@
     "summary": "국가근로장학생으로 일할 희망 근로기관을 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:51.518Z",
-    "seriesId": "sogang-scholarship-545878"
+    "seriesId": "sogang-scholarship-541401"
   },
   {
     "id": "sogang-scholarship-550423",
@@ -82890,7 +82911,7 @@
     "summary": "초·중·고생을 멘토링하고 장학금을 받는 활동이에요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:52.571Z",
-    "seriesId": "sogang-scholarship-545913"
+    "seriesId": "sogang-scholarship-543477"
   },
   {
     "id": "sogang-scholarship-550408",
@@ -82935,7 +82956,7 @@
     "summary": "등록금을 최대 150만원까지 지원받는 장학생을 뽑아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:54.675Z",
-    "seriesId": "sogang-scholarship-545880"
+    "seriesId": "sogang-scholarship-540805"
   },
   {
     "id": "sogang-scholarship-550407",
@@ -82981,7 +83002,7 @@
     "summary": "대학생 멘토링에 참여하고 멘토링비 300만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:55.723Z",
-    "seriesId": "sogang-scholarship-547253"
+    "seriesId": "sogang-scholarship-544233"
   },
   {
     "id": "sogang-scholarship-550406",
@@ -83032,7 +83053,7 @@
     "summary": "기숙사에 최대 3년간 무료로 거주하는 장학생을 뽑아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:56.776Z",
-    "seriesId": "sogang-scholarship-547288"
+    "seriesId": "sogang-scholarship-541113"
   },
   {
     "id": "sogang-scholarship-550405",
@@ -83077,7 +83098,7 @@
     "summary": "생활비를 월 최대 200만원까지 지원받는 장학생을 뽑아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:57.823Z",
-    "seriesId": "sogang-scholarship-547230"
+    "seriesId": "sogang-scholarship-544245"
   },
   {
     "id": "sogang-scholarship-550318",
@@ -83169,7 +83190,7 @@
     "summary": "언론·미디어 직무교육을 듣고 학업보조비 100만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:54:01.038Z",
-    "seriesId": "sogang-scholarship-547336"
+    "seriesId": "sogang-scholarship-544005"
   },
   {
     "id": "sogang-scholarship-550242",
@@ -83272,7 +83293,7 @@
     "summary": "봉사활동을 하며 생활비 400만원을 지원받는 장학생을 뽑아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:54:05.204Z",
-    "seriesId": "sogang-scholarship-547009"
+    "seriesId": "sogang-scholarship-544011"
   },
   {
     "id": "sogang-scholarship-550657",
@@ -83318,7 +83339,7 @@
     "summary": "한국장학재단 학자금대출의 상반기 본인 부담 이자를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:27.354Z",
-    "seriesId": "sogang-scholarship-548829"
+    "seriesId": "sogang-scholarship-540962"
   },
   {
     "id": "sogang-scholarship-550649",
@@ -83409,7 +83430,7 @@
     "summary": "공직·언론·연구 분야 진출 희망 학생이 등록금과 면학보조금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:29.441Z",
-    "seriesId": "sogang-scholarship-547736"
+    "seriesId": "sogang-scholarship-544875"
   },
   {
     "id": "sogang-scholarship-550644",
@@ -83454,7 +83475,7 @@
     "summary": "이공계 새터민 학생이 연 800만원의 학습지원비를 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:30.489Z",
-    "seriesId": "sogang-scholarship-547476"
+    "seriesId": "sogang-scholarship-544628"
   },
   {
     "id": "sogang-scholarship-550632",
@@ -83544,7 +83565,7 @@
     "summary": "5·18희망장학생으로 선발되어 생활비 100만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:32.568Z",
-    "seriesId": "sogang-scholarship-547365"
+    "seriesId": "sogang-scholarship-544227"
   },
   {
     "id": "sogang-scholarship-550630",
@@ -83594,7 +83615,7 @@
     "summary": "국가근로장학생으로 일할 희망 근로기관을 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:33.606Z",
-    "seriesId": "sogang-scholarship-545878"
+    "seriesId": "sogang-scholarship-541401"
   },
   {
     "id": "sogang-scholarship-550601",
@@ -83642,7 +83663,7 @@
     "summary": "미국 대학으로 교환학생을 가는 이공계 학부생이 생활비 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:34.665Z",
-    "seriesId": "sogang-scholarship-546048"
+    "seriesId": "sogang-scholarship-544562"
   },
   {
     "id": "sogang-scholarship-550554",
@@ -83730,7 +83751,7 @@
     "summary": "사랑나눔 장학생으로 선발되어 학업장려금 100만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:36.804Z",
-    "seriesId": "sogang-scholarship-548546"
+    "seriesId": "sogang-scholarship-541335"
   },
   {
     "id": "sogang-scholarship-550541",
@@ -83775,7 +83796,7 @@
     "summary": "가계가 어려운 학생 30명 내외가 후생복지장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:37.843Z",
-    "seriesId": "sogang-scholarship-546075"
+    "seriesId": "sogang-scholarship-541245"
   },
   {
     "id": "sogang-scholarship-550536",
@@ -83911,7 +83932,7 @@
     "summary": "경제적으로 어려운 학생이 학업지원비 500만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:40.975Z",
-    "seriesId": "sogang-scholarship-547359"
+    "seriesId": "sogang-scholarship-544385"
   },
   {
     "id": "sogang-scholarship-550490",
@@ -83998,7 +84019,7 @@
     "summary": "장학생으로 선발되어 생활비 220만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:43.075Z",
-    "seriesId": "sogang-scholarship-547338"
+    "seriesId": "sogang-scholarship-544449"
   },
   {
     "id": "sogang-scholarship-550479",
@@ -84142,7 +84163,7 @@
     "summary": "1학년 학생이 졸업까지 등록금과 학업보조금, 교환학생 체재비를 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:46.220Z",
-    "seriesId": "sogang-scholarship-547295"
+    "seriesId": "sogang-scholarship-544309"
   },
   {
     "id": "sogang-scholarship-550470",
@@ -84187,7 +84208,7 @@
     "summary": "어려운 환경의 대학생이 생활비 250만원을 장학금으로 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:47.262Z",
-    "seriesId": "sogang-scholarship-545891"
+    "seriesId": "sogang-scholarship-544194"
   },
   {
     "id": "sogang-scholarship-550160",
@@ -84231,7 +84252,8 @@
     "collectedAt": "2026-10-02T18:54:16.938Z",
     "summary": "디딤돌·외국인 근로자 자녀 장학생으로 학업보조비나 등록금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:54:16.938Z"
+    "firstSeenAt": "2026-10-02T18:54:16.938Z",
+    "seriesId": "sogang-scholarship-544097"
   },
   {
     "id": "sogang-scholarship-550158",
@@ -84372,7 +84394,7 @@
     "summary": "초·중·고 학생을 멘토링하고 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:54:27.435Z",
-    "seriesId": "sogang-scholarship-545913"
+    "seriesId": "sogang-scholarship-543477"
   },
   {
     "id": "sogang-scholarship-549480",
@@ -84472,7 +84494,8 @@
     "collectedAt": "2026-10-02T18:55:29.569Z",
     "summary": "중학생에게 온라인 학습·진로 멘토링을 하고 월 48만원 활동비를 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:55:29.569Z"
+    "firstSeenAt": "2026-10-02T18:55:29.569Z",
+    "seriesId": "sogang-scholarship-541824"
   },
   {
     "id": "sogang-scholarship-549646",
@@ -84523,7 +84546,7 @@
     "summary": "초·중·고 학생에게 학습과 상담 멘토링을 하고 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:54:57.994Z",
-    "seriesId": "sogang-scholarship-545913"
+    "seriesId": "sogang-scholarship-543477"
   },
   {
     "id": "sogang-scholarship-549327",
@@ -84574,7 +84597,7 @@
     "summary": "초·중·고 학생에게 학습·상담 멘토링을 하고 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:55:49.703Z",
-    "seriesId": "sogang-scholarship-545913"
+    "seriesId": "sogang-scholarship-543477"
   },
   {
     "id": "sogang-scholarship-547451",
@@ -84623,7 +84646,8 @@
     "collectedAt": "2026-10-02T18:58:56.430Z",
     "summary": "남학생이 롯데장학관에 1년간 무료로 거주해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:58:56.430Z"
+    "firstSeenAt": "2026-10-02T18:58:56.430Z",
+    "seriesId": "sogang-scholarship-544877"
   },
   {
     "id": "sogang-scholarship-547291",
@@ -84673,7 +84697,8 @@
     "collectedAt": "2026-10-02T18:59:11.158Z",
     "summary": "여학생이 롯데장학관에서 1년간 거주비 없이 지내요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:59:11.158Z"
+    "firstSeenAt": "2026-10-02T18:59:11.158Z",
+    "seriesId": "sogang-scholarship-544877"
   },
   {
     "id": "korea-startup-1111",
@@ -85082,7 +85107,7 @@
     "summary": "스타트업 현장실습이나 창업활동 실습을 하며 학점을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T19:04:52.433Z",
-    "seriesId": "korea-startup-700"
+    "seriesId": "korea-startup-572"
   },
   {
     "id": "korea-startup-1095",
@@ -85286,7 +85311,7 @@
       "openTo": "고려대학교 소속·출신 창업자 및 예비 창업자"
     },
     "recruitPeriod": {
-      "start": "2026-07-20",
+      "start": null,
       "end": "2026-08-02"
     },
     "activityPeriod": {
@@ -86031,7 +86056,8 @@
     "collectedAt": "2026-10-02T19:05:41.686Z",
     "summary": "창업 교육을 무료로 받고 수당과 우수팀 지원금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T19:05:41.686Z"
+    "firstSeenAt": "2026-10-02T19:05:41.686Z",
+    "seriesId": "korea-startup-401"
   },
   {
     "id": "korea-startup-1087",
@@ -86075,7 +86101,7 @@
     "summary": "서울 글로벌 스타트업 페스티벌에 사전등록하고 참가해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T19:05:00.790Z",
-    "seriesId": "korea-startup-769"
+    "seriesId": "korea-startup-491"
   },
   {
     "id": "korea-startup-1086",
@@ -86383,7 +86409,7 @@
     "summary": "창업보육센터 학생창업실에 입주해 창업 공간을 이용해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T19:05:16.901Z",
-    "seriesId": "korea-startup-736"
+    "seriesId": "korea-startup-367"
   },
   {
     "id": "korea-startup-1067",
@@ -86475,7 +86501,7 @@
     "summary": "창업 아이템을 발표하는 경진대회에 참가하고 창업활동 지원금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T19:05:20.040Z",
-    "seriesId": "korea-startup-743"
+    "seriesId": "korea-startup-444"
   },
   {
     "id": "korea-startup-1065",
@@ -86813,7 +86839,7 @@
       "openTo": "창업 7년 이내 초기창업기업·예비창업자"
     },
     "recruitPeriod": {
-      "start": "2026-01-08",
+      "start": null,
       "end": "2026-01-21"
     },
     "activityPeriod": {
@@ -86846,7 +86872,8 @@
     "firstSeenAt": "2026-10-02T19:07:08.841Z",
     "aliases": [
       "korea-notice-000060000000059917"
-    ]
+    ],
+    "seriesId": "korea-startup-418"
   },
   {
     "id": "korea-startup-925",
@@ -91781,7 +91808,8 @@
     "collectedAt": "2026-10-03T01:26:54.516Z",
     "summary": "학생홍보기자단으로 13개월간 기사와 영상 콘텐츠를 만들고 근로장학금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:26:54.516Z"
+    "firstSeenAt": "2026-10-03T01:26:54.516Z",
+    "seriesId": "sogang-notice-545465"
   },
   {
     "id": "sogang-notice-547877",
@@ -92165,7 +92193,8 @@
     "collectedAt": "2026-10-03T01:32:23.644Z",
     "summary": "서울 중학생에게 온라인으로 학습 멘토링을 하고 활동비를 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:32:23.644Z"
+    "firstSeenAt": "2026-10-03T01:32:23.644Z",
+    "seriesId": "yonsei-notice-936068"
   },
   {
     "id": "yonsei-notice-942720",
@@ -92209,7 +92238,8 @@
     "collectedAt": "2026-10-03T01:32:50.216Z",
     "summary": "외식업주 가정의 대학생이 연 400만원 장학금과 성장 프로그램을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:32:50.216Z"
+    "firstSeenAt": "2026-10-03T01:32:50.216Z",
+    "seriesId": "yonsei-notice-935969"
   },
   {
     "id": "yonsei-notice-942388",
@@ -92256,7 +92286,8 @@
     "collectedAt": "2026-10-03T01:33:33.981Z",
     "summary": "청소년에게 학습지도 봉사를 하고 장학금과 멘토링을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:33:33.981Z"
+    "firstSeenAt": "2026-10-03T01:33:33.981Z",
+    "seriesId": "yonsei-notice-936223"
   },
   {
     "id": "yonsei-notice-942344",
@@ -92348,7 +92379,7 @@
     "summary": "지역 청소년 학습지도 활동을 하고 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:33:42.487Z",
-    "seriesId": "yonsei-notice-936282"
+    "seriesId": "yonsei-notice-935925"
   },
   {
     "id": "yonsei-notice-942304",
@@ -92396,7 +92427,7 @@
     "summary": "시설보호 여성청소년의 멘토로 활동하고 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:33:46.780Z",
-    "seriesId": "yonsei-notice-936262"
+    "seriesId": "yonsei-notice-935906"
   },
   {
     "id": "yonsei-notice-942468",
@@ -92489,7 +92520,8 @@
     "collectedAt": "2026-10-03T01:33:23.257Z",
     "summary": "청소년 학습 멘토링 봉사를 하고 장학금 300만원을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:33:23.257Z"
+    "firstSeenAt": "2026-10-03T01:33:23.257Z",
+    "seriesId": "yonsei-notice-935975"
   },
   {
     "id": "yonsei-notice-942447",
@@ -92579,7 +92611,8 @@
     "collectedAt": "2026-10-03T01:34:12.315Z",
     "summary": "1년간 봉사 프로그램을 기획·실천하며 학기당 300만 원을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:34:12.315Z"
+    "firstSeenAt": "2026-10-03T01:34:12.315Z",
+    "seriesId": "yonsei-notice-936237"
   },
   {
     "id": "yonsei-notice-941977",
@@ -92629,7 +92662,7 @@
     "summary": "롯데장학관 입주생으로 선발되어 1년간 거주해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:34:39.048Z",
-    "seriesId": "yonsei-notice-940970"
+    "seriesId": "yonsei-notice-936084"
   },
   {
     "id": "yonsei-notice-942088",
@@ -92672,7 +92705,8 @@
     "collectedAt": "2026-10-03T01:34:24.070Z",
     "summary": "마음공부 청년 활동에 참여하며 등록금 지원을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:34:24.070Z"
+    "firstSeenAt": "2026-10-03T01:34:24.070Z",
+    "seriesId": "yonsei-notice-936060"
   },
   {
     "id": "yonsei-startup-327",
@@ -93874,7 +93908,8 @@
     "collectedAt": "2026-10-03T01:47:23.229Z",
     "summary": "장애학생의 수업·이동을 돕고 활동비를 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:47:23.229Z"
+    "firstSeenAt": "2026-10-03T01:47:23.229Z",
+    "seriesId": "hanyang-notice-94144"
   },
   {
     "id": "hanyang-notice-115601",
@@ -94875,7 +94910,7 @@
     "summary": "현장실습학기제에 참여해 학점을 인정받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:47:59.122Z",
-    "seriesId": "hanyang-notice-94390"
+    "seriesId": "hanyang-notice-94908"
   },
   {
     "id": "hanyang-notice-113203",
@@ -94884,7 +94919,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "hanyang-erica"
+        "hanyang"
       ],
       "colleges": [],
       "departments": [],
@@ -94920,8 +94955,7 @@
     "collectedAt": "2026-10-03T01:48:00.609Z",
     "summary": "ERICA IC-PBL 10주년 슬로건·AI 숏폼 공모전에 참가해 상금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:48:00.609Z",
-    "campus": "hanyang-erica"
+    "firstSeenAt": "2026-10-03T01:48:00.609Z"
   },
   {
     "id": "hanyang-notice-113202",
@@ -95105,7 +95139,8 @@
     "firstSeenAt": "2026-10-03T01:48:07.974Z",
     "aliases": [
       "hanyang-notice-112901"
-    ]
+    ],
+    "seriesId": "hanyang-notice-98437"
   },
   {
     "id": "hanyang-notice-112802",
@@ -95153,7 +95188,7 @@
     "summary": "마지막 학기 학생이 팀을 이뤄 10주간 취업 준비 트레이닝을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:48:10.867Z",
-    "seriesId": "hanyang-notice-94930"
+    "seriesId": "hanyang-notice-94909"
   },
   {
     "id": "hanyang-notice-112702",
@@ -95943,7 +95978,8 @@
     "collectedAt": "2026-10-03T01:49:09.932Z",
     "summary": "우정사회봉사단 7기로 활동해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:49:09.932Z"
+    "firstSeenAt": "2026-10-03T01:49:09.932Z",
+    "seriesId": "hanyang-notice-94113"
   },
   {
     "id": "hanyang-notice-109202",
@@ -96082,7 +96118,7 @@
     "summary": "실리콘밸리 기업과 창업 환경을 탐방하고 경비를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:49:20.574Z",
-    "seriesId": "hanyang-notice-94936"
+    "seriesId": "hanyang-notice-95046"
   },
   {
     "id": "hanyang-notice-108403",
@@ -96242,7 +96278,8 @@
     },
     "tags": [
       "학교",
-      "창업"
+      "창업",
+      "장학·지원금"
     ],
     "links": [
       {
@@ -96266,7 +96303,7 @@
     "aliases": [
       "hanyang-notice-109401"
     ],
-    "seriesId": "hanyang-notice-94229"
+    "seriesId": "hanyang-notice-94601"
   },
   {
     "id": "hanyang-notice-105901",
@@ -96728,7 +96765,8 @@
     "collectedAt": "2026-10-03T01:51:18.618Z",
     "summary": "중학생에게 국영수를 가르치는 멘토로 활동하고 활동비를 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:51:18.618Z"
+    "firstSeenAt": "2026-10-03T01:51:18.618Z",
+    "seriesId": "hanyang-notice-94617"
   },
   {
     "id": "hanyang-notice-99701",
@@ -97337,7 +97375,7 @@
     "summary": "교환학생에 선발되면 한 학기 파견 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:58:39.625Z",
-    "seriesId": "cau-notice-28655"
+    "seriesId": "cau-notice-27427"
   },
   {
     "id": "cau-notice-30145",
@@ -97519,7 +97557,7 @@
     "summary": "대학 재학 중 공적을 인정받아 상패와 최대 500만원 상금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:58:44.695Z",
-    "seriesId": "cau-notice-29169"
+    "seriesId": "cau-notice-28159"
   },
   {
     "id": "cau-notice-30131",
@@ -97614,7 +97652,7 @@
     "summary": "중소·중견기업 취업이나 창업을 준비하면 등록금과 200만원을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:58:47.232Z",
-    "seriesId": "cau-notice-28618"
+    "seriesId": "cau-notice-28146"
   },
   {
     "id": "cau-notice-30129",
@@ -97661,7 +97699,7 @@
     "summary": "재직 중인 고졸 후학습자가 등록금을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:58:48.516Z",
-    "seriesId": "cau-notice-28619"
+    "seriesId": "cau-notice-28222"
   },
   {
     "id": "cau-notice-30125",
@@ -97706,7 +97744,7 @@
     "summary": "푸른등대 기부장학금 신규 장학생으로 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:58:49.780Z",
-    "seriesId": "cau-notice-28714"
+    "seriesId": "cau-notice-27582"
   },
   {
     "id": "cau-notice-30123",
@@ -97842,7 +97880,7 @@
     "summary": "교내에서 토익·토익스피킹·토플 강좌를 들어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:58:53.581Z",
-    "seriesId": "cau-notice-28872"
+    "seriesId": "cau-notice-27868"
   },
   {
     "id": "cau-notice-30088",
@@ -97887,7 +97925,7 @@
     "summary": "경원장학재단 장학생으로 선발돼 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:58:54.872Z",
-    "seriesId": "cau-notice-29130"
+    "seriesId": "cau-notice-28168"
   },
   {
     "id": "cau-notice-29598",
@@ -97932,7 +97970,7 @@
     "summary": "교내 식당과 카우버거에서 일하며 근로 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:58:56.104Z",
-    "seriesId": "cau-notice-28579"
+    "seriesId": "cau-notice-28126"
   },
   {
     "id": "cau-notice-29979",
@@ -97977,7 +98015,7 @@
     "summary": "농어촌 출신 대학생이 등록금 전액을 무이자로 대출받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:58:58.620Z",
-    "seriesId": "cau-notice-28968"
+    "seriesId": "cau-notice-27981"
   },
   {
     "id": "cau-notice-29670",
@@ -98025,7 +98063,7 @@
     "summary": "교내에서 TOEIC 정기시험을 응시하고 응시료 할인도 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:59:06.206Z",
-    "seriesId": "cau-notice-28610"
+    "seriesId": "cau-notice-27853"
   },
   {
     "id": "cau-notice-29667",
@@ -98120,7 +98158,7 @@
     "summary": "전공탐색 박람회에서 멘토와 교수에게 전공 상담을 받아요",
     "noApplication": true,
     "firstSeenAt": "2026-10-03T01:59:12.639Z",
-    "seriesId": "cau-notice-29347"
+    "seriesId": "cau-notice-28382"
   },
   {
     "id": "cau-notice-30203",
@@ -98260,7 +98298,7 @@
     "summary": "미래설계장학금 장학생으로 선발돼 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:59:17.701Z",
-    "seriesId": "cau-notice-28637"
+    "seriesId": "cau-notice-27448"
   },
   {
     "id": "cau-notice-30192",
@@ -98898,7 +98936,7 @@
     "summary": "기독교 학생이 요남장학기금에서 장학금 250만~300만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:59:37.915Z",
-    "seriesId": "cau-notice-29221"
+    "seriesId": "cau-notice-28212"
   },
   {
     "id": "cau-notice-30150",
@@ -98946,7 +98984,8 @@
     "collectedAt": "2026-10-03T01:59:39.165Z",
     "summary": "전통 기·예능, 매장유산 전공 우수 학생이 장학금 150만원을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:59:39.165Z"
+    "firstSeenAt": "2026-10-03T01:59:39.165Z",
+    "seriesId": "cau-notice-28200"
   },
   {
     "id": "cau-notice-30149",
@@ -99042,7 +99081,7 @@
     "summary": "차세대반도체학과 수강생이 태블릿PC를 학기 동안 무료로 빌려요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:59:41.712Z",
-    "seriesId": "cau-notice-28593"
+    "seriesId": "cau-notice-27411"
   },
   {
     "id": "cau-notice-30143",
@@ -99361,7 +99400,7 @@
     "summary": "문화예술 분야 인재로 성장할 대학생이 학기별 생활비성 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:59:50.520Z",
-    "seriesId": "cau-notice-29618"
+    "seriesId": "cau-notice-28106"
   },
   {
     "id": "cau-notice-30127",
@@ -99589,7 +99628,7 @@
     "summary": "청룡사회봉사단에 가입해 봉사활동을 해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:59:59.387Z",
-    "seriesId": "cau-notice-29109"
+    "seriesId": "cau-notice-27433"
   },
   {
     "id": "cau-notice-30108",
@@ -99692,7 +99731,7 @@
     "summary": "팀을 꾸려 지도교수와 창의적 주제를 공부하고 1학점을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:00:03.291Z",
-    "seriesId": "cau-notice-28596"
+    "seriesId": "cau-notice-28097"
   },
   {
     "id": "cau-notice-30106",
@@ -99835,7 +99874,7 @@
     "summary": "인권 주제 세미나와 특강·영화제에 참여하는 서포터즈로 활동해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:00:07.069Z",
-    "seriesId": "cau-notice-28607"
+    "seriesId": "cau-notice-28156"
   },
   {
     "id": "cau-notice-30100",
@@ -99907,11 +99946,11 @@
     },
     "recruitPeriod": {
       "start": "2026-09-16",
-      "end": "2026-10-07"
+      "end": "2026-09-30"
     },
     "activityPeriod": {
-      "start": "2026-10-19",
-      "end": "2026-12-04"
+      "start": "2026-10-12",
+      "end": "2026-11-27"
     },
     "tags": [
       "학교",
@@ -100080,7 +100119,7 @@
     "summary": "청룡사회봉사단(다빈치)에서 봉사할 학생을 모집해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:00:16.425Z",
-    "seriesId": "cau-notice-29109"
+    "seriesId": "cau-notice-27433"
   },
   {
     "id": "cau-notice-30092",
@@ -100128,7 +100167,7 @@
     "summary": "언론인을 준비하는 언론고시반에서 멘토링 수업과 특강을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:00:17.648Z",
-    "seriesId": "cau-notice-28564"
+    "seriesId": "cau-notice-27331"
   },
   {
     "id": "cau-notice-30089",
@@ -100216,7 +100255,7 @@
     "summary": "손태희장학재단에서 장학생을 선발해 장학금을 줘요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:00:20.170Z",
-    "seriesId": "cau-notice-29053"
+    "seriesId": "cau-notice-28074"
   },
   {
     "id": "cau-notice-30085",
@@ -100356,7 +100395,7 @@
     "summary": "팀을 꾸려 자기주도 스터디를 하고 우수팀은 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:00:23.970Z",
-    "seriesId": "cau-notice-28635"
+    "seriesId": "cau-notice-27450"
   },
   {
     "id": "cau-notice-29655",
@@ -100401,7 +100440,8 @@
     "collectedAt": "2026-10-03T02:00:25.231Z",
     "summary": "동작구청에서 대학생 행정인턴으로 일하며 정책 아이디어를 내요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:00:25.231Z"
+    "firstSeenAt": "2026-10-03T02:00:25.231Z",
+    "seriesId": "cau-notice-28183"
   },
   {
     "id": "cau-notice-30079",
@@ -100542,7 +100582,8 @@
     "collectedAt": "2026-10-03T02:00:32.935Z",
     "summary": "전공 교과 튜터나 튜티로 참여하고 튜터는 장학금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:00:32.935Z"
+    "firstSeenAt": "2026-10-03T02:00:32.935Z",
+    "seriesId": "cau-notice-27451"
   },
   {
     "id": "cau-notice-30072",
@@ -100587,7 +100628,7 @@
     "summary": "방학 중 국가근로장학생으로 일할 수 있도록 한국장학재단에 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:00:34.221Z",
-    "seriesId": "cau-notice-28828"
+    "seriesId": "cau-notice-27780"
   },
   {
     "id": "cau-notice-30066",
@@ -100636,7 +100677,7 @@
     "summary": "동문장학재단에서 생활지원 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:00:36.748Z",
-    "seriesId": "cau-notice-29015"
+    "seriesId": "cau-notice-28041"
   },
   {
     "id": "cau-notice-30064",
@@ -101001,7 +101042,7 @@
     "summary": "한국투자저축은행 종합직 신입사원에 추천받아 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:00:46.964Z",
-    "seriesId": "cau-notice-29035"
+    "seriesId": "cau-notice-28091"
   },
   {
     "id": "cau-notice-30051",
@@ -101224,7 +101265,7 @@
     "summary": "국가근로장학금 근로를 희망하는 기관을 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:00:54.596Z",
-    "seriesId": "cau-notice-28828"
+    "seriesId": "cau-notice-27780"
   },
   {
     "id": "cau-notice-30043",
@@ -101268,7 +101309,8 @@
     "collectedAt": "2026-10-03T02:00:55.872Z",
     "summary": "앨트웰민초장학재단 제27기 장학생을 선발해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:00:55.872Z"
+    "firstSeenAt": "2026-10-03T02:00:55.872Z",
+    "seriesId": "cau-notice-28160"
   },
   {
     "id": "cau-notice-30042",
@@ -101313,7 +101355,7 @@
     "summary": "학술정보원이 여는 독후감 공모전에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:00:57.196Z",
-    "seriesId": "cau-notice-29022"
+    "seriesId": "cau-notice-28076"
   },
   {
     "id": "cau-notice-30041",
@@ -101590,7 +101632,7 @@
     "summary": "외부 장학금 감사편지나 수기를 써서 내고 상금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:01:13.509Z",
-    "seriesId": "cau-notice-28461"
+    "seriesId": "cau-notice-28003"
   },
   {
     "id": "cau-notice-29992",
@@ -101731,7 +101773,7 @@
     "summary": "성적과 소득 기준을 충족하면 100만~200만원 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:01:18.529Z",
-    "seriesId": "cau-notice-28510"
+    "seriesId": "cau-notice-28040"
   },
   {
     "id": "cau-notice-30003",
@@ -102102,7 +102144,7 @@
     "summary": "미국 어학연수와 인턴십을 함께 경험하는 한미 대학생 연수에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:01:56.362Z",
-    "seriesId": "cau-notice-28634"
+    "seriesId": "cau-notice-27984"
   },
   {
     "id": "cau-notice-29956",
@@ -102336,7 +102378,7 @@
     "summary": "다문화가족 대학생과 대학원생이 등록금 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:02:06.493Z",
-    "seriesId": "cau-notice-28486"
+    "seriesId": "cau-notice-27933"
   },
   {
     "id": "cau-notice-29944",
@@ -102383,7 +102425,7 @@
     "summary": "기숙사비를 최대 3년간 전액 지원받는 무상기숙사 장학생이 돼요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:02:10.317Z",
-    "seriesId": "cau-notice-28939"
+    "seriesId": "cau-notice-27943"
   },
   {
     "id": "cau-notice-29943",
@@ -102427,7 +102469,8 @@
     "collectedAt": "2026-10-03T02:02:11.512Z",
     "summary": "졸업 때까지 매달 생활비 장학금을 받고 국내외 연수에도 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:02:11.512Z"
+    "firstSeenAt": "2026-10-03T02:02:11.512Z",
+    "seriesId": "cau-notice-27959"
   },
   {
     "id": "cau-notice-29937",
@@ -102474,7 +102517,7 @@
     "summary": "원어민 교수와 1:1 영어 튜터링을 무료로 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:02:16.927Z",
-    "seriesId": "cau-notice-28902"
+    "seriesId": "cau-notice-27903"
   },
   {
     "id": "cau-notice-29923",
@@ -102609,7 +102652,7 @@
     "summary": "창업교육스튜디오 공간에 입주해 창업 활동을 해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:01:32.281Z",
-    "seriesId": "cau-notice-28523"
+    "seriesId": "cau-notice-27619"
   },
   {
     "id": "cau-notice-29987",
@@ -102656,7 +102699,7 @@
     "summary": "어려운 환경의 대학생이 생활비성 장학금 250만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:01:34.846Z",
-    "seriesId": "cau-notice-28489"
+    "seriesId": "cau-notice-27912"
   },
   {
     "id": "cau-notice-29986",
@@ -102848,7 +102891,7 @@
     "summary": "국립외교원에서 2주간 대학생 외교 연수 과정을 들어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:01:43.756Z",
-    "seriesId": "cau-notice-28874"
+    "seriesId": "cau-notice-27851"
   },
   {
     "id": "cau-notice-29972",
@@ -102946,7 +102989,7 @@
     "summary": "학부생이 대학원 학석사 연계과정에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:01:46.259Z",
-    "seriesId": "cau-notice-28938"
+    "seriesId": "cau-notice-27998"
   },
   {
     "id": "cau-notice-29970",
@@ -102997,7 +103040,7 @@
     "summary": "성적이 좋거나 형편이 어려운 학생이 100~150만원 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:01:47.530Z",
-    "seriesId": "cau-notice-28888"
+    "seriesId": "cau-notice-27880"
   },
   {
     "id": "cau-notice-29969",
@@ -103047,7 +103090,7 @@
     "summary": "신격호 롯데장학관 연합 기숙사에 1년간 무료로 살아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:01:48.820Z",
-    "seriesId": "cau-notice-28949"
+    "seriesId": "cau-notice-28206"
   },
   {
     "id": "cau-notice-29968",
@@ -103189,7 +103232,7 @@
     "summary": "또래상담과 캠페인 등 마음건강 지원 활동을 하고 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:02:25.756Z",
-    "seriesId": "cau-notice-28854"
+    "seriesId": "cau-notice-27799"
   },
   {
     "id": "cau-notice-29910",
@@ -103239,7 +103282,7 @@
     "summary": "정보보호 세미나와 기업 탐방 등 서포터즈 활동을 해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:02:27.015Z",
-    "seriesId": "cau-notice-28774"
+    "seriesId": "cau-notice-27823"
   },
   {
     "id": "cau-notice-29925",
@@ -103385,7 +103428,7 @@
     "summary": "2학기 서울캠퍼스 생활관에 입관해 거주해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:02:43.332Z",
-    "seriesId": "cau-notice-28841"
+    "seriesId": "cau-notice-27745"
   },
   {
     "id": "cau-notice-29906",
@@ -103566,7 +103609,7 @@
     "summary": "언론인 준비생을 위한 멘토링과 전용 좌석을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:02:52.937Z",
-    "seriesId": "cau-notice-28564"
+    "seriesId": "cau-notice-27331"
   },
   {
     "id": "cau-notice-29897",
@@ -103614,7 +103657,7 @@
     "summary": "하계방학 동안 교내외에서 근무하며 근로장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:02:58.668Z",
-    "seriesId": "cau-notice-28828"
+    "seriesId": "cau-notice-27780"
   },
   {
     "id": "cau-notice-29895",
@@ -103713,7 +103756,8 @@
     "collectedAt": "2026-10-03T02:03:03.051Z",
     "summary": "봉사활동을 하며 학기당 400만원 생활비 장학금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:03:03.051Z"
+    "firstSeenAt": "2026-10-03T02:03:03.051Z",
+    "seriesId": "cau-notice-27772"
   },
   {
     "id": "cau-notice-29892",
@@ -103806,7 +103850,7 @@
     "summary": "개발도상국 출신 유학생이 학기당 480만원 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:03:07.618Z",
-    "seriesId": "cau-notice-28858"
+    "seriesId": "cau-notice-27860"
   },
   {
     "id": "cau-notice-29888",
@@ -103900,7 +103944,8 @@
     "collectedAt": "2026-10-03T02:03:10.794Z",
     "summary": "경제적으로 어려운 신입생이 매월 80만원 장학금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:03:10.794Z"
+    "firstSeenAt": "2026-10-03T02:03:10.794Z",
+    "seriesId": "cau-notice-27906"
   },
   {
     "id": "cau-notice-29885",
@@ -104080,7 +104125,7 @@
     "summary": "여름방학 동안 서울캠퍼스 생활관에서 지낼 단기 입관생을 모집해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:03:18.193Z",
-    "seriesId": "cau-notice-28841"
+    "seriesId": "cau-notice-27745"
   },
   {
     "id": "cau-notice-29869",
@@ -104218,7 +104263,7 @@
     "summary": "하계방학 중 교내외·집중근로로 일하며 국가근로장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:03:34.863Z",
-    "seriesId": "cau-notice-28828"
+    "seriesId": "cau-notice-27780"
   },
   {
     "id": "cau-notice-29855",
@@ -104265,7 +104310,7 @@
     "summary": "하계방학 중 교내외·집중근로로 일하며 국가근로장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:03:38.007Z",
-    "seriesId": "cau-notice-28828"
+    "seriesId": "cau-notice-27780"
   },
   {
     "id": "cau-notice-29854",
@@ -104449,7 +104494,7 @@
     "summary": "국제학생대사로 1년간 활동하며 장학금과 봉사시간을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:03:53.117Z",
-    "seriesId": "cau-notice-29322"
+    "seriesId": "cau-notice-27762"
   },
   {
     "id": "cau-notice-29837",
@@ -104588,7 +104633,7 @@
     "summary": "국립생물자원관에서 한 달간 현장실습을 하고 지원비를 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:04:02.201Z",
-    "seriesId": "cau-notice-29330"
+    "seriesId": "cau-notice-28348"
   },
   {
     "id": "cau-notice-29827",
@@ -104808,7 +104853,7 @@
     "summary": "대학원생 자기주도 학습 커뮤니티를 꾸리고 우수팀은 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:04:40.338Z",
-    "seriesId": "cau-notice-28635"
+    "seriesId": "cau-notice-27450"
   },
   {
     "id": "cau-notice-29784",
@@ -104901,7 +104946,8 @@
     "collectedAt": "2026-10-03T02:05:06.194Z",
     "summary": "국회도서관 SNS 콘텐츠를 만들고 활동지원금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:05:06.194Z"
+    "firstSeenAt": "2026-10-03T02:05:06.194Z",
+    "seriesId": "cau-notice-27533"
   },
   {
     "id": "cau-notice-29754",
@@ -105039,7 +105085,7 @@
     "summary": "금천구 협력 공간에 (예비)창업자가 입주해 창업 지원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:06:04.033Z",
-    "seriesId": "cau-notice-28523"
+    "seriesId": "cau-notice-27619"
   },
   {
     "id": "cau-notice-29702",
@@ -105377,7 +105423,7 @@
     "summary": "친구들과 스터디 팀을 꾸려 활동하고 우수팀은 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:06:45.724Z",
-    "seriesId": "cau-notice-28635"
+    "seriesId": "cau-notice-27450"
   },
   {
     "id": "cau-notice-29673",
@@ -105632,8 +105678,8 @@
       "openTo": null
     },
     "recruitPeriod": {
-      "start": "2025-08-04",
-      "end": "2025-08-13"
+      "start": "2025-07-10",
+      "end": "2025-07-25"
     },
     "activityPeriod": {
       "start": "2025-09-01",
@@ -105716,7 +105762,7 @@
     "summary": "무료 대학생 기숙사 롯데장학관에 1년간 입주해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:11:49.529Z",
-    "seriesId": "cau-notice-28949"
+    "seriesId": "cau-notice-28206"
   },
   {
     "id": "skku-notice-140137",
@@ -109354,7 +109400,8 @@
       "end": "2026-09-15"
     },
     "tags": [
-      "창업"
+      "창업",
+      "정부부처"
     ],
     "links": [
       {
@@ -114877,15 +114924,13 @@
     "organizer": "자연과학캠퍼스 N센터 집적신경보철연구실",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "skku"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
       "excludedStatuses": [],
-      "openTo": null
+      "openTo": "만 18~45세 건강한 성인"
     },
     "recruitPeriod": {
       "start": null,
@@ -114896,7 +114941,8 @@
       "end": null
     },
     "tags": [
-      "학교"
+      "학교",
+      "장학·지원금"
     ],
     "links": [
       {
@@ -121531,7 +121577,7 @@
     "summary": "학비 마련이 어려운 학생이 생활비 장학금 700만 원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:38.768Z",
-    "seriesId": "yonsei-notice-942541"
+    "seriesId": "yonsei-notice-936125"
   },
   {
     "id": "yonsei-notice-943968",
@@ -121667,7 +121713,7 @@
     "summary": "여섯 분야의 장학생 선발에 지원해 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:42.059Z",
-    "seriesId": "yonsei-notice-941362"
+    "seriesId": "yonsei-notice-936074"
   },
   {
     "id": "yonsei-notice-943961",
@@ -121712,7 +121758,7 @@
     "summary": "푸른등대 기부장학금을 지원받을 수 있어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:43.124Z",
-    "seriesId": "yonsei-notice-942661"
+    "seriesId": "yonsei-notice-936100"
   },
   {
     "id": "yonsei-notice-943954",
@@ -121761,7 +121807,7 @@
     "summary": "결손·다문화 가정 학생이 생활비 장학금 300만 원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:44.177Z",
-    "seriesId": "yonsei-notice-936328"
+    "seriesId": "yonsei-notice-936198"
   },
   {
     "id": "yonsei-notice-943951",
@@ -121806,7 +121852,7 @@
     "summary": "다섯 종류의 장학금 선발에 지원할 수 있어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:45.240Z",
-    "seriesId": "yonsei-notice-936329"
+    "seriesId": "yonsei-notice-935989"
   },
   {
     "id": "yonsei-notice-943950",
@@ -121851,7 +121897,7 @@
     "summary": "선원가족을 위한 장학금을 지원받을 수 있어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:46.290Z",
-    "seriesId": "yonsei-notice-941358"
+    "seriesId": "yonsei-notice-935964"
   },
   {
     "id": "yonsei-notice-943941",
@@ -121896,7 +121942,7 @@
     "summary": "성적우수·특기·저소득 분야의 장학금에 지원할 수 있어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:47.347Z",
-    "seriesId": "yonsei-notice-941421"
+    "seriesId": "yonsei-notice-936161"
   },
   {
     "id": "yonsei-notice-943933",
@@ -121941,7 +121987,7 @@
     "summary": "대학생 등록금 전액을 지원받을 수 있어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:48.405Z",
-    "seriesId": "yonsei-notice-941373"
+    "seriesId": "yonsei-notice-936133"
   },
   {
     "id": "yonsei-notice-943931",
@@ -121986,7 +122032,7 @@
     "summary": "장학생으로 선발되면 장학금 200만 원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:49.455Z",
-    "seriesId": "yonsei-notice-941493"
+    "seriesId": "yonsei-notice-936137"
   },
   {
     "id": "yonsei-notice-943930",
@@ -122084,7 +122130,7 @@
     "summary": "상경대학 학생 한 명이 등록금 장학금 150만 원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:51.640Z",
-    "seriesId": "yonsei-notice-941335"
+    "seriesId": "yonsei-notice-935982"
   },
   {
     "id": "yonsei-notice-943899",
@@ -122174,7 +122220,7 @@
     "summary": "국가장학금을 신청해 장학금을 지원받을 수 있어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:53.743Z",
-    "seriesId": "yonsei-notice-940472"
+    "seriesId": "yonsei-notice-936055"
   },
   {
     "id": "yonsei-notice-943897",
@@ -122219,7 +122265,7 @@
     "summary": "저소득 가정의 공학계 대학생이 생활비 장학금 400만 원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:54.805Z",
-    "seriesId": "yonsei-notice-941435"
+    "seriesId": "yonsei-notice-936154"
   },
   {
     "id": "yonsei-notice-943883",
@@ -122267,7 +122313,7 @@
     "summary": "포항공과대학교 온라인 강의를 듣고 학점을 인정받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:55.857Z",
-    "seriesId": "yonsei-notice-923251"
+    "seriesId": "yonsei-notice-923006"
   },
   {
     "id": "yonsei-notice-943880",
@@ -122310,7 +122356,7 @@
     "summary": "성적우수·학생장려 분야 장학생으로 선발되면 200만 원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:56.957Z",
-    "seriesId": "yonsei-notice-941225"
+    "seriesId": "yonsei-notice-936116"
   },
   {
     "id": "yonsei-notice-943862",
@@ -122401,7 +122447,7 @@
     "summary": "공군 학군사관후보생 선발에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:17.187Z",
-    "seriesId": "yonsei-notice-904936"
+    "seriesId": "yonsei-notice-923034"
   },
   {
     "id": "yonsei-notice-944106",
@@ -122542,7 +122588,7 @@
     "summary": "여섯 종류의 장학금 선발에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:22.545Z",
-    "seriesId": "yonsei-notice-936352"
+    "seriesId": "yonsei-notice-935972"
   },
   {
     "id": "yonsei-notice-944072",
@@ -122634,7 +122680,7 @@
     "summary": "해외교환학생 파견을 위한 장학금 650만~850만 원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:24.690Z",
-    "seriesId": "yonsei-notice-936320"
+    "seriesId": "yonsei-notice-936164"
   },
   {
     "id": "yonsei-notice-944063",
@@ -122683,7 +122729,7 @@
     "summary": "전통 기·예능이나 매장유산 분야 전공자가 장학금 150만 원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:25.768Z",
-    "seriesId": "yonsei-notice-941432"
+    "seriesId": "yonsei-notice-936166"
   },
   {
     "id": "yonsei-notice-944062",
@@ -122728,7 +122774,7 @@
     "summary": "2026년 상반기에 발생한 학자금대출 이자를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:26.894Z",
-    "seriesId": "yonsei-notice-936317"
+    "seriesId": "yonsei-notice-935978"
   },
   {
     "id": "yonsei-notice-944052",
@@ -122774,7 +122820,8 @@
     "collectedAt": "2026-10-03T02:39:27.981Z",
     "summary": "우덕재단 장학생으로 추천받아 등록금 전액을 지원받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:39:27.981Z"
+    "firstSeenAt": "2026-10-03T02:39:27.981Z",
+    "seriesId": "yonsei-notice-935967"
   },
   {
     "id": "yonsei-notice-944031",
@@ -122818,7 +122865,8 @@
     "collectedAt": "2026-10-03T02:39:29.049Z",
     "summary": "등록금과 자기계발비를 지원받고 장학생 교류 활동에 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:39:29.049Z"
+    "firstSeenAt": "2026-10-03T02:39:29.049Z",
+    "seriesId": "yonsei-notice-936151"
   },
   {
     "id": "yonsei-notice-944030",
@@ -122863,7 +122911,7 @@
     "summary": "경주시장학회의 대학생 장학생 선발에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:30.112Z",
-    "seriesId": "yonsei-notice-941430"
+    "seriesId": "yonsei-notice-936158"
   },
   {
     "id": "yonsei-notice-944016",
@@ -122910,7 +122958,7 @@
     "summary": "2026년 상반기에 발생한 학자금대출 이자 전액을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:31.177Z",
-    "seriesId": "yonsei-notice-936345"
+    "seriesId": "yonsei-notice-936002"
   },
   {
     "id": "yonsei-notice-944005",
@@ -122957,7 +123005,7 @@
     "summary": "다자녀가구 셋째 이상 대학생이 등록금을 최대 100만 원 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:32.246Z",
-    "seriesId": "yonsei-notice-941360"
+    "seriesId": "yonsei-notice-936032"
   },
   {
     "id": "yonsei-notice-943996",
@@ -123047,7 +123095,7 @@
     "summary": "이공계 전공 새터민 학부생이 생활비 장학금 800만 원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:34.363Z",
-    "seriesId": "yonsei-notice-941175"
+    "seriesId": "yonsei-notice-936145"
   },
   {
     "id": "yonsei-notice-943991",
@@ -123140,7 +123188,7 @@
     "summary": "등록금 부담을 덜어주는 자유·진리 장학금을 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:36.486Z",
-    "seriesId": "yonsei-notice-936310"
+    "seriesId": "yonsei-notice-935966"
   },
   {
     "id": "yonsei-notice-943843",
@@ -123185,7 +123233,7 @@
     "summary": "국가근로장학생으로 신청해 근로장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:39:59.072Z",
-    "seriesId": "yonsei-notice-940473"
+    "seriesId": "yonsei-notice-935954"
   },
   {
     "id": "yonsei-notice-943837",
@@ -123278,7 +123326,7 @@
     "summary": "점심나눔 프로그램에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:01.218Z",
-    "seriesId": "yonsei-notice-923265"
+    "seriesId": "yonsei-notice-923003"
   },
   {
     "id": "yonsei-notice-943825",
@@ -123325,7 +123373,7 @@
     "summary": "능주고 출신 학생이 등록금 범위 내 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:02.272Z",
-    "seriesId": "yonsei-notice-941176"
+    "seriesId": "yonsei-notice-935934"
   },
   {
     "id": "yonsei-notice-943814",
@@ -123463,7 +123511,8 @@
     "collectedAt": "2026-10-03T02:40:05.655Z",
     "summary": "5·18희망장학생에 지원해 장학금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:40:05.655Z"
+    "firstSeenAt": "2026-10-03T02:40:05.655Z",
+    "seriesId": "yonsei-notice-936086"
   },
   {
     "id": "yonsei-notice-943805",
@@ -123555,7 +123604,7 @@
     "summary": "6개 학기 동안 등록금과 면학보조금 또는 면학보조금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:07.771Z",
-    "seriesId": "yonsei-notice-941361"
+    "seriesId": "yonsei-notice-936149"
   },
   {
     "id": "yonsei-notice-943803",
@@ -123915,7 +123964,7 @@
     "summary": "가정형편과 성적 심사를 거쳐 등록금 장학금 200만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:17.304Z",
-    "seriesId": "yonsei-notice-936290"
+    "seriesId": "yonsei-notice-935946"
   },
   {
     "id": "yonsei-notice-943701",
@@ -124011,7 +124060,7 @@
     "summary": "유학생 지원 콘텐츠를 만들고 서비스데스크를 도우며 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:19.430Z",
-    "seriesId": "yonsei-notice-941095"
+    "seriesId": "yonsei-notice-923008"
   },
   {
     "id": "yonsei-notice-943691",
@@ -124239,7 +124288,8 @@
     "collectedAt": "2026-10-03T02:40:26.887Z",
     "summary": "우수인재 장학생으로 선발되면 장학금을 받아요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:40:26.887Z"
+    "firstSeenAt": "2026-10-03T02:40:26.887Z",
+    "seriesId": "yonsei-notice-936105"
   },
   {
     "id": "yonsei-notice-943618",
@@ -124284,7 +124334,7 @@
     "summary": "인문학 강연과 캠퍼스 견학에 참여하고 에세이 공모전에 도전해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:28.006Z",
-    "seriesId": "yonsei-notice-923235"
+    "seriesId": "yonsei-startup-197"
   },
   {
     "id": "yonsei-notice-943610",
@@ -124465,7 +124515,7 @@
     "summary": "불광장학회 장학생 선발에 지원해 장학금을 받아요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:33.422Z",
-    "seriesId": "yonsei-notice-936272"
+    "seriesId": "yonsei-notice-935888"
   },
   {
     "id": "yonsei-notice-943581",
@@ -124558,7 +124608,7 @@
     "summary": "등록금 전액과 월 50만원 학업 보조금, 교환학생 체재비를 지원받아요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:35.553Z",
-    "seriesId": "yonsei-notice-940972"
+    "seriesId": "yonsei-notice-936092"
   },
   {
     "id": "yonsei-notice-943574",
@@ -124647,7 +124697,7 @@
     "summary": "인문학 강연과 캠퍼스 견학에 참여하고 에세이 공모전에 도전해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:37.690Z",
-    "seriesId": "yonsei-notice-923235"
+    "seriesId": "yonsei-startup-197"
   },
   {
     "id": "yonsei-notice-943563",
@@ -124742,7 +124792,7 @@
     "summary": "신격호 롯데장학관 입주생으로 선발되어 1년간 거주해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:40.921Z",
-    "seriesId": "yonsei-notice-940970"
+    "seriesId": "yonsei-notice-936084"
   },
   {
     "id": "yonsei-notice-943529",
@@ -124848,7 +124898,7 @@
     "summary": "성적과 소득 요건을 충족하면 한 학기 등록금을 최대 500만원까지 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:45.155Z",
-    "seriesId": "yonsei-notice-940950"
+    "seriesId": "yonsei-notice-935909"
   },
   {
     "id": "yonsei-notice-943511",
@@ -124947,7 +124997,8 @@
     "collectedAt": "2026-10-03T02:40:48.369Z",
     "summary": "기숙사 장학생으로 선발되면 기숙사비와 관리비, 공과금을 지원받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:40:48.369Z"
+    "firstSeenAt": "2026-10-03T02:40:48.369Z",
+    "seriesId": "yonsei-notice-936088"
   },
   {
     "id": "yonsei-notice-943495",
@@ -124994,7 +125045,7 @@
     "summary": "졸업까지 매월 85만~200만원의 장학금을 받고 연수와 교육에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:49.422Z",
-    "seriesId": "yonsei-notice-940930"
+    "seriesId": "yonsei-notice-936220"
   },
   {
     "id": "yonsei-notice-943487",
@@ -125041,7 +125092,7 @@
     "summary": "진리·자유 장학금을 신청해 등록금을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:50.470Z",
-    "seriesId": "yonsei-notice-936310"
+    "seriesId": "yonsei-notice-935966"
   },
   {
     "id": "yonsei-notice-943481",
@@ -125132,7 +125183,7 @@
     "summary": "지능형반도체 전공을 이수하고 요건을 충족하면 등록금과 생활비 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:52.601Z",
-    "seriesId": "yonsei-notice-940877"
+    "seriesId": "yonsei-notice-936229"
   },
   {
     "id": "yonsei-notice-943459",
@@ -125312,7 +125363,7 @@
     "summary": "소아청소년 푸른빛 희망 장학금 지원사업에 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:56.836Z",
-    "seriesId": "yonsei-notice-941206"
+    "seriesId": "yonsei-notice-936101"
   },
   {
     "id": "yonsei-notice-943386",
@@ -125414,7 +125465,7 @@
     "summary": "국제캠퍼스 기숙사에 거주하며 RA로 RC 교육과 프로그램 운영을 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:42:09.221Z",
-    "seriesId": "yonsei-notice-940417"
+    "seriesId": "yonsei-notice-923073"
   },
   {
     "id": "yonsei-notice-943054",
@@ -125506,7 +125557,7 @@
     "summary": "신격호 롯데장학관 입주자로 지원해 약 1년 동안 거주해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:43:53.018Z",
-    "seriesId": "yonsei-notice-940970"
+    "seriesId": "yonsei-notice-936084"
   },
   {
     "id": "yonsei-notice-940933",
@@ -125555,7 +125606,8 @@
     "collectedAt": "2026-10-03T02:44:01.516Z",
     "summary": "캠프와 대면 봉사활동에 참여하며 생활비 장학금 400만원을 받아요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:44:01.516Z"
+    "firstSeenAt": "2026-10-03T02:44:01.516Z",
+    "seriesId": "yonsei-notice-936059"
   },
   {
     "id": "cau-notice-29512",
@@ -125702,7 +125754,7 @@
     "summary": "중학생의 진로 탐색과 학습을 돕는 온·오프라인 멘토로 활동해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T03:00:26.559Z",
-    "seriesId": "cau-notice-29399"
+    "seriesId": "cau-notice-27993"
   },
   {
     "id": "cau-notice-29395",
@@ -125745,7 +125797,7 @@
     "summary": "창업 공간에 입주하고 경영·마케팅·기술 지원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T03:00:30.972Z",
-    "seriesId": "cau-notice-28523"
+    "seriesId": "cau-notice-27619"
   },
   {
     "id": "cau-notice-29365",
@@ -125788,7 +125840,8 @@
     "collectedAt": "2026-10-03T03:01:20.648Z",
     "summary": "교육과 활동비 지원을 받아 사회문제를 연구하고 해결책을 현장에 적용해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T03:01:20.648Z"
+    "firstSeenAt": "2026-10-03T03:01:20.648Z",
+    "seriesId": "cau-notice-28328"
   },
   {
     "id": "skku-notice-139131",
@@ -126255,15 +126308,13 @@
     "organizer": "스포츠재활 연구실",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "skku"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
       "excludedStatuses": [],
-      "openTo": null
+      "openTo": "만 19세 이상 만성 발목 불안정성 성인"
     },
     "recruitPeriod": {
       "start": null,
@@ -126274,7 +126325,8 @@
       "end": null
     },
     "tags": [
-      "학교"
+      "학교",
+      "장학·지원금"
     ],
     "links": [
       {
@@ -130554,15 +130606,13 @@
     "organizer": "성균관대학교",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "skku"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
       "excludedStatuses": [],
-      "openTo": null
+      "openTo": "미취업자"
     },
     "recruitPeriod": {
       "start": null,
@@ -130574,7 +130624,8 @@
     },
     "tags": [
       "학교",
-      "교육·특강"
+      "교육·특강",
+      "취업·채용"
     ],
     "links": [
       {
@@ -131711,11 +131762,12 @@
       "end": null
     },
     "activityPeriod": {
-      "start": "2026-08-24",
-      "end": "2026-08-31"
+      "start": "2027-06-02",
+      "end": "2027-06-09"
     },
     "tags": [
-      "공공기관"
+      "공공기관",
+      "장학·지원금"
     ],
     "links": [
       {
@@ -132595,15 +132647,13 @@
     "organizer": "스포츠과학과 스포츠재활 연구실",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "skku"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
       "excludedStatuses": [],
-      "openTo": null
+      "openTo": "18세 이상 성인"
     },
     "recruitPeriod": {
       "start": null,
@@ -132613,7 +132663,10 @@
       "start": null,
       "end": null
     },
-    "tags": [],
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
     "links": [
       {
         "sourceId": "skku-notice",
@@ -135596,7 +135649,7 @@
     "summary": "일본인 유학생과 문화체험을 하며 인솔과 영상 제작을 돕고 활동비를 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:42:32.358Z",
-    "seriesId": "khu-notice-316946"
+    "seriesId": "khu-notice-313755"
   },
   {
     "id": "khu-notice-323170",
@@ -136154,7 +136207,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "khu-global"
+        "khu"
       ],
       "colleges": [],
       "departments": [],
@@ -136192,8 +136245,7 @@
     "collectedAt": "2026-10-03T07:42:10.040Z",
     "summary": "원어민과 일대일 영어회화를 배우고 수료 기준 충족 시 장학 환급을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:42:10.040Z",
-    "campus": "khu-global"
+    "firstSeenAt": "2026-10-03T07:42:10.040Z"
   },
   {
     "id": "khu-notice-322511",
@@ -136239,7 +136291,7 @@
     "summary": "창업에 관한 멘토링을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:42:11.391Z",
-    "seriesId": "khu-startup-524097"
+    "seriesId": "khu-notice-314491"
   },
   {
     "id": "khu-notice-321363",
@@ -136416,7 +136468,7 @@
     "summary": "스타트업 박람회에서 강연·전시·밋업과 투자 발표를 접해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:42:20.558Z",
-    "seriesId": "khu-notice-319767"
+    "seriesId": "khu-notice-315205"
   },
   {
     "id": "khu-notice-323212",
@@ -136819,7 +136871,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "khu-global"
+        "khu"
       ],
       "colleges": [],
       "departments": [],
@@ -136858,8 +136910,7 @@
     "collectedAt": "2026-10-03T07:43:04.038Z",
     "summary": "현업 선배의 취업·직장생활 이야기를 듣고 실습과 토론에 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:43:04.038Z",
-    "campus": "khu-global"
+    "firstSeenAt": "2026-10-03T07:43:04.038Z"
   },
   {
     "id": "khu-notice-323109",
@@ -137785,7 +137836,8 @@
     "organizerType": "기업",
     "target": {
       "schools": [
-        "khu-global"
+        "khu-global",
+        "khu"
       ],
       "colleges": [],
       "departments": [],
@@ -137937,7 +137989,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "khu-global"
+        "khu"
       ],
       "colleges": [],
       "departments": [],
@@ -137976,8 +138028,7 @@
     "summary": "현직자와 함께 2주간 온라인 부트캠프에서 직무 실무를 배워요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:43:37.220Z",
-    "seriesId": "khu-notice-320298",
-    "campus": "khu-global"
+    "seriesId": "khu-notice-314607"
   },
   {
     "id": "khu-notice-323030",
@@ -138071,7 +138122,8 @@
     "collectedAt": "2026-10-03T07:43:39.815Z",
     "summary": "취약가족 자녀의 학습과 정서를 지원하고 활동비와 교통비를 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:43:39.815Z"
+    "firstSeenAt": "2026-10-03T07:43:39.815Z",
+    "seriesId": "khu-notice-313611"
   },
   {
     "id": "khu-notice-323025",
@@ -138117,7 +138169,8 @@
     "collectedAt": "2026-10-03T07:43:42.455Z",
     "summary": "평화운동사진전의 판넬 이동과 설치를 돕고 시급 15,000원을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:43:42.455Z"
+    "firstSeenAt": "2026-10-03T07:43:42.455Z",
+    "seriesId": "khu-notice-315249"
   },
   {
     "id": "khu-notice-322995",
@@ -138355,7 +138408,7 @@
     "summary": "KHU Valley Start-up 12기 창업 프로그램에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:43:49.129Z",
-    "seriesId": "khu-startup-524096"
+    "seriesId": "khu-notice-314306"
   },
   {
     "id": "khu-notice-322982",
@@ -138535,7 +138588,8 @@
     "collectedAt": "2026-10-03T07:43:55.672Z",
     "summary": "원어민 선생님과 6주 동안 온라인 영어 강좌를 수강해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:43:55.672Z"
+    "firstSeenAt": "2026-10-03T07:43:55.672Z",
+    "seriesId": "khu-notice-316622"
   },
   {
     "id": "khu-notice-322971",
@@ -138963,7 +139017,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "khu-global"
+        "khu"
       ],
       "colleges": [],
       "departments": [],
@@ -139002,8 +139056,7 @@
     "summary": "공인영어시험 대비 강의를 듣고 수료하면 수강료의 30%를 장학금으로 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:45:18.226Z",
-    "seriesId": "khu-notice-322102",
-    "campus": "khu-global"
+    "seriesId": "khu-notice-322102"
   },
   {
     "id": "khu-notice-322838",
@@ -139889,7 +139942,7 @@
     "summary": "온라인에서 무료 영어회화 샘플강의를 들어요",
     "noApplication": true,
     "firstSeenAt": "2026-10-03T07:44:55.593Z",
-    "seriesId": "khu-notice-316661"
+    "seriesId": "khu-notice-315593"
   },
   {
     "id": "khu-notice-322923",
@@ -140536,7 +140589,7 @@
     "summary": "장학금이나 다전공 경험을 강의 영상으로 공유하고 장학금 10만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:46:10.762Z",
-    "seriesId": "khu-notice-316818"
+    "seriesId": "khu-notice-315620"
   },
   {
     "id": "khu-notice-322571",
@@ -140722,7 +140775,7 @@
     "summary": "근로장학생으로 미래문명원 행정업무를 보조하고 시급을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:46:16.001Z",
-    "seriesId": "khu-notice-318225"
+    "seriesId": "khu-notice-314542"
   },
   {
     "id": "khu-notice-322752",
@@ -140731,7 +140784,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "khu-global"
+        "khu"
       ],
       "colleges": [],
       "departments": [],
@@ -140771,8 +140824,7 @@
     "collectedAt": "2026-10-03T07:46:19.880Z",
     "summary": "공기업 취업 대비 NCS 특강을 듣고 일대일 컨설팅을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:46:19.880Z",
-    "campus": "khu-global"
+    "firstSeenAt": "2026-10-03T07:46:19.880Z"
   },
   {
     "id": "khu-notice-322751",
@@ -140930,7 +140982,7 @@
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2026-09-20"
+      "end": "2026-08-23"
     },
     "activityPeriod": {
       "start": null,
@@ -141191,7 +141243,8 @@
     "collectedAt": "2026-10-03T07:45:43.211Z",
     "summary": "학생 봉사활동을 직접 기획하고 운영하며 활동지원비를 받아요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:45:43.211Z"
+    "firstSeenAt": "2026-10-03T07:45:43.211Z",
+    "seriesId": "khu-notice-314093"
   },
   {
     "id": "khu-notice-322809",
@@ -141961,7 +142014,7 @@
     "summary": "이카운트 서비스본부 신입사원 추천채용에 지원해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:46:52.785Z",
-    "seriesId": "khu-notice-318727"
+    "seriesId": "khu-notice-315404"
   },
   {
     "id": "khu-notice-322653",
@@ -142049,7 +142102,8 @@
     "collectedAt": "2026-10-03T07:46:55.400Z",
     "summary": "창업 교육을 통해 사업을 시작하고 성장시킬 역량을 길러요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:46:55.400Z"
+    "firstSeenAt": "2026-10-03T07:46:55.400Z",
+    "seriesId": "khu-notice-314917"
   },
   {
     "id": "khu-notice-322651",
@@ -142285,7 +142339,7 @@
     "summary": "KVP 15기 창업 프로그램에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:47:29.528Z",
-    "seriesId": "khu-startup-524094"
+    "seriesId": "khu-notice-305155"
   },
   {
     "id": "khu-notice-322639",
@@ -143719,7 +143773,7 @@
     "organizerType": "학교",
     "target": {
       "schools": [
-        "khu-global"
+        "khu"
       ],
       "colleges": [],
       "departments": [],
@@ -143757,8 +143811,7 @@
     "collectedAt": "2026-10-03T07:48:42.423Z",
     "summary": "공인영어시험 대비 강의를 듣고 수료하면 수강료 절반을 장학금으로 받아요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:48:42.423Z",
-    "campus": "khu-global"
+    "firstSeenAt": "2026-10-03T07:48:42.423Z"
   },
   {
     "id": "khu-notice-322464",
@@ -144352,8 +144405,7 @@
     "collectedAt": "2026-10-03T07:49:43.239Z",
     "summary": "전문가 특강에서 휴머노이드와 VLA 모델의 최신 기술 동향을 배워요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:49:43.239Z",
-    "campus": "khu-global"
+    "firstSeenAt": "2026-10-03T07:49:43.239Z"
   },
   {
     "id": "khu-notice-322318",
@@ -144578,7 +144630,8 @@
     "collectedAt": "2026-10-03T07:49:53.825Z",
     "summary": "양자기술을 사업화하는 교육 과정에 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:49:53.825Z"
+    "firstSeenAt": "2026-10-03T07:49:53.825Z",
+    "seriesId": "khu-notice-315758"
   },
   {
     "id": "khu-notice-322229",
@@ -145022,7 +145075,7 @@
     "summary": "스트레스·성격·진로 심리검사를 받고 원하는 경우 해석상담을 신청해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:49:22.234Z",
-    "seriesId": "khu-notice-316201"
+    "seriesId": "khu-notice-305185"
   },
   {
     "id": "khu-notice-322356",
@@ -146976,7 +147029,7 @@
     "summary": "다전공 경험을 나누는 학생강사로 활동하고 장학금 10만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:54:12.333Z",
-    "seriesId": "khu-notice-316818"
+    "seriesId": "khu-notice-315620"
   },
   {
     "id": "khu-notice-321970",
@@ -148106,7 +148159,7 @@
     "summary": "초·중·고등학생 학습 멘토로 활동하고 활동비나 봉사실적을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T08:00:42.389Z",
-    "seriesId": "khu-notice-319798"
+    "seriesId": "khu-notice-315284"
   },
   {
     "id": "khu-notice-321325",
@@ -148203,7 +148256,8 @@
     "collectedAt": "2026-10-03T08:02:16.875Z",
     "summary": "한국인과 외국인 학생이 함께 문화 체험을 하며 교류해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T08:02:16.875Z"
+    "firstSeenAt": "2026-10-03T08:02:16.875Z",
+    "seriesId": "khu-notice-305322"
   },
   {
     "id": "khu-notice-320952",
@@ -148269,8 +148323,8 @@
       "openTo": "만 18~39세 청년"
     },
     "recruitPeriod": {
-      "start": null,
-      "end": "2026-03-20"
+      "start": "2026-01-12",
+      "end": "2026-03-03"
     },
     "activityPeriod": {
       "start": "2026-04-02",
@@ -148624,7 +148678,7 @@
     "summary": "공기업 취업과 NCS를 준비하는 교육을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:34:38.350Z",
-    "seriesId": "khu-career-322"
+    "seriesId": "khu-career-285"
   },
   {
     "id": "khu-career-359",
@@ -148670,7 +148724,7 @@
     "summary": "자기소개서 작성과 면접 준비를 위한 교육을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:34:39.484Z",
-    "seriesId": "khu-career-321"
+    "seriesId": "khu-career-315"
   },
   {
     "id": "khu-startup-547491",
@@ -148719,7 +148773,7 @@
     "summary": "창업을 준비하거나 진행하는 학생이 온라인 창업 멘토링에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:37:57.473Z",
-    "seriesId": "khu-startup-524097"
+    "seriesId": "khu-notice-314491"
   },
   {
     "id": "khu-startup-547460",
@@ -148771,7 +148825,7 @@
     "summary": "창업 교육과 팀 프로젝트, 멘토링을 거쳐 데모데이에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:37:58.677Z",
-    "seriesId": "khu-startup-524094"
+    "seriesId": "khu-notice-305155"
   },
   {
     "id": "khu-startup-527524",
@@ -149053,7 +149107,7 @@
     "summary": "장애학생의 학습·이동·기숙사 생활을 돕고 근로장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:48:18.058Z",
-    "seriesId": "dongguk-notice-26760954"
+    "seriesId": "dongguk-notice-26756369"
   },
   {
     "id": "dongguk-notice-26765725",
@@ -149275,7 +149329,7 @@
     "summary": "무료 버크만 진단과 그룹 특강으로 자신을 이해하고 진로 방향을 찾아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:48:25.477Z",
-    "seriesId": "dongguk-notice-26759315"
+    "seriesId": "dongguk-notice-26754423"
   },
   {
     "id": "dongguk-notice-26765650",
@@ -149556,7 +149610,7 @@
     "summary": "장애학생의 수업 필기와 이동을 돕고 근로장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:48:32.798Z",
-    "seriesId": "dongguk-notice-26760954"
+    "seriesId": "dongguk-notice-26756369"
   },
   {
     "id": "dongguk-notice-26765499",
@@ -149926,7 +149980,7 @@
     "summary": "영자신문 기자로 활동하며 장학금과 해외취재 기회를 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:47:15.717Z",
-    "seriesId": "dongguk-notice-26764679"
+    "seriesId": "dongguk-notice-26754269"
   },
   {
     "id": "dongguk-notice-26766234",
@@ -150162,7 +150216,7 @@
     "summary": "국제학생증을 무료로 발급받고 국내외 학생 할인 혜택을 이용해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:47:24.259Z",
-    "seriesId": "dongguk-notice-26759286"
+    "seriesId": "dongguk-notice-26757720"
   },
   {
     "id": "dongguk-notice-26766188",
@@ -150484,7 +150538,7 @@
     "summary": "전문 코치와 일대일로 고민을 살피고 목표와 실행 계획을 세워요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:47:38.947Z",
-    "seriesId": "dongguk-notice-26759268"
+    "seriesId": "dongguk-notice-26754334"
   },
   {
     "id": "dongguk-notice-26766115",
@@ -150528,7 +150582,7 @@
     "summary": "온라인 진단에 참여하고 마일리지를 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:47:41.408Z",
-    "seriesId": "dongguk-notice-26759275"
+    "seriesId": "dongguk-notice-26754338"
   },
   {
     "id": "dongguk-notice-26766098",
@@ -150572,7 +150626,8 @@
     "collectedAt": "2026-10-03T13:47:42.592Z",
     "summary": "CES 2027 학생 서포터즈로 활동해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T13:47:42.592Z"
+    "firstSeenAt": "2026-10-03T13:47:42.592Z",
+    "seriesId": "dongguk-startup-556"
   },
   {
     "id": "dongguk-notice-26766091",
@@ -151415,7 +151470,7 @@
     "summary": "학군사관 후보생 선발에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:48:08.299Z",
-    "seriesId": "dongguk-notice-26759066"
+    "seriesId": "dongguk-notice-26754130"
   },
   {
     "id": "dongguk-notice-26765821",
@@ -151505,7 +151560,7 @@
     "summary": "중구멘토링에 온라인 봉사자로 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:48:10.752Z",
-    "seriesId": "dongguk-notice-26759082"
+    "seriesId": "dongguk-notice-26754207"
   },
   {
     "id": "dongguk-notice-26765766",
@@ -152379,7 +152434,7 @@
     "summary": "온라인 판매로 매출을 만드는 방법을 배우고 사업자등록을 해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:51:00.002Z",
-    "seriesId": "dongguk-notice-26760282"
+    "seriesId": "dongguk-notice-26755411"
   },
   {
     "id": "dongguk-notice-26764877",
@@ -152825,7 +152880,7 @@
     "summary": "세종대학교에서 수업을 듣고 동국대학교 학점으로 인정받아요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:09:25.554Z",
-    "seriesId": "dongguk-haksa-26758783"
+    "seriesId": "dongguk-haksa-26757708"
   },
   {
     "id": "dongguk-haksa-26765543",
@@ -152914,7 +152969,8 @@
     "collectedAt": "2026-10-03T14:09:27.971Z",
     "summary": "학생설계전공을 개발하는 공모전에 참여해요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T14:09:27.971Z"
+    "firstSeenAt": "2026-10-03T14:09:27.971Z",
+    "seriesId": "dongguk-haksa-26757303"
   },
   {
     "id": "dongguk-haksa-26765516",
@@ -153141,7 +153197,8 @@
     "collectedAt": "2026-10-03T14:09:34.155Z",
     "summary": "연구실에서 연구에 참여하고 전공 3학점을 인정받아요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T14:09:34.155Z"
+    "firstSeenAt": "2026-10-03T14:09:34.155Z",
+    "seriesId": "dongguk-haksa-26753750"
   },
   {
     "id": "dongguk-haksa-26765476",
@@ -154175,7 +154232,7 @@
     "summary": "교육 분야의 봉사활동에 참여해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:08:56.168Z",
-    "seriesId": "dongguk-haksa-26759150"
+    "seriesId": "dongguk-haksa-26756749"
   },
   {
     "id": "dongguk-haksa-26766043",
@@ -154670,7 +154727,7 @@
     "summary": "교육봉사활동 도반 14기의 멘토로 활동해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:09:11.945Z",
-    "seriesId": "dongguk-haksa-26759150"
+    "seriesId": "dongguk-haksa-26756749"
   },
   {
     "id": "dongguk-haksa-26765829",
@@ -154714,7 +154771,7 @@
     "summary": "온라인 모의토익에 응시하고 시험 직후 점수를 확인해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:09:13.170Z",
-    "seriesId": "dongguk-haksa-26758946"
+    "seriesId": "dongguk-haksa-26756828"
   },
   {
     "id": "dongguk-haksa-26765744",
@@ -154903,7 +154960,7 @@
     "summary": "우수·다자녀·생활·재능·지역정착 분야 장학금을 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:08.099Z",
-    "seriesId": "dongguk-scholarship-26759296"
+    "seriesId": "dongguk-scholarship-26754402"
   },
   {
     "id": "dongguk-scholarship-26765890",
@@ -155087,7 +155144,7 @@
     "summary": "장학생으로 선발되면 장학금 200만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:14.095Z",
-    "seriesId": "dongguk-scholarship-26761476"
+    "seriesId": "dongguk-scholarship-26756776"
   },
   {
     "id": "dongguk-scholarship-26765838",
@@ -155177,7 +155234,7 @@
     "summary": "경원장학재단 장학생에 지원해 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:16.574Z",
-    "seriesId": "dongguk-scholarship-26761611"
+    "seriesId": "dongguk-scholarship-26757092"
   },
   {
     "id": "dongguk-scholarship-26765792",
@@ -155221,7 +155278,7 @@
     "summary": "손태희장학재단 장학생 선발에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:17.760Z",
-    "seriesId": "dongguk-scholarship-26761139"
+    "seriesId": "dongguk-scholarship-26756516"
   },
   {
     "id": "dongguk-scholarship-26765783",
@@ -155321,7 +155378,7 @@
     "summary": "월드머시코리아 장학생 선발에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:20.178Z",
-    "seriesId": "dongguk-scholarship-26758934"
+    "seriesId": "dongguk-scholarship-26754007"
   },
   {
     "id": "dongguk-scholarship-26765751",
@@ -155498,7 +155555,7 @@
     "summary": "대학생 학자금 이자 지원을 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:24.985Z",
-    "seriesId": "dongguk-scholarship-26759272"
+    "seriesId": "dongguk-scholarship-26756224"
   },
   {
     "id": "dongguk-scholarship-26765670",
@@ -155591,7 +155648,7 @@
     "summary": "학교 추천과 재단 선발을 거쳐 생활비 장학금 500만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:27.437Z",
-    "seriesId": "dongguk-scholarship-26761058"
+    "seriesId": "dongguk-scholarship-26756593"
   },
   {
     "id": "dongguk-scholarship-26765595",
@@ -155680,7 +155737,7 @@
     "summary": "장학생으로 선발되면 2학기 등록금 전액을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:30.069Z",
-    "seriesId": "dongguk-scholarship-26758580"
+    "seriesId": "dongguk-scholarship-26753637"
   },
   {
     "id": "dongguk-scholarship-26765586",
@@ -155812,7 +155869,8 @@
     "collectedAt": "2026-10-03T14:23:00.694Z",
     "summary": "국가장학금 수혜 신입생이 최대 4년간 매월 80만원을 지원받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T14:23:00.694Z"
+    "firstSeenAt": "2026-10-03T14:23:00.694Z",
+    "seriesId": "dongguk-scholarship-26755870"
   },
   {
     "id": "dongguk-scholarship-26765164",
@@ -155856,7 +155914,7 @@
     "summary": "장학생으로 선발되어 기숙사를 무료로 이용해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:23:01.914Z",
-    "seriesId": "dongguk-scholarship-26760631"
+    "seriesId": "dongguk-scholarship-26755950"
   },
   {
     "id": "dongguk-scholarship-26764960",
@@ -155954,7 +156012,7 @@
     "summary": "대한불교조계종 스님인 학부생이 수업료 70%를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:23:12.817Z",
-    "seriesId": "dongguk-scholarship-26760439"
+    "seriesId": "dongguk-scholarship-26755698"
   },
   {
     "id": "dongguk-scholarship-26764950",
@@ -156003,7 +156061,7 @@
     "summary": "지정 전문자격시험의 1차 합격자가 장학금 200만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:23:14.056Z",
-    "seriesId": "dongguk-scholarship-26760441"
+    "seriesId": "dongguk-scholarship-26755697"
   },
   {
     "id": "dongguk-scholarship-26764949",
@@ -156050,7 +156108,7 @@
     "summary": "소득과 가정 조건을 충족하는 학부생이 수업료 30%를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:23:15.275Z",
-    "seriesId": "dongguk-scholarship-26760436"
+    "seriesId": "dongguk-scholarship-26755693"
   },
   {
     "id": "dongguk-scholarship-26764946",
@@ -156097,7 +156155,7 @@
     "summary": "국가장학 수혜횟수를 초과한 기초생활수급 학부생이 수업료 전액을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:23:16.501Z",
-    "seriesId": "dongguk-scholarship-26760435"
+    "seriesId": "dongguk-scholarship-26758315"
   },
   {
     "id": "dongguk-scholarship-26764945",
@@ -156146,7 +156204,7 @@
     "summary": "장애가 있는 학부생이 장애 정도에 따라 수업료 전액이나 30%를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:23:17.734Z",
-    "seriesId": "dongguk-scholarship-26760434"
+    "seriesId": "dongguk-scholarship-26755692"
   },
   {
     "id": "dongguk-scholarship-26764944",
@@ -156195,7 +156253,7 @@
     "summary": "보훈대상자인 학부생이 수업료 전액을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:23:18.982Z",
-    "seriesId": "dongguk-scholarship-26760438"
+    "seriesId": "dongguk-scholarship-26755696"
   },
   {
     "id": "dongguk-scholarship-26764943",
@@ -156242,7 +156300,7 @@
     "summary": "북한이탈주민과 한국국적을 취득한 그 자녀가 수업료 전액을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:23:20.204Z",
-    "seriesId": "dongguk-scholarship-26760437"
+    "seriesId": "dongguk-scholarship-26755695"
   },
   {
     "id": "dongguk-scholarship-26765584",
@@ -156286,7 +156344,7 @@
     "summary": "5·18희망장학생 선발에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:32.506Z",
-    "seriesId": "dongguk-scholarship-26760867"
+    "seriesId": "dongguk-scholarship-26755947"
   },
   {
     "id": "dongguk-scholarship-26765583",
@@ -156332,7 +156390,7 @@
     "summary": "한국장학재단 학자금대출의 상반기 발생 이자를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:33.698Z",
-    "seriesId": "dongguk-scholarship-26758634"
+    "seriesId": "dongguk-scholarship-26756042"
   },
   {
     "id": "dongguk-scholarship-26765506",
@@ -156376,7 +156434,7 @@
     "summary": "사랑나눔장학생 선발에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:34.903Z",
-    "seriesId": "dongguk-scholarship-26760400"
+    "seriesId": "dongguk-scholarship-26753849"
   },
   {
     "id": "dongguk-scholarship-26765479",
@@ -156464,7 +156522,8 @@
     "collectedAt": "2026-10-03T14:22:37.331Z",
     "summary": "장학금 관련 경험을 담은 수기 공모전에 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T14:22:37.331Z"
+    "firstSeenAt": "2026-10-03T14:22:37.331Z",
+    "seriesId": "dongguk-scholarship-26756669"
   },
   {
     "id": "dongguk-scholarship-26765448",
@@ -156598,7 +156657,7 @@
     "summary": "재능키움 장학사업의 장학금 지원에 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:40.973Z",
-    "seriesId": "dongguk-scholarship-26764445"
+    "seriesId": "dongguk-scholarship-26760470"
   },
   {
     "id": "dongguk-scholarship-26765400",
@@ -156686,7 +156745,7 @@
     "summary": "우수인재 장학금을 받을 장학생 선발에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:43.433Z",
-    "seriesId": "dongguk-scholarship-26760866"
+    "seriesId": "dongguk-scholarship-26756205"
   },
   {
     "id": "dongguk-scholarship-26765358",
@@ -156863,7 +156922,7 @@
     "summary": "가정 여건이나 장애 요건에 해당하는 대학생이 생활비 장학금 250만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:49.621Z",
-    "seriesId": "dongguk-scholarship-26758594"
+    "seriesId": "dongguk-scholarship-26756056"
   },
   {
     "id": "dongguk-scholarship-26765316",
@@ -156912,7 +156971,7 @@
     "summary": "롯데장학관에서 1년 동안 무료로 거주해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:50.855Z",
-    "seriesId": "dongguk-scholarship-26758940"
+    "seriesId": "dongguk-scholarship-26757966"
   },
   {
     "id": "dongguk-scholarship-26765313",
@@ -156964,7 +157023,7 @@
     "summary": "의약학·간호학 전공 학생이 생활비 장학금 250만원을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:52.095Z",
-    "seriesId": "dongguk-scholarship-26760120"
+    "seriesId": "dongguk-scholarship-26755307"
   },
   {
     "id": "dongguk-scholarship-26765312",
@@ -157064,7 +157123,7 @@
     "summary": "고시·공인회계사 시험 합격자가 수업료 전액을 감면받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:23:21.440Z",
-    "seriesId": "dongguk-scholarship-26760440"
+    "seriesId": "dongguk-scholarship-26758309"
   },
   {
     "id": "dongguk-scholarship-26766256",
@@ -157153,7 +157212,7 @@
     "summary": "인천인재평생교육진흥원의 하반기 장학생 선발에 지원해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:21:47.300Z",
-    "seriesId": "dongguk-scholarship-26759680"
+    "seriesId": "dongguk-scholarship-26754256"
   },
   {
     "id": "dongguk-scholarship-26766073",
@@ -157195,7 +157254,7 @@
     "summary": "기초과학 연구자는 학위 과정에 맞춰 최대 3년간 주거비를 지원받아요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:21:48.519Z",
-    "seriesId": "dongguk-scholarship-26762043"
+    "seriesId": "dongguk-scholarship-26756982"
   },
   {
     "id": "dongguk-scholarship-26766033",
@@ -157284,7 +157343,7 @@
     "summary": "자격 요건을 충족하면 상반기에 발생한 학자금 대출이자를 지원받아요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:21:50.947Z",
-    "seriesId": "dongguk-scholarship-26759134"
+    "seriesId": "dongguk-scholarship-26756919"
   },
   {
     "id": "dongguk-scholarship-26766022",
@@ -157330,7 +157389,7 @@
     "summary": "해외 교환학생 파견을 위한 장학생 선발에 지원해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:21:52.142Z",
-    "seriesId": "dongguk-scholarship-26761716"
+    "seriesId": "dongguk-scholarship-26754293"
   },
   {
     "id": "dongguk-scholarship-26766019",
@@ -157379,7 +157438,7 @@
     "summary": "전통 기·예능 및 매장유산 분야 우수 학생은 장학금 150만원을 받아요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:21:53.363Z",
-    "seriesId": "dongguk-scholarship-26761684"
+    "seriesId": "dongguk-scholarship-26757373"
   },
   {
     "id": "dongguk-scholarship-26766007",
@@ -157424,7 +157483,7 @@
     "summary": "포항시장학회의 장학생 선발에 지원해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:21:54.559Z",
-    "seriesId": "dongguk-scholarship-26761690"
+    "seriesId": "dongguk-scholarship-26756983"
   },
   {
     "id": "dongguk-scholarship-26766004",
@@ -157517,7 +157576,7 @@
     "summary": "선발된 학부 재학생은 생활비 장학금 100만원을 받아요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:21:58.429Z",
-    "seriesId": "dongguk-scholarship-26761731"
+    "seriesId": "dongguk-scholarship-26758175"
   },
   {
     "id": "dongguk-scholarship-26765986",
@@ -157612,7 +157671,7 @@
     "summary": "자격 요건을 충족하면 상반기 학자금 대출이자 전액을 지원받아요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:00.832Z",
-    "seriesId": "dongguk-scholarship-26759330"
+    "seriesId": "dongguk-scholarship-26757597"
   },
   {
     "id": "dongguk-scholarship-26765973",
@@ -157657,7 +157716,7 @@
     "summary": "다자녀가구의 셋째 이상 대학생은 등록금 지원을 신청해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:02.057Z",
-    "seriesId": "dongguk-scholarship-26759906"
+    "seriesId": "dongguk-scholarship-26754985"
   },
   {
     "id": "dongguk-scholarship-26765936",
@@ -157701,7 +157760,7 @@
     "summary": "푸른등대 기부장학금의 신규 장학생 선발에 지원해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:03.269Z",
-    "seriesId": "dongguk-scholarship-26759617"
+    "seriesId": "dongguk-scholarship-26753555"
   },
   {
     "id": "dongguk-scholarship-26765931",
@@ -157748,7 +157807,7 @@
     "summary": "대학생은 6개 분야의 익산사랑 장학생 선발에 지원해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:04.462Z",
-    "seriesId": "dongguk-scholarship-26761510"
+    "seriesId": "dongguk-scholarship-26755638"
   },
   {
     "id": "dongguk-scholarship-26765930",
@@ -157895,6 +157954,149 @@
     "summary": "중학생의 온라인 학습을 지도하고 시간당 3만원의 활동비를 받아요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:25:58.570Z",
-    "seriesId": "dongguk-scholarship-26759606"
+    "seriesId": "dongguk-scholarship-26755728"
+  },
+  {
+    "id": "korea-notice-000060000000060282",
+    "title": "[RISE Center] 한국어능력시험(TOPIK) 4급 대비반 학생 모집 안내",
+    "organizer": "RISE 사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "korea"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2027-03-31"
+    },
+    "activityPeriod": {
+      "start": "2027-04-04",
+      "end": "2027-04-11"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "korea-notice",
+        "url": "https://www.korea.ac.kr/portalBoard/ko/1/000060000000060723/portalBoardView.do"
+      },
+      {
+        "sourceId": "korea-notice",
+        "url": "https://www.korea.ac.kr/portalBoard/ko/1/000060000000060442/portalBoardView.do"
+      },
+      {
+        "sourceId": "korea-notice",
+        "url": "https://www.korea.ac.kr/portalBoard/ko/1/000060000000060282/portalBoardView.do"
+      }
+    ],
+    "sources": [
+      "korea-notice"
+    ],
+    "postedAt": "2026-06-15",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T19:15:28.962Z",
+    "summary": "이공계 외국인 유학생이 TOPIK 4급 대비 집중 특강을 들어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T19:15:28.962Z",
+    "aliases": [
+      "korea-notice-000060000000060442",
+      "korea-notice-000060000000060723"
+    ]
+  },
+  {
+    "id": "skku-notice-138212",
+    "title": "2026년 세종이도인재장학금 디딤돌장학사업 학자금대출 관련 분야 신청 공고",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "skku"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=138212"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-07-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T02:26:38.158Z",
+    "summary": "학자금대출 관련 세종이도인재장학금을 신청해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T02:26:38.158Z"
+  },
+  {
+    "id": "yonsei-notice-943609",
+    "title": "2026 세종이도인재장학금 디딤돌 장학사업 학자금대출 관련분야 신청 안내",
+    "organizer": "학생지원팀(장학)",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-notice",
+        "url": "https://www.yonsei.ac.kr/bbs/sc/58/943609/artclView.do"
+      }
+    ],
+    "sources": [
+      "yonsei-notice"
+    ],
+    "postedAt": "2026-07-08",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T02:40:30.158Z",
+    "summary": "디딤돌 장학사업의 학자금대출 관련 분야에 지원해요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T02:40:30.158Z"
   }
 ]
