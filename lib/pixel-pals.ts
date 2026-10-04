@@ -4,7 +4,7 @@
 
 export type PalName = "wizard" | "knight" | "ranger" | "cleric";
 export type PalPose = "sit" | "peek";
-export type PalBubble = "question" | "exclaim" | "heart";
+export type PalBubble = "question" | "exclaim";
 
 export const PAL_WIDTH = 16;
 export const BUBBLE_WIDTH = 7; // 말풍선이 있으면 오른쪽으로 이만큼 넓어진다
@@ -49,11 +49,10 @@ export const PAL_HEX: Record<string, string> = {
   "white-dark": "#d9cdb8",
 };
 
-// 머리 오른쪽 위의 작은 말풍선 (7×7)
+// 머리 오른쪽 위의 작은 말풍선 (7×7): 물음표·느낌표
 const BUBBLES: Record<PalBubble, string[]> = {
   question: [".KKKKK.", "K##K##K", "K###K#K", "K##K##K", "K#####K", ".KK#KK.", "...K..."],
   exclaim: [".KKKKK.", "K##K##K", "K##K##K", "K##K##K", "K#####K", ".KKKKK.", "...K..."],
-  heart: [".KKKKK.", "K#C#C#K", "K#CCC#K", "K##C##K", "K#####K", ".KK#KK.", "...K..."],
 };
 
 // 말풍선을 붙인 그림 (오른쪽으로 BUBBLE_WIDTH만큼 넓힌다)

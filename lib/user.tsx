@@ -52,8 +52,6 @@ interface UserState {
 
 const UserContext = createContext<UserState | null>(null);
 
-export const PAL_CHEER_EVENT = "pal-cheer";
-
 const SCHOOL_KEY = "schoolId";
 const FAVORITES_KEY = "favorites";
 const PROFILE_KEY = "profile";
@@ -231,8 +229,6 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       if (adding) next.add(programId);
       else next.delete(programId);
       setFavorites(next);
-      // 관심 공고가 늘면 아래 탭 바의 도트 캐릭터가 폴짝 반긴다 (components/BottomNav.tsx)
-      if (adding) window.dispatchEvent(new Event(PAL_CHEER_EVENT));
 
       if (!supabase) {
         writeLocal(FAVORITES_KEY, JSON.stringify([...next]));

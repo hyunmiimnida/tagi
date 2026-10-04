@@ -45,7 +45,7 @@ test("같은 색이 이어진 칸은 한 덩어리로 그린다", () => {
 
 test("말풍선은 오른쪽에 붙고(높이 그대로), 화면 밖 그림의 색 값이 globals.css와 같다", async () => {
   const { BUBBLE_WIDTH, PAL_HEX, palSvg, withBubble } = await import("./pixel-pals.ts");
-  for (const bubble of ["question", "exclaim", "heart"] as const) {
+  for (const bubble of ["question", "exclaim"] as const) {
     const rows = withBubble(palRows("wizard", "sit"), bubble);
     assert.equal(rows.length, PAL_HEIGHT.sit);
     for (const row of rows) assert.equal(row.length, PAL_WIDTH + BUBBLE_WIDTH);

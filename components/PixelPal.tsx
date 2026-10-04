@@ -3,7 +3,7 @@ import type { PalBubble, PalName, PalPose } from "../lib/pixel-pals.ts";
 
 // 도트 캐릭터 한 명 (lib/pixel-pals.ts). 장식이라 화면 읽기 프로그램은 건너뛰고 눌리지도 않는다.
 // 숨 쉬듯 1픽셀 들썩이고 가끔 눈을 깜빡인다 (기기의 "동작 줄이기"를 켜면 멈춘다, app/globals.css의 .pal)
-// scale: 도트 한 칸의 크기(px). delay: 여러 명이 동시에 깜빡이지 않게 시작을 늦춘다(초). bubble: 머리 옆 말풍선(?·!·♥)
+// scale: 도트 한 칸의 크기(px). delay: 여러 명이 동시에 깜빡이지 않게 시작을 늦춘다(초). bubble: 머리 옆 말풍선(?·!)
 
 interface Props {
   name: PalName;
@@ -30,6 +30,7 @@ export function PixelPal({ name, pose, scale = 2, delay = 0, bubble, className =
       shapeRendering="crispEdges"
       aria-hidden="true"
       focusable="false"
+      data-pal={name}
       style={{ "--pal-scale": `${scale}px`, "--pal-delay": `${delay}s` } as React.CSSProperties}
     >
       <g className="pal-open">{draw(rows(false))}</g>
