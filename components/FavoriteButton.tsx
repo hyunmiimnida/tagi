@@ -17,10 +17,10 @@ export function FavoriteButton({ programId, title, withLabel = false }: { progra
   const on = favorites.has(programId);
   const lit = on && !waiting;
 
-  // 캐릭터가 못 오는 일이 생겨도 별은 곧 켠다
+  // 캐릭터가 못 오는 일이 생겨도 별은 3초 안에 켠다
   useEffect(() => {
     if (!waiting) return;
-    const timer = setTimeout(() => setWaiting(false), 2000);
+    const timer = setTimeout(() => setWaiting(false), 3000);
     return () => clearTimeout(timer);
   }, [waiting]);
 

@@ -55,3 +55,21 @@ test("말풍선은 오른쪽에 붙고(높이 그대로), 화면 밖 그림의 �
   for (const [name, hex] of Object.entries(PAL_HEX)) assert.ok(css.includes(`--px-${name}: ${hex};`), `${name} ${hex}`);
   assert.match(palSvg(palRows("knight", "peek"), 7), /^<svg [^>]*width="112" height="98"/);
 });
+
+test("별 켜기 동작 그림(24×17)과 효과 그림은 정해진 색만 쓴다", async () => {
+  const { ACTION_HEIGHT, ACTION_WIDTH, EFFECT_ROWS, actionRows } = await import("./pixel-pals.ts");
+  const frames = ["stand", "runA", "runB", "windup", "strike", "draw", "release", "cast", "pray"] as const;
+  for (const name of names) {
+    for (const frame of frames) {
+      const rows = actionRows(name, frame);
+      assert.equal(rows.length, ACTION_HEIGHT);
+      for (const row of rows) assert.equal(row.length, ACTION_WIDTH, `${name} ${frame}`);
+      for (const ch of rows.join("")) assert.ok(ch === "." || PAL_COLORS[ch], `${name} ${frame}: ${ch}`);
+    }
+  }
+  // 동작마다 그림이 실제로 달라진다 (칼을 치켜들기·휘두르기, 활 당기기·놓기, 지팡이 들기)
+  assert.notDeepEqual(actionRows("knight", "windup"), actionRows("knight", "strike"));
+  assert.notDeepEqual(actionRows("ranger", "draw"), actionRows("ranger", "release"));
+  assert.notDeepEqual(actionRows("wizard", "stand"), actionRows("wizard", "cast"));
+  for (const rows of Object.values(EFFECT_ROWS)) for (const ch of rows.join("")) assert.ok(ch === "." || PAL_COLORS[ch], ch);
+});

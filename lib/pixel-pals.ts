@@ -158,3 +158,73 @@ export function palSvg(rows: string[], scale: number): string {
   const width = rows[0].length;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width * scale}" height="${rows.length * scale}" viewBox="0 0 ${width} ${rows.length}" shape-rendering="crispEdges">${paths}</svg>`;
 }
+
+// ───────── 동작 그림 (관심 표시 때 캐릭터가 직접 별을 켜는 동작, components/StarHelper.tsx) ─────────
+// 24×17 칸. 캐릭터 몸은 가운데(4~19칸), 칼·활·지팡이는 오른쪽으로 삐져나온다. 모두 오른쪽을 보고 그리고, 왼쪽은 뒤집어 쓴다
+export const ACTION_WIDTH = 24;
+export const ACTION_HEIGHT = 17;
+export type ActionFrame = "stand" | "runA" | "runB" | "windup" | "strike" | "draw" | "release" | "cast" | "pray";
+
+const LEG_COLOR: Record<PalName, string> = { wizard: "t", knight: "m", ranger: "T", cleric: "b" };
+const LEGS: Record<"stand" | "runA" | "runB", string[]> = {
+  stand: ["....KxK.KxK.....", "...KKKK.KKKK...."],
+  runA: ["...KxK...KxK....", "..KKK.....KKK..."],
+  runB: [".....KxKxK......", "....KKKKKKK....."],
+};
+
+// 손에 든 것: [그림, 왼쪽 칸, 위 칸]
+type Prop = [string[], number, number];
+const SWORD = [".K.", "KWK", "KMK", "KMK", "KMK", "KMK", "YYY", ".t."];
+const SWORD_FORWARD = ["Y.KKKKK.", "YtMMMMMW", "Y.KKKKK."];
+const BOW_DRAWN = [
+  "......T....",
+  ".......T...",
+  "........T..",
+  "........T..",
+  "........T..",
+  "WttttttttMM",
+  "........T..",
+  ".......T...",
+  "......T....",
+];
+const BOW = BOW_DRAWN.map((row, i) => (i === 5 ? "........T.." : row));
+const WAND = [".Y.", "YWY", ".Y.", ".t.", ".t."];
+const STAFF = ["YYY", "YWY", "YYY", ".t.", ".t.", ".t.", ".t.", ".t.", ".t.", ".t.", ".t."];
+
+const PROPS: Partial<Record<PalName, Partial<Record<ActionFrame, Prop>>>> = {
+  knight: {
+    stand: [SWORD, 17, 6],
+    runA: [SWORD, 17, 6],
+    runB: [SWORD, 17, 6],
+    windup: [SWORD, 18, 0], // 칼을 높이 치켜든다
+    strike: [SWORD_FORWARD, 16, 12], // 앞으로 휘두른다
+  },
+  ranger: { draw: [BOW_DRAWN, 13, 8], release: [BOW, 13, 8] },
+  wizard: { stand: [WAND, 17, 9], cast: [WAND, 19, 3] },
+  cleric: { stand: [STAFF, 17, 4], pray: [STAFF, 18, 1] },
+};
+
+function stamp(canvas: string[][], rows: string[], ox: number, oy: number): void {
+  rows.forEach((row, y) =>
+    [...row].forEach((ch, x) => {
+      if (ch !== "." && canvas[oy + y]?.[ox + x] !== undefined) canvas[oy + y][ox + x] = ch;
+    }),
+  );
+}
+
+export function actionRows(name: PalName, frame: ActionFrame): string[] {
+  const canvas = Array.from({ length: ACTION_HEIGHT }, () => Array<string>(ACTION_WIDTH).fill("."));
+  const legs = frame === "runA" || frame === "runB" ? LEGS[frame] : LEGS.stand;
+  stamp(canvas, HEADS[name], 4, 0);
+  stamp(canvas, BODIES[name].slice(0, 3), 4, 12);
+  stamp(canvas, legs.map((row) => row.replace(/x/g, LEG_COLOR[name])), 4, 15);
+  const prop = PROPS[name]?.[frame];
+  if (prop) stamp(canvas, ...prop);
+  return canvas.map((row) => row.join(""));
+}
+
+// 효과 그림: 칼바람(초승달)과 화살
+export const EFFECT_ROWS = {
+  slash: ["...YWW...", ".....WW..", "......WY.", "......WW.", "......WY.", ".....WW..", "...YWW..."],
+  arrow: ["W.....K.", "WttttMMM", "W.....K."],
+};

@@ -48,3 +48,20 @@ export function PeekPal({ name, right = 28, delay = 0 }: { name: PalName; right?
     </div>
   );
 }
+
+// 동작 그림·효과 그림처럼 깜빡임 없이 한 장만 그리는 도트 그림 (components/StarHelper.tsx)
+export function PixelSprite({ rows, scale }: { rows: string[]; scale: number }) {
+  return (
+    <svg
+      className="pal"
+      width={rows[0].length * scale}
+      height={rows.length * scale}
+      viewBox={`0 0 ${rows[0].length} ${rows.length}`}
+      shapeRendering="crispEdges"
+      aria-hidden="true"
+      focusable="false"
+    >
+      {draw(rows)}
+    </svg>
+  );
+}

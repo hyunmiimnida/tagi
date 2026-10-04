@@ -2802,10 +2802,111 @@ button.stat {
 }
 
 /* 관심 표시: 도트 캐릭터가 날아와 별을 누르면(components/StarHelper.tsx) 별이 노랗게 바뀌며 도트 반짝이가 퍼진다 */
-.star-helper {
+.star-actor {
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 40;
   pointer-events: none;
+}
+
+.star-actor-sprite.flip {
+  scale: -1 1;
+}
+
+/* 캐릭터 동작 효과 (components/StarHelper.tsx). 기준점(left·top)이 효과의 가운데 */
+.fx {
+  position: fixed;
+  z-index: 41;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.fx-slash .pal {
+  position: absolute;
+  top: -10px;
+  left: -14px;
+  animation: fx-slash 0.3s steps(3, end) forwards;
+}
+
+.fx-slash.flip .pal {
+  scale: -1 1;
+}
+
+@keyframes fx-slash {
+  0% { opacity: 0; transform: translateX(-6px); }
+  30% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(4px); }
+}
+
+.fx-arrow .pal {
+  position: absolute;
+  top: -4.5px;
+  left: -21px;
+  transform-origin: 21px 4.5px;
+  animation: fx-arrow 0.21s linear forwards;
+}
+
+@keyframes fx-arrow {
+  from { transform: rotate(var(--angle)); }
+  to { transform: translate(var(--dx), var(--dy)) rotate(var(--angle)); }
+}
+
+.fx-beam {
+  width: 12px;
+  margin-left: -6px;
+}
+
+.fx-beam::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 12px;
+  height: 150px;
+  background: repeating-linear-gradient(to bottom, var(--px-gold) 0 4px, var(--px-shine) 4px 8px);
+  opacity: 0.85;
+  transform-origin: 50% 0;
+  animation: fx-beam 0.5s steps(5, end) forwards;
+}
+
+@keyframes fx-beam {
+  0% { transform: scaleY(0); opacity: 0.9; }
+  45% { transform: scaleY(1); opacity: 0.9; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+.fx-poof i,
+.fx-spark i {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 4px;
+  height: 4px;
+  opacity: 0;
+}
+
+.fx-poof i {
+  background: var(--px-violet);
+  animation: fx-ray 0.4s steps(4, end);
+}
+
+.fx-poof i:nth-child(odd) {
+  background: var(--px-gold);
+}
+
+.fx-spark i {
+  width: 5px;
+  height: 5px;
+  background: var(--fx-color);
+  box-shadow: 0 0 0 1px var(--px-line);
+  animation: fx-ray 0.5s steps(5, end);
+}
+
+@keyframes fx-ray {
+  0% { opacity: 1; transform: rotate(var(--a)) translateY(-4px); }
+  100% { opacity: 0; transform: rotate(var(--a)) translateY(-24px); }
 }
 
 .favorite-icon {
