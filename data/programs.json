@@ -17733,9 +17733,16 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
+      "grades": [
+        "2학년",
+        "3학년"
+      ],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
       "openTo": null
     },
     "recruitPeriod": {
@@ -17747,7 +17754,9 @@
       "end": null
     },
     "tags": [
-      "학교"
+      "학교",
+      "장학·지원금",
+      "학사·행정"
     ],
     "links": [
       {
@@ -17759,38 +17768,50 @@
       "yu-news"
     ],
     "postedAt": "2026-05-07",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:51:09.126Z",
     "firstSeenAt": "2026-10-01T03:51:09.126Z",
-    "summary": "SW응용학부나 자동차SW학과를 부·복수전공하며 장학금 지원 기회를 얻어요."
+    "summary": "자동차SW학과나 SW응용학부를 부·복수전공하고 장학금을 지원받아요.",
+    "noApplication": false
   },
   {
     "id": "yu-news-229810470",
     "title": "[글로벌공생HUSS] 「(베트남) 글로벌 자원을 활용한 기후변화 완화 국제협력 솔루션」참가자 모집",
-    "organizer": "인문사회글로벌공생융합인재양성사업단",
+    "organizer": "글로벌공생 인문사회융합인재양성사업단",
     "organizerType": "학교",
     "target": {
       "schools": [
         "yu"
       ],
       "colleges": [],
-      "departments": [],
+      "departments": [
+        "화학공학부 에너지화공전공",
+        "글로벌교육학부 국제한국어교육전공",
+        "경영학과",
+        "무역학부",
+        "사회학과",
+        "글로벌공생 융합전공"
+      ],
       "grades": [],
-      "statuses": [],
+      "statuses": [
+        "재학생"
+      ],
       "excludedStatuses": [],
       "openTo": null
     },
     "recruitPeriod": {
-      "start": null,
+      "start": "2026-05-04",
       "end": "2026-05-20"
     },
     "activityPeriod": {
-      "start": "2026-07-04",
+      "start": "2026-05-28",
       "end": "2026-07-10"
     },
     "tags": [
       "학교",
-      "해외·글로벌"
+      "해외·글로벌",
+      "해외탐방",
+      "장학·지원금"
     ],
     "links": [
       {
@@ -17802,11 +17823,12 @@
       "yu-news"
     ],
     "postedAt": "2026-05-06",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:51:25.776Z",
     "firstSeenAt": "2026-10-01T03:51:25.776Z",
     "seriesId": "yu-news-227304658",
-    "summary": "베트남 학생들과 기후변화 완화를 위한 국제협력 프로젝트에 참여해요."
+    "summary": "베트남 학생들과 기후변화 대응 프로젝트에 참여하고 해외 활동을 지원받아요.",
+    "noApplication": false
   },
   {
     "id": "yu-news-229726182",
@@ -17880,18 +17902,21 @@
   {
     "id": "yu-news-229599610",
     "title": "[RISE사업단 중소기업공동연구지원팀] 2차년도 산학공동기술개발과제 본 공고",
-    "organizer": "RISE사업단 중소기업공동연구지원팀",
-    "organizerType": "기업",
+    "organizer": "RISE사업단 기업협업센터 중소기업공동연구지원팀",
+    "organizerType": "학교",
     "target": {
-      "schools": [
-        "yu"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생",
+        "졸업생"
+      ],
+      "openTo": "경상북도 소재 협력대학 학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -17902,7 +17927,7 @@
       "end": null
     },
     "tags": [
-      "기업"
+      "학교"
     ],
     "links": [
       {
@@ -17914,26 +17939,37 @@
       "yu-news"
     ],
     "postedAt": "2026-04-21",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:52:49.952Z",
     "firstSeenAt": "2026-10-01T03:52:49.952Z",
     "seriesId": "yu-news-225839595",
-    "summary": "학생연구원으로 대학과 기업의 공동 기술개발 연구와 기업 현장 파견에 참여해요."
+    "summary": "기업과 공동 기술개발 연구에 참여하고 기업 현장에서 경험을 쌓아요",
+    "noApplication": false
   },
   {
     "id": "yu-news-229585516",
     "title": "[글로벌공생HUSS] 「(일본)글로벌 역량 강화를 위한 일본 기업 탐방」참가자 모집",
-    "organizer": "인문사회글로벌공생융합인재양성사업단",
+    "organizer": "호남대학교 글로벌공생HUSS 사업단",
     "organizerType": "학교",
     "target": {
       "schools": [
         "yu"
       ],
       "colleges": [],
-      "departments": [],
+      "departments": [
+        "화학공학부 에너지화공전공",
+        "글로벌교육학부 국제한국어교육전공",
+        "경영학과",
+        "무역학부",
+        "사회학과"
+      ],
       "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
       "openTo": null
     },
     "recruitPeriod": {
@@ -17946,7 +17982,8 @@
     },
     "tags": [
       "학교",
-      "해외·글로벌"
+      "해외·글로벌",
+      "해외탐방"
     ],
     "links": [
       {
@@ -17958,24 +17995,31 @@
       "yu-news"
     ],
     "postedAt": "2026-04-20",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:53:10.591Z",
     "firstSeenAt": "2026-10-01T03:53:10.591Z",
-    "summary": "일본 오키나와의 대학과 호텔·리조트를 탐방하며 항공비와 숙식 지원을 받아요."
+    "summary": "일본 오키나와의 대학과 기업 현장을 탐방하며 글로벌 역량을 키워요",
+    "noApplication": false
   },
   {
     "id": "yu-news-229332358",
     "title": "📢 [한국무역협회] 제14기 경북대구청년무역사관학교 모집(~ 4/5)",
-    "organizer": "진로취업지원팀",
-    "organizerType": "학교",
+    "organizer": "한국무역협회",
+    "organizerType": null,
     "target": {
       "schools": [],
       "colleges": [],
       "departments": [],
-      "grades": [],
-      "statuses": [],
+      "grades": [
+        "3학년",
+        "4학년"
+      ],
+      "statuses": [
+        "재학생",
+        "졸업생"
+      ],
       "excludedStatuses": [],
-      "openTo": "경북·대구 대학생·청년·재직자 등"
+      "openTo": "경북·대구 대학생·청년·재직자 및 부모 거주 대학생"
     },
     "recruitPeriod": {
       "start": "2026-03-12",
@@ -17986,7 +18030,8 @@
       "end": "2026-07-24"
     },
     "tags": [
-      "학교"
+      "취업·채용",
+      "교육·특강"
     ],
     "links": [
       {
@@ -17998,11 +18043,12 @@
       "yu-news"
     ],
     "postedAt": "2026-04-02",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:58:45.714Z",
     "firstSeenAt": "2026-10-01T03:58:45.714Z",
     "seriesId": "yu-news-84157",
-    "summary": "무역과 해외취업을 준비하는 실무 교육을 받고 숙식이 제공되는 합숙교육에 참여해요."
+    "summary": "무역·해외취업 준비를 위한 실무 교육과 숙식이 제공되는 합숙교육을 받아요",
+    "noApplication": false
   },
   {
     "id": "yu-news-229304200",
@@ -18016,8 +18062,12 @@
       "colleges": [],
       "departments": [],
       "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생"
+      ],
       "openTo": null
     },
     "recruitPeriod": {
@@ -18030,7 +18080,10 @@
     },
     "tags": [
       "학교",
-      "창업"
+      "취업·채용",
+      "창업",
+      "장학·지원금",
+      "공모전·대회"
     ],
     "links": [
       {
@@ -18042,15 +18095,16 @@
       "yu-news"
     ],
     "postedAt": "2026-03-31",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:59:02.626Z",
     "firstSeenAt": "2026-10-01T03:59:02.626Z",
-    "summary": "팀으로 취창업 프로젝트와 공모전에 참여하고 활동 실비를 지원받아요"
+    "summary": "팀으로 취창업 프로젝트와 공모전에 참여하고 활동 실비를 지원받아요",
+    "noApplication": false
   },
   {
     "id": "yu-news-229290096",
     "title": "[공학교육혁신센터] 2026 융합 Capstone Design Project 참가 팀 모집",
-    "organizer": "공학교육혁신센터 행정실",
+    "organizer": "공학교육혁신센터",
     "organizerType": "학교",
     "target": {
       "schools": [
@@ -18059,7 +18113,9 @@
       "colleges": [],
       "departments": [],
       "grades": [],
-      "statuses": [],
+      "statuses": [
+        "휴학생"
+      ],
       "excludedStatuses": [],
       "openTo": null
     },
@@ -18072,7 +18128,8 @@
       "end": "2026-07-24"
     },
     "tags": [
-      "학교"
+      "학교",
+      "장학·지원금"
     ],
     "links": [
       {
@@ -18084,11 +18141,12 @@
       "yu-news"
     ],
     "postedAt": "2026-03-30",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:59:13.113Z",
     "firstSeenAt": "2026-10-01T03:59:13.113Z",
     "seriesId": "yu-news-2756920",
-    "summary": "여러 전공의 학생들과 팀을 꾸려 종합설계 과제물을 만들고 재료비를 지원받아요"
+    "summary": "여러 전공의 학생들과 종합설계 과제를 만들고 재료비를 지원받아요",
+    "noApplication": false
   },
   {
     "id": "yu-news-229120915",
@@ -18148,7 +18206,7 @@
   {
     "id": "yu-news-228909571",
     "title": "★2026년도 MIDAS 동아리 지원 프로그램 모집 (~ 3. 9.(월) 16시)★",
-    "organizer": "SW중심대학사업단 행정지원실",
+    "organizer": "SW중심대학사업단",
     "organizerType": "학교",
     "target": {
       "schools": [
@@ -18170,7 +18228,8 @@
       "end": "2026-09-30"
     },
     "tags": [
-      "학교"
+      "학교",
+      "장학·지원금"
     ],
     "links": [
       {
@@ -18182,15 +18241,16 @@
       "yu-news"
     ],
     "postedAt": "2026-03-03",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T04:05:11.926Z",
     "firstSeenAt": "2026-10-01T04:05:11.926Z",
-    "summary": "SW 동아리 활동에 필요한 경비를 동아리별 최대 500만원까지 지원받아요"
+    "summary": "SW 동아리 활동 경비를 지원받고 연계 활동 참여 시 장학금도 받아요.",
+    "noApplication": false
   },
   {
     "id": "yu-news-228573820",
     "title": "[글로벌평생교육원] 2026학년도 <숲해설가 전문과정> 수강생 모집 안내(2026년 3월 개강)",
-    "organizer": "글로벌평생교육원 행정실",
+    "organizer": "글로벌평생교육원",
     "organizerType": "학교",
     "target": {
       "schools": [],
@@ -18199,11 +18259,11 @@
       "grades": [],
       "statuses": [],
       "excludedStatuses": [],
-      "openTo": "숲해설가에 관심 있는 일반성인"
+      "openTo": "일반성인"
     },
     "recruitPeriod": {
-      "start": null,
-      "end": "2026-01-14"
+      "start": "2026-01-14",
+      "end": null
     },
     "activityPeriod": {
       "start": "2026-03-14",
@@ -18211,8 +18271,7 @@
     },
     "tags": [
       "학교",
-      "해외·글로벌",
-      "학사·행정"
+      "교육·특강"
     ],
     "links": [
       {
@@ -18224,16 +18283,17 @@
       "yu-news"
     ],
     "postedAt": "2026-02-07",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T04:07:49.982Z",
     "firstSeenAt": "2026-10-01T04:07:49.982Z",
-    "summary": "숲해설 교육과 실습을 받고 평가에 합격하면 숲해설가 자격증을 취득해요"
+    "summary": "숲해설가 전문교육을 받고 평가에 합격하면 자격증을 취득해요",
+    "noApplication": false
   },
   {
     "id": "yu-news-228029157",
     "title": "2026학년도 [TOEIC] 재학생 TOEIC 정기시험 응시료(10%) 할인접수 안내",
-    "organizer": "천마학부대학 행정실",
-    "organizerType": "학교",
+    "organizer": "(주)YBM 한국TOEIC위원회",
+    "organizerType": "기업",
     "target": {
       "schools": [
         "yu"
@@ -18241,7 +18301,10 @@
       "colleges": [],
       "departments": [],
       "grades": [],
-      "statuses": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
       "excludedStatuses": [],
       "openTo": null
     },
@@ -18254,7 +18317,7 @@
       "end": null
     },
     "tags": [
-      "학교"
+      "기업"
     ],
     "links": [
       {
@@ -18266,11 +18329,12 @@
       "yu-news"
     ],
     "postedAt": "2025-12-30",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T04:12:16.541Z",
     "firstSeenAt": "2026-10-01T04:12:16.541Z",
     "seriesId": "yu-news-10564691",
-    "summary": "TOEIC 정기시험 응시료를 횟수 제한 없이 10% 할인받아요"
+    "summary": "제휴대학 접수로 TOEIC 정기시험 응시료를 10% 할인받아요",
+    "noApplication": false
   },
   {
     "id": "yu-news-224890988",
@@ -18293,13 +18357,13 @@
       "end": "2025-05-23"
     },
     "activityPeriod": {
-      "start": "2025-09-01",
+      "start": "2025-06-30",
       "end": "2026-08-31"
     },
     "tags": [
       "학교",
-      "해외·글로벌",
-      "서포터즈·기자단"
+      "서포터즈·기자단",
+      "장학·지원금"
     ],
     "links": [
       {
@@ -18311,11 +18375,12 @@
       "yu-news"
     ],
     "postedAt": "2025-05-13",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T04:47:08.486Z",
     "firstSeenAt": "2026-10-01T04:47:08.486Z",
     "seriesId": "yu-news-220062092",
-    "summary": "대학의 국제 사업을 홍보하고 국제 업무를 도우며 활동 평가에 따라 장학금을 받아요"
+    "summary": "국제홍보대사로 대학의 대외·국제화 사업을 홍보하고 매 학기 홍보장학금을 받아요",
+    "noApplication": false
   },
   {
     "id": "yu-news-230499958",
@@ -26968,8 +27033,8 @@
   {
     "id": "yu-news-226395269",
     "title": "[해외인턴] 미국 해외인턴 참가자 모집 안내(IGE Korea)",
-    "organizer": "현장실습지원팀",
-    "organizerType": "학교",
+    "organizer": "IGE Korea",
+    "organizerType": "기업",
     "target": {
       "schools": [
         "yu"
@@ -26977,20 +27042,23 @@
       "colleges": [],
       "departments": [],
       "grades": [],
-      "statuses": [],
+      "statuses": [
+        "졸업생"
+      ],
       "excludedStatuses": [],
       "openTo": null
     },
     "recruitPeriod": {
       "start": null,
-      "end": "2026-09-10"
+      "end": "2026-03-06"
     },
     "activityPeriod": {
       "start": null,
       "end": null
     },
     "tags": [
-      "학교",
+      "기업",
+      "취업·채용",
       "해외·글로벌",
       "인턴·일경험"
     ],
@@ -27036,7 +27104,7 @@
       "yu-news"
     ],
     "postedAt": "2026-02-23",
-    "extractedBy": "rules",
+    "extractedBy": "ai",
     "collectedAt": "2026-10-01T04:34:46.419Z",
     "firstSeenAt": "2026-10-01T04:34:46.419Z",
     "seriesId": "yu-news-83707",
@@ -27050,7 +27118,8 @@
       "yu-news-227114354",
       "yu-news-226775237"
     ],
-    "summary": "미국 조지아주에 있는 한화큐셀에서 해외인턴으로 일해요"
+    "summary": "미국 한화큐셀에서 해외인턴으로 실무 경험을 쌓아요",
+    "noApplication": false
   },
   {
     "id": "knu-notice-1338356",
