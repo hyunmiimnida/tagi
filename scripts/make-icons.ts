@@ -1,6 +1,6 @@
 import { writeFileSync } from "node:fs";
 import { deflateSync } from "node:zlib";
-import { PAL_COLORS, palRows } from "../lib/pixel-pals.ts";
+import { PAL_COLORS, PAL_HEX, palRows } from "../lib/pixel-pals.ts";
 
 // 서비스 아이콘 만들기: 파랑 바탕에서 마법사(도트 캐릭터, lib/pixel-pals.ts)가 공고 카드 너머로 빼꼼.
 // 32×32 도트 그림 하나로 모든 크기를 만든다:
@@ -14,15 +14,9 @@ const GRID = 32;
 const BG = "#3f78e6";
 const CORNER = 0.22; // 둥근 모서리 반지름 (한 변에 대한 비율)
 
-// 도트 캐릭터 색 (app/globals.css의 --px-* 와 같은 값. 그림 파일이라 변수를 못 쓴다)
-const PX: Record<string, string> = {
-  line: "#2b2140", skin: "#ffd9b8", blush: "#ff9fae", shine: "#ffffff", violet: "#6c5ce7", "violet-dark": "#4834b8",
-  gold: "#ffcf3f", boot: "#8a5a3b", steel: "#c7d0dc", "steel-dark": "#8893a5", red: "#ef4b5b", green: "#53b86f",
-  leather: "#a06a42", white: "#fbf7ef", "white-dark": "#d9cdb8",
-};
 // 아이콘에만 쓰는 색: 카드 흰색·줄·별
 const ICON_COLORS: Record<string, string> = { "#": "#ffffff", ":": "#dfe7f5", "~": "#b9c8e6", "*": "#ffcf3f" };
-const colorOf = (ch: string) => ICON_COLORS[ch] ?? PX[PAL_COLORS[ch]];
+const colorOf = (ch: string) => ICON_COLORS[ch] ?? PAL_HEX[PAL_COLORS[ch]];
 
 // 공고 카드: 흰 카드에 줄 세 개와 보라 배지 (아래쪽은 아이콘 밖으로 이어진다)
 const CARD = [

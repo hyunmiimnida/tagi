@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { SITE_NAME } from "./filter.ts";
+import { PAL_HEIGHT, palRows, palSvg } from "./pixel-pals.ts";
 
 // 공유 미리보기 이미지(카카오톡·메신저에 링크를 보낼 때 보이는 카드). 빌드할 때 만들어 둔다.
 // 한글 글꼴(Pretendard, 사이트와 같은 글꼴)은 빌드 중 한 번만 받아 재사용한다
@@ -11,6 +12,9 @@ const FONT_URL = "https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/public/stat
 let font: Promise<ArrayBuffer> | null = null;
 // 사이트 로고 (public/icon-192.png)를 그림 주소로
 const LOGO = `data:image/png;base64,${readFileSync(join(process.cwd(), "public", "icon-192.png")).toString("base64")}`;
+// 흰 카드 윗선을 두 손으로 잡고 빼꼼하는 마법사 (사이트의 도트 캐릭터와 같은 그림, 도트 한 칸 = 7px)
+const PEEK_SCALE = 7;
+const PEEK = `data:image/svg+xml;base64,${Buffer.from(palSvg(palRows("wizard", "peek"), PEEK_SCALE)).toString("base64")}`;
 async function fetchFont(tries = 3): Promise<ArrayBuffer> {
   const res = await fetch(FONT_URL);
   const data = await res.arrayBuffer();
@@ -38,6 +42,7 @@ export async function renderCard({ badges, title, lines }: Card): Promise<ImageR
         </div>
         <div
           style={{
+            position: "relative",
             display: "flex",
             flexDirection: "column",
             flexGrow: 1,
@@ -47,6 +52,14 @@ export async function renderCard({ badges, title, lines }: Card): Promise<ImageR
             background: "#ffffff",
           }}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={PEEK}
+            width={16 * PEEK_SCALE}
+            height={PAL_HEIGHT.peek * PEEK_SCALE}
+            alt=""
+            style={{ position: "absolute", right: 64, top: -(PAL_HEIGHT.peek - 2) * PEEK_SCALE }}
+          />
           <div style={{ display: "flex", gap: 12 }}>
             {badges.map((badge) => (
               <div

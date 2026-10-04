@@ -4,8 +4,10 @@
 
 export type PalName = "wizard" | "knight" | "ranger" | "cleric";
 export type PalPose = "sit" | "peek";
+export type PalBubble = "question" | "exclaim" | "heart";
 
 export const PAL_WIDTH = 16;
+export const BUBBLE_WIDTH = 7; // 말풍선이 있으면 오른쪽으로 이만큼 넓어진다
 export const PAL_HEIGHT: Record<PalPose, number> = { sit: 17, peek: 14 };
 
 // 글자 → 색 변수 이름 (--px-…)
@@ -25,7 +27,40 @@ export const PAL_COLORS: Record<string, string> = {
   T: "leather",
   B: "white",
   b: "white-dark",
+  "#": "shine", // 말풍선 바탕
 };
+
+// 색 변수의 실제 값 (app/globals.css의 --px-*와 같아야 한다. 공유 이미지·아이콘처럼 변수를 못 쓰는 그림에 쓴다)
+export const PAL_HEX: Record<string, string> = {
+  line: "#2b2140",
+  skin: "#ffd9b8",
+  blush: "#ff9fae",
+  shine: "#ffffff",
+  violet: "#6c5ce7",
+  "violet-dark": "#4834b8",
+  gold: "#ffcf3f",
+  boot: "#8a5a3b",
+  steel: "#c7d0dc",
+  "steel-dark": "#8893a5",
+  red: "#ef4b5b",
+  green: "#53b86f",
+  leather: "#a06a42",
+  white: "#fbf7ef",
+  "white-dark": "#d9cdb8",
+};
+
+// 머리 오른쪽 위의 작은 말풍선 (7×7)
+const BUBBLES: Record<PalBubble, string[]> = {
+  question: [".KKKKK.", "K##K##K", "K###K#K", "K##K##K", "K#####K", ".KK#KK.", "...K..."],
+  exclaim: [".KKKKK.", "K##K##K", "K##K##K", "K##K##K", "K#####K", ".KKKKK.", "...K..."],
+  heart: [".KKKKK.", "K#C#C#K", "K#CCC#K", "K##C##K", "K#####K", ".KK#KK.", "...K..."],
+};
+
+// 말풍선을 붙인 그림 (오른쪽으로 BUBBLE_WIDTH만큼 넓힌다)
+export function withBubble(rows: string[], bubble: PalBubble): string[] {
+  const pad = ".".repeat(BUBBLE_WIDTH);
+  return rows.map((row, y) => row + (BUBBLES[bubble][y] ?? pad));
+}
 
 // 얼굴 6줄. side는 얼굴 양옆(모자·두건) 색. 눈은 2×3에 반짝이 한 점, 볼 터치, 작은 입
 const face = (side: string) => [
@@ -116,4 +151,11 @@ export function palPaths(rows: string[]): { color: string; d: string }[] {
     }
   });
   return [...byColor].map(([color, parts]) => ({ color, d: parts.join("") }));
+}
+
+// 혼자 쓰는 SVG 문자열 (색을 값으로 넣는다): 공유 미리보기 이미지처럼 화면 밖에서 쓰는 그림
+export function palSvg(rows: string[], scale: number): string {
+  const paths = palPaths(rows).map(({ color, d }) => `<path fill="${PAL_HEX[color]}" d="${d}"/>`).join("");
+  const width = rows[0].length;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width * scale}" height="${rows.length * scale}" viewBox="0 0 ${width} ${rows.length}" shape-rendering="crispEdges">${paths}</svg>`;
 }

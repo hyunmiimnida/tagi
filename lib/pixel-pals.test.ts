@@ -42,3 +42,16 @@ test("같은 색이 이어진 칸은 한 덩어리로 그린다", () => {
     { color: "skin", d: "M3 0h1v1h-1z" },
   ]);
 });
+
+test("말풍선은 오른쪽에 붙고(높이 그대로), 화면 밖 그림의 색 값이 globals.css와 같다", async () => {
+  const { BUBBLE_WIDTH, PAL_HEX, palSvg, withBubble } = await import("./pixel-pals.ts");
+  for (const bubble of ["question", "exclaim", "heart"] as const) {
+    const rows = withBubble(palRows("wizard", "sit"), bubble);
+    assert.equal(rows.length, PAL_HEIGHT.sit);
+    for (const row of rows) assert.equal(row.length, PAL_WIDTH + BUBBLE_WIDTH);
+    for (const ch of rows.join("")) assert.ok(ch === "." || PAL_COLORS[ch], `${bubble}: 색 없는 글자 ${ch}`);
+  }
+  const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+  for (const [name, hex] of Object.entries(PAL_HEX)) assert.ok(css.includes(`--px-${name}: ${hex};`), `${name} ${hex}`);
+  assert.match(palSvg(palRows("knight", "peek"), 7), /^<svg [^>]*width="112" height="98"/);
+});
