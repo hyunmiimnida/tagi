@@ -13,7 +13,7 @@ export default function manifest(): MetadataRoute.Manifest {
     scope: "/",
     display: "standalone",
     orientation: "portrait",
-    background_color: "#f6ead8", // 앱을 열 때 잠깐 보이는 화면 색 (참새 아이콘 크림색)
+    background_color: "#3f78e6", // 앱을 열 때 잠깐 보이는 화면 색 (아이콘 바탕 파랑)
     theme_color: "#f2f4f6",
     icons: [
       { src: "/icon-192.png", sizes: "192x192", type: "image/png" },

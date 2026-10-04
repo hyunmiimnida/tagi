@@ -134,7 +134,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - 검색엔진 소유 확인 코드: `lib/policy.ts`의 `SITE_VERIFICATION`(공개값, 비어 있으면 안 넣음) → `app/layout.tsx` metadata
 - 약관: `/terms`(이용약관), `/privacy`(개인정보처리방침). 문의처·규칙 문구는 `lib/policy.ts`
 - PWA: `app/manifest.ts`, `public/sw.js`(오프라인 때 마지막 화면), 아이콘 `public/icon-*.png`, `app/apple-icon.png`
-- `mobile/` — 앱(Expo) 뼈대. **비용 문제로 잠시 멈춤** (스토어 개발자 등록비가 든다). 지금은 PWA(홈 화면에 추가)와 웹 푸시로 앱 역할을 대신한다. 아이콘은 참새 B(크림, `design/app-icon/sparrow-B-cream.*`)로 정했다 → `public/icon-*.png`·`app/apple-icon.png`·`app/icon.svg`·`public/logo.svg` 사이트를 바꿀 때 앱 전환에 걸림돌이 생기지 않게 한다 (데이터는 `public/api`로 계속 제공)
+- `mobile/` — 앱(Expo) 뼈대. **비용 문제로 잠시 멈춤** (스토어 개발자 등록비가 든다). 지금은 PWA(홈 화면에 추가)와 웹 푸시로 앱 역할을 대신한다. 아이콘은 파랑 바탕에서 도트 마법사가 공고 카드 너머로 빼꼼하는 그림(2026-10-04, 예전 참새 B는 `design/app-icon/`에 남김). `node scripts/make-icons.ts`가 `lib/pixel-pals.ts`의 캐릭터로 `public/icon-*.png`·`app/apple-icon.png`·`app/icon.svg`·`public/logo.svg`를 한 번에 만든다(앱 `mobile/`의 아이콘은 아직 참새). 사이트를 바꿀 때 앱 전환에 걸림돌이 생기지 않게 한다 (데이터는 `public/api`로 계속 제공)
 - `.github/workflows/collect.yml` — 하루 1회 자동 수집
 - `scripts/collect-local.ps1` — 내 컴퓨터에서 수집 후 GitHub에 올리기 (PowerShell 5.1 호환을 위해 BOM 포함 UTF-8로 저장)
 - `docs/설정-안내.md` — 연결 상태와 남은 설정 방법
