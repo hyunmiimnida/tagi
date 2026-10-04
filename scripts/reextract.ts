@@ -10,7 +10,8 @@ import type { CollectedItem, Program, School, TagCategory } from "../src/types.t
 //   node scripts/reextract.ts --school yu --since 2024-01-01            그 학교의 그 날짜 이후 게시물
 //   node scripts/reextract.ts --school yu --since 2024-01-01 --limit 300 최근 것부터 300개만
 // 묶음(50개)마다 결과를 data/에 바로 반영하고 .cache/reextract.json에 기억해서, 끊겨도 이어서 한다.
-// AI가 "학생 대상 아님"으로 보면 목록·보관함에서 빼고 data/excluded.json에 남긴다. 번호·묶음(seriesId)·원문 링크는 그대로 둔다
+// AI가 "학생 대상 아님"으로 보면 바로 지우지 않고 logs/reextract-review.json에 모은다 (기회가 섞여 있어 사람이 보고 뺀다).
+// 번호·묶음(seriesId)·원문 링크는 그대로 둔다
 
 const args = process.argv.slice(2);
 const arg = (name: string) => (args.includes(name) ? args[args.indexOf(name) + 1] : undefined);
@@ -23,7 +24,9 @@ if (!findAi()) throw new Error(AI_MISSING);
 const CACHE = new URL("../.cache/reextract.json", import.meta.url);
 const schools = await readJson<School[]>(new URL("../config/schools.json", import.meta.url));
 const categories = await readJson<TagCategory[]>(new URL("../config/tag-categories.json", import.meta.url));
-const done = await readJson<Record<string, "ai" | "excluded" | "unreadable">>(CACHE, {});
+const done = await readJson<Record<string, "ai" | "review" | "unreadable">>(CACHE, {});
+const REVIEW_FILE = new URL("../logs/reextract-review.json", import.meta.url);
+const review = await readJson<{ id: string; title: string; url: string }[]>(REVIEW_FILE, []);
 const sourceOf = new Map(schools.flatMap((school) => school.sources.map((source) => [source.id, { school, source }] as const)));
 
 let programs = await readJson<Program[]>(PROGRAMS_FILE, []);
@@ -82,9 +85,8 @@ for (let start = 0; start < targets.length; start += CHUNK) {
   const drop = new Set<Program>();
   for (const { saved, item } of items) {
     if (ai.notForStudents.has(item.program.id)) {
-      drop.add(saved);
-      for (const link of saved.links) excluded.add(link.url);
-      done[saved.id] = "excluded";
+      review.push({ id: saved.id, title: saved.title, url: saved.links[0].url });
+      done[saved.id] = "review";
     } else if (item.program.extractedBy === "ai") {
       update(saved, item.program);
       done[saved.id] = "ai";
@@ -96,9 +98,10 @@ for (let start = 0; start < targets.length; start += CHUNK) {
   await writeJson(ARCHIVE_FILE, archive);
   await writeJson(EXCLUDED_FILE, [...excluded].sort());
   await writeJson(CACHE, done);
+  await writeJson(REVIEW_FILE, review);
   const counts = Object.values(done);
   console.log(
-    `${Math.min(start + CHUNK, targets.length)}/${targets.length} · AI로 다시 정리 ${counts.filter((c) => c === "ai").length} · 학생 대상 아님 ${counts.filter((c) => c === "excluded").length}`,
+    `${Math.min(start + CHUNK, targets.length)}/${targets.length} · AI로 다시 정리 ${counts.filter((c) => c === "ai").length} · 확인 필요(학생 대상 아님) ${counts.filter((c) => c === "review").length}`,
   );
 }
 console.log("끝");
