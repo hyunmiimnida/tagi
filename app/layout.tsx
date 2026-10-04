@@ -5,6 +5,7 @@ import { Header } from "../components/Header.tsx";
 import { PwaSetup } from "../components/InstallCard.tsx";
 import { LoginSheet } from "../components/LoginSheet.tsx";
 import { SiteNotice } from "../components/SiteNotice.tsx";
+import { StarHelper } from "../components/StarHelper.tsx";
 import { describeSources, getCollectedByRegion } from "../lib/data.ts";
 import { SITE_NAME, SITE_URL } from "../lib/filter.ts";
 import { SITE_VERIFICATION } from "../lib/policy.ts";
@@ -76,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </footer>
           <BottomNav />
           <LoginSheet />
+          <StarHelper />
           <PwaSetup />
         </UserProvider>
       </body>

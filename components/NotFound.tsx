@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { EmptyArt } from "./EmptyArt.tsx";
+import { PixelPal } from "./PixelPal.tsx";
 
 // 없는 주소. 공고 주소라면 다른 공고에 합쳐졌거나(→ 그 공고로 이동) 마감되어 보관됐는지(→ 안내) 찾아본다
 // 찾아보는 표는 빌드할 때 scripts/build-api.ts가 public/api/ids.json으로 만든다
@@ -76,7 +77,10 @@ export function NotFound() {
 
   return (
     <div className="empty">
-      <EmptyArt />
+      <div className="empty-pal">
+        <EmptyArt />
+        <PixelPal name="ranger" pose="sit" scale={3} bubble="question" />
+      </div>
       <p className="empty-title">{id ? "공고를 찾지 못했어요" : "없는 페이지예요"}</p>
       <p>{id ? "주소가 바뀌었거나 오래되어 정리된 공고예요." : "주소를 다시 확인해 주세요."}</p>
       <div className="empty-actions">

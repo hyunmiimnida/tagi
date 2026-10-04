@@ -14,6 +14,7 @@ import { useListPrograms, useSeriesInfo } from "../lib/use-list.ts";
 import { LOGIN_PROVIDERS, supabase, useToday, useUser } from "../lib/user.tsx";
 import type { Profile } from "../lib/user.tsx";
 import { FeedbackBox } from "./FeedbackBox.tsx";
+import { PeekPal } from "./PixelPal.tsx";
 import { CalendarPlusIcon, ChevronIcon, ProfileIcon } from "./Icons.tsx";
 
 interface Props {
@@ -198,7 +199,8 @@ export function MyAccount({ schools, fieldTags, sources }: Props) {
   return (
     <div className="my">
       {/* 1. 머리: 누구인지 + 내 활동 */}
-      <section className="card my-card my-head">
+      <section className="card my-card my-head pal-wall">
+        <PeekPal name="cleric" right={32} delay={1.2} />
         <div className="my-identity">
           <div className="my-avatar" aria-hidden="true">
             {user.signedIn && profile.nickname ? profile.nickname.slice(0, 1) : <ProfileIcon size={28} />}

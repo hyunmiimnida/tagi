@@ -134,7 +134,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - 검색엔진 소유 확인 코드: `lib/policy.ts`의 `SITE_VERIFICATION`(공개값, 비어 있으면 안 넣음) → `app/layout.tsx` metadata
 - 약관: `/terms`(이용약관), `/privacy`(개인정보처리방침). 문의처·규칙 문구는 `lib/policy.ts`
 - PWA: `app/manifest.ts`, `public/sw.js`(오프라인 때 마지막 화면), 아이콘 `public/icon-*.png`, `app/apple-icon.png`
-- `mobile/` — 앱(Expo) 뼈대. **비용 문제로 잠시 멈춤** (스토어 개발자 등록비가 든다). 지금은 PWA(홈 화면에 추가)와 웹 푸시로 앱 역할을 대신한다. 아이콘은 참새 B(크림, `design/app-icon/sparrow-B-cream.*`)로 정했다 → `public/icon-*.png`·`app/apple-icon.png`·`app/icon.svg`·`public/logo.svg` 사이트를 바꿀 때 앱 전환에 걸림돌이 생기지 않게 한다 (데이터는 `public/api`로 계속 제공)
+- `mobile/` — 앱(Expo) 뼈대. **비용 문제로 잠시 멈춤** (스토어 개발자 등록비가 든다). 지금은 PWA(홈 화면에 추가)와 웹 푸시로 앱 역할을 대신한다. 아이콘은 파랑 바탕에서 도트 마법사가 공고 카드 너머로 빼꼼하는 그림(2026-10-04, 예전 참새 B는 `design/app-icon/`에 남김). `node scripts/make-icons.ts`가 `lib/pixel-pals.ts`의 캐릭터로 `public/icon-*.png`·`app/apple-icon.png`·`app/icon.svg`·`public/logo.svg`를 한 번에 만든다(앱 `mobile/`의 아이콘은 아직 참새). 사이트를 바꿀 때 앱 전환에 걸림돌이 생기지 않게 한다 (데이터는 `public/api`로 계속 제공)
 - `.github/workflows/collect.yml` — 하루 1회 자동 수집
 - `scripts/collect-local.ps1` — 내 컴퓨터에서 수집 후 GitHub에 올리기 (PowerShell 5.1 호환을 위해 BOM 포함 UTF-8로 저장)
 - `docs/설정-안내.md` — 연결 상태와 남은 설정 방법
@@ -164,6 +164,16 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - 토스·노션처럼 단순하게: 회색 바탕(`--bg`) 위 흰 카드(`--surface`), 큰 제목, 넉넉한 여백, 강조색은 파랑(`--accent`) 하나와 마감 빨강(`--warn`)
 - 색은 `app/globals.css`의 변수만 쓴다 (다크 모드가 자동으로 맞춰진다)
 - 공고 한 줄은 `components/ProgramRow.tsx`, 아이콘은 `components/Icons.tsx`를 재사용한다
+- 도트 캐릭터(중세 마법 RPG 2등신: 마법사·기사·궁수·성직자): 그림은 `lib/pixel-pals.ts`의 글자 지도, 그리는 부품 `components/PixelPal.tsx`, 색은 `--px-*` 변수. 깔끔한 바탕은 그대로 두고 장식으로만 쓴다(aria-hidden, 눌리지 않음, 글자·버튼을 가리지 않게)
+  - 아래 탭 바: 지금 탭 아이콘 위에 그 탭 캐릭터가 걸터앉는다(홈 마법사·공고 기사·캘린더 성직자·프로필 궁수), 탭을 바꾸면 폴짝
+  - `PeekPal`: 카드를 벽 삼아 두 손으로 윗선을 잡고 빼꼼(카드에 `pal-wall` 클래스). 홈 "마감 임박"(기사)·"새로 올라온 공고"(궁수), 공고 목록(궁수), 캘린더(마법사), 프로필 첫 카드(성직자). 빈 화면에는 앉은 캐릭터
+  - 움직임은 살짝만: 가끔 깜빡임, 빼꼼은 1픽셀 들썩임. 기기의 "동작 줄이기"를 켜면 멈춘다
+  - 말풍선(`bubble`: ?·!): 없는 공고·페이지(궁수 ?, `components/NotFound.tsx`), 목록을 못 받음(마법사 !, `components/ListError.tsx`)
+  - 관심 표시(☆)를 켜면 `components/StarHelper.tsx`가 캐릭터마다 다른 동작으로 별을 켠다 (동작 그림 24×17 `actionRows`·효과 그림 `EFFECT_ROWS`, `lib/pixel-pals.ts`). 출발은 그 카드에서 빼꼼하던 캐릭터(화면에 보일 때) 아니면 탭 바 캐릭터
+    - 기사: 뛰어내려 달려가(다리 번갈아) 칼을 치켜들었다 휘두름(칼바람) → 뒤돌아 달려서 복귀 / 궁수: 일어나 활을 꺼내 당겨 쏨(화살이 별까지) → 숨음 / 마법사: 펑 사라져 별 옆에 나타나 마법 → 펑 복귀 / 성직자: 일어나 기도 → 빛기둥 → 숨음
+    - 별은 맞는 순간 노랗게 바뀌며 반짝(`components/FavoriteButton.tsx`의 `star-burst`). 저장은 누르자마자 되고, 3초 안에 못 오면 그냥 켬. 끌 때·동작 줄이기·한 명이 다녀오는 중에는 캐릭터 없이 바로
+  - 공유 미리보기 이미지(`lib/og.tsx`)의 흰 카드 위에도 마법사가 빼꼼(`palSvg`, 색 값은 `PAL_HEX` = globals.css의 `--px-*`)
+  - 더 넣지 않기로 한 것(과해짐): 도트 글꼴, 도트 테두리·배경, 공고마다 캐릭터, RPG 말투(퀘스트·경험치), 소리
 - 화면 전체를 덮는 창(로그인 시트 등)은 머리말 안에 두지 않는다 (반투명 효과 때문에 위치가 깨진다)
 
 ## 코드 규칙
