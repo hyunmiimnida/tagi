@@ -15,6 +15,22 @@
   --star: #ffb800;
   --radius: 20px;
   --nav-height: 64px;
+  /* 도트 캐릭터 색 (lib/pixel-pals.ts). 도트 그림은 밝은·다크 모드 모두 같은 색을 쓴다 */
+  --px-line: #2b2140;
+  --px-skin: #ffd9b8;
+  --px-blush: #ff9fae;
+  --px-shine: #ffffff;
+  --px-violet: #6c5ce7;
+  --px-violet-dark: #4834b8;
+  --px-gold: #ffcf3f;
+  --px-boot: #8a5a3b;
+  --px-steel: #c7d0dc;
+  --px-steel-dark: #8893a5;
+  --px-red: #ef4b5b;
+  --px-green: #53b86f;
+  --px-leather: #a06a42;
+  --px-white: #fbf7ef;
+  --px-white-dark: #d9cdb8;
   --shadow: 0 1px 2px rgb(0 0 0 / 4%);
 }
 
@@ -2683,4 +2699,104 @@ button.stat {
   color: var(--text-2);
   font-size: 0.8125rem;
   font-weight: 600;
+}
+
+/* ───────── 도트 캐릭터 (components/PixelPal.tsx) ───────── */
+.pal {
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* 깜빡임: 눈 감은 그림을 잠깐만 보여 준다 (사람마다 시작이 달라 동시에 깜빡이지 않는다) */
+.pal-closed {
+  opacity: 0;
+  animation: pal-blink 5s steps(1, end) var(--pal-delay) infinite;
+}
+
+.pal-open {
+  animation: pal-blink-open 5s steps(1, end) var(--pal-delay) infinite;
+}
+
+@keyframes pal-blink {
+  0%, 93% { opacity: 0; }
+  94%, 96% { opacity: 1; }
+  97%, 100% { opacity: 0; }
+}
+
+@keyframes pal-blink-open {
+  0%, 93% { opacity: 1; }
+  94%, 96% { opacity: 0; }
+  97%, 100% { opacity: 1; }
+}
+
+/* 빼꼼: 카드를 벽 삼아 고개를 내밀고, 숨 쉬듯 1픽셀 들썩인다. 두 손(마지막 2줄)이 카드 윗선에 걸친다 */
+.pal-wall {
+  position: relative;
+}
+
+.pal-peek-anchor {
+  position: absolute;
+  top: 0;
+  right: var(--pal-right);
+  z-index: 2;
+  width: 0;
+  height: 0;
+}
+
+.pal-peek-anchor .pal {
+  position: absolute;
+  right: 0;
+  bottom: calc(var(--pal-scale) * -2);
+}
+
+.pal-peek {
+  animation: pal-bob 2.8s steps(1, end) var(--pal-delay) infinite;
+}
+
+@keyframes pal-bob {
+  0%, 55% { transform: translateY(0); }
+  56%, 100% { transform: translateY(calc(var(--pal-scale) * -1)); }
+}
+
+/* 아래 탭 바: 지금 탭 아이콘 위에 걸터앉는다 (다리 2줄이 아이콘 윗부분에 걸친다). 탭을 바꾸면 폴짝 뛰어오른다 */
+.tab-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.tab-pal {
+  position: absolute;
+  bottom: calc(100% - 6px);
+  left: 50%;
+  margin-left: -16px;
+  animation: pal-hop 0.45s steps(4, end);
+}
+
+@keyframes pal-hop {
+  0% { transform: translateY(6px); opacity: 0; }
+  50% { transform: translateY(-6px); opacity: 1; }
+  100% { transform: translateY(0); }
+}
+
+/* 빈 화면: 그림 옆에 앉아 있다 */
+.empty-pal {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pal-open,
+  .pal-closed,
+  .pal-peek,
+  .tab-pal {
+    animation: none;
+  }
+}
+
+/* 공고 목록: 빼꼼 캐릭터의 머리가 위의 정렬·마감 포함 줄을 가리지 않게 조금 띄운다 */
+.list-wall {
+  margin-top: 16px;
 }

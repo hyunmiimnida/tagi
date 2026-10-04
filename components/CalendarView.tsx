@@ -10,6 +10,7 @@ import type { ProgramView as Program } from "../lib/filter.ts";
 import { CalendarIcon, CalendarPlusIcon, ChevronIcon } from "./Icons.tsx";
 import { ListError } from "./ListError.tsx";
 import { PastFavorites } from "./PastFavorites.tsx";
+import { PeekPal, PixelPal } from "./PixelPal.tsx";
 
 interface CalendarEvent {
   date: string;
@@ -51,7 +52,10 @@ export function CalendarView() {
   if (user.loginEnabled && !user.signedIn) {
     return (
       <div className="empty card-empty">
-        <CalendarIcon size={40} />
+        <div className="empty-pal">
+          <CalendarIcon size={40} />
+          <PixelPal name="cleric" pose="sit" scale={3} />
+        </div>
         <p className="empty-title">관심 공고의 일정을 한눈에</p>
         <p>로그인하고 공고에 ☆를 누르면 모집 마감일과 활동 일정이 여기에 모여요.</p>
         <button className="button primary" onClick={() => user.setLoginOpen(true)}>
@@ -73,7 +77,8 @@ export function CalendarView() {
 
   return (
     <div className="calendar-page">
-      <section className="card calendar-card">
+      <section className="card calendar-card pal-wall">
+        <PeekPal name="wizard" right={36} delay={0.9} />
         <div className="calendar-head">
           <button className="icon-button" onClick={() => setOffset(offset - 1)} aria-label="이전 달">
             <ChevronIcon dir="left" size={20} />
