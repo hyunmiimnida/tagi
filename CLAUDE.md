@@ -152,7 +152,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `npm run recheck` — 목록 공고 중 나중에 생긴 AI 칸(다른 학교 학생도 지원 가능한지 `openTo`, 한 줄 요약 `summary`)·모집 기간이 없는 글의 신청 없이 참여 여부 `noApplication`)을 확인하지 않은 글만 다시 읽어 AI에게 묻는다
 - `node scripts/audit-quality.ts` — 품질 점검: 중복 줄, 잡음(신청할 것 없는 글) 비율, 마감일 대조 샘플(원문의 날짜 줄을 사람이 보고 대조) → `logs/quality-audit.json`. 출시 기준: 마감일 정확도 90%↑, 잡음 5%↓, 중복 0
 - `node scripts/ai-sample-check.ts [--per 5] [제목 단어...]` — AI 추출 점검: 저장된 공고 몇 개를 다시 읽어 지금 AI·규칙으로 다시 추출하고 저장된 결과와 나란히 비교(데이터는 안 바꿈) → `logs/ai-sample-check.json`. AI 엔진이나 `src/ai.ts`의 규칙을 바꾼 뒤 꼭 돌려 원문 날짜 줄과 대조한다
-- `node scripts/reextract.ts --school yu --since 2024-01-01 [--limit N]` — 규칙으로만 정리된 공고(AI 한도 때문에 `--rules`로 쌓은 지난 공고)를 원문을 다시 읽어 AI로 다시 정리한다. 50개마다 data/에 반영하고 `.cache/reextract.json`에 기억해 이어서 한다. AI가 학생 대상 아니라고 본 글은 빼지만, 기회가 섞이기 쉬우니 뺀 제목을 꼭 사람이 확인한다 (2026-10-04 영남대 2024년~ 1,978개 완료, 2020~2023년 약 5,000개 남음)
+- `node scripts/reextract.ts --school yu --since 2024-01-01 [--limit N]` — 규칙으로만 정리된 공고(AI 한도 때문에 `--rules`로 쌓은 지난 공고)를 원문을 다시 읽어 AI로 다시 정리한다. 50개마다 data/에 반영하고 `.cache/reextract.json`에 기억해 이어서 한다. AI가 학생 대상 아니라고 본 글은 지우지 않고 `logs/reextract-review.json`에 모은다(기회가 섞이기 쉬워 사람이 보고 뺀다) (2026-10-06 영남대 2020~2026년 규칙 정리분 6,703개 완료, 확인 목록 428개)
 - `node scripts/review-excluded.ts` — "학생 대상 아님"으로 뺀 글을 다시 읽어 AI에게 다시 판단받기 (`--apply`로 되살리기. 되살리기 전에 사람이 목록 확인)
 - `node scripts/save-fixtures.ts` — 수집기 테스트용 HTML 샘플 만들기·갱신 (`test/fixtures/`, 학교 사이트 구조가 바뀌었을 때). 원문 글이 들어 있어 GitHub에 올리지 않는다(.gitignore). 샘플이 없으면 그 테스트는 건너뛴다
 - `node scripts/assign-series.ts` — 수집 없이 반복 프로그램 묶음만 다시 계산 (애매한 쌍은 AI에게 묻는다)
