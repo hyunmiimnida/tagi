@@ -36,7 +36,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.926Z",
+    "collectedAt": "2026-10-07T12:38:23.556Z",
     "firstSeenAt": "2026-09-30T18:31:28.903Z",
     "seriesId": "yu-career-1914"
   },
@@ -223,7 +223,7 @@
   },
   {
     "id": "yu-career-2622",
-    "title": "2026 하반기 취업의 정석(입사지원서 작성 실습)",
+    "title": "[재맞고] 2026 하반기 취업의 정석(입사지원서 작성 실습)",
     "organizer": "학생성공처",
     "organizerType": "학교",
     "target": {
@@ -232,7 +232,8 @@
       ],
       "colleges": [],
       "departments": [],
-      "grades": []
+      "grades": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": "2026-09-30",
@@ -245,21 +246,32 @@
     "tags": [
       "학교",
       "취업·채용",
-      "교육·특강"
+      "교육·특강",
+      "멘토링·컨설팅"
     ],
     "links": [
       {
         "sourceId": "yu-career",
         "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2622"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231978037"
       }
     ],
     "sources": [
-      "yu-career"
+      "yu-career",
+      "yu-news"
     ],
-    "postedAt": null,
+    "postedAt": "2026-10-07",
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:24.117Z",
+    "collectedAt": "2026-10-07T12:38:22.101Z",
+    "summary": "입사지원서 작성을 실습하고 맞춤형 컨설팅을 받아요",
+    "noApplication": false,
     "firstSeenAt": "2026-09-30T18:31:28.907Z",
+    "aliases": [
+      "yu-news-231978037"
+    ],
     "seriesId": "yu-career-2338"
   },
   {
@@ -299,7 +311,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:24.118Z",
+    "collectedAt": "2026-10-07T12:38:22.102Z",
     "firstSeenAt": "2026-09-30T18:31:28.907Z"
   },
   {
@@ -339,7 +351,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:24.118Z",
+    "collectedAt": "2026-10-07T12:38:22.102Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z"
   },
   {
@@ -379,7 +391,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:24.119Z",
+    "collectedAt": "2026-10-07T12:38:22.103Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z",
     "seriesId": "yu-career-1527"
   },
@@ -419,7 +431,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:24.119Z",
+    "collectedAt": "2026-10-07T12:38:22.103Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z",
     "seriesId": "yu-news-85874"
   },
@@ -458,7 +470,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:24.119Z",
+    "collectedAt": "2026-10-07T12:38:22.104Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z"
   },
   {
@@ -497,7 +509,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:24.119Z",
+    "collectedAt": "2026-10-07T12:38:22.105Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z",
     "seriesId": "yu-career-2092"
   },
@@ -537,7 +549,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:24.119Z",
+    "collectedAt": "2026-10-07T12:38:22.105Z",
     "firstSeenAt": "2026-09-30T18:31:28.909Z"
   },
   {
@@ -718,7 +730,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.927Z",
+    "collectedAt": "2026-10-07T12:38:23.556Z",
     "firstSeenAt": "2026-09-30T18:31:29.734Z",
     "seriesId": "yu-career-2480"
   },
@@ -799,7 +811,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.927Z",
+    "collectedAt": "2026-10-07T12:38:23.556Z",
     "firstSeenAt": "2026-09-30T18:31:29.735Z"
   },
   {
@@ -880,7 +892,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.928Z",
+    "collectedAt": "2026-10-07T12:38:23.556Z",
     "firstSeenAt": "2026-09-30T18:31:29.735Z",
     "seriesId": "yu-career-1914"
   },
@@ -1019,7 +1031,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.929Z",
+    "collectedAt": "2026-10-07T12:38:23.558Z",
     "firstSeenAt": "2026-09-30T18:31:29.736Z"
   },
   {
@@ -1059,7 +1071,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.930Z",
+    "collectedAt": "2026-10-07T12:38:23.558Z",
     "firstSeenAt": "2026-09-30T18:31:29.736Z"
   },
   {
@@ -1098,7 +1110,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.930Z",
+    "collectedAt": "2026-10-07T12:38:23.558Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1137,7 +1149,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.931Z",
+    "collectedAt": "2026-10-07T12:38:23.559Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1176,7 +1188,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.932Z",
+    "collectedAt": "2026-10-07T12:38:23.559Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1215,7 +1227,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.932Z",
+    "collectedAt": "2026-10-07T12:38:23.559Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1254,7 +1266,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.933Z",
+    "collectedAt": "2026-10-07T12:38:23.559Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1293,7 +1305,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.933Z",
+    "collectedAt": "2026-10-07T12:38:23.560Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z",
     "seriesId": "yu-career-2184"
   },
@@ -1333,7 +1345,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.933Z",
+    "collectedAt": "2026-10-07T12:38:23.560Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z"
   },
   {
@@ -1372,7 +1384,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.934Z",
+    "collectedAt": "2026-10-07T12:38:23.560Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z"
   },
   {
@@ -1411,7 +1423,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:25.934Z",
+    "collectedAt": "2026-10-07T12:38:23.561Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z"
   },
   {
@@ -1995,7 +2007,7 @@
   {
     "id": "yu-news-231850878",
     "title": "[YU Digital HUSS] 영남대&숙명여대&국립순천대 공동 비교과 프로그램 <로컬콘텐츠 AI 융합캠프 : Connection in GONGJU> 참가자 모집",
-    "organizer": "인문사회디지털융합인재양성사업단",
+    "organizer": "인문사회디지털융합인재양성사업단, 숙명여자대학교, 국립순천대학교",
     "organizerType": "학교",
     "target": {
       "schools": [
@@ -2027,17 +2039,25 @@
     "links": [
       {
         "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231978030"
+      },
+      {
+        "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231850878"
       }
     ],
     "sources": [
       "yu-news"
     ],
-    "postedAt": "2026-09-28",
+    "postedAt": "2026-10-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:29:56.692Z",
     "firstSeenAt": "2026-09-28T00:00:00.000Z",
-    "summary": "공주의 문화 현장을 탐방하며 로컬콘텐츠와 AI를 접목하는 캠프에 참여해요"
+    "summary": "공주 문화공간을 탐방하며 로컬콘텐츠와 AI 융합을 배워요",
+    "noApplication": false,
+    "aliases": [
+      "yu-news-231978030"
+    ]
   },
   {
     "id": "yu-news-231850864",
@@ -105802,7 +105822,7 @@
   {
     "id": "skku-notice-140199",
     "title": "[KUSF 두드림] 스포츠단 농구부 재능 기부 프로그램 참여자 모집 (창의품 10시간 지급)",
-    "organizer": "스포츠단",
+    "organizer": "스포츠단 농구부",
     "organizerType": "학교",
     "target": {
       "schools": [
@@ -105830,18 +105850,25 @@
     "links": [
       {
         "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140402"
+      },
+      {
+        "sourceId": "skku-notice",
         "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140199"
       }
     ],
     "sources": [
       "skku-notice"
     ],
-    "postedAt": "2026-09-29",
+    "postedAt": "2026-10-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-03T02:21:34.564Z",
-    "summary": "농구부 선수들과 함께 농구를 배우고 창의품 시간을 받아요",
+    "summary": "농구부 선수들과 기본기와 실전 플레이를 배우고 창의품 시간을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:21:34.564Z"
+    "firstSeenAt": "2026-10-03T02:21:34.564Z",
+    "aliases": [
+      "skku-notice-140402"
+    ]
   },
   {
     "id": "skku-notice-140196",
@@ -128210,7 +128237,7 @@
       "grades": [],
       "statuses": [],
       "excludedStatuses": [],
-      "openTo": "미취업자"
+      "openTo": "미취업 청년"
     },
     "recruitPeriod": {
       "start": null,
@@ -128222,10 +128249,14 @@
     },
     "tags": [
       "학교",
-      "교육·특강",
-      "취업·채용"
+      "취업·채용",
+      "교육·특강"
     ],
     "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140417"
+      },
       {
         "sourceId": "skku-notice",
         "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=139450"
@@ -128242,15 +128273,16 @@
     "sources": [
       "skku-notice"
     ],
-    "postedAt": "2026-09-01",
+    "postedAt": "2026-10-07",
     "extractedBy": "ai",
     "collectedAt": "2026-10-03T03:14:05.680Z",
-    "summary": "청년도약 인재양성 부트캠프 교육생을 모집해요",
+    "summary": "디스플레이 이론과 실무, 프로젝트 및 기업 연계 교육으로 취업 역량을 키워요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T03:14:05.680Z",
     "aliases": [
       "skku-notice-139128",
-      "skku-notice-139450"
+      "skku-notice-139450",
+      "skku-notice-140417"
     ]
   },
   {
@@ -155879,7 +155911,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-07T04:00:24.116Z",
+    "collectedAt": "2026-10-07T12:38:22.099Z",
     "summary": "AICE 기반 교육으로 AI와 데이터 실무 역량을 키워요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-07T00:24:15.866Z"
@@ -158817,5 +158849,991 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-07T04:01:54.340Z",
     "seriesId": "skku-notice-129371"
+  },
+  {
+    "id": "yu-news-231978186",
+    "title": "[봉산문화회관] 공연·전시 안내근무자 모집(~10.23.(금) 18:00)",
+    "organizer": "봉산문화회관",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-23"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231978186"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:38:26.750Z",
+    "summary": "공연과 전시 안내 업무를 맡는 근무자로 지원해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:38:26.750Z"
+  },
+  {
+    "id": "yu-news-231978010",
+    "title": "2026년 10월 무료 모의 TOEIC / TOEIC Speaking / OPIc 시험 실시 안내",
+    "organizer": "한국어‧국제언어교육원",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-10-12",
+      "end": "2026-10-16"
+    },
+    "activityPeriod": {
+      "start": "2026-10-22",
+      "end": "2026-10-22"
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=231978010"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:38:30.660Z",
+    "summary": "선착순으로 무료 모의 TOEIC·TOEIC Speaking·OPIc 시험에 응시해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:38:30.660Z",
+    "seriesId": "yu-news-1655882"
+  },
+  {
+    "id": "pnu-notice-1511434",
+    "title": "2026년 조선해양미래혁신인재양성센터사업 실습과정 성과공유회 안내",
+    "organizer": "수소선박기술센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-10-30",
+      "end": "2026-10-30"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "pnu-notice",
+        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq=1511434"
+      }
+    ],
+    "sources": [
+      "pnu-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:38:41.741Z",
+    "summary": "조선해양 실습 성과를 공유하고 디지털·AI 역량 관련 강연에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:38:41.741Z"
+  },
+  {
+    "id": "pnu-notice-1511433",
+    "title": "[에듀테크센터] 단과대학 계열별 AI+X 전공 실무 및 전교생 바이브코딩 교육 안내",
+    "organizer": "에듀테크센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-10-07",
+      "end": "2026-10-30"
+    },
+    "activityPeriod": {
+      "start": "2026-10-26",
+      "end": "2026-11-21"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "pnu-notice",
+        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq=1511433"
+      }
+    ],
+    "sources": [
+      "pnu-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:38:43.018Z",
+    "summary": "전공별 AI 활용 실무와 바이브코딩을 배우고 실습해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:38:43.018Z"
+  },
+  {
+    "id": "pnu-notice-1511429",
+    "title": "[박물관] 제21회 PNU역사나들이 안내",
+    "organizer": "박물관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [
+        "졸업생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-10-08",
+      "end": "2026-10-25"
+    },
+    "activityPeriod": {
+      "start": "2026-10-26",
+      "end": "2026-10-31"
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "pnu-notice",
+        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq=1511429"
+      }
+    ],
+    "sources": [
+      "pnu-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:38:46.679Z",
+    "summary": "담양의 문화유산과 전통 정원을 답사하고 예술공간과 공연을 둘러봐요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:38:46.679Z"
+  },
+  {
+    "id": "pnu-notice-1511428",
+    "title": "[국제처] 2026학년도 SAM분야 동계 단기파견 프로그램 참가자 모집(~10.16 12:00)",
+    "organizer": "국제처",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pnu"
+      ],
+      "colleges": [
+        "인문대학",
+        "사회과학대학",
+        "자연과학대학"
+      ],
+      "departments": [],
+      "grades": [
+        "1학년",
+        "2학년",
+        "3학년",
+        "4학년"
+      ],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-10-07",
+      "end": "2026-10-16"
+    },
+    "activityPeriod": {
+      "start": "2027-01-03",
+      "end": "2027-02-04"
+    },
+    "tags": [
+      "학교",
+      "해외·글로벌",
+      "해외탐방"
+    ],
+    "links": [
+      {
+        "sourceId": "pnu-notice",
+        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq=1511428"
+      }
+    ],
+    "sources": [
+      "pnu-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:38:48.099Z",
+    "summary": "독일·이탈리아·캐나다·호주 대학의 동계 단기파견 프로그램에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:38:48.099Z"
+  },
+  {
+    "id": "pknu-notice-726536",
+    "title": "▶맞춤형 취업 특강 [취업역량강화 특강] 과정 신청 안내◀",
+    "organizer": "학생성공지원과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-10-12",
+      "end": "2026-10-21"
+    },
+    "activityPeriod": {
+      "start": "2026-10-27",
+      "end": "2026-10-30"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=726536"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:38:54.132Z",
+    "summary": "맞춤형 취업 특강을 듣고 실전 취업역량을 키워요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:38:54.132Z"
+  },
+  {
+    "id": "dcu-program-187330",
+    "title": "[특강][취창직전문관] 오디세우스의 취업 항해 특강",
+    "organizer": "취창직전문관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-10-06",
+      "end": "2026-10-23"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NzMzMCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:38:47.043Z",
+    "summary": "오디세우스의 이야기를 통해 자신의 취업 방향을 찾아봐요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:38:47.043Z"
+  },
+  {
+    "id": "korea-notice-000060000000061473",
+    "title": "[인문사회 융합인재양성사업] 2027학년도 1학기 인문사회디지털콘텐츠융합전공 신청 안내",
+    "organizer": "인문사회디지털융합인재양성사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "korea"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "korea-notice",
+        "url": "https://www.korea.ac.kr/portalBoard/ko/1/000060000000061473/portalBoardView.do"
+      }
+    ],
+    "sources": [
+      "korea-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:39:03.278Z",
+    "summary": "인문사회디지털콘텐츠융합전공에 신청할 수 있어요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:39:03.278Z",
+    "seriesId": "korea-notice-000060000000060287"
+  },
+  {
+    "id": "dcu-service-187326",
+    "title": "[사랑나눔봉사] FUN 자원봉사 심화 특강 참여자 모집",
+    "organizer": "사랑나눔봉사단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NzMyNiZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:38:50.141Z",
+    "summary": "자원봉사 심화 특강에 참여해요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:38:50.141Z",
+    "seriesId": "dcu-service-179456"
+  },
+  {
+    "id": "dcu-notice-187328",
+    "title": "[혁신]2026-2학기 글힘키움마당(2차) 참가 안내",
+    "organizer": "글쓰기말하기센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-10-12",
+      "end": "2026-11-06"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-notice",
+        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzMyOCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:39:10.941Z",
+    "summary": "독서감상문이나 에세이를 응모하고 수상하면 상금을 받아요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:39:10.941Z",
+    "seriesId": "dcu-notice-174126"
+  },
+  {
+    "id": "khu-startup-555668",
+    "title": "[로컬콘텐츠사업단] 다닥다닥 프로그램 안내",
+    "organizer": "로컬콘텐츠사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "khu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "khu-startup",
+        "url": "https://startup.khu.ac.kr/startup_kor/user/bbs/BMSR00052/view.do?menuNo=15200048&boardId=555668"
+      }
+    ],
+    "sources": [
+      "khu-startup"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:39:20.184Z",
+    "summary": "AI 기초부터 상품 기획과 마케팅까지 디지털 교육을 수강해요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:39:20.184Z"
+  },
+  {
+    "id": "cau-notice-30230",
+    "title": "2026년 우양재단 동행 장학생 모집",
+    "organizer": "우양재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "cau"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "cau-notice",
+        "url": "https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=4&BBS_SEQ=30230"
+      }
+    ],
+    "sources": [
+      "cau-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:39:11.358Z",
+    "summary": "동행 장학생으로 선발되어 장학금을 받아요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:39:11.358Z",
+    "seriesId": "cau-notice-29316"
+  },
+  {
+    "id": "cau-notice-30229",
+    "title": "2027학년도 전반기 일반대학원 신입생 모집 안내",
+    "organizer": "일반대학원",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "내국인"
+    },
+    "recruitPeriod": {
+      "start": "2026-10-13",
+      "end": "2026-10-26"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "cau-notice",
+        "url": "https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=4&BBS_SEQ=30229"
+      }
+    ],
+    "sources": [
+      "cau-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:39:15.540Z",
+    "summary": "일반전형이나 특별추천전형으로 일반대학원 입학에 지원해요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:39:15.540Z"
+  },
+  {
+    "id": "khu-notice-323256",
+    "title": "2026학년도 가을 학과 및 연구실탐방 사전신청안내",
+    "organizer": "일반대학원(국제)",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "khu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-10-08",
+      "end": "2026-10-30"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "khu-notice",
+        "url": "https://www.khu.ac.kr/kor/user/bbs/BMSR00040/view.do?menuNo=200316&boardId=323256"
+      }
+    ],
+    "sources": [
+      "khu-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:39:19.775Z",
+    "summary": "학과와 연구실을 탐방하고 동계방학 학부연구생 선발 기회를 얻어요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:39:19.775Z",
+    "seriesId": "khu-notice-315617"
+  },
+  {
+    "id": "dongguk-scholarship-26766513",
+    "title": "2026-2학기 DHC(Dongguk Honors Club) 후배사랑 장학생 신청 안내(~10/23(금) 17시까지)",
+    "organizer": "동국 기업인 모임(DHC)",
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "dongguk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-23"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dongguk-scholarship",
+        "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766513"
+      }
+    ],
+    "sources": [
+      "dongguk-scholarship"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:39:27.457Z",
+    "summary": "가계가 어려운 학부생이 생활비 장학금 200만원을 받아요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:39:27.457Z",
+    "seriesId": "dongguk-scholarship-26757508"
+  },
+  {
+    "id": "dongguk-scholarship-26766512",
+    "title": "2026-2학기 윤영문화재단 신규장학생 선발(1인당 200만원/~10.11(일)까지)",
+    "organizer": "윤영문화재단",
+    "organizerType": null,
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "대한민국 국적 서울·경기·인천 4년제 대학생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-11"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dongguk-scholarship",
+        "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26766512"
+      }
+    ],
+    "sources": [
+      "dongguk-scholarship"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:39:28.783Z",
+    "summary": "학업과 문화예술 성장 가능성을 평가받아 생활비 장학금 200만원을 받아요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:39:28.783Z",
+    "seriesId": "dongguk-scholarship-26754177"
+  },
+  {
+    "id": "skku-notice-140433",
+    "title": "[인공지능혁신융합대학사업단] 2026 구름톤 아레나 참가자 모집 안내(참가비 전액 지원)",
+    "organizer": "인공지능혁신융합대학사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "skku"
+      ],
+      "colleges": [
+        "사범대학",
+        "글로벌융합학부",
+        "경제대학",
+        "경영대학",
+        "예술대학",
+        "문과대학"
+      ],
+      "departments": [
+        "교육학과",
+        "한문교육과",
+        "수학교육과",
+        "컴퓨터교육과",
+        "데이터사이언스융합전공",
+        "인공지능융합전공",
+        "컬처앤테크놀로지융합전공",
+        "경제학과",
+        "통계학과",
+        "글로벌경제학과",
+        "경영학과",
+        "글로벌경영학과",
+        "영상학과",
+        "의상학과",
+        "연기예술학과",
+        "디자인학과",
+        "영어영문학과",
+        "독어독문학과"
+      ],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-30"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140433"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:39:17.813Z",
+    "summary": "참가비 전액을 지원받아 전국 프로그래밍 대회에 도전해요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:39:17.813Z"
+  },
+  {
+    "id": "skku-notice-140407",
+    "title": "스웨덴 왕립과학한림원 원장 특별 강연 안내 (10/30(금) 14:00)",
+    "organizer": "성균관대학교, 한국과학기술한림원",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "skku"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-10-30",
+      "end": "2026-10-30"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140407"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:39:20.317Z",
+    "summary": "노벨상 심사자의 관점에서 좋은 연구와 발견을 배우고 질의응답에 참여해요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:39:20.317Z"
+  },
+  {
+    "id": "skku-notice-140424",
+    "title": "[ 실험 참가자 모집 공고] AI 면접 환경에 따른 지원자의 인식과 경험에 관한 연구",
+    "organizer": "인터랙션사이언스학과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "만 19세 이상 한국 국적 국내 대학생·대학원생"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140424"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:39:21.477Z",
+    "summary": "AI 면접을 체험하고 설문에 참여해 1만원 상당의 기프티콘을 받아요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:39:21.477Z"
+  },
+  {
+    "id": "skku-notice-140400",
+    "title": "「제13회 대학생 물환경 정책·기술 공모전」 개최 안내",
+    "organizer": "기후에너지환경부",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "국내 대학생"
+    },
+    "recruitPeriod": {
+      "start": "2026-09-28",
+      "end": "2026-10-25"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "정부부처",
+      "장학·지원금",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140400"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-10-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-07T12:39:28.803Z",
+    "summary": "팀을 꾸려 물환경 정책·기술 아이디어를 제안하고 상금에 도전해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-07T12:39:28.803Z"
   }
 ]
