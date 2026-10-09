@@ -17,7 +17,7 @@ import { collapseReposts, findAmbiguousPairs, mergePair, mergePrograms } from ".
 import { applyCampus } from "./campus.ts";
 import { cleanPeriods, looksLikeNoticeOnly, notForStudentsByTitle } from "./extract.ts";
 import { enrich } from "./extract.ts";
-import { fetchHtml, isAllowedByRobots, robotsBlocked } from "./fetch.ts";
+import { fetchHtml, isAllowedByRobots, robotsBlocked, robotsProblemOf } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
 import type { CollectedItem, Program, School, Source, TagCategory } from "./types.ts";
 
@@ -60,6 +60,9 @@ async function readSource({ school, source }: (typeof tasks)[number]) {
     const collector = collectors[source.collector];
     if (!collector) throw new Error(`"${source.collector}" 수집기가 등록되어 있지 않음`);
     if (!(await isAllowedByRobots(source.url))) {
+      // robots.txt를 받지 못한 것(접속 오류)은 막힌 것이 아니라 실패로 남긴다 → 수집 점검(check-health)이 알린다
+      const problem = robotsProblemOf(source.url);
+      if (problem) throw new Error(`robots.txt를 확인하지 못해 수집하지 않음 (${problem})`);
       console.log(`${label} robots.txt에서 자동 접근을 막아서 수집하지 않음`);
       log.push({ source: source.id, ok: true, count: 0, message: "robots.txt에서 막음" });
       return;

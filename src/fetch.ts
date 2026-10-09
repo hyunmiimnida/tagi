@@ -101,21 +101,40 @@ export function robotsAllows(rules: RobotsRule[], path: string): boolean {
 
 // 사이트마다 robots.txt를 한 번만 받아 기억한다. null = 확인할 수 없어 수집하지 않음
 const robotsCache = new Map<string, Promise<RobotsRule[] | null>>();
+// robots.txt를 확인하지 못한 사이트와 그 이유 ("막음"과 구별해 수집 기록에 실패로 남긴다)
+export const robotsProblems = new Map<string, string>();
+const ROBOTS_TRIES = 3;
+const ROBOTS_RETRY_MS = 5000;
+
+async function fetchRobots(origin: string): Promise<RobotsRule[] | null> {
+  let reason = "";
+  for (let attempt = 1; attempt <= ROBOTS_TRIES; attempt++) {
+    try {
+      const res = await politeFetch(`${origin}/robots.txt`);
+      if (res.status === 404) return []; // robots.txt가 없으면 제한 없음
+      if (res.ok) return parseRobots(await res.text());
+      reason = `응답 ${res.status}`;
+    } catch (error) {
+      reason = error instanceof Error ? error.message : String(error);
+    }
+    // 잠깐의 접속 오류일 수 있어 조금 쉬고 다시 받아 본다
+    if (attempt < ROBOTS_TRIES) await new Promise((r) => setTimeout(r, ROBOTS_RETRY_MS * attempt));
+  }
+  robotsProblems.set(origin, reason);
+  return null; // 끝내 확인할 수 없으면 수집하지 않는다
+}
 
 function robotsOf(origin: string): Promise<RobotsRule[] | null> {
   let rules = robotsCache.get(origin);
   if (!rules) {
-    rules = politeFetch(`${origin}/robots.txt`)
-      .then(async (res) => {
-        if (res.status === 404) return []; // robots.txt가 없으면 제한 없음
-        if (!res.ok) return null; // 확인할 수 없으면 수집하지 않는다
-        return parseRobots(await res.text());
-      })
-      .catch(() => null);
+    rules = fetchRobots(origin);
     robotsCache.set(origin, rules);
   }
   return rules;
 }
+
+// 이 주소의 robots.txt를 확인하지 못했으면 그 이유 (막힌 것과 구별할 때)
+export const robotsProblemOf = (url: string) => robotsProblems.get(new URL(url).origin);
 
 // robots.txt의 "User-agent: *" 규칙에서 이 주소의 자동 접근이 허용되는지 확인한다
 export async function isAllowedByRobots(url: string): Promise<boolean> {

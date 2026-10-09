@@ -93,7 +93,8 @@ function labeled($: cheerio.CheerioAPI, label: RegExp): string {
 async function readPost(ctx: CollectContext, post: ArchivePost): Promise<CollectedItem | null> {
   const board = boardOf(ctx);
   const $ = cheerio.load(await ctx.fetchHtml(post.url));
-  const title = clean($(board.title).first().text()).replace(/^제목\s*:\s*/, "") || post.title; // "제목 : …" 머리말은 지운다
+  // "제목 : …" 머리말과 앞에 붙은 분류("해외파견 | …")는 지운다
+  const title = clean($(board.title).first().text()).replace(/^제목\s*:\s*/, "").replace(/^[가-힣A-Za-z]{1,8}\s+\|\s+/, "") || post.title;
   if (!title) return null;
 
   const program = emptyProgram(ctx.school, ctx.source, post.postId, title, post.url);

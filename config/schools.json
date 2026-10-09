@@ -1202,7 +1202,7 @@
         "name": "공지사항",
         "collector": "table-board",
         "url": "https://www.hanyang.ac.kr/notice_all?p_p_id=kr_ac_hanyang_noticeBoard_web_portlet_NoticeBoardPortlet&p_p_lifecycle=0&_kr_ac_hanyang_noticeBoard_web_portlet_NoticeBoardPortlet_action=view",
-        "enabled": true,
+        "enabled": false,
         "pages": 2,
         "useAi": true,
         "board": {
@@ -1217,6 +1217,47 @@
           "date": ".noticeBoard-view-message .hyu-meta-inner:nth-child(1) > .hyu-meta-item:nth-child(2) > span:nth-child(2)",
           "writer": ".noticeBoard-view-message .hyu-meta-inner:nth-child(1) > .hyu-meta-item:nth-child(1) > span:nth-child(2)",
           "campus": ".hyu-badge"
+        }
+      },
+      {
+        "id": "hanyang-startup",
+        "name": "창업지원단 공지",
+        "collector": "json-board",
+        "url": "https://startup.hanyang.ac.kr/board/notice/list",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "창업지원단",
+        "json": {
+          "listUrl": "https://startup.hanyang.ac.kr/api/board/content?boardEnName=notice&page={page}&pageSize=10",
+          "items": "data.list",
+          "id": "contentId",
+          "title": "title",
+          "date": "regDate",
+          "viewUrl": "https://startup.hanyang.ac.kr/board/notice/view/{id}",
+          "detailUrl": "https://startup.hanyang.ac.kr/api/board/content/{id}",
+          "content": "data.content.content",
+          "writer": "userName"
+        }
+      },
+      {
+        "id": "hanyang-oia",
+        "name": "국제처 공지",
+        "collector": "table-board",
+        "url": "https://oia.hanyang.ac.kr/notice",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "국제처",
+        "board": {
+          "link": "td.title > a[href^=\"/notice/\"]",
+          "idPattern": "/notice/(\\d+)",
+          "viewUrl": "https://oia.hanyang.ac.kr/notice/{id}",
+          "pageParam": "page",
+          "title": ".content_header h1",
+          "content": ".content_body .xe_content",
+          "listDate": "td.time",
+          "date": ".content_header .detail > li:nth-child(2) .detail_content"
         }
       }
     ],
@@ -1239,7 +1280,28 @@
     "shortName": "한양대 ERICA",
     "region": "수도권",
     "campusOf": "hanyang",
-    "sources": []
+    "sources": [
+      {
+        "id": "erica-global",
+        "name": "국제처 공지",
+        "collector": "table-board",
+        "url": "https://global.hanyang.ac.kr/bbs/board.php?bo_table=s4_1",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "defaultOrganizer": "ERICA 국제처",
+        "board": {
+          "link": "td.left > a[href*=\"wr_id=\"]",
+          "idParam": "wr_id",
+          "viewUrl": "https://global.hanyang.ac.kr/bbs/board.php?bo_table=s4_1&wr_id={id}",
+          "pageParam": "page",
+          "title": "#bo_v_title",
+          "content": "#bo_v_con",
+          "listDate": "td:nth-child(5)",
+          "date": "#bo_v_info ul > li:nth-child(2) > strong"
+        }
+      }
+    ]
   },
   {
     "id": "hufs",
