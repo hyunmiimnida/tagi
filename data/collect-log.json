@@ -1,165 +1,21 @@
 {
-  "ranAt": "2026-10-11T05:26:11.524Z",
-  "total": 3502,
+  "ranAt": "2026-10-12T00:17:21.553Z",
+  "total": 3488,
   "sources": [
     {
-      "source": "kmu-notice",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-recruit",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-scholarship",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-startup",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-col-abeek",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-col-arts",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-col-coe",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-col-human",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-col-kbs",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-col-musicarts",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-col-natural",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-col-pharmacyhome",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-col-sports",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "kmu-col-ssc",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "sogang-notice",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "sogang-student",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "sogang-scholarship",
-      "ok": false,
-      "count": 0,
-      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
-      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
-      "lastSuccessCount": 0,
-      "failStreak": 5
-    },
-    {
-      "source": "yu-col-sci",
+      "source": "yu-news",
       "ok": true,
       "count": 0,
-      "message": "",
+      "message": "내 컴퓨터에서만 수집",
+      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "yu-rise",
+      "ok": true,
+      "count": 0,
+      "message": "내 컴퓨터에서만 수집",
       "lastSuccessAt": "2026-10-11T05:26:11.524Z",
       "lastSuccessCount": 0,
       "failStreak": 0
@@ -168,7 +24,16 @@
       "source": "yu-col-liberalart",
       "ok": true,
       "count": 0,
-      "message": "",
+      "message": "내 컴퓨터에서만 수집",
+      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "yu-col-sci",
+      "ok": true,
+      "count": 0,
+      "message": "내 컴퓨터에서만 수집",
       "lastSuccessAt": "2026-10-11T05:26:11.524Z",
       "lastSuccessCount": 0,
       "failStreak": 0
@@ -177,25 +42,7 @@
       "source": "yu-col-eng",
       "ok": true,
       "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "yu-career",
-      "ok": true,
-      "count": 29,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 29,
-      "failStreak": 0
-    },
-    {
-      "source": "yu-rise",
-      "ok": true,
-      "count": 0,
-      "message": "",
+      "message": "내 컴퓨터에서만 수집",
       "lastSuccessAt": "2026-10-11T05:26:11.524Z",
       "lastSuccessCount": 0,
       "failStreak": 0
@@ -204,16 +51,7 @@
       "source": "yu-col-digital",
       "ok": true,
       "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "yu-col-sob",
-      "ok": true,
-      "count": 0,
-      "message": "",
+      "message": "내 컴퓨터에서만 수집",
       "lastSuccessAt": "2026-10-11T05:26:11.524Z",
       "lastSuccessCount": 0,
       "failStreak": 0
@@ -222,7 +60,16 @@
       "source": "yu-col-politics",
       "ok": true,
       "count": 0,
-      "message": "",
+      "message": "내 컴퓨터에서만 수집",
+      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "yu-col-sob",
+      "ok": true,
+      "count": 0,
+      "message": "내 컴퓨터에서만 수집",
       "lastSuccessAt": "2026-10-11T05:26:11.524Z",
       "lastSuccessCount": 0,
       "failStreak": 0
@@ -231,16 +78,7 @@
       "source": "yu-col-yumc",
       "ok": true,
       "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "yu-news",
-      "ok": true,
-      "count": 0,
-      "message": "",
+      "message": "내 컴퓨터에서만 수집",
       "lastSuccessAt": "2026-10-11T05:26:11.524Z",
       "lastSuccessCount": 0,
       "failStreak": 0
@@ -249,16 +87,7 @@
       "source": "yu-col-pharm",
       "ok": true,
       "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "yu-col-chek",
-      "ok": true,
-      "count": 0,
-      "message": "",
+      "message": "내 컴퓨터에서만 수집",
       "lastSuccessAt": "2026-10-11T05:26:11.524Z",
       "lastSuccessCount": 0,
       "failStreak": 0
@@ -267,7 +96,16 @@
       "source": "yu-col-life",
       "ok": true,
       "count": 0,
-      "message": "",
+      "message": "내 컴퓨터에서만 수집",
+      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "yu-col-chek",
+      "ok": true,
+      "count": 0,
+      "message": "내 컴퓨터에서만 수집",
       "lastSuccessAt": "2026-10-11T05:26:11.524Z",
       "lastSuccessCount": 0,
       "failStreak": 0
@@ -276,7 +114,7 @@
       "source": "yu-col-education",
       "ok": true,
       "count": 0,
-      "message": "",
+      "message": "내 컴퓨터에서만 수집",
       "lastSuccessAt": "2026-10-11T05:26:11.524Z",
       "lastSuccessCount": 0,
       "failStreak": 0
@@ -285,7 +123,7 @@
       "source": "yu-col-arts",
       "ok": true,
       "count": 0,
-      "message": "",
+      "message": "내 컴퓨터에서만 수집",
       "lastSuccessAt": "2026-10-11T05:26:11.524Z",
       "lastSuccessCount": 0,
       "failStreak": 0
@@ -294,7 +132,7 @@
       "source": "yu-col-gl",
       "ok": true,
       "count": 0,
-      "message": "",
+      "message": "내 컴퓨터에서만 수집",
       "lastSuccessAt": "2026-10-11T05:26:11.524Z",
       "lastSuccessCount": 0,
       "failStreak": 0
@@ -303,27 +141,189 @@
       "source": "yu-col-ccgs",
       "ok": true,
       "count": 0,
-      "message": "",
+      "message": "내 컴퓨터에서만 수집",
       "lastSuccessAt": "2026-10-11T05:26:11.524Z",
       "lastSuccessCount": 0,
       "failStreak": 0
+    },
+    {
+      "source": "kmu-notice",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-recruit",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-scholarship",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-startup",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-col-abeek",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-col-coe",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-col-arts",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-col-kbs",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-col-human",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-col-musicarts",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-col-natural",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-col-pharmacyhome",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-col-ssc",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "kmu-col-sports",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "sogang-notice",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "sogang-student",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "sogang-scholarship",
+      "ok": false,
+      "count": 0,
+      "message": "robots.txt를 확인하지 못해 수집하지 않음 (fetch failed)",
+      "lastSuccessAt": "2026-10-09T09:00:11.956Z",
+      "lastSuccessCount": 0,
+      "failStreak": 6
+    },
+    {
+      "source": "dongguk-startup",
+      "ok": false,
+      "count": 0,
+      "message": "목록에서 게시물을 찾지 못함 (사이트 구조가 바뀌었을 수 있음)",
+      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessCount": 0,
+      "failStreak": 1
     },
     {
       "source": "knu-startup",
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
     {
-      "source": "knu-notice",
+      "source": "yu-career",
       "ok": true,
-      "count": 0,
+      "count": 29,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 29,
       "failStreak": 0
     },
     {
@@ -331,7 +331,25 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "knu-notice",
+      "ok": true,
+      "count": 5,
+      "message": "",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 5,
+      "failStreak": 0
+    },
+    {
+      "source": "dcu-notice",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -340,26 +358,8 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "pnu-notice",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "dcu-notice",
-      "ok": true,
-      "count": 1,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 1,
       "failStreak": 0
     },
     {
@@ -367,43 +367,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "pnu-glocal",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "snu-career",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "snu-startup",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "pknu-notice",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -412,7 +376,34 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "pnu-glocal",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "snu-startup",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "snu-career",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -421,7 +412,25 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "pnu-notice",
+      "ok": true,
+      "count": 2,
+      "message": "",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 2,
+      "failStreak": 0
+    },
+    {
+      "source": "pknu-notice",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -430,7 +439,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -439,7 +448,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -448,7 +457,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -457,7 +466,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -466,7 +475,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -475,7 +484,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -484,16 +493,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "konkuk-startup",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -502,7 +502,16 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "konkuk-startup",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -511,25 +520,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "hanyang-oia",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "cau-startup",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -538,7 +529,16 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "cau-startup",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -547,17 +547,17 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
     {
-      "source": "cau-notice",
+      "source": "hanyang-oia",
       "ok": true,
-      "count": 0,
+      "count": 1,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 1,
       "failStreak": 0
     },
     {
@@ -565,8 +565,17 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "cau-notice",
+      "ok": true,
+      "count": 1,
+      "message": "",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 1,
       "failStreak": 0
     },
     {
@@ -574,16 +583,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "uos-startup",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -592,44 +592,35 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
     {
-      "source": "khu-notice",
+      "source": "uos-startup",
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
     {
       "source": "skku-notice",
       "ok": true,
-      "count": 0,
+      "count": 2,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 2,
       "failStreak": 0
     },
     {
-      "source": "skku-success",
+      "source": "khu-notice",
       "ok": true,
-      "count": 0,
+      "count": 1,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
-      "failStreak": 0
-    },
-    {
-      "source": "dongguk-startup",
-      "ok": true,
-      "count": 0,
-      "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
-      "lastSuccessCount": 0,
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 1,
       "failStreak": 0
     },
     {
@@ -637,7 +628,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -646,7 +637,16 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
+      "lastSuccessCount": 0,
+      "failStreak": 0
+    },
+    {
+      "source": "skku-success",
+      "ok": true,
+      "count": 0,
+      "message": "",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     },
@@ -655,7 +655,7 @@
       "ok": true,
       "count": 0,
       "message": "",
-      "lastSuccessAt": "2026-10-11T05:26:11.524Z",
+      "lastSuccessAt": "2026-10-12T00:17:21.553Z",
       "lastSuccessCount": 0,
       "failStreak": 0
     }

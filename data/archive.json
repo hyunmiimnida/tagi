@@ -1,5 +1,1037 @@
 [
   {
+    "id": "dcu-program-185945",
+    "title": "[캠프][선착순 10명][대일플] 2026년도 지역특화 산업분야 우수 기업탐방(대구텍, 새빗켐) 캠프 신청 안내",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTk0NSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:36.244Z",
+    "summary": "대구텍과 새빗켐을 탐방하는 캠프에 참여해요.",
+    "firstSeenAt": "2026-10-01T19:12:36.244Z",
+    "noApplication": false
+  },
+  {
+    "id": "dcu-program-185884",
+    "title": "[특강][취창직전문관] 썸머JOB데이(취업준비 편) 특강",
+    "organizer": "취창직전문관",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-07-07",
+      "end": "2026-07-13"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTg4NCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-07-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-01T19:12:56.245Z",
+    "summary": "기업 선택 기준과 채용포털 활용법을 배우고 참여수당을 받아요.",
+    "firstSeenAt": "2026-10-01T19:12:56.245Z"
+  },
+  {
+    "id": "dcu-service-185941",
+    "title": "[사랑나눔봉사단] 「캠퍼스 마음온도+감사 릴레이」 '당신에게 닿는 편지' 프로그램 자원봉사자 모집 안내",
+    "organizer": "사랑나눔봉사단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-service",
+        "url": "https://www.cu.ac.kr/plaza/notice/service?mode=view&mv_data=aWR4PTE4NTk0MSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPWluc3VuZyZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-service"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T00:03:00.231Z",
+    "summary": "당신에게 닿는 편지 프로그램을 돕는 자원봉사를 해요",
+    "firstSeenAt": "2026-10-02T00:03:00.231Z",
+    "noApplication": false
+  },
+  {
+    "id": "pknu-notice-725605",
+    "title": "제9회 국립김해박물관 가야 웹툰 공모전 안내",
+    "organizer": "국립김해박물관",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725605"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:03:37.728Z",
+    "summary": "가야를 주제로 한 웹툰 공모전에 참가해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:03:37.728Z"
+  },
+  {
+    "id": "pknu-notice-725604",
+    "title": "2026 해운대구 인구정책 숏폼 공모전「우리 가족의 반짝이는 60초」 안내",
+    "organizer": "해운대구",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725604"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:03:39.129Z",
+    "summary": "인구정책을 주제로 한 60초 숏폼 영상 공모전에 참가해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:03:39.129Z"
+  },
+  {
+    "id": "pknu-notice-725603",
+    "title": "[대구광역시] 「2026 대구정원박람회」 학생정원 작품공모 안내",
+    "organizer": "대구광역시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725603"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:03:40.556Z",
+    "summary": "대구정원박람회 학생정원 작품 공모전에 참가해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:03:40.556Z"
+  },
+  {
+    "id": "pknu-notice-725598",
+    "title": "[서울주택도시개발공사] 2026 SH 스마트 건설기술 경진대회 안내",
+    "organizer": "서울주택도시개발공사",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725598"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:03:43.349Z",
+    "summary": "스마트 건설기술 아이디어를 겨루는 경진대회에 참가해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:03:43.349Z"
+  },
+  {
+    "id": "pknu-notice-725597",
+    "title": "「2026 디지털 리터러시 힐링 데이: 익(翼)다」 참여자 모집 안내",
+    "organizer": "학생복지과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725597"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:03:44.767Z",
+    "summary": "디지털 리터러시 힐링 프로그램 '익(翼)다'에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:03:44.767Z"
+  },
+  {
+    "id": "pknu-notice-725583",
+    "title": "[부산광역시 남구] 「여성 1인 가구 안심홈세트 지원 사업」 안내",
+    "organizer": "부산광역시 남구",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "부산 남구 여성 1인 가구"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725583"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:03:49.001Z",
+    "summary": "여성 1인 가구를 위한 안심홈세트 지원을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:03:49.001Z"
+  },
+  {
+    "id": "pknu-notice-725582",
+    "title": "[국립외교원] 「제15회 KNDA 학술논문상」 공모 안내",
+    "organizer": "국립외교원",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "정부부처",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725582"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:03:50.388Z",
+    "summary": "제15회 KNDA 학술논문상 공모에 논문을 내요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:03:50.388Z"
+  },
+  {
+    "id": "pknu-notice-725581",
+    "title": "[종로문화재단] 2026 윤동주문학제 <공모형 프로그램> 참여자 모집 안내",
+    "organizer": "종로문화재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725581"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:03:51.803Z",
+    "summary": "윤동주문학제 공모형 프로그램에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:03:51.803Z"
+  },
+  {
+    "id": "pknu-notice-725580",
+    "title": "[국립광주과학관] 2026 매스&사이언스 아트(Math&Science ARt) 작품공모전 안내",
+    "organizer": "국립광주과학관",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725580"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:03:53.205Z",
+    "summary": "수학과 과학을 주제로 한 아트 작품 공모전에 참가해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:03:53.205Z"
+  },
+  {
+    "id": "pknu-notice-725523",
+    "title": "2026년 8월 「수상레저관」 강습 프로그램 및 접수 안내",
+    "organizer": "체육진흥원",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-07-13",
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725523"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-07-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:04:12.861Z",
+    "summary": "수상레저관에서 8월 수상 스포츠 강습을 신청해 배워요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:04:12.861Z",
+    "seriesId": "pknu-notice-714069"
+  },
+  {
+    "id": "cau-notice-29964",
+    "title": "2026학년도 하계방학 사회진출분야 대학원생 직무교육 프로그램: 07/13(월) ~",
+    "organizer": "인재개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "cau"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-07-13",
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "cau-notice",
+        "url": "https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=4&BBS_SEQ=29964"
+      }
+    ],
+    "sources": [
+      "cau-notice"
+    ],
+    "postedAt": "2026-06-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T02:01:55.133Z",
+    "summary": "사회 진출을 준비하는 대학원생을 위한 하계방학 직무교육을 들어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T02:01:55.133Z",
+    "seriesId": "cau-notice-28989"
+  },
+  {
+    "id": "skku-notice-137970",
+    "title": "성균인문아카데미 근로학생(아르바이트) 모집 안내",
+    "organizer": "성균인문아카데미",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "skku"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-06-30"
+    },
+    "activityPeriod": {
+      "start": "2026-07-13",
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=137970"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-06-24",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T02:27:39.871Z",
+    "summary": "성균인문아카데미에서 강연 보조와 행정 업무를 하는 근로학생으로 일해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T02:27:39.871Z",
+    "seriesId": "skku-notice-133701"
+  },
+  {
+    "id": "yonsei-notice-943633",
+    "title": "[포스코비전장학] 대학생 생활장학금 지원 장학프로그램 선발 안내",
+    "organizer": "학생지원팀(장학)",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-notice",
+        "url": "https://www.yonsei.ac.kr/bbs/sc/58/943633/artclView.do"
+      }
+    ],
+    "sources": [
+      "yonsei-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T02:40:24.752Z",
+    "summary": "포스코비전장학 장학생으로 선발되면 생활비 장학금을 받아요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T02:40:24.752Z"
+  },
+  {
+    "id": "yonsei-notice-943632",
+    "title": "2027-2028 독일정부초청장학생 (DAAD 장학생) 선발 안내",
+    "organizer": "독일정부",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "외국인 대학·대학원생 및 대졸자"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "정부부처",
+      "장학·지원금",
+      "해외·글로벌",
+      "해외탐방"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-notice",
+        "url": "https://www.yonsei.ac.kr/bbs/sc/58/943632/artclView.do"
+      }
+    ],
+    "sources": [
+      "yonsei-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T02:40:25.826Z",
+    "summary": "독일 학위과정·연구·현지 섬머코스에 참여할 장학금을 받아요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T02:40:25.826Z",
+    "seriesId": "yonsei-notice-940939"
+  },
+  {
+    "id": "yonsei-notice-943629",
+    "title": "2026년 정읍시민장학재단 우수인재 장학금 장학생 선발 안내",
+    "organizer": "정읍시민장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-notice",
+        "url": "https://www.yonsei.ac.kr/bbs/sc/58/943629/artclView.do"
+      }
+    ],
+    "sources": [
+      "yonsei-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T02:40:26.887Z",
+    "summary": "우수인재 장학생으로 선발되면 장학금을 받아요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T02:40:26.887Z",
+    "seriesId": "yonsei-notice-936105"
+  },
+  {
+    "id": "yonsei-notice-943529",
+    "title": "2026년 인공지능융합대학 제2회 연세대학교 앵커사업단 스마트 모빌리티 특화 학부 장학생 선발 모집(~7/13)",
+    "organizer": "융합과학기술원 앵커사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [
+        "인공지능융합대학"
+      ],
+      "departments": [
+        "첨단융합공학부"
+      ],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-13"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-notice",
+        "url": "https://www.yonsei.ac.kr/bbs/sc/58/943529/artclView.do"
+      }
+    ],
+    "sources": [
+      "yonsei-notice"
+    ],
+    "postedAt": "2026-06-25",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T02:40:43.052Z",
+    "summary": "스마트 모빌리티 분야 학부 장학생으로 선발되면 최대 240만원의 장학금을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T02:40:43.052Z"
+  },
+  {
+    "id": "dongguk-notice-26765230",
+    "title": "[취업팀 고시반] 2026학년도 2학기 입실 신청안내 (5급(행정, 과학기술) 시험반, 외교관후보자 선발시험반, 변리사 시험반, 언론사 준비반)",
+    "organizer": "취업팀 고시반",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dongguk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생",
+        "휴학생",
+        "졸업생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-06-29",
+      "end": "2026-07-13"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "장학·지원금",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "dongguk-notice",
+        "url": "https://www.dongguk.edu/article/GENERALNOTICES/detail/26765230"
+      }
+    ],
+    "sources": [
+      "dongguk-notice"
+    ],
+    "postedAt": "2026-06-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T13:48:52.430Z",
+    "summary": "고시반에서 시험 준비를 위한 멘토링과 학습 지원, 합격 장학 혜택을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T13:48:52.430Z"
+  },
+  {
+    "id": "dongguk-scholarship-26765407",
+    "title": "[홍보] 2026년 재능키움 장학사업(2차) 안내",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "dongguk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dongguk-scholarship",
+        "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765407"
+      }
+    ],
+    "sources": [
+      "dongguk-scholarship"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T14:22:40.973Z",
+    "summary": "재능키움 장학사업의 장학금 지원에 신청해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T14:22:40.973Z",
+    "seriesId": "dongguk-scholarship-26760470"
+  },
+  {
+    "id": "dongguk-scholarship-26765400",
+    "title": "[홍보] 2026 포스코비전장학 대학생 생활장학금 지원 장학프로그램 안내",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "dongguk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dongguk-scholarship",
+        "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765400"
+      }
+    ],
+    "sources": [
+      "dongguk-scholarship"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T14:22:42.185Z",
+    "summary": "포스코비전장학의 대학생 생활장학금 지원에 신청해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T14:22:42.185Z"
+  },
+  {
+    "id": "dongguk-scholarship-26765393",
+    "title": "[홍보] 2026년 정읍시민장학재단 우수인재 장학금 장학생 선발 안내",
+    "organizer": "정읍시민장학재단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "dongguk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "dongguk-scholarship",
+        "url": "https://www.dongguk.edu/article/JANGHAKNOTICE/detail/26765393"
+      }
+    ],
+    "sources": [
+      "dongguk-scholarship"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T14:22:43.433Z",
+    "summary": "우수인재 장학금을 받을 장학생 선발에 지원해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T14:22:43.433Z",
+    "seriesId": "dongguk-scholarship-26756205"
+  },
+  {
     "id": "snu-startup-66",
     "title": "[서울대학교 시흥캠퍼스] SNU Venture Builder 시즌5 모집(~7/12(일)까지)",
     "organizer": "시흥캠퍼스본부",
