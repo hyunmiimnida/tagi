@@ -31072,7 +31072,7 @@
     "summary": "방학 동안 금융권·디지털 직무 아카데미 교육에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:02:19.455Z",
-    "seriesId": "cau-notice-29220"
+    "seriesId": "cau-notice-27679"
   },
   {
     "id": "cau-notice-29935",
@@ -36658,7 +36658,8 @@
     "postedAt": "2026-05-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:43:05.601Z",
-    "firstSeenAt": "2026-10-01T03:43:05.601Z"
+    "firstSeenAt": "2026-10-01T03:43:05.601Z",
+    "seriesId": "yu-news-6182913"
   },
   {
     "id": "yu-news-230091954",
@@ -38236,7 +38237,7 @@
     "summary": "2학기 장기현장실습 프로그램에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:51:49.492Z",
-    "seriesId": "khu-notice-321575"
+    "seriesId": "khu-startup-502249"
   },
   {
     "id": "khu-notice-322135",
@@ -62714,7 +62715,8 @@
     "collectedAt": "2026-10-03T03:20:24.249Z",
     "summary": "성균관 역사와 박물관을 탐방하고 유생복과 전통 예절을 체험해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T03:20:24.249Z"
+    "firstSeenAt": "2026-10-03T03:20:24.249Z",
+    "seriesId": "skku-notice-136521"
   },
   {
     "id": "skku-notice-136440",
@@ -65375,7 +65377,8 @@
     "collectedAt": "2026-10-03T02:04:24.935Z",
     "summary": "은행·증권·보험 등 금융권 직무를 알려주는 온라인 강의를 들어요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:04:24.935Z"
+    "firstSeenAt": "2026-10-03T02:04:24.935Z",
+    "seriesId": "cau-notice-27679"
   },
   {
     "id": "cau-notice-29773",
@@ -113758,7 +113761,7 @@
     "summary": "여름학기 단기현장실습 프로그램에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:58:13.480Z",
-    "seriesId": "khu-notice-321575"
+    "seriesId": "khu-startup-502249"
   },
   {
     "id": "khu-notice-321524",
@@ -261507,7 +261510,8 @@
     "postedAt": "2025-09-26",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T12:11:22.451Z",
-    "firstSeenAt": "2026-10-01T12:11:22.451Z"
+    "firstSeenAt": "2026-10-01T12:11:22.451Z",
+    "seriesId": "yu-col-chek-226734632"
   },
   {
     "id": "dcu-notice-182502",
@@ -314689,7 +314693,8 @@
     "collectedAt": "2026-10-03T07:24:20.289Z",
     "summary": "해외대학원 진학 정보와 영문 지원서류 작성 전략을 온라인으로 배워요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:24:20.289Z"
+    "firstSeenAt": "2026-10-03T07:24:20.289Z",
+    "seriesId": "skku-notice-130308"
   },
   {
     "id": "skku-notice-130250",
@@ -470722,7 +470727,8 @@
     "collectedAt": "2026-10-03T14:02:05.504Z",
     "summary": "DUICA 입학관리팀의 학생 아르바이트에 지원해요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T14:02:05.504Z"
+    "firstSeenAt": "2026-10-03T14:02:05.504Z",
+    "seriesId": "dongguk-notice-26757874"
   },
   {
     "id": "dongguk-scholarship-26759702",
@@ -596963,7 +596969,8 @@
     "firstSeenAt": "2026-10-01T18:34:31.242Z",
     "aliases": [
       "dcu-notice-176792"
-    ]
+    ],
+    "seriesId": "dcu-notice-176630"
   },
   {
     "id": "dcu-program-176825",
@@ -602728,7 +602735,8 @@
     "collectedAt": "2026-10-04T01:20:28.675Z",
     "summary": "듀이카에서 일할 아르바이트 학생을 모집해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-04T01:20:28.675Z"
+    "firstSeenAt": "2026-10-04T01:20:28.675Z",
+    "seriesId": "dongguk-notice-26757874"
   },
   {
     "id": "dongguk-scholarship-26757615",
@@ -775422,7 +775430,8 @@
     "collectedAt": "2026-10-03T23:06:18.581Z",
     "summary": "기업 면접 준비를 위한 인성 모의면접 경진대회에 참가하거나 참관해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T23:06:18.581Z"
+    "firstSeenAt": "2026-10-03T23:06:18.581Z",
+    "seriesId": "pknu-notice-715227"
   },
   {
     "id": "pknu-notice-715185",
