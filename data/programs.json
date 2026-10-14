@@ -240,7 +240,7 @@
       "end": "2026-11-05"
     },
     "activityPeriod": {
-      "start": "2026-10-27",
+      "start": "2026-10-26",
       "end": "2026-11-13"
     },
     "tags": [
@@ -311,7 +311,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:22.337Z",
+    "collectedAt": "2026-10-14T00:10:48.602Z",
     "firstSeenAt": "2026-09-30T18:31:28.907Z"
   },
   {
@@ -351,7 +351,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:22.337Z",
+    "collectedAt": "2026-10-14T00:10:48.602Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z"
   },
   {
@@ -391,7 +391,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:22.337Z",
+    "collectedAt": "2026-10-14T00:10:48.603Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z",
     "seriesId": "yu-career-1527"
   },
@@ -431,7 +431,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:22.337Z",
+    "collectedAt": "2026-10-14T00:10:48.603Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z",
     "seriesId": "yu-news-85874"
   },
@@ -470,7 +470,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:22.338Z",
+    "collectedAt": "2026-10-14T00:10:48.603Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z"
   },
   {
@@ -509,7 +509,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:22.338Z",
+    "collectedAt": "2026-10-14T00:10:48.603Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z",
     "seriesId": "yu-career-2092"
   },
@@ -549,7 +549,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:22.339Z",
+    "collectedAt": "2026-10-14T00:10:48.603Z",
     "firstSeenAt": "2026-09-30T18:31:28.909Z"
   },
   {
@@ -730,7 +730,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.819Z",
+    "collectedAt": "2026-10-14T00:10:50.150Z",
     "firstSeenAt": "2026-09-30T18:31:29.734Z",
     "seriesId": "yu-career-2480"
   },
@@ -811,7 +811,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.820Z",
+    "collectedAt": "2026-10-14T00:10:50.150Z",
     "firstSeenAt": "2026-09-30T18:31:29.735Z"
   },
   {
@@ -1031,7 +1031,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.821Z",
+    "collectedAt": "2026-10-14T00:10:50.151Z",
     "firstSeenAt": "2026-09-30T18:31:29.736Z"
   },
   {
@@ -1071,7 +1071,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.821Z",
+    "collectedAt": "2026-10-14T00:10:50.151Z",
     "firstSeenAt": "2026-09-30T18:31:29.736Z"
   },
   {
@@ -1110,7 +1110,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.822Z",
+    "collectedAt": "2026-10-14T00:10:50.152Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1149,7 +1149,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.822Z",
+    "collectedAt": "2026-10-14T00:10:50.152Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1188,7 +1188,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.822Z",
+    "collectedAt": "2026-10-14T00:10:50.152Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1227,7 +1227,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.823Z",
+    "collectedAt": "2026-10-14T00:10:50.152Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1266,7 +1266,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.823Z",
+    "collectedAt": "2026-10-14T00:10:50.152Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1305,7 +1305,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.824Z",
+    "collectedAt": "2026-10-14T00:10:50.153Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z",
     "seriesId": "yu-career-2184"
   },
@@ -1345,7 +1345,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.824Z",
+    "collectedAt": "2026-10-14T00:10:50.153Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z"
   },
   {
@@ -1384,7 +1384,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.824Z",
+    "collectedAt": "2026-10-14T00:10:50.153Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z"
   },
   {
@@ -1423,7 +1423,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.824Z",
+    "collectedAt": "2026-10-14T00:10:50.153Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z"
   },
   {
@@ -4478,125 +4478,6 @@
     "collectedAt": "2026-10-01T02:16:51.192Z",
     "firstSeenAt": "2026-10-01T02:16:51.192Z",
     "seriesId": "yu-career-1293"
-  },
-  {
-    "id": "yu-career-2500",
-    "title": "[경북테크노파크] 경북기업 탐방 프로그램(화신, 아진산업 등 8개 기업)",
-    "organizer": "경북테크노파크",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": []
-    },
-    "recruitPeriod": {
-      "start": "2026-05-12",
-      "end": "2026-06-01"
-    },
-    "activityPeriod": {
-      "start": "2026-05-26",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "공공기관",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-career",
-        "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2500"
-      }
-    ],
-    "sources": [
-      "yu-career"
-    ],
-    "postedAt": null,
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T02:16:52.178Z",
-    "firstSeenAt": "2026-10-01T02:16:52.178Z"
-  },
-  {
-    "id": "yu-career-2519",
-    "title": "2026 하계방학 직업상담사 양성과정",
-    "organizer": "학생성공처",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": []
-    },
-    "recruitPeriod": {
-      "start": "2026-06-09",
-      "end": "2026-07-01"
-    },
-    "activityPeriod": {
-      "start": "2026-07-06",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "학교",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-career",
-        "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2519"
-      }
-    ],
-    "sources": [
-      "yu-career"
-    ],
-    "postedAt": null,
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T02:16:52.178Z",
-    "firstSeenAt": "2026-10-01T02:16:52.178Z"
-  },
-  {
-    "id": "yu-career-2546",
-    "title": "[추천채용 연계] (주)태영필트레이션 채용설명회 및 현장면접",
-    "organizer": "(주)태영필트레이션",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": []
-    },
-    "recruitPeriod": {
-      "start": "2026-07-09",
-      "end": "2026-07-14"
-    },
-    "activityPeriod": {
-      "start": "2026-07-15",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "박람회·설명회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-career",
-        "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2546"
-      }
-    ],
-    "sources": [
-      "yu-career"
-    ],
-    "postedAt": null,
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T02:16:52.178Z",
-    "firstSeenAt": "2026-10-01T02:16:52.178Z",
-    "seriesId": "yu-news-230682802"
   },
   {
     "id": "yu-news-231893326",
@@ -13675,51 +13556,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-230682802",
-    "title": "[추천채용 연계] (주)태영필트레이션 채용설명회 및 현장면접",
-    "organizer": "(주)태영필트레이션",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": "2026-07-15",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "박람회·설명회"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230682802"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-07-07",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:39:44.891Z",
-    "firstSeenAt": "2026-10-01T03:39:44.891Z",
-    "seriesId": "yu-news-230682802",
-    "summary": "태영필트레이션 채용설명회를 듣고 현장면접에 참여해요."
-  },
-  {
     "id": "yu-news-230682794",
     "title": "★ 2026학년도 FAST-2차 교내어학특강 모집 안내 (6주 과정)★",
     "organizer": "한국어·국제언어교육원",
@@ -14312,51 +14148,6 @@
     "firstSeenAt": "2026-10-01T03:40:57.588Z",
     "summary": "AI로 경북 지역문제를 해결하는 연구에 참여하고 연구활동 비용을 지원받아요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-230401501",
-    "title": "[진로취업지원팀] 2026 하계방학 직무아카데미 (직업상담사 양성과정) 참여자 모집 안내",
-    "organizer": "진로취업지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-06-29"
-    },
-    "activityPeriod": {
-      "start": "2026-07-06",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=230401501"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-06-17",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T03:41:00.578Z",
-    "firstSeenAt": "2026-10-01T03:41:00.578Z",
-    "seriesId": "yu-career-625",
-    "summary": "직업상담사 양성교육을 통해 고용서비스 분야의 상담 실무 역량을 키워요"
   },
   {
     "id": "yu-news-230387365",
@@ -27414,49 +27205,6 @@
     "noApplication": false
   },
   {
-    "id": "kmu-scholarship-268651",
-    "title": "[교외] 2026년 제주평생교육장학진흥원 미래이음 장학금 장학생 선발",
-    "organizer": "(재)제주평생교육장학진흥원",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "kmu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-07-01",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "kmu-scholarship",
-        "url": "https://www.kmu.ac.kr/uni/main/page.jsp?cmd=2&hasToken=1&parm_bod_uid=268651&mnu_uid=145"
-      }
-    ],
-    "sources": [
-      "kmu-scholarship"
-    ],
-    "postedAt": "2026-07-06",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T14:31:01.558Z",
-    "firstSeenAt": "2026-10-01T14:31:01.558Z",
-    "summary": "미래이음 장학생으로 선발되면 생활비 장학금 500만 원을 받아요."
-  },
-  {
     "id": "kmu-scholarship-261685",
     "title": "[재안내]2026-1학기 특별 외국어성적장학금 신청 안내(신청 기준 재안내)",
     "organizer": "장학복지팀",
@@ -35868,50 +35616,6 @@
     "firstSeenAt": "2026-10-01T18:08:00.409Z"
   },
   {
-    "id": "dcu-notice-185883",
-    "title": "[혁신] 2026학년도 하계 방학 집단상담 참가자 모집 [비교과]",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dcu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-07-06",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "상담·심리"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-notice",
-        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NTg4MyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-notice"
-    ],
-    "postedAt": "2026-07-07",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T18:08:07.414Z",
-    "summary": "5주 동안 주 1회 집단상담에 참여하고 참여 시간만큼 스텔라를 받아요.",
-    "firstSeenAt": "2026-10-01T18:08:07.414Z",
-    "seriesId": "dcu-notice-172972"
-  },
-  {
     "id": "dcu-notice-185842",
     "title": "[2차년도 앵커사업] '성공적인 직무 고도화 완성하기' 온라인 강의 수강(기간 연장)",
     "organizer": "앵커 평생교육체제혁신사업단",
@@ -39157,53 +38861,6 @@
     "firstSeenAt": "2026-10-01T19:12:43.387Z"
   },
   {
-    "id": "dcu-program-185904",
-    "title": "[특강][취창직전문관] 알.잘.딱.깔.센 AI 취업 부스터(①대인관계&팔로워십 강점검사 ②스마트 취업준비법)",
-    "organizer": "취창직전문관",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dcu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-07-09",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "장학·지원금",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-program",
-        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NTkwNCZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-program"
-    ],
-    "postedAt": "2026-07-09",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T19:12:44.524Z",
-    "summary": "강점검사와 스마트 취업준비법을 배우고 참여수당을 받아요.",
-    "firstSeenAt": "2026-10-01T19:12:44.524Z"
-  },
-  {
     "id": "dcu-program-185903",
     "title": "[공모전](스텔라)졸업생 특화 프로그램 사업 로고 디자인 및 슬로건 공모전 안내",
     "organizer": "대학일자리플러스센터",
@@ -40150,49 +39807,6 @@
     "firstSeenAt": "2026-10-01T19:18:44.727Z",
     "seriesId": "dcu-notice-172402",
     "noApplication": false
-  },
-  {
-    "id": "dcu-program-180915",
-    "title": "[SAP Korea] CODE 아카데미 1기 모집",
-    "organizer": "SAP Korea",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "dcu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2025-07-01",
-      "end": "2025-08-25"
-    },
-    "activityPeriod": {
-      "start": "2025-10-21",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "기업",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "dcu-program",
-        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4MDkxNSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
-      }
-    ],
-    "sources": [
-      "dcu-program"
-    ],
-    "postedAt": "2025-08-06",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-01T19:24:37.465Z",
-    "summary": "SAP Korea CODE 아카데미 교육과정에 참여해요",
-    "firstSeenAt": "2026-10-01T19:24:37.465Z"
   },
   {
     "id": "dcu-scholarship-186339",
@@ -45119,7 +44733,8 @@
     "collectedAt": "2026-10-02T12:55:22.021Z",
     "summary": "제조창업팀이 설계·해석 보완이나 역설계 지원을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T12:55:22.021Z"
+    "firstSeenAt": "2026-10-02T12:55:22.021Z",
+    "seriesId": "korea-startup-1071"
   },
   {
     "id": "korea-startup-1070",
@@ -55547,60 +55162,6 @@
     "summary": "바이오·메디컬 임상·인허가 컨설팅 지원에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T16:53:06.602Z"
-  },
-  {
-    "id": "dongguk-startup-636",
-    "title": "C-FORUM 2026 행사 안내 (7.15(수))",
-    "organizer": "창업기술본부",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dongguk"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-07-15",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "학교",
-      "창업",
-      "박람회·설명회",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "dongguk-startup",
-        "url": "https://dvic.dongguk.edu/dvic2_2/636"
-      },
-      {
-        "sourceId": "dongguk-notice",
-        "url": "https://www.dongguk.edu/article/GENERALNOTICES/detail/26765287"
-      }
-    ],
-    "sources": [
-      "dongguk-startup",
-      "dongguk-notice"
-    ],
-    "postedAt": "2026-07-01",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-02T16:53:08.846Z",
-    "summary": "창업 생태계와 투자·창업가 이야기를 듣는 특별포럼에 참여해요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-02T16:53:08.846Z",
-    "aliases": [
-      "dongguk-notice-26765287"
-    ]
   },
   {
     "id": "dongguk-haksa-26766431",
@@ -66967,48 +66528,6 @@
     "firstSeenAt": "2026-10-02T18:04:24.176Z"
   },
   {
-    "id": "pknu-notice-725476",
-    "title": "[노션으로 시작하는 나의 디지털 습관] 특강 안내(2026.7.15.(수) 14:00 ~ 18:00)",
-    "organizer": "AI디지털배움터사업단, ㈜BNK에듀케이션, 한국능률협회",
-    "organizerType": "기업",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": "일반인 및 학생 누구나"
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-14"
-    },
-    "activityPeriod": {
-      "start": "2026-07-15",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "기업",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "pknu-notice",
-        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725476"
-      }
-    ],
-    "sources": [
-      "pknu-notice"
-    ],
-    "postedAt": "2026-07-07",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-02T18:04:25.578Z",
-    "summary": "노션으로 디지털 습관을 만드는 방법을 배우는 특강을 들어요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:04:25.578Z"
-  },
-  {
     "id": "pknu-notice-725470",
     "title": "☆★삼성전자, 기아자동차, 포스코스틸리온, KT 멘토가 참여하는 부경커리어멘토단 멘토링 캠프:이공계/대기업 참여자 추가 모집★☆",
     "organizer": "학생성공지원과",
@@ -67481,53 +67000,6 @@
     "summary": "외국인 학생들과 영어로 계절학기 수업을 듣고 수업료 전액을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:04:59.606Z"
-  },
-  {
-    "id": "pknu-notice-725341",
-    "title": "★★기업탐방 프로그램(수·해양계) 한국해양수산개발원[KMI] 모집 안내(7/7까지 모집)★★",
-    "organizer": "학생성공지원과",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "pknu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-07-01",
-      "end": "2026-07-07"
-    },
-    "activityPeriod": {
-      "start": "2026-07-15",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "pknu-notice",
-        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725341"
-      }
-    ],
-    "sources": [
-      "pknu-notice"
-    ],
-    "postedAt": "2026-06-26",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-02T18:05:02.434Z",
-    "summary": "한국해양수산개발원을 방문해 현직자 특강과 취업 교육을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:05:02.434Z"
   },
   {
     "id": "pknu-notice-725330",
@@ -70294,57 +69766,6 @@
     "firstSeenAt": "2026-10-02T18:39:44.397Z"
   },
   {
-    "id": "snu-startup-68",
-    "title": "[서울대학교 RISE사업단 캠퍼스타운] 외국인 유학생 창업지원프로그램 2026 SNU K-STARTUP LAUNCHPAD(~7/15(수)까지)",
-    "organizer": "RISE사업단 캠퍼스타운",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "snu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생",
-        "휴학생",
-        "졸업생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-06-29",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "창업",
-      "교육·특강",
-      "멘토링·컨설팅",
-      "해외·글로벌"
-    ],
-    "links": [
-      {
-        "sourceId": "snu-startup",
-        "url": "https://startup.snu.ac.kr/bbs/board.php?bo_table=sub5_1&wr_id=68"
-      }
-    ],
-    "sources": [
-      "snu-startup"
-    ],
-    "postedAt": "2026-07-06",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-02T18:39:46.591Z",
-    "summary": "외국인 유학생이 창업 교육과 멘토링, 컨설팅을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:39:46.591Z"
-  },
-  {
     "id": "snu-startup-63",
     "title": "2026학년도 2학기 창업학점제 신청 안내 (6. 24.(수) ~ 7. 17.(금) 23:59까지)",
     "organizer": "창업지원단",
@@ -72390,52 +71811,6 @@
     "firstSeenAt": "2026-10-02T18:42:28.800Z"
   },
   {
-    "id": "snu-student-312",
-    "title": "(재)제주평생교육장학진흥원 2026년 미래이음 장학금 장학생 추가모집 안내",
-    "organizer": "(재)제주평생교육장학진흥원",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생"
-      ],
-      "openTo": "도외 소재 대학 재학 39세 이하 제주 4·3유족 등"
-    },
-    "recruitPeriod": {
-      "start": "2026-07-01",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "snu-student",
-        "url": "https://student.snu.ac.kr/%ec%86%8c%ec%8b%9d%c2%b7%ec%95%8c%eb%a6%bc/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/?mod=document&uid=312"
-      }
-    ],
-    "sources": [
-      "snu-student"
-    ],
-    "postedAt": "2026-07-07",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-02T18:42:33.254Z",
-    "summary": "제주 4·3유족·독립유공자 후손 대학생이 주거·생활비 장학금 500만 원을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:42:33.254Z"
-  },
-  {
     "id": "snu-student-310",
     "title": "2026년도 사단법인 청권사 석사·박사 학위 논문 장학생 선발 안내",
     "organizer": "사단법인 청권사",
@@ -72480,52 +71855,6 @@
     "summary": "석·박사 논문 연구에 쓸 장학금을 300만~500만 원 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:42:36.333Z"
-  },
-  {
-    "id": "snu-student-309",
-    "title": "2026년도 서암윤세영재단 윤세영 스칼라십 장학생 선발 안내",
-    "organizer": "서암윤세영재단",
-    "organizerType": "기업",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "1학년"
-      ],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": "국내 4년제 대학 1학년 신입생"
-    },
-    "recruitPeriod": {
-      "start": "2026-07-01",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "snu-student",
-        "url": "https://student.snu.ac.kr/%ec%86%8c%ec%8b%9d%c2%b7%ec%95%8c%eb%a6%bc/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/?mod=document&uid=309"
-      }
-    ],
-    "sources": [
-      "snu-student"
-    ],
-    "postedAt": "2026-07-01",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-02T18:42:37.811Z",
-    "summary": "등록금 전액과 학업보조금을 7학기 동안 지원받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:42:37.811Z"
   },
   {
     "id": "snu-student-301",
@@ -79691,53 +79020,6 @@
     "firstSeenAt": "2026-10-02T18:53:45.182Z"
   },
   {
-    "id": "sogang-scholarship-550471",
-    "title": "[교외] 서암윤세영재단 장학생 선발 안내(7/15마감, 1학년, 등록금 전액 및 학업보조금 월 50만원, 교환학생 체재비 700만원)",
-    "organizer": "서암윤세영재단",
-    "organizerType": "기업",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "1학년"
-      ],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": "4년제 대학교 1학년 재학생"
-    },
-    "recruitPeriod": {
-      "start": "2026-07-01",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "sogang-scholarship",
-        "url": "https://www.sogang.ac.kr/ko/detail/550471?bbsConfigFk=141"
-      }
-    ],
-    "sources": [
-      "sogang-scholarship"
-    ],
-    "postedAt": "2026-07-07",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-02T18:53:46.220Z",
-    "summary": "1학년 학생이 졸업까지 등록금과 학업보조금, 교환학생 체재비를 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:53:46.220Z",
-    "seriesId": "sogang-scholarship-544309"
-  },
-  {
     "id": "sogang-scholarship-550470",
     "title": "[교외] 삼일장학회 장학생 선발 안내(7/21 마감, 생활비 250만원)",
     "organizer": "삼일장학회",
@@ -81620,48 +80902,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-02T19:05:08.329Z",
     "seriesId": "korea-startup-1079"
-  },
-  {
-    "id": "korea-startup-1075",
-    "title": "[포스코그룹] 제 32기 포스코 아이디어 마켓플레이스(POSCO IMP) 투자트랙 기업 모집(~7/15 23:59)",
-    "organizer": "포스코그룹",
-    "organizerType": "기업",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": "예비·초기 스타트업"
-    },
-    "recruitPeriod": {
-      "start": "2026-07-03",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "창업"
-    ],
-    "links": [
-      {
-        "sourceId": "korea-startup",
-        "url": "https://kustartup.korea.ac.kr/program/programView.do?seq=1075"
-      }
-    ],
-    "sources": [
-      "korea-startup"
-    ],
-    "postedAt": "2026-07-03",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-02T19:05:12.709Z",
-    "summary": "최대 5억원 투자와 보육 프로그램을 받을 스타트업을 뽑아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-02T19:05:12.709Z"
   },
   {
     "id": "korea-startup-1072",
@@ -86146,50 +85386,6 @@
     "firstSeenAt": "2026-10-02T19:19:14.701Z"
   },
   {
-    "id": "korea-scholarship-000100000000003777",
-    "title": "[교외-7/15]2026년 (재)제주평생교육장학진흥 미래이음 장학금 장학생 선발 안내(재단지원)",
-    "organizer": "제주평생교육장학진흥원",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "korea"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "korea-scholarship",
-        "url": "https://www.korea.ac.kr/portalBoard/ko/3/000100000000003777/portalBoardView.do"
-      }
-    ],
-    "sources": [
-      "korea-scholarship"
-    ],
-    "postedAt": "2026-07-07",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-02T19:19:15.885Z",
-    "summary": "제주4·3유족·독립유공자 후손이 미래이음 장학금을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-02T19:19:15.885Z"
-  },
-  {
     "id": "korea-scholarship-000100000000003775",
     "title": "[교외-10/30]2026학년도 의암손병희선생계승사업회 의암손병희 우수논문 장학생 선발 안내(재단지원)",
     "organizer": "의암손병희선생계승사업회",
@@ -86277,56 +85473,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-02T19:19:19.453Z",
     "seriesId": "korea-scholarship-000100000000003589"
-  },
-  {
-    "id": "korea-scholarship-000100000000003761",
-    "title": "[교외-7/15] (신입생) 2026학년도 서암윤세영재단 신규장학생 선발 안내(재단지원)",
-    "organizer": "서암윤세영재단",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "korea"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "1학년"
-      ],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생"
-      ],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-07-01",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "korea-scholarship",
-        "url": "https://www.korea.ac.kr/portalBoard/ko/3/000100000000003761/portalBoardView.do"
-      }
-    ],
-    "sources": [
-      "korea-scholarship"
-    ],
-    "postedAt": "2026-07-01",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-02T19:19:20.632Z",
-    "summary": "신입생이 등록금 전액과 학업보조금을 지원받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-02T19:19:20.632Z"
   },
   {
     "id": "korea-scholarship-000100000000003751",
@@ -90310,50 +89456,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T01:48:26.442Z",
     "seriesId": "hanyang-notice-98450"
-  },
-  {
-    "id": "hanyang-notice-110602",
-    "title": "[포천시] 제6기 포천시립박물관 건립 지원 대학생 서포터즈 모집(~7/15)",
-    "organizer": "포천시",
-    "organizerType": "지자체",
-    "target": {
-      "schools": [
-        "hanyang"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "지자체",
-      "서포터즈·기자단"
-    ],
-    "links": [
-      {
-        "sourceId": "hanyang-notice",
-        "url": "https://www.hanyang.ac.kr/notice_all?p_p_id=kr_ac_hanyang_noticeBoard_web_portlet_NoticeBoardPortlet&p_p_lifecycle=0&_kr_ac_hanyang_noticeBoard_web_portlet_NoticeBoardPortlet_action=view_message&_kr_ac_hanyang_noticeBoard_web_portlet_NoticeBoardPortlet_entryId=110602"
-      }
-    ],
-    "sources": [
-      "hanyang-notice"
-    ],
-    "postedAt": "2026-06-22",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T01:48:45.935Z",
-    "summary": "포천시립박물관 건립을 돕는 대학생 서포터즈로 활동해요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:48:45.935Z"
   },
   {
     "id": "hanyang-notice-110601",
@@ -96477,53 +95579,6 @@
     "firstSeenAt": "2026-10-03T02:01:21.005Z"
   },
   {
-    "id": "cau-notice-30002",
-    "title": "중대신문사 96기 수습기자 모집",
-    "organizer": "중대신문사",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "cau"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "서포터즈·기자단"
-    ],
-    "links": [
-      {
-        "sourceId": "cau-notice",
-        "url": "https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=4&BBS_SEQ=30002"
-      }
-    ],
-    "sources": [
-      "cau-notice"
-    ],
-    "postedAt": "2026-07-13",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:01:22.277Z",
-    "summary": "대학신문 수습기자로 취재·기획·편집을 경험하고 장학금과 현장실습학점을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:01:22.277Z",
-    "seriesId": "cau-notice-28508"
-  },
-  {
     "id": "cau-notice-29998",
     "title": "중앙대학교 대학혁신지원사업 홍보 서포터즈 ‘다온’ 모집",
     "organizer": "교육혁신원",
@@ -96935,53 +95990,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:02:11.512Z",
     "seriesId": "cau-notice-27959"
-  },
-  {
-    "id": "cau-notice-29937",
-    "title": "2026학년도 하계 English Clinic Advanced(ECA) 시행 안내",
-    "organizer": "교양대학",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "cau"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-06-18",
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-06-24",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "학교",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "cau-notice",
-        "url": "https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=4&BBS_SEQ=29937"
-      }
-    ],
-    "sources": [
-      "cau-notice"
-    ],
-    "postedAt": "2026-06-17",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:02:16.927Z",
-    "summary": "원어민 교수와 1:1 영어 튜터링을 무료로 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:02:16.927Z",
-    "seriesId": "cau-notice-27903"
   },
   {
     "id": "cau-notice-29996",
@@ -97461,52 +96469,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:01:48.820Z",
     "seriesId": "cau-notice-28206"
-  },
-  {
-    "id": "cau-notice-29968",
-    "title": "서암윤세영재단 2026년도 윤세영 스칼라십 신규 장학생 선발 공고",
-    "organizer": "서암윤세영재단",
-    "organizerType": "기업",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "1학년"
-      ],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": "국내 4년제 대학 1학년 신입생"
-    },
-    "recruitPeriod": {
-      "start": "2026-07-01",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "cau-notice",
-        "url": "https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=4&BBS_SEQ=29968"
-      }
-    ],
-    "sources": [
-      "cau-notice"
-    ],
-    "postedAt": "2026-07-01",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:01:50.104Z",
-    "summary": "신입생이 등록금과 학업보조금, 교환학생 체재비를 지원받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:01:50.104Z"
   },
   {
     "id": "cau-notice-29967",
@@ -98125,101 +97087,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:03:04.625Z",
     "seriesId": "cau-notice-28867"
-  },
-  {
-    "id": "cau-notice-29888",
-    "title": "2026학년도 산학협동재단 국내 외국인 근로자 자녀 장학생 선발 공고",
-    "organizer": "산학협동재단",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "cau"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "cau-notice",
-        "url": "https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=4&BBS_SEQ=29888"
-      }
-    ],
-    "sources": [
-      "cau-notice"
-    ],
-    "postedAt": "2026-05-28",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:03:09.201Z",
-    "summary": "외국인 근로자 자녀가 2학기 등록금을 지원받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:03:09.201Z"
-  },
-  {
-    "id": "cau-notice-29887",
-    "title": "2026학년도 산학협동재단 디딤돌 장학생 선발 공고",
-    "organizer": "산학협동재단",
-    "organizerType": "기업",
-    "target": {
-      "schools": [
-        "cau"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "1학년"
-      ],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "cau-notice",
-        "url": "https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=4&BBS_SEQ=29887"
-      }
-    ],
-    "sources": [
-      "cau-notice"
-    ],
-    "postedAt": "2026-05-28",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:03:10.794Z",
-    "summary": "경제적으로 어려운 신입생이 매월 80만원 장학금을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:03:10.794Z",
-    "seriesId": "cau-notice-27906"
   },
   {
     "id": "cau-notice-29881",
@@ -99042,49 +97909,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:05:06.194Z",
     "seriesId": "cau-notice-27533"
-  },
-  {
-    "id": "cau-notice-29754",
-    "title": "2026-하계 중앙대학교 차세대반도체학과 학부생 연구 인턴 A/D 신청 안내",
-    "organizer": "혁신융합대학 사업단",
-    "organizerType": "학교",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": "타 대학 학생 (학점교류 가능)"
-    },
-    "recruitPeriod": {
-      "start": "2026-04-06",
-      "end": "2026-04-16"
-    },
-    "activityPeriod": {
-      "start": "2026-06-24",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "학교",
-      "인턴·일경험"
-    ],
-    "links": [
-      {
-        "sourceId": "cau-notice",
-        "url": "https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=4&BBS_SEQ=29754"
-      }
-    ],
-    "sources": [
-      "cau-notice"
-    ],
-    "postedAt": "2026-04-06",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:05:16.708Z",
-    "summary": "여름방학에 서울캠퍼스 연구실에서 연구인턴 활동을 하며 1학점을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:05:16.708Z",
-    "seriesId": "cau-notice-28707"
   },
   {
     "id": "cau-notice-29724",
@@ -109410,51 +108234,6 @@
     "firstSeenAt": "2026-10-03T02:25:42.482Z"
   },
   {
-    "id": "skku-notice-138490",
-    "title": "2027/28년 독일정부초청장학생(DAAD 장학생) 선발",
-    "organizer": "DAAD 한국학술교류처",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "skku"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금",
-      "해외·글로벌"
-    ],
-    "links": [
-      {
-        "sourceId": "skku-notice",
-        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=138490"
-      }
-    ],
-    "sources": [
-      "skku-notice"
-    ],
-    "postedAt": "2026-07-15",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:25:43.627Z",
-    "summary": "독일 석·박사 과정과 연구 체류를 위한 장학금을 지원받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:25:43.627Z"
-  },
-  {
     "id": "skku-notice-137603",
     "title": "[인공지능혁신융합대학사업단] 2026 하계 AIB 학생제안 2차 비교과 프로그램 신청 안내",
     "organizer": "인공지능혁신융합대학사업단",
@@ -110253,52 +109032,6 @@
     "seriesId": "skku-notice-136096"
   },
   {
-    "id": "skku-notice-138173",
-    "title": "의상학과 국가근로장학생 모집(~07/15)",
-    "organizer": "예술대학 의상학과",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "skku"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "skku-notice",
-        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=138173"
-      }
-    ],
-    "sources": [
-      "skku-notice"
-    ],
-    "postedAt": "2026-07-13",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:25:57.303Z",
-    "summary": "의상학과 사무실에서 행정을 보조하며 근로장학금을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:25:57.303Z"
-  },
-  {
     "id": "skku-notice-138361",
     "title": "2026년 정읍시민장학재단 우수인재 장학금 선발안내",
     "organizer": "정읍시민장학재단",
@@ -110875,50 +109608,6 @@
     "firstSeenAt": "2026-10-03T02:26:47.161Z"
   },
   {
-    "id": "skku-notice-138170",
-    "title": "2026년도 (재)제주평생교육장학진흥원 '미래 이음 장학생' 추가 모집 안내",
-    "organizer": "제주평생교육장학진흥원",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "skku"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-07-01",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "skku-notice",
-        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=138170"
-      }
-    ],
-    "sources": [
-      "skku-notice"
-    ],
-    "postedAt": "2026-07-02",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:26:48.293Z",
-    "summary": "생활비 지원형 미래이음 장학금 500만원을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:26:48.293Z"
-  },
-  {
     "id": "skku-notice-138169",
     "title": "[학생성공센터 대학원] 2026 대학원 3MT 학술 커뮤니케이션 역량 강화 워크숍(기초, 심화)",
     "organizer": "학생성공센터",
@@ -110968,58 +109657,6 @@
     "firstSeenAt": "2026-10-03T02:26:49.428Z",
     "aliases": [
       "skku-success-64920"
-    ]
-  },
-  {
-    "id": "skku-notice-138166",
-    "title": "[학생성공센터 대학원] 2026 대학원 AI 활용 연구방법론(기초, 심화)",
-    "organizer": "학생성공센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "skku"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-07"
-    },
-    "activityPeriod": {
-      "start": "2026-07-08",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "학교",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "skku-notice",
-        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=138166"
-      },
-      {
-        "sourceId": "skku-success",
-        "url": "https://success.skku.edu/success/notice.do?mode=view&articleNo=64919"
-      }
-    ],
-    "sources": [
-      "skku-notice",
-      "skku-success"
-    ],
-    "postedAt": "2026-07-02",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:26:50.576Z",
-    "summary": "AI를 활용한 논문 작성과 통계 이해를 배우는 대학원생 워크숍이에요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:26:50.576Z",
-    "aliases": [
-      "skku-success-64919"
     ]
   },
   {
@@ -112000,50 +110637,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:27:23.032Z",
     "seriesId": "skku-notice-133568"
-  },
-  {
-    "id": "skku-notice-138058",
-    "title": "2026년도 윤세영 스칼라십 신규 장학생 선발 안내",
-    "organizer": "서암 윤세영 재단",
-    "organizerType": "기업",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "1학년"
-      ],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": "전국 4년제 대학 1학년"
-    },
-    "recruitPeriod": {
-      "start": "2026-07-01",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "기업",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "skku-notice",
-        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=138058"
-      }
-    ],
-    "sources": [
-      "skku-notice"
-    ],
-    "postedAt": "2026-06-29",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:27:24.132Z",
-    "summary": "등록금과 학업보조금, 교환학생 체재비를 지원받는 장학생이 돼요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:27:24.132Z"
   },
   {
     "id": "skku-notice-138048",
@@ -116992,99 +115585,6 @@
     "summary": "수학 수준을 진단하고 AI 추천 학습으로 부족한 개념을 보완해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T02:40:32.357Z"
-  },
-  {
-    "id": "yonsei-notice-943575",
-    "title": "2026 서암 윤세영 스칼라십 신규 장학생 선발 안내",
-    "organizer": "학생지원팀(장학)",
-    "organizerType": "학교",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "1학년"
-      ],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생"
-      ],
-      "openTo": "대한민국 국적의 국내 4년제 대학생"
-    },
-    "recruitPeriod": {
-      "start": "2026-07-01",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "yonsei-notice",
-        "url": "https://www.yonsei.ac.kr/bbs/sc/58/943575/artclView.do"
-      }
-    ],
-    "sources": [
-      "yonsei-notice"
-    ],
-    "postedAt": "2026-07-02",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:40:35.553Z",
-    "summary": "등록금 전액과 월 50만원 학업 보조금, 교환학생 체재비를 지원받아요.",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:40:35.553Z",
-    "seriesId": "yonsei-notice-936092"
-  },
-  {
-    "id": "yonsei-notice-943574",
-    "title": "2026년 미래이음 장학금 장학생 추가 선발 안내",
-    "organizer": "(재)제주평생교육장학진흥원",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": "도외 소재 대학의 39세 이하 학생"
-    },
-    "recruitPeriod": {
-      "start": "2026-07-01",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "yonsei-notice",
-        "url": "https://www.yonsei.ac.kr/bbs/sc/58/943574/artclView.do"
-      }
-    ],
-    "sources": [
-      "yonsei-notice"
-    ],
-    "postedAt": "2026-07-02",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T02:40:36.604Z",
-    "summary": "제주 4·3 유족이나 독립유공자 후손이 주거·생활비 장학금을 받아요.",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T02:40:36.604Z"
   },
   {
     "id": "yonsei-notice-943568",
@@ -136167,50 +134667,6 @@
     "firstSeenAt": "2026-10-03T07:49:41.929Z"
   },
   {
-    "id": "khu-notice-322318",
-    "title": "「2026 연구 아이디어 기술사업화 챌린지」 참가자 모집 공고 안내",
-    "organizer": "보건복지부, 한국보건산업진흥원",
-    "organizerType": "정부부처",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": "39세 이하 대학(원)생·박사후연구원 등"
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": "2026-06-24",
-      "end": "2026-07-03"
-    },
-    "tags": [
-      "정부부처",
-      "창업",
-      "장학·지원금",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "khu-notice",
-        "url": "https://www.khu.ac.kr/kor/user/bbs/BMSR00040/view.do?menuNo=200316&boardId=322318"
-      }
-    ],
-    "sources": [
-      "khu-notice"
-    ],
-    "postedAt": "2026-06-25",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T07:49:45.828Z",
-    "summary": "바이오헬스 연구의 사업화 아이디어를 겨루고 참가경비와 수상금을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:49:45.828Z"
-  },
-  {
     "id": "khu-notice-322311",
     "title": "[미래인재센터(국제)] 2026-하계방학 대기업 및 공기업 직무적성검사 통합특강 참여자 모집 안내",
     "organizer": "S취업컨설팅",
@@ -136659,51 +135115,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:49:30.107Z",
     "seriesId": "khu-notice-318916"
-  },
-  {
-    "id": "khu-notice-322288",
-    "title": "[포천시립박물관] 제6기 포천시립박물관 건립 지원 대학생 서포터즈 모집",
-    "organizer": "포천시립박물관",
-    "organizerType": "지자체",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": "서울·경기 소재 대학생"
-    },
-    "recruitPeriod": {
-      "start": "2026-06-19",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "지자체",
-      "봉사",
-      "장학·지원금",
-      "서포터즈·기자단"
-    ],
-    "links": [
-      {
-        "sourceId": "khu-notice",
-        "url": "https://www.khu.ac.kr/kor/user/bbs/BMSR00040/view.do?menuNo=200316&boardId=322288"
-      }
-    ],
-    "sources": [
-      "khu-notice"
-    ],
-    "postedAt": "2026-06-23",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T07:50:47.037Z",
-    "summary": "박물관 건립을 돕는 홍보와 현장 캠페인에 참여하고 활동비를 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:50:47.037Z",
-    "seriesId": "khu-notice-318824"
   },
   {
     "id": "khu-notice-322286",
@@ -137828,54 +136239,6 @@
     "seriesId": "khu-notice-317002"
   },
   {
-    "id": "khu-notice-322031",
-    "title": "[⋆모집중] 2026년 경희대학교 공자아카데미 중국(상하이) 여름 캠프",
-    "organizer": "공자아카데미",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "khu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "휴학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-05-25",
-      "end": "2026-06-07"
-    },
-    "activityPeriod": {
-      "start": "2026-07-06",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "학교",
-      "해외·글로벌",
-      "교육·특강",
-      "해외탐방"
-    ],
-    "links": [
-      {
-        "sourceId": "khu-notice",
-        "url": "https://www.khu.ac.kr/kor/user/bbs/BMSR00040/view.do?menuNo=200316&boardId=322031"
-      }
-    ],
-    "sources": [
-      "khu-notice"
-    ],
-    "postedAt": "2026-05-26",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T07:52:44.796Z",
-    "summary": "상하이에서 중국어를 배우고 문화수업과 현지 탐방에 참여해요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:52:44.796Z"
-  },
-  {
     "id": "khu-notice-322003",
     "title": "[제천국제음악영화제] 2026년 제천국제음악영화제 자원활동가 JIMFFree 모집",
     "organizer": "제천국제음악영화제",
@@ -138145,50 +136508,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T07:54:27.048Z",
     "seriesId": "khu-notice-319025"
-  },
-  {
-    "id": "khu-notice-321891",
-    "title": "「2026 연구 아이디어 기술사업화 챌린지」 참가자 모집 사전공고 안내",
-    "organizer": "보건복지부, 한국보건산업진흥원",
-    "organizerType": "정부부처",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": "39세 이하 대학(원)생·연구자 등"
-    },
-    "recruitPeriod": {
-      "start": "2026-06-10",
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "정부부처",
-      "창업",
-      "장학·지원금",
-      "공모전·대회"
-    ],
-    "links": [
-      {
-        "sourceId": "khu-notice",
-        "url": "https://www.khu.ac.kr/kor/user/bbs/BMSR00040/view.do?menuNo=200316&boardId=321891"
-      }
-    ],
-    "sources": [
-      "khu-notice"
-    ],
-    "postedAt": "2026-05-12",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T07:55:04.909Z",
-    "summary": "바이오헬스 연구 아이디어의 사업화 가능성을 겨루고 상금을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:55:04.909Z"
   },
   {
     "id": "khu-notice-321855",
@@ -143098,49 +141417,6 @@
     "seriesId": "dongguk-notice-26755411"
   },
   {
-    "id": "dongguk-notice-26764877",
-    "title": "[서울RISE] 2026 열린커리어랩 여행업오퍼레이터 양성과정 참여자 모집 (~5.29(금))",
-    "organizer": "비컨힐컴퍼니",
-    "organizerType": "기업",
-    "target": {
-      "schools": [],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": "서울 거주 만 30~55세 구직자"
-    },
-    "recruitPeriod": {
-      "start": "2026-05-13",
-      "end": "2026-05-29"
-    },
-    "activityPeriod": {
-      "start": "2026-06-08",
-      "end": "2026-07-15"
-    },
-    "tags": [
-      "기업",
-      "취업·채용",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "dongguk-notice",
-        "url": "https://www.dongguk.edu/article/GENERALNOTICES/detail/26764877"
-      }
-    ],
-    "sources": [
-      "dongguk-notice"
-    ],
-    "postedAt": "2026-05-26",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T13:51:02.471Z",
-    "summary": "여행업오퍼레이터 교육을 무료로 받고 여행기업 연계 취업지원을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T13:51:02.471Z"
-  },
-  {
     "id": "dongguk-notice-26764117",
     "title": "[동국대학교일산병원 개방형실험실] 창업기업 임상전문가(의사, 간호사 등) 자문 지원 프로그램 안내 (~11.06)",
     "organizer": "동국대학교일산병원 개방형실험실",
@@ -144402,51 +142678,6 @@
     "seriesId": "dongguk-haksa-26758562"
   },
   {
-    "id": "dongguk-haksa-26765411",
-    "title": "2026학년도 2학기 가톨릭대학교 수학 안내",
-    "organizer": "가톨릭대학교",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dongguk"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "dongguk-haksa",
-        "url": "https://www.dongguk.edu/article/HAKSANOTICE/detail/26765411"
-      }
-    ],
-    "sources": [
-      "dongguk-haksa"
-    ],
-    "postedAt": "2026-07-13",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T14:09:50.088Z",
-    "summary": "가톨릭대학교에서 교류 수업을 듣고 학점을 인정받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T14:09:50.088Z",
-    "seriesId": "dongguk-haksa-26758559"
-  },
-  {
     "id": "dongguk-haksa-26765410",
     "title": "2026학년도 2학기 중앙대학교 수학 안내 (사진제출 필수, 선착순 3명/마감)",
     "organizer": "중앙대학교",
@@ -144582,51 +142813,6 @@
     "seriesId": "dongguk-haksa-26758642"
   },
   {
-    "id": "dongguk-haksa-26765371",
-    "title": "2026학년도 2학기 강원대학교 수학 안내",
-    "organizer": "강원대학교",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dongguk"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "dongguk-haksa",
-        "url": "https://www.dongguk.edu/article/HAKSANOTICE/detail/26765371"
-      }
-    ],
-    "sources": [
-      "dongguk-haksa"
-    ],
-    "postedAt": "2026-07-09",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T14:09:55.069Z",
-    "summary": "강원대학교에서 교류 수업을 듣고 학점을 인정받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T14:09:55.069Z",
-    "seriesId": "dongguk-haksa-26758560"
-  },
-  {
     "id": "dongguk-haksa-26765370",
     "title": "2026학년도 2학기 제주대학교 수학 안내",
     "organizer": "제주대학교",
@@ -144670,51 +142856,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:09:56.301Z",
     "seriesId": "dongguk-haksa-26758558"
-  },
-  {
-    "id": "dongguk-haksa-26765342",
-    "title": "2026학년도 2학기 전북대학교 수학 안내",
-    "organizer": "전북대학교",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "dongguk"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-07-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "dongguk-haksa",
-        "url": "https://www.dongguk.edu/article/HAKSANOTICE/detail/26765342"
-      }
-    ],
-    "sources": [
-      "dongguk-haksa"
-    ],
-    "postedAt": "2026-07-06",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T14:09:59.981Z",
-    "summary": "전북대학교에서 교류 수업을 듣고 학점을 인정받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T14:09:59.981Z",
-    "seriesId": "dongguk-haksa-26758561"
   },
   {
     "id": "dongguk-haksa-26766143",
@@ -149079,7 +147220,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:23.819Z",
+    "collectedAt": "2026-10-14T00:10:50.149Z",
     "summary": "AICE 기반 교육으로 AI와 데이터 실무 역량을 키워요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-07T00:24:15.866Z"
@@ -154167,7 +152308,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-10-13T04:15:22.334Z",
+    "collectedAt": "2026-10-14T00:10:48.600Z",
     "summary": "대웅그룹 채용설명회에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-09T01:01:53.241Z"
@@ -160672,7 +158813,7 @@
     ],
     "postedAt": "2026-09-21",
     "extractedBy": "rules",
-    "collectedAt": "2026-10-12T00:17:04.190Z",
+    "collectedAt": "2026-10-14T00:12:28.490Z",
     "firstSeenAt": "2026-10-12T00:17:04.190Z"
   },
   {
@@ -164809,5 +162950,1512 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-13T04:16:57.239Z",
     "seriesId": "dongguk-notice-26757432"
+  },
+  {
+    "id": "yu-career-2630",
+    "title": "2026 대학일자리플러스센터 만족도 조사",
+    "organizer": "학생성공처",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2026-10-13",
+      "end": "2026-10-30"
+    },
+    "activityPeriod": {
+      "start": "2026-10-13",
+      "end": "2026-10-30"
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-career",
+        "url": "https://join.yu.ac.kr/front_new/index.php?g_page=program&m_page=program01&act=view.new&P_IDX=2630"
+      }
+    ],
+    "sources": [
+      "yu-career"
+    ],
+    "postedAt": null,
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:10:48.601Z",
+    "firstSeenAt": "2026-10-14T00:10:48.601Z",
+    "seriesId": "yu-career-2347"
+  },
+  {
+    "id": "knu-event-1338546",
+    "title": "[학생상담센터] 외국인대학원생 마음건강증진 캠프 안내(참가 신청 연장)",
+    "organizer": "장봉경",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1338546&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:10:52.358Z",
+    "firstSeenAt": "2026-10-14T00:10:52.358Z"
+  },
+  {
+    "id": "knu-event-1338540",
+    "title": "[학생상담센터] 마음건강 캠페인 행사 홍보",
+    "organizer": "김민혜",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-event",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1338540&btin.appl_no=000000&menu_idx=73"
+      }
+    ],
+    "sources": [
+      "knu-event"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:10:54.861Z",
+    "firstSeenAt": "2026-10-14T00:10:54.861Z"
+  },
+  {
+    "id": "knu-notice-1338547",
+    "title": "2026년도 3분기 제3차 경북대학교 산업안전보건위원회 회의 결과",
+    "organizer": "안전관리총괄본부",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338547&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:10:53.626Z",
+    "firstSeenAt": "2026-10-14T00:10:53.626Z"
+  },
+  {
+    "id": "knu-notice-1338542",
+    "title": "[진로취업과] 2026년 'KNU-대구앵커' 청년 연구자를 위한 ABB 역량 강화 프로그램(3차) 신청 안내 - 빅데이터 분석 기사 (실기)",
+    "organizer": "진로취업과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "knu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2026-10-26",
+      "end": "2026-10-30"
+    },
+    "activityPeriod": {
+      "start": "2026-11-02",
+      "end": "2026-11-13"
+    },
+    "tags": [
+      "학교",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "knu-notice",
+        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338542&btin.appl_no=000000&menu_idx=67"
+      }
+    ],
+    "sources": [
+      "knu-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:01.024Z",
+    "firstSeenAt": "2026-10-14T00:11:01.024Z"
+  },
+  {
+    "id": "dcu-program-187383",
+    "title": "2026년 대학일자리플러스센터 만족도 조사(~10.30)",
+    "organizer": "진로취업지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-program",
+        "url": "https://www.cu.ac.kr/plaza/notice/program?mode=view&mv_data=aWR4PTE4NzM4MyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPXByb2dyYW0wMSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-program"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:37.657Z",
+    "firstSeenAt": "2026-10-14T00:11:37.657Z"
+  },
+  {
+    "id": "dcu-notice-187393",
+    "title": "[비교과] 2026 작가와 함께하는 북콘서트 참가 신청 안내",
+    "organizer": "학술정보지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-notice",
+        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzM5MyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:38.901Z",
+    "firstSeenAt": "2026-10-14T00:11:38.901Z",
+    "seriesId": "dcu-notice-171537"
+  },
+  {
+    "id": "dcu-notice-187389",
+    "title": "교내 우편취급국 주말·야간 24시간 우편접수함 안내",
+    "organizer": "총무행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-notice",
+        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzM4OSZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:44.920Z",
+    "firstSeenAt": "2026-10-14T00:11:44.920Z"
+  },
+  {
+    "id": "dcu-notice-187387",
+    "title": "2026-2학기 영남대 학점교류 GUA교과목 중간고사 공지",
+    "organizer": "앵커 더경북공통교양교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "dcu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "dcu-notice",
+        "url": "https://www.cu.ac.kr/plaza/notice/notice?mode=view&mv_data=aWR4PTE4NzM4NyZ0YWJsZT1jc19iYnNfZGF0YSZjb2RlPW5vdGljZSZtb2RlPXZpZXc"
+      }
+    ],
+    "sources": [
+      "dcu-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:47.876Z",
+    "firstSeenAt": "2026-10-14T00:11:47.876Z"
+  },
+  {
+    "id": "pnu-notice-1510825",
+    "title": "2026학년도 저학년 진로설계 커리어로드맵 공모전 안내",
+    "organizer": "학생성공개발원행정실",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2026-09-14",
+      "end": "2026-10-23"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "pnu-notice",
+        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq=1510825"
+      }
+    ],
+    "sources": [
+      "pnu-notice"
+    ],
+    "postedAt": "2026-09-02",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:43.083Z",
+    "firstSeenAt": "2026-10-14T00:11:43.083Z"
+  },
+  {
+    "id": "pnu-notice-1511537",
+    "title": "[에듀테크센터] (10/23(금)) Global Career Meetup 안내 (영국 구글러 초청 글로벌 커리어 토크 및 Gemini 활용 특강)",
+    "organizer": "에듀테크센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-23"
+    },
+    "activityPeriod": {
+      "start": "2026-10-23",
+      "end": "2026-10-23"
+    },
+    "tags": [
+      "학교",
+      "해외·글로벌",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "pnu-notice",
+        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq=1511537"
+      }
+    ],
+    "sources": [
+      "pnu-notice"
+    ],
+    "postedAt": "2026-10-14",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:44.720Z",
+    "firstSeenAt": "2026-10-14T00:11:44.720Z"
+  },
+  {
+    "id": "pnu-notice-1511534",
+    "title": "[학사과] 2026학년도 겨울계절수업 교류 수학 안내(전북대학교)",
+    "organizer": "학사과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "pnu-notice",
+        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq=1511534"
+      }
+    ],
+    "sources": [
+      "pnu-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:46.145Z",
+    "firstSeenAt": "2026-10-14T00:11:46.145Z"
+  },
+  {
+    "id": "pnu-notice-1511533",
+    "title": "[AI융합교육원] 2026-2학기 AI Agent 특강 참여자 모집",
+    "organizer": "AI융합교육원",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2026-10-06",
+      "end": "2026-10-22"
+    },
+    "activityPeriod": {
+      "start": "2026-10-23",
+      "end": "2026-10-23"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "pnu-notice",
+        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq=1511533"
+      }
+    ],
+    "sources": [
+      "pnu-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:47.586Z",
+    "firstSeenAt": "2026-10-14T00:11:47.586Z"
+  },
+  {
+    "id": "pnu-notice-1511531",
+    "title": "2026학년도 겨울계절수업 강좌개설 수요조사 안내",
+    "organizer": "학사과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-10-15",
+      "end": "2026-10-21"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "pnu-notice",
+        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq=1511531"
+      }
+    ],
+    "sources": [
+      "pnu-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:49.043Z",
+    "firstSeenAt": "2026-10-14T00:11:49.043Z"
+  },
+  {
+    "id": "pnu-notice-1511524",
+    "title": "[에너지신산업] 에코업 분석장비 교육 및 실습 아카데미 [건국대 에코업 사업단]",
+    "organizer": "에너지신산업부산대학교사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-21"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "pnu-notice",
+        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq=1511524"
+      }
+    ],
+    "sources": [
+      "pnu-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:50.523Z",
+    "firstSeenAt": "2026-10-14T00:11:50.523Z"
+  },
+  {
+    "id": "pknu-notice-726581",
+    "title": "[부산광역시] 2026 하반기 금융특강「부산청년, 빚투 말고 영끌클래스」 안내",
+    "organizer": "부산광역시",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=726581"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:48.993Z",
+    "firstSeenAt": "2026-10-14T00:11:48.993Z"
+  },
+  {
+    "id": "pknu-notice-726580",
+    "title": "[고용노동부, 한국고용정보원] 2026년 대학일자리플러스센터 만족도 조사",
+    "organizer": "고용노동부, 한국고용정보원",
+    "organizerType": "정부부처",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "정부부처"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=726580"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:50.677Z",
+    "firstSeenAt": "2026-10-14T00:11:50.677Z"
+  },
+  {
+    "id": "korea-startup-1154",
+    "title": "[X-GARAGE] AI 설계, 해석 지원 프로그램",
+    "organizer": "크림슨창업지원단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "korea"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2026-10-13",
+      "end": "2026-11-06"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "korea-startup",
+        "url": "https://kustartup.korea.ac.kr/program/programView.do?seq=1154"
+      }
+    ],
+    "sources": [
+      "korea-startup"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:58.024Z",
+    "firstSeenAt": "2026-10-14T00:11:58.024Z",
+    "seriesId": "korea-startup-1071"
+  },
+  {
+    "id": "korea-notice-000060000000061508",
+    "title": "[한국어센터] 월례문화특강-10 「알면 쓸모있는 최소한의 AI상식」 (김준연 국제어학원장, 중어중문학과 교수)에 초대합니다",
+    "organizer": "한국어센터행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "korea"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "해외·글로벌",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "korea-notice",
+        "url": "https://www.korea.ac.kr/portalBoard/ko/1/000060000000061508/portalBoardView.do"
+      }
+    ],
+    "sources": [
+      "korea-notice"
+    ],
+    "postedAt": "2026-10-14",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:57.443Z",
+    "firstSeenAt": "2026-10-14T00:11:57.443Z"
+  },
+  {
+    "id": "korea-notice-000060000000061504",
+    "title": "(어학강좌) OPIc IH+ Challenge 모집 안내",
+    "organizer": "외국어센터행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "korea"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2026-10-14",
+      "end": "2026-11-06"
+    },
+    "activityPeriod": {
+      "start": "2026-11-09",
+      "end": "2026-11-26"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "korea-notice",
+        "url": "https://www.korea.ac.kr/portalBoard/ko/1/000060000000061504/portalBoardView.do"
+      }
+    ],
+    "sources": [
+      "korea-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:11:58.885Z",
+    "firstSeenAt": "2026-10-14T00:11:58.885Z"
+  },
+  {
+    "id": "korea-notice-000060000000061503",
+    "title": "[학부대학_BK21] 인문사회계열 대학원생을 위한 「나만의 AI 연구 운영 체제(Research OS) 설계 워크숍」 참여자 모집 (~10/25)",
+    "organizer": "학부대학행정팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "korea"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2026-10-13",
+      "end": "2026-10-25"
+    },
+    "activityPeriod": {
+      "start": "2026-11-11",
+      "end": "2026-12-16"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "korea-notice",
+        "url": "https://www.korea.ac.kr/portalBoard/ko/1/000060000000061503/portalBoardView.do"
+      }
+    ],
+    "sources": [
+      "korea-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:01.525Z",
+    "firstSeenAt": "2026-10-14T00:12:01.525Z"
+  },
+  {
+    "id": "yonsei-notice-944344",
+    "title": "2026학년도 2학기 방일영문화재단 탈북대학생 장학생 선발 안내(~11/1)",
+    "organizer": "학생지원팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-11-01"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-notice",
+        "url": "https://www.yonsei.ac.kr/bbs/sc/58/944344/artclView.do"
+      }
+    ],
+    "sources": [
+      "yonsei-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:07.958Z",
+    "firstSeenAt": "2026-10-14T00:12:07.958Z",
+    "seriesId": "yonsei-notice-941686"
+  },
+  {
+    "id": "yonsei-startup-341",
+    "title": "[단국대학교 기술지주회사] TECH IP-UP: IP 창출캠프 참가팀 모집",
+    "organizer": "창업지원단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-28"
+    },
+    "activityPeriod": {
+      "start": "2026-11-06",
+      "end": "2026-11-06"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-startup",
+        "url": "https://venture.yonsei.ac.kr/community/notice/341"
+      }
+    ],
+    "sources": [
+      "yonsei-startup"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:09.390Z",
+    "firstSeenAt": "2026-10-14T00:12:09.390Z"
+  },
+  {
+    "id": "yonsei-startup-340",
+    "title": "[단국대학교 기술지주회사] TECH DISCOVERY 실험실창업경진대회 참가팀 모집",
+    "organizer": "창업지원단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-23"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-startup",
+        "url": "https://venture.yonsei.ac.kr/community/notice/340"
+      }
+    ],
+    "sources": [
+      "yonsei-startup"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:10.967Z",
+    "firstSeenAt": "2026-10-14T00:12:10.967Z"
+  },
+  {
+    "id": "hanyang-startup-4448",
+    "title": "[2026년 창업중심대학] HYU Startups & Partners Meet-up Day 프로그램 용역 수행업체 선정공고",
+    "organizer": "창업지원단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "hanyang"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-30"
+    },
+    "activityPeriod": {
+      "start": "2026-10-06",
+      "end": "2026-10-06"
+    },
+    "tags": [
+      "학교",
+      "창업"
+    ],
+    "links": [
+      {
+        "sourceId": "hanyang-startup",
+        "url": "https://startup.hanyang.ac.kr/board/notice/view/4448"
+      }
+    ],
+    "sources": [
+      "hanyang-startup"
+    ],
+    "postedAt": "2026-09-29",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:13.303Z",
+    "firstSeenAt": "2026-10-14T00:12:13.303Z"
+  },
+  {
+    "id": "hanyang-oia-1819677",
+    "title": "[홍보] 10월 연남동 소통&힐링 모임 참가자 모집 (한국인 & 유학생) <웰디/Welldy>",
+    "organizer": "국제처",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "hanyang"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-10-23",
+      "end": "2026-10-23"
+    },
+    "tags": [
+      "학교",
+      "해외·글로벌"
+    ],
+    "links": [
+      {
+        "sourceId": "hanyang-oia",
+        "url": "https://oia.hanyang.ac.kr/notice/1819677"
+      }
+    ],
+    "sources": [
+      "hanyang-oia"
+    ],
+    "postedAt": "2026-10-14",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:15.933Z",
+    "firstSeenAt": "2026-10-14T00:12:15.933Z"
+  },
+  {
+    "id": "konkuk-job-1209735",
+    "title": "[대학일자리+] (졸업생특화) 금융직무로드맵 \"금융직무특화교육\" 참여자 모집",
+    "organizer": "진로취업센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "konkuk"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-27"
+    },
+    "activityPeriod": {
+      "start": "2026-11-02",
+      "end": "2026-11-20"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "konkuk-job",
+        "url": "https://www.konkuk.ac.kr/bbs/job/4083/1209735/artclView.do"
+      }
+    ],
+    "sources": [
+      "konkuk-job"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:12.938Z",
+    "firstSeenAt": "2026-10-14T00:12:12.938Z"
+  },
+  {
+    "id": "cau-notice-30250",
+    "title": "동작노인종합복지관 서울 시니어 미래공감 페스티벌 봉사자 모집 안내",
+    "organizer": "학생지원팀(서울)",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "cau"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "cau-notice",
+        "url": "https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=4&BBS_SEQ=30250"
+      }
+    ],
+    "sources": [
+      "cau-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:18.255Z",
+    "firstSeenAt": "2026-10-14T00:12:18.255Z"
+  },
+  {
+    "id": "khu-notice-323315",
+    "title": "제21기 씨티-경희대 NGO 인턴십 프로그램 인턴 모집 안내",
+    "organizer": "공공거버넌스연구소",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "khu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "인턴·일경험"
+    ],
+    "links": [
+      {
+        "sourceId": "khu-notice",
+        "url": "https://www.khu.ac.kr/kor/user/bbs/BMSR00040/view.do?menuNo=200316&boardId=323315"
+      }
+    ],
+    "sources": [
+      "khu-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:23.994Z",
+    "firstSeenAt": "2026-10-14T00:12:23.994Z",
+    "seriesId": "khu-notice-320215"
+  },
+  {
+    "id": "khu-notice-323094",
+    "title": "2026학년도 2학기 재학생 학생증 신청 안내",
+    "organizer": "학생지원센터[제증명](국제)",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "khu-global"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "khu-notice",
+        "url": "https://www.khu.ac.kr/kor/user/bbs/BMSR00040/view.do?menuNo=200316&boardId=323094"
+      }
+    ],
+    "sources": [
+      "khu-notice"
+    ],
+    "postedAt": "2026-09-16",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:30.493Z",
+    "campus": "khu-global",
+    "firstSeenAt": "2026-10-14T00:12:30.493Z"
+  },
+  {
+    "id": "skku-notice-140545",
+    "title": "2026년 하반기 교직원(정규직) 경력채용 서류전형 결과 및 1차 면접전형 안내",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "skku"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140545"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:20.852Z",
+    "firstSeenAt": "2026-10-14T00:12:20.852Z"
+  },
+  {
+    "id": "skku-notice-140544",
+    "title": "2026년 졸업앨범 추가 촬영 안내",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "skku"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140544"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:22.061Z",
+    "firstSeenAt": "2026-10-14T00:12:22.061Z"
+  },
+  {
+    "id": "skku-notice-140536",
+    "title": "2026년 성균관대학교 서베이리서치센터 통계 워크숍 안내",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "skku"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140536"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:23.275Z",
+    "firstSeenAt": "2026-10-14T00:12:23.275Z"
+  },
+  {
+    "id": "skku-notice-140540",
+    "title": "[AI 부트캠프사업단 X 제네시스랩] 몰입형 교과목 3기 수강생 모집 (~10/19(월)마감) *선착순 진행",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "skku"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학사·행정",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140540"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:24.542Z",
+    "firstSeenAt": "2026-10-14T00:12:24.542Z",
+    "seriesId": "skku-notice-139691"
+  },
+  {
+    "id": "skku-notice-140538",
+    "title": "2026년 성암육영회 장학생 선발안내(10.14(수)~10.19(월) 09:00까지)",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "skku"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": "2026-10-14",
+      "end": "2026-10-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140538"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:25.876Z",
+    "firstSeenAt": "2026-10-14T00:12:25.876Z"
+  },
+  {
+    "id": "skku-notice-140537",
+    "title": "사회과학/예술대학행정실 행정조교 모집[~10.19.(월) 16:00까지]",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "skku"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-10-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140537"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:27.132Z",
+    "firstSeenAt": "2026-10-14T00:12:27.132Z"
+  },
+  {
+    "id": "skku-notice-140531",
+    "title": "[아이폰 17 및 경품 다수] 2026년 학생인재개발팀/대학일자리플러스센터 만족도 조사",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "skku"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=140531"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-10-13",
+    "extractedBy": "rules",
+    "collectedAt": "2026-10-14T00:12:28.409Z",
+    "firstSeenAt": "2026-10-14T00:12:28.409Z"
   }
 ]
