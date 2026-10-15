@@ -9458,6 +9458,51 @@
     "seriesId": "dongguk-scholarship-26755870"
   },
   {
+    "id": "jnu-jobcenter-40",
+    "title": "[재맞고] 2026년 빌드업 프로젝트 『커리어업 톡톡(Talk-Talk)』 참여자 모집!",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-06-18",
+      "end": "2026-07-06"
+    },
+    "activityPeriod": {
+      "start": "2026-07-10",
+      "end": "2026-07-10"
+    },
+    "tags": [
+      "학교",
+      "교육·특강",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "jnu-jobcenter",
+        "url": "https://jobcenter.jnu.ac.kr/?mid=0104&act=dtl&idx=40"
+      }
+    ],
+    "sources": [
+      "jnu-jobcenter"
+    ],
+    "postedAt": "2026-06-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:20.543Z",
+    "summary": "진로취업 플랫폼으로 학기·연간 커리어 계획을 세워요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:20.543Z"
+  },
+  {
     "id": "yu-news-230584311",
     "title": "반도체융합전공 신청[7/7~7/9]",
     "organizer": "반도체특성화대학사업단",
@@ -13280,6 +13325,50 @@
     "summary": "학자금대출 원금 상환과 이자 지원을 위한 장학사업에 신청해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:22:47.221Z"
+  },
+  {
+    "id": "jnu-jobcenter-41",
+    "title": "[재맞고] 『2026 식약처 공인 HACCP 팀장과정』",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "jnu-jobcenter",
+        "url": "https://jobcenter.jnu.ac.kr/?mid=0104&act=dtl&idx=41"
+      }
+    ],
+    "sources": [
+      "jnu-jobcenter"
+    ],
+    "postedAt": "2026-07-07",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:19.440Z",
+    "summary": "식약처 공인 HACCP 팀장과정 교육에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:19.440Z"
   },
   {
     "id": "kmu-recruit-268733",
@@ -25869,6 +25958,53 @@
     "seriesId": "dongguk-haksa-26756828"
   },
   {
+    "id": "cbnu-fole-254",
+    "title": "[RC교육] 2026학년도 CBNU-RC교육 운영 안내",
+    "organizer": "교양교육본부 비교과센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "cbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-03-03",
+      "end": "2026-03-15"
+    },
+    "activityPeriod": {
+      "start": "2026-03-23",
+      "end": "2026-06-26"
+    },
+    "tags": [
+      "학교",
+      "멘토링·컨설팅",
+      "교육·특강",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "cbnu-fole",
+        "url": "https://fole.chungbuk.ac.kr/post/254"
+      }
+    ],
+    "sources": [
+      "cbnu-fole"
+    ],
+    "postedAt": "2026-03-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:08:51.005Z",
+    "summary": "기숙사 신입생이 멘토링·교육 프로그램에 참여하고 마일리지와 장학금을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:08:51.005Z",
+    "seriesId": "cbnu-fole-254"
+  },
+  {
     "id": "yu-news-230415663",
     "title": "[글로컬대학사업단 경북AI융합원] 3극 MIB 벨트 AX 혁신 1차년도 산학공동기술개발과제 공고",
     "organizer": "경북AI융합원",
@@ -31459,6 +31595,95 @@
     ],
     "summary": "한국생명공학연구원에서 생명공학 분야 현장실습에 참여해요.",
     "noApplication": false
+  },
+  {
+    "id": "jbnu-startup-VNFHwy274MjL",
+    "title": "2026학년도 창업 서포터즈(근로장학생) 모집공고문",
+    "organizer": "창업교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "서포터즈·기자단",
+      "창업"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-startup",
+        "url": "https://startup.jbnu.ac.kr/main/?gc=605XOAS&do=view&bwrite_id=VNFHwy274MjL"
+      }
+    ],
+    "sources": [
+      "jbnu-startup"
+    ],
+    "postedAt": "2026-06-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:17.284Z",
+    "summary": "창업 서포터즈 근로장학생으로 활동해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:17.284Z"
+  },
+  {
+    "id": "jbnu-startup-VNFHhVZg10Dq",
+    "title": "2026년 제2회 전북 현대 모터스 FC & 전북권 대학 연합 Drive Up 창업 프로젝트",
+    "organizer": "창업교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-startup",
+        "url": "https://startup.jbnu.ac.kr/main/?gc=605XOAS&do=view&bwrite_id=VNFHhVZg10Dq"
+      }
+    ],
+    "sources": [
+      "jbnu-startup"
+    ],
+    "postedAt": "2026-06-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:18.365Z",
+    "summary": "전북권 대학 연합 Drive Up 창업 프로젝트에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:18.365Z"
   },
   {
     "id": "dcu-notice-184920",
@@ -37281,6 +37506,50 @@
     "seriesId": "dongguk-scholarship-26755387"
   },
   {
+    "id": "jbnu-startup-VMaPGo1fUL2j",
+    "title": "2026년 스마트 디바이스 아이디어 캠프 모집공고",
+    "organizer": "창업교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-startup",
+        "url": "https://startup.jbnu.ac.kr/main/?gc=605XOAS&do=view&bwrite_id=VMaPGo1fUL2j"
+      }
+    ],
+    "sources": [
+      "jbnu-startup"
+    ],
+    "postedAt": "2026-06-15",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:19.850Z",
+    "summary": "스마트 디바이스 아이디어 캠프에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:19.850Z"
+  },
+  {
     "id": "dcu-program-185456",
     "title": "[특강][취창직전문관] 센스있는 대학생의 비즈니스 매너법",
     "organizer": "취창직전문관",
@@ -41499,6 +41768,58 @@
     "seriesId": "dongguk-scholarship-26761015"
   },
   {
+    "id": "jejunu-rise-2149",
+    "title": "2026-1학기 캡스톤디자인 J-IDEA 마켓 플레이스 학생 아이디어 등록 안내",
+    "organizer": "RISE사업단 산학연계교육팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jejunu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-05-27",
+      "end": "2026-06-10"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업"
+    ],
+    "links": [
+      {
+        "sourceId": "jejunu-rise",
+        "url": "https://jnurise.jejunu.ac.kr/news/notice.htm?act=view&seq=2149"
+      },
+      {
+        "sourceId": "jejunu-capstone",
+        "url": "https://jnurise.jejunu.ac.kr/job/resource/notice.htm?act=view&seq=2147"
+      }
+    ],
+    "sources": [
+      "jejunu-rise",
+      "jejunu-capstone"
+    ],
+    "postedAt": "2026-06-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:10:04.052Z",
+    "summary": "캡스톤디자인 팀 아이디어를 마켓에 등록해 기업 연계 기회를 얻어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:10:04.052Z",
+    "aliases": [
+      "jejunu-capstone-2147"
+    ]
+  },
+  {
     "id": "yu-news-230288920",
     "title": "✅접수중-[진로취업지원팀] 2026 하계방학 반도체 직무 스프린트 교육",
     "organizer": "진로취업지원팀",
@@ -42539,6 +42860,51 @@
     "seriesId": "khu-career-315"
   },
   {
+    "id": "jbnu-startup-VM25lR6edsgz",
+    "title": "[창업교육센터] 2026년 UNIV. STAR 글로벌 연합 창업캠프 및 경진대회 참가자 추가모집 공고",
+    "organizer": "창업교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-startup",
+        "url": "https://startup.jbnu.ac.kr/main/?gc=605XOAS&do=view&bwrite_id=VM25lR6edsgz"
+      }
+    ],
+    "sources": [
+      "jbnu-startup"
+    ],
+    "postedAt": "2026-06-09",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:21.253Z",
+    "summary": "글로벌 연합 창업캠프와 경진대회에 참가할 학생을 추가로 모집해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:21.253Z"
+  },
+  {
     "id": "yu-career-2508",
     "title": "[우리은행] 상반기 신입행원 채용설명회 및 상담회(경북대학교)",
     "organizer": "우리은행",
@@ -43439,6 +43805,52 @@
     "summary": "AI 분야 취업을 위한 AI캠퍼스에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:50:47.450Z"
+  },
+  {
+    "id": "jbnu-startup-VLvi8nRnwx9a",
+    "title": "2026학년도 여름방학 창업강좌 수강생 모집(연장)",
+    "organizer": "창업교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-startup",
+        "url": "https://startup.jbnu.ac.kr/main/?gc=605XOAS&do=view&bwrite_id=VLvi8nRnwx9a"
+      }
+    ],
+    "sources": [
+      "jbnu-startup"
+    ],
+    "postedAt": "2026-06-08",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:22.330Z",
+    "summary": "여름방학 동안 듣는 창업강좌 수강생을 연장해서 모집해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:22.330Z",
+    "seriesId": "jbnu-startup-VLe2dA51iHxK"
   },
   {
     "id": "knu-notice-1337507",
@@ -45810,6 +46222,50 @@
     "seriesId": "dongguk-scholarship-26761277"
   },
   {
+    "id": "jejunu-rise-2150",
+    "title": "2026-1학기 캡스톤디자인 결과발표회 안내",
+    "organizer": "RISE사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jejunu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-06-05",
+      "end": "2026-06-05"
+    },
+    "tags": [
+      "학교",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "jejunu-rise",
+        "url": "https://jnurise.jejunu.ac.kr/news/notice.htm?act=view&seq=2150"
+      }
+    ],
+    "sources": [
+      "jejunu-rise"
+    ],
+    "postedAt": "2026-06-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:10:03.005Z",
+    "summary": "캡스톤디자인 1차 평가를 통과한 팀이 결과를 발표해요",
+    "noApplication": true,
+    "firstSeenAt": "2026-10-15T08:10:03.005Z"
+  },
+  {
     "id": "yu-news-230218618",
     "title": "[학생상담센터] 2026학년도 1학기 하계방학 마음건강증진 프로그램 실시",
     "organizer": "학생상담센터",
@@ -47020,6 +47476,139 @@
     "noApplication": true,
     "firstSeenAt": "2026-10-03T13:50:58.795Z",
     "seriesId": "dongguk-notice-26759554"
+  },
+  {
+    "id": "cnu-job-588367",
+    "title": "★진로/취업/자소서/면접 컨설팅★ - 상시운영",
+    "organizer": "인재개발원",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "cnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "cnu-job",
+        "url": "https://job.cnu.ac.kr/job/local/notice.do?mode=view&articleNo=588367"
+      }
+    ],
+    "sources": [
+      "cnu-job"
+    ],
+    "postedAt": "2026-06-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:08:25.299Z",
+    "summary": "진로·취업·자소서·면접 컨설팅을 상시로 받을 수 있어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:08:25.299Z"
+  },
+  {
+    "id": "jnu-jobcenter-38",
+    "title": "[재맞고] 2026년도 Adobe Digital Literacy(ACP 프리미어 프로)",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "jnu-jobcenter",
+        "url": "https://jobcenter.jnu.ac.kr/?mid=0104&act=dtl&idx=38"
+      }
+    ],
+    "sources": [
+      "jnu-jobcenter"
+    ],
+    "postedAt": "2026-06-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:22.654Z",
+    "summary": "Adobe 프리미어 프로 교육과 자격 과정에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:22.654Z"
+  },
+  {
+    "id": "jnu-jobcenter-37",
+    "title": "[재맞고] 2026년도 Adobe Digital Literacy(ACP 포토샵)",
+    "organizer": "대학일자리플러스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "jnu-jobcenter",
+        "url": "https://jobcenter.jnu.ac.kr/?mid=0104&act=dtl&idx=37"
+      }
+    ],
+    "sources": [
+      "jnu-jobcenter"
+    ],
+    "postedAt": "2026-06-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:23.729Z",
+    "summary": "Adobe 포토샵 교육과 자격 과정에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:23.729Z"
   },
   {
     "id": "sogang-scholarship-550229",
@@ -62005,6 +62594,52 @@
     ],
     "summary": "여러 전공 학생과 팀을 이뤄 AI 활용 해커톤에 참가하고 우수팀은 상금을 받아요",
     "noApplication": false
+  },
+  {
+    "id": "jnu-jobcenter-36",
+    "title": "2026학년도 공과대학 중견/강소기업 분석 경진대회",
+    "organizer": "공과대학",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jnu"
+      ],
+      "colleges": [
+        "공과대학"
+      ],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "jnu-jobcenter",
+        "url": "https://jobcenter.jnu.ac.kr/?mid=0104&act=dtl&idx=36"
+      }
+    ],
+    "sources": [
+      "jnu-jobcenter"
+    ],
+    "postedAt": "2026-05-22",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:24.782Z",
+    "summary": "중견·강소기업을 분석하는 경진대회에 참가해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:24.782Z"
   },
   {
     "id": "yu-career-2501",
@@ -78200,7 +78835,8 @@
     "postedAt": "2026-04-28",
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:31:33.460Z",
-    "firstSeenAt": "2026-10-01T14:31:33.460Z"
+    "firstSeenAt": "2026-10-01T14:31:33.460Z",
+    "seriesId": "kmu-scholarship-265011"
   },
   {
     "id": "dcu-notice-185070",
@@ -93378,6 +94014,94 @@
     "noApplication": false
   },
   {
+    "id": "jejunu-capstone-2114",
+    "title": "❣️ 2026-1학기 캡스톤디자인 지식재산권 교육 특강(온라인) 안내 ❣️",
+    "organizer": "RISE사업단 산학연계교육팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jejunu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-04-21"
+    },
+    "activityPeriod": {
+      "start": "2026-04-29",
+      "end": "2026-04-29"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "jejunu-capstone",
+        "url": "https://jnurise.jejunu.ac.kr/job/resource/notice.htm?act=view&seq=2114"
+      }
+    ],
+    "sources": [
+      "jejunu-capstone"
+    ],
+    "postedAt": "2026-04-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:10:19.757Z",
+    "summary": "전문 변리사에게 지식재산권 교육을 온라인 특강으로 들어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:10:19.757Z"
+  },
+  {
+    "id": "jejunu-capstone-2113",
+    "title": "⭐ 2026-1학기 캡스톤디자인 지식재산권 교육(상담) 일정 안내 ⭐",
+    "organizer": "RISE사업단 산학연계교육팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jejunu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-04-21"
+    },
+    "activityPeriod": {
+      "start": "2026-04-29",
+      "end": "2026-04-29"
+    },
+    "tags": [
+      "학교",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "jejunu-capstone",
+        "url": "https://jnurise.jejunu.ac.kr/job/resource/notice.htm?act=view&seq=2113"
+      }
+    ],
+    "sources": [
+      "jejunu-capstone"
+    ],
+    "postedAt": "2026-04-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:10:20.803Z",
+    "summary": "캡스톤디자인 팀별로 지식재산권 상담을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:10:20.803Z"
+  },
+  {
     "id": "yu-career-2470",
     "title": "2026 반도체 현장면접 대비 기업분석 교육",
     "organizer": "학생성공처",
@@ -94730,6 +95454,51 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T13:51:35.449Z",
     "seriesId": "dongguk-notice-26757909"
+  },
+  {
+    "id": "jbnu-startup-VLe2dAqh4a0j",
+    "title": "2026년 전대 창업서포터즈 14기 모집 연장 공고",
+    "organizer": "창업교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "서포터즈·기자단"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-startup",
+        "url": "https://startup.jbnu.ac.kr/main/?gc=605XOAS&do=view&bwrite_id=VLe2dAqh4a0j"
+      }
+    ],
+    "sources": [
+      "jbnu-startup"
+    ],
+    "postedAt": "2026-04-28",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:23.745Z",
+    "summary": "창업서포터즈 14기로 활동할 학생을 연장해서 모집해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:23.745Z"
   },
   {
     "id": "yu-career-2475",
@@ -138423,6 +139192,50 @@
     "seriesId": "dongguk-haksa-26757091"
   },
   {
+    "id": "jbnu-startup-VLe2dAUO7J3K",
+    "title": "2026년 예비창업동아리·학생창업기업 모집공고",
+    "organizer": "창업교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-startup",
+        "url": "https://startup.jbnu.ac.kr/main/?gc=605XOAS&do=view&bwrite_id=VLe2dAUO7J3K"
+      }
+    ],
+    "sources": [
+      "jbnu-startup"
+    ],
+    "postedAt": "2026-03-23",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:25.881Z",
+    "summary": "예비 창업동아리와 학생창업기업으로 지원받을 팀을 모집해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:25.881Z"
+  },
+  {
     "id": "dcu-notice-183958",
     "title": "[몽골] 2026 하계 FUN 해외봉사 프로그램 8기 모집(~3/22)",
     "organizer": "사랑나눔봉사단",
@@ -159464,6 +160277,97 @@
     "seriesId": "yu-news-84753",
     "summary": "교환학생의 학교생활과 한국 문화 적응을 돕는 봉사활동을 해요",
     "noApplication": false
+  },
+  {
+    "id": "jbnu-startup-VLe2dAHBCH0A",
+    "title": "2026년 전북대학교 학생창업 지원사업 모집설명회",
+    "organizer": "창업교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-startup",
+        "url": "https://startup.jbnu.ac.kr/main/?gc=605XOAS&do=view&bwrite_id=VLe2dAHBCH0A"
+      }
+    ],
+    "sources": [
+      "jbnu-startup"
+    ],
+    "postedAt": "2026-03-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:26.968Z",
+    "summary": "학생창업 지원사업의 모집 내용을 알려주는 설명회예요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:26.968Z"
+  },
+  {
+    "id": "jbnu-startup-VLe2dA51iHxK",
+    "title": "2026학년도 1학기 창업강좌 수강생 모집",
+    "organizer": "창업교육센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-startup",
+        "url": "https://startup.jbnu.ac.kr/main/?gc=605XOAS&do=view&bwrite_id=VLe2dA51iHxK"
+      }
+    ],
+    "sources": [
+      "jbnu-startup"
+    ],
+    "postedAt": "2026-03-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:09:28.041Z",
+    "summary": "1학기에 열리는 창업강좌 수강생을 모집해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:09:28.041Z",
+    "seriesId": "jbnu-startup-VLe2dA51iHxK"
   },
   {
     "id": "yu-news-228909577",
@@ -187623,6 +188527,51 @@
     "noApplication": false
   },
   {
+    "id": "jejunu-rise-2024",
+    "title": "Study, Stay & Work in Jeju: 외국인 유학생 취업·정주를 위한 지산학연 세미나 및 네트워킹 데이",
+    "organizer": "RISE사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jejunu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-02-06",
+      "end": "2026-02-06"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "jejunu-rise",
+        "url": "https://jnurise.jejunu.ac.kr/news/notice.htm?act=view&seq=2024"
+      }
+    ],
+    "sources": [
+      "jejunu-rise"
+    ],
+    "postedAt": "2026-02-03",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:10:05.090Z",
+    "summary": "외국인 유학생 취업·정주 세미나와 네트워킹에 참여하고 오찬을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:10:05.090Z"
+  },
+  {
     "id": "yu-career-2429",
     "title": "이공계생 대상 미래 산업 인사이트 및 커리어 설계",
     "organizer": "학생성공처",
@@ -203684,6 +204633,50 @@
     "noApplication": false
   },
   {
+    "id": "jejunu-rise-1898",
+    "title": "제주대학교 RISE사업단 성과공유 페스티벌 개최 안내",
+    "organizer": "RISE사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jejunu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-01-23",
+      "end": "2026-01-23"
+    },
+    "tags": [
+      "학교",
+      "박람회·설명회"
+    ],
+    "links": [
+      {
+        "sourceId": "jejunu-rise",
+        "url": "https://jnurise.jejunu.ac.kr/news/notice.htm?act=view&seq=1898"
+      }
+    ],
+    "sources": [
+      "jejunu-rise"
+    ],
+    "postedAt": "2026-01-19",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:10:06.134Z",
+    "summary": "RISE사업단 성과공유 페스티벌에 참석해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:10:06.134Z"
+  },
+  {
     "id": "yu-career-2386",
     "title": "2025 동계방학 1차 '갓'생을 위한 '나'알기 프로젝트",
     "organizer": "학생성공처",
@@ -207077,6 +208070,52 @@
     "seriesId": "yu-news-224809623",
     "summary": "대구공공시설관리공단에서 환경공학 분야 현장실습에 참여해요.",
     "noApplication": false
+  },
+  {
+    "id": "jejunu-rise-1762",
+    "title": "Study, Stay & Work in Jeju: JNU-RISE 외국인 유학생 취업·정주 캠프 참가자 모집",
+    "organizer": "RISE사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jejunu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-01-20",
+      "end": "2026-01-21"
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "해외·글로벌",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "jejunu-rise",
+        "url": "https://jnurise.jejunu.ac.kr/news/notice.htm?act=view&seq=1762"
+      }
+    ],
+    "sources": [
+      "jejunu-rise"
+    ],
+    "postedAt": "2025-12-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:10:09.325Z",
+    "summary": "외국인 유학생이 1박 2일 취업·정주 캠프에서 취업 역량을 키워요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:10:09.325Z"
   },
   {
     "id": "yu-career-2400",
@@ -232953,6 +233992,52 @@
     "noApplication": false
   },
   {
+    "id": "jejunu-rise-1730",
+    "title": "[홍보] 2025 제주권대학 연합 창업동아리 경진대회",
+    "organizer": "RISE사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jejunu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2025-12-30",
+      "end": "2025-12-30"
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "공모전·대회",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "jejunu-rise",
+        "url": "https://jnurise.jejunu.ac.kr/news/notice.htm?act=view&seq=1730"
+      }
+    ],
+    "sources": [
+      "jejunu-rise"
+    ],
+    "postedAt": "2025-12-24",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:10:11.401Z",
+    "summary": "창업동아리 경진대회와 창업 특강, 모의 투자 행사에 참여해요",
+    "noApplication": true,
+    "firstSeenAt": "2026-10-15T08:10:11.401Z"
+  },
+  {
     "id": "yu-career-2387",
     "title": "[기업 채용설명회] 2025 영남대학교 Y-BRIDGE 12월 세미나 및 일본기업취업설명회",
     "organizer": "영남대학교",
@@ -239884,6 +240969,50 @@
     "summary": "종근당고촌재단 장학생으로 선발되어 생활비를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:28:37.292Z"
+  },
+  {
+    "id": "jejunu-rise-1691",
+    "title": "[홍보] WITH CULTURE 다문화 페스티벌 개최 및 참가 안내",
+    "organizer": "RISE사업단, 제주한라대학교 RISE사업단, 제주관광대학교 RISE사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jejunu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2025-12-22",
+      "end": "2025-12-22"
+    },
+    "tags": [
+      "학교",
+      "해외·글로벌"
+    ],
+    "links": [
+      {
+        "sourceId": "jejunu-rise",
+        "url": "https://jnurise.jejunu.ac.kr/news/notice.htm?act=view&seq=1691"
+      }
+    ],
+    "sources": [
+      "jejunu-rise"
+    ],
+    "postedAt": "2025-12-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:10:13.468Z",
+    "summary": "다문화 페스티벌에 사전 등록하고 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:10:13.468Z"
   },
   {
     "id": "sogang-notice-548496",
@@ -250207,6 +251336,49 @@
     "noApplication": false
   },
   {
+    "id": "jejunu-rise-1634",
+    "title": "新수눌음 늘봄학교 공청회 개최",
+    "organizer": "RISE사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jejunu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "jejunu-rise",
+        "url": "https://jnurise.jejunu.ac.kr/news/notice.htm?act=view&seq=1634"
+      }
+    ],
+    "sources": [
+      "jejunu-rise"
+    ],
+    "postedAt": "2025-12-10",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:10:15.553Z",
+    "summary": "늘봄학교 공청회에 참여해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:10:15.553Z"
+  },
+  {
     "id": "yu-news-227739193",
     "title": "[한국대학사회봉사협의회] 2025-2027 KOICA-청년중기봉사단(아프리카, 중남미) 1차 단원 모집",
     "organizer": "한국대학사회봉사협의회",
@@ -259301,7 +260473,8 @@
     "collectedAt": "2026-10-01T04:17:58.595Z",
     "firstSeenAt": "2026-10-01T04:17:58.595Z",
     "summary": "현장실습 경험을 수기와 영상으로 소개하는 공모전에 참여해요.",
-    "noApplication": false
+    "noApplication": false,
+    "seriesId": "yu-news-227562626"
   },
   {
     "id": "yu-news-227494839",
@@ -279926,7 +281099,8 @@
     "collectedAt": "2026-10-03T07:22:28.116Z",
     "summary": "현장실습 경험을 수기로 출품하고 수상하면 상장과 상금을 받아요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:22:28.116Z"
+    "firstSeenAt": "2026-10-03T07:22:28.116Z",
+    "seriesId": "skku-notice-130318"
   },
   {
     "id": "khu-notice-320229",
@@ -299949,7 +301123,8 @@
     "collectedAt": "2026-10-03T07:20:04.058Z",
     "summary": "국가고시와 전문자격증 준비 과정 및 선배들의 합격 경험을 들어요",
     "noApplication": true,
-    "firstSeenAt": "2026-10-03T07:20:04.058Z"
+    "firstSeenAt": "2026-10-03T07:20:04.058Z",
+    "seriesId": "skku-notice-130388"
   },
   {
     "id": "skku-notice-130649",
@@ -406535,6 +407710,51 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:32:46.067Z",
     "seriesId": "dongguk-scholarship-26758583"
+  },
+  {
+    "id": "gnu-scholarship-2490404",
+    "title": "※ 학교장추천서(총장추천서) 관련 안내",
+    "organizer": "학생과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "gnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "gnu-scholarship",
+        "url": "https://www.gnu.ac.kr/main/na/ntt/selectNttInfo.do?mi=1376&bbsId=1075&nttSn=2490404"
+      }
+    ],
+    "sources": [
+      "gnu-scholarship"
+    ],
+    "postedAt": "2025-07-16",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:07:41.616Z",
+    "summary": "교외장학금 신청에 필요한 학교장 추천서를 발급받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:07:41.616Z"
   },
   {
     "id": "dcu-notice-180586",
@@ -696567,7 +697787,8 @@
     "collectedAt": "2026-10-01T05:23:34.681Z",
     "firstSeenAt": "2026-10-01T05:23:34.681Z",
     "summary": "독도와 울릉도를 3박 4일간 탐방하며 역사를 배워요",
-    "noApplication": false
+    "noApplication": false,
+    "seriesId": "yu-news-220740068"
   },
   {
     "id": "dcu-program-175140",
@@ -970355,6 +971576,51 @@
     "noApplication": false
   },
   {
+    "id": "jnu-cba-825700",
+    "title": "경영대학 동아리 등록부 제출 안내",
+    "organizer": "경영대학",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jnu"
+      ],
+      "colleges": [
+        "경영대학"
+      ],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "jnu-cba",
+        "url": "https://cba.jnu.ac.kr/bbs/cba/1615/825700/artclView.do"
+      }
+    ],
+    "sources": [
+      "jnu-cba"
+    ],
+    "postedAt": "2022-08-24",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:08:44.766Z",
+    "summary": "경영대학 동아리를 등록하면 공간 사용과 예산 지원 대상이 돼요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:08:44.766Z"
+  },
+  {
     "id": "yu-career-1465",
     "title": "2022 YU 취업HAJA(부복수전공반) - 여름방학(7&8월)",
     "organizer": "학생성공처",
@@ -976499,6 +977765,51 @@
     "seriesId": "yu-news-84477",
     "summary": "장애대학생에게 사용 목적 제한 없는 장학금 100만원을 지원해요",
     "noApplication": false
+  },
+  {
+    "id": "jnu-cba-823113",
+    "title": "경영대학] AI 면접 스튜디오 공간 사용안내",
+    "organizer": "경영대학 경력개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "jnu-cba",
+        "url": "https://cba.jnu.ac.kr/bbs/cba/1615/823113/artclView.do"
+      }
+    ],
+    "sources": [
+      "jnu-cba"
+    ],
+    "postedAt": "2022-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:08:45.857Z",
+    "summary": "AI 면접 스튜디오에서 모의면접과 AI면접을 연습할 수 있어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:08:45.857Z"
   },
   {
     "id": "yu-news-3226127",
@@ -1155969,5 +1157280,55 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T14:22:49.013Z",
     "firstSeenAt": "2026-10-01T14:22:49.013Z"
+  },
+  {
+    "id": "jnu-cba-347699",
+    "title": "온라인 진로/취업 상담신청 방법 안내",
+    "organizer": "경영대학 경력개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "1학년",
+        "2학년",
+        "3학년",
+        "4학년"
+      ],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "상담·심리",
+      "취업·채용"
+    ],
+    "links": [
+      {
+        "sourceId": "jnu-cba",
+        "url": "https://cba.jnu.ac.kr/bbs/cba/1615/347699/artclView.do"
+      }
+    ],
+    "sources": [
+      "jnu-cba"
+    ],
+    "postedAt": "2016-05-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T08:08:46.941Z",
+    "summary": "진로·취업 상담을 온라인으로 예약해 받고 점수도 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T08:08:46.941Z"
   }
 ]
