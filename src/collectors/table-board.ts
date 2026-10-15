@@ -138,12 +138,19 @@ const ARCHIVE_MAX_PAGES = 300; // 끝없이 넘기지 않게 막는 안전장치
 export const archiveTableBoard: Archiver = {
   async list(ctx, since) {
     const seen = new Map<string, ArchivePost>();
+    let undated = 0; // 등록일을 하나도 못 읽은 쪽이 연달아 몇 번인지
     for (let page = 1; page <= ARCHIVE_MAX_PAGES; page++) {
       const posts = await listPage(ctx, page);
       const fresh = posts.filter((post) => !seen.has(post.postId));
       if (fresh.length === 0) break; // 마지막 쪽을 넘어가면 같은 글(고정 공지)만 나오거나 빈 쪽이 나온다
       for (const post of fresh) if (!post.postedAt || post.postedAt >= since) seen.set(post.postId, post);
       console.log(`  목록 ${page}쪽 확인 (${fresh.at(-1)?.postedAt ?? "?"})`);
+      // 등록일을 못 읽으면 언제 멈출지 몰라 끝까지 넘기게 된다 (선택자가 틀렸을 때 사이트에 요청이 몰린다): 3쪽 연달아 없으면 멈춘다
+      undated = fresh.some((post) => post.postedAt) ? 0 : undated + 1;
+      if (undated >= 3) {
+        console.warn(`  목록에서 등록일을 3쪽 연달아 못 읽어 멈춤 (listDate 설정 확인)`);
+        break;
+      }
       // 고정 공지 때문에 날짜가 섞일 수 있어, 새로 나온 글이 모두 기준보다 오래되었을 때 멈춘다
       if (fresh.every((post) => post.postedAt && post.postedAt < since)) break;
     }

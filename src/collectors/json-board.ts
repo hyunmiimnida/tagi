@@ -101,11 +101,17 @@ const ARCHIVE_MAX_PAGES = 300;
 export const archiveJsonBoard: Archiver = {
   async list(ctx, since) {
     const seen = new Map<string, ArchivePost>();
+    let undated = 0; // 등록일을 하나도 못 읽은 쪽이 연달아 몇 번인지 (3번이면 멈춘다, table-board와 같다)
     for (let page = 1; page <= ARCHIVE_MAX_PAGES; page++) {
       const fresh = (await listPage(ctx, page)).filter((post) => !seen.has(post.postId));
       if (fresh.length === 0) break;
       for (const post of fresh) if (!post.postedAt || post.postedAt >= since) seen.set(post.postId, post);
       console.log(`  목록 ${page}쪽 확인 (${fresh.at(-1)?.postedAt ?? "?"})`);
+      undated = fresh.some((post) => post.postedAt) ? 0 : undated + 1;
+      if (undated >= 3) {
+        console.warn(`  목록에서 등록일을 3쪽 연달아 못 읽어 멈춤 (date 설정 확인)`);
+        break;
+      }
       if (fresh.every((post) => post.postedAt && post.postedAt < since)) break;
     }
     return [...seen.values()];
