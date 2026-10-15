@@ -312993,7 +312993,8 @@
     "collectedAt": "2026-10-03T01:35:10.041Z",
     "summary": "등록금이나 학업장려금 350만원을 최대 2년간 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T01:35:10.041Z"
+    "firstSeenAt": "2026-10-03T01:35:10.041Z",
+    "seriesId": "yonsei-notice-941697"
   },
   {
     "id": "hanyang-notice-94764",
@@ -338110,7 +338111,8 @@
     "collectedAt": "2026-10-01T04:49:55.895Z",
     "firstSeenAt": "2026-10-01T04:49:55.895Z",
     "summary": "축구부 U리그 홈경기 운영을 도우며 시급 11,000원을 받아요",
-    "noApplication": false
+    "noApplication": false,
+    "seriesId": "yu-news-224593569"
   },
   {
     "id": "dcu-notice-181740",
@@ -870084,7 +870086,8 @@
     "collectedAt": "2026-10-01T06:01:04.732Z",
     "firstSeenAt": "2026-10-01T06:01:04.732Z",
     "summary": "전기차와 자율주행 분야의 취업 전략을 온라인 직무특강에서 배워요",
-    "noApplication": false
+    "noApplication": false,
+    "seriesId": "yu-career-1949"
   },
   {
     "id": "yu-career-1766",
@@ -892660,7 +892663,8 @@
     "collectedAt": "2026-10-01T06:13:20.630Z",
     "firstSeenAt": "2026-10-01T06:13:20.630Z",
     "summary": "울릉도와 독도를 조별로 탐방하며 역사와 국토 수호의 의미를 배워요",
-    "noApplication": false
+    "noApplication": false,
+    "seriesId": "yu-news-220740068"
   },
   {
     "id": "yu-career-1773",
@@ -1008897,7 +1008901,8 @@
     "collectedAt": "2026-10-01T07:43:35.191Z",
     "firstSeenAt": "2026-10-01T07:43:35.191Z",
     "summary": "2인 1팀으로 울릉도·독도를 탐방하고 숙박·교통비를 지원받아요",
-    "noApplication": false
+    "noApplication": false,
+    "seriesId": "yu-news-220740068"
   },
   {
     "id": "yu-news-799305",
