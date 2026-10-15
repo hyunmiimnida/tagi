@@ -841,6 +841,98 @@
     "sources": []
   },
   {
+    "id": "gnu",
+    "name": "경상국립대학교",
+    "shortName": "경상국립대",
+    "region": "영남권",
+    "sources": [
+      {
+        "id": "gnu-notice",
+        "name": "공지사항(교내기관)",
+        "collector": "table-board",
+        "url": "https://www.gnu.ac.kr/main/na/ntt/selectNttList.do?mi=1126&bbsId=1028",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "a.nttInfoBtn",
+          "idAttr": "data-id",
+          "idPattern": "^([0-9]+)$",
+          "viewUrl": "https://www.gnu.ac.kr/main/na/ntt/selectNttInfo.do?mi=1126&bbsId=1028&nttSn={id}",
+          "pageParam": "currPage",
+          "title": ".BD_table th.title",
+          "content": ".BD_table tr.cont td",
+          "listDate": "td:last-child",
+          "date": ".BD_table th:contains('등록일') + td",
+          "writer": ".BD_table th:contains('부서') + td"
+        }
+      },
+      {
+        "id": "gnu-external",
+        "name": "외부기관 공지",
+        "collector": "table-board",
+        "url": "https://www.gnu.ac.kr/main/na/ntt/selectNttList.do?mi=1132&bbsId=1033",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "a.nttInfoBtn",
+          "idAttr": "data-id",
+          "idPattern": "^([0-9]+)$",
+          "viewUrl": "https://www.gnu.ac.kr/main/na/ntt/selectNttInfo.do?mi=1132&bbsId=1033&nttSn={id}",
+          "pageParam": "currPage",
+          "title": ".BD_table th.title",
+          "content": ".BD_table tr.cont td",
+          "listDate": "td.ta_l + td",
+          "date": ".BD_table th:contains('등록일') + td",
+          "writer": ".BD_table th:contains('부서') + td"
+        }
+      },
+      {
+        "id": "gnu-scholarship",
+        "name": "장학 공지",
+        "collector": "table-board",
+        "url": "https://www.gnu.ac.kr/main/na/ntt/selectNttList.do?mi=1376&bbsId=1075",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "a.nttInfoBtn",
+          "idAttr": "data-id",
+          "idPattern": "^([0-9]+)$",
+          "viewUrl": "https://www.gnu.ac.kr/main/na/ntt/selectNttInfo.do?mi=1376&bbsId=1075&nttSn={id}",
+          "pageParam": "currPage",
+          "title": ".BD_table th.title",
+          "content": ".BD_table tr.cont td",
+          "listDate": "td:last-child",
+          "date": ".BD_table th:contains('등록일') + td",
+          "writer": ".BD_table th:contains('부서') + td"
+        }
+      },
+      {
+        "id": "gnu-academic",
+        "name": "학사 공지",
+        "collector": "table-board",
+        "url": "https://www.gnu.ac.kr/main/na/ntt/selectNttList.do?mi=1127&bbsId=1029",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "a.nttInfoBtn",
+          "idAttr": "data-id",
+          "idPattern": "^([0-9]+)$",
+          "viewUrl": "https://www.gnu.ac.kr/main/na/ntt/selectNttInfo.do?mi=1127&bbsId=1029&nttSn={id}",
+          "pageParam": "currPage",
+          "title": ".BD_table th.title",
+          "content": ".BD_table tr.cont td",
+          "listDate": "td:last-child",
+          "date": ".BD_table th:contains('등록일') + td",
+          "writer": ".BD_table th:contains('부서') + td"
+        }
+      }
+    ]
+  },
+  {
     "id": "snu",
     "name": "서울대학교",
     "shortName": "서울대",
@@ -1707,6 +1799,461 @@
           "(WISE)",
           "경주캠퍼스"
         ]
+      }
+    ]
+  },
+  {
+    "id": "cnu",
+    "name": "충남대학교",
+    "shortName": "충남대",
+    "region": "충청권",
+    "sources": [
+      {
+        "id": "cnu-job",
+        "name": "인재개발원 공지",
+        "collector": "table-board",
+        "url": "https://job.cnu.ac.kr/job/local/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "인재개발원",
+        "board": {
+          "link": ".b-title-box > a",
+          "listTitle": ".b-title-box > a",
+          "idParam": "articleNo",
+          "viewUrl": "https://job.cnu.ac.kr/job/local/notice.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "title": "td.b-title-box",
+          "content": ".bn-view-common01 td[colspan=\"6\"].b-no-right:not(.b-title-box)",
+          "listDate": ".b-date",
+          "date": "th:contains(\"등록일\") + td",
+          "writer": "th:contains(\"작성자\") + td"
+        }
+      },
+      {
+        "id": "cnu-intl-recruit",
+        "name": "국제교류본부 학생 모집",
+        "collector": "table-board",
+        "url": "https://cnuint.cnu.ac.kr/cnuint/notice/recruit.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "국제교류본부",
+        "board": {
+          "link": ".b-title-box > a",
+          "listTitle": ".b-title-box > a",
+          "idParam": "articleNo",
+          "viewUrl": "https://cnuint.cnu.ac.kr/cnuint/notice/recruit.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "title": "td.b-title-box",
+          "content": ".bn-view-common01 td[colspan=\"6\"].b-no-right:not(.b-title-box)",
+          "listDate": ".b-date",
+          "date": "th:contains(\"등록일\") + td",
+          "writer": "th:contains(\"작성자\") + td"
+        }
+      },
+      {
+        "id": "cnu-intl-job",
+        "name": "국제교류본부 취업",
+        "collector": "table-board",
+        "url": "https://cnuint.cnu.ac.kr/cnuint/notice/job.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": ".b-title-box > a",
+          "listTitle": ".b-title-box > a",
+          "idParam": "articleNo",
+          "viewUrl": "https://cnuint.cnu.ac.kr/cnuint/notice/job.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "title": "td.b-title-box",
+          "content": ".bn-view-common01 td[colspan=\"6\"].b-no-right:not(.b-title-box)",
+          "listDate": ".b-date",
+          "date": "th:contains(\"등록일\") + td",
+          "writer": "th:contains(\"작성자\") + td"
+        }
+      },
+      {
+        "id": "cnu-intl-event",
+        "name": "국제교류본부 행사",
+        "collector": "table-board",
+        "url": "https://cnuint.cnu.ac.kr/cnuint/notice/event.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": ".b-title-box > a",
+          "listTitle": ".b-title-box > a",
+          "idParam": "articleNo",
+          "viewUrl": "https://cnuint.cnu.ac.kr/cnuint/notice/event.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "title": "td.b-title-box",
+          "content": ".bn-view-common01 td[colspan=\"6\"].b-no-right:not(.b-title-box)",
+          "listDate": ".b-date",
+          "date": "th:contains(\"등록일\") + td",
+          "writer": "th:contains(\"작성자\") + td"
+        }
+      }
+    ]
+  },
+  {
+    "id": "cbnu",
+    "name": "충북대학교",
+    "shortName": "충북대",
+    "region": "충청권",
+    "sources": [
+      {
+        "id": "cbnu-cieat",
+        "name": "CIEAT 공지사항",
+        "collector": "table-board",
+        "url": "https://cieat.chungbuk.ac.kr/notice/a/m/getBoardListClientAjax.do?boardDiv=notice",
+        "enabled": true,
+        "pages": 1,
+        "defaultOrganizer": "비교과센터",
+        "useAi": true,
+        "board": {
+          "link": "ul.data_list li p.col_2 a",
+          "row": "li",
+          "idAttr": "data-param1",
+          "idPattern": "(BOM[0-9]+)",
+          "viewUrl": "https://cieat.chungbuk.ac.kr/notice/a/m/getBoardDetail.do?bomKeyId={id}",
+          "pageParam": "pageIndex",
+          "listDate": "p.col_3 span",
+          "title": "h4.cnt_title",
+          "content": ".commu_edit",
+          "date": ".title_info p:first-child"
+        }
+      },
+      {
+        "id": "cbnu-fole",
+        "name": "교양교육본부 공지사항",
+        "collector": "table-board",
+        "url": "https://fole.chungbuk.ac.kr/board/hb1",
+        "enabled": true,
+        "pages": 1,
+        "defaultOrganizer": "교양교육본부",
+        "useAi": true,
+        "board": {
+          "link": "td.board_title a",
+          "idPattern": "/post/([0-9]+)",
+          "viewUrl": "https://fole.chungbuk.ac.kr/post/{id}",
+          "pageParam": "page",
+          "listDate": "td.date",
+          "title": ".board_view .board_top_title",
+          "content": "#post-content",
+          "date": ".board_view ul.info li.time",
+          "writer": ".board_view ul.info li a"
+        }
+      }
+    ]
+  },
+  {
+    "id": "jnu",
+    "name": "전남대학교",
+    "shortName": "전남대",
+    "region": "호남권",
+    "sources": [
+      {
+        "id": "jnu-cba",
+        "name": "경영대학 공지사항",
+        "collector": "table-board",
+        "url": "https://cba.jnu.ac.kr/bbs/cba/1615/artclList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "defaultOrganizer": "경영대학",
+        "board": {
+          "link": "td.td-subject a[href*=\"/artclView.do\"]",
+          "idPattern": "/bbs/cba/1615/(\\d+)/artclView",
+          "viewUrl": "https://cba.jnu.ac.kr/bbs/cba/1615/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.view-title",
+          "content": "div.view-con",
+          "listDate": "td.td-date",
+          "date": "dl.write dd",
+          "listTitle": "td.td-subject strong",
+          "writer": "dl.writer dd.dept-only"
+        }
+      },
+      {
+        "id": "jnu-natural",
+        "name": "자연과학대학 공지사항",
+        "collector": "table-board",
+        "url": "https://natural.jnu.ac.kr/bbs/natural/1560/artclList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "defaultOrganizer": "자연과학대학",
+        "board": {
+          "link": "td.td-subject a[href*=\"/artclView.do\"]",
+          "idPattern": "/bbs/natural/1560/(\\d+)/artclView",
+          "viewUrl": "https://natural.jnu.ac.kr/bbs/natural/1560/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.view-title",
+          "content": "div.view-con",
+          "listDate": "td.td-date",
+          "date": "dl.write dd",
+          "listTitle": "td.td-subject strong",
+          "writer": "dl.writer dd.dept-only"
+        }
+      },
+      {
+        "id": "jnu-eng",
+        "name": "공과대학 공지사항",
+        "collector": "table-board",
+        "url": "https://eng.jnu.ac.kr/bbs/eng/993/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "공과대학",
+        "board": {
+          "link": "td.td-subject a[href*=\"/artclView.do\"]",
+          "idPattern": "/bbs/eng/993/(\\d+)/artclView",
+          "viewUrl": "https://eng.jnu.ac.kr/bbs/eng/993/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.view-title",
+          "content": "div.view-con",
+          "listDate": "td.td-date",
+          "date": "dl.write dd",
+          "listTitle": "td.td-subject strong",
+          "writer": "dl.writer dd.dept-only"
+        }
+      },
+      {
+        "id": "jnu-jobcenter",
+        "name": "대학일자리플러스센터 공지사항",
+        "collector": "table-board",
+        "url": "https://jobcenter.jnu.ac.kr/?mid=0104",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "대학일자리플러스센터",
+        "board": {
+          "link": "td.tLeft a[href*=\"act=dtl\"]",
+          "idParam": "idx",
+          "viewUrl": "https://jobcenter.jnu.ac.kr/?mid=0104&act=dtl&idx={id}",
+          "pageParam": "page",
+          "listTitle": "td.tLeft a.FS15",
+          "title": ".card-blog-header p.title span.no-such",
+          "content": ".card-blog-body",
+          "listDate": "td[data-header=\"작성일\"]",
+          "date": "ul.datehit li:first-child"
+        }
+      }
+    ]
+  },
+  {
+    "id": "jbnu",
+    "name": "전북대학교",
+    "shortName": "전북대",
+    "region": "호남권",
+    "sources": [
+      {
+        "id": "jbnu-notice",
+        "name": "교내공지",
+        "collector": "table-board",
+        "url": "https://www.jbnu.ac.kr/web/news/notice/sub01.do",
+        "enabled": true,
+        "pages": 3,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a.title",
+          "idAttr": "onclick",
+          "idPattern": "'([0-9]+)'",
+          "viewUrl": "https://www.jbnu.ac.kr/web/Board/{id}/detailView.do?menu=2377",
+          "pageParam": "pageIndex",
+          "listDate": "ul.etc-list li",
+          "title": ".com-post-hd-01 h2.title",
+          "content": ".com-post-content-01",
+          "date": ".com-post-hd-01 .etc-list li:nth-of-type(2)",
+          "writer": ".com-post-hd-01 .etc-list li:first-child"
+        }
+      },
+      {
+        "id": "jbnu-student",
+        "name": "학생공지",
+        "collector": "table-board",
+        "url": "https://www.jbnu.ac.kr/web/news/notice/sub02.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.td-title a.title",
+          "idAttr": "onclick",
+          "idPattern": "'([0-9]+)'",
+          "viewUrl": "https://www.jbnu.ac.kr/web/Board/{id}/detailView.do?menu=2378",
+          "pageParam": "pageIndex",
+          "listDate": "ul.etc-list li",
+          "title": ".com-post-hd-01 h2.title",
+          "content": ".com-post-content-01",
+          "date": ".com-post-hd-01 .etc-list li:nth-of-type(2)",
+          "writer": ".com-post-hd-01 .etc-list li:first-child"
+        }
+      },
+      {
+        "id": "jbnu-startup",
+        "name": "창업교육센터 공지사항",
+        "collector": "table-board",
+        "url": "https://startup.jbnu.ac.kr/main/?gc=605XOAS",
+        "enabled": true,
+        "pages": 1,
+        "defaultOrganizer": "창업교육센터",
+        "useAi": true,
+        "board": {
+          "link": "td.article_title a",
+          "idPattern": "bwrite_id=([A-Za-z0-9]+)",
+          "viewUrl": "https://startup.jbnu.ac.kr/main/?gc=605XOAS&do=view&bwrite_id={id}",
+          "pageParam": "page",
+          "listDate": "td:nth-child(4)",
+          "title": ".board_view .tit_wrap .tit",
+          "content": ".board_view .content_wrap",
+          "date": ".board_view .tit_wrap .name span:nth-child(2)",
+          "writer": ".board_view .tit_wrap .name span:first-child"
+        }
+      }
+    ]
+  },
+  {
+    "id": "kangwon",
+    "name": "강원대학교",
+    "shortName": "강원대",
+    "region": "강원권",
+    "sources": [
+      {
+        "id": "kangwon-notice",
+        "name": "일반공지",
+        "collector": "table-board",
+        "url": "https://www.kangwon.ac.kr/ko/bbs/504/list.do?searchMulti=1",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "row": ".table-list.pc tbody tr",
+          "link": "td a.detail-button",
+          "idParam": "pstSn",
+          "viewUrl": "https://www.kangwon.ac.kr/ko/bbs/504/detail.do?pstSn={id}",
+          "pageParam": "pageIndex",
+          "listDate": "td:nth-last-child(2)",
+          "title": ".card-header h3",
+          "content": ".editor-wrap",
+          "date": ".view-header-info p:first-child",
+          "writer": "th:contains('작성자') + td"
+        }
+      },
+      {
+        "id": "kangwon-scholarship",
+        "name": "장학공지",
+        "collector": "table-board",
+        "url": "https://www.kangwon.ac.kr/ko/bbs/721/list.do?searchMulti=1",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "row": ".table-list.pc tbody tr",
+          "link": "td a.detail-button",
+          "idParam": "pstSn",
+          "viewUrl": "https://www.kangwon.ac.kr/ko/bbs/721/detail.do?pstSn={id}",
+          "pageParam": "pageIndex",
+          "listDate": "td:nth-last-child(2)",
+          "title": ".card-header h3",
+          "content": ".editor-wrap",
+          "date": ".view-header-info p:first-child",
+          "writer": "th:contains('작성자') + td"
+        }
+      },
+      {
+        "id": "kangwon-event",
+        "name": "행사안내",
+        "collector": "table-board",
+        "url": "https://www.kangwon.ac.kr/ko/bbs/715/list.do?searchMulti=1",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "row": ".table-list.pc tbody tr",
+          "link": "td a.detail-button",
+          "idParam": "pstSn",
+          "viewUrl": "https://www.kangwon.ac.kr/ko/bbs/715/detail.do?pstSn={id}",
+          "pageParam": "pageIndex",
+          "listDate": "td:nth-last-child(2)",
+          "title": ".card-header h3",
+          "content": ".editor-wrap",
+          "date": ".view-header-info p:first-child",
+          "writer": "th:contains('작성자') + td"
+        }
+      },
+      {
+        "id": "kangwon-contest",
+        "name": "공모안내",
+        "collector": "table-board",
+        "url": "https://www.kangwon.ac.kr/ko/bbs/719/list.do?searchMulti=1",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "row": ".table-list.pc tbody tr",
+          "link": "td a.detail-button",
+          "idParam": "pstSn",
+          "viewUrl": "https://www.kangwon.ac.kr/ko/bbs/719/detail.do?pstSn={id}",
+          "pageParam": "pageIndex",
+          "listDate": "td:nth-last-child(2)",
+          "title": ".card-header h3",
+          "content": ".editor-wrap",
+          "date": ".view-header-info p:first-child",
+          "writer": "th:contains('작성자') + td"
+        }
+      }
+    ]
+  },
+  {
+    "id": "jejunu",
+    "name": "제주대학교",
+    "shortName": "제주대",
+    "region": "제주권",
+    "sources": [
+      {
+        "id": "jejunu-rise",
+        "name": "RISE사업단 공지사항",
+        "collector": "table-board",
+        "url": "https://jnurise.jejunu.ac.kr/news/notice.htm",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "RISE사업단",
+        "board": {
+          "link": "td.table-title a",
+          "idParam": "seq",
+          "viewUrl": "https://jnurise.jejunu.ac.kr/news/notice.htm?act=view&seq={id}",
+          "pageParam": "page",
+          "title": ".board-view .view-title",
+          "content": ".board-view .view-content",
+          "listDate": "td:nth-last-child(2)",
+          "date": ".board-view .view-data"
+        }
+      },
+      {
+        "id": "jejunu-capstone",
+        "name": "RISE사업단 캡스톤디자인 공지",
+        "collector": "table-board",
+        "url": "https://jnurise.jejunu.ac.kr/job/resource/notice.htm",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "RISE사업단",
+        "board": {
+          "link": "td.table-title a",
+          "idParam": "seq",
+          "viewUrl": "https://jnurise.jejunu.ac.kr/job/resource/notice.htm?act=view&seq={id}",
+          "pageParam": "page",
+          "title": ".board-view .view-title",
+          "content": ".board-view .view-content",
+          "listDate": "td:nth-last-child(2)",
+          "date": ".board-view .view-data"
+        }
       }
     ]
   }
