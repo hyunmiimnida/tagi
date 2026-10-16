@@ -18,6 +18,7 @@
 - 프로그램 데이터: `data/programs.json` 파일 (git에 저장)
 - 로그인·학교 설정·관심 표시: Supabase (구글·카카오 소셜 로그인). 설정이 없으면 "체험 모드"로 브라우저에만 저장
 - 하루 1회 자동 수집: GitHub Actions가 수집 후 `data/`를 커밋 → Vercel이 자동 재배포
+  - **2026-10-16부터 자동 수집을 잠시 멈춤** (시스템 구축에 집중, 자동 수집은 나중에 정비): `collect.yml`의 schedule을 주석 처리(수동 실행 버튼은 남김), 작업 스케줄러 "tagi 정보 수집"은 사용 안 함. 다시 켤 때 둘 다 되돌린다. 마감 알림(`notify.yml`)은 그대로
   - `localOnly` 출처(해외 서버에서 접속 불가)는 GitHub Actions에서 건너뛰고, 내 컴퓨터의 `scripts/collect-local.ps1`(작업 스케줄러 "tagi 정보 수집", 매일 오후 1시·8시, 꺼져 있었으면 켤 때 실행)로 수집해 올린다
 - 배포: Vercel
 - HTML 분석: cheerio

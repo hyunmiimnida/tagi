@@ -2,8 +2,9 @@
 name: 정보 수집
 
 on:
-  schedule:
-    - cron: "0 21 * * *" # 매일 한국 시간 오전 6시 (UTC 21시)
+  # 2026-10-16 시스템 구축에 집중하려고 자동 실행을 잠시 멈춤. 다시 켤 때 아래 두 줄의 # 를 지운다
+  # schedule:
+  #   - cron: "0 21 * * *" # 매일 한국 시간 오전 6시 (UTC 21시)
   workflow_dispatch: # GitHub 화면에서 직접 실행 버튼
 
 permissions:
