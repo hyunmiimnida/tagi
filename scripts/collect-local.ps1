@@ -19,7 +19,14 @@ function Save-Data {
 }
 
 try {
+  # 손으로 하던 data 작업(과거 글 저장 등)이 아직 안 올라갔으면 섞이지 않게 이번 자동 수집은 건너뛴다
+  # (2026-10-16 자동 수집과 과거 글 저장이 겹쳐 git 충돌 표시가 든 목록이 올라간 적이 있다)
+  if (git status --porcelain -- data) {
+    Write-Output "data 폴더에 올리지 않은 변경이 있어 이번 자동 수집을 건너뜀"
+    return
+  }
   git pull --rebase --autostash --quiet
+  if (git diff --name-only --diff-filter=U) { throw "최신을 받다가 충돌이 남: 자동 수집을 멈춤" }
   # 일부 출처가 실패해도 성공한 결과는 올린다
   npm.cmd run collect
   # 수집하는 동안 GitHub Actions 결과가 먼저 올라오면 올리기가 실패한다.
