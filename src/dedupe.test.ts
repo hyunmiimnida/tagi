@@ -92,3 +92,21 @@ test("추가 모집·상시 모집·(조기 마감)은 같은 공고를 다시 �
   assert.equal(repostKey("튜터 추가모집(조기 마감)"), repostKey("튜터 모집"));
   assert.notEqual(repostKey("영어권 교환학생 선발"), repostKey("일어권 교환학생 선발"));
 });
+
+test("(수정)·[수정게시]·(재업로드)·(재안내)·(상시모집)도 같은 공고로 본다", () => {
+  assert.equal(repostKey("[수정게시] [★사회공헌단] 해외자원봉사 파견단원 모집"), repostKey("[★사회공헌단] 해외자원봉사 파견단원 모집"));
+  assert.equal(repostKey("KNU in the World Program 참가학생 모집 (수정)"), repostKey("KNU in the World Program 참가학생 모집"));
+  assert.equal(repostKey("(재안내)[SW중심대학사업단] 창업 경진대회 참가자 모집 안내"), repostKey("[SW중심대학사업단] 창업 경진대회 참가자 모집 안내"));
+  assert.equal(repostKey("국제개발협력 동아리원 모집 (상시모집)"), repostKey("국제개발협력 동아리원 모집"));
+});
+
+test("두 게시판에 함께 올라온 글도 한 게시판의 재게시와 합친다 (출처 순서가 달라도)", async () => {
+  const { collapseReposts } = await import("./dedupe.ts");
+  const a = { ...program("x"), id: "a", sources: ["s1", "s2"], title: "벤처클럽 경진대회 모집", postedAt: "2026-09-28" };
+  const b = { ...program("x"), id: "b", sources: ["s2", "s1"], title: "벤처클럽 경진대회 모집", postedAt: "2026-09-28" };
+  const c = { ...program("x"), id: "c", sources: ["s1"], title: "(재게시) 벤처클럽 경진대회 모집", postedAt: "2026-10-05" };
+  const other = { ...program("x"), id: "d", sources: ["s3"], title: "벤처클럽 경진대회 모집", postedAt: "2026-10-01" };
+  const kept = collapseReposts([a, b, c, other]);
+  assert.deepEqual(kept.map((p) => p.id), ["a", "d"]); // 다른 게시판(s3)의 글은 그대로 둔다
+  assert.deepEqual(kept[0].aliases, ["b", "c"]);
+});

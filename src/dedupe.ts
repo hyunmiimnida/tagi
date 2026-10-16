@@ -145,8 +145,10 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
 // 같은 게시판에 다시 올린 글(재게시·재공지·기간연장)은 같은 공고다.
 // 이런 표시를 지운 제목이 같고 두 달 안에 올라온 글을 하나로 합친다.
 // 처음 글의 id를 남기고(관심 표시·주소 유지), 일정은 나중 글을 따르며(기간연장 반영), 원문 링크는 나중 글을 앞에 둔다.
-// "추가 모집"·"상시 모집"·"(추가)"·"(조기 마감)"도 같은 공고를 다시 올린 것으로 본다
-const REPOST_MARK = /재게시|재공지|재공고|기간\s*연장|연장(?=\s*(공고|안내))|마감\s*임박|일정\s*변경|장소\s*변경|(추가|상시)\s*(?=모집)|\(추가\)|\(?조기\s*마감\)?/g;
+// "추가 모집"·"상시 모집"·"(추가)"·"(조기 마감)"·"(수정)"·"[수정게시]"·"(재업로드)"도 같은 공고를 다시 올린 것으로 본다
+// 괄호 안이 통째로 표시인 것은 괄호째 지운다 ("동아리원 모집 (상시모집)" = "동아리원 모집", "(재안내)[SW사업단] …" = "[SW사업단] …")
+const REPOST_MARK =
+  /[(\[]\s*(?:(?:추가|상시)\s*모집|수정\s*게시|수정|재업로드|재안내)\s*[)\]]|수정\s*게시|재업로드|재게시|재공지|재공고|기간\s*연장|연장(?=\s*(공고|안내))|마감\s*임박|일정\s*변경|장소\s*변경|(추가|상시)\s*(?=모집)|\(추가\)|\(?조기\s*마감\)?/g;
 // 제목 앞의 마감·대상 머리말도 지운다. 예: "[(재게시) 8/17(월) 까지_인문사회 계열]", "[🚨9/9(화) 까지]", "[~9/30]"
 // (날짜나 "까지·마감"이 들어 있는 대괄호 묶음만 지운다. "[학생상담센터]" 같은 부서 이름은 남긴다)
 const DEADLINE_HEAD = /^\s*\[[^\]]*(\d{1,2}\s*[/.월]\s*\d{1,2}|까지|마감|접수)[^\]]*\]\s*/;
@@ -157,14 +159,14 @@ export function stripDeadlineHead(title: string): string {
 }
 // "재안내"는 "안내"로 본다("모집 재안내" = "모집 안내"), 앞의 [홍보] 머리말도 지운다
 export const repostKey = (title: string) =>
-  normalize(stripDeadlineHead(title).replace(/재안내/g, "안내").replace(/^\s*\[(재)?홍보\]\s*/, "").replace(REPOST_MARK, ""));
+  normalize(stripDeadlineHead(title).replace(REPOST_MARK, "").replace(/재안내/g, "안내").replace(/^\s*\[(재)?홍보\]\s*/, "").replace(REPOST_MARK, ""));
 const REPOST_DAYS = 60;
 
 export function collapseReposts(programs: Program[]): Program[] {
   const groups = new Map<string, Program[]>();
   for (const program of programs) {
     if (!program.postedAt) continue; // 게시일이 없는 출처(목록형)는 글마다 다른 회차다
-    const key = `${program.sources.join(",")}|${repostKey(program.title)}`;
+    const key = repostKey(program.title);
     groups.set(key, [...(groups.get(key) ?? []), program]);
   }
 
@@ -172,11 +174,15 @@ export function collapseReposts(programs: Program[]): Program[] {
   for (const group of groups.values()) {
     if (group.length < 2) continue;
     group.sort((a, b) => a.postedAt!.localeCompare(b.postedAt!));
-    let base = group[0];
-    for (const next of group.slice(1)) {
-      const gap = (Date.parse(next.postedAt!) - Date.parse(base.postedAt!)) / 86_400_000;
-      if (gap > REPOST_DAYS) {
-        base = next; // 두 달 넘게 지나 다시 올린 글은 다른 회차로 본다
+    // 같은 게시판(출처가 하나라도 겹침)에 두 달 안에 다시 올린 글만 합친다.
+    // 두 게시판에 함께 올라와 이미 합쳐진 글(출처 여럿, 순서도 제각각)도 그중 한 게시판의 재게시와 합친다
+    const kept: Program[] = [];
+    for (const next of group) {
+      const gap = (base: Program) => (Date.parse(next.postedAt!) - Date.parse(base.postedAt!)) / 86_400_000;
+      // 두 달 넘게 지나 다시 올린 글은 다른 회차로 본다
+      const base = kept.findLast((p) => p.sources.some((s) => next.sources.includes(s)) && p.campus === next.campus && gap(p) <= REPOST_DAYS);
+      if (!base) {
+        kept.push(next);
         continue;
       }
       if (next.recruitPeriod.start || next.recruitPeriod.end) base.recruitPeriod = next.recruitPeriod;
@@ -191,6 +197,7 @@ export function collapseReposts(programs: Program[]): Program[] {
         base.extractedBy = "ai";
       }
       base.links = [...next.links, ...base.links.filter((l) => !next.links.some((n) => n.url === l.url))];
+      base.sources = union(base.sources, next.sources);
       base.postedAt = next.postedAt; // 기준 게시일을 옮겨 다음 재게시도 이어 붙인다
       base.aliases = union(base.aliases ?? [], [next.id, ...(next.aliases ?? [])]); // 예전 주소·관심 표시를 이어 준다
       removed.add(next);
