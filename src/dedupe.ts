@@ -26,15 +26,32 @@ const conflicts = (a: string | null, b: string | null) => a !== null && b !== nu
 const datesCompatible = (a: Program, b: Program) =>
   !conflicts(a.recruitPeriod.end, b.recruitPeriod.end) && !conflicts(a.activityPeriod.start, b.activityPeriod.start);
 
-// 규칙으로는 판단하기 애매한 출처 간 후보 쌍 (AI가 같은 프로그램인지 판단한다)
+// 같은 게시판은 가까운 시기에 올라온 비슷한 글만 AI에게 묻는다.
+// 학교 공지는 "2026학년도 2학기 … 안내" 같은 틀이 많아 0.45로는 다른 공고가 너무 많이 걸린다 (2026-10 목록에서 1,390쌍 → 0.7이면 294쌍)
+const SAME_SOURCE_SIMILARITY = 0.7;
+function sameSourceCandidate(a: Program, b: Program, similarity: number): boolean {
+  if (!a.postedAt || !b.postedAt) return false;
+  const days = Math.abs(Date.parse(a.postedAt) - Date.parse(b.postedAt)) / 86_400_000;
+  if (!Number.isFinite(days) || days > 90) return false;
+  const sameKey = repostKey(a.title) === repostKey(b.title);
+  if (sameKey && days <= REPOST_DAYS) return false; // 이미 재게시 규칙으로 합친다
+  // 달·회차·연도가 다르면 다른 공고다. 마감 머리말만 바뀐 재게시는 남긴다
+  const numbers = (title: string) => (title.match(/\d+/g) ?? []).join(",");
+  if (!sameKey && numbers(a.title) !== numbers(b.title)) return false;
+  return sameKey || similarity >= SAME_SOURCE_SIMILARITY;
+}
+
+// 규칙으로는 판단하기 애매한 후보 쌍 (AI가 같은 프로그램인지 판단한다)
 export function findAmbiguousPairs(programs: Program[]): [Program, Program][] {
   const pairs: [Program, Program][] = [];
   for (let i = 0; i < programs.length; i++) {
     for (let j = i + 1; j < programs.length; j++) {
       const [a, b] = [programs[i], programs[j]];
-      if (a.sources.some((s) => b.sources.includes(s)) || !sameSchool(a, b) || !datesCompatible(a, b)) continue;
+      if (a.campus !== b.campus || !sameSchool(a, b) || !datesCompatible(a, b)) continue;
       const similarity = titleSimilarity(a.title, b.title);
-      if (similarity >= 0.45 && similarity < 0.8) pairs.push([a, b]);
+      const sharedSource = a.sources.some((s) => b.sources.includes(s));
+      // 같은 게시판은 한 단어만 달라도 다른 프로그램일 수 있어 상한을 두지 않는다
+      if (sharedSource ? sameSourceCandidate(a, b, similarity) : similarity >= 0.45 && similarity < 0.8) pairs.push([a, b]);
     }
   }
   return pairs;
@@ -134,7 +151,7 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
       continue;
     }
 
-    const duplicate = result.find((p) => !p.sources.includes(program.sources[0]) && sameSchool(p, program) && isDuplicate(p, program));
+    const duplicate = result.find((p) => !p.sources.some((s) => program.sources.includes(s)) && sameSchool(p, program) && isDuplicate(p, program));
     if (duplicate) mergeInto(duplicate, program);
     else result.push({ ...program, firstSeenAt: firstSeen(program) });
   }

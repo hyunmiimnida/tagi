@@ -2,6 +2,7 @@ import type { Archiver, Collector } from "../types.ts";
 import { archiveCareerProgramList, collectCareerProgramList } from "./career-program-list.ts";
 import { archiveJsonBoard, collectJsonBoard } from "./json-board.ts";
 import { archiveNewsBoard, collectNewsBoard } from "./news-board.ts";
+import { archiveRssBoard, collectRssBoard } from "./rss-board.ts";
 import { archiveTableBoard, collectTableBoard } from "./table-board.ts";
 
 // 수집기 등록부. config/schools.json의 "collector" 값과 이름이 같아야 한다.
@@ -9,6 +10,7 @@ export const collectors: Record<string, Collector> = {
   "career-program-list": collectCareerProgramList,
   "json-board": collectJsonBoard,
   "news-board": collectNewsBoard,
+  "rss-board": collectRssBoard,
   "table-board": collectTableBoard,
 };
 
@@ -17,5 +19,6 @@ export const archivers: Record<string, Archiver> = {
   "career-program-list": archiveCareerProgramList,
   "json-board": archiveJsonBoard,
   "news-board": archiveNewsBoard,
+  "rss-board": archiveRssBoard,
   "table-board": archiveTableBoard,
 };

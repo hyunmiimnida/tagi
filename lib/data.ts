@@ -134,12 +134,15 @@ export function describeSources(): string {
 
 // 지역별 마지막 수집 시각. 지역 학교 출처 중 가장 오래전에 성공한 시각을 보여 주고,
 // 수집이 멈춘 학교는 이름을 따로 알린다 (학교가 많아 학교마다 늘어놓지 않는다)
-const STALE_DAYS = 3; // 이보다 오래 수집에 성공하지 못한 학교는 바닥글에 경고한다
+const STALE_DAYS = 3; // 가장 최근 수집보다 이만큼 넘게 성공하지 못한 학교는 바닥글에 경고한다
 
 export function getCollectedByRegion(): { region: string; at: string; stale: string[] }[] {
   try {
     const log = readJson<{ sources: { source: string; lastSuccessAt?: string }[] }>("data/collect-log.json");
     const last = new Map(log.sources.map((s) => [s.source, s.lastSuccessAt]));
+    // "멈춤"은 오늘이 아니라 가장 최근 수집과 비교한다. 자동 수집을 통째로 쉬는 동안에는
+    // 모든 학교가 멈춘 것으로 보이지 않고, 마지막 수집 시각만 보인다 (2026-10 자동 수집 잠시 멈춤)
+    const latest = Math.max(...log.sources.map((s) => (s.lastSuccessAt ? Date.parse(s.lastSuccessAt) : 0)));
     const regions = new Map<string, { oldest: string; stale: string[] }>();
     for (const school of readSchools()) {
       const times = school.sources.filter((s) => s.enabled).map((s) => last.get(s.id));
@@ -147,7 +150,7 @@ export function getCollectedByRegion(): { region: string; at: string; stale: str
       const oldest = (times as string[]).sort()[0];
       const entry = regions.get(school.region) ?? { oldest, stale: [] };
       if (oldest < entry.oldest) entry.oldest = oldest;
-      if (Date.now() - Date.parse(oldest) > STALE_DAYS * 86_400_000) entry.stale.push(school.shortName);
+      if (latest - Date.parse(oldest) > STALE_DAYS * 86_400_000) entry.stale.push(school.shortName);
       regions.set(school.region, entry);
     }
     return [...regions].map(([region, { oldest, stale }]) => ({ region, at: formatKoreanTime(oldest), stale }));

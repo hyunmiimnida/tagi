@@ -24,6 +24,7 @@ import type { ArchivePost, CollectContext, CollectedItem, Program, School, TagCa
 //   --rules를 붙이면 AI 없이 규칙으로만 추출한다 (AI 한도가 없을 때)
 //   --school knu,kmu 를 붙이면 그 학교만 한다
 //   --posters를 붙이면 본문이 그림뿐인 글의 포스터도 AI가 읽는다 (느려서 기본은 끔)
+// 학교는 BACKFILL_SCHOOLS개(기본 4)씩 동시에, 학교 안 출처는 차례로 처리하며 AI는 전체 5개까지 돌린다.
 // 진행 상황은 .cache/backfill/에 둔다 (git에 올리지 않음). 원문 본문은 저장하지 않는다.
 
 const CACHE = new URL("../.cache/backfill/", import.meta.url);
@@ -36,7 +37,10 @@ const TRIAGE_BATCH = 200; // 제목 거르기 한 번에 보낼 제목 수
 const NEWS_BATCH = 20; // 본문 추출 한 번에 보낼 게시물 수
 const LIST_ONLY_BATCH = 40; // 목록 정보만 있는 출처는 글이 짧아 많이 보낸다
 const NEWS_MAX_TEXT = 1500;
-const AI_PARALLEL = 5; // 동시에 돌리는 AI 작업 수
+const AI_PARALLEL = 5; // 모든 학교가 함께 쓰는 AI 작업 수
+const schoolParallel = Number(process.env.BACKFILL_SCHOOLS ?? 4);
+const SCHOOL_PARALLEL = Number.isSafeInteger(schoolParallel) && schoolParallel > 0 ? schoolParallel : 4;
+const withAiSlot = createLimiter(AI_PARALLEL);
 
 const args = process.argv.slice(2);
 const rulesOnly = args.includes("--rules");
@@ -74,19 +78,19 @@ async function run() {
   if (!rulesOnly && !findAi()) throw new Error(`과거 글을 거를 수 없습니다: ${AI_MISSING}`);
   const known = await knownUrls();
 
-  for (const school of schools) {
-    if (onlySchools && !onlySchools.has(school.id)) continue;
+  const selected = schools.filter((school) => !onlySchools || onlySchools.has(school.id));
+  await inParallel(selected, async (school) => {
     for (const source of school.sources) {
       const archiver = archivers[source.collector];
       if (!source.enabled || !archiver) continue;
       const label = `[${school.name} > ${source.name}]`;
-      if (!(await isAllowedByRobots(source.url))) {
-        console.log(`${label} robots.txt에서 막아서 건너뜀`);
-        continue;
-      }
       const ctx: CollectContext = { school, source, fetchHtml, isKnown: (url) => known.has(url) };
 
       try {
+        if (!(await isAllowedByRobots(source.url))) {
+          console.log(`${label} robots.txt에서 막아서 건너뜀`);
+          continue;
+        }
         // 1. 목록 훑기 (한 번 훑은 목록은 저장해 두고 다시 쓴다)
         let posts = await readJson<ArchivePost[] | null>(listFile(source.id), null).catch(() => null);
         if (!posts) {
@@ -111,7 +115,7 @@ async function run() {
         console.error(`${label} 건너뜀: ${error instanceof Error ? error.message : error}`);
       }
     }
-  }
+  }, SCHOOL_PARALLEL);
   console.log(`끝. 추출 ${results.length}개, 학생 대상 아님 ${rejected.size}개. 이제 npm run backfill -- --save`);
 }
 
@@ -119,7 +123,7 @@ async function triageTitles(label: string, posts: ArchivePost[]) {
   const pending = posts.filter((post) => triage[post.url] === undefined);
   const batches = chunk(pending, TRIAGE_BATCH);
   await inParallel(batches, async (batch, index) => {
-    const picked = await pickProgramTitles(batch.map((post) => post.title));
+    const picked = await withAiSlot(() => pickProgramTitles(batch.map((post) => post.title)));
     if (!picked) return; // 실패한 묶음은 다음 실행 때 다시 거른다
     const set = new Set(picked);
     batch.forEach((post, i) => (triage[post.url] = set.has(i)));
@@ -136,52 +140,60 @@ async function extract(
 ) {
   const batches = chunk(posts, read ? NEWS_BATCH : LIST_ONLY_BATCH);
   let finished = 0;
+  let failure: { error: unknown } | undefined;
   // 본문 읽기(1초 간격)는 차례로, AI 추출은 동시에 여러 개 돌린다
   const running = new Set<Promise<void>>();
-  for (const batch of batches) {
-    const items: CollectedItem[] = [];
-    for (const post of batch) {
-      try {
-        const item = post.item ?? (await read!(ctx, post));
-        if (item) items.push(item);
-      } catch (error) {
-        console.error(`  읽기 실패 ${post.url}:`, error instanceof Error ? error.message : error);
+  try {
+    for (const batch of batches) {
+      if (failure) break;
+      const items: CollectedItem[] = [];
+      for (const post of batch) {
+        try {
+          const item = post.item ?? (await read!(ctx, post));
+          if (item) items.push(item);
+        } catch (error) {
+          console.error(`${label} 읽기 실패 ${post.url}:`, error instanceof Error ? error.message : error);
+        }
       }
-    }
-    for (const item of items) {
-      enrich(item, ctx.source, categories);
-      applyCampus(item.program, ctx.school, item.campusLabel); // 다른 캠퍼스 글은 그 캠퍼스로 (수집과 같게)
-    }
+      for (const item of items) {
+        enrich(item, ctx.source, categories);
+        applyCampus(item.program, ctx.school, item.campusLabel); // 다른 캠퍼스 글은 그 캠퍼스로 (수집과 같게)
+      }
 
-    const job = (async () => {
-      // --rules: AI 없이 규칙 추출 결과만 쓴다 (AI 한도가 없을 때, 보관함에만 들어갈 오래된 글용)
-      if (rulesOnly) {
+      const job = (async () => {
+        // --rules: AI 없이 규칙 추출 결과만 쓴다 (AI 한도가 없을 때, 보관함에만 들어갈 오래된 글용)
+        if (rulesOnly) {
+          for (const item of items) {
+            fixOrganizerType(item.program, categories);
+            results.push(item.program);
+          }
+          await persist();
+          console.log(`${label} 규칙 추출 ${++finished}/${batches.length}묶음 (누적 ${results.length}개)`);
+          return;
+        }
+        const ai = await withAiSlot(() => enrichWithAi(items, categories, {
+          batchSize: items.length,
+          maxText: NEWS_MAX_TEXT,
+          posters: args.includes("--posters"),
+        }));
         for (const item of items) {
-          fixOrganizerType(item.program, categories);
-          results.push(item.program);
+          if (ai.notForStudents.has(item.program.id)) rejected.add(item.program.links[0].url);
+          else if (item.program.extractedBy === "ai") results.push(item.program); // AI가 실패한 글은 다음 실행 때 다시
         }
         await persist();
-        console.log(`${label} 규칙 추출 ${++finished}/${batches.length}묶음 (누적 ${results.length}개)`);
-        return;
-      }
-      const ai = await enrichWithAi(items, categories, {
-        batchSize: items.length,
-        maxText: NEWS_MAX_TEXT,
-        posters: args.includes("--posters"),
-      });
-      for (const item of items) {
-        if (ai.notForStudents.has(item.program.id)) rejected.add(item.program.links[0].url);
-        else if (item.program.extractedBy === "ai") results.push(item.program); // AI가 실패한 글은 다음 실행 때 다시
-      }
-      await persist();
-      finished++;
-      console.log(`${label} 추출 ${finished}/${batches.length}묶음 (누적 ${results.length}개)`);
-    })();
-    running.add(job);
-    void job.finally(() => running.delete(job));
-    if (running.size >= AI_PARALLEL) await Promise.race(running);
+        finished++;
+        console.log(`${label} 추출 ${finished}/${batches.length}묶음 (누적 ${results.length}개)`);
+      })().catch((error: unknown) => {
+        failure ??= { error }; // 읽는 동안 난 오류도 기억하고, 이미 시작한 작업은 마저 기다린다
+      }).finally(() => running.delete(job));
+      running.add(job);
+      // AI 자리를 기다리는 동안에도 다음 본문을 읽되, 대기 묶음이 끝없이 쌓이지 않게 한다
+      if (running.size >= AI_PARALLEL) await Promise.race(running);
+    }
+  } finally {
+    await Promise.all(running);
   }
-  await Promise.all(running);
+  if (failure) throw failure.error;
 }
 
 // 추출 결과를 목록(최근 90일)과 보관함(그 이전)에 나눠 합친다
@@ -214,12 +226,15 @@ async function save() {
 // 진행 상황 저장. 동시에 끝난 작업들이 같은 파일을 겹쳐 쓰지 않게 차례로 저장한다
 let saving = Promise.resolve();
 function persist(): Promise<void> {
-  saving = saving.then(async () => {
-    await writeJson(TRIAGE_FILE, triage);
-    await writeJson(RESULTS_FILE, results);
-    await writeJson(REJECTED_FILE, [...rejected]);
+  const saved = saving.then(async () => {
+    // 세 파일에 같은 시점의 진행 상황을 담는다
+    const snapshot = { triage: { ...triage }, results: [...results], rejected: [...rejected] };
+    await writeJson(TRIAGE_FILE, snapshot.triage);
+    await writeJson(RESULTS_FILE, snapshot.results);
+    await writeJson(REJECTED_FILE, snapshot.rejected);
   });
-  return saving;
+  saving = saved.catch(() => {}); // 한 번 실패해도 다른 학교의 다음 저장은 시도한다
+  return saved;
 }
 
 function chunk<T>(list: T[], size: number): T[][] {
@@ -228,7 +243,24 @@ function chunk<T>(list: T[], size: number): T[][] {
   return out;
 }
 
-async function inParallel<T>(list: T[], work: (item: T, index: number) => Promise<void>) {
+// 먼저 기다린 작업부터 빈자리를 넘겨준다. 실패해도 다음 작업은 계속한다.
+function createLimiter(limit: number) {
+  let active = 0;
+  const waiting: (() => void)[] = [];
+  return async <T>(work: () => Promise<T>): Promise<T> => {
+    if (active >= limit) await new Promise<void>((resolve) => waiting.push(resolve));
+    else active++;
+    try {
+      return await work();
+    } finally {
+      const next = waiting.shift();
+      if (next) next();
+      else active--;
+    }
+  };
+}
+
+async function inParallel<T>(list: T[], work: (item: T, index: number) => Promise<void>, parallel = AI_PARALLEL) {
   let next = 0;
   const worker = async () => {
     while (next < list.length) {
@@ -236,7 +268,9 @@ async function inParallel<T>(list: T[], work: (item: T, index: number) => Promis
       await work(list[index], index);
     }
   };
-  await Promise.all(Array.from({ length: AI_PARALLEL }, worker));
+  const settled = await Promise.allSettled(Array.from({ length: Math.min(parallel, list.length) }, worker));
+  const failure = settled.find((result) => result.status === "rejected");
+  if (failure) throw failure.reason;
 }
 
 // 위의 함수와 변수를 모두 정의한 뒤에 실행한다

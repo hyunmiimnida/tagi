@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { mergePair, repostKey } from "./dedupe.ts";
+import { collapseReposts, findAmbiguousPairs, mergePair, mergePrograms, repostKey, titleSimilarity } from "./dedupe.ts";
 import type { Program } from "./types.ts";
 
 const program = (id: string, openTo?: string | null): Program => ({
@@ -17,6 +17,138 @@ const program = (id: string, openTo?: string | null): Program => ({
   postedAt: null,
   extractedBy: "ai",
   collectedAt: "2026-10-01T00:00:00Z",
+});
+
+// 같은 게시판의 서로 다른 글을 만든다
+const boardPost = (id: string, title: string, postedAt: string | null): Program => ({
+  ...program(id), title, postedAt, sources: ["board"],
+});
+
+for (const [titleA, titleB, dateA, dateB] of [
+  ["[진주시] 경남진주지역대학생봉사단 미니박람회 개최", "[진주시] 경남진주지역대학생봉사단 미니박람회", "2026-08-12", "2026-08-10"],
+  ["[BLUE/RED/ORANGE BELT] 2026년 하반기 면접 집중교육 참여자 모집 안내(졸업생 참여 가능)", "[BLUE/RED/ORANGE BELT] 2026년 하반기 면접 집중교육 운영 안내(졸업생 참여 가능)", "2026-10-13", "2026-08-24"],
+  ["[제주대학교] (기간연장) 제46회 백록학술상 공모전", "[제주대학교] 제46회 백록학술상 공모전", "2026-10-13", "2026-08-11"],
+]) {
+  test(`같은 게시판의 비슷한 글을 AI 후보로 낸다: ${titleA}`, () => {
+    const a = boardPost("a", titleA, dateA);
+    const b = boardPost("b", titleB, dateB);
+    assert.deepEqual(findAmbiguousPairs(collapseReposts(mergePrograms([a], [b]))).map(([x, y]) => [x.id, y.id]), [["a", "b"]]);
+  });
+}
+
+test("한쪽 모집 마감이 없어도 같은 게시판의 장학생 모집을 후보로 낸다", () => {
+  const a = boardPost("a", "2026년 우양재단 동행 장학생 모집 안내", "2026-10-13");
+  const b = boardPost("b", "2026년 우양재단 동행 장학생 모집", "2026-10-10");
+  a.recruitPeriod.end = "2026-10-18";
+  assert.deepEqual(findAmbiguousPairs([a, b]), [[a, b]]);
+});
+
+test("61일 뒤 올라온 같은 제목과 일정의 논문 경진대회도 AI에게 묻는다", () => {
+  const title = "[연구산학처] 개교 80주년 기념 첨성인 대학원생 논문 경진대회 개최 안내";
+  const a = boardPost("a", title, "2026-08-07");
+  const b = boardPost("b", title, "2026-10-07");
+  for (const p of [a, b]) {
+    p.recruitPeriod.end = "2026-10-16";
+    p.activityPeriod.start = "2026-11-13";
+  }
+  assert.deepEqual(findAmbiguousPairs(collapseReposts([a, b])), [[a, b]]);
+});
+
+for (const [titleA, titleB] of [
+  ["스포츠단 배구부 재능 기부 참여자 모집", "스포츠단 축구부 재능 기부 참여자 모집"],
+  ["겨울계절수업 교류 수학 안내(충북대학교)", "겨울계절수업 교류 수학 안내(전북대학교)"],
+  ["대학원생활 만족도 조사", "대학생활 만족도 조사"],
+]) {
+  test(`한 단어가 다른 같은 게시판 글은 자동 합치지 않고 AI에게 묻는다: ${titleA}`, () => {
+    const a = boardPost("a", titleA, "2026-10-01");
+    const b = boardPost("b", titleB, "2026-10-02");
+    assert.ok(titleSimilarity(a.title, b.title) >= 0.8);
+    const kept = collapseReposts(mergePrograms([a], [b]));
+    assert.equal(kept.length, 2);
+    assert.deepEqual(findAmbiguousPairs(kept), [[kept[0], kept[1]]]);
+  });
+}
+
+test("출처가 여러 개인 글도 게시판 하나가 겹치면 자동 합치지 않는다", () => {
+  const a = boardPost("a", "스포츠단 배구부 재능 기부 참여자 모집", "2026-10-01");
+  const b = boardPost("b", "스포츠단 축구부 재능 기부 참여자 모집", "2026-10-02");
+  b.sources = ["other", "board"];
+  const kept = mergePrograms([a], [b]);
+  assert.equal(kept.length, 2);
+  assert.deepEqual(findAmbiguousPairs(kept), [[kept[0], kept[1]]]);
+});
+
+for (const [titleA, titleB] of [
+  ["일일봉사자 9월 모집", "일일봉사자 10월 모집"],
+  ["제3회 대학생 공모전", "제4회 대학생 공모전"],
+  ["2025년 장학생 모집", "2026년 장학생 모집"],
+]) {
+  test(`숫자가 다른 회차는 같은 게시판 후보에서 뺀다: ${titleA}`, () => {
+    const a = boardPost("a", titleA, "2026-09-01");
+    const b = boardPost("b", titleB, "2026-10-01");
+    assert.deepEqual(findAmbiguousPairs([a, b]), []);
+  });
+}
+
+test("같은 게시판은 90일까지 후보로 내고 게시일이 없거나 잘못되면 뺀다", () => {
+  const a = boardPost("a", "장학생 모집 안내", "2026-07-01");
+  const b = boardPost("b", "장학생 모집", "2026-09-29");
+  assert.deepEqual(findAmbiguousPairs([a, b]), [[a, b]]);
+  assert.deepEqual(findAmbiguousPairs([b, a]), [[b, a]]);
+  for (const postedAt of ["2026-09-30", null, "잘못된 날짜"]) {
+    assert.deepEqual(findAmbiguousPairs([a, { ...b, postedAt }]), []);
+  }
+});
+
+test("같은 제목의 60일 이내 재게시는 이미 규칙으로 합쳐 AI 후보에서 뺀다", () => {
+  const a = boardPost("a", "장학생 모집", "2026-08-01");
+  const b = boardPost("b", "(재게시) 장학생 모집", "2026-09-30");
+  assert.deepEqual(findAmbiguousPairs([a, b]), []);
+  assert.equal(collapseReposts([a, b]).length, 1);
+});
+
+test("마감 머리말 때문에 유사도가 낮고 숫자가 달라도 재게시 제목이 같으면 후보로 낸다", () => {
+  const a = boardPost("a", "[8/7까지 건축학부 인문사회계열 대상] 특강", "2026-08-01");
+  const b = boardPost("b", "[10/7까지 전자공학부 자연과학계열 신청] 특강", "2026-10-01");
+  assert.ok(titleSimilarity(a.title, b.title) < 0.45);
+  assert.equal(repostKey(a.title), repostKey(b.title));
+  assert.deepEqual(findAmbiguousPairs([a, b]), [[a, b]]);
+});
+
+test("일정이 다르거나 제목이 전혀 다르면 같은 게시판 후보에서 뺀다", () => {
+  const a = boardPost("a", "장학생 모집 안내", "2026-10-01");
+  const b = boardPost("b", "장학생 모집", "2026-10-02");
+  for (const field of ["recruitPeriod", "activityPeriod"] as const) {
+    const key = field === "recruitPeriod" ? "end" : "start";
+    const x = { ...a, [field]: { ...a[field], [key]: "2026-10-18" } };
+    const y = { ...b, [field]: { ...b[field], [key]: "2026-10-19" } };
+    assert.deepEqual(findAmbiguousPairs([x, y]), []);
+  }
+  assert.deepEqual(findAmbiguousPairs([a, { ...b, title: "겨울 해외 봉사활동" }]), []);
+});
+
+test("다른 출처는 기존 유사도 범위를 따르고 다른 학교는 후보에서 뺀다", () => {
+  const a = { ...program("a"), sources: ["yu-news"], title: "대학생 서포터즈 모집 안내" };
+  const b = { ...program("b"), sources: ["yu-career"], title: "대학생 홍보단 모집 안내" };
+  const similarity = titleSimilarity(a.title, b.title);
+  assert.ok(similarity >= 0.45 && similarity < 0.8);
+  // 다른 출처는 게시일이 없어도 기존처럼 판단한다
+  assert.deepEqual(findAmbiguousPairs([a, b]), [[a, b]]);
+  assert.deepEqual(findAmbiguousPairs([a, { ...b, title: a.title }]), []);
+  assert.deepEqual(findAmbiguousPairs([a, { ...b, title: "겨울 해외 봉사활동" }]), []);
+  assert.deepEqual(findAmbiguousPairs([a, { ...b, sources: ["another-school"] }]), []);
+});
+
+test("같은 출처와 다른 출처 모두 캠퍼스가 다르면 후보에서 뺀다", () => {
+  const a = { ...boardPost("a", "대학생 홍보 서포터즈 모집 안내", "2026-10-01"), sources: ["yu-news"] };
+  for (const sources of [["yu-news"], ["yu-career"]]) {
+    const b = { ...boardPost("b", "대학생 홍보 서포터즈 선발 안내", "2026-10-02"), sources };
+    assert.deepEqual(findAmbiguousPairs([a, { ...b, campus: "campus-b" }]), []);
+    assert.deepEqual(findAmbiguousPairs([{ ...a, campus: "campus-a" }, { ...b, campus: "campus-b" }]), []);
+    const x = { ...a, campus: "campus-a" };
+    const y = { ...b, campus: "campus-a" };
+    assert.deepEqual(findAmbiguousPairs([x, y]), [[x, y]]);
+  }
 });
 
 test("합쳐져 없어진 공고의 id를 기억한다", () => {

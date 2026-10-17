@@ -1,4 +1,5 @@
 import { execFile, execFileSync } from "node:child_process";
+import type { ExecFileException } from "node:child_process";
 import { existsSync, readdirSync, statSync } from "node:fs";
 import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
@@ -195,8 +196,9 @@ function runAi(bin: string, prompt: string, dir: string, images: string[] = []):
       ? `${prompt}\n\n그림 파일(Read 도구로 열어 봐라): ${images.map((image) => basename(image)).join(", ")}`
       : prompt;
   return new Promise((resolve, reject) => {
-    const child = execFile(exe, args, { timeout: 600_000, maxBuffer: 20 * 1024 * 1024, cwd: dir }, async (error, stdout) => {
-      if (error) return reject(error);
+    const child = execFile(exe, args, { timeout: 600_000, maxBuffer: 20 * 1024 * 1024, cwd: dir }, async (error, stdout, stderr) => {
+      // 실제 실패 안내는 stdout에만 나올 수도 있어 둘 다 남긴다
+      if (error) return reject(Object.assign(error, { stdout, stderr }));
       try {
         resolve(engine === "codex" ? await readFile(outFile, "utf8") : stdout);
       } catch (readError) {
@@ -212,15 +214,42 @@ const date = (v: unknown) =>
   typeof v === "string" && DATE.test(v) && new Date(`${v}T00:00:00Z`).toISOString().startsWith(v) ? v : null;
 const strings = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : []);
 
+type AiFailure = Partial<ExecFileException> & { stdout?: string | Buffer; stderr?: string | Buffer };
+const failureDetails = (error: unknown): AiFailure => error && typeof error === "object" ? error as AiFailure : {};
+
+// 명령어와 빈 줄을 빼고, 오류 출력부터 마지막 안내를 찾는다
+export function failureReason(error: unknown): string {
+  const details = failureDetails(error);
+  const message = error instanceof Error ? error.message : String(error);
+  const timedOut = details.killed || details.signal || details.code === "ETIMEDOUT";
+  const commandError = timedOut || ["cmd", "stdout", "stderr"].some((key) => key in details) || /^Command failed:/i.test(message);
+  if (!commandError) return message;
+
+  const commandLine = /^(?:Command failed:|["']?(?:.*[\\/])?(?:claude|codex)(?:\.exe|\.cmd)?["']?(?:\s+(?:-|exec\b)|$))/i;
+  const lastLine = (output: string | Buffer | undefined) => String(output ?? "")
+    .split(/[\r\n]+/)
+    .map((line) => line.trim())
+    .filter((line) => line && line !== details.cmd?.trim() && !commandLine.test(line))
+    .at(-1);
+  const reason = timedOut ? "시간 초과" : lastLine(details.stderr) || lastLine(details.stdout) || lastLine(message) || "명령 실행 실패";
+  const code = details.code == null ? "" : ` (${typeof details.code === "number" ? "종료" : "오류"} 코드: ${details.code})`;
+  return reason.slice(0, Math.max(0, 200 - code.length)) + code;
+}
+
+// 한도 안내는 마지막 줄이나 200자 밖에 있어도 놓치지 않는다
+export function isUsageLimitError(error: unknown): boolean {
+  const { stderr, stdout } = failureDetails(error);
+  const message = error instanceof Error ? error.message : String(error);
+  return /hit your usage limit|usage limit reached|rate_limit_exceeded/i.test([message, stderr, stdout].join("\n"));
+}
+
 async function askOnce(bin: string, prompt: string): Promise<{ items?: Record<string, unknown>[]; same?: unknown }> {
   const dir = await mkdtemp(join(tmpdir(), "ai-"));
   try {
     const answer = await runAi(bin, prompt, dir);
     return JSON.parse(answer.slice(answer.indexOf("{"), answer.lastIndexOf("}") + 1));
   } catch (error) {
-    // 실패 이유를 한 줄 남긴다 (Codex는 MCP 연결 오류 같은 잡음도 함께 내보내므로 마지막 줄만)
-    const reason = (error instanceof Error ? error.message : String(error)).trim().split(/\r?\n/).filter(Boolean).at(-1)?.slice(0, 160);
-    console.error(`  AI(${engineOf(bin)}) 실패: ${reason}`);
+    console.error(`  AI(${engineOf(bin)}) 실패: ${failureReason(error)}`);
     throw error;
   } finally {
     await rm(dir, { recursive: true, force: true });
@@ -235,9 +264,8 @@ async function askAi(bin: string, prompt: string): Promise<{ items?: Record<stri
     return await askOnce(bin, prompt);
   } catch (error) {
     if (!backup) throw error;
-    const message = error instanceof Error ? error.message : String(error);
     // 진짜 사용 한도 안내일 때만 이번 실행 동안 넘긴다 (한 번 실패한 것만으로는 다음 묶음에서 다시 Codex를 쓴다)
-    if (/hit your usage limit|usage limit reached|rate_limit_exceeded/i.test(message) && !primaryDown) {
+    if (isUsageLimitError(error) && !primaryDown) {
       primaryDown = true;
       console.error(`  ${engineOf(bin)} 한도에 걸려 이번 실행은 ${FALLBACK}로 이어서 한다`);
     }
@@ -280,7 +308,7 @@ async function readPoster(bin: string, item: CollectedItem): Promise<void> {
     const text = (await runAi(bin, prompt, dir, files)).trim();
     if (text && text !== "없음") item.text = `${item.text}\n[포스터에 적힌 글자]\n${text.slice(0, 2000)}`;
   } catch (error) {
-    console.error("  포스터 읽기 실패:", error instanceof Error ? error.message : error);
+    console.error("  포스터 읽기 실패:", failureReason(error));
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
@@ -400,7 +428,7 @@ ${posts}`;
     }
     return answered;
   } catch (error) {
-    console.error("  AI 모집 대상 확인 실패:", error instanceof Error ? error.message : error);
+    console.error("  AI 모집 대상 확인 실패:", failureReason(error));
     return 0;
   }
 }
@@ -421,7 +449,7 @@ ${pairs.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join
     const same = (answer as { same?: unknown }).same;
     return Array.isArray(same) ? same.filter((n): n is number => Number.isInteger(n) && n >= 0 && n < pairs.length) : null;
   } catch (error) {
-    console.error("  AI 중복 판단 실패:", error instanceof Error ? error.message : error);
+    console.error("  AI 중복 판단 실패:", failureReason(error));
     return null;
   }
 }
@@ -454,7 +482,7 @@ ${batch.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join
       await onBatch?.(part);
       console.log(`  AI 반복 프로그램 판단 ${Math.min(start + 60, pairs.length)}/${pairs.length}`);
     } catch (error) {
-      console.error("  AI 반복 프로그램 판단 실패(이 묶음은 다음에 다시):", error instanceof Error ? error.message.split("\n").at(-1) : error);
+      console.error("  AI 반복 프로그램 판단 실패(이 묶음은 다음에 다시):", failureReason(error));
       batch.forEach(() => answers.push(undefined));
     }
   }
@@ -478,7 +506,7 @@ ${titles.map((title, i) => `${i}. ${title}`).join("\n")}`;
     if (!Array.isArray(answer.pick)) return null;
     return answer.pick.filter((n): n is number => Number.isInteger(n) && n >= 0 && n < titles.length);
   } catch (error) {
-    console.error("  AI 제목 거르기 실패:", error instanceof Error ? error.message : error);
+    console.error("  AI 제목 거르기 실패:", failureReason(error));
     return null;
   }
 }
@@ -518,7 +546,7 @@ export async function enrichWithAi(
           else if (result === false) notForStudents.add(item.program.id);
         }
       } catch (error) {
-        console.error("  AI 추출 실패, 규칙 결과를 사용:", error instanceof Error ? error.message : error);
+        console.error("  AI 추출 실패, 규칙 결과를 사용:", failureReason(error));
       }
       console.log(`  AI 추출 묶음 ${++finished}/${batches.length}`);
     }

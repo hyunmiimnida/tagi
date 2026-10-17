@@ -64,6 +64,14 @@ export interface Source {
   localOnly?: boolean; // 해외 서버에서 접속이 막혀 내 컴퓨터에서만 수집하는 출처
   board?: TableBoard; // "table-board" 수집기의 사이트별 설정
   json?: JsonBoard; // "json-board" 수집기의 사이트별 설정
+  rss?: RssBoard; // "rss-board" 수집기의 사이트별 설정
+}
+
+// RSS·Atom 피드 설정. 주소는 출처의 url을 쓴다
+export interface RssBoard {
+  idParam: string; // 링크 주소에서 게시물 번호가 담긴 칸 이름
+  content?: string; // 상세 화면 본문 선택자. 없으면 피드 본문을 쓴다
+  writer?: string; // 상세 화면의 작성 부서 선택자
 }
 
 // 목록을 데이터 주소(JSON)로 불러오는 게시판 설정. 칸 이름은 "data.list"처럼 점으로 잇는다
