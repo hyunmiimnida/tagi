@@ -382,7 +382,7 @@
         "name": "공지사항",
         "collector": "table-board",
         "url": "https://www.kmu.ac.kr/uni/main/page.jsp?mnu_uid=143",
-        "enabled": true,
+        "enabled": false,
         "pages": 2,
         "useAi": true,
         "board": {
@@ -399,7 +399,7 @@
         "name": "모집",
         "collector": "table-board",
         "url": "https://www.kmu.ac.kr/uni/main/page.jsp?mnu_uid=147",
-        "enabled": true,
+        "enabled": false,
         "pages": 2,
         "useAi": true,
         "board": {
@@ -416,7 +416,7 @@
         "name": "장학",
         "collector": "table-board",
         "url": "https://www.kmu.ac.kr/uni/main/page.jsp?mnu_uid=145",
-        "enabled": true,
+        "enabled": false,
         "pages": 2,
         "useAi": true,
         "board": {
@@ -433,7 +433,7 @@
         "name": "창업지원단",
         "collector": "table-board",
         "url": "https://cms.kmu.ac.kr/bbs/kubic2025/2441/artclList.do",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "defaultOrganizer": "창업지원단",
         "useAi": true,
@@ -453,7 +453,7 @@
         "name": "공과대학",
         "collector": "table-board",
         "url": "https://abeek.kmu.ac.kr/bbs/abeek/251/artclList.do",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "useAi": true,
         "board": {
@@ -472,7 +472,7 @@
         "name": "미술대학",
         "collector": "table-board",
         "url": "https://arts.kmu.ac.kr/bbs/arts/325/artclList.do",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "useAi": true,
         "board": {
@@ -491,7 +491,7 @@
         "name": "사범대학",
         "collector": "table-board",
         "url": "https://coe.kmu.ac.kr/bbs/coe/154/artclList.do",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "useAi": true,
         "board": {
@@ -510,7 +510,7 @@
         "name": "인문국제학대학",
         "collector": "table-board",
         "url": "https://human.kmu.ac.kr/bbs/human/533/artclList.do",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "useAi": true,
         "board": {
@@ -529,7 +529,7 @@
         "name": "경영대학",
         "collector": "table-board",
         "url": "https://kbs.kmu.ac.kr/bbs/kbs/173/artclList.do",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "useAi": true,
         "board": {
@@ -548,7 +548,7 @@
         "name": "음악공연예술대학",
         "collector": "table-board",
         "url": "https://musicarts.kmu.ac.kr/bbs/musicarts/304/artclList.do",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "useAi": true,
         "board": {
@@ -567,7 +567,7 @@
         "name": "자연과학대학",
         "collector": "table-board",
         "url": "https://natural.kmu.ac.kr/bbs/natural/718/artclList.do",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "useAi": true,
         "board": {
@@ -586,7 +586,7 @@
         "name": "약학대학",
         "collector": "table-board",
         "url": "https://pharmacyhome.kmu.ac.kr/bbs/pharmacyhome/383/artclList.do",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "useAi": true,
         "board": {
@@ -605,7 +605,7 @@
         "name": "체육대학",
         "collector": "table-board",
         "url": "https://sports.kmu.ac.kr/bbs/sports/357/artclList.do",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "useAi": true,
         "board": {
@@ -624,7 +624,7 @@
         "name": "사회과학대학",
         "collector": "table-board",
         "url": "https://ssc.kmu.ac.kr/bbs/ssc/190/artclList.do",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "useAi": true,
         "board": {
