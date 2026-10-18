@@ -1,5 +1,5 @@
 import { mkdir } from "node:fs/promises";
-import { AI_MISSING, enrichWithAi, findAi, fixOrganizerType, normalizeGrades, pickProgramTitles } from "./ai.ts";
+import { AI_MISSING, aiLimitHit, enrichWithAi, findAi, fixOrganizerType, normalizeGrades, pickProgramTitles } from "./ai.ts";
 import {
   ARCHIVE_FILE,
   EXCLUDED_FILE,
@@ -117,6 +117,11 @@ async function run() {
     }
   }, SCHOOL_PARALLEL);
   console.log(`끝. 추출 ${results.length}개, 학생 대상 아님 ${rejected.size}개. 이제 npm run backfill -- --save`);
+  // AI 한도로 멈췄으면 종료 코드 2 (이어서 저장하는 스크립트가 알 수 있게)
+  if (aiLimitHit()) {
+    console.error("AI 사용 한도에 걸려 일부 글을 정리하지 못함. 한도가 풀리면 다시 실행");
+    process.exitCode = 2;
+  }
 }
 
 async function triageTitles(label: string, posts: ArchivePost[]) {

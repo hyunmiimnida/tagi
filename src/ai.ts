@@ -15,10 +15,11 @@ import type { CollectedItem, Program, TagCategory } from "./types.ts";
 // 엔진: 기본은 Codex CLI (모델 CODEX_MODEL, 정확도를 위해 생각 깊이 CODEX_EFFORT=high, 한 번에 10개씩).
 //       Codex가 없거나 한도 등으로 실패하면 Claude(Claude 앱의 Claude Code CLI, CLAUDE_MODEL=sonnet)가 이어받는다.
 //       AI_ENGINE=claude 로 실행하면 처음부터 Claude만 쓴다.
+//       AI_FALLBACK=none 이면 Codex만 쓴다 (Claude 한도를 아낄 때). Codex가 한도에 걸리면 그 실행의 AI 작업은 모두 멈춘다.
 
 type Engine = "claude" | "codex";
 export const AI_ENGINE: Engine = process.env.AI_ENGINE === "claude" ? "claude" : "codex";
-const FALLBACK: Engine | null = AI_ENGINE === "codex" ? "claude" : null;
+const FALLBACK: Engine | null = AI_ENGINE === "codex" && process.env.AI_FALLBACK !== "none" ? "claude" : null;
 const CLAUDE_MODEL = process.env.CLAUDE_MODEL ?? "sonnet";
 const CODEX_MODEL = process.env.CODEX_MODEL ?? "gpt-6.1-sol";
 const CODEX_EFFORT = process.env.CODEX_EFFORT ?? "high"; // 생각 깊이 (low·medium·high). 날짜·대상 판단이 정확하도록 높게
@@ -256,14 +257,25 @@ async function askOnce(bin: string, prompt: string): Promise<{ items?: Record<st
   }
 }
 
+// 이번 실행에서 기본 엔진이 사용 한도에 걸렸는지
+export const aiLimitHit = () => primaryDown;
+
 // 기본 엔진으로 묻고, 실패하면(한도·형식 오류 등) 이어받을 엔진으로 한 번 더 묻는다
 async function askAi(bin: string, prompt: string): Promise<{ items?: Record<string, unknown>[]; same?: unknown }> {
   const backup = FALLBACK && engineOf(bin) !== FALLBACK ? finderOf(FALLBACK)() : null;
   if (primaryDown && backup) return askOnce(backup, prompt);
+  // 이어받을 엔진이 없는데 한도에 걸렸으면 남은 묶음은 묻지 않고 바로 실패로 둔다 (다음 실행 때 다시)
+  if (primaryDown) throw new Error(`${engineOf(bin)} 사용 한도로 이번 실행의 AI 작업을 멈춤`);
   try {
     return await askOnce(bin, prompt);
   } catch (error) {
-    if (!backup) throw error;
+    if (!backup) {
+      if (isUsageLimitError(error) && !primaryDown) {
+        primaryDown = true;
+        console.error(`  ${engineOf(bin)} 한도에 걸려 이번 실행의 AI 작업을 멈춘다 (이어받을 엔진 없음)`);
+      }
+      throw error;
+    }
     // 진짜 사용 한도 안내일 때만 이번 실행 동안 넘긴다 (한 번 실패한 것만으로는 다음 묶음에서 다시 Codex를 쓴다)
     if (isUsageLimitError(error) && !primaryDown) {
       primaryDown = true;

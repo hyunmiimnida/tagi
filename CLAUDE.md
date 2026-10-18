@@ -96,6 +96,7 @@
 끝나면 `npm run backfill -- --save`로 목록·보관함에 합친다. 진행 상황은 `.cache/backfill/`에 있어 끊겨도 이어서 한다
 - 학교는 `BACKFILL_SCHOOLS`개(기본 4)씩 동시에 처리하고(학교 안 출처는 차례로, 사이트 간격은 fetch.ts가 지킴), AI 작업은 전체 5개까지 함께 쓴다
 - AI가 실패하면 기록에 이유(오류 출력의 마지막 안내·시간 초과·종료 코드, `failureReason`)를 남긴다
+- `AI_FALLBACK=none`이면 Codex만 쓰고 Claude로 넘어가지 않는다(Claude 한도를 아낄 때). Codex가 한도에 걸리면 그 실행의 AI 작업을 멈추고 종료 코드 2로 끝난다(다음 실행 때 이어서)
 - AI 한도가 없으면 `--rules`를 붙여 AI 없이 규칙으로만 추출한다 (보관함에만 들어갈 오래된 글은 이것으로 충분하다)
 - 반복 프로그램인지 애매한 쌍을 AI가 판단하지 못하면, 지금 목록 공고와 관련된 쌍만 뽑아 직접 판단해 `data/series-decisions.json`에 `"id1|id2": true/false`로 적는다 (id는 사전순 정렬). 다음 저장 때 반영된다
 
