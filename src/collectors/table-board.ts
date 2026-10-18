@@ -105,7 +105,8 @@ async function readPost(ctx: CollectContext, post: ArchivePost): Promise<Collect
   $(board.content).find("img, script, style").remove();
   return {
     program,
-    writer: (board.writer ? writerName(clean($(board.writer).first().text())) : labeled($, /작성자|부서/)) || null,
+    // writer가 ""이면 작성자를 읽지 않는다 (개인 이름만 적힌 게시판)
+    writer: (board.writer !== undefined ? (board.writer ? writerName(clean($(board.writer).first().text())) : "") : labeled($, /작성자|부서/)) || null,
     // 본문 HTML이 글자로 한 번 더 감싸여 오는 게시판(contentEscaped)은 글자를 다시 HTML로 읽는다
     text: htmlToText(board.contentEscaped ? $(board.content).first().text() : ($(board.content).first().html() ?? "")),
     images,

@@ -87,6 +87,7 @@ export interface JsonBoard {
   content?: string;
   writer?: string;
   detailTitle?: string;
+  contentEscaped?: boolean; // 상세 데이터의 본문 HTML이 한 번 더 기호로 감싸여 오는 게시판 (&lt;p&gt;…, 숭실대 창업지원단)
 }
 
 // 표 모양 게시판(번호·제목·작성자·등록일) 설정. 학교마다 다른 부분만 적는다
@@ -102,7 +103,7 @@ export interface TableBoard {
   contentEscaped?: boolean; // 본문 HTML이 글자로 감싸여 오는 게시판 (예: 성균관대 본부 공지의 pre)
   listDate?: string; // 목록에서 등록일 칸 선택자 (기본: "td.date")
   date?: string; // 상세에서 등록일 선택자 (기본: "등록일·일시" 이름표 옆 값)
-  writer?: string; // 상세에서 작성 부서 선택자 (기본: "작성자·부서" 이름표 옆 값). "작성자 :" 같은 머리말은 지운다
+  writer?: string; // 상세에서 작성 부서 선택자 (기본: "작성자·부서" 이름표 옆 값). "작성자 :" 같은 머리말은 지운다. 작성자 칸이 개인 이름뿐인 게시판은 "" (읽지 않음)
   // 쪽 번호·게시물 번호를 base64로 감싼 주소 칸에 넣는 게시판 (예: 대구가톨릭대 mv_data).
   // list는 목록 칸 값({page} 자리에 쪽 번호), view는 상세 칸 값({id} 자리에 게시물 번호). 이때 idPattern은 풀어 낸 값에서 번호를 찾고,
   // viewUrl의 {id} 자리에는 감싼 view 값이 들어간다
@@ -169,9 +170,22 @@ export interface Archiver {
   read?: (ctx: CollectContext, post: ArchivePost) => Promise<CollectedItem | null>;
 }
 
+// 공고 id에 쓸 글 번호. 번호 대신 제목 글자(%EA%B2…)를 주소에 쓰는 게시판(숭실대 공지)은
+// 상세 화면 주소가 깨지고 너무 길어져서 짧은 해시로 바꾼다. 숫자·영문 번호는 그대로 (지금까지의 id 유지)
+export function safePostId(postId: string): string {
+  if (/^[A-Za-z0-9_.-]{1,40}$/.test(postId)) return postId;
+  // FNV-1a 두 번(다른 시작값)으로 32비트 두 개를 만든다 (브라우저에서도 쓰는 파일이라 node:crypto를 쓰지 않는다)
+  const fnv = (seed: number) => {
+    let h = seed;
+    for (const ch of postId) h = Math.imul(h ^ ch.codePointAt(0)!, 16777619) >>> 0;
+    return h.toString(36);
+  };
+  return `h${fnv(2166136261)}${fnv(33554467)}`;
+}
+
 export function emptyProgram(school: School, source: Source, postId: string, title: string, url: string): Program {
   return {
-    id: `${source.id}-${postId}`,
+    id: `${source.id}-${safePostId(postId)}`,
     title,
     organizer: null,
     organizerType: null,

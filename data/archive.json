@@ -1,5 +1,543 @@
 [
   {
+    "id": "sogang-scholarship-550492",
+    "title": "[교외] 포스코청암재단 장학생 선발 안내(7/19 마감, 생활비 연 500만원)",
+    "organizer": "포스코청암재단",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "sogang"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "기업",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "sogang-scholarship",
+        "url": "https://www.sogang.ac.kr/ko/detail/550492?bbsConfigFk=141"
+      }
+    ],
+    "sources": [
+      "sogang-scholarship"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:53:39.933Z",
+    "summary": "장학생으로 선발되어 연 500만원의 생활비를 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:53:39.933Z",
+    "seriesId": "sogang-scholarship-547177"
+  },
+  {
+    "id": "korea-notice-000060000000060772",
+    "title": "[국제처 GSC] (~7/19) 교환학생 교류회 (KUBA) 조원 모집",
+    "organizer": "글로벌서비스센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "korea"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-06-24",
+      "end": "2026-07-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사",
+      "서포터즈·기자단"
+    ],
+    "links": [
+      {
+        "sourceId": "korea-notice",
+        "url": "https://www.korea.ac.kr/portalBoard/ko/1/000060000000060772/portalBoardView.do"
+      }
+    ],
+    "sources": [
+      "korea-notice"
+    ],
+    "postedAt": "2026-06-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T19:13:53.609Z",
+    "summary": "교환·방문학생의 정착을 돕는 봉사단 KUBA 조원으로 활동해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T19:13:53.609Z",
+    "seriesId": "korea-notice-000060000000059867"
+  },
+  {
+    "id": "cau-notice-30013",
+    "title": "[사회봉사단(다빈치)] 2026학년도 하계 다빈치캠퍼스 비대면 봉사의 날 참가자 모집",
+    "organizer": "사회봉사단(다빈치)",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "cau-davinci"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "봉사"
+    ],
+    "links": [
+      {
+        "sourceId": "cau-notice",
+        "url": "https://www.cau.ac.kr/cms/FR_CON/BoardView.do?MENU_ID=100&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=4&BBS_SEQ=30013"
+      }
+    ],
+    "sources": [
+      "cau-notice"
+    ],
+    "postedAt": "2026-07-19",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T02:01:16.006Z",
+    "campus": "cau-davinci",
+    "summary": "다빈치캠퍼스 비대면 봉사의 날에 참가해 봉사활동을 해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T02:01:16.006Z"
+  },
+  {
+    "id": "skku-notice-138373",
+    "title": "2026년 포스코청암재단 '포스코비전장학생' 선발안내",
+    "organizer": "포스코청암재단",
+    "organizerType": "기업",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "1학년"
+      ],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "포항·광양 지역 출신 2026년 신입생"
+    },
+    "recruitPeriod": {
+      "start": "2026-06-15",
+      "end": "2026-07-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "기업",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=138373"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-07-14",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T02:25:48.194Z",
+    "summary": "포항·광양 지역 신입생이 포스코비전장학금을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T02:25:48.194Z"
+  },
+  {
+    "id": "yonsei-notice-943487",
+    "title": "2026학년도 2학기 대학배정장학금 (진리/자유) 1차 신청 안내",
+    "organizer": "학생지원팀(장학)",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yonsei"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-06-23",
+      "end": "2026-07-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "yonsei-notice",
+        "url": "https://www.yonsei.ac.kr/bbs/sc/58/943487/artclView.do"
+      }
+    ],
+    "sources": [
+      "yonsei-notice"
+    ],
+    "postedAt": "2026-06-19",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T02:40:50.470Z",
+    "summary": "진리·자유 장학금을 신청해 등록금을 지원받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T02:40:50.470Z",
+    "seriesId": "yonsei-notice-935966"
+  },
+  {
+    "id": "khu-notice-322486",
+    "title": "2026년 경기 콘텐츠코리아 랩 크라우드 펀딩 연계 전시 참가자 모집 안내",
+    "organizer": "경기도, 성남시, 경기콘텐츠진흥원",
+    "organizerType": "지자체",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "경기도 내 콘텐츠 기업 및 창작자"
+    },
+    "recruitPeriod": {
+      "start": "2026-07-03",
+      "end": "2026-07-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "지자체",
+      "창업"
+    ],
+    "links": [
+      {
+        "sourceId": "khu-notice",
+        "url": "https://www.khu.ac.kr/kor/user/bbs/BMSR00040/view.do?menuNo=200316&boardId=322486"
+      }
+    ],
+    "sources": [
+      "khu-notice"
+    ],
+    "postedAt": "2026-07-13",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T07:48:39.823Z",
+    "summary": "콘텐츠 기업과 창작자가 펀딩 연계 팝업전시와 홍보 지원을 받아요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T07:48:39.823Z"
+  },
+  {
+    "id": "khu-notice-321993",
+    "title": "[교수학습개발원] 2026-1 슬기로운 경희생활 시리즈: 장학금 / 다전공 / 교환학생 편 개강",
+    "organizer": "교수학습개발원(국제)",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "khu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-04-06",
+      "end": "2026-07-19"
+    },
+    "activityPeriod": {
+      "start": "2026-04-06",
+      "end": "2026-07-19"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "khu-notice",
+        "url": "https://www.khu.ac.kr/kor/user/bbs/BMSR00040/view.do?menuNo=200316&boardId=321993"
+      }
+    ],
+    "sources": [
+      "khu-notice"
+    ],
+    "postedAt": "2026-05-20",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T07:54:11.014Z",
+    "summary": "장학금·다전공·교환학생 제도와 선배들의 경험을 온라인 특강으로 배워요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T07:54:11.014Z"
+  },
+  {
+    "id": "khu-notice-321985",
+    "title": "[교수학습개발원] 슬기로운 경희생활: 다전공 편 학생강사 모집(~6월초, 선착순 마감)",
+    "organizer": "교수학습개발원(국제)",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "khu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-05-15",
+      "end": "2026-07-19"
+    },
+    "tags": [
+      "학교",
+      "장학·지원금",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "khu-notice",
+        "url": "https://www.khu.ac.kr/kor/user/bbs/BMSR00040/view.do?menuNo=200316&boardId=321985"
+      }
+    ],
+    "sources": [
+      "khu-notice"
+    ],
+    "postedAt": "2026-05-20",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T07:54:12.333Z",
+    "summary": "다전공 경험을 나누는 학생강사로 활동하고 장학금 10만원을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T07:54:12.333Z",
+    "seriesId": "khu-notice-315620"
+  },
+  {
+    "id": "jbnu-notice-214844",
+    "title": "2026학년도 2학기 한국교원대학교 대학원 교류수학 안내",
+    "organizer": "한국교원대학교 대학원",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-notice",
+        "url": "https://www.jbnu.ac.kr/web/Board/214844/detailView.do?menu=2377"
+      }
+    ],
+    "sources": [
+      "jbnu-notice"
+    ],
+    "postedAt": "2026-07-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T17:50:40.247Z",
+    "summary": "2학기에 한국교원대 대학원에서 교류 학생으로 수업을 들어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T17:50:40.247Z"
+  },
+  {
+    "id": "jbnu-notice-214843",
+    "title": "2026학년도 2학기 국립창원대학교 대학원 교류수학 안내",
+    "organizer": "국립창원대학교 대학원",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-notice",
+        "url": "https://www.jbnu.ac.kr/web/Board/214843/detailView.do?menu=2377"
+      }
+    ],
+    "sources": [
+      "jbnu-notice"
+    ],
+    "postedAt": "2026-07-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T17:50:42.074Z",
+    "summary": "2학기에 창원대 대학원에서 교류 학생으로 수업을 들어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T17:50:42.074Z",
+    "seriesId": "jbnu-notice-197376"
+  },
+  {
+    "id": "jbnu-notice-214840",
+    "title": "2026학년도 2학기 제주대학교 교류수학 안내",
+    "organizer": "제주대학교",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-notice",
+        "url": "https://www.jbnu.ac.kr/web/Board/214840/detailView.do?menu=2377"
+      }
+    ],
+    "sources": [
+      "jbnu-notice"
+    ],
+    "postedAt": "2026-07-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T17:50:46.217Z",
+    "summary": "2학기에 제주대에서 교류 학생으로 수업을 들어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T17:50:46.217Z",
+    "seriesId": "jbnu-notice-198518"
+  },
+  {
+    "id": "jbnu-notice-214836",
+    "title": "2026학년도 2학기 강원대학교 교류수학 안내",
+    "organizer": "강원대학교",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-19"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "학사·행정"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-notice",
+        "url": "https://www.jbnu.ac.kr/web/Board/214836/detailView.do?menu=2377"
+      }
+    ],
+    "sources": [
+      "jbnu-notice"
+    ],
+    "postedAt": "2026-07-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-15T17:50:47.670Z",
+    "summary": "2학기에 강원대에서 교류 학생으로 수업을 들어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-15T17:50:47.670Z",
+    "seriesId": "jbnu-notice-198461"
+  },
+  {
     "id": "yu-news-230485907",
     "title": "(재게시)[초거대AI사업]⭐2026년 AI전문인력양성 AI기술고급과정 2차 자연어처리 수강생 모집⭐",
     "organizer": "산학협력단",
@@ -206887,6 +207425,50 @@
     "aliases": [
       "kangwon-contest-4029"
     ]
+  },
+  {
+    "id": "inha-studlife-179090",
+    "title": "[대학혁신지원사업] 2026 인하인 마음보기 프로그램(온라인 심리검사) 안내",
+    "organizer": "학생상담실",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "inha"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "상담·심리"
+    ],
+    "links": [
+      {
+        "sourceId": "inha-studlife",
+        "url": "https://studlife.inha.ac.kr/bbs/studlife/2574/179090/artclView.do"
+      }
+    ],
+    "sources": [
+      "inha-studlife"
+    ],
+    "postedAt": "2026-03-24",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-18T04:28:11.887Z",
+    "summary": "온라인 대학적응력검사를 받고 기념품과 마일리지를 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-18T04:28:11.887Z"
   },
   {
     "id": "yu-news-229022439",
@@ -447002,7 +447584,7 @@
     "summary": "동서대의 동계 계절학기 과목을 학점 교류로 들을 수 있어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-15T13:36:46.388Z",
-    "seriesId": "gnu-academic-2255691"
+    "seriesId": "gnu-academic-2243623"
   },
   {
     "id": "cnu-intl-recruit-558438",
@@ -453971,7 +454553,7 @@
     "summary": "전남대의 동계 계절학기 과목을 학점 교류로 들을 수 있어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-15T13:36:31.583Z",
-    "seriesId": "gnu-academic-2256484"
+    "seriesId": "gnu-academic-2243623"
   },
   {
     "id": "cbnu-cieat-BOM000000000514",
@@ -677927,7 +678509,7 @@
     "summary": "동서대 하계 계절학기를 들으면서 학점을 교류할 수 있어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-15T13:37:52.181Z",
-    "seriesId": "gnu-academic-2255691"
+    "seriesId": "gnu-academic-2243623"
   },
   {
     "id": "jbnu-student-186554",
@@ -882162,7 +882744,7 @@
     "summary": "동서대 동계 계절학기 수업을 듣고 학점을 인정받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-15T13:38:52.626Z",
-    "seriesId": "gnu-academic-2255691"
+    "seriesId": "gnu-academic-2243623"
   },
   {
     "id": "kangwon-contest-2779",
@@ -890665,7 +891247,7 @@
     "summary": "전남대 동계 계절학기 수업을 듣고 학점을 인정받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-15T13:38:40.406Z",
-    "seriesId": "gnu-academic-2256484"
+    "seriesId": "gnu-academic-2243623"
   },
   {
     "id": "gnu-academic-2256219",

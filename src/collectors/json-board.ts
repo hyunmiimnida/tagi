@@ -56,6 +56,7 @@ async function readPost(ctx: CollectContext, post: ArchivePost): Promise<Collect
     // 상세도 JSON: 본문 HTML 칸을 글자로 바꾼다
     const detail = JSON.parse(await ctx.fetchHtml(board.detailUrl.replace("{id}", post.postId)));
     html = str(pick(detail, board.content ?? ""));
+    if (board.contentEscaped) html = cheerio.load(html).text(); // &lt;p&gt; 같은 기호를 풀어 진짜 HTML로
     writer = board.writer ? str(pick(detail, board.writer)) : "";
     const title = board.detailTitle ? str(pick(detail, board.detailTitle)) : "";
     if (title) program.title = title;

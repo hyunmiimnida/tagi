@@ -1817,6 +1817,270 @@
     ]
   },
   {
+    "id": "ewha",
+    "name": "이화여자대학교",
+    "shortName": "이화여대",
+    "region": "수도권",
+    "sources": [
+      {
+        "id": "ewha-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.ewha.ac.kr/ewha/news/notice.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": ".b-title-box > a",
+          "idParam": "articleNo",
+          "viewUrl": "https://www.ewha.ac.kr/ewha/news/notice.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "listTitle": ".b-title-box > a",
+          "listDate": ".b-m-con .b-date",
+          "title": ".b-top-box .b-title",
+          "content": ".b-content-box",
+          "date": ".b-date-box span:last-child",
+          "writer": ".b-writer-box span:last-child"
+        }
+      },
+      {
+        "id": "ewha-oia",
+        "name": "국제교류 공지사항",
+        "collector": "table-board",
+        "url": "https://oia.ewha.ac.kr/bbs/oia/168/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "국제교류팀",
+        "board": {
+          "row": "ul.artclList > li",
+          "link": "a.artclLinkView",
+          "idPattern": "/(\\d+)/artclView",
+          "viewUrl": "https://oia.ewha.ac.kr/bbs/oia/168/{id}/artclView.do",
+          "pageParam": "page",
+          "listTitle": ".artclTitle strong",
+          "listDate": ".artclInfo dl dd",
+          "title": "h2.artclViewTitle",
+          "content": ".artclView",
+          "date": ".artclViewHead .right dd"
+        }
+      },
+      {
+        "id": "ewha-oia-external",
+        "name": "국제교류 외부 프로그램·행사",
+        "collector": "table-board",
+        "url": "https://oia.ewha.ac.kr/bbs/oia/403/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "row": "ul.artclList > li",
+          "link": "a.artclLinkView",
+          "idPattern": "/(\\d+)/artclView",
+          "viewUrl": "https://oia.ewha.ac.kr/bbs/oia/403/{id}/artclView.do",
+          "pageParam": "page",
+          "listTitle": ".artclTitle strong",
+          "listDate": ".artclInfo dl dd",
+          "title": "h2.artclViewTitle",
+          "content": ".artclView",
+          "date": ".artclViewHead .right dd"
+        }
+      }
+    ]
+  },
+  {
+    "id": "kookmin",
+    "name": "국민대학교",
+    "shortName": "국민대",
+    "region": "수도권",
+    "sources": [
+      {
+        "id": "kookmin-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.kookmin.ac.kr/user/kmuNews/notice/index.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": ".board_list li > a",
+          "idPattern": "notice/\\d+/(\\d+)/view\\.do",
+          "viewUrl": "https://www.kookmin.ac.kr/user/kmuNews/notice/0/{id}/view.do",
+          "pageParam": "currentPageNo",
+          "row": "li",
+          "listTitle": "p.title",
+          "listDate": ".board_etc span:first-child",
+          "title": ".view_top .view_tit",
+          "content": ".view_cont .view_inner",
+          "date": ".view_top .board_etc span:nth-child(1)",
+          "writer": ".view_top .board_etc span:nth-child(2)"
+        }
+      },
+      {
+        "id": "kookmin-intl",
+        "name": "국제교류 공지사항",
+        "collector": "table-board",
+        "url": "https://iat.kookmin.ac.kr/international/community/notice/",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "국제교류팀",
+        "board": {
+          "link": ".list-tbody li.subject a",
+          "idPattern": "^\\./(\\d+)",
+          "viewUrl": "https://iat.kookmin.ac.kr/international/community/notice/{id}",
+          "pageParam": "pn",
+          "pageOffset": 1,
+          "row": "ul",
+          "listDate": "li.date",
+          "title": ".view-thead p",
+          "content": "#view-detail-data",
+          "date": ".view-info li:nth-child(1) span",
+          "writer": ".view-info li:nth-child(2) span"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ssu",
+    "name": "숭실대학교",
+    "shortName": "숭실대",
+    "region": "수도권",
+    "sources": [
+      {
+        "id": "ssu-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://scatch.ssu.ac.kr/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": ".notice-lists li .notice_col3 a",
+          "idPattern": "[?&]slug=([^&]+)",
+          "viewUrl": "https://scatch.ssu.ac.kr/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/?f&category&slug={id}&keyword",
+          "pageParam": "paged",
+          "row": "li",
+          "listTitle": ".notice_col3 a span.m-pt-5",
+          "listDate": ".notice_col1 .h2",
+          "title": "div.bg-white.p-4 h1",
+          "content": "div.bg-white.p-4 > hr + div"
+        }
+      },
+      {
+        "id": "ssu-job-etc",
+        "name": "진로취업센터 공모전/기타",
+        "collector": "table-board",
+        "url": "https://job.ssu.ac.kr/service/careerEmpl/etcList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "table.t_list tbody td.title a.detailBtn",
+          "idAttr": "data-params",
+          "idPattern": "dataSeq\":\"([0-9a-f]+)",
+          "viewUrl": "https://job.ssu.ac.kr/service/careerEmpl/etcInfo.do?dataSeq={id}",
+          "pageParam": "currentPageNo",
+          "listDate": "td:nth-child(5)",
+          "title": "table.board_view thead td.title",
+          "content": "table.board_view tbody .td_box",
+          "date": "table.board_view thead ul.flex_box li:last-child"
+        }
+      },
+      {
+        "id": "ssu-startup",
+        "name": "창업지원단 공지사항",
+        "collector": "json-board",
+        "url": "https://startup.ssu.ac.kr/board/notice",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "defaultOrganizer": "창업지원단",
+        "json": {
+          "listUrl": "https://startup.ssu.ac.kr/api/board/content/list?pageNum={page}&boardEnName=notice",
+          "items": "data.content.list",
+          "id": "boardContentId",
+          "title": "boardTitle",
+          "date": "regDate",
+          "viewUrl": "https://startup.ssu.ac.kr/board/notice/{id}",
+          "detailUrl": "https://startup.ssu.ac.kr/api/board/content/{id}",
+          "content": "data.boardContent",
+          "detailTitle": "data.boardTitle",
+          "contentEscaped": true
+        }
+      }
+    ]
+  },
+  {
+    "id": "inha",
+    "name": "인하대학교",
+    "shortName": "인하대",
+    "region": "수도권",
+    "sources": [
+      {
+        "id": "inha-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.inha.ac.kr/bbs/kr/8/artclList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td._artclTdTitle a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://www.inha.ac.kr/bbs/kr/8/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.artclViewTitle",
+          "content": "div.artclView",
+          "listDate": "td._artclTdRdate",
+          "date": ".artclViewHead .right",
+          "writer": ""
+        }
+      },
+      {
+        "id": "inha-international",
+        "name": "국제처 공지사항",
+        "collector": "table-board",
+        "url": "https://internationalcenter.inha.ac.kr/bbs/internationalcenter/2507/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "국제처",
+        "board": {
+          "link": "td._artclTdTitle a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://internationalcenter.inha.ac.kr/bbs/internationalcenter/2507/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.artclViewTitle",
+          "content": "div.artclView",
+          "listDate": "td._artclTdRdate",
+          "date": ".artclViewHead .right"
+        }
+      },
+      {
+        "id": "inha-studlife",
+        "name": "학생지원처 공지사항",
+        "collector": "table-board",
+        "url": "https://studlife.inha.ac.kr/bbs/studlife/2574/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "학생지원처",
+        "board": {
+          "link": "td._artclTdTitle a",
+          "idPattern": "/([0-9]+)/artclView",
+          "viewUrl": "https://studlife.inha.ac.kr/bbs/studlife/2574/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.artclViewTitle",
+          "content": "div.artclView",
+          "listDate": "td._artclTdRdate",
+          "date": ".artclViewHead .right"
+        }
+      }
+    ]
+  },
+  {
     "id": "cnu",
     "name": "충남대학교",
     "shortName": "충남대",
