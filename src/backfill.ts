@@ -81,6 +81,7 @@ async function run() {
   const selected = schools.filter((school) => !onlySchools || onlySchools.has(school.id));
   await inParallel(selected, async (school) => {
     for (const source of school.sources) {
+      if (aiLimitHit()) break; // AI 한도에 걸렸으면 다음 출처의 목록도 훑지 않는다
       const archiver = archivers[source.collector];
       if (!source.enabled || !archiver) continue;
       const label = `[${school.name} > ${source.name}]`;
@@ -150,7 +151,7 @@ async function extract(
   const running = new Set<Promise<void>>();
   try {
     for (const batch of batches) {
-      if (failure) break;
+      if (failure || aiLimitHit()) break; // AI가 한도에 걸리면 본문을 더 읽지 않는다 (사이트에 헛요청이 가지 않게)
       const items: CollectedItem[] = [];
       for (const post of batch) {
         try {
