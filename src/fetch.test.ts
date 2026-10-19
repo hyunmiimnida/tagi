@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { parseRobots, robotsAllows } from "./fetch.ts";
+import { parseCrawlDelay, parseRobots, robotsAllows } from "./fetch.ts";
 
 test("robots.txt: 모든 수집기(*) 묶음의 규칙만 따르고, 가장 길게 일치하는 규칙이 이긴다", () => {
   const rules = parseRobots(
@@ -27,4 +27,11 @@ test("robots.txt: Disallow: / 는 전부 막고, 다른 수집기 전용 규칙�
   assert.ok(!robotsAllows(parseRobots("User-agent: *\nDisallow: /"), "/anything"));
   assert.ok(robotsAllows(parseRobots("User-agent: ClaudeBot\nDisallow: /\n\nUser-agent: *\nDisallow: /data/"), "/news"));
   assert.ok(robotsAllows(parseRobots(""), "/news"));
+});
+
+test("Crawl-delay는 * 묶음 값만 읽는다", () => {
+  assert.equal(parseCrawlDelay("User-agent: *\nCrawl-delay: 10\nDisallow: /_attach/"), 10);
+  assert.equal(parseCrawlDelay("User-agent: Yeti\nCrawl-delay: 30\n\nUser-agent: *\nDisallow: /x"), null);
+  assert.equal(parseCrawlDelay("User-agent: Googlebot\nUser-agent: *\nCrawl-delay: 2.5"), 2.5);
+  assert.equal(parseCrawlDelay("User-agent: *\nDisallow:"), null);
 });

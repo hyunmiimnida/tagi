@@ -7,6 +7,9 @@ const DELAY_MS = 1000; // 사이트에 부담을 주지 않도록 요청 사이�
 
 // 사이트(호스트)마다 요청을 한 줄로 세워 1초씩 띄운다. 서로 다른 학교 사이트는 동시에 읽어도 된다
 const queues = new Map<string, Promise<unknown>>();
+// robots.txt의 Crawl-delay(초): 이 값이 있으면 그 사이트는 요청 사이를 그만큼 띄운다 (너무 큰 값은 60초까지만)
+const crawlDelays = new Map<string, number>();
+const MAX_CRAWL_DELAY_S = 60;
 
 function politeFetch(url: string): Promise<Response> {
   const host = new URL(url).host;
@@ -15,7 +18,8 @@ function politeFetch(url: string): Promise<Response> {
       headers: { "User-Agent": USER_AGENT },
       signal: AbortSignal.timeout(30_000),
     });
-    await new Promise((r) => setTimeout(r, DELAY_MS)); // 다음 요청까지 쉰다
+    const wait = Math.max(DELAY_MS, Math.min(crawlDelays.get(host) ?? 0, MAX_CRAWL_DELAY_S) * 1000);
+    await new Promise((r) => setTimeout(r, wait)); // 다음 요청까지 쉰다
     return response;
   });
   queues.set(host, turn.catch(() => {}));
@@ -90,6 +94,29 @@ export function parseRobots(text: string): RobotsRule[] {
   return rules;
 }
 
+// "User-agent: *" 묶음의 Crawl-delay(초). 없으면 null
+export function parseCrawlDelay(text: string): number | null {
+  let agents: string[] = [];
+  let inRules = false;
+  for (const raw of text.split(/\r?\n/)) {
+    const line = raw.split("#")[0].trim();
+    const sep = line.indexOf(":");
+    if (sep < 0) continue;
+    const key = line.slice(0, sep).trim().toLowerCase();
+    const value = line.slice(sep + 1).trim();
+    if (key === "user-agent") {
+      if (inRules) agents = [];
+      inRules = false;
+      agents.push(value);
+    } else {
+      inRules = true;
+      const seconds = Number(value);
+      if (key === "crawl-delay" && agents.includes("*") && Number.isFinite(seconds) && seconds > 0) return seconds;
+    }
+  }
+  return null;
+}
+
 // 가장 길게 일치하는 규칙을 따른다. 일치하는 규칙이 없으면 허용
 export function robotsAllows(rules: RobotsRule[], path: string): boolean {
   let best = { length: -1, allow: true };
@@ -112,7 +139,12 @@ async function fetchRobots(origin: string): Promise<RobotsRule[] | null> {
     try {
       const res = await politeFetch(`${origin}/robots.txt`);
       if (res.status === 404) return []; // robots.txt가 없으면 제한 없음
-      if (res.ok) return parseRobots(await res.text());
+      if (res.ok) {
+        const text = await res.text();
+        const delay = parseCrawlDelay(text);
+        if (delay) crawlDelays.set(new URL(origin).host, delay);
+        return parseRobots(text);
+      }
       reason = `응답 ${res.status}`;
     } catch (error) {
       reason = error instanceof Error ? error.message : String(error);
