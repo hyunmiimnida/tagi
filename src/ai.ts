@@ -259,13 +259,29 @@ async function askOnce(bin: string, prompt: string): Promise<{ items?: Record<st
   }
 }
 
-// 이번 실행에서 기본 엔진이 사용 한도에 걸렸는지
-export const aiLimitHit = () => primaryDown;
+// 이번 실행에서 AI를 더 쓸 수 없는지 (기본 엔진이 한도인데 이어받을 엔진이 없거나, 이어받은 엔진도 한도)
+// 기본 엔진만 한도이고 이어받을 엔진이 있으면 false (과거 글 쌓기가 멈추지 않게)
+let aiStopped = false;
+export const aiLimitHit = () => aiStopped;
+
+// 이어받은 엔진으로 묻는다. 이 엔진도 한도면 이번 실행의 AI 작업을 멈춘다
+async function askBackup(backup: string, prompt: string) {
+  try {
+    return await askOnce(backup, prompt);
+  } catch (error) {
+    if (isUsageLimitError(error) && !aiStopped) {
+      aiStopped = true;
+      console.error(`  ${engineOf(backup)}도 한도에 걸려 이번 실행의 AI 작업을 멈춘다`);
+    }
+    throw error;
+  }
+}
 
 // 기본 엔진으로 묻고, 실패하면(한도·형식 오류 등) 이어받을 엔진으로 한 번 더 묻는다
 async function askAi(bin: string, prompt: string): Promise<{ items?: Record<string, unknown>[]; same?: unknown }> {
   const backup = FALLBACK && engineOf(bin) !== FALLBACK ? finderOf(FALLBACK)() : null;
-  if (primaryDown && backup) return askOnce(backup, prompt);
+  if (aiStopped) throw new Error("AI 사용 한도로 이번 실행의 AI 작업을 멈춤");
+  if (primaryDown && backup) return askBackup(backup, prompt);
   // 이어받을 엔진이 없는데 한도에 걸렸으면 남은 묶음은 묻지 않고 바로 실패로 둔다 (다음 실행 때 다시)
   if (primaryDown) throw new Error(`${engineOf(bin)} 사용 한도로 이번 실행의 AI 작업을 멈춤`);
   try {
@@ -274,6 +290,7 @@ async function askAi(bin: string, prompt: string): Promise<{ items?: Record<stri
     if (!backup) {
       if (isUsageLimitError(error) && !primaryDown) {
         primaryDown = true;
+        aiStopped = true;
         console.error(`  ${engineOf(bin)} 한도에 걸려 이번 실행의 AI 작업을 멈춘다 (이어받을 엔진 없음)`);
       }
       throw error;
@@ -283,7 +300,7 @@ async function askAi(bin: string, prompt: string): Promise<{ items?: Record<stri
       primaryDown = true;
       console.error(`  ${engineOf(bin)} 한도에 걸려 이번 실행은 ${FALLBACK}로 이어서 한다`);
     }
-    return askOnce(backup, prompt);
+    return askBackup(backup, prompt);
   }
 }
 
