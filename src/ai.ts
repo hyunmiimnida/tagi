@@ -70,12 +70,14 @@ function finder(envVar: string, command: string, appDirs: (string | undefined)[]
 const { LOCALAPPDATA, APPDATA } = process.env;
 export const findCodex = finder("CODEX_BIN", "codex", [LOCALAPPDATA && join(LOCALAPPDATA, "OpenAI", "Codex", "bin")], "codex.exe");
 // Claude 앱은 Microsoft Store 앱이라 실제 파일은 Packages 안에 있다. 앱 안에서 실행하면 %APPDATA%\Claude로도 보인다
+// 2026-10 앱 업데이트 뒤로는 %LOCALAPPDATA%\Claude-Data\claude_<패키지>\claude-code 에 있다
 const claudeStoreDirs = () => {
-  const packages = LOCALAPPDATA && join(LOCALAPPDATA, "Packages");
-  if (!packages || !existsSync(packages)) return [];
-  return readdirSync(packages)
-    .filter((name) => name.startsWith("Claude_"))
-    .map((name) => join(packages, name, "LocalCache", "Roaming", "Claude", "claude-code"));
+  const inside = (root: string | undefined, pick: (name: string) => boolean, rest: string[]) =>
+    root && existsSync(root) ? readdirSync(root).filter(pick).map((name) => join(root, name, ...rest)) : [];
+  return [
+    ...inside(LOCALAPPDATA && join(LOCALAPPDATA, "Claude-Data"), (name) => name.startsWith("claude_"), ["claude-code"]),
+    ...inside(LOCALAPPDATA && join(LOCALAPPDATA, "Packages"), (name) => name.startsWith("Claude_"), ["LocalCache", "Roaming", "Claude", "claude-code"]),
+  ];
 };
 export const findClaude = finder("CLAUDE_BIN", "claude", [APPDATA && join(APPDATA, "Claude", "claude-code"), ...claudeStoreDirs()], "claude.exe");
 const finderOf = (engine: Engine) => (engine === "codex" ? findCodex : findClaude);
