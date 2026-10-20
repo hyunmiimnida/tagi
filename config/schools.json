@@ -2081,6 +2081,504 @@
     ]
   },
   {
+    "id": "kw",
+    "name": "광운대학교",
+    "shortName": "광운대",
+    "region": "수도권",
+    "sources": [
+      {
+        "id": "kw-career",
+        "name": "경력개발팀 공지사항",
+        "collector": "table-board",
+        "url": "https://job.kw.ac.kr/community/notice.php",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "경력개발팀",
+        "board": {
+          "link": "td.d_sj a[href*='UID=']",
+          "idParam": "UID",
+          "viewUrl": "https://job.kw.ac.kr/community/notice.php?BoardMode=view&UID={id}",
+          "pageParam": "tpage",
+          "title": ".view_top h3",
+          "content": ".view_con",
+          "listDate": "td.d_dt",
+          "date": ".view_top ul li:nth-child(2) span",
+          "writer": ""
+        }
+      },
+      {
+        "id": "kw-startup",
+        "name": "창업지원 공지사항",
+        "collector": "table-board",
+        "url": "https://startup.kw.ac.kr/communication/notice.php",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "광운창업지원센터",
+        "board": {
+          "link": "td.d_sj a[href*='UID=']",
+          "idParam": "UID",
+          "viewUrl": "https://startup.kw.ac.kr/communication/notice.php?BoardMode=view&UID={id}",
+          "pageParam": "CURRENT_PAGE",
+          "title": ".view_top h3",
+          "content": ".view_con",
+          "listDate": "td.d_dt",
+          "date": ".view_top ul li:first-child span",
+          "writer": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "mju",
+    "name": "명지대학교",
+    "shortName": "명지대",
+    "region": "수도권",
+    "sources": [
+      {
+        "id": "mju-notice",
+        "name": "일반공지",
+        "collector": "table-board",
+        "url": "https://www.mju.ac.kr/bbs/mjukr/141/artclList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td._artclTdTitle a.artclLinkView",
+          "idPattern": "/141/(\\d+)/artclView",
+          "viewUrl": "https://www.mju.ac.kr/bbs/mjukr/141/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.artclViewTitle",
+          "content": "div.artclView",
+          "listTitle": "td._artclTdTitle strong",
+          "listDate": "td._artclTdRdate",
+          "date": ".head_info li:has(strong:contains(\"작성일\"))",
+          "writer": ""
+        }
+      },
+      {
+        "id": "mju-career",
+        "name": "진로·취업·창업공지",
+        "collector": "table-board",
+        "url": "https://www.mju.ac.kr/bbs/mjukr/146/artclList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "defaultOrganizer": "취창업지원처",
+        "board": {
+          "link": "td._artclTdTitle a.artclLinkView",
+          "idPattern": "/146/(\\d+)/artclView",
+          "viewUrl": "https://www.mju.ac.kr/bbs/mjukr/146/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.artclViewTitle",
+          "content": "div.artclView",
+          "listTitle": "td._artclTdTitle strong",
+          "listDate": "td._artclTdRdate",
+          "date": ".head_info li:has(strong:contains(\"작성일\"))",
+          "writer": ""
+        }
+      },
+      {
+        "id": "mju-student",
+        "name": "학생활동공지",
+        "collector": "table-board",
+        "url": "https://www.mju.ac.kr/bbs/mjukr/853/artclList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td._artclTdTitle a.artclLinkView",
+          "idPattern": "/853/(\\d+)/artclView",
+          "viewUrl": "https://www.mju.ac.kr/bbs/mjukr/853/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.artclViewTitle",
+          "content": "div.artclView",
+          "listTitle": "td._artclTdTitle strong",
+          "listDate": "td._artclTdRdate",
+          "date": ".head_info li:has(strong:contains(\"작성일\"))",
+          "writer": ""
+        }
+      },
+      {
+        "id": "mju-scholarship",
+        "name": "장학·학자금공지",
+        "collector": "table-board",
+        "url": "https://www.mju.ac.kr/bbs/mjukr/145/artclList.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "board": {
+          "link": "td._artclTdTitle a.artclLinkView",
+          "idPattern": "/145/(\\d+)/artclView",
+          "viewUrl": "https://www.mju.ac.kr/bbs/mjukr/145/{id}/artclView.do",
+          "pageParam": "page",
+          "title": "h2.artclViewTitle",
+          "content": "div.artclView",
+          "listTitle": "td._artclTdTitle strong",
+          "listDate": "td._artclTdRdate",
+          "date": ".head_info li:has(strong:contains(\"작성일\"))",
+          "writer": ""
+        }
+      }
+    ],
+    "campuses": [
+      {
+        "schoolId": "mju-yongin",
+        "titleKeywords": [
+          "자연캠퍼스",
+          "[자연",
+          "자연(용인)",
+          "(용인캠퍼스)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mju-yongin",
+    "name": "명지대학교 자연캠퍼스",
+    "shortName": "명지대 자연",
+    "region": "수도권",
+    "campusOf": "mju",
+    "sources": []
+  },
+  {
+    "id": "seoultech",
+    "name": "서울과학기술대학교",
+    "shortName": "서울과기대",
+    "region": "수도권",
+    "sources": [
+      {
+        "id": "seoultech-notice",
+        "name": "대학공지사항",
+        "collector": "table-board",
+        "url": "https://www.seoultech.ac.kr/service/info/notice/",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "tr.body_tr td.tit a[href*='bidx=']",
+          "idParam": "bidx",
+          "viewUrl": "https://www.seoultech.ac.kr/service/info/notice/?do=commonview&bnum=4691&bidx={id}",
+          "pageParam": "page",
+          "title": ".tbl_view > tbody > tr:first-child > td",
+          "content": ".tbl_view td.cont",
+          "listDate": "td.dn5",
+          "date": ".tbl_view > tbody > tr:nth-child(2) > td:last-child",
+          "writer": ".tbl_view > tbody > tr:nth-child(2) > td:first-of-type"
+        }
+      },
+      {
+        "id": "seoultech-scholarship",
+        "name": "장학·근로장학 통합 공지사항",
+        "collector": "table-board",
+        "url": "https://www.seoultech.ac.kr/service/info/janghak",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "tr.body_tr td.tit a[href*='bidx=']",
+          "idPattern": "[?&]bnum=(\\d+&bidx=\\d+)",
+          "viewUrl": "https://www.seoultech.ac.kr/service/info/janghak?do=commonview&bnum={id}",
+          "pageParam": "page",
+          "title": ".tbl_view > tbody > tr:first-child > td",
+          "content": ".tbl_view td.cont",
+          "listDate": "td.dn5",
+          "date": ".tbl_view > tbody > tr:nth-child(2) > td:last-child",
+          "writer": ".tbl_view > tbody > tr:nth-child(2) > td:first-of-type"
+        }
+      },
+      {
+        "id": "seoultech-career",
+        "name": "취업진로본부 공지사항",
+        "collector": "table-board",
+        "url": "https://job.seoultech.ac.kr/program/board",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "defaultOrganizer": "취업진로본부",
+        "board": {
+          "link": "tr.body_tr td.tit a[href*='bidx=']",
+          "idParam": "bidx",
+          "viewUrl": "https://job.seoultech.ac.kr/program/board?do=commonview&bnum=57925&bidx={id}",
+          "pageParam": "page",
+          "title": ".tbl_view > tbody > tr:first-child > td",
+          "content": ".tbl_view td.cont",
+          "listDate": "td.dn5",
+          "date": ".tbl_view > tbody > tr:nth-child(2) > td:last-child",
+          "writer": ".tbl_view > tbody > tr:nth-child(2) > td:first-of-type"
+        }
+      },
+      {
+        "id": "seoultech-global",
+        "name": "국제교류처 공개 공지사항(교환학생 분류 제외)",
+        "collector": "table-board",
+        "url": "https://global.seoultech.ac.kr/notice/notice",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "국제교류처",
+        "board": {
+          "link": "tr.body_tr td.dn2 a[href*='bidx=']:not([href*='bnum=58669&'])",
+          "idPattern": "[?&]bnum=(\\d+&bidx=\\d+)",
+          "viewUrl": "https://global.seoultech.ac.kr/notice/notice?do=view&bnum={id}",
+          "pageParam": "page",
+          "title": ".tbl_list > tbody > tr:first-child > td:first-of-type",
+          "content": ".tbl_list td.cont",
+          "listDate": "td.body_col_regdate",
+          "date": ".tbl_list > tbody > tr:first-child > td:nth-of-type(2)",
+          "writer": ".tbl_list > tbody > tr:nth-child(2) > td"
+        }
+      }
+    ]
+  },
+  {
+    "id": "smu",
+    "name": "상명대학교",
+    "shortName": "상명대",
+    "region": "수도권",
+    "sources": [
+      {
+        "id": "smu-notice",
+        "name": "통합공지",
+        "collector": "table-board",
+        "url": "https://www.smu.ac.kr/lounge/notice/notice.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": ".board-thumb-content-title td:last-child a[href*='articleNo=']",
+          "row": ".board-thumb-content-wrap",
+          "listTitle": ".board-thumb-content-title td:last-child a[href*='articleNo=']",
+          "idParam": "articleNo",
+          "viewUrl": "https://www.smu.ac.kr/lounge/notice/notice.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "title": ".board-view-title-wrap h4",
+          "content": ".board-view-content-wrap",
+          "listDate": ".board-thumb-content-date",
+          "date": ".board-view-title-wrap .board-thumb-content-date",
+          "writer": "",
+          "campus": ".cmp"
+        }
+      },
+      {
+        "id": "smu-startup",
+        "name": "창업지원센터 창업사업 공지",
+        "collector": "table-board",
+        "url": "https://www.smu.ac.kr/changup/community/notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "창업지원센터",
+        "board": {
+          "link": ".board-thumb-content-title > a[href*='articleNo=']",
+          "row": ".board-thumb-content-wrap",
+          "listTitle": ".board-thumb-content-title > a[href*='articleNo=']",
+          "idParam": "articleNo",
+          "viewUrl": "https://www.smu.ac.kr/changup/community/notice.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "title": ".board-view-title-wrap h4",
+          "content": ".board-view-content-wrap",
+          "listDate": ".board-thumb-content-date",
+          "date": ".board-view-title-wrap .board-thumb-content-date",
+          "writer": ""
+        }
+      },
+      {
+        "id": "smu-global",
+        "name": "국제대외협력처 외국인유학생 공지",
+        "collector": "table-board",
+        "url": "https://www.smu.ac.kr/oia/foreign/notice02.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "국제대외협력처",
+        "board": {
+          "link": ".board-thumb-content-title > a[href*='articleNo=']",
+          "row": ".board-thumb-content-wrap",
+          "listTitle": ".board-thumb-content-title > a[href*='articleNo=']",
+          "idParam": "articleNo",
+          "viewUrl": "https://www.smu.ac.kr/oia/foreign/notice02.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "title": ".board-view-title-wrap h4",
+          "content": ".board-view-content-wrap",
+          "listDate": ".board-thumb-content-date",
+          "date": ".board-view-title-wrap .board-thumb-content-date",
+          "writer": ""
+        }
+      },
+      {
+        "id": "smu-startup-club",
+        "name": "창업지원센터 상명 창업 핫이슈",
+        "collector": "table-board",
+        "url": "https://www.smu.ac.kr/changup/community/board.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "창업지원센터",
+        "board": {
+          "link": ".board-thumb-content-title > a[href*='articleNo=']",
+          "row": ".board-thumb-content-wrap",
+          "listTitle": ".board-thumb-content-title > a[href*='articleNo=']",
+          "idParam": "articleNo",
+          "viewUrl": "https://www.smu.ac.kr/changup/community/board.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "title": ".board-view-title-wrap h4",
+          "content": ".board-view-content-wrap",
+          "listDate": ".board-thumb-content-date",
+          "date": ".board-view-title-wrap .board-thumb-content-date",
+          "writer": ""
+        }
+      }
+    ],
+    "campuses": [
+      {
+        "schoolId": "smu-cheonan",
+        "labels": [
+          "천안"
+        ],
+        "titleKeywords": [
+          "천안캠퍼스",
+          "[천안]",
+          "(천안)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "catholic",
+    "name": "가톨릭대학교",
+    "shortName": "가톨릭대",
+    "region": "수도권",
+    "sources": [
+      {
+        "id": "catholic-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.catholic.ac.kr/ko/campuslife/notice.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": ".b-title-box a.b-title",
+          "idParam": "articleNo",
+          "viewUrl": "https://www.catholic.ac.kr/ko/campuslife/notice.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "listTitle": ".b-title-box a.b-title",
+          "listDate": ".b-m-con .b-date",
+          "title": ".b-top-box p.b-title + p.b-title",
+          "content": ".b-content-box",
+          "date": ".b-etc-box li:nth-child(2) span:last-child",
+          "writer": ".b-writer-box span:last-child"
+        }
+      },
+      {
+        "id": "catholic-oia",
+        "name": "국제교류 프로그램 공지",
+        "collector": "table-board",
+        "url": "https://oia.catholic.ac.kr/oia/program/international-notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "국제교류처",
+        "board": {
+          "link": ".b-title-box a.b-title",
+          "idParam": "articleNo",
+          "viewUrl": "https://oia.catholic.ac.kr/oia/program/international-notice.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "listTitle": ".b-title-box a.b-title",
+          "listDate": ".b-m-con .b-date",
+          "title": ".b-top-box p.b-title + p.b-title",
+          "content": ".b-content-box",
+          "date": ".b-etc-box li:nth-child(2) span:last-child",
+          "writer": ".b-writer-box span:last-child"
+        }
+      },
+      {
+        "id": "catholic-intl",
+        "name": "유학생 공지사항",
+        "collector": "table-board",
+        "url": "https://oia.catholic.ac.kr/oia/international-student/international-notice.do",
+        "enabled": true,
+        "pages": 1,
+        "useAi": true,
+        "defaultOrganizer": "국제교류처",
+        "board": {
+          "link": ".b-title-box a.b-title",
+          "idParam": "articleNo",
+          "viewUrl": "https://oia.catholic.ac.kr/oia/international-student/international-notice.do?mode=view&articleNo={id}",
+          "pageParam": "article.offset",
+          "pageOffset": 10,
+          "listTitle": ".b-title-box a.b-title",
+          "listDate": ".b-m-con .b-date",
+          "title": ".b-top-box p.b-title + p.b-title",
+          "content": ".b-content-box",
+          "date": ".b-etc-box li:nth-child(2) span:last-child",
+          "writer": ".b-writer-box span:last-child"
+        }
+      }
+    ]
+  },
+  {
+    "id": "gachon",
+    "name": "가천대학교",
+    "shortName": "가천대",
+    "region": "수도권",
+    "sources": [
+      {
+        "id": "gachon-notice",
+        "name": "공지사항",
+        "collector": "table-board",
+        "url": "https://www.gachon.ac.kr/commonNotice/kor/artclList.do",
+        "enabled": true,
+        "pages": 2,
+        "useAi": true,
+        "board": {
+          "link": "td.td-subject a",
+          "idPattern": "'kor', '([0-9]+)'",
+          "viewUrl": "https://www.gachon.ac.kr/commonNotice/kor/{id}/artclView.do",
+          "pageParam": "page",
+          "title": ".view-title",
+          "content": ".view-con",
+          "listDate": "td.td-date",
+          "date": "dl.write dd",
+          "writer": "dl.writer dd"
+        }
+      }
+    ],
+    "campuses": [
+      {
+        "schoolId": "gachon-medical",
+        "titleKeywords": [
+          "[메디컬]",
+          "메디컬캠퍼스"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gachon-medical",
+    "name": "가천대학교 메디컬캠퍼스",
+    "shortName": "가천대 메디컬",
+    "region": "수도권",
+    "campusOf": "gachon",
+    "sources": []
+  },
+  {
+    "id": "smu-cheonan",
+    "name": "상명대학교 천안캠퍼스",
+    "shortName": "상명대 천안",
+    "region": "충청권",
+    "campusOf": "smu",
+    "sources": []
+  },
+  {
     "id": "cnu",
     "name": "충남대학교",
     "shortName": "충남대",
