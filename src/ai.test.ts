@@ -44,7 +44,7 @@ test("JSON 해석 같은 일반 오류는 원래 message를 쓴다", () => {
 
 test("사용 한도는 message와 stderr·stdout 전체에서 감지한다", () => {
   for (const field of ["message", "stderr", "stdout"]) {
-    for (const notice of ["Hit your usage limit", "usage limit reached", "RATE_LIMIT_EXCEEDED"]) {
+    for (const notice of ["Hit your usage limit", "You've hit your session limit · resets 2:50am", "usage limit reached", "RATE_LIMIT_EXCEEDED"]) {
       const error = cliError({ [field]: `${"앞".repeat(250)}\n${notice}\n마지막 안내` });
       assert.ok(isUsageLimitError(error));
     }

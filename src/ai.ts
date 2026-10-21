@@ -243,7 +243,7 @@ export function failureReason(error: unknown): string {
 export function isUsageLimitError(error: unknown): boolean {
   const { stderr, stdout } = failureDetails(error);
   const message = error instanceof Error ? error.message : String(error);
-  return /hit your usage limit|usage limit reached|rate_limit_exceeded/i.test([message, stderr, stdout].join("\n"));
+  return /hit your (usage|session) limit|usage limit reached|rate_limit_exceeded/i.test([message, stderr, stdout].join("\n"));
 }
 
 async function askOnce(bin: string, prompt: string): Promise<{ items?: Record<string, unknown>[]; same?: unknown }> {
