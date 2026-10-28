@@ -54,9 +54,9 @@ export function matchesKeyword(program: Pick<Program, "title" | "organizer" | "s
   return words.every((word) => text.includes(word));
 }
 
-// 학교를 고르면 그 학교 정보와 모든 학교 공통 정보가 보인다.
-// includeOpen이면 다른 학교에 올라왔어도 다른 학교 학생이 지원할 수 있는 공고(target.openTo)도 함께 보인다
-export function visibleForSchool(program: ProgramView, schoolId: string | null, includeOpen = true): boolean {
+// 학교를 고르면 그 학교 정보와 모든 학교 공통 정보가 보인다 (기본은 내 학교만).
+// includeOpen을 켜면 다른 학교에 올라왔어도 다른 학교 학생이 지원할 수 있는 공고(target.openTo)도 함께 보인다
+export function visibleForSchool(program: ProgramView, schoolId: string | null, includeOpen = false): boolean {
   if (!schoolId || program.schoolIds.length === 0 || program.schoolIds.includes(schoolId)) return true;
   return includeOpen && Boolean(program.target.openTo);
 }

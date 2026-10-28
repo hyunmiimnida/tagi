@@ -96,14 +96,14 @@ test("게시일이 없으면 처음 수집한 시각을 보는 사람의 시간�
   assert.equal(addedAt(program), toDateString(new Date(seen)));
 });
 
-test("학교 필터: 다른 학교에 올라왔어도 지원할 수 있는 공고는 기본으로 함께 보이고, 끌 수 있다", async () => {
+test("학교 필터: 기본은 내 학교 공고만, 켜면 다른 학교에 올라왔어도 지원할 수 있는 공고도 보인다", async () => {
   const { visibleForSchool } = await import("./filter.ts");
   const mine = { schoolIds: ["knu"], target: { schools: ["knu"] } } as never;
   const open = { schoolIds: ["yu"], target: { schools: [], openTo: "전국 대학생" } } as never;
   const closed = { schoolIds: ["yu"], target: { schools: ["yu"], openTo: null } } as never;
   assert.ok(visibleForSchool(mine, "knu"));
-  assert.ok(visibleForSchool(open, "knu"));
-  assert.ok(!visibleForSchool(open, "knu", false));
+  assert.ok(!visibleForSchool(open, "knu")); // 기본은 내 학교 공고만
+  assert.ok(visibleForSchool(open, "knu", true)); // 켜면 다른 학교 공고 중 지원할 수 있는 것도
   assert.ok(!visibleForSchool(closed, "knu"));
   assert.ok(visibleForSchool(closed, null));
 });

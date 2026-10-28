@@ -37,7 +37,7 @@ interface Filters {
   tags: Set<string>;
   keyword: string;
   showClosed: boolean;
-  includeOpen: boolean; // 다른 학교에 올라왔지만 지원할 수 있는 공고도 보기
+  includeOpen: boolean; // 다른 학교에 올라왔지만 지원할 수 있는 공고도 보기 (기본은 끔: 내 학교 공고만)
   sort: Sort;
 }
 
@@ -65,7 +65,7 @@ function readQuery() {
     tags: new Set(params.getAll("tag")),
     keyword: params.get("q") ?? "",
     showClosed: params.get("closed") === "1",
-    includeOpen: params.get("open") !== "0",
+    includeOpen: params.get("open") === "1",
     sort: (params.get("sort") === "recent" ? "recent" : "deadline") as Sort,
   };
 }
@@ -79,7 +79,7 @@ function writeQuery({ school, region, units, who, tags, keyword, showClosed, inc
   for (const tag of tags) params.append("tag", tag);
   if (keyword) params.set("q", keyword);
   if (showClosed) params.set("closed", "1");
-  if (!includeOpen) params.set("open", "0");
+  if (includeOpen) params.set("open", "1");
   if (sort !== "deadline") params.set("sort", sort);
   const query = params.toString() ? `?${params}` : "";
   window.history.replaceState(null, "", query || window.location.pathname);
@@ -107,7 +107,7 @@ export function Explorer({ categories, schools }: Props) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [openPanel, setOpenPanel] = useState<string | null>(null);
   const [showClosed, setShowClosed] = useState(false);
-  const [includeOpen, setIncludeOpen] = useState(true);
+  const [includeOpen, setIncludeOpen] = useState(false);
   const [keyword, setKeyword] = useState("");
   const [sort, setSort] = useState<Sort>("deadline");
 
@@ -220,6 +220,19 @@ export function Explorer({ categories, schools }: Props) {
         .sort((a, b) => (sort === "recent" ? addedAt(b).localeCompare(addedAt(a)) : compareDeadline(a, b, today))),
     [open, categories, school, region, inPlace, units, who, selected, sort, today],
   );
+
+  // 기본은 내 학교 공고만 보인다. 다른 학교에 올라왔지만 우리 학교 학생도 지원할 수 있는 공고가 몇 개 더 있는지 (켜기 안내)
+  const openExtra = useMemo(() => {
+    if (!school || includeOpen) return 0;
+    return open.filter(
+      (p) =>
+        !visibleForSchool(p, school) &&
+        visibleForSchool(p, school, true) &&
+        matchesUnits(p, units) &&
+        matchesEligibility(p, who) &&
+        matchesTags(p.tags, selected, categories),
+    ).length;
+  }, [open, school, includeOpen, units, who, selected, categories]);
 
   // 개수: 다른 필터는 반영하고, 자기 자신이 속한 필터만 빼고 센다
   const counts = useMemo(() => {
@@ -379,7 +392,7 @@ export function Explorer({ categories, schools }: Props) {
             {school && (
               <label className="toggle panel-toggle">
                 <input type="checkbox" checked={includeOpen} onChange={(event) => setIncludeOpen(event.target.checked)} />
-                <span>다른 학교에 올라온 공고 중 우리 학교 학생도 지원할 수 있는 것 함께 보기</span>
+                <span>다른 학교 공고 중 우리 학교 학생도 지원할 수 있는 것도 보기</span>
               </label>
             )}
             {currentSchool && currentSchool.units.length > 0 && (
@@ -449,6 +462,24 @@ export function Explorer({ categories, schools }: Props) {
         </div>
       </div>
 
+      {/* 다른 학교 공고 켜기·끄기를 학교 패널을 열지 않고도 할 수 있게 */}
+      {ready && school && (openExtra > 0 || includeOpen) && (
+        <p className="open-line">
+          {includeOpen ? (
+            <>
+              다른 학교 공고 중 지원할 수 있는 것도 함께 보는 중{" "}
+              <button className="link-button" onClick={() => setIncludeOpen(false)}>
+                내 학교만 보기
+              </button>
+            </>
+          ) : (
+            <button className="link-button" onClick={() => setIncludeOpen(true)}>
+              다른 학교 공고 중 우리 학교 학생도 지원할 수 있는 {openExtra}개 더 보기
+            </button>
+          )}
+        </p>
+      )}
+
       {failed ? (
         <ListError onRetry={retry} />
       ) : !ready ? (
@@ -466,10 +497,15 @@ export function Explorer({ categories, schools }: Props) {
           <p className="empty-title">조건에 맞는 공고가 없어요</p>
           <p>필터를 줄이거나 다른 검색어를 써 보세요.</p>
           <div className="empty-actions">
+            {openExtra > 0 && (
+              <button className="button primary" onClick={() => setIncludeOpen(true)}>
+                다른 학교 공고 중 지원 가능한 {openExtra}개 보기
+              </button>
+            )}
             {/* 학교를 골라 둔 것을 잊고 검색하는 경우가 많아, 다른 학교에 결과가 있으면 바로 넓혀 볼 수 있게 한다 (내 학교 설정은 그대로) */}
             {(school || region) && (counts.all ?? 0) > 0 && (
               <button
-                className="button primary"
+                className={`button ${openExtra > 0 ? "" : "primary"}`}
                 onClick={() => {
                   setSchool(null);
                   setRegion(null);

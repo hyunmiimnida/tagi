@@ -2960,3 +2960,10 @@ button.stat {
     display: none;
   }
 }
+
+/* 공고 목록: 다른 학교 공고(지원 가능한 것) 켜기·끄기 안내 줄 */
+.open-line {
+  margin: 0 4px 10px;
+  color: var(--text-2);
+  font-size: 0.875rem;
+}
