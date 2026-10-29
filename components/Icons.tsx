@@ -97,3 +97,10 @@ export const ProfileIcon = ({ size, filled }: IconProps) => (
     <path d="M4.5 20c.8-3.7 3.9-6 7.5-6s6.7 2.3 7.5 6z" fill={filled ? "currentColor" : "none"} />
   </Svg>
 );
+
+export const LockIcon = ({ size = 16 }: IconProps) => (
+  <Svg size={size}>
+    <rect x="5" y="11" width="14" height="10" rx="2" />
+    <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+  </Svg>
+);

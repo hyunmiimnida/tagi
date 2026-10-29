@@ -151,7 +151,42 @@ export const PAL_PRESETS: Record<PalName, Avatar> = {
 };
 
 // 색 이름 → 그 색의 어두운 색 (없으면 같은 색)
-const DARKER: Record<string, string> = { violet: "violet-dark", steel: "steel-dark", white: "white-dark" };
+const DARKER: Record<string, string> = {
+  violet: "violet-dark",
+  steel: "steel-dark",
+  white: "white-dark",
+  gold: "gold-shadow",
+  rose: "rose-shadow",
+  blush: "rose",
+  tangerine: "ember-shadow",
+  red: "ember-shadow",
+  sky: "sky-shadow",
+  green: "leaf-shadow",
+  "leaf-light": "green",
+  lavender: "smoke-mid",
+  indigo: "line",
+  leather: "boot",
+};
+
+// 꾸미기 화면에서 고를 수 있는 머리 장식·옷 색 [색 이름, 화면에 보이는 이름]
+export const AVATAR_COLORS: [string, string][] = [
+  ["violet", "보라"],
+  ["indigo", "남색"],
+  ["sky", "하늘"],
+  ["green", "초록"],
+  ["leaf-light", "연두"],
+  ["gold", "노랑"],
+  ["tangerine", "주황"],
+  ["red", "빨강"],
+  ["rose", "장미"],
+  ["blush", "분홍"],
+  ["lavender", "연보라"],
+  ["leather", "갈색"],
+  ["steel", "은색"],
+  ["white", "하양"],
+];
+export const HEADWEAR_NAMES: Record<Headwear, string> = { "wizard-hat": "마법사 모자", helmet: "투구", hood: "두건", veil: "베일" };
+export const OUTFIT_NAMES: Record<Outfit, string> = { robe: "로브", armor: "갑옷", tunic: "튜닉", vestment: "사제복" };
 
 // 색 이름 → 그 색을 뜻하는 글자 (PAL_COLORS를 거꾸로)
 const LETTER_OF: Record<string, string> = Object.fromEntries(

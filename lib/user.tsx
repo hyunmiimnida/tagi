@@ -61,6 +61,7 @@ interface UserState {
   deleteAccount: () => Promise<boolean>; // 계정과 계정에 저장된 모든 데이터를 지운다
   // 내 도트 캐릭터 (화면 곳곳에서 같이 다니는 캐릭터). 브라우저에서 읽기 전에는 null
   avatar: Avatar | null;
+  ownedWeapons: ReadonlySet<string>; // 얻은 무기 (희귀 이상. 일반 무기는 누구나 가진다)
   setAvatar: (next: Avatar) => void;
 }
 
@@ -344,6 +345,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         return true;
       },
       avatar,
+      ownedWeapons: OWNED_WEAPONS,
       setAvatar,
     }),
     [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite, avatar, setAvatar],

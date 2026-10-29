@@ -22,11 +22,13 @@ import type { EffectId } from "../lib/pixel-effects.ts";
 // 별이 켜지는 순간 onTap(components/FavoriteButton.tsx가 별을 노랗게 바꾸고 반짝이를 띄운다).
 // 기기의 "동작 줄이기"가 켜져 있거나 이미 한 명이 다녀오는 중이면 캐릭터 없이 바로 별이 켜진다 (false를 돌려준다)
 
-type Start = (button: HTMLElement, onTap: () => void) => boolean;
+// avatar·source: 저장된 내 캐릭터 대신 이 모습으로, 이 그림 자리에서 출발 (꾸미기 화면의 "써 보기")
+type Options = { avatar?: Avatar; source?: SVGElement };
+type Start = (button: HTMLElement, onTap: () => void, options?: Options) => boolean;
 let start: Start | null = null;
 
-export function requestStarHelper(button: HTMLElement, onTap: () => void): boolean {
-  return start ? start(button, onTap) : false;
+export function requestStarHelper(button: HTMLElement, onTap: () => void, options?: Options): boolean {
+  return start ? start(button, onTap, options) : false;
 }
 
 const SCALE = 2;
@@ -81,11 +83,11 @@ export function StarHelper() {
       setTimeout(() => setEffects((list) => list.filter((e) => e.id !== id)), ms);
     };
 
-    start = (button, onTap) => {
+    start = (button, onTap, options) => {
       if (busy.current || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
       const wallPal = button.closest(".pal-wall")?.querySelector<SVGElement>(".pal-peek-anchor svg[data-pal]");
-      const source = wallPal && onScreen(wallPal) ? wallPal : document.querySelector<SVGElement>(".tab-pal[data-pal]");
-      const me = avatarRef.current;
+      const source = options?.source ?? (wallPal && onScreen(wallPal) ? wallPal : document.querySelector<SVGElement>(".tab-pal[data-pal]"));
+      const me = options?.avatar ?? avatarRef.current;
       if (!source || !me) return false;
       busy.current = true;
       void perform(me, source, button, onTap).finally(() => {

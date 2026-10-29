@@ -3110,3 +3110,226 @@ button.stat {
   50% { transform: translate(calc(var(--dx) * 0.5 - 50%), calc(var(--dy) * 0.5 - var(--arc) - 50%)); }
   100% { transform: translate(calc(var(--dx) - 50%), calc(var(--dy) - 50%)); }
 }
+
+/* 내 캐릭터 꾸미기 (components/AvatarEditor.tsx) */
+.avatar-editor {
+  display: grid;
+  gap: 12px;
+  padding-bottom: 88px; /* 아래 고정 버튼 줄에 가리지 않게 */
+}
+
+.avatar-stage-card {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding-top: 28px;
+}
+
+.avatar-preview {
+  position: relative;
+  line-height: 0;
+}
+
+/* 미리보기에서는 입자가 캐릭터 머리 근처에서 나온다 */
+.avatar-preview .amb-anchor {
+  bottom: 70%;
+}
+
+.avatar-weapon-name {
+  margin: 0;
+  font-weight: 600;
+}
+
+.grade {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--surface-2);
+  color: var(--text-2);
+}
+
+/* 등급 색: 희귀 파랑, 영웅 보라, 전설 금색 (글자는 바탕과 대비 4.5:1 이상인 진한 색) */
+.grade-rare.grade,
+.avatar-group-label.grade-rare { color: var(--accent); }
+.grade-rare.grade { background: var(--accent-soft); }
+.grade-heroic.grade,
+.avatar-group-label.grade-heroic { color: var(--px-violet-dark); }
+.grade-heroic.grade { background: color-mix(in srgb, var(--px-lavender) 30%, transparent); }
+.grade-legendary.grade,
+.avatar-group-label.grade-legendary { color: var(--px-gold-shadow); }
+.grade-legendary.grade { background: color-mix(in srgb, var(--px-gold) 25%, transparent); }
+
+.avatar-try {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  margin-top: 4px;
+  padding: 8px 16px 4px;
+  border-radius: 14px;
+  background: var(--surface-2);
+}
+
+.avatar-try-pal {
+  line-height: 0;
+}
+
+.avatar-try-hint {
+  align-self: center;
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.avatar-section .card-title {
+  margin-bottom: 10px;
+}
+
+.avatar-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.avatar-option {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 4px;
+  min-width: 64px;
+  min-height: 64px;
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.avatar-option.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.avatar-option.locked {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.avatar-options.weapons .avatar-option {
+  min-width: 76px;
+  align-content: end;
+}
+
+.avatar-option-name {
+  font-size: 12px;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+.avatar-lock {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  color: var(--text-3);
+}
+
+.avatar-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.avatar-swatch {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatar-swatch.on {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.avatar-weapon-group + .avatar-weapon-group {
+  margin-top: 14px;
+}
+
+.avatar-group-label {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+/* 저장 버튼 줄: 아래 탭 바 바로 위에 붙어 있다 */
+.avatar-actions {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--nav-height) + env(safe-area-inset-bottom) + 8px);
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  width: min(560px, calc(100% - 24px));
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 4px 20px rgb(0 0 0 / 12%);
+  transform: translateX(-50%);
+}
+
+.avatar-notice {
+  flex: 1 1 100%;
+  margin: 0;
+  min-height: 0;
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+.avatar-notice:empty {
+  display: none;
+}
+
+/* 프로필의 내 캐릭터 카드 */
+.my-pal-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.my-pal-card .pal-frame {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: var(--surface-2);
+  line-height: 0;
+}
+
+.my-pal-card .my-pal-text {
+  flex: 1;
+  display: grid;
+  gap: 2px;
+}
+
+.my-pal-card .my-pal-text span {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+@media (prefers-color-scheme: dark) {
+  .grade-heroic.grade,
+  .avatar-group-label.grade-heroic { color: var(--px-lavender); }
+  .grade-legendary.grade,
+  .avatar-group-label.grade-legendary { color: var(--px-gold); }
+}

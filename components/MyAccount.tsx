@@ -14,7 +14,7 @@ import { useListPrograms, useSeriesInfo } from "../lib/use-list.ts";
 import { LOGIN_PROVIDERS, supabase, useToday, useUser } from "../lib/user.tsx";
 import type { Profile } from "../lib/user.tsx";
 import { FeedbackBox } from "./FeedbackBox.tsx";
-import { MyPeekPal } from "./MyPal.tsx";
+import { MyPal, MyPeekPal } from "./MyPal.tsx";
 import { CalendarPlusIcon, ChevronIcon, ProfileIcon } from "./Icons.tsx";
 
 interface Props {
@@ -288,6 +288,18 @@ export function MyAccount({ schools, fieldTags, sources }: Props) {
           </>
         )}
       </section>
+
+      {/* 내 캐릭터: 누르면 꾸미기 */}
+      <Link href="/my/avatar" className="card my-card my-pal-card">
+        <span className="pal-frame">
+          <MyPal pose="sit" scale={3} />
+        </span>
+        <span className="my-pal-text">
+          <strong>내 캐릭터</strong>
+          <span>머리 장식·옷·무기를 바꿔 꾸며 보세요</span>
+        </span>
+        <ChevronIcon size={18} />
+      </Link>
 
       {/* 2. 맞춤 설정 안내: 아직 안 고른 것이 있으면 */}
       {user.ready && remaining.length > 0 && (
