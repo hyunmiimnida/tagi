@@ -1026,7 +1026,8 @@
           "content": "data.content",
           "writer": "data.displayName",
           "detailTitle": "data.title"
-        }
+        },
+        "localOnly": true
       },
       {
         "id": "sogang-student",
@@ -1047,7 +1048,8 @@
           "content": "data.content",
           "writer": "data.displayName",
           "detailTitle": "data.title"
-        }
+        },
+        "localOnly": true
       },
       {
         "id": "sogang-scholarship",
@@ -1068,7 +1070,8 @@
           "content": "data.content",
           "writer": "data.displayName",
           "detailTitle": "data.title"
-        }
+        },
+        "localOnly": true
       }
     ]
   },
@@ -1801,7 +1804,8 @@
           "listDate": ".s-day",
           "date": "#bo_v_info .if_date",
           "writer": "#bo_v_info .sv_member"
-        }
+        },
+        "localOnly": true
       }
     ],
     "campuses": [
@@ -2266,7 +2270,8 @@
           "listDate": "td.dn5",
           "date": ".tbl_view > tbody > tr:nth-child(2) > td:last-child",
           "writer": ".tbl_view > tbody > tr:nth-child(2) > td:first-of-type"
-        }
+        },
+        "localOnly": true
       },
       {
         "id": "seoultech-scholarship",
@@ -2286,7 +2291,8 @@
           "listDate": "td.dn5",
           "date": ".tbl_view > tbody > tr:nth-child(2) > td:last-child",
           "writer": ".tbl_view > tbody > tr:nth-child(2) > td:first-of-type"
-        }
+        },
+        "localOnly": true
       },
       {
         "id": "seoultech-career",
@@ -2307,7 +2313,8 @@
           "listDate": "td.dn5",
           "date": ".tbl_view > tbody > tr:nth-child(2) > td:last-child",
           "writer": ".tbl_view > tbody > tr:nth-child(2) > td:first-of-type"
-        }
+        },
+        "localOnly": true
       },
       {
         "id": "seoultech-global",
@@ -2328,7 +2335,8 @@
           "listDate": "td.body_col_regdate",
           "date": ".tbl_list > tbody > tr:first-child > td:nth-of-type(2)",
           "writer": ".tbl_list > tbody > tr:nth-child(2) > td"
-        }
+        },
+        "localOnly": true
       }
     ]
   },
@@ -2804,7 +2812,7 @@
         "name": "대학일자리플러스센터 공지사항",
         "collector": "table-board",
         "url": "https://jobcenter.jnu.ac.kr/?mid=0104",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "useAi": true,
         "defaultOrganizer": "대학일자리플러스센터",
