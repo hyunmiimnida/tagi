@@ -1,0 +1,34 @@
+{
+  "firstFrameEpoch": 1793293454.69263,
+  "startEpoch": 1793293454.609,
+  "scenes": [
+    {
+      "name": "list",
+      "t": 0.08
+    },
+    {
+      "name": "school",
+      "t": 1.29
+    },
+    {
+      "name": "tag",
+      "t": 7.5
+    },
+    {
+      "name": "open",
+      "t": 11.25
+    },
+    {
+      "name": "favorite",
+      "t": 15.1
+    },
+    {
+      "name": "calendar",
+      "t": 19.26
+    },
+    {
+      "name": "end",
+      "t": 24.72
+    }
+  ]
+}
