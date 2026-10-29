@@ -1,0 +1,206 @@
+import type { WeaponDef } from "./weapons.ts";
+
+// 추가 무기: Codex가 기획하고 그린 무기. 스킬은 대본(recipe)으로 정한다 (lib/weapons.ts의 RecipeStep)
+// skill은 대본이 없을 때 쓸 그 계열의 일반 스킬
+export const EXTRA_WEAPONS = {
+  // 재킷 지퍼의 은빛 이빨을 칼날로 엮은 작은 검
+  "zip-blade": {
+    name: "지퍼검",
+    family: "sword",
+    grade: "rare",
+    skill: "approach-slash",
+    effect: "zipper",
+    recipe: [
+      {do: "standUp"},
+      {do: "pose",pose: "strike",ms: 200},
+      {do: "shoot",fx: "zip-slider",from: "hand",ms: 1050,arc: 0,count: 1,stagger: 0,spread: 0,frameMs: 80},
+      {do: "tap"},
+      {do: "hide"},
+    ],
+  },
+  // 강의실 시곗바늘을 닮은 금빛 장검
+  "hour-blade": {
+    name: "시곗바늘검",
+    family: "sword",
+    grade: "heroic",
+    skill: "approach-slash",
+    effect: "clockwork",
+    recipe: [
+      {do: "standUp"},
+      {do: "pose",pose: "windup",ms: 170},
+      {do: "pose",pose: "strike",ms: 60},
+      {do: "shoot",fx: "minute-hand",from: "hand",ms: 500,arc: 0,count: 1,stagger: 0,spread: 0,frameMs: 80},
+      {do: "play",fx: "clock-dial",at: "star",frameMs: 95,ax: 0.5,ay: 0.5,wait: false},
+      {do: "wait",ms: 285},
+      {do: "tap"},
+      {do: "wait",ms: 300},
+      {do: "hide"},
+    ],
+  },
+  // 축제 노점의 바삭한 격자 달고나를 얹은 마법봉
+  "dalgona-wand": {
+    name: "달고나봉",
+    family: "staff",
+    grade: "rare",
+    skill: "magic-orb",
+    effect: "crumb",
+    recipe: [
+      {do: "standUp"},
+      {do: "pose",pose: "cast",ms: 200},
+      {do: "shoot",fx: "wafer-dart",from: "hand",ms: 1050,arc: 18,count: 1,stagger: 0,spread: 0,frameMs: 80},
+      {do: "tap"},
+      {do: "hide"},
+    ],
+  },
+  // 동아리 화분에 유리 온실을 씌운 새싹 지팡이
+  "glasshouse-staff": {
+    name: "온실지팡이",
+    family: "staff",
+    grade: "heroic",
+    skill: "magic-orb",
+    effect: "leaf",
+    recipe: [
+      {do: "standUp"},
+      {do: "pose",pose: "cast",ms: 170},
+      {do: "shoot",fx: "green-seed",from: "hand",ms: 500,arc: 26,count: 1,stagger: 0,spread: 0,frameMs: 80},
+      {do: "play",fx: "greenhouse-grow",at: "star",frameMs: 95,ax: 0.5,ay: 0.5,wait: false},
+      {do: "wait",ms: 285},
+      {do: "tap"},
+      {do: "wait",ms: 300},
+      {do: "hide"},
+    ],
+  },
+  // 편지 봉투와 우편함 곡선을 품은 산호빛 활
+  "post-bow": {
+    name: "우편궁",
+    family: "bow",
+    grade: "rare",
+    skill: "arrow",
+    effect: "postmark",
+    recipe: [
+      {do: "standUp"},
+      {do: "pose",pose: "draw",ms: 200},
+      {do: "shoot",fx: "letter-arrow",from: "hand",ms: 1050,arc: 0,count: 1,stagger: 0,spread: 0,frameMs: 80},
+      {do: "tap"},
+      {do: "hide"},
+    ],
+  },
+  // 공예 동아리의 금빛 실패와 날실로 만든 활
+  "loom-bow": {
+    name: "직조궁",
+    family: "bow",
+    grade: "heroic",
+    skill: "arrow",
+    effect: "weave",
+    recipe: [
+      {do: "standUp"},
+      {do: "pose",pose: "draw",ms: 170},
+      {do: "pose",pose: "release",ms: 60},
+      {do: "shoot",fx: "thread-shuttle",from: "hand",ms: 500,arc: 0,count: 1,stagger: 0,spread: 0,frameMs: 80},
+      {do: "play",fx: "woven-check",at: "star",frameMs: 95,ax: 0.5,ay: 0.5,wait: false},
+      {do: "wait",ms: 285},
+      {do: "tap"},
+      {do: "wait",ms: 300},
+      {do: "hide"},
+    ],
+  },
+  // 새 학기 사물함의 첫 문을 여는 금빛 열쇠 성물
+  "lucky-key": {
+    name: "행운열쇠",
+    family: "relic",
+    grade: "rare",
+    skill: "holy-dot",
+    effect: "coin",
+    recipe: [
+      {do: "standUp"},
+      {do: "pose",pose: "pray",ms: 200},
+      {do: "shoot",fx: "key-turn",from: "hand",ms: 1050,arc: 0,count: 1,stagger: 0,spread: 0,frameMs: 80},
+      {do: "tap"},
+      {do: "hide"},
+    ],
+  },
+  // 캠퍼스에서 만날 장소를 가리키는 청록 나침반 성물
+  "promise-compass": {
+    name: "약속나침반",
+    family: "relic",
+    grade: "heroic",
+    skill: "holy-dot",
+    effect: "sparkle",
+    recipe: [
+      {do: "standUp"},
+      {do: "pose",pose: "pray",ms: 170},
+      {do: "shoot",fx: "bearing-needle",from: "hand",ms: 500,arc: 14,count: 1,stagger: 0,spread: 0,frameMs: 80},
+      {do: "play",fx: "campus-route",at: "star",frameMs: 95,ax: 0.5,ay: 0.5,wait: false},
+      {do: "wait",ms: 285},
+      {do: "tap"},
+      {do: "wait",ms: 300},
+      {do: "hide"},
+    ],
+  },
+  // 하얀 수정액과 하늘색 그립을 가진 통통한 펜
+  "correction-pen": {
+    name: "수정펜",
+    family: "pen",
+    grade: "rare",
+    skill: "pencil-poke",
+    effect: "snow",
+    recipe: [
+      {do: "standUp"},
+      {do: "pose",pose: "poke",ms: 200},
+      {do: "shoot",fx: "white-stroke",from: "hand",ms: 1050,arc: 0,count: 1,stagger: 0,spread: 0,frameMs: 80},
+      {do: "tap"},
+      {do: "hide"},
+    ],
+  },
+  // 건축 과제의 설계선을 꺼내는 금테 제도펜
+  "drafting-pen": {
+    name: "제도펜",
+    family: "pen",
+    grade: "heroic",
+    skill: "pencil-poke",
+    effect: "blueprint",
+    recipe: [
+      {do: "standUp"},
+      {do: "pose",pose: "poke",ms: 170},
+      {do: "shoot",fx: "draft-line",from: "hand",ms: 500,arc: 0,count: 1,stagger: 0,spread: 0,frameMs: 80},
+      {do: "play",fx: "blueprint-bridge",at: "star",frameMs: 95,ax: 0.5,ay: 0.5,wait: false},
+      {do: "wait",ms: 285},
+      {do: "tap"},
+      {do: "wait",ms: 300},
+      {do: "hide"},
+    ],
+  },
+  // 동아리 합주의 짝짝 소리를 담은 귤빛 나무 조개 악기
+  "castanets": {
+    name: "캐스터네츠",
+    family: "instrument",
+    grade: "rare",
+    skill: "note-float",
+    effect: "bubble",
+    recipe: [
+      {do: "standUp"},
+      {do: "pose",pose: "play",ms: 200},
+      {do: "shoot",fx: "shell-clap",from: "hand",ms: 1050,arc: 0,count: 1,stagger: 0,spread: 0,frameMs: 80},
+      {do: "tap"},
+      {do: "hide"},
+    ],
+  },
+  // 축제 부스처럼 알록달록한 건반과 두 채를 단 실로폰
+  "campus-xylophone": {
+    name: "축제실로폰",
+    family: "instrument",
+    grade: "heroic",
+    skill: "note-float",
+    effect: "weave",
+    recipe: [
+      {do: "standUp"},
+      {do: "pose",pose: "play",ms: 170},
+      {do: "shoot",fx: "tone-bar",from: "hand",ms: 500,arc: 0,count: 1,stagger: 0,spread: 0,frameMs: 80},
+      {do: "play",fx: "keyboard-stage",at: "star",frameMs: 95,ax: 0.5,ay: 0.75,wait: false},
+      {do: "wait",ms: 285},
+      {do: "tap"},
+      {do: "wait",ms: 300},
+      {do: "hide"},
+    ],
+  },
+} satisfies Record<string, WeaponDef>;

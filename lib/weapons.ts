@@ -1,4 +1,5 @@
 import type { EffectId } from "./pixel-effects.ts";
+import { EXTRA_WEAPONS } from "./weapons-extra.ts";
 
 // 무기: 내 캐릭터가 손에 드는 것. 무기가 관심 표시(☆)를 켜 주는 스킬과 이펙트를 정한다.
 //   계열(family)이 스킬의 종류를, 등급(grade)이 화려함을 정한다. 일반은 단출하게, 영웅으로 갈수록 화려하게.
@@ -34,15 +35,26 @@ export type SkillId =
   | "note-line" // 기타: 음표 여러 개
   | "sound-ring"; // 그랜드 하프: 무지개 음파
 
+// 스킬 대본: 단계를 차례로 실행한다 (components/StarHelper.tsx의 runRecipe). 새 무기는 코드 없이 대본만으로 스킬을 만든다
+//   standUp(제자리에서 일어남) … hide(다시 숨음) / goToStar(별까지 달려감) … goHome(돌아옴), tap = 별이 켜지는 순간(한 번)
+export type RecipeStep =
+  | { do: "standUp" | "goToStar" | "goHome" | "hide" | "tap" | "beam" | "slash" }
+  | { do: "pose"; pose: string; ms?: number }
+  | { do: "shoot"; fx: string; from?: "hand" | "sky" | "ground"; ms?: number; arc?: number; count?: number; stagger?: number; spread?: number; frameMs?: number }
+  | { do: "play"; fx: string; at?: "star" | "self"; frameMs?: number; ax?: number; ay?: number; wait?: boolean }
+  | { do: "spark"; color?: string }
+  | { do: "wait"; ms: number };
+
 export interface WeaponDef {
   name: string;
   family: WeaponFamily;
   grade: Grade;
   skill: SkillId;
   effect: EffectId | null; // 별이 켜질 때 터지고 평소 캐릭터 주변을 떠다니는 이펙트 (일반은 없음)
+  recipe?: RecipeStep[]; // 있으면 skill 대신 이 대본으로 별을 켠다
 }
 
-export const WEAPONS = {
+const BASE_WEAPONS = {
   "bare-hands": { name: "맨손", family: "fist", grade: "common", skill: "fist-tap", effect: null },
   "wooden-sword": { name: "목검", family: "sword", grade: "common", skill: "approach-slash", effect: null },
   "apprentice-wand": { name: "견습 지팡이", family: "staff", grade: "common", skill: "magic-orb", effect: null },
@@ -67,6 +79,9 @@ export const WEAPONS = {
   // 전설: 자리만 있다 (디자인은 나중에). 지금은 누구도 가질 수 없다
   "legend-1": { name: "???", family: "sword", grade: "legendary", skill: "blossom-wave", effect: "sparkle" },
 } satisfies Record<string, WeaponDef>;
+
+// 추가 무기 (Codex가 기획·제작, lib/weapons-extra.ts). 스킬은 대본(recipe)으로
+export const WEAPONS = { ...BASE_WEAPONS, ...EXTRA_WEAPONS };
 
 export type WeaponId = keyof typeof WEAPONS;
 export const WEAPON_IDS = Object.keys(WEAPONS) as WeaponId[];

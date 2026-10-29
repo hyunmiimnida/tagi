@@ -292,6 +292,170 @@ const DRAWN: Partial<Record<WeaponId, Partial<Record<WeaponPose, Stamp>>>> = {
       rows: ["......EEE.", ".....EYYYE", "....EY.RYE", "....EY.UYE", "....EY.DYE", "...EY.R.YE", "..EY.RU.YE", ".EY.RUD.YE", "EYYYYYYYYE", ".EEEEEEEE."],
     },
   },
+  "zip-blade": {
+    stand: {
+      x: 20,
+      y: 4,
+      rows: [".KK.", "KMMK", "KmWK", "KMMK", "KmWK", "KMMK", "KmWK", "KMMK", "KddK", "KDDK", ".KK."],
+    },
+    windup: {
+      x: 20,
+      y: 0,
+      rows: [".KK.", "KMMK", "KmWK", "KMMK", "KmWK", "KMMK", "KmWK", "KMMK", "KddK", "KDDK", ".KK."],
+    },
+    strike: {
+      x: 16,
+      y: 12,
+      rows: ["K.KKKKK.", "KDMMWMMK", "K.KKKKK."],
+    },
+  },
+  "hour-blade": {
+    stand: {
+      x: 18,
+      y: 1,
+      rows: ["..EEE.", ".EEKEE", "EEKYKE", "EKYEKE", "EKYGKE", "EKYEKE", "EKYGKE", "EKYEKE", "EKYYKE", "EKYYKE", "EKhHKE", "EEhKEE", ".EKKE.", ".EEEE."],
+    },
+    windup: {
+      x: 18,
+      y: 0,
+      rows: ["..EEE.", ".EEKEE", "EEKYKE", "EKYEKE", "EKYGKE", "EKYEKE", "EKYGKE", "EKYEKE", "EKYYKE", "EKYYKE", "EKhHKE", "EEhKEE", ".EKKE.", ".EEEE."],
+    },
+    strike: {
+      x: 14,
+      y: 12,
+      rows: ["EEEEEEEEEE", "EKKKKKKKKE", "EKHHYYEEKE", "EKKKKKKKKE", "EEEEEEEEEE"],
+    },
+  },
+  "dalgona-wand": {
+    stand: {
+      x: 19,
+      y: 6,
+      rows: [".KKK.", "KYEYK", "KYGYK", "KGYGK", ".KGK.", "..T..", "..t..", "..T..", "..T.."],
+    },
+    cast: {
+      x: 19,
+      y: 0,
+      rows: [".KKK.", "KYEYK", "KYGYK", "KGYGK", ".KGK.", "..T..", "..t..", "..T..", "..T.."],
+    },
+  },
+  "glasshouse-staff": {
+    stand: {
+      x: 18,
+      y: 1,
+      rows: [".LLLL.", "LLKKLL", "LKIIKL", "LKIdKL", "LKlNKL", "LKNNKL", "LKbbKL", "LKBBKL", "LLtKLL", ".LTKL.", ".LtKL.", ".LTKL.", ".LKKL.", ".LLLL."],
+    },
+    cast: {
+      x: 18,
+      y: 0,
+      rows: [".LLLL.", "LLKKLL", "LKIIKL", "LKIdKL", "LKlNKL", "LKNNKL", "LKbbKL", "LKBBKL", "LLtKLL", ".LTKL.", ".LtKL.", ".LTKL.", ".LKKL.", ".LLLL."],
+    },
+  },
+  "post-bow": {
+    stand: {
+      x: 19,
+      y: 6,
+      rows: ["KK...", "KRK..", "KBPK.", "KB.rK", "KB.rK", "KB.rK", "KBPK.", "KRK..", "KK..."],
+    },
+    draw: {
+      x: 14,
+      y: 6,
+      rows: [".....KK...", "....KRRK..", ".....KBPK.", "......B.rK", "......B.rK", "......B.rK", "...B..BPK.", "KtttttRRKK", "...B..KK..", "....BB....", ".........."],
+    },
+    release: {
+      x: 19,
+      y: 6,
+      rows: ["KK...", "KRK..", "KBPK.", "KB.rK", "KB.rK", "KB.rK", "KBPK.", "KRK..", "KK..."],
+    },
+  },
+  "loom-bow": {
+    stand: {
+      x: 17,
+      y: 2,
+      rows: ["EEEE...", "EKKEE..", "EKYKEE.", "EEBbKEE", ".EB.GKE", ".EB.GKE", ".EE.GKE", ".EB.GKE", ".EB.GKE", ".EBbKEE", "EEYbKE.", "EKYKEE.", "EEEEE.."],
+    },
+    draw: {
+      x: 14,
+      y: 4,
+      rows: [".....EEEE.", "....EEKKEE", "....EKYYKE", "....EEbbKE", ".....EEGKE", ".....EBGKE", ".....EEGKE", "....EEBGKE", "..EEEKEGKE", "EEEKKYbbKE", "EKYYYYYYKE", "EEEKKYGGKE", "..EEEEEEEE"],
+    },
+    release: {
+      x: 17,
+      y: 2,
+      rows: ["EEEE...", "EKKEE..", "EKYKEE.", "EEBbKEE", ".EB.GKE", ".EB.GKE", ".EE.GKE", ".EB.GKE", ".EB.GKE", ".EBbKEE", "EEYbKE.", "EKYKEE.", "EEEEE.."],
+    },
+  },
+  "lucky-key": {
+    stand: {
+      x: 19,
+      y: 6,
+      rows: [".KKK.", "KY.YK", "KYEYK", ".KGK.", "..YK.", "..GK.", "..YYK", "..YGK", "..KK."],
+    },
+    pray: {
+      x: 19,
+      y: 0,
+      rows: [".KKK.", "KY.YK", "KYEYK", ".KGK.", "..YK.", "..GK.", "..YYK", "..YGK", "..KK."],
+    },
+  },
+  "promise-compass": {
+    stand: {
+      x: 18,
+      y: 1,
+      rows: [".IIII.", "IIKKII", "IKDdKI", "IKIFKI", "IKFYKI", "IKdDKI", "IIKKII", ".IITKI", "..ItKI", "..ITKI", "..ItKI", "..ITKI", "..IKKI", "..IIII"],
+    },
+    pray: {
+      x: 18,
+      y: 0,
+      rows: [".IIII.", "IIKKII", "IKDdKI", "IKIFKI", "IKFYKI", "IKdDKI", "IIKKII", ".IITKI", "..ItKI", "..ITKI", "..ItKI", "..ITKI", "..IKKI", "..IIII"],
+    },
+  },
+  "correction-pen": {
+    stand: {
+      x: 20,
+      y: 6,
+      rows: [".KK.", "KDDK", "KIWK", "KDdK", "KDdK", "KBBK", "KBbK", "KBBK", ".KK."],
+    },
+    poke: {
+      x: 15,
+      y: 12,
+      rows: ["KKKKKKKK.", "KDDDBBBmK", "KKKKKKKK."],
+    },
+  },
+  "drafting-pen": {
+    stand: {
+      x: 18,
+      y: 3,
+      rows: [".IIII.", "IIKKII", "IKDDKI", "IKIdKI", "IKDdKI", "IKDdKI", "IKDDKI", "IKYEKI", "IKMmKI", "IImKII", ".IKKI.", ".IIII."],
+    },
+    poke: {
+      x: 14,
+      y: 12,
+      rows: ["IIIIIIIIII", "IKDDDYMmKI", "IIIIIIIIII"],
+    },
+  },
+  "castanets": {
+    stand: {
+      x: 18,
+      y: 5,
+      rows: [".KKKK.", "KFTTfK", "KFWFfK", "KFTTfK", ".KKKK.", "..KK..", ".KFFK.", "KFTTfK", "KFTTfK", ".KKKK."],
+    },
+    play: {
+      x: 17,
+      y: 12,
+      rows: [".KK.KK.", "KFWKFFK", "KFTKFTK", ".KK.KK."],
+    },
+  },
+  "campus-xylophone": {
+    stand: {
+      x: 18,
+      y: 1,
+      rows: [".IIII.", "IIKKII", "IKRRKI", "IKrRKI", "IKFFKI", "IKfFKI", "IKYYKI", "IKGYKI", "IKNNKI", "IKlNKI", "IKDDKI", "IKdDKI", "IIKKII", ".IIII."],
+    },
+    play: {
+      x: 13,
+      y: 12,
+      rows: ["IIIIIIIIIII", "IKKKKKKKKKI", "IKRFYNDDBKI", "IKrfGlddbKI", "IIIIIIIIIII"],
+    },
+  },
 };
 
 export const WEAPON_SPRITES = Object.fromEntries(

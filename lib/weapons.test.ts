@@ -4,10 +4,12 @@ import { ACTION_HEIGHT, ACTION_WIDTH, PAL_COLORS, PAL_PRESETS, actionRows } from
 import { FAMILY_POSES, WEAPON_SPRITES } from "./weapon-sprites.ts";
 import { GRADES, STARTER_WEAPONS, WEAPONS, WEAPON_IDS, owns, starterOf, upgradeWeaponId } from "./weapons.ts";
 
-test("계열마다 일반·희귀·영웅 무기가 하나씩, 전설은 자리 하나", () => {
+test("계열마다 일반·희귀·영웅 무기가 있고, 전설은 자리 하나", () => {
   for (const family of ["sword", "staff", "bow", "relic", "pen", "instrument"] as const) {
     for (const grade of ["common", "rare", "heroic"] as const) {
-      assert.equal(WEAPON_IDS.filter((id) => WEAPONS[id].family === family && WEAPONS[id].grade === grade).length, 1, `${family} ${grade}`);
+      const count = WEAPON_IDS.filter((id) => WEAPONS[id].family === family && WEAPONS[id].grade === grade).length;
+      // 일반은 계열마다 하나(기본 지급), 희귀·영웅은 하나 이상
+      assert.ok(grade === "common" ? count === 1 : count >= 1, `${family} ${grade}: ${count}`);
     }
   }
   assert.equal(WEAPON_IDS.filter((id) => WEAPONS[id].grade === "legendary").length, 1);
@@ -51,5 +53,24 @@ test("스킬 효과 그림은 효과마다 프레임 크기가 같고 팔레트 
       for (const row of rows) assert.equal(row.length, w, `${id}: ${row}`);
       for (const ch of rows.join("")) assert.ok(ch === "." || (PAL_COLORS[ch] && !"AaOo#".includes(ch)), `${id}: ${ch}`);
     }
+  }
+});
+
+test("스킬 대본은 그 계열의 자세와 있는 그림만 쓰고, 별을 한 번 켜며, 시작과 끝이 짝이 맞는다", async () => {
+  const { SKILL_FX } = await import("./skill-fx.ts");
+  for (const id of WEAPON_IDS) {
+    const recipe = (WEAPONS[id] as import("./weapons.ts").WeaponDef).recipe;
+    if (!recipe) continue;
+    const { family } = WEAPONS[id];
+    assert.equal(recipe.filter((st) => st.do === "tap").length, 1, `${id} tap`);
+    const first = recipe[0].do;
+    const last = recipe.at(-1)!.do;
+    assert.ok((first === "standUp" && last === "hide") || (first === "goToStar" && last === "goHome"), `${id}: ${first} … ${last}`);
+    for (const st of recipe) {
+      if (st.do === "pose") assert.ok(st.pose === "stand" || FAMILY_POSES[family].includes(st.pose as never), `${id} 자세 ${st.pose}`);
+      if (st.do === "shoot" || st.do === "play") assert.ok(st.fx in SKILL_FX, `${id} 그림 ${st.fx}`);
+    }
+    const total = recipe.reduce((ms, st) => ms + ("ms" in st && st.ms ? st.ms : 0), 0);
+    assert.ok(total < 2500, `${id} 대본이 너무 김 ${total}ms`);
   }
 });

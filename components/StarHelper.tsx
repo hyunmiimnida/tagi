@@ -5,7 +5,7 @@ import { EFFECTS } from "../lib/pixel-effects.ts";
 import { SKILL_FX } from "../lib/skill-fx.ts";
 import { ACTION_HEIGHT, ACTION_WIDTH, EFFECT_ROWS, actionRows } from "../lib/pixel-pals.ts";
 import { WEAPONS } from "../lib/weapons.ts";
-import type { SkillId, WeaponFamily } from "../lib/weapons.ts";
+import type { RecipeStep, SkillId, WeaponDef, WeaponFamily } from "../lib/weapons.ts";
 import type { ActionFrame, Avatar } from "../lib/pixel-pals.ts";
 import { useUser } from "../lib/user.tsx";
 import { PixelSprite } from "./PixelPal.tsx";
@@ -191,7 +191,11 @@ export function StarHelper() {
         const big = weapon.grade === "heroic" || weapon.grade === "legendary" ? 3 : 2;
         const playFx = (frames: string[][], at: Point, frameMs: number, ax = 0.5, ay = 0.5, flip = false) => {
           const ms = frames.length * frameMs;
-          fx({ kind: "sprite", at, frames, frameMs, ax, ay, flip, scale: big }, ms + 40);
+          // 큰 그림이 화면 밖으로 잘리지 않게 좌우로 밀어 넣는다
+          const width = frames[0][0].length * big;
+          const left = Math.min(Math.max(at.x - width * ax, 4), window.innerWidth - 4 - width);
+          const x = width > window.innerWidth - 8 ? at.x : left + width * ax;
+          fx({ kind: "sprite", at: { x, y: at.y }, frames, frameMs, ax, ay, flip, scale: big }, ms + 40);
           return ms;
         };
         // 날려 보내기: 도착할 때까지 기다린다
@@ -469,6 +473,69 @@ export function StarHelper() {
           await hideAgain();
         };
 
+        // 대본 실행 (lib/weapons.ts의 RecipeStep). 모르는 그림 id는 건너뛴다
+        const fxFrames = (id: string): string[][] | null => (SKILL_FX as Record<string, string[][]>)[id] ?? null;
+        const runRecipe = async (steps: RecipeStep[]) => {
+          for (const step of steps) {
+            switch (step.do) {
+              case "standUp":
+                await standUp();
+                break;
+              case "goToStar":
+                await goToStar();
+                break;
+              case "goHome":
+                await goHome();
+                break;
+              case "hide":
+                await hideAgain();
+                break;
+              case "tap":
+                tap();
+                break;
+              case "beam":
+                fx({ kind: "beam", at: star }, 520);
+                break;
+              case "slash":
+                fx({ kind: "slash", at: star, flip: faceLeft }, 320);
+                break;
+              case "spark":
+                fx({ kind: "spark", at: star, color: `var(--px-${step.color ?? "shine"})` });
+                break;
+              case "wait":
+                await sleep(step.ms);
+                break;
+              case "pose":
+                frame(step.pose as ActionFrame);
+                await sleep(step.ms ?? 120);
+                break;
+              case "shoot": {
+                const frames = fxFrames(step.fx);
+                if (!frames) break;
+                const { count = 1, stagger = 0, spread = 0, ms = 300, arc = 0, frameMs = 80, from = "hand" } = step;
+                for (let k = 0; k < count; k++) {
+                  // 여러 개면 좌우로 고르게 흩는다
+                  const dx = count > 1 ? (k / (count - 1) - 0.5) * 2 * spread : 0;
+                  const to = { x: star.x + dx, y: star.y };
+                  const start =
+                    from === "sky" ? { x: to.x - 90, y: to.y - 160 } : from === "ground" ? { x: to.x - 40, y: to.y + 70 } : handTip(9);
+                  setTimeout(() => fx({ kind: "proj", from: start, to, frames, frameMs, ms, arc, scale: big }, ms), k * stagger);
+                }
+                await sleep((count - 1) * stagger + ms);
+                break;
+              }
+              case "play": {
+                const frames = fxFrames(step.fx);
+                if (!frames) break;
+                const at = step.at === "self" ? bodyCenter() : star;
+                const ms = playFx(frames, at, step.frameMs ?? 100, step.ax ?? 0.5, step.ay ?? 0.5);
+                if (step.wait) await sleep(ms);
+                break;
+              }
+            }
+          }
+        };
+
         const COMMON_SKILL: Record<WeaponFamily, SkillId> = {
           sword: "approach-slash",
           staff: "magic-orb",
@@ -478,7 +545,8 @@ export function StarHelper() {
           instrument: "note-float",
           fist: "fist-tap",
         };
-        const script = SKILLS[weapon.skill] ?? SKILLS[COMMON_SKILL[weapon.family]];
+        const recipe = (weapon as WeaponDef).recipe;
+        const script = recipe ? () => runRecipe(recipe) : (SKILLS[weapon.skill] ?? SKILLS[COMMON_SKILL[weapon.family]]);
         if (script) await script();
       } finally {
         tap(); // 중간에 멈춰도(화면 이동 등) 별은 켠다
