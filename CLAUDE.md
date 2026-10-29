@@ -17,9 +17,10 @@
 - 웹: Next.js (App Router). 화면은 빌드할 때 `data/programs.json`을 읽어 미리 만든다
 - 프로그램 데이터: `data/programs.json` 파일 (git에 저장)
 - 로그인·학교 설정·관심 표시: Supabase (구글·카카오 소셜 로그인). 설정이 없으면 "체험 모드"로 브라우저에만 저장
-- 하루 1회 자동 수집: GitHub Actions가 수집 후 `data/`를 커밋 → Vercel이 자동 재배포
-  - **2026-10-16부터 자동 수집을 잠시 멈춤** (시스템 구축에 집중, 자동 수집은 나중에 정비): `collect.yml`의 schedule을 주석 처리(수동 실행 버튼은 남김), 작업 스케줄러 "tagi 정보 수집"은 사용 안 함. 다시 켤 때 둘 다 되돌린다. 마감 알림(`notify.yml`)은 그대로
-  - `localOnly` 출처(해외 서버에서 접속 불가)는 GitHub Actions에서 건너뛰고, 내 컴퓨터의 `scripts/collect-local.ps1`(작업 스케줄러 "tagi 정보 수집", 매일 오후 1시·8시, 꺼져 있었으면 켤 때 실행)로 수집해 올린다
+- 하루 1회 자동 수집 (2026-10-30부터, 둘 다 수집 후 `data/`를 main에 커밋 → Vercel이 자동 재배포):
+  1. **오후 1시 Claude 클라우드 예약 작업**(routine "캠퍼스모아 정보 수집 (매일 오후 1시)", https://claude.ai/code/routines/trig_019eUxqfor2CJJjkDVAFw7eK): 컴퓨터가 꺼져 있어도 돈다. Default 클라우드 환경(네트워크 Full)에서 `GITHUB_ACTIONS=true AI_ENGINE=claude npm run collect` → AI는 Claude. 해외 서버라 `localOnly` 출처는 건너뛴다(`GITHUB_ACTIONS=true`가 그 표시). 절반 넘게 접속 실패면 올리지 않는다
+  2. **오후 2시 내 컴퓨터 예약 작업**(Claude 앱의 예약 작업 `campusmoa-local-collect`, `%USERPROFILE%\.claude\scheduled-tasks\`): Claude 앱이 켜져 있을 때 `scripts/collect-local.ps1`을 실행(창이 뜨지 않음, 앱이 꺼져 있었으면 다음에 켤 때). 한국 인터넷이라 `localOnly`(영남대 영대소식·RISE사업단·단과대)와 클라우드에서 실패한 출처까지 수집하고, 규칙으로만 정리된 글을 Codex(막히면 Claude)로 다시 정리한다(AI로 정리된 글은 다시 보내지 않음)
+  - 쓰지 않는 것: GitHub Actions `collect.yml`의 schedule(주석 처리, 수동 실행 버튼만), Windows 작업 스케줄러 "tagi 정보 수집"(꺼 둠, 실행 때 cmd 창이 떠서). 마감 알림(`notify.yml`)은 GitHub Actions 그대로
 - 배포: Vercel
 - HTML 분석: cheerio
 
