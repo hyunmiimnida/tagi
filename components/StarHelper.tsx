@@ -6,11 +6,12 @@ import type { ActionFrame, Avatar } from "../lib/pixel-pals.ts";
 import { useUser } from "../lib/user.tsx";
 import { PixelSprite } from "./PixelPal.tsx";
 
-// 관심 표시(☆)를 켜면 내 캐릭터가 직접 별을 켜 준다. 스킬은 손에 든 무기로 정해진다(skillOf, 검·활·마법 지팡이·성직자 지팡이):
+// 관심 표시(☆)를 켜면 내 캐릭터가 직접 별을 켜 준다. 스킬은 손에 든 무기로 정해진다(skillOf, 검·활·마법 지팡이·성직자 지팡이·맨손):
 //   칼     카드에서 뛰어내려 별까지 달려가 칼을 휘두른다(칼바람) → 뒤돌아 달려서 복귀
 //   활     그 자리에서 일어나 활을 꺼내 쏜다 → 화살이 별에 꽂힌다 → 다시 숨는다
 //   마법   펑! 사라져 별 옆에 나타나 지팡이로 마법을 건다 → 펑! 사라져 제자리에 나타난다
 //   기도   일어나 지팡이를 들고 기도한다 → 하늘에서 빛기둥이 별에 내려온다 → 다시 숨는다
+//   맨손   카드에서 뛰어내려 별까지 달려가 폴짝 뛰며 주먹으로 톡 → 뒤돌아 달려서 복귀
 // 출발하는 자리: 그 카드에서 빼꼼하던 캐릭터(화면에 보일 때), 아니면 아래 탭 바의 캐릭터.
 // 별이 켜지는 순간 onTap(components/FavoriteButton.tsx가 별을 노랗게 바꾸고 반짝이를 띄운다).
 // 기기의 "동작 줄이기"가 켜져 있거나 이미 한 명이 다녀오는 중이면 캐릭터 없이 바로 별이 켜진다 (false를 돌려준다)
@@ -156,6 +157,30 @@ export function StarHelper() {
           frame("stand", !faceLeft); // 뒤돌기
           await sleep(80);
           await run(landing, 230);
+          frame("runB", home.cx < landing.x + CENTER);
+          await move(place(home), 300, 36);
+          frame("stand");
+          await sleep(60);
+        } else if (skill === "tap") {
+          // 맨손: 카드에서 뛰어내려 별까지 달려가 → 폴짝 뛰며 주먹으로 톡 → 뒤돌아 달려서 복귀
+          const dir = faceLeft ? -1 : 1;
+          const landing = place({ cx: Math.min(Math.max(beside.cx - dir * 56, 28), window.innerWidth - 28), feet: beside.feet });
+          frame("runB", landing.x + CENTER > home.cx ? false : true);
+          await move(landing, 300, 36);
+          frame("stand", faceLeft);
+          await run(place(beside), 260);
+          const spot = at;
+          await move({ x: spot.x, y: spot.y - 8 }, 110);
+          frame("punch");
+          fx({ kind: "spark", at: star, color: "var(--px-shine)" });
+          tap();
+          await sleep(170);
+          frame("stand");
+          await move(spot, 110);
+          await sleep(120);
+          frame("stand", !faceLeft); // 뒤돌기
+          await sleep(80);
+          await run(landing, 260);
           frame("runB", home.cx < landing.x + CENTER);
           await move(place(home), 300, 36);
           frame("stand");

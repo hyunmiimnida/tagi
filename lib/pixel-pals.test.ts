@@ -58,7 +58,7 @@ test("말풍선은 오른쪽에 붙고(높이 그대로), 화면 밖 그림의 �
 
 test("별 켜기 동작 그림(24×17)과 효과 그림은 정해진 색만 쓴다", async () => {
   const { ACTION_HEIGHT, ACTION_WIDTH, EFFECT_ROWS, actionRows } = await import("./pixel-pals.ts");
-  const frames = ["stand", "runA", "runB", "windup", "strike", "draw", "release", "cast", "pray"] as const;
+  const frames = ["stand", "runA", "runB", "windup", "strike", "draw", "release", "cast", "pray", "punch"] as const;
   for (const name of names) {
     for (const frame of frames) {
       const rows = actionRows(name, frame);
@@ -104,4 +104,9 @@ test("저장해 둔 캐릭터 값은 그릴 수 있는 것만 받고, 처음 온
   assert.ok(actionRows({ ...PAL_PRESETS.cleric, weapon: "sword" }, "windup").join("").includes("M"));
   const { skillOf } = await import("./pixel-pals.ts");
   assert.equal(skillOf({ ...PAL_PRESETS.cleric, weapon: "bow" }), "arrow");
+  // 맨손이면 달려가 주먹으로 톡: 주먹(피부색 S)이 몸 오른쪽(16칸 이후)으로 나온다
+  const bare = { ...PAL_PRESETS.knight, weapon: "none" as const };
+  assert.equal(skillOf(bare), "tap");
+  assert.ok(actionRows(bare, "punch").some((row) => row.slice(16).includes("S")));
+  assert.notDeepEqual(actionRows(bare, "stand"), actionRows("knight", "stand")); // 같은 차림이어도 맨손은 칼을 들지 않는다
 });

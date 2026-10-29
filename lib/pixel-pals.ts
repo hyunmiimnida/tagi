@@ -78,12 +78,12 @@ const EYE_ROWS = [7, 8, 9]; // 머리 지도에서 눈이 있는 줄 (깜빡일 
 //   A·a: 머리 장식 색·그 어두운 색, O·o: 옷 색·그 어두운 색 (나머지 글자는 PAL_COLORS의 고정 색)
 export type Headwear = "wizard-hat" | "helmet" | "hood" | "veil";
 export type Outfit = "robe" | "armor" | "tunic" | "vestment";
-// 손에 드는 무기: 마법 지팡이·검·활·성직자 지팡이
-export type Weapon = "wand" | "sword" | "bow" | "staff";
+// 손에 드는 무기: 마법 지팡이·검·활·성직자 지팡이, 또는 맨손(none)
+export type Weapon = "wand" | "sword" | "bow" | "staff" | "none";
 // 관심 표시(☆)를 켜 줄 때의 스킬 (components/StarHelper.tsx). 무기를 바꾸면 스킬이 저절로 바뀐다.
 // 화면에서는 이 연결을 설명하지 않는다 (무기를 바꿔 보다 알아채는 숨은 재미)
-export type StarAction = "magic" | "slash" | "arrow" | "pray";
-const SKILL_OF: Record<Weapon, StarAction> = { wand: "magic", sword: "slash", bow: "arrow", staff: "pray" };
+export type StarAction = "magic" | "slash" | "arrow" | "pray" | "tap";
+const SKILL_OF: Record<Weapon, StarAction> = { wand: "magic", sword: "slash", bow: "arrow", staff: "pray", none: "tap" };
 export const skillOf = (avatar: Avatar): StarAction => SKILL_OF[avatar.weapon];
 
 // 한 사람의 캐릭터 모습. 색은 PAL_HEX의 이름(app/globals.css의 --px-*)
@@ -253,7 +253,7 @@ export function palSvg(rows: string[], scale: number): string {
 // 24×17 칸. 캐릭터 몸은 가운데(4~19칸), 칼·활·지팡이는 오른쪽으로 삐져나온다. 모두 오른쪽을 보고 그리고, 왼쪽은 뒤집어 쓴다
 export const ACTION_WIDTH = 24;
 export const ACTION_HEIGHT = 17;
-export type ActionFrame = "stand" | "runA" | "runB" | "windup" | "strike" | "draw" | "release" | "cast" | "pray";
+export type ActionFrame = "stand" | "runA" | "runB" | "windup" | "strike" | "draw" | "release" | "cast" | "pray" | "punch";
 
 const LEGS: Record<"stand" | "runA" | "runB", string[]> = {
   stand: ["....KxK.KxK.....", "...KKKK.KKKK...."],
@@ -278,6 +278,7 @@ const BOW_DRAWN = [
 ];
 const BOW = BOW_DRAWN.map((row, i) => (i === 5 ? "........T.." : row));
 const WAND = [".Y.", "YWY", ".Y.", ".t.", ".t."];
+const FIST = ["KKKK.", "KSSSK", "KSPSK", "KKKK."];
 const STAFF = ["YYY", "YWY", "YYY", ".t.", ".t.", ".t.", ".t.", ".t.", ".t.", ".t.", ".t."];
 
 // 스킬 동작마다 손에 든 무기 그림
@@ -292,6 +293,7 @@ const PROPS: Record<StarAction, Partial<Record<ActionFrame, Prop>>> = {
   arrow: { draw: [BOW_DRAWN, 13, 8], release: [BOW, 13, 8] },
   magic: { stand: [WAND, 17, 9], cast: [WAND, 19, 3] },
   pray: { stand: [STAFF, 17, 4], pray: [STAFF, 18, 1] },
+  tap: { punch: [FIST, 15, 12] }, // 맨손: 주먹을 앞으로 쭉 내밀어 별을 톡
 };
 
 function stamp(canvas: string[][], rows: string[], ox: number, oy: number): void {
