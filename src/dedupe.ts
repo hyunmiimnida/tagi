@@ -4,6 +4,8 @@ import { sameSchool } from "./school-of.ts";
 // 중복 제거: 같은 프로그램이 여러 출처에 올라오면 하나로 합치고 원문 링크는 모두 보관한다.
 
 const normalize = (title: string) => title.toLowerCase().replace(/[^0-9a-z가-힣]/g, "");
+// 마감 머리말을 빼고 달·회차·연도 숫자를 비교한다
+const numbers = (title: string) => (stripDeadlineHead(title).match(/\d+/g) ?? []).join(",");
 
 function bigrams(text: string): Set<string> {
   const set = new Set<string>();
@@ -36,7 +38,6 @@ function sameSourceCandidate(a: Program, b: Program, similarity: number): boolea
   const sameKey = repostKey(a.title) === repostKey(b.title);
   if (sameKey && days <= REPOST_DAYS) return false; // 이미 재게시 규칙으로 합친다
   // 달·회차·연도가 다르면 다른 공고다. 마감 머리말만 바뀐 재게시는 남긴다
-  const numbers = (title: string) => (title.match(/\d+/g) ?? []).join(",");
   if (!sameKey && numbers(a.title) !== numbers(b.title)) return false;
   return sameKey || similarity >= SAME_SOURCE_SIMILARITY;
 }
@@ -51,7 +52,9 @@ export function findAmbiguousPairs(programs: Program[]): [Program, Program][] {
       const similarity = titleSimilarity(a.title, b.title);
       const sharedSource = a.sources.some((s) => b.sources.includes(s));
       // 같은 게시판은 한 단어만 달라도 다른 프로그램일 수 있어 상한을 두지 않는다
-      if (sharedSource ? sameSourceCandidate(a, b, similarity) : similarity >= 0.45 && similarity < 0.8) pairs.push([a, b]);
+      // 다른 게시판끼리는 45~80%를 묻고, 80% 넘게 비슷해도 숫자가 다르면(회차인지 날짜 표기인지 규칙으로는 모름) 규칙으로 합치지 않고 묻는다
+      const crossSource = similarity >= 0.45 && (similarity < 0.8 || numbers(a.title) !== numbers(b.title));
+      if (sharedSource ? sameSourceCandidate(a, b, similarity) : crossSource) pairs.push([a, b]);
     }
   }
   return pairs;
@@ -64,6 +67,7 @@ export function mergePair(programs: Program[], a: Program, b: Program): Program[
 }
 
 export function isDuplicate(a: Program, b: Program): boolean {
+  if (numbers(a.title) !== numbers(b.title)) return false;
   if (conflicts(a.recruitPeriod.end, b.recruitPeriod.end)) return false;
   if (conflicts(a.activityPeriod.start, b.activityPeriod.start)) return false;
   return titleSimilarity(a.title, b.title) >= 0.8;
@@ -151,7 +155,7 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
       continue;
     }
 
-    const duplicate = result.find((p) => !p.sources.some((s) => program.sources.includes(s)) && sameSchool(p, program) && isDuplicate(p, program));
+    const duplicate = result.find((p) => !p.sources.some((s) => program.sources.includes(s)) && p.campus === program.campus && sameSchool(p, program) && isDuplicate(p, program));
     if (duplicate) mergeInto(duplicate, program);
     else result.push({ ...program, firstSeenAt: firstSeen(program) });
   }

@@ -24,6 +24,53 @@ const boardPost = (id: string, title: string, postedAt: string | null): Program 
   ...program(id), title, postedAt, sources: ["board"],
 });
 
+for (const [titleA, titleB] of [
+  ["제1회 대학생 창업 아이디어 공모전", "제2회 대학생 창업 아이디어 공모전"],
+  ["2025 대학생 창업 아이디어 공모전", "2026 대학생 창업 아이디어 공모전"],
+  ["대학생 홍보 서포터즈 3기 모집 안내", "대학생 홍보 서포터즈 4기 모집 안내"],
+  ["대학생 일일봉사자 9월 모집 안내", "대학생 일일봉사자 10월 모집 안내"],
+]) {
+  test(`다른 출처도 숫자가 다른 회차는 자동 합치지 않는다: ${titleA}`, () => {
+    const a = { ...program("a"), sources: ["yu-news"], title: titleA };
+    const b = { ...program("b"), sources: ["yu-career"], title: titleB };
+    assert.ok(titleSimilarity(a.title, b.title) >= 0.8);
+    assert.deepEqual(mergePrograms([a], [b]).map((p) => p.id), ["a", "b"]);
+  });
+}
+
+for (const [titleA, titleB] of [
+  ["2026 제3회 대학생 창업 아이디어 공모전", "2026 제3회 대학생 창업 아이디어 공모전 안내"],
+  ["[~9/30] 2026 제3회 대학생 창업 아이디어 공모전", "[~10/7] 2026 제3회 대학생 창업 아이디어 공모전 안내"],
+  ["2026 제3회 대학생 창업 아이디어 공모전", "(재게시) 2026 제3회 대학생 창업 아이디어 공모전"],
+]) {
+  test(`다른 출처도 숫자가 같고 비슷한 제목은 합친다: ${titleB}`, () => {
+    const a = { ...program("a"), sources: ["yu-news"], title: titleA };
+    const b = { ...program("b"), sources: ["yu-career"], title: titleB };
+    assert.ok(titleSimilarity(a.title, b.title) >= 0.8);
+    const [merged, ...rest] = mergePrograms([a], [b]);
+    assert.equal(rest.length, 0);
+    assert.deepEqual(merged.sources, ["yu-news", "yu-career"]);
+    assert.deepEqual(merged.links, [...a.links, ...b.links]);
+  });
+}
+
+test("다른 출처의 같은 제목도 캠퍼스가 다르면 합치지 않는다", () => {
+  const a = { ...program("a"), sources: ["yu-news"] };
+  const b = { ...program("b"), sources: ["yu-career"] };
+  for (const campus of [undefined, "campus-a"]) {
+    const kept = mergePrograms([{ ...a, campus }], [{ ...b, campus: "campus-b" }]);
+    assert.deepEqual(kept.map((p) => p.id), ["a", "b"]);
+  }
+  assert.equal(mergePrograms([{ ...a, campus: "campus-a" }], [{ ...b, campus: "campus-a" }]).length, 1);
+});
+
+test("같은 게시판도 마감 머리말을 빼고 숫자가 같은 비슷한 제목을 후보로 낸다", () => {
+  const a = boardPost("a", "[~9/30] 2026 제3회 대학생 창업 아이디어 공모전", "2026-09-01");
+  const b = boardPost("b", "[~10/7] 2026 제3회 대학생 창업 아이디어 공모전 안내", "2026-09-02");
+  assert.notEqual(repostKey(a.title), repostKey(b.title));
+  assert.deepEqual(findAmbiguousPairs([a, b]), [[a, b]]);
+});
+
 for (const [titleA, titleB, dateA, dateB] of [
   ["[진주시] 경남진주지역대학생봉사단 미니박람회 개최", "[진주시] 경남진주지역대학생봉사단 미니박람회", "2026-08-12", "2026-08-10"],
   ["[BLUE/RED/ORANGE BELT] 2026년 하반기 면접 집중교육 참여자 모집 안내(졸업생 참여 가능)", "[BLUE/RED/ORANGE BELT] 2026년 하반기 면접 집중교육 운영 안내(졸업생 참여 가능)", "2026-10-13", "2026-08-24"],
@@ -241,4 +288,11 @@ test("두 게시판에 함께 올라온 글도 한 게시판의 재게시와 합
   const kept = collapseReposts([a, b, c, other]);
   assert.deepEqual(kept.map((p) => p.id), ["a", "d"]); // 다른 게시판(s3)의 글은 그대로 둔다
   assert.deepEqual(kept[0].aliases, ["b", "c"]);
+});
+
+test("다른 게시판의 매우 비슷한 제목이 숫자만 다르면 규칙으로 합치지 않고 AI에게 묻는다", async () => {
+  const { findAmbiguousPairs } = await import("./dedupe.ts");
+  const a = { ...program("a"), sources: ["yu-news"], title: "방송미디어 1:1 멘토링 참가자 모집 안내 (~10/29)" };
+  const b = { ...program("b"), sources: ["yu-career"], title: "방송미디어 1:1 멘토링 참가자 모집 안내" };
+  assert.equal(findAmbiguousPairs([a, b]).length, 1);
 });
