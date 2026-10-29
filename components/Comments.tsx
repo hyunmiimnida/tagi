@@ -3,7 +3,10 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { COMMENT_RULES, REPORT_REASONS } from "../lib/policy.ts";
+import { palRows, toValidAvatar } from "../lib/pixel-pals.ts";
+import type { Avatar } from "../lib/pixel-pals.ts";
 import { supabase, useUser } from "../lib/user.tsx";
+import { PixelSprite } from "./PixelPal.tsx";
 
 // 반복 프로그램 후기·정보 나눔. 같은 묶음(seriesId)의 모든 회차가 댓글을 함께 본다.
 // 누구나 읽을 수 있고, 이용 규칙에 동의한 로그인 사용자만 쓴다.
@@ -26,6 +29,15 @@ interface Comment {
   author?: string; // 닉네임 (없으면 "익명")
 }
 
+// 글쓴이 캐릭터 얼굴 (머리 장식까지 위쪽 12줄). 캐릭터를 아직 저장하지 않은 사람은 빈 동그라미
+function CommentFace({ avatar }: { avatar: Avatar | null | undefined }) {
+  return (
+    <span className="comment-face" aria-hidden="true">
+      {avatar && <PixelSprite rows={palRows(avatar, "sit").slice(0, 12)} scale={2} />}
+    </span>
+  );
+}
+
 function timeAgo(iso: string): string {
   const minutes = Math.floor((Date.now() - Date.parse(iso)) / 60_000);
   if (minutes < 1) return "방금";
@@ -45,6 +57,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
   const [sending, setSending] = useState(false);
   const [reporting, setReporting] = useState<number | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
+  const [faces, setFaces] = useState<Map<number, Avatar>>(new Map()); // 댓글 id → 글쓴이 캐릭터
   const { userId } = user;
 
   // 로그인이 바뀌면 "내 글"과 숨긴 글이 달라지므로 다시 불러온다
@@ -57,7 +70,23 @@ export function Comments({ seriesId }: { seriesId: string }) {
     if (error?.code === "42703") ({ data, error } = await query("id, body, created_at, mine"));
     // 댓글 표를 아직 만들지 않았으면(supabase/*.sql 미실행) 준비 중으로 보여 준다
     if (error) (error.code === "PGRST205" || error.code === "42P01" ? setMissingTable : setFailed)(true);
-    else setComments(data as unknown as Comment[]);
+    else {
+      const list = data as unknown as Comment[];
+      setComments(list);
+      // 글쓴이 캐릭터 얼굴 (supabase/avatar.sql의 comment_avatars. 아직 없으면 얼굴 없이 보여 준다)
+      const ids = list.map((c) => c.id);
+      if (ids.length > 0) {
+        const faceRows = await supabase.from("comment_avatars").select("comment_id, avatar").in("comment_id", ids);
+        const next = new Map<number, Avatar>();
+        if (!faceRows.error) {
+          for (const row of faceRows.data as { comment_id: number; avatar: unknown }[]) {
+            const face = toValidAvatar(row.avatar);
+            if (face) next.set(row.comment_id, face);
+          }
+        }
+        setFaces(next);
+      }
+    }
   }, [seriesId, userId]);
 
   useEffect(() => {
@@ -198,6 +227,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
               {comments.map((comment) => (
                 <li key={comment.id}>
                   <div className="comment-meta">
+                    <CommentFace avatar={comment.mine ? (user.avatar ?? faces.get(comment.id)) : faces.get(comment.id)} />
                     <strong>{comment.mine ? "나" : (comment.author ?? "익명")}</strong>
                     <span>{timeAgo(comment.created_at)}</span>
                     <span className="comment-tools">
