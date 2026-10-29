@@ -3574,3 +3574,30 @@ button.stat {
   82% { transform: rotate(0) translateY(0); opacity: 1; }
   100% { transform: translateY(10px); opacity: 0; }
 }
+
+/* 검색 돕기: 빼꼼 캐릭터가 돋보기를 들고 좌우로 두리번거린다 (components/PixelPal.tsx의 searching) */
+.pal-peek-anchor.searching .pal {
+  animation: pal-lookaround 1.6s steps(8, end) infinite;
+}
+
+.pal-magnifier {
+  position: absolute;
+  right: -10px;
+  bottom: 2px;
+  line-height: 0;
+  animation: pal-lookaround 1.6s steps(8, end) infinite;
+}
+
+@keyframes pal-lookaround {
+  0%, 100% { translate: 0 0; }
+  25% { translate: -5px 0; }
+  50% { translate: 0 -1px; }
+  75% { translate: 5px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pal-peek-anchor.searching .pal,
+  .pal-magnifier {
+    animation: none;
+  }
+}

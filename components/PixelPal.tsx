@@ -41,13 +41,22 @@ export function PixelPal({ who, pose, scale = 2, delay = 0, bubble, className = 
 
 // 카드를 벽 삼아 고개를 빼꼼 내민 캐릭터. 카드 바로 앞에 두면 두 손이 카드 윗선에 걸친다.
 // right: 카드 오른쪽 끝에서 얼마나 떨어질지(px)
-export function PeekPal({ who, right = 28, delay = 0 }: { who: PalName | Avatar; right?: number; delay?: number }) {
+// searching: 돋보기를 들고 좌우로 두리번거린다 (공고 화면에서 검색어를 치는 동안)
+export function PeekPal({ who, right = 28, delay = 0, searching = false }: { who: PalName | Avatar; right?: number; delay?: number; searching?: boolean }) {
   return (
-    <div className="pal-peek-anchor" aria-hidden="true" style={{ "--pal-right": `${right}px` } as React.CSSProperties}>
+    <div className={`pal-peek-anchor ${searching ? "searching" : ""}`} aria-hidden="true" style={{ "--pal-right": `${right}px` } as React.CSSProperties}>
       <PixelPal who={who} pose="peek" scale={2} delay={delay} />
+      {searching && (
+        <span className="pal-magnifier">
+          <PixelSprite rows={MAGNIFIER} scale={2} />
+        </span>
+      )}
     </div>
   );
 }
+
+// 돋보기 (7×7)
+const MAGNIFIER = [".KKK...", "KIWIK..", "KIIIK..", "KIIIK..", ".KKKt..", "....tt.", ".....tt"];
 
 // 동작 그림·효과 그림처럼 깜빡임 없이 한 장만 그리는 도트 그림 (components/StarHelper.tsx)
 export function PixelSprite({ rows, scale }: { rows: string[]; scale: number }) {

@@ -12,7 +12,7 @@ export function MyPal(props: { pose: PalPose; scale?: number; delay?: number; bu
   return avatar ? <PixelPal who={avatar} {...props} /> : null;
 }
 
-export function MyPeekPal(props: { right?: number; delay?: number }) {
+export function MyPeekPal(props: { right?: number; delay?: number; searching?: boolean }) {
   const { avatar } = useUser();
   return avatar ? <PeekPal who={avatar} {...props} /> : null;
 }

@@ -111,6 +111,7 @@ export function Explorer({ categories, schools }: Props) {
   const [showClosed, setShowClosed] = useState(false);
   const [includeOpen, setIncludeOpen] = useState(true);
   const [keyword, setKeyword] = useState("");
+  const [typing, setTyping] = useState(false); // 검색창에 글자를 치는 중 (빼꼼 캐릭터가 돋보기를 든다)
   const [sort, setSort] = useState<Sort>("deadline");
 
   useEffect(() => {
@@ -328,6 +329,8 @@ export function Explorer({ categories, schools }: Props) {
             aria-label="공고명이나 주최 기관으로 검색"
             value={keyword}
             onChange={(event) => setKeyword(event.target.value)}
+            onFocus={() => setTyping(true)}
+            onBlur={() => setTyping(false)}
           />
         </label>
 
@@ -508,7 +511,7 @@ export function Explorer({ categories, schools }: Props) {
         </div>
       ) : (
         <div className="pal-wall list-wall">
-          <MyPeekPal right={28} delay={0.6} />
+          <MyPeekPal right={28} delay={0.6} searching={typing && keyword.trim() !== ""} />
           <ul className="rows">
             {visible.slice(0, limit).map((program) => (
               <ProgramRow key={program.id} program={program} today={today} hiddenTags={organizerTags} />
