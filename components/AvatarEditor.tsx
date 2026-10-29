@@ -1,90 +1,95 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AVATAR_COLORS, HEADWEAR_NAMES, OUTFIT_NAMES, actionRows, palRows } from "../lib/pixel-pals.ts";
 import type { Avatar, Headwear, Outfit } from "../lib/pixel-pals.ts";
 import { useUser } from "../lib/user.tsx";
 import { WEAPON_SPRITES } from "../lib/weapon-sprites.ts";
-import { GRADES, GRADE_NAMES, WEAPONS, WEAPON_IDS, owns } from "../lib/weapons.ts";
-import type { WeaponId } from "../lib/weapons.ts";
-import { LockIcon, StarIcon } from "./Icons.tsx";
+import { GRADES, WEAPONS, WEAPON_IDS, owns } from "../lib/weapons.ts";
+import type { WeaponDef, WeaponId } from "../lib/weapons.ts";
+import { ChevronIcon, LockIcon, StarIcon } from "./Icons.tsx";
 import { AmbientEffect } from "./PixelEffect.tsx";
 import { PixelSprite } from "./PixelPal.tsx";
 import { requestStarHelper } from "./StarHelper.tsx";
 
-// 내 캐릭터 꾸미기 (/my/avatar): 머리 장식·옷과 그 색, 손에 든 무기를 고른다.
-// 고르는 동안은 미리보기에만 보이고 "저장"을 눌러야 내 캐릭터가 바뀐다.
-// 아직 얻지 못한 무기는 자물쇠와 실루엣으로만 보인다. 무기와 스킬의 관계는 설명하지 않는다 (써 보며 알아채는 재미)
+// 내 캐릭터 꾸미기 (/my/avatar): 무기 도감에서 무기를 골라 장착하고, 머리 장식·옷과 그 색을 바꾼다. 고르면 바로 내 캐릭터에 반영된다.
+// 등급은 글자로 쓰지 않고 무기를 감싼 아우라 색으로만 보여 준다: 일반 없음, 희귀 흰빛, 영웅 보랏빛, 전설 호박빛 (app/globals.css의 .aura-*)
+// 아직 얻지 못한 무기는 아우라는 그대로 두고 그림은 실루엣, 이름은 ???. 무기와 스킬의 관계는 설명하지 않는다 (써 보며 알아채는 재미)
 
 const HEADWEARS = Object.keys(HEADWEAR_NAMES) as Headwear[];
 const OUTFITS = Object.keys(OUTFIT_NAMES) as Outfit[];
+const FAMILY_ORDER = ["fist", "sword", "staff", "bow", "relic", "pen", "instrument"];
 
-const pick = <T,>(list: readonly T[]) => list[Math.floor(Math.random() * list.length)];
+// 도감 순서: 등급(일반 → 전설) → 계열
+const CODEX: WeaponId[] = [...WEAPON_IDS].sort(
+  (a, b) =>
+    GRADES.indexOf(WEAPONS[a].grade) - GRADES.indexOf(WEAPONS[b].grade) ||
+    FAMILY_ORDER.indexOf(WEAPONS[a].family) - FAMILY_ORDER.indexOf(WEAPONS[b].family),
+);
 
-// 무기만 그린 작은 그림 (서 있는 자세, 주먹은 주먹). 잠긴 무기는 실루엣(모든 칸을 외곽선 색으로)
+// 무기만 그린 그림 (서 있는 자세, 주먹은 주먹). 잠긴 무기는 실루엣 (어두운 진열장 위에서 보이게 회색)
 function weaponRows(id: WeaponId, locked: boolean): string[] {
   const sprites = WEAPON_SPRITES[id];
   const stamp = sprites.stand ?? sprites.punch;
   if (!stamp) return ["."];
-  return locked ? stamp.rows.map((row) => row.replace(/[^.]/g, "K")) : stamp.rows;
+  return locked ? stamp.rows.map((row) => row.replace(/[^.]/g, "m")) : stamp.rows;
 }
 
 export function AvatarEditor() {
   const user = useUser();
-  const [draft, setDraft] = useState<Avatar | null>(null);
-  const [saved, setSaved] = useState(false);
+  const avatar = user.avatar;
+  const [index, setIndex] = useState<number | null>(null);
   const [notice, setNotice] = useState("");
   const [demoOn, setDemoOn] = useState(false);
   const stageRef = useRef<HTMLDivElement | null>(null);
+  const stripRef = useRef<HTMLDivElement | null>(null);
+  const swipe = useRef<number | null>(null);
 
-  // 내 캐릭터를 읽어 오면 그 모습에서 시작한다
+  // 처음에는 들고 있는 무기의 쪽을 펼친다
   useEffect(() => {
-    if (user.avatar && !draft) setDraft(user.avatar);
-  }, [user.avatar, draft]);
+    if (avatar && index === null) setIndex(Math.max(0, CODEX.indexOf(avatar.weapon)));
+  }, [avatar, index]);
 
-  if (!draft || !user.avatar) {
+  // 아래 작은 칸 줄에서 지금 보는 무기가 보이게 옮긴다
+  useEffect(() => {
+    if (index === null) return;
+    stripRef.current?.children[index]?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+  }, [index]);
+
+  const ownedCount = useMemo(() => CODEX.filter((id) => owns(user.ownedWeapons, id)).length, [user.ownedWeapons]);
+
+  if (!avatar || index === null) {
     return <div className="card avatar-editor skeleton-block tall" aria-busy="true" />;
   }
 
-  const current = user.avatar;
-  const changed = JSON.stringify(draft) !== JSON.stringify(current);
-  const weapon = WEAPONS[draft.weapon];
-  const update = (patch: Partial<Avatar>) => {
-    setDraft({ ...draft, ...patch });
-    setSaved(false);
+  const shownId = CODEX[index];
+  const shown: WeaponDef = WEAPONS[shownId];
+  const shownLocked = !owns(user.ownedWeapons, shownId);
+  const equipped: WeaponDef = WEAPONS[avatar.weapon];
+  const equippedHere = avatar.weapon === shownId;
+
+  const change = (patch: Partial<Avatar>, message = "") => {
+    user.setAvatar({ ...avatar, ...patch });
+    setNotice(message);
+  };
+  const go = (step: number) => {
+    setIndex((index + step + CODEX.length) % CODEX.length);
     setNotice("");
   };
 
-  function randomize() {
-    const ownedIds = WEAPON_IDS.filter((id) => owns(user.ownedWeapons, id));
-    update({
-      headwear: pick(HEADWEARS),
-      headwearColor: pick(AVATAR_COLORS)[0],
-      outfit: pick(OUTFITS),
-      outfitColor: pick(AVATAR_COLORS)[0],
-      weapon: pick(ownedIds),
-    });
-  }
-
-  function save() {
-    if (!draft) return;
-    user.setAvatar(draft);
-    setSaved(true);
-  }
-
-  // 써 보기: 지금 고른 모습으로 옆의 별을 켜 본다 (관심 표시는 바뀌지 않는다)
+  // 써 보기: 지금 모습으로 옆의 별을 켜 본다 (관심 표시는 바뀌지 않는다)
   function tryStar(event: React.MouseEvent<HTMLButtonElement>) {
     if (demoOn) {
       setDemoOn(false);
       return;
     }
     const source = stageRef.current?.querySelector<SVGElement>("svg") ?? undefined;
-    const coming = requestStarHelper(event.currentTarget, () => setDemoOn(true), { avatar: draft ?? undefined, source });
+    const coming = requestStarHelper(event.currentTarget, () => setDemoOn(true), { avatar: avatar ?? undefined, source });
     if (!coming) setDemoOn(true);
   }
 
-  const option = (key: string, label: string, on: boolean, onClick: () => void, picture: React.ReactNode, extra = "") => (
-    <button key={key} type="button" className={`avatar-option ${on ? "on" : ""} ${extra}`} aria-pressed={on} aria-label={label} onClick={onClick}>
+  const option = (key: string, label: string, on: boolean, onClick: () => void, picture: React.ReactNode) => (
+    <button key={key} type="button" className={`avatar-option ${on ? "on" : ""}`} aria-pressed={on} aria-label={label} title={label} onClick={onClick}>
       {picture}
     </button>
   );
@@ -108,19 +113,16 @@ export function AvatarEditor() {
 
   return (
     <div className="avatar-editor">
-      {/* 미리보기 */}
-      <section className="card avatar-stage-card">
-        <div className="avatar-preview">
-          <PixelSprite rows={actionRows(draft, "stand")} scale={6} />
-          {weapon.effect && <AmbientEffect key={weapon.effect} effect={weapon.effect} every={weapon.grade === "rare" ? 2400 : 1400} />}
+      {/* 내 캐릭터: 들고 있는 무기의 아우라가 뒤에서 빛난다 */}
+      <section className="card vitrine avatar-stage-card">
+        <div className={`avatar-preview aura aura-${equipped.grade}`}>
+          <PixelSprite rows={actionRows(avatar, "stand")} scale={6} />
+          {equipped.effect && <AmbientEffect key={equipped.effect} effect={equipped.effect} every={equipped.grade === "rare" ? 2400 : 1400} />}
         </div>
-        <p className="avatar-weapon-name">
-          <span className={`grade grade-${weapon.grade}`}>{GRADE_NAMES[weapon.grade]}</span> {weapon.name}
-        </p>
-        {/* 써 보기: 작은 캐릭터와 별 */}
+        <p className="avatar-weapon-name">{equipped.name}</p>
         <div className="avatar-try">
           <div ref={stageRef} className="avatar-try-pal" aria-hidden="true">
-            <PixelSprite rows={actionRows(draft, "stand")} scale={2} />
+            <PixelSprite rows={actionRows(avatar, "stand")} scale={2} />
           </div>
           <button type="button" className={`favorite avatar-try-star ${demoOn ? "on" : ""}`} aria-pressed={demoOn} aria-label="별 눌러 보기" onClick={tryStar}>
             <StarIcon filled={demoOn} />
@@ -129,74 +131,109 @@ export function AvatarEditor() {
         </div>
       </section>
 
+      {/* 무기 도감: 한 장씩 넘겨 본다 (좌우 버튼·밀기·작은 칸) */}
+      <section className="card codex" aria-roledescription="도감">
+        <div className="codex-head">
+          <h2 className="card-title">무기 도감</h2>
+          <span className="codex-count">
+            {ownedCount} / {CODEX.length}
+          </span>
+        </div>
+
+        <div
+          className="codex-stage"
+          onPointerDown={(e) => (swipe.current = e.clientX)}
+          onPointerUp={(e) => {
+            if (swipe.current === null) return;
+            const dx = e.clientX - swipe.current;
+            swipe.current = null;
+            if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowLeft") go(-1);
+            if (e.key === "ArrowRight") go(1);
+          }}
+        >
+          <button type="button" className="codex-arrow" aria-label="이전 무기" onClick={() => go(-1)}>
+            <ChevronIcon dir="left" size={22} />
+          </button>
+          <div className={`codex-card vitrine aura aura-${shown.grade} ${shownLocked ? "locked" : ""}`} aria-live="polite">
+            <div className="codex-art">
+              <PixelSprite rows={weaponRows(shownId, shownLocked)} scale={7} />
+              {shownLocked && (
+                <span className="codex-lock" aria-hidden="true">
+                  <LockIcon size={18} />
+                </span>
+              )}
+            </div>
+            <p className="codex-name">{shownLocked ? "???" : shown.name}</p>
+            <p className="codex-flavor">{shownLocked ? "아직 얻지 못한 무기예요." : (shown.flavor ?? "")}</p>
+          </div>
+          <button type="button" className="codex-arrow" aria-label="다음 무기" onClick={() => go(1)}>
+            <ChevronIcon dir="right" size={22} />
+          </button>
+        </div>
+
+        <div className="codex-actions">
+          {shownLocked ? (
+            <span className="codex-status">
+              <LockIcon size={14} /> 잠김
+            </span>
+          ) : equippedHere ? (
+            <span className="codex-status equipped">장착 중</span>
+          ) : (
+            <button type="button" className="button primary" onClick={() => change({ weapon: shownId }, "장착했어요.")}>
+              장착하기
+            </button>
+          )}
+        </div>
+
+        {/* 작은 칸 줄: 눌러서 바로 그 무기로 */}
+        <div className="codex-strip" ref={stripRef} role="list">
+          {CODEX.map((id, i) => {
+            const locked = !owns(user.ownedWeapons, id);
+            const label = locked ? "잠긴 무기" : WEAPONS[id].name;
+            return (
+              <button
+                key={id}
+                type="button"
+                role="listitem"
+                className={`codex-slot aura aura-${WEAPONS[id].grade} ${i === index ? "on" : ""} ${avatar.weapon === id ? "worn" : ""} ${locked ? "locked" : ""}`}
+                aria-label={avatar.weapon === id ? `${label} (장착 중)` : label}
+                aria-current={i === index}
+                onClick={() => {
+                  setIndex(i);
+                  setNotice("");
+                }}
+              >
+                <PixelSprite rows={weaponRows(id, locked)} scale={2} />
+              </button>
+            );
+          })}
+        </div>
+        <p className="avatar-notice" role="status">
+          {notice}
+        </p>
+      </section>
+
+      {/* 외형 */}
       <section className="card avatar-section">
         <h2 className="card-title">머리 장식</h2>
         <div className="avatar-options">
           {HEADWEARS.map((h) =>
-            option(h, HEADWEAR_NAMES[h], draft.headwear === h, () => update({ headwear: h }), <PixelSprite rows={palRows({ ...draft, headwear: h }, "sit").slice(0, 12)} scale={3} />),
+            option(h, HEADWEAR_NAMES[h], avatar.headwear === h, () => change({ headwear: h }), <PixelSprite rows={palRows({ ...avatar, headwear: h }, "sit").slice(0, 12)} scale={3} />),
           )}
         </div>
-        {swatches(draft.headwearColor, (color) => update({ headwearColor: color }), "머리 장식 색")}
-      </section>
+        {swatches(avatar.headwearColor, (color) => change({ headwearColor: color }), "머리 장식 색")}
 
-      <section className="card avatar-section">
-        <h2 className="card-title">옷</h2>
+        <h2 className="card-title avatar-subtitle">옷</h2>
         <div className="avatar-options">
           {OUTFITS.map((o) =>
-            option(o, OUTFIT_NAMES[o], draft.outfit === o, () => update({ outfit: o }), <PixelSprite rows={palRows({ ...draft, outfit: o }, "sit")} scale={2} />),
+            option(o, OUTFIT_NAMES[o], avatar.outfit === o, () => change({ outfit: o }), <PixelSprite rows={palRows({ ...avatar, outfit: o }, "sit")} scale={2} />),
           )}
         </div>
-        {swatches(draft.outfitColor, (color) => update({ outfitColor: color }), "옷 색")}
+        {swatches(avatar.outfitColor, (color) => change({ outfitColor: color }), "옷 색")}
       </section>
-
-      <section className="card avatar-section">
-        <h2 className="card-title">무기</h2>
-        {GRADES.map((grade) => {
-          const ids = WEAPON_IDS.filter((id) => WEAPONS[id].grade === grade);
-          return (
-            <div key={grade} className="avatar-weapon-group">
-              <p className={`avatar-group-label grade-${grade}`}>{GRADE_NAMES[grade]}</p>
-              <div className="avatar-options weapons">
-                {ids.map((id) => {
-                  const locked = !owns(user.ownedWeapons, id);
-                  const label = locked ? `잠긴 ${GRADE_NAMES[grade]} 무기` : WEAPONS[id].name;
-                  return option(
-                    id,
-                    label,
-                    draft.weapon === id,
-                    () => (locked ? setNotice("아직 얻지 못한 무기예요.") : update({ weapon: id })),
-                    <>
-                      <PixelSprite rows={weaponRows(id, locked)} scale={4} />
-                      <span className="avatar-option-name">{locked ? "???" : WEAPONS[id].name}</span>
-                      {locked && (
-                        <span className="avatar-lock">
-                          <LockIcon size={14} />
-                        </span>
-                      )}
-                    </>,
-                    `${locked ? "locked" : ""} grade-${grade}`,
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
-      </section>
-
-      <div className="avatar-actions">
-        <p className="avatar-notice" role="status">
-          {notice || (saved && !changed ? "저장했어요. 이제 이 모습으로 같이 다녀요." : "")}
-        </p>
-        <button type="button" className="button" onClick={randomize}>
-          랜덤
-        </button>
-        <button type="button" className="button" onClick={() => update(current)} disabled={!changed}>
-          되돌리기
-        </button>
-        <button type="button" className="button primary" onClick={save} disabled={!changed}>
-          저장
-        </button>
-      </div>
     </div>
   );
 }

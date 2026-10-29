@@ -3114,8 +3114,18 @@ button.stat {
 /* 내 캐릭터 꾸미기 (components/AvatarEditor.tsx) */
 .avatar-editor {
   display: grid;
+  grid-template-columns: minmax(0, 1fr); /* 긴 칸 줄이 화면을 옆으로 넓히지 않게 */
   gap: 12px;
-  padding-bottom: 88px; /* 아래 고정 버튼 줄에 가리지 않게 */
+}
+
+.avatar-editor > * {
+  min-width: 0;
+}
+
+/* 진열장: 아우라가 잘 보이도록 밝은·어두운 모드 모두 어두운 바탕 (도트 색처럼 모드와 상관없이 같다) */
+.vitrine {
+  background: radial-gradient(120% 90% at 50% 20%, #3a2f5c 0%, var(--px-line) 70%);
+  color: #f2eefc;
 }
 
 .avatar-stage-card {
@@ -3138,29 +3148,78 @@ button.stat {
 .avatar-weapon-name {
   margin: 0;
   font-weight: 600;
+  color: #f2eefc;
 }
 
-.grade {
-  display: inline-block;
-  margin-right: 4px;
-  padding: 1px 8px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  background: var(--surface-2);
-  color: var(--text-2);
+/* ── 아우라: 등급을 글자 대신 빛으로 (일반 없음 · 희귀 흰빛 · 영웅 보랏빛 · 전설 호박빛) ── */
+.aura {
+  --aura: transparent;
+  position: relative;
+  isolation: isolate;
 }
 
-/* 등급 색: 희귀 파랑, 영웅 보라, 전설 금색 (글자는 바탕과 대비 4.5:1 이상인 진한 색) */
-.grade-rare.grade,
-.avatar-group-label.grade-rare { color: var(--accent); }
-.grade-rare.grade { background: var(--accent-soft); }
-.grade-heroic.grade,
-.avatar-group-label.grade-heroic { color: var(--px-violet-dark); }
-.grade-heroic.grade { background: color-mix(in srgb, var(--px-lavender) 30%, transparent); }
-.grade-legendary.grade,
-.avatar-group-label.grade-legendary { color: var(--px-gold-shadow); }
-.grade-legendary.grade { background: color-mix(in srgb, var(--px-gold) 25%, transparent); }
+.aura-rare { --aura: #ffffff; }
+.aura-heroic { --aura: #b48cff; }
+.aura-legendary { --aura: #ffb02e; }
+
+/* 뒤에서 번지는 빛 */
+.aura::before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--aura) 55%, transparent), transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.aura-rare::before,
+.aura-heroic::before,
+.aura-legendary::before {
+  opacity: 0.75;
+  animation: aura-pulse 2.4s ease-in-out infinite;
+}
+
+/* 그림 테두리를 따라 도는 빛 */
+.aura-rare svg { filter: drop-shadow(0 0 1px var(--aura)) drop-shadow(0 0 4px var(--aura)); }
+.aura-heroic svg { filter: drop-shadow(0 0 1px var(--aura)) drop-shadow(0 0 6px var(--aura)); }
+.aura-legendary svg { filter: drop-shadow(0 0 1px var(--aura)) drop-shadow(0 0 8px var(--aura)) drop-shadow(0 0 2px #fff3c4); }
+
+/* 영웅·전설은 빛 알갱이가 피어오른다 */
+.aura-heroic::after,
+.aura-legendary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, var(--aura) 0 1.5px, transparent 2px) 18% 70% / 100% 100% no-repeat,
+    radial-gradient(circle, var(--aura) 0 1.5px, transparent 2px) 78% 60% / 100% 100% no-repeat,
+    radial-gradient(circle, #ffffff 0 1px, transparent 1.5px) 55% 85% / 100% 100% no-repeat;
+  animation: aura-rise 2.8s linear infinite;
+}
+
+.aura-legendary::after {
+  animation-duration: 2s;
+}
+
+@keyframes aura-pulse {
+  0%, 100% { opacity: 0.45; transform: scale(0.94); }
+  50% { opacity: 0.9; transform: scale(1.04); }
+}
+
+@keyframes aura-rise {
+  0% { transform: translateY(12%); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-28%); opacity: 0; }
+}
+
+/* 미리보기 캐릭터 뒤 아우라는 은은하게 */
+.avatar-preview.aura::before {
+  inset: -18% -30%;
+}
 
 .avatar-try {
   display: flex;
@@ -3169,21 +3228,196 @@ button.stat {
   margin-top: 4px;
   padding: 8px 16px 4px;
   border-radius: 14px;
-  background: var(--surface-2);
+  background: rgb(255 255 255 / 8%);
 }
 
 .avatar-try-pal {
   line-height: 0;
 }
 
+.avatar-try .favorite {
+  color: #c9c1e6;
+}
+
 .avatar-try-hint {
   align-self: center;
   font-size: 13px;
+  color: #c9c1e6;
+}
+
+/* ── 무기 도감 ── */
+.codex-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.codex-count {
+  font-size: 13px;
+  font-weight: 600;
   color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.codex-stage {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 40px;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.codex-arrow {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--text-2);
+  cursor: pointer;
+}
+
+.codex-card {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  min-height: 248px;
+  padding: 22px 14px 18px;
+  border-radius: 18px;
+  text-align: center;
+  animation: codex-in 0.22s ease-out;
+}
+
+@keyframes codex-in {
+  from { transform: translateY(6px) scale(0.98); opacity: 0.4; }
+}
+
+.codex-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 120px;
+  line-height: 0;
+}
+
+.codex-lock {
+  position: absolute;
+  right: -18px;
+  bottom: 4px;
+  color: #c9c1e6;
+}
+
+.codex-name {
+  margin: 4px 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.codex-flavor {
+  margin: 0;
+  max-width: 24em;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #c9c1e6;
+  word-break: keep-all;
+}
+
+.codex-card.locked .codex-name {
+  letter-spacing: 0.2em;
+  color: #c9c1e6;
+}
+
+.codex-actions {
+  display: flex;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 12px;
+}
+
+.codex-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 40px;
+  color: var(--text-3);
+  background: var(--surface-2);
+}
+
+.codex-status.equipped {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* 작은 칸 줄 (가방) */
+.codex-strip {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 6px 2px 10px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+.codex-slot {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: var(--px-line);
+  line-height: 0;
+  cursor: pointer;
+  scroll-snap-align: center;
+}
+
+.codex-slot::before {
+  inset: 2px;
+  border-radius: 10px;
+}
+
+.codex-slot::after {
+  display: none;
+}
+
+.codex-slot.on {
+  border-color: var(--accent);
+}
+
+/* 장착 중인 무기: 칸 아래 작은 점 */
+.codex-slot.worn {
+  box-shadow: inset 0 -3px 0 var(--accent);
+}
+
+.codex-slot.locked svg {
+  opacity: 0.6;
+}
+
+.avatar-notice {
+  margin: 4px 0 0;
+  min-height: 1.2em;
+  font-size: 13px;
+  text-align: center;
+  color: var(--text-2);
 }
 
 .avatar-section .card-title {
   margin-bottom: 10px;
+}
+
+.avatar-subtitle {
+  margin-top: 18px;
 }
 
 .avatar-options {
@@ -3193,48 +3427,20 @@ button.stat {
 }
 
 .avatar-option {
-  position: relative;
   display: grid;
-  justify-items: center;
-  align-content: center;
-  gap: 4px;
+  place-items: center;
   min-width: 64px;
   min-height: 64px;
   padding: 8px;
   border: 2px solid transparent;
   border-radius: 14px;
   background: var(--surface-2);
-  color: var(--text);
-  font: inherit;
   cursor: pointer;
 }
 
 .avatar-option.on {
   border-color: var(--accent);
   background: var(--accent-soft);
-}
-
-.avatar-option.locked {
-  cursor: default;
-  opacity: 0.55;
-}
-
-.avatar-options.weapons .avatar-option {
-  min-width: 76px;
-  align-content: end;
-}
-
-.avatar-option-name {
-  font-size: 12px;
-  line-height: 1.3;
-  word-break: keep-all;
-}
-
-.avatar-lock {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  color: var(--text-3);
 }
 
 .avatar-swatches {
@@ -3257,46 +3463,12 @@ button.stat {
   outline-offset: 2px;
 }
 
-.avatar-weapon-group + .avatar-weapon-group {
-  margin-top: 14px;
-}
-
-.avatar-group-label {
-  margin: 0 0 6px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-2);
-}
-
-/* 저장 버튼 줄: 아래 탭 바 바로 위에 붙어 있다 */
-.avatar-actions {
-  position: fixed;
-  left: 50%;
-  bottom: calc(var(--nav-height) + env(safe-area-inset-bottom) + 8px);
-  z-index: 20;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 8px;
-  width: min(560px, calc(100% - 24px));
-  padding: 10px 12px;
-  border-radius: 16px;
-  background: var(--surface);
-  box-shadow: 0 4px 20px rgb(0 0 0 / 12%);
-  transform: translateX(-50%);
-}
-
-.avatar-notice {
-  flex: 1 1 100%;
-  margin: 0;
-  min-height: 0;
-  font-size: 13px;
-  color: var(--text-2);
-}
-
-.avatar-notice:empty {
-  display: none;
+@media (prefers-reduced-motion: reduce) {
+  .aura::before,
+  .aura::after,
+  .codex-card {
+    animation: none;
+  }
 }
 
 /* 프로필의 내 캐릭터 카드 */
@@ -3327,9 +3499,9 @@ button.stat {
   color: var(--text-3);
 }
 
-@media (prefers-color-scheme: dark) {
-  .grade-heroic.grade,
-  .avatar-group-label.grade-heroic { color: var(--px-lavender); }
-  .grade-legendary.grade,
-  .avatar-group-label.grade-legendary { color: var(--px-gold); }
+
+/* 도감·외형 카드 안쪽 여백 */
+.codex,
+.avatar-section {
+  padding: 18px 16px 16px;
 }

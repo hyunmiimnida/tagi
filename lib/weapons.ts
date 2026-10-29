@@ -52,32 +52,33 @@ export interface WeaponDef {
   skill: SkillId;
   effect: EffectId | null; // 별이 켜질 때 터지고 평소 캐릭터 주변을 떠다니는 이펙트 (일반은 없음)
   recipe?: RecipeStep[]; // 있으면 skill 대신 이 대본으로 별을 켠다
+  flavor?: string; // 도감에 보이는 한 줄 설명 (무기 이야기. 스킬은 설명하지 않는다)
 }
 
 const BASE_WEAPONS = {
-  "bare-hands": { name: "맨손", family: "fist", grade: "common", skill: "fist-tap", effect: null },
-  "wooden-sword": { name: "목검", family: "sword", grade: "common", skill: "approach-slash", effect: null },
-  "apprentice-wand": { name: "견습 지팡이", family: "staff", grade: "common", skill: "magic-orb", effect: null },
-  "short-bow": { name: "단궁", family: "bow", grade: "common", skill: "arrow", effect: null },
-  "oak-staff": { name: "나무 지팡이", family: "relic", grade: "common", skill: "holy-dot", effect: null },
-  pencil: { name: "연필", family: "pen", grade: "common", skill: "pencil-poke", effect: null },
-  recorder: { name: "리코더", family: "instrument", grade: "common", skill: "note-float", effect: null },
+  "bare-hands": { name: "맨손", family: "fist", grade: "common", skill: "fist-tap", effect: null, flavor: "언제나 함께하는 두 손." },
+  "wooden-sword": { name: "목검", family: "sword", grade: "common", skill: "approach-slash", effect: null, flavor: "수련장 한쪽에 늘 세워져 있던 나무 검." },
+  "apprentice-wand": { name: "견습 지팡이", family: "staff", grade: "common", skill: "magic-orb", effect: null, flavor: "입학 첫날 받은 견습생용 지팡이." },
+  "short-bow": { name: "단궁", family: "bow", grade: "common", skill: "arrow", effect: null, flavor: "가볍고 다루기 쉬운 짧은 활." },
+  "oak-staff": { name: "나무 지팡이", family: "relic", grade: "common", skill: "holy-dot", effect: null, flavor: "오래된 참나무를 깎아 만든 지팡이." },
+  pencil: { name: "연필", family: "pen", grade: "common", skill: "pencil-poke", effect: null, flavor: "시험 날 꼭 챙기는 노란 연필." },
+  recorder: { name: "리코더", family: "instrument", grade: "common", skill: "note-float", effect: null, flavor: "음악 시간의 추억이 담긴 리코더." },
 
-  "azure-blade": { name: "청람검", family: "sword", grade: "rare", skill: "slash-wave", effect: "bolt" },
-  "starlight-wand": { name: "별빛 지팡이", family: "staff", grade: "rare", skill: "star-bolt", effect: "snow" },
-  "wind-bow": { name: "바람활", family: "bow", grade: "rare", skill: "wind-arrow", effect: "leaf" },
-  "radiant-staff": { name: "성광 지팡이", family: "relic", grade: "rare", skill: "light-pillar", effect: "heart" },
-  "fountain-pen": { name: "만년필", family: "pen", grade: "rare", skill: "ink-circle", effect: "shadow" },
-  guitar: { name: "기타", family: "instrument", grade: "rare", skill: "note-line", effect: "note" },
+  "azure-blade": { name: "청람검", family: "sword", grade: "rare", skill: "slash-wave", effect: "bolt", flavor: "푸른 강철을 벼려 만든 검." },
+  "starlight-wand": { name: "별빛 지팡이", family: "staff", grade: "rare", skill: "star-bolt", effect: "snow", flavor: "밤하늘 별빛을 담아 둔 지팡이." },
+  "wind-bow": { name: "바람활", family: "bow", grade: "rare", skill: "wind-arrow", effect: "leaf", flavor: "잎사귀 장식에 바람이 깃든 활." },
+  "radiant-staff": { name: "성광 지팡이", family: "relic", grade: "rare", skill: "light-pillar", effect: "heart", flavor: "한낮의 햇살을 머금은 지팡이." },
+  "fountain-pen": { name: "만년필", family: "pen", grade: "rare", skill: "ink-circle", effect: "shadow", flavor: "밤새 쓴 리포트의 잉크가 아직 마르지 않았다." },
+  guitar: { name: "기타", family: "instrument", grade: "rare", skill: "note-line", effect: "note", flavor: "동아리방에서 가장 많이 울린 기타." },
 
-  "blossom-blade": { name: "벚꽃검 '춘풍'", family: "sword", grade: "heroic", skill: "blossom-wave", effect: "petal" },
-  "tide-staff": { name: "해일의 지팡이", family: "staff", grade: "heroic", skill: "tsunami", effect: "bubble" },
-  "meteor-bow": { name: "유성궁", family: "bow", grade: "heroic", skill: "meteor-rain", effect: "flame" },
-  "angel-scepter": { name: "천사의 홀", family: "relic", grade: "heroic", skill: "angel-wings", effect: "sparkle" },
-  "victory-quill": { name: "깃펜 '필승'", family: "pen", grade: "heroic", skill: "letter-storm", effect: "coin" },
-  "grand-harp": { name: "그랜드 하프", family: "instrument", grade: "heroic", skill: "sound-ring", effect: "rainbow" },
+  "blossom-blade": { name: "벚꽃검 '춘풍'", family: "sword", grade: "heroic", skill: "blossom-wave", effect: "petal", flavor: "봄바람의 이름을 받은 벚꽃빛 검." },
+  "tide-staff": { name: "해일의 지팡이", family: "staff", grade: "heroic", skill: "tsunami", effect: "bubble", flavor: "바다의 숨결이 소용돌이치는 지팡이." },
+  "meteor-bow": { name: "유성궁", family: "bow", grade: "heroic", skill: "meteor-rain", effect: "flame", flavor: "별똥별이 떨어진 밤에 만들어졌다는 활." },
+  "angel-scepter": { name: "천사의 홀", family: "relic", grade: "heroic", skill: "angel-wings", effect: "sparkle", flavor: "작은 날개가 달린 성스러운 홀." },
+  "victory-quill": { name: "깃펜 '필승'", family: "pen", grade: "heroic", skill: "letter-storm", effect: "coin", flavor: "\"필승\"을 새긴 깃털 펜. 합격을 부른다는 소문이 있다." },
+  "grand-harp": { name: "그랜드 하프", family: "instrument", grade: "heroic", skill: "sound-ring", effect: "rainbow", flavor: "무지갯빛 현이 걸린 커다란 하프." },
   // 전설: 자리만 있다 (디자인은 나중에). 지금은 누구도 가질 수 없다
-  "legend-1": { name: "???", family: "sword", grade: "legendary", skill: "blossom-wave", effect: "sparkle" },
+  "legend-1": { name: "???", family: "sword", grade: "legendary", skill: "blossom-wave", effect: "sparkle", flavor: "아직 아무도 본 적 없는 무기." },
 } satisfies Record<string, WeaponDef>;
 
 // 추가 무기 (Codex가 기획·제작, lib/weapons-extra.ts). 스킬은 대본(recipe)으로

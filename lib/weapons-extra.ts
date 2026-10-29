@@ -10,6 +10,7 @@ export const EXTRA_WEAPONS = {
     grade: "rare",
     skill: "approach-slash",
     effect: "zipper",
+    flavor: "재킷 지퍼의 은빛 이빨을 칼날로 엮은 작은 검.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "strike",ms: 200},
@@ -25,6 +26,7 @@ export const EXTRA_WEAPONS = {
     grade: "heroic",
     skill: "approach-slash",
     effect: "clockwork",
+    flavor: "강의실 시곗바늘을 닮은 금빛 장검.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "windup",ms: 170},
@@ -44,6 +46,7 @@ export const EXTRA_WEAPONS = {
     grade: "rare",
     skill: "magic-orb",
     effect: "crumb",
+    flavor: "축제 노점의 바삭한 격자 달고나를 얹은 마법봉.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "cast",ms: 200},
@@ -59,6 +62,7 @@ export const EXTRA_WEAPONS = {
     grade: "heroic",
     skill: "magic-orb",
     effect: "leaf",
+    flavor: "동아리 화분에 유리 온실을 씌운 새싹 지팡이.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "cast",ms: 170},
@@ -77,6 +81,7 @@ export const EXTRA_WEAPONS = {
     grade: "rare",
     skill: "arrow",
     effect: "postmark",
+    flavor: "편지 봉투와 우편함 곡선을 품은 산호빛 활.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "draw",ms: 200},
@@ -92,6 +97,7 @@ export const EXTRA_WEAPONS = {
     grade: "heroic",
     skill: "arrow",
     effect: "weave",
+    flavor: "공예 동아리의 금빛 실패와 날실로 만든 활.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "draw",ms: 170},
@@ -111,6 +117,7 @@ export const EXTRA_WEAPONS = {
     grade: "rare",
     skill: "holy-dot",
     effect: "coin",
+    flavor: "새 학기 사물함의 첫 문을 여는 금빛 열쇠 성물.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "pray",ms: 200},
@@ -126,6 +133,7 @@ export const EXTRA_WEAPONS = {
     grade: "heroic",
     skill: "holy-dot",
     effect: "sparkle",
+    flavor: "캠퍼스에서 만날 장소를 가리키는 청록 나침반 성물.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "pray",ms: 170},
@@ -144,6 +152,7 @@ export const EXTRA_WEAPONS = {
     grade: "rare",
     skill: "pencil-poke",
     effect: "snow",
+    flavor: "하얀 수정액과 하늘색 그립을 가진 통통한 펜.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "poke",ms: 200},
@@ -159,6 +168,7 @@ export const EXTRA_WEAPONS = {
     grade: "heroic",
     skill: "pencil-poke",
     effect: "blueprint",
+    flavor: "건축 과제의 설계선을 꺼내는 금테 제도펜.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "poke",ms: 170},
@@ -177,6 +187,7 @@ export const EXTRA_WEAPONS = {
     grade: "rare",
     skill: "note-float",
     effect: "bubble",
+    flavor: "동아리 합주의 짝짝 소리를 담은 귤빛 나무 조개 악기.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "play",ms: 200},
@@ -192,6 +203,7 @@ export const EXTRA_WEAPONS = {
     grade: "heroic",
     skill: "note-float",
     effect: "weave",
+    flavor: "축제 부스처럼 알록달록한 건반과 두 채를 단 실로폰.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "play",ms: 170},
