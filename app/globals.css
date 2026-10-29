@@ -853,6 +853,7 @@ main {
 
 .list-head {
   display: flex;
+  flex-wrap: wrap; /* 옵션이 많아 좁은 화면에서는 옵션이 다음 줄로 */
   align-items: center;
   justify-content: space-between;
   gap: 8px;
@@ -870,6 +871,7 @@ main {
 
 .list-options {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
 }
@@ -904,6 +906,7 @@ main {
   color: var(--text-2);
   font-size: 0.8125rem;
   font-weight: 500;
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -1985,11 +1988,6 @@ main {
   font-weight: 600;
 }
 
-.panel-toggle {
-  margin-top: 4px;
-  line-height: 1.5;
-}
-
 .past-actions {
   display: flex;
   align-items: center;
@@ -2959,11 +2957,4 @@ button.stat {
     animation: none;
     display: none;
   }
-}
-
-/* 공고 목록: 다른 학교 공고(지원 가능한 것) 켜기·끄기 안내 줄 */
-.open-line {
-  margin: 0 4px 10px;
-  color: var(--text-2);
-  font-size: 0.875rem;
 }

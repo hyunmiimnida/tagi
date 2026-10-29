@@ -221,7 +221,7 @@ export function Explorer({ categories, schools }: Props) {
     [open, categories, school, region, inPlace, units, who, selected, sort, today],
   );
 
-  // 기본은 내 학교 공고만 보인다. 다른 학교에 올라왔지만 우리 학교 학생도 지원할 수 있는 공고가 몇 개 더 있는지 (켜기 안내)
+  // 기본은 내 학교 공고만 보인다. 다른 학교에 올라왔지만 우리 학교 학생도 지원할 수 있는 공고가 몇 개 더 있는지 (결과가 없을 때 켜기 안내)
   const openExtra = useMemo(() => {
     if (!school || includeOpen) return 0;
     return open.filter(
@@ -389,12 +389,6 @@ export function Explorer({ categories, schools }: Props) {
               <p className="panel-label">대상</p>
               {ELIGIBILITY.map((w) => option(w, w, who.has(w), counts.who.get(w), () => setWho(toggle(who, w))))}
             </div>
-            {school && (
-              <label className="toggle panel-toggle">
-                <input type="checkbox" checked={includeOpen} onChange={(event) => setIncludeOpen(event.target.checked)} />
-                <span>다른 학교 공고 중 우리 학교 학생도 지원할 수 있는 것도 보기</span>
-              </label>
-            )}
             {currentSchool && currentSchool.units.length > 0 && (
               <div className="panel-group">
                 <p className="panel-label">{currentSchool.shortName} 교내 기관</p>
@@ -459,26 +453,15 @@ export function Explorer({ categories, schools }: Props) {
             <input type="checkbox" checked={showClosed} onChange={(event) => setShowClosed(event.target.checked)} />
             <span>마감 포함</span>
           </label>
+          {/* 기본은 내 학교 공고만. 켜면 다른 학교에 올라왔어도 우리 학교 학생이 지원할 수 있는 공고도 보인다 */}
+          {school && (
+            <label className="toggle">
+              <input type="checkbox" checked={includeOpen} onChange={(event) => setIncludeOpen(event.target.checked)} />
+              <span>다른 학교 포함</span>
+            </label>
+          )}
         </div>
       </div>
-
-      {/* 다른 학교 공고 켜기·끄기를 학교 패널을 열지 않고도 할 수 있게 */}
-      {ready && school && (openExtra > 0 || includeOpen) && (
-        <p className="open-line">
-          {includeOpen ? (
-            <>
-              다른 학교 공고 중 지원할 수 있는 것도 함께 보는 중{" "}
-              <button className="link-button" onClick={() => setIncludeOpen(false)}>
-                내 학교만 보기
-              </button>
-            </>
-          ) : (
-            <button className="link-button" onClick={() => setIncludeOpen(true)}>
-              다른 학교 공고 중 우리 학교 학생도 지원할 수 있는 {openExtra}개 더 보기
-            </button>
-          )}
-        </p>
-      )}
 
       {failed ? (
         <ListError onRetry={retry} />
