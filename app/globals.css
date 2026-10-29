@@ -3776,3 +3776,111 @@ button.stat {
     transition: none !important;
   }
 }
+
+/* ───────── 보물상자 (components/TreasureBox.tsx)·열쇠조각 알림 ───────── */
+.treasure {
+  display: grid;
+  gap: 10px;
+  padding: 18px 16px 16px;
+}
+
+.treasure-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.treasure-keys {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 17px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.key-shard {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.treasure-meter {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.treasure-meter i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--px-gold);
+  transition: width 0.3s ease-out;
+}
+
+.treasure-note {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+.treasure .button {
+  width: 100%;
+}
+
+.treasure-ways {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.treasure-odds {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.treasure-odds summary {
+  cursor: pointer;
+  color: var(--text-2);
+}
+
+.treasure-odds ul {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.treasure-odds li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+
+.treasure-odds p {
+  margin: 8px 0 0;
+  word-break: keep-all;
+}
+
+.reveal-refund {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #ffe08a;
+}
+
+.key-toast {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.key-toast-link {
+  margin-left: 4px;
+  color: #ffe08a;
+  font-weight: 700;
+}

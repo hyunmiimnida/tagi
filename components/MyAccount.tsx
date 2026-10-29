@@ -273,7 +273,9 @@ export function MyAccount({ schools, sources }: Props) {
         </span>
         <span className="my-pal-text">
           <strong>내 캐릭터</strong>
-          <span>머리 장식·옷·무기를 바꿔 꾸며 보세요</span>
+          <span>
+            {user.keys !== null ? `열쇠조각 ${user.keys}개 · 보물상자에서 무기를 얻어 보세요` : "머리 장식·옷·무기를 바꿔 꾸며 보세요"}
+          </span>
         </span>
         <ChevronIcon size={18} />
       </Link>

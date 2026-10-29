@@ -133,6 +133,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
       return;
     }
     setDraft("");
+    user.refreshKeys(); // 후기 선물 열쇠조각 (supabase/gacha.sql, 하루 3번까지)
     void load();
   }
 

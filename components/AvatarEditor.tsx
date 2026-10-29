@@ -13,6 +13,7 @@ import type { ActionFrame } from "../lib/pixel-pals.ts";
 import type { WeaponFamily } from "../lib/weapons.ts";
 import { PixelSprite } from "./PixelPal.tsx";
 import { requestStarHelper } from "./StarHelper.tsx";
+import { TreasureBox } from "./TreasureBox.tsx";
 
 // 내 캐릭터 꾸미기 (/my/avatar): 무기 도감에서 무기를 골라 장착하고, 머리 장식·옷과 그 색을 바꾼다. 고르면 바로 내 캐릭터에 반영된다.
 // 등급은 글자로 쓰지 않고 무기를 감싼 아우라 색으로만 보여 준다: 일반 없음, 희귀 흰빛, 영웅 보랏빛, 전설 호박빛 (app/globals.css의 .aura-*)
@@ -168,6 +169,9 @@ export function AvatarEditor() {
         </div>
       </section>
 
+      {/* 보물상자: 열쇠조각으로 무기 뽑기 */}
+      <TreasureBox />
+
       {/* 무기 도감: 한 장씩 넘겨 본다 (좌우 버튼·밀기·작은 칸) */}
       <section className="card codex" aria-roledescription="도감">
         <div className="codex-head">
@@ -204,7 +208,7 @@ export function AvatarEditor() {
               )}
             </div>
             <p className="codex-name">{shownLocked ? "???" : shown.name}</p>
-            <p className="codex-flavor">{shownLocked ? "아직 얻지 못한 무기예요." : (shown.flavor ?? "")}</p>
+            <p className="codex-flavor">{shownLocked ? (shown.grade === "legendary" ? "아직 잠들어 있는 전설이에요." : "보물상자에서 나올지도 몰라요.") : (shown.flavor ?? "")}</p>
           </div>
           <button type="button" className="codex-arrow" aria-label="다음 무기" onClick={() => go(1)}>
             <ChevronIcon dir="right" size={22} />

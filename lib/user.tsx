@@ -6,28 +6,49 @@ import { toDateString } from "./filter.ts";
 import { forgetPushOnThisDevice } from "./push.ts";
 import { randomAvatar, toValidAvatar } from "./pixel-pals.ts";
 import type { Avatar } from "./pixel-pals.ts";
-import { WEAPONS, WEAPON_IDS, owns, starterOf } from "./weapons.ts";
+import { DAILY_KEYS, DRAW_COST, drawOnce, keysAfter } from "./gacha.ts";
+import type { DrawResult } from "./gacha.ts";
+import { WEAPONS, WEAPON_IDS, isWeaponId, owns, starterOf } from "./weapons.ts";
 import type { WeaponId } from "./weapons.ts";
 
-// 얻은 무기(희귀 이상, 일반 무기는 누구나 가진다). grantWeapon으로 얻으면 이 기기에 기억한다 (OWNED_KEY).
-// 얻는 경로는 아직 정하지 않았다. 경로를 만들 때는 계정(서버)에도 기록해야 한다 (이 기기 기록은 고쳐 쓸 수 있으므로).
-// 내 컴퓨터에서 화면을 시험할 때(npm run dev)만 모든 무기를 가진 것으로 본다
-const OWNED_KEY = "ownedWeapons";
+// 얻은 무기(희귀 이상, 일반 무기는 누구나 가진다)는 보물상자 뽑기(lib/gacha.ts)로 얻는다.
+// 로그인하면 계정(supabase/gacha.sql의 owned_weapons)에 있는 것이 전부다. 이 기기 기록은 고쳐 쓸 수 있으므로 쓰지 않는다.
+// 체험 모드(Supabase 설정 없음)에서만 이 기기에 열쇠조각·무기를 기억하고 이 기기에서 뽑는다 (LOCAL_*).
+// 내 컴퓨터에서 화면을 시험할 때(npm run dev)는 모든 무기를 가진 것으로 보인다 (뽑기 결과는 실제 기록으로 정한다)
+const LOCAL_OWNED_KEY = "ownedWeapons";
+const LOCAL_WALLET_KEY = "keyWallet";
 const DEV_ALL = process.env.NODE_ENV === "development";
+const withDev = (owned: ReadonlySet<string>): ReadonlySet<string> => (DEV_ALL ? new Set(WEAPON_IDS) : owned);
 
-function readOwned(): Set<string> {
-  if (DEV_ALL) return new Set(WEAPON_IDS);
+interface LocalWallet {
+  keys: number;
+  shards: number;
+  lastDaily: string | null;
+}
+
+function readLocalOwned(): Set<string> {
+  return new Set([...readLocalList(LOCAL_OWNED_KEY)].filter(isWeaponId));
+}
+
+const count = (value: unknown): number => (Number.isInteger(value) && (value as number) >= 0 ? (value as number) : 0);
+
+function readLocalWallet(): LocalWallet {
   try {
-    const value: unknown = JSON.parse(localStorage.getItem(OWNED_KEY) ?? "[]");
-    return new Set(Array.isArray(value) ? value.filter((v): v is string => typeof v === "string" && v in WEAPONS) : []);
+    const value = JSON.parse(readLocal(LOCAL_WALLET_KEY) ?? "{}") as Partial<LocalWallet>;
+    return { keys: count(value.keys), shards: count(value.shards), lastDaily: typeof value.lastDaily === "string" ? value.lastDaily : null };
   } catch {
-    return new Set();
+    return { keys: 0, shards: 0, lastDaily: null };
   }
 }
 
+// 한국 날짜 (접속 선물은 하루 한 번, 서버의 kst_today와 같은 기준)
+const kstToday = () => new Date(Date.now() + 9 * 3600_000).toISOString().slice(0, 10);
+
 // 갖지 않은 무기를 들고 있으면(저장값을 고쳤거나 무기를 잃은 경우) 그 계열의 일반 무기로 바꾼다
-const holdable = (avatar: Avatar, owned: ReadonlySet<string> = readOwned()): Avatar =>
+const holdable = (avatar: Avatar, owned: ReadonlySet<string>): Avatar =>
   owns(owned, avatar.weapon) ? avatar : { ...avatar, weapon: starterOf(WEAPONS[avatar.weapon].family) };
+
+export type KeyGift = { amount: number; reason: "daily" | "review" };
 
 // 로그인, 학교 설정, 관심 표시를 한곳에서 관리한다.
 // Supabase 설정(.env.local)이 없으면 "체험 모드"로 동작해 이 브라우저에만 저장한다.
@@ -77,9 +98,16 @@ interface UserState {
   avatar: Avatar | null;
   ownedWeapons: ReadonlySet<string>; // 얻은 무기 (희귀 이상. 일반 무기는 누구나 가진다)
   setAvatar: (next: Avatar) => void;
-  // 무기를 얻는다: 처음 얻는 무기면 보물상자 연출(components/WeaponReveal.tsx)을 띄운다
+  // 보물상자 뽑기 (lib/gacha.ts). keys가 null이면 뽑기를 쓸 수 없다 (로그인 전, supabase/gacha.sql 실행 전)
+  keys: number | null;
+  legendShards: number;
+  drawWeapon: () => Promise<"ok" | "not-enough" | "error">; // 결과는 보물상자 연출로 보여 준다
+  refreshKeys: () => void; // 후기를 쓴 뒤 부른다: 열쇠조각이 늘었으면 선물 알림
+  keyGift: KeyGift | null; // 방금 받은 열쇠조각 (components/KeyGiftToast.tsx)
+  clearKeyGift: () => void;
+  // 보물상자 연출(components/WeaponReveal.tsx). grantWeapon은 내 컴퓨터 시험용(?reveal=무기id)
   grantWeapon: (id: WeaponId) => void;
-  revealing: WeaponId | null; // 지금 연출 중인 무기
+  revealing: DrawResult | null;
   closeReveal: () => void;
 }
 
@@ -95,8 +123,7 @@ const AVATAR_KEY = "avatar";
 
 function readLocalAvatar(): Avatar | null {
   try {
-    const saved = toValidAvatar(JSON.parse(readLocal(AVATAR_KEY) ?? "null"));
-    return saved && holdable(saved);
+    return toValidAvatar(JSON.parse(readLocal(AVATAR_KEY) ?? "null"));
   } catch {
     return null;
   }
@@ -237,8 +264,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       .maybeSingle()
       .then(({ data, error }) => {
         if (cancelled || error) return;
-        const valid = toValidAvatar((data as { avatar?: unknown } | null)?.avatar);
-        const saved = valid && holdable(valid);
+        const saved = toValidAvatar((data as { avatar?: unknown } | null)?.avatar);
         if (saved) {
           setAvatarState(saved);
           writeLocal(AVATAR_KEY, JSON.stringify(saved));
@@ -252,16 +278,127 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     };
   }, [userId]);
 
-  const [ownedWeapons, setOwnedWeapons] = useState<ReadonlySet<string>>(() => new Set(DEV_ALL ? WEAPON_IDS : []));
-  const [revealing, setRevealing] = useState<WeaponId | null>(null);
-  useEffect(() => setOwnedWeapons(readOwned()), []);
+  // ── 무기와 열쇠조각 ──
+  const [owned, setOwned] = useState<ReadonlySet<string> | null>(null); // 실제로 얻은 무기. 불러오기 전에는 null
+  const [keys, setKeys] = useState<number | null>(null);
+  const [legendShards, setLegendShards] = useState(0);
+  const [keyGift, setKeyGift] = useState<KeyGift | null>(null);
+  const [revealing, setRevealing] = useState<DrawResult | null>(null);
+
+  // 체험 모드: 이 기기의 기록. 접속 선물도 이 기기에서
+  useEffect(() => {
+    if (supabase) return;
+    setOwned(readLocalOwned());
+    const wallet = readLocalWallet();
+    const today = kstToday();
+    if (wallet.lastDaily !== today) {
+      wallet.keys += DAILY_KEYS;
+      wallet.lastDaily = today;
+      writeLocal(LOCAL_WALLET_KEY, JSON.stringify(wallet));
+      setKeyGift({ amount: DAILY_KEYS, reason: "daily" });
+    }
+    setKeys(wallet.keys);
+    setLegendShards(wallet.shards);
+  }, []);
+
+  // 로그인하면 계정의 무기와 열쇠조각, 오늘 접속 선물 (gacha.sql을 아직 실행하지 않았으면 뽑기 없이 일반 무기만)
+  useEffect(() => {
+    if (!supabase) return;
+    if (!userId) {
+      setOwned(ready ? new Set() : null);
+      setKeys(null);
+      setLegendShards(0);
+      return;
+    }
+    setOwned(null); // 계정의 기록을 받기 전에는 무기를 바꾸지 않는다
+    let cancelled = false;
+    const client = supabase;
+    void Promise.all([client.from("owned_weapons").select("weapon_id"), client.rpc("claim_daily_keys")]).then(([rows, daily]) => {
+      if (cancelled) return;
+      setOwned(new Set((rows.data ?? []).map((row) => row.weapon_id as string).filter(isWeaponId)));
+      if (daily.error) {
+        setKeys(null);
+        return;
+      }
+      const wallet = daily.data as { granted: number; keys: number; shards: number };
+      setKeys(wallet.keys);
+      setLegendShards(wallet.shards);
+      if (wallet.granted > 0) setKeyGift({ amount: wallet.granted, reason: "daily" });
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [userId, ready]);
+
+  const ownedWeapons = useMemo(() => withDev(owned ?? new Set()), [owned]);
+
+  // 갖지 않은 무기를 들고 있으면 그 계열의 일반 무기로 (무기 기록을 불러온 뒤에만)
+  useEffect(() => {
+    if (!avatar || !owned) return;
+    const fixed = holdable(avatar, ownedWeapons);
+    if (fixed !== avatar) {
+      setAvatarState(fixed);
+      writeLocal(AVATAR_KEY, JSON.stringify(fixed));
+    }
+  }, [avatar, owned, ownedWeapons]);
+
+  const drawWeapon = useCallback(async (): Promise<"ok" | "not-enough" | "error"> => {
+    if (keys === null) return "error";
+    if (keys < DRAW_COST) return "not-enough";
+    let result: DrawResult;
+    let after: { keys: number; shards: number };
+    if (!supabase) {
+      const mine = readLocalOwned();
+      const wallet = readLocalWallet();
+      if (wallet.keys < DRAW_COST) return "not-enough";
+      result = drawOnce(mine);
+      wallet.keys = keysAfter(wallet.keys, result);
+      if (result.kind === "shard") wallet.shards += 1;
+      else if (!result.duplicate) mine.add(result.weapon);
+      writeLocal(LOCAL_WALLET_KEY, JSON.stringify(wallet));
+      writeLocal(LOCAL_OWNED_KEY, JSON.stringify([...mine]));
+      after = wallet;
+    } else {
+      const { data, error } = await supabase.rpc("draw_weapon");
+      if (error) return error.message.includes("gacha:not-enough") ? "not-enough" : "error";
+      const row = data as { kind: string; weapon?: string; grade?: string; duplicate?: boolean; refund?: number; keys: number; shards: number };
+      if (row.kind === "shard") result = { kind: "shard" };
+      else if (row.weapon && isWeaponId(row.weapon) && (row.grade === "common" || row.grade === "rare" || row.grade === "heroic"))
+        result = { kind: "weapon", weapon: row.weapon, grade: row.grade, duplicate: Boolean(row.duplicate), refund: row.refund ?? 0 };
+      else return "error";
+      after = row;
+    }
+    setKeys(after.keys);
+    setLegendShards(after.shards);
+    if (result.kind === "weapon" && !result.duplicate) {
+      const weapon = result.weapon;
+      setOwned((current) => new Set([...(current ?? []), weapon]));
+    }
+    setRevealing(result);
+    return "ok";
+  }, [keys]);
+
+  const refreshKeys = useCallback(() => {
+    if (!supabase || !userId) return;
+    void supabase
+      .from("key_wallets")
+      .select("keys, legend_shards")
+      .maybeSingle()
+      .then(({ data, error }) => {
+        if (error || !data) return;
+        const now = data.keys as number;
+        setKeys((before) => {
+          if (before !== null && now > before) setKeyGift({ amount: now - before, reason: "review" });
+          return now;
+        });
+        setLegendShards(data.legend_shards as number);
+      });
+  }, [userId]);
+  const clearKeyGift = useCallback(() => setKeyGift(null), []);
 
   const grantWeapon = useCallback((id: WeaponId) => {
-    setOwnedWeapons((owned) => {
-      if (!DEV_ALL && !owned.has(id)) writeLocal(OWNED_KEY, JSON.stringify([...owned, id]));
-      return owned.has(id) ? owned : new Set([...owned, id]);
-    });
-    setRevealing(id);
+    const grade = WEAPONS[id].grade;
+    setRevealing({ kind: "weapon", weapon: id, grade: grade === "legendary" ? "heroic" : grade, duplicate: false, refund: 0 });
   }, []);
   const closeReveal = useCallback(() => setRevealing(null), []);
 
@@ -431,11 +568,17 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       avatar,
       ownedWeapons,
       setAvatar,
+      keys,
+      legendShards,
+      drawWeapon,
+      refreshKeys,
+      keyGift,
+      clearKeyGift,
       grantWeapon,
       revealing,
       closeReveal,
     }),
-    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite, avatar, setAvatar, ownedWeapons, grantWeapon, revealing, closeReveal],
+    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite, avatar, setAvatar, ownedWeapons, keys, legendShards, drawWeapon, refreshKeys, keyGift, clearKeyGift, grantWeapon, revealing, closeReveal],
   );
 
   return <UserContext value={value}>{children}</UserContext>;
