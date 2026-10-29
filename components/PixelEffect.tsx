@@ -15,7 +15,7 @@ export function PixelFrames({ frames, scale, frameMs, loop = false }: { frames: 
   const height = frames[0].length;
   return (
     <svg
-      className={`pfx ${loop ? "pfx-loop" : "pfx-once"}`}
+      className={`pfx ${frames.length === 1 ? "pfx-still" : loop ? `pfx-loop pfx-n${frames.length}` : "pfx-once"}`}
       width={width * scale}
       height={height * scale}
       viewBox={`0 0 ${width} ${height}`}
@@ -40,11 +40,11 @@ export function BurstEffect({ effect, scale = 2 }: { effect: EffectId; scale?: n
   return <PixelFrames frames={EFFECTS[effect].burst} scale={scale} frameMs={75} />;
 }
 
-const AMBIENT_EVERY_MS = 3200; // 입자가 새로 나오는 간격
 const AMBIENT_LIFE_MS = 2200; // 입자 하나가 떠다니는 시간 (app/globals.css의 .amb 애니메이션과 같게)
 
 // 캐릭터 주변을 가끔 떠다니는 작은 입자. 기기의 "동작 줄이기"를 켜면 나오지 않는다
-export function AmbientEffect({ effect }: { effect: EffectId }) {
+// every: 입자가 새로 나오는 간격(ms)
+export function AmbientEffect({ effect, every = 3200 }: { effect: EffectId; every?: number }) {
   const [particles, setParticles] = useState<{ id: number; dx: number }[]>([]);
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -55,12 +55,12 @@ export function AmbientEffect({ effect }: { effect: EffectId }) {
       setTimeout(() => setParticles((list) => list.filter((p) => p.id !== particle.id)), AMBIENT_LIFE_MS);
     };
     const first = setTimeout(spawn, 600);
-    const timer = setInterval(spawn, AMBIENT_EVERY_MS);
+    const timer = setInterval(spawn, every);
     return () => {
       clearTimeout(first);
       clearInterval(timer);
     };
-  }, [effect]);
+  }, [effect, every]);
   const { ambient, motion } = EFFECTS[effect];
   return (
     <span className="amb-anchor" aria-hidden="true">

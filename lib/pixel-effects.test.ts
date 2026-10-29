@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { EFFECTS, EFFECT_COLORS, EFFECT_IDS } from "./pixel-effects.ts";
-import { PAL_COLORS, PAL_PRESETS, toValidAvatar } from "./pixel-pals.ts";
+import { PAL_COLORS } from "./pixel-pals.ts";
 
 test("이펙트 그림은 정해진 크기·프레임 수이고 팔레트 색만 쓴다", () => {
   assert.ok(EFFECT_IDS.length >= 12);
@@ -34,9 +34,9 @@ test("이펙트 전용 색 글자는 캐릭터 부품 글자(A·a·O·o)·기존
   }
 });
 
-test("저장된 캐릭터에 이펙트가 없거나 모르는 값이면 '없음'", () => {
-  const { effect: _effect, ...old } = PAL_PRESETS.wizard;
-  assert.equal(toValidAvatar(old)?.effect, "none");
-  assert.equal(toValidAvatar({ ...PAL_PRESETS.wizard, effect: "fireworks" })?.effect, "none");
-  assert.equal(toValidAvatar({ ...PAL_PRESETS.wizard, effect: "petal" })?.effect, "petal");
+test("이펙트는 희귀 이상 무기에 하나씩 딸려 있다 (일반 무기는 이펙트 없음)", async () => {
+  const { WEAPONS, WEAPON_IDS } = await import("./weapons.ts");
+  const used = WEAPON_IDS.filter((id) => WEAPONS[id].grade === "rare" || WEAPONS[id].grade === "heroic").map((id) => WEAPONS[id].effect);
+  assert.deepEqual([...used].sort(), [...EFFECT_IDS].sort(), "희귀·영웅 12개 무기가 이펙트 12종을 하나씩");
+  for (const id of WEAPON_IDS) if (WEAPONS[id].grade === "common") assert.equal(WEAPONS[id].effect, null, id);
 });

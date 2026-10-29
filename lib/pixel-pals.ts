@@ -2,8 +2,10 @@
 // 그림은 글자 지도로 그린다: 글자 하나 = 픽셀 하나, "." = 투명. 색은 app/globals.css의 --px-* 변수.
 // 자세: sit(앉아서 다리를 늘어뜨림, 16×17) · peek(카드 모서리를 두 손으로 잡고 고개만 내밂, 16×14)
 
-import { EFFECT_COLORS, EFFECTS } from "./pixel-effects.ts";
-import type { EffectId } from "./pixel-effects.ts";
+import { EFFECT_COLORS } from "./pixel-effects.ts";
+import { WEAPON_SPRITES, poseOf } from "./weapon-sprites.ts";
+import { WEAPONS, upgradeWeaponId } from "./weapons.ts";
+import type { WeaponId } from "./weapons.ts";
 
 export type PalName = "wizard" | "knight" | "ranger" | "cleric";
 export type PalPose = "sit" | "peek";
@@ -84,22 +86,13 @@ const EYE_ROWS = [7, 8, 9]; // 머리 지도에서 눈이 있는 줄 (깜빡일 
 //   A·a: 머리 장식 색·그 어두운 색, O·o: 옷 색·그 어두운 색 (나머지 글자는 PAL_COLORS의 고정 색)
 export type Headwear = "wizard-hat" | "helmet" | "hood" | "veil";
 export type Outfit = "robe" | "armor" | "tunic" | "vestment";
-// 손에 드는 무기: 마법 지팡이·검·활·성직자 지팡이, 또는 맨손(none)
-export type Weapon = "wand" | "sword" | "bow" | "staff" | "none";
-// 관심 표시(☆)를 켜 줄 때의 스킬 (components/StarHelper.tsx). 무기를 바꾸면 스킬이 저절로 바뀐다.
-// 화면에서는 이 연결을 설명하지 않는다 (무기를 바꿔 보다 알아채는 숨은 재미)
-export type StarAction = "magic" | "slash" | "arrow" | "pray" | "tap";
-const SKILL_OF: Record<Weapon, StarAction> = { wand: "magic", sword: "slash", bow: "arrow", staff: "pray", none: "tap" };
-export const skillOf = (avatar: Avatar): StarAction => SKILL_OF[avatar.weapon];
-
 // 한 사람의 캐릭터 모습. 색은 PAL_HEX의 이름(app/globals.css의 --px-*)
 export interface Avatar {
   headwear: Headwear;
   headwearColor: string;
   outfit: Outfit;
   outfitColor: string;
-  weapon: Weapon;
-  effect: EffectId | "none"; // 별이 켜질 때 터지고, 평소에 주변을 떠다니는 이펙트 (lib/pixel-effects.ts)
+  weapon: WeaponId; // 손에 든 무기 (lib/weapons.ts). 별 켜기 스킬과 이펙트는 무기가 정한다
 }
 
 const HEADWEAR: Record<Headwear, string[]> = {
@@ -151,10 +144,10 @@ const OUTFITS: Record<Outfit, { rows: string[]; legs: string }> = {
 
 // 처음부터 있던 네 모습(코드 안의 이름일 뿐, 화면에서 직업으로 나누지 않는다). 처음 온 사람이 받는 캐릭터이자 꾸미기의 출발점
 export const PAL_PRESETS: Record<PalName, Avatar> = {
-  wizard: { headwear: "wizard-hat", headwearColor: "violet", outfit: "robe", outfitColor: "violet", weapon: "wand", effect: "none" },
-  knight: { headwear: "helmet", headwearColor: "steel", outfit: "armor", outfitColor: "steel", weapon: "sword", effect: "none" },
-  ranger: { headwear: "hood", headwearColor: "green", outfit: "tunic", outfitColor: "green", weapon: "bow", effect: "none" },
-  cleric: { headwear: "veil", headwearColor: "white", outfit: "vestment", outfitColor: "white", weapon: "staff", effect: "none" },
+  wizard: { headwear: "wizard-hat", headwearColor: "violet", outfit: "robe", outfitColor: "violet", weapon: "apprentice-wand" },
+  knight: { headwear: "helmet", headwearColor: "steel", outfit: "armor", outfitColor: "steel", weapon: "wooden-sword" },
+  ranger: { headwear: "hood", headwearColor: "green", outfit: "tunic", outfitColor: "green", weapon: "short-bow" },
+  cleric: { headwear: "veil", headwearColor: "white", outfit: "vestment", outfitColor: "white", weapon: "oak-staff" },
 };
 
 // 색 이름 → 그 색의 어두운 색 (없으면 같은 색)
@@ -181,14 +174,12 @@ export function toValidAvatar(value: unknown): Avatar | null {
     typeof v.headwearColor === "string" &&
     v.headwearColor in LETTER_OF &&
     typeof v.outfitColor === "string" &&
-    v.outfitColor in LETTER_OF &&
-    typeof v.weapon === "string" &&
-    v.weapon in SKILL_OF;
-  if (!ok) return null;
-  const { headwear, headwearColor, outfit, outfitColor, weapon } = v as unknown as Avatar;
-  // 이펙트는 나중에 생긴 칸이라 없거나 모르는 값이면 "없음"으로 둔다
-  const effect = typeof v.effect === "string" && v.effect in EFFECTS ? (v.effect as EffectId) : "none";
-  return { headwear, headwearColor, outfit, outfitColor, weapon, effect };
+    v.outfitColor in LETTER_OF;
+  // 무기는 예전 이름(sword·wand 등)이면 그 계열의 일반 무기로 바꾼다
+  const weapon = upgradeWeaponId(v.weapon);
+  if (!ok || !weapon) return null;
+  const { headwear, headwearColor, outfit, outfitColor } = v as unknown as Avatar;
+  return { headwear, headwearColor, outfit, outfitColor, weapon };
 }
 
 // 처음 온 사람에게 주는 캐릭터: 기본 네 캐릭터 중 하나
@@ -262,47 +253,12 @@ export function palSvg(rows: string[], scale: number): string {
 // 24×17 칸. 캐릭터 몸은 가운데(4~19칸), 칼·활·지팡이는 오른쪽으로 삐져나온다. 모두 오른쪽을 보고 그리고, 왼쪽은 뒤집어 쓴다
 export const ACTION_WIDTH = 24;
 export const ACTION_HEIGHT = 17;
-export type ActionFrame = "stand" | "runA" | "runB" | "windup" | "strike" | "draw" | "release" | "cast" | "pray" | "punch";
+export type ActionFrame = "stand" | "runA" | "runB" | "windup" | "strike" | "draw" | "release" | "cast" | "pray" | "punch" | "poke" | "play";
 
 const LEGS: Record<"stand" | "runA" | "runB", string[]> = {
   stand: ["....KxK.KxK.....", "...KKKK.KKKK...."],
   runA: ["...KxK...KxK....", "..KKK.....KKK..."],
   runB: [".....KxKxK......", "....KKKKKKK....."],
-};
-
-// 손에 든 것: [그림, 왼쪽 칸, 위 칸]
-type Prop = [string[], number, number];
-const SWORD = [".K.", "KWK", "KMK", "KMK", "KMK", "KMK", "YYY", ".t."];
-const SWORD_FORWARD = ["Y.KKKKK.", "YtMMMMMW", "Y.KKKKK."];
-const BOW_DRAWN = [
-  "......T....",
-  ".......T...",
-  "........T..",
-  "........T..",
-  "........T..",
-  "WttttttttMM",
-  "........T..",
-  ".......T...",
-  "......T....",
-];
-const BOW = BOW_DRAWN.map((row, i) => (i === 5 ? "........T.." : row));
-const WAND = [".Y.", "YWY", ".Y.", ".t.", ".t."];
-const FIST = ["KKKK.", "KSSSK", "KSPSK", "KKKK."];
-const STAFF = ["YYY", "YWY", "YYY", ".t.", ".t.", ".t.", ".t.", ".t.", ".t.", ".t.", ".t."];
-
-// 스킬 동작마다 손에 든 무기 그림
-const PROPS: Record<StarAction, Partial<Record<ActionFrame, Prop>>> = {
-  slash: {
-    stand: [SWORD, 17, 6],
-    runA: [SWORD, 17, 6],
-    runB: [SWORD, 17, 6],
-    windup: [SWORD, 18, 0], // 칼을 높이 치켜든다
-    strike: [SWORD_FORWARD, 16, 12], // 앞으로 휘두른다
-  },
-  arrow: { draw: [BOW_DRAWN, 13, 8], release: [BOW, 13, 8] },
-  magic: { stand: [WAND, 17, 9], cast: [WAND, 19, 3] },
-  pray: { stand: [STAFF, 17, 4], pray: [STAFF, 18, 1] },
-  tap: { punch: [FIST, 15, 12] }, // 맨손: 주먹을 앞으로 쭉 내밀어 별을 톡
 };
 
 function stamp(canvas: string[][], rows: string[], ox: number, oy: number): void {
@@ -321,8 +277,10 @@ export function actionRows(who: PalName | Avatar, frame: ActionFrame): string[] 
   stamp(canvas, headRows(avatar), 4, 0);
   stamp(canvas, paint(outfit.rows.slice(0, 3), avatar), 4, 12);
   stamp(canvas, paint(legs.map((row) => row.replace(/x/g, outfit.legs)), avatar), 4, 15);
-  const prop = PROPS[skillOf(avatar)][frame];
-  if (prop) stamp(canvas, ...prop);
+  // 손에 든 무기 (lib/weapon-sprites.ts). 그 계열에 없는 자세면 들지 않는다
+  const pose = poseOf(WEAPONS[avatar.weapon].family, frame);
+  const held = pose && WEAPON_SPRITES[avatar.weapon][pose];
+  if (held) stamp(canvas, held.rows, held.x, held.y);
   return canvas.map((row) => row.join(""));
 }
 

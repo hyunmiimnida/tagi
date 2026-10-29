@@ -2992,16 +2992,46 @@ button.stat {
   100% { visibility: hidden; }
 }
 
-/* 반복: 4프레임 (ambient). 음수 지연으로 처음부터 첫 프레임이 보인다 */
+/* 반복: 2~4프레임. 음수 지연으로 처음부터 첫 프레임이 보인다. 프레임 수마다 한 칸이 보이는 비율이 다르다(pfx-n2·3·4) */
 .pfx-loop g {
   animation: pfx-loop-4 calc(var(--pfx-n) * var(--pfx-ms)) steps(1, end) infinite;
   animation-delay: calc((var(--i) - var(--pfx-n)) * var(--pfx-ms));
+}
+
+.pfx-loop.pfx-n2 g { animation-name: pfx-loop-2; }
+.pfx-loop.pfx-n3 g { animation-name: pfx-loop-3; }
+
+/* 한 장짜리 그림은 그대로 보인다 */
+.pfx-still g {
+  visibility: visible;
+}
+
+@keyframes pfx-loop-2 {
+  0% { visibility: visible; }
+  50%,
+  100% { visibility: hidden; }
+}
+
+@keyframes pfx-loop-3 {
+  0% { visibility: visible; }
+  33.34%,
+  100% { visibility: hidden; }
 }
 
 @keyframes pfx-loop-4 {
   0% { visibility: visible; }
   25%,
   100% { visibility: hidden; }
+}
+
+/* 한 번 재생하는 큰 그림 (해일·날개·음파 등): 기준점(left·top)에서 --ax·--ay 비율만큼 왼쪽 위로 */
+.fx-sprite .pfx {
+  position: absolute;
+  transform: translate(calc(var(--ax) * -100%), calc(var(--ay) * -100%));
+}
+
+.fx-sprite.flip .pfx {
+  scale: -1 1;
 }
 
 /* 별 위치에서 터지는 이펙트: 기준점이 가운데 */
@@ -3062,4 +3092,21 @@ button.stat {
   .amb-anchor {
     display: none;
   }
+}
+
+/* 날아가는 도트 그림 (components/StarHelper.tsx의 proj): from → to로 --dur 동안, --arc만큼 위로 휘며. 기준점이 그림 가운데 */
+.fx-proj > span {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: fx-proj var(--dur) linear forwards;
+}
+
+.fx-proj > span.flip .pfx {
+  scale: -1 1;
+}
+
+@keyframes fx-proj {
+  0% { transform: translate(-50%, -50%); }
+  50% { transform: translate(calc(var(--dx) * 0.5 - 50%), calc(var(--dy) * 0.5 - var(--arc) - 50%)); }
+  100% { transform: translate(calc(var(--dx) - 50%), calc(var(--dy) - 50%)); }
 }

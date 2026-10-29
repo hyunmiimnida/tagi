@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CalendarIcon, HomeIcon, ListIcon, ProfileIcon } from "./Icons.tsx";
 import { useUser } from "../lib/user.tsx";
+import { WEAPONS } from "../lib/weapons.ts";
 import { MyPal } from "./MyPal.tsx";
 import { AmbientEffect } from "./PixelEffect.tsx";
 
@@ -18,7 +19,10 @@ const TABS: { href: string; label: string; Icon: typeof HomeIcon; match: (path: 
 export function BottomNav() {
   const pathname = usePathname();
   const { avatar } = useUser();
-  const effect = avatar && avatar.effect !== "none" ? avatar.effect : null;
+  // 희귀 이상 무기를 들면 그 무기의 이펙트가 캐릭터 주변을 떠다닌다 (영웅은 더 자주)
+  const weapon = avatar ? WEAPONS[avatar.weapon] : null;
+  const effect = weapon?.effect ?? null;
+  const every = weapon?.grade === "common" || weapon?.grade === "rare" ? 3200 : 1800;
 
   return (
     <nav className="bottom-nav" aria-label="주요 메뉴">
@@ -28,7 +32,7 @@ export function BottomNav() {
           <Link key={href} href={href} className={`tab ${active ? "active" : ""}`} aria-current={active ? "page" : undefined}>
             <span className="tab-icon">
               {active && <MyPal pose="sit" className="tab-pal" />}
-              {active && effect && <AmbientEffect key={effect} effect={effect} />}
+              {active && effect && <AmbientEffect key={effect} effect={effect} every={every} />}
               <Icon size={24} filled={active} />
             </span>
             <span>{label}</span>

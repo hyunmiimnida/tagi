@@ -180,15 +180,19 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - 색은 `app/globals.css`의 변수만 쓴다 (다크 모드가 자동으로 맞춰진다)
 - 공고 한 줄은 `components/ProgramRow.tsx`, 아이콘은 `components/Icons.tsx`를 재사용한다
 - 도트 캐릭터(중세 마법 RPG 2등신): **사용자마다 자기 캐릭터(아바타) 한 명**이 화면 곳곳에서 같이 다닌다. 그림은 `lib/pixel-pals.ts`의 글자 지도(머리 장식 `HEADWEAR`·옷 `OUTFITS` 부품 + 고른 색, A·a·O·o 글자가 고른 색으로 바뀜), 그리는 부품 `components/PixelPal.tsx`(`who`: 기본 캐릭터 이름이나 모습), 내 캐릭터는 `components/MyPal.tsx`, 색은 `--px-*` 변수. 깔끔한 바탕은 그대로 두고 장식으로만 쓴다(aria-hidden, 눌리지 않음, 글자·버튼을 가리지 않게)
-  - 내 캐릭터 모습(`Avatar`: 머리 장식·색, 옷·색, 무기)은 `lib/user.tsx`의 `avatar`. 처음 온 사람은 기본 네 모습(`PAL_PRESETS`, 코드 안 이름 wizard·knight·ranger·cleric) 중 하나를 무작위로 받는다. 이 기기에 저장, 로그인하면 `profiles.avatar`에도(`supabase/avatar.sql`). 저장값은 `toValidAvatar`로 확인
-  - 꾸밀 거리(외형·장비·효과)는 활동으로 해금하는 방향 (해금 조건은 아직 미정)
-  - 이펙트(`Avatar.effect`, `lib/pixel-effects.ts`, 12종): 별이 켜질 때 별 위치에서 터지는 burst(17×17·6프레임)와 탭 바 캐릭터 주변을 가끔 떠다니는 ambient(7×7·4프레임, rise·fall·drift·twinkle). 그리는 부품 `components/PixelEffect.tsx`(프레임을 겹쳐 두고 CSS `.pfx`가 하나씩 보여 줌). 그림은 Codex가 그리고 밝은·어두운 바탕에서 검수, 이펙트 전용 색은 `EFFECT_COLORS`(globals.css `--px-*`에도 같은 값). 기본은 "none"
+  - 내 캐릭터 모습(`Avatar`: 머리 장식·색, 옷·색, 무기)은 `lib/user.tsx`의 `avatar`. 처음 온 사람은 기본 네 모습(`PAL_PRESETS`, 코드 안 이름 wizard·knight·ranger·cleric) 중 하나를 무작위로 받는다. 이 기기에 저장, 로그인하면 `profiles.avatar`에도(`supabase/avatar.sql`). 저장값은 `toValidAvatar`로 확인(예전 무기 이름 sword·wand 등은 그 계열 일반 무기로)
+  - **무기**(`lib/weapons.ts`): 계열(검·지팡이·활·성물·펜·악기, 맨손) × 등급(일반·희귀·영웅·전설). 계열이 스킬 종류를, 등급이 화려함을 정한다. 일반은 모두 기본 지급(단출한 동작·이펙트 없음), 희귀부터는 정해진 경로로 얻는다(경로 미정 → 잠긴 채로 보임, `owns`). 전설은 자리 1개(`legend-1`, 디자인 예정). 갖지 않은 무기를 들고 있으면 그 계열 일반 무기로 바꾼다. `npm run dev`에서만 모든 무기를 가진 것으로 본다
+    - 무기 그림 `lib/weapon-sprites.ts`(계열별 자세 `FAMILY_POSES`, 동작 그림 위에 찍는 도장), 스킬 효과 그림 `lib/skill-fx.ts`(검기·마법탄·해일·날개·음파 등), 이펙트 `lib/pixel-effects.ts`(희귀·영웅 무기 12개에 하나씩, 별이 켜질 때 터지고 탭 바 캐릭터 주변을 떠다님, 영웅은 더 자주). 그림은 모두 Codex가 그리고 밝은·어두운 바탕에서 검수
+    - 화면에서는 무기와 스킬의 관계를 설명하지 않는다 (바꿔 보며 알아채는 숨은 재미)
+  - 이펙트 그리는 부품 `components/PixelEffect.tsx`: 프레임을 겹쳐 두고 CSS `.pfx`가 하나씩 보여 준다(한 번 재생 `pfx-once`, 반복 `pfx-loop` 2~4프레임). 이펙트 전용 색은 `EFFECT_COLORS`(globals.css `--px-*`에도 같은 값)
   - 아래 탭 바: 지금 탭 아이콘 위에 내 캐릭터가 걸터앉는다, 탭을 바꾸면 폴짝
   - `PeekPal`(`MyPeekPal`): 카드를 벽 삼아 두 손으로 윗선을 잡고 빼꼼(카드에 `pal-wall` 클래스). **한 화면에 한 곳만**: 홈 "마감 임박", 공고 목록, 캘린더, 프로필 첫 카드. 빈 화면에는 앉은 캐릭터
   - 움직임은 살짝만: 가끔 깜빡임, 빼꼼은 1픽셀 들썩임. 기기의 "동작 줄이기"를 켜면 멈춘다
-  - 말풍선(`bubble`: ?·!): 없는 공고·페이지(궁수 ?, `components/NotFound.tsx`), 목록을 못 받음(마법사 !, `components/ListError.tsx`)
-  - 관심 표시(☆)를 켜면 `components/StarHelper.tsx`가 내 캐릭터의 스킬로 별을 켠다. **스킬은 손에 든 무기로 정해진다**(`skillOf`: 마법 지팡이→마법, 검→칼, 활→활, 성직자 지팡이→기도, 맨손→달려가 주먹으로 톡). 직업으로 나누지 않고, 화면에서 이 연결을 설명하지 않는다(무기를 바꿔 보다 알아채는 숨은 재미). 동작 그림 24×17 `actionRows`, 무기 그림 `PROPS`·효과 그림 `EFFECT_ROWS` (`lib/pixel-pals.ts`). 출발은 그 카드에서 빼꼼하던 캐릭터(화면에 보일 때) 아니면 탭 바 캐릭터
-    - 칼(slash): 뛰어내려 달려가(다리 번갈아) 칼을 치켜들었다 휘두름(칼바람) → 뒤돌아 달려서 복귀 / 활(arrow): 일어나 활을 꺼내 당겨 쏨(화살이 별까지) → 숨음 / 마법(magic): 펑 사라져 별 옆에 나타나 마법 → 펑 복귀 / 기도(pray): 일어나 기도 → 빛기둥 → 숨음
+  - 말풍선(`bubble`: ?·!): 없는 공고·페이지(내 캐릭터 ?, `components/NotFound.tsx`), 목록을 못 받음(내 캐릭터 !, `components/ListError.tsx`)
+  - 관심 표시(☆)를 켜면 `components/StarHelper.tsx`가 내 무기의 스킬(`WEAPONS[무기].skill`, 스킬마다 `SKILLS` 대본)로 별을 켠다. 영웅 연출은 3배 크기. 출발은 그 카드에서 빼꼼하던 캐릭터(화면에 보일 때) 아니면 탭 바 캐릭터
+    - 일반: 목검 다가가서 베기 / 견습 지팡이 마법 구슬 / 단궁 화살 / 나무 지팡이 작은 빛 / 연필 다가가서 콕 / 리코더 음표 하나 / 맨손 달려가 주먹 톡
+    - 희귀: 청람검 검기 / 별빛 지팡이 별 에너지탄(반짝이 꼬리) / 바람활 바람 화살 / 성광 지팡이 빛기둥 / 만년필 잉크 동그라미 / 기타 음표 3개
+    - 영웅: 벚꽃검 검기 3연발 / 해일의 지팡이 해일 / 유성궁 유성 화살비 / 천사의 홀 날개 후광·빛기둥·깃털 / 깃펜 글자 폭풍·도장 / 그랜드 하프 무지개 음파
     - 별은 맞는 순간 노랗게 바뀌며 반짝(`components/FavoriteButton.tsx`의 `star-burst`). 저장은 누르자마자 되고, 3초 안에 못 오면 그냥 켬. 끌 때·동작 줄이기·한 명이 다녀오는 중에는 캐릭터 없이 바로
   - 공유 미리보기 이미지(`lib/og.tsx`)의 흰 카드 위에도 마법사가 빼꼼(`palSvg`, 색 값은 `PAL_HEX` = globals.css의 `--px-*`)
   - 더 넣지 않기로 한 것(과해짐): 도트 글꼴, 도트 테두리·배경, 공고마다 캐릭터, RPG 말투(퀘스트), 경험치·레벨 숫자, 소리, 캐릭터의 말(말풍선은 ?·! 기호만)

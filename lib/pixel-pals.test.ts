@@ -79,7 +79,7 @@ test("캐릭터는 부품(머리 장식·옷)과 색을 바꿔 꾸밀 수 있다
   // 기본 캐릭터 이름과 그 모습을 넘겼을 때 같은 그림
   for (const name of names) assert.deepEqual(palRows(PAL_PRESETS[name], "sit"), palRows(name, "sit"));
   // 마법사 모자에 기사 갑옷, 색은 초록 모자·하얀 옷
-  const mixed = palRows({ headwear: "wizard-hat", headwearColor: "green", outfit: "armor", outfitColor: "white", weapon: "wand", effect: "none" }, "sit");
+  const mixed = palRows({ headwear: "wizard-hat", headwearColor: "green", outfit: "armor", outfitColor: "white", weapon: "apprentice-wand" }, "sit");
   assert.equal(mixed.length, PAL_HEIGHT.sit);
   const hat = mixed.slice(0, 6).join("");
   const body = mixed.slice(12).join("");
@@ -98,15 +98,14 @@ test("저장해 둔 캐릭터 값은 그릴 수 있는 것만 받고, 처음 온
   }
   assert.deepEqual(randomAvatar(() => 0), PAL_PRESETS.wizard);
   assert.deepEqual(randomAvatar(() => 0.99), PAL_PRESETS.cleric);
-  // 스킬은 무기를 따른다: 사제복 차림이어도 검을 들면 칼 스킬(칼날 = 강철색 M)
+  // 예전에 저장한 무기 이름(계열 이름)은 그 계열의 일반 무기로 바뀐다
+  assert.equal(toValidAvatar({ ...PAL_PRESETS.cleric, weapon: "sword" })?.weapon, "wooden-sword");
+  assert.equal(toValidAvatar({ ...PAL_PRESETS.cleric, weapon: "none", effect: "petal" })?.weapon, "bare-hands");
+  // 손에 든 무기는 무기를 따른다: 사제복 차림이어도 검을 들면 칼을 치켜든다
   const { actionRows } = await import("./pixel-pals.ts");
-  assert.ok(!actionRows("cleric", "windup").join("").includes("M"));
-  assert.ok(actionRows({ ...PAL_PRESETS.cleric, weapon: "sword" }, "windup").join("").includes("M"));
-  const { skillOf } = await import("./pixel-pals.ts");
-  assert.equal(skillOf({ ...PAL_PRESETS.cleric, weapon: "bow" }), "arrow");
-  // 맨손이면 달려가 주먹으로 톡: 주먹(피부색 S)이 몸 오른쪽(16칸 이후)으로 나온다
-  const bare = { ...PAL_PRESETS.knight, weapon: "none" as const };
-  assert.equal(skillOf(bare), "tap");
+  assert.notDeepEqual(actionRows({ ...PAL_PRESETS.cleric, weapon: "wooden-sword" }, "windup"), actionRows("cleric", "windup"));
+  // 맨손이면 주먹(피부색 S)이 몸 오른쪽(16칸 이후)으로 나온다
+  const bare = { ...PAL_PRESETS.knight, weapon: "bare-hands" as const };
   assert.ok(actionRows(bare, "punch").some((row) => row.slice(16).includes("S")));
   assert.notDeepEqual(actionRows(bare, "stand"), actionRows("knight", "stand")); // 같은 차림이어도 맨손은 칼을 들지 않는다
 });

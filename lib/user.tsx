@@ -5,6 +5,15 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import { toDateString } from "./filter.ts";
 import { randomAvatar, toValidAvatar } from "./pixel-pals.ts";
 import type { Avatar } from "./pixel-pals.ts";
+import { WEAPONS, WEAPON_IDS, owns, starterOf } from "./weapons.ts";
+
+// 얻은 무기(희귀 이상). 얻는 방법이 아직 없어 지금은 비어 있다 (일반 무기는 누구나 가진다).
+// 내 컴퓨터에서 화면을 시험할 때(npm run dev)만 모든 무기를 가진 것으로 본다
+const OWNED_WEAPONS: ReadonlySet<string> = new Set(process.env.NODE_ENV === "development" ? WEAPON_IDS : []);
+
+// 갖지 않은 무기를 들고 있으면(저장값을 고쳤거나 무기를 잃은 경우) 그 계열의 일반 무기로 바꾼다
+const holdable = (avatar: Avatar): Avatar =>
+  owns(OWNED_WEAPONS, avatar.weapon) ? avatar : { ...avatar, weapon: starterOf(WEAPONS[avatar.weapon].family) };
 
 // 로그인, 학교 설정, 관심 표시를 한곳에서 관리한다.
 // Supabase 설정(.env.local)이 없으면 "체험 모드"로 동작해 이 브라우저에만 저장한다.
@@ -64,7 +73,8 @@ const AVATAR_KEY = "avatar";
 
 function readLocalAvatar(): Avatar | null {
   try {
-    return toValidAvatar(JSON.parse(readLocal(AVATAR_KEY) ?? "null"));
+    const saved = toValidAvatar(JSON.parse(readLocal(AVATAR_KEY) ?? "null"));
+    return saved && holdable(saved);
   } catch {
     return null;
   }
@@ -190,7 +200,8 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       .maybeSingle()
       .then(({ data, error }) => {
         if (cancelled || error) return;
-        const saved = toValidAvatar((data as { avatar?: unknown } | null)?.avatar);
+        const valid = toValidAvatar((data as { avatar?: unknown } | null)?.avatar);
+        const saved = valid && holdable(valid);
         if (saved) {
           setAvatarState(saved);
           writeLocal(AVATAR_KEY, JSON.stringify(saved));
