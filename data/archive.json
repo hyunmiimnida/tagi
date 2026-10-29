@@ -88,7 +88,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T03:40:21.463Z",
     "firstSeenAt": "2026-10-01T03:40:21.463Z",
-    "summary": "글로벌공생 교과·비교과 활동에서 배운 점과 경험을 수기로 써서 공모전에 참여해요"
+    "summary": "글로벌공생 교과·비교과 활동에서 배운 점과 경험을 수기로 써서 공모전에 참여해요",
+    "seriesId": "yu-news-226707460"
   },
   {
     "id": "yu-news-229599610",
@@ -118635,7 +118636,8 @@
     "collectedAt": "2026-10-02T18:54:31.661Z",
     "summary": "외국인 유학생이 글로벌장학금으로 수업료를 지원받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:54:31.661Z"
+    "firstSeenAt": "2026-10-02T18:54:31.661Z",
+    "seriesId": "sogang-scholarship-550011"
   },
   {
     "id": "sogang-scholarship-549726",
@@ -634704,7 +634706,8 @@
     "collectedAt": "2026-10-01T04:30:02.813Z",
     "firstSeenAt": "2026-10-01T04:30:02.813Z",
     "summary": "융합 교육과정 참여 경험을 수기로 출품하고 상금에 도전해요",
-    "noApplication": false
+    "noApplication": false,
+    "seriesId": "yu-news-226707460"
   },
   {
     "id": "yu-news-226612498",
