@@ -128,7 +128,7 @@ export function WeaponReveal() {
         <div className="reveal-text" aria-live="polite">
           {shown && (
             <>
-              <p className="reveal-name">{name}</p>
+              <p className={`reveal-name grade-name-${grade}`}>{name}</p>
               <p className="reveal-flavor">{weapon ? weapon.flavor : SHARD_FLAVOR}</p>
               {revealing.kind === "weapon" && revealing.duplicate && (
                 <p className="reveal-refund">이미 가진 무기라 열쇠조각 {revealing.refund}개를 돌려받았어요</p>

@@ -16,7 +16,7 @@ import { requestStarHelper } from "./StarHelper.tsx";
 import { TreasureBox } from "./TreasureBox.tsx";
 
 // 내 캐릭터 꾸미기 (/my/avatar): 무기 도감에서 무기를 골라 장착하고, 머리 장식·옷과 그 색을 바꾼다. 고르면 바로 내 캐릭터에 반영된다.
-// 등급은 글자로 쓰지 않고 무기를 감싼 아우라 색으로만 보여 준다: 일반 없음, 희귀 흰빛, 영웅 보랏빛, 전설 호박빛 (app/globals.css의 .aura-*)
+// 등급은 글자로 쓰지 않는다: 무기를 감싼 아우라(.aura-*)와 이름 색(.grade-name-*: 일반 회색·희귀 파랑·영웅 보라·전설 호박), 아래 칸은 등급마다 한 줄 (app/globals.css)
 // 아직 얻지 못한 무기는 아우라는 그대로 두고 그림은 실루엣, 이름은 ???. 무기와 스킬의 관계는 설명하지 않는다 (써 보며 알아채는 재미)
 
 const HEADWEARS = Object.keys(HEADWEAR_NAMES) as Headwear[];
@@ -71,7 +71,7 @@ export function AvatarEditor() {
   // 아래 작은 칸 줄에서 지금 보는 무기가 보이게 옮긴다
   useEffect(() => {
     if (index === null) return;
-    stripRef.current?.children[index]?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+    stripRef.current?.querySelector(`[data-i="${index}"]`)?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
   }, [index]);
 
   const ownedCount = useMemo(() => CODEX.filter((id) => owns(user.ownedWeapons, id)).length, [user.ownedWeapons]);
@@ -157,7 +157,7 @@ export function AvatarEditor() {
           )}
           {equipped.effect && <AmbientEffect key={equipped.effect} effect={equipped.effect} every={equipped.grade === "rare" ? 2400 : 1400} />}
         </div>
-        <p className="avatar-weapon-name">{equipped.name}</p>
+        <p className={`avatar-weapon-name grade-name-${equipped.grade}`}>{equipped.name}</p>
         <div className="avatar-try">
           <div ref={stageRef} className="avatar-try-pal" aria-hidden="true">
             <PixelSprite rows={actionRows(avatar, "stand")} scale={2} />
@@ -207,7 +207,7 @@ export function AvatarEditor() {
                 </span>
               )}
             </div>
-            <p className="codex-name">{shownLocked ? "???" : shown.name}</p>
+            <p className={`codex-name grade-name-${shown.grade}`}>{shownLocked ? "???" : shown.name}</p>
             <p className="codex-flavor">{shownLocked ? (shown.grade === "legendary" ? "아직 잠들어 있는 전설이에요." : "보물상자에서 나올지도 몰라요.") : (shown.flavor ?? "")}</p>
           </div>
           <button type="button" className="codex-arrow" aria-label="다음 무기" onClick={() => go(1)}>
@@ -229,28 +229,34 @@ export function AvatarEditor() {
           )}
         </div>
 
-        {/* 작은 칸 줄: 눌러서 바로 그 무기로 */}
-        <div className="codex-strip" ref={stripRef} role="list">
-          {CODEX.map((id, i) => {
-            const locked = !owns(user.ownedWeapons, id);
-            const label = locked ? "잠긴 무기" : WEAPONS[id].name;
-            return (
-              <button
-                key={id}
-                type="button"
-                role="listitem"
-                className={`codex-slot aura aura-${WEAPONS[id].grade} ${i === index ? "on" : ""} ${avatar.weapon === id ? "worn" : ""} ${locked ? "locked" : ""}`}
-                aria-label={avatar.weapon === id ? `${label} (장착 중)` : label}
-                aria-current={i === index}
-                onClick={() => {
-                  setIndex(i);
-                  setNotice("");
-                }}
-              >
-                <PixelSprite rows={weaponRows(id, locked)} scale={2} />
-              </button>
-            );
-          })}
+        {/* 작은 칸: 등급마다 한 줄 (줄 앞의 색 막대가 등급 색), 눌러서 바로 그 무기로 */}
+        <div className="codex-rows" ref={stripRef}>
+          {GRADES.map((grade) => (
+            <div key={grade} className={`codex-row grade-${grade}`} role="list">
+              {CODEX.filter((id) => WEAPONS[id].grade === grade).map((id) => {
+                const i = CODEX.indexOf(id);
+                const locked = !owns(user.ownedWeapons, id);
+                const label = locked ? "잠긴 무기" : WEAPONS[id].name;
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    role="listitem"
+                    data-i={i}
+                    className={`codex-slot aura aura-${grade} ${i === index ? "on" : ""} ${avatar.weapon === id ? "worn" : ""} ${locked ? "locked" : ""}`}
+                    aria-label={avatar.weapon === id ? `${label} (장착 중)` : label}
+                    aria-current={i === index}
+                    onClick={() => {
+                      setIndex(i);
+                      setNotice("");
+                    }}
+                  >
+                    <PixelSprite rows={weaponRows(id, locked)} scale={2} />
+                  </button>
+                );
+              })}
+            </div>
+          ))}
         </div>
         <p className="avatar-notice" role="status">
           {notice}

@@ -3,14 +3,14 @@ import type { WeaponDef } from "./weapons.ts";
 // 추가 무기: Codex가 기획하고 그린 무기. 스킬은 대본(recipe)으로 정한다 (lib/weapons.ts의 RecipeStep)
 // skill은 대본이 없을 때 쓸 그 계열의 일반 스킬
 export const EXTRA_WEAPONS = {
-  // 재킷 지퍼의 은빛 이빨을 칼날로 엮은 작은 검
+  // 은빛 이빨이 촘촘히 맞물리도록 엮은 작은 검
   "zip-blade": {
-    name: "지퍼검",
+    name: "은니검",
     family: "sword",
     grade: "rare",
     skill: "approach-slash",
     effect: "zipper",
-    flavor: "재킷 지퍼의 은빛 이빨을 칼날로 엮은 작은 검.",
+    flavor: "은빛 이빨이 촘촘히 맞물리도록 엮은 작은 검. 칼날을 닫으면 틈 하나 없이 하나로 잠긴다.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "strike",ms: 200},
@@ -19,14 +19,14 @@ export const EXTRA_WEAPONS = {
       {do: "hide"},
     ],
   },
-  // 강의실 시곗바늘을 닮은 금빛 장검
+  // 멈춰 버린 탑시계에서 떼어 낸 금빛 시침을 벼려 만든 장검
   "hour-blade": {
-    name: "시곗바늘검",
+    name: "영겁의 시침검",
     family: "sword",
     grade: "heroic",
     skill: "approach-slash",
     effect: "clockwork",
-    flavor: "강의실 시곗바늘을 닮은 금빛 장검.",
+    flavor: "멈춰 버린 탑시계에서 떼어 낸 금빛 시침을 벼려 만든 장검. 칼끝이 가리키는 곳은 늘 한 박자 늦게 시간이 흐른다. 검을 쥔 이는 가끔 이미 지나간 순간을 한 번 더 살게 된다고 한다.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "windup",ms: 170},
@@ -39,14 +39,14 @@ export const EXTRA_WEAPONS = {
       {do: "hide"},
     ],
   },
-  // 축제 노점의 바삭한 격자 달고나를 얹은 마법봉
+  // 녹인 설탕을 굳혀 격자 무늬를 새긴 마법봉
   "dalgona-wand": {
-    name: "달고나봉",
+    name: "호박당 마법봉",
     family: "staff",
     grade: "rare",
     skill: "magic-orb",
     effect: "crumb",
-    flavor: "축제 노점의 바삭한 격자 달고나를 얹은 마법봉.",
+    flavor: "녹인 설탕을 굳혀 격자 무늬를 새긴 마법봉. 장터 아이들은 마력보다 단내를 먼저 알아챈다.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "cast",ms: 200},
@@ -55,14 +55,14 @@ export const EXTRA_WEAPONS = {
       {do: "hide"},
     ],
   },
-  // 동아리 화분에 유리 온실을 씌운 새싹 지팡이
+  // 유리 돔 안에 끝나지 않는 봄을 가둔 지팡이
   "glasshouse-staff": {
-    name: "온실지팡이",
+    name: "유리정원 지팡이",
     family: "staff",
     grade: "heroic",
     skill: "magic-orb",
     effect: "leaf",
-    flavor: "동아리 화분에 유리 온실을 씌운 새싹 지팡이.",
+    flavor: "유리 돔 안에 끝나지 않는 봄을 가둔 지팡이. 돔 속 새싹은 주인의 마음이 맑은 날에만 한 잎씩 자란다. 마지막 잎이 펼쳐지는 날, 잠들어 있던 정원 전체가 깨어난다는 전설이 있다.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "cast",ms: 170},
@@ -74,14 +74,14 @@ export const EXTRA_WEAPONS = {
       {do: "hide"},
     ],
   },
-  // 편지 봉투와 우편함 곡선을 품은 산호빛 활
+  // 왕국 전령들이 봉인한 서신을 화살에 매어 쏘던 활
   "post-bow": {
-    name: "우편궁",
+    name: "전령의 활",
     family: "bow",
     grade: "rare",
     skill: "arrow",
     effect: "postmark",
-    flavor: "편지 봉투와 우편함 곡선을 품은 산호빛 활.",
+    flavor: "왕국 전령들이 봉인한 서신을 화살에 매어 쏘던 활. 아무리 먼 성벽이라도 소식은 반드시 닿았다.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "draw",ms: 200},
@@ -90,14 +90,14 @@ export const EXTRA_WEAPONS = {
       {do: "hide"},
     ],
   },
-  // 공예 동아리의 금빛 실패와 날실로 만든 활
+  // 금빛 실패에서 풀려나온 운명의 실로 시위를 건 활
   "loom-bow": {
-    name: "직조궁",
+    name: "운명을 잣는 활",
     family: "bow",
     grade: "heroic",
     skill: "arrow",
     effect: "weave",
-    flavor: "공예 동아리의 금빛 실패와 날실로 만든 활.",
+    flavor: "금빛 실패에서 풀려나온 운명의 실로 시위를 건 활. 화살이 날아간 자리에는 보이지 않는 실이 남아 쏜 이와 과녁을 영영 이어 둔다. 그 실을 끊으려 한 자는 많았지만 성공한 이는 아무도 없다.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "draw",ms: 170},
@@ -110,14 +110,14 @@ export const EXTRA_WEAPONS = {
       {do: "hide"},
     ],
   },
-  // 새 학기 사물함의 첫 문을 여는 금빛 열쇠 성물
+  // 주인이 바뀔 때마다 새로운 문 하나를 연다는 금빛 열쇠
   "lucky-key": {
-    name: "행운열쇠",
+    name: "행운의 열쇠",
     family: "relic",
     grade: "rare",
     skill: "holy-dot",
     effect: "coin",
-    flavor: "새 학기 사물함의 첫 문을 여는 금빛 열쇠 성물.",
+    flavor: "주인이 바뀔 때마다 새로운 문 하나를 연다는 금빛 열쇠. 어떤 문인지는 열어 보기 전까지 아무도 모른다.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "pray",ms: 200},
@@ -126,14 +126,14 @@ export const EXTRA_WEAPONS = {
       {do: "hide"},
     ],
   },
-  // 캠퍼스에서 만날 장소를 가리키는 청록 나침반 성물
+  // 북쪽 대신 반드시 지켜야 할 약속이 있는 곳을 가리키는 나침반
   "promise-compass": {
-    name: "약속나침반",
+    name: "맹약의 나침반",
     family: "relic",
     grade: "heroic",
     skill: "holy-dot",
     effect: "sparkle",
-    flavor: "캠퍼스에서 만날 장소를 가리키는 청록 나침반 성물.",
+    flavor: "북쪽 대신 반드시 지켜야 할 약속이 있는 곳을 가리키는 나침반. 약속이 이루어지면 바늘은 잠시 멈췄다가 다음 약속을 찾아 다시 돈다. 오래 품고 다닌 이들은 바늘 끝에 늘 누군가 기다리고 있었다고 말한다.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "pray",ms: 170},
@@ -145,14 +145,14 @@ export const EXTRA_WEAPONS = {
       {do: "hide"},
     ],
   },
-  // 하얀 수정액과 하늘색 그립을 가진 통통한 펜
+  // 적은 것을 하얗게 덮어 없던 일로 만드는 펜
   "correction-pen": {
-    name: "수정펜",
+    name: "망각의 백필",
     family: "pen",
     grade: "rare",
     skill: "pencil-poke",
     effect: "snow",
-    flavor: "하얀 수정액과 하늘색 그립을 가진 통통한 펜.",
+    flavor: "적은 것을 하얗게 덮어 없던 일로 만드는 펜. 지운 자리에는 언제나 서늘한 기운이 남는다.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "poke",ms: 200},
@@ -161,14 +161,14 @@ export const EXTRA_WEAPONS = {
       {do: "hide"},
     ],
   },
-  // 건축 과제의 설계선을 꺼내는 금테 제도펜
+  // 사라진 왕도의 성벽을 처음 그었다는 금테 펜
   "drafting-pen": {
-    name: "제도펜",
+    name: "설계자의 금필",
     family: "pen",
     grade: "heroic",
     skill: "pencil-poke",
     effect: "blueprint",
-    flavor: "건축 과제의 설계선을 꺼내는 금테 제도펜.",
+    flavor: "사라진 왕도의 성벽을 처음 그었다는 금테 펜. 펜 끝에서 뽑아낸 선은 허공에서도 곧게 서서 쉽게 흐트러지지 않는다. 설계도가 완성되는 순간 종이 위 성채에 아주 잠깐 불이 켜진다고 한다.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "poke",ms: 170},
@@ -180,14 +180,14 @@ export const EXTRA_WEAPONS = {
       {do: "hide"},
     ],
   },
-  // 동아리 합주의 짝짝 소리를 담은 귤빛 나무 조개 악기
+  // 사막의 무희들이 손끝에 쥐고 박자를 맞추던 나무 악기
   "castanets": {
-    name: "캐스터네츠",
+    name: "무희의 캐스터네츠",
     family: "instrument",
     grade: "rare",
     skill: "note-float",
     effect: "bubble",
-    flavor: "동아리 합주의 짝짝 소리를 담은 귤빛 나무 조개 악기.",
+    flavor: "사막의 무희들이 손끝에 쥐고 박자를 맞추던 나무 악기. 두 번 맞부딪치면 모닥불도 춤을 따라 흔들린다.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "play",ms: 200},
@@ -196,14 +196,14 @@ export const EXTRA_WEAPONS = {
       {do: "hide"},
     ],
   },
-  // 축제 부스처럼 알록달록한 건반과 두 채를 단 실로폰
+  // 한 해의 마지막 축제에서 마을 아이들이 건반을 하나씩 깎아 모아 만든 종금
   "campus-xylophone": {
-    name: "축제실로폰",
+    name: "축제의 종금",
     family: "instrument",
     grade: "heroic",
     skill: "note-float",
     effect: "weave",
-    flavor: "축제 부스처럼 알록달록한 건반과 두 채를 단 실로폰.",
+    flavor: "한 해의 마지막 축제에서 마을 아이들이 건반을 하나씩 깎아 모아 만든 종금. 건반마다 색도 크기도 제각각이지만 함께 울리면 어긋나는 음이 하나도 없다. 축제가 끝난 밤에도 두 채를 쥐면 멀리서 웃음소리가 따라 울린다.",
     recipe: [
       {do: "standUp"},
       {do: "pose",pose: "play",ms: 170},

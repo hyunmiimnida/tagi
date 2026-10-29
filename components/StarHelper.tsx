@@ -237,7 +237,7 @@ export function StarHelper() {
             await sleep(100);
             await goHome();
           },
-          // 연필: 달려가 연필 끝으로 콕
+          // 서기의 철필: 달려가 펜 끝으로 콕
           "pencil-poke": async () => {
             await goToStar();
             frame("poke");
@@ -275,7 +275,7 @@ export function StarHelper() {
             await sleep(300);
             await hideAgain();
           },
-          // 나무 지팡이: 일어나 기도 → 별에 작은 빛 한 점
+          // 참나무 지팡이: 일어나 기도 → 별에 작은 빛 한 점
           "holy-dot": async () => {
             await standUp();
             frame("pray");
@@ -297,7 +297,7 @@ export function StarHelper() {
             await sleep(360);
             await hideAgain();
           },
-          // 리코더: 일어나 불면 음표 하나가 둥실 날아가 별에 닿음
+          // 목동의 피리: 일어나 불면 음표 하나가 둥실 날아가 별에 닿음
           "note-float": async () => {
             await standUp();
             frame("play");
@@ -351,7 +351,7 @@ export function StarHelper() {
           await sleep(320);
           await hideAgain();
         };
-        // 만년필: 달려가 펜으로 별을 빙 둘러 잉크 동그라미
+        // 밤잉크 펜: 달려가 펜으로 별을 빙 둘러 잉크 동그라미
         SKILLS["ink-circle"] = async () => {
           await goToStar();
           frame("poke");

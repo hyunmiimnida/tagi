@@ -3358,15 +3358,44 @@ button.stat {
 }
 
 /* 작은 칸 줄 (가방) */
-.codex-strip {
+/* 아래 작은 칸: 등급마다 한 줄. 줄 앞 색 막대가 등급 색 (글자로 쓰지 않음), 넘치면 옆으로 밀어 본다 */
+.codex-rows {
+  display: grid;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.codex-row {
   display: flex;
   gap: 8px;
-  margin-top: 14px;
-  padding: 6px 2px 10px;
+  padding: 4px 2px 6px 12px;
   overflow-x: auto;
   scroll-snap-type: x proximity;
   scrollbar-width: thin;
+  position: relative;
 }
+
+.codex-row::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--grade);
+}
+
+.grade-common { --grade: #9aa3b1; }
+.grade-rare { --grade: #3d9bff; }
+.grade-heroic { --grade: #a66bff; }
+.grade-legendary { --grade: #ff9f1c; }
+
+/* 무기 이름 색 (이름은 늘 어두운 진열장·연출 위에 있다) */
+.grade-name-common { color: #d5d9e0 !important; }
+.grade-name-rare { color: #6cc0ff !important; }
+.grade-name-heroic { color: #c79bff !important; }
+.grade-name-legendary { color: #ffbf47 !important; }
 
 .codex-slot {
   flex: none;

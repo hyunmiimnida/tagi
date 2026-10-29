@@ -25,13 +25,13 @@ export type SkillId =
   | "arrow" // 단궁: 화살 한 발
   | "wind-arrow" // 바람활: 바람 화살
   | "meteor-rain" // 유성궁: 유성 화살비
-  | "holy-dot" // 나무 지팡이: 작은 빛
+  | "holy-dot" // 참나무 지팡이: 작은 빛
   | "light-pillar" // 성광 지팡이: 빛기둥
   | "angel-wings" // 천사의 홀: 날개 후광과 빛기둥
-  | "pencil-poke" // 연필: 다가가서 콕
-  | "ink-circle" // 만년필: 잉크 동그라미
+  | "pencil-poke" // 서기의 철필: 다가가서 콕
+  | "ink-circle" // 밤잉크 펜: 잉크 동그라미
   | "letter-storm" // 깃펜: 글자 폭풍과 도장
-  | "note-float" // 리코더: 음표 하나
+  | "note-float" // 목동의 피리: 음표 하나
   | "note-line" // 기타: 음표 여러 개
   | "sound-ring"; // 그랜드 하프: 무지개 음파
 
@@ -56,27 +56,27 @@ export interface WeaponDef {
 }
 
 const BASE_WEAPONS = {
-  "bare-hands": { name: "맨손", family: "fist", grade: "common", skill: "fist-tap", effect: null, flavor: "언제나 함께하는 두 손." },
-  "wooden-sword": { name: "목검", family: "sword", grade: "common", skill: "approach-slash", effect: null, flavor: "수련장 한쪽에 늘 세워져 있던 나무 검." },
-  "apprentice-wand": { name: "견습 지팡이", family: "staff", grade: "common", skill: "magic-orb", effect: null, flavor: "입학 첫날 받은 견습생용 지팡이." },
-  "short-bow": { name: "단궁", family: "bow", grade: "common", skill: "arrow", effect: null, flavor: "가볍고 다루기 쉬운 짧은 활." },
-  "oak-staff": { name: "나무 지팡이", family: "relic", grade: "common", skill: "holy-dot", effect: null, flavor: "오래된 참나무를 깎아 만든 지팡이." },
-  pencil: { name: "연필", family: "pen", grade: "common", skill: "pencil-poke", effect: null, flavor: "시험 날 꼭 챙기는 노란 연필." },
-  recorder: { name: "리코더", family: "instrument", grade: "common", skill: "note-float", effect: null, flavor: "음악 시간의 추억이 담긴 리코더." },
+  "bare-hands": { name: "맨손", family: "fist", grade: "common", skill: "fist-tap", effect: null, flavor: "모든 모험가가 처음 쥐어 본 무기는 자기 주먹이었다." },
+  "wooden-sword": { name: "목검", family: "sword", grade: "common", skill: "approach-slash", effect: null, flavor: "수련생들의 손때가 반질반질하게 밴 나무 검." },
+  "apprentice-wand": { name: "견습 지팡이", family: "staff", grade: "common", skill: "magic-orb", effect: null, flavor: "견습 마법사에게 처음 쥐여 주는, 끝이 뭉툭한 지팡이." },
+  "short-bow": { name: "단궁", family: "bow", grade: "common", skill: "arrow", effect: null, flavor: "사냥꾼의 아이들이 가장 먼저 배우는 가볍고 짧은 활." },
+  "oak-staff": { name: "참나무 지팡이", family: "relic", grade: "common", skill: "holy-dot", effect: null, flavor: "마을 사제가 순례길에 짚고 다니던 오래된 참나무 지팡이." },
+  pencil: { name: "서기의 철필", family: "pen", grade: "common", skill: "pencil-poke", effect: null, flavor: "왕궁 서기들이 장부를 적을 때 쓰는, 끝이 단단한 철필." },
+  recorder: { name: "목동의 피리", family: "instrument", grade: "common", skill: "note-float", effect: null, flavor: "언덕 위 양 떼를 불러 모으던 소박한 나무 피리." },
 
-  "azure-blade": { name: "청람검", family: "sword", grade: "rare", skill: "slash-wave", effect: "bolt", flavor: "푸른 강철을 벼려 만든 검." },
-  "starlight-wand": { name: "별빛 지팡이", family: "staff", grade: "rare", skill: "star-bolt", effect: "snow", flavor: "밤하늘 별빛을 담아 둔 지팡이." },
-  "wind-bow": { name: "바람활", family: "bow", grade: "rare", skill: "wind-arrow", effect: "leaf", flavor: "잎사귀 장식에 바람이 깃든 활." },
-  "radiant-staff": { name: "성광 지팡이", family: "relic", grade: "rare", skill: "light-pillar", effect: "heart", flavor: "한낮의 햇살을 머금은 지팡이." },
-  "fountain-pen": { name: "만년필", family: "pen", grade: "rare", skill: "ink-circle", effect: "shadow", flavor: "밤새 쓴 리포트의 잉크가 아직 마르지 않았다." },
-  guitar: { name: "기타", family: "instrument", grade: "rare", skill: "note-line", effect: "note", flavor: "동아리방에서 가장 많이 울린 기타." },
+  "azure-blade": { name: "청람검", family: "sword", grade: "rare", skill: "slash-wave", effect: "bolt", flavor: "깊은 호수의 푸른빛이 날에 스며든 검. 맑은 새벽이면 칼끝에 이슬이 맺힌다." },
+  "starlight-wand": { name: "별빛 지팡이", family: "staff", grade: "rare", skill: "star-bolt", effect: "snow", flavor: "별이 가장 많이 뜨는 밤에만 깎을 수 있다는 지팡이. 끝에 매단 수정은 한낮에도 희미하게 반짝인다." },
+  "wind-bow": { name: "바람활", family: "bow", grade: "rare", skill: "wind-arrow", effect: "leaf", flavor: "바람이 잠들지 않는 고원에서 만든 활. 시위를 당기면 주변 풀잎이 먼저 고개를 숙인다." },
+  "radiant-staff": { name: "성광 지팡이", family: "relic", grade: "rare", skill: "light-pillar", effect: "heart", flavor: "새해 첫 햇살을 받아 축성한 지팡이. 들고 걸으면 어두운 회랑에서도 그림자가 짧아진다." },
+  "fountain-pen": { name: "밤잉크 펜", family: "pen", grade: "rare", skill: "ink-circle", effect: "shadow", flavor: "마르지 않는 밤의 잉크를 품은 펜. 이것으로 쓴 글자는 해가 뜨기 전까지 결코 번지지 않는다." },
+  guitar: { name: "음유시인의 류트", family: "instrument", grade: "rare", skill: "note-line", effect: "note", flavor: "떠돌이 음유시인이 백 곳의 여관을 돌며 연주한 류트. 줄마다 다른 마을의 노래가 배어 있다." },
 
-  "blossom-blade": { name: "벚꽃검 '춘풍'", family: "sword", grade: "heroic", skill: "blossom-wave", effect: "petal", flavor: "봄바람의 이름을 받은 벚꽃빛 검." },
-  "tide-staff": { name: "해일의 지팡이", family: "staff", grade: "heroic", skill: "tsunami", effect: "bubble", flavor: "바다의 숨결이 소용돌이치는 지팡이." },
-  "meteor-bow": { name: "유성궁", family: "bow", grade: "heroic", skill: "meteor-rain", effect: "flame", flavor: "별똥별이 떨어진 밤에 만들어졌다는 활." },
-  "angel-scepter": { name: "천사의 홀", family: "relic", grade: "heroic", skill: "angel-wings", effect: "sparkle", flavor: "작은 날개가 달린 성스러운 홀." },
-  "victory-quill": { name: "깃펜 '필승'", family: "pen", grade: "heroic", skill: "letter-storm", effect: "coin", flavor: "\"필승\"을 새긴 깃털 펜. 합격을 부른다는 소문이 있다." },
-  "grand-harp": { name: "그랜드 하프", family: "instrument", grade: "heroic", skill: "sound-ring", effect: "rainbow", flavor: "무지갯빛 현이 걸린 커다란 하프." },
+  "blossom-blade": { name: "벚꽃검 '춘풍'", family: "sword", grade: "heroic", skill: "blossom-wave", effect: "petal", flavor: "누군가의 기억 속에 아직 선명한 어느 봄날의 벚꽃 길을 그대로 담아낸 검. 칼집에서 뽑는 순간 바람의 결이 바뀌고, 지나간 자리마다 늦게 진 꽃잎이 흩날린다. 처음 이 검을 벼린 이는 다시 오지 않을 봄을 붙잡아 두고 싶었다고 한다." },
+  "tide-staff": { name: "해일의 지팡이", family: "staff", grade: "heroic", skill: "tsunami", effect: "bubble", flavor: "잠든 바다의 깊은 숨을 한 줌 떠서 가둔 지팡이. 귀를 대면 먼 수평선에서 밀려오는 파도 소리가 들리고, 끝에 맺힌 물방울은 결코 마르지 않는다. 바다가 성을 내는 밤이면 지팡이도 함께 들썩인다고 전해진다." },
+  "meteor-bow": { name: "유성궁", family: "bow", grade: "heroic", skill: "meteor-rain", effect: "flame", flavor: "별똥별이 쏟아지던 밤, 하늘에서 떨어진 운석 조각으로 활대를 깎았다. 시위는 별의 꼬리를 꼬아 만들어 어둠 속에서 은은히 타오른다. 이 활로 쏜 화살은 땅에 닿기 전에 소원 하나를 듣고 간다는 이야기가 있다." },
+  "angel-scepter": { name: "천사의 홀", family: "relic", grade: "heroic", skill: "angel-wings", effect: "sparkle", flavor: "하늘 회랑을 지키던 수호천사가 땅으로 내려오며 남긴 홀. 머리에 달린 작은 날개는 누군가의 기도를 들을 때마다 살며시 떨린다. 이 홀 앞에서는 거짓말이 목에 걸려 나오지 않는다고 한다." },
+  "victory-quill": { name: "깃펜 '필승'", family: "pen", grade: "heroic", skill: "letter-storm", effect: "coin", flavor: "전설의 서기관이 마지막 결전의 맹세문을 적었다는 깃펜. 펜대에는 끝내 승리한 이들의 이름이 금빛으로 새겨져 있다. 이것으로 다짐을 적으면 글자가 저절로 굵어진다는 소문이 돈다." },
+  "grand-harp": { name: "그랜드 하프", family: "instrument", grade: "heroic", skill: "sound-ring", effect: "rainbow", flavor: "일곱 빛깔 무지개를 한 가닥씩 걷어 현으로 건 하프. 비가 갠 오후에만 조율할 수 있어, 연주자는 평생 하늘을 올려다보며 산다. 마지막 음이 사라질 때면 듣는 이의 눈가에 옅은 무지개가 걸린다." },
   // 전설: 자리만 있다 (디자인은 나중에). 지금은 누구도 가질 수 없다
   "legend-1": { name: "???", family: "sword", grade: "legendary", skill: "blossom-wave", effect: "sparkle", flavor: "아직 아무도 본 적 없는 무기." },
 } satisfies Record<string, WeaponDef>;
