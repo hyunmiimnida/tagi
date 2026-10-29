@@ -3,6 +3,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { toDateString } from "./filter.ts";
+import { forgetPushOnThisDevice } from "./push.ts";
 
 // 로그인, 학교 설정, 관심 표시를 한곳에서 관리한다.
 // Supabase 설정(.env.local)이 없으면 "체험 모드"로 동작해 이 브라우저에만 저장한다.
@@ -55,6 +56,8 @@ const UserContext = createContext<UserState | null>(null);
 const SCHOOL_KEY = "schoolId";
 const FAVORITES_KEY = "favorites";
 const PROFILE_KEY = "profile";
+// 이 브라우저에서 마지막으로 로그인했던 계정 (다른 계정으로 바뀌면 이전 계정의 설정을 지운다)
+const LAST_USER_KEY = "lastUserId";
 
 function readLocalProfile(): Profile {
   try {
@@ -113,7 +116,18 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     }
 
     const { data } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUserId(session?.user.id ?? null);
+      const nextUser = session?.user.id ?? null;
+      // 이 브라우저에서 다른 계정이 로그인하면 이전 계정의 학교·프로필을 넘겨받지 않는다.
+      // 처음 로그인하는 경우(이전 계정 없음)는 로그인 전에 고른 설정을 그대로 이어 쓴다
+      const lastUser = readLocal(LAST_USER_KEY);
+      if (nextUser && lastUser && lastUser !== nextUser) {
+        writeLocal(SCHOOL_KEY, null);
+        writeLocal(PROFILE_KEY, null);
+        setSchoolId(null);
+        setProfileState(EMPTY_PROFILE);
+      }
+      if (nextUser) writeLocal(LAST_USER_KEY, nextUser);
+      setUserId(nextUser);
       setEmail(session?.user.email ?? null);
       setProvider((session?.user.app_metadata.provider as string | undefined) ?? null);
       if (!session) {
@@ -163,7 +177,12 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       setSchoolId(next);
       writeLocal(SCHOOL_KEY, next);
       if (supabase && userId) {
-        void supabase.from("profiles").upsert({ user_id: userId, school_id: next }).then();
+        void supabase
+          .from("profiles")
+          .upsert({ user_id: userId, school_id: next })
+          .then(({ error }) => {
+            if (error) console.error("학교 설정을 계정에 저장하지 못함:", error.message); // 이 기기에는 저장되어 있다
+          });
       }
     },
     [userId],
@@ -206,13 +225,27 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
           next.delete(from);
           next.add(to);
         }
-        setFavorites(next);
         if (!supabase) {
+          setFavorites(next);
           writeLocal(FAVORITES_KEY, JSON.stringify([...next]));
-        } else if (userId) {
-          void supabase.from("favorites").upsert(changes.map(([, to]) => ({ user_id: userId, program_id: to }))).then();
-          void supabase.from("favorites").delete().eq("user_id", userId).in("program_id", changes.map(([from]) => from)).then();
+          return;
         }
+        if (!userId) return;
+        // 새 id 저장이 성공한 뒤에만 예전 id를 지운다 (저장이 실패하면 관심 표시가 사라지지 않게, 다음에 다시 옮긴다).
+        // 예전 id 여러 개가 같은 새 id로 합쳐졌을 수 있어 새 id는 한 번씩만 보낸다
+        const client = supabase;
+        const targets = [...new Set(changes.map(([, to]) => to))];
+        return client
+          .from("favorites")
+          .upsert(targets.map((to) => ({ user_id: userId, program_id: to })))
+          .then(async ({ error }) => {
+            if (error) {
+              migrated.current = null;
+              return;
+            }
+            setFavorites(next);
+            await client.from("favorites").delete().eq("user_id", userId).in("program_id", changes.map(([from]) => from));
+          });
       })
       .catch(() => {}); // 못 받으면 다음에 다시 한다
   }, [ready, favorites, userId]);
@@ -232,11 +265,22 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
 
       if (!supabase) {
         writeLocal(FAVORITES_KEY, JSON.stringify([...next]));
-      } else if (adding) {
-        void supabase.from("favorites").upsert({ user_id: userId, program_id: programId }).then();
-      } else {
-        void supabase.from("favorites").delete().eq("user_id", userId).eq("program_id", programId).then();
+        return;
       }
+      const request = adding
+        ? supabase.from("favorites").upsert({ user_id: userId, program_id: programId })
+        : supabase.from("favorites").delete().eq("user_id", userId).eq("program_id", programId);
+      // 저장에 실패하면 이 공고만 되돌린다 (화면에는 켜져 있는데 다시 들어오면 사라지는 일이 없게)
+      void request.then(({ error }) => {
+        if (!error) return;
+        console.error("관심 표시를 저장하지 못함:", error.message);
+        setFavorites((current) => {
+          const reverted = new Set(current);
+          if (adding) reverted.delete(programId);
+          else reverted.add(programId);
+          return reverted;
+        });
+      });
     },
     [favorites, userId],
   );
@@ -261,7 +305,12 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         void supabase?.auth.signInWithOAuth({ provider, options: { redirectTo: window.location.origin } });
       },
       signOut: () => {
-        void supabase?.auth.signOut();
+        if (!supabase) return;
+        const client = supabase;
+        // 이 기기의 알림 주소를 먼저 지운다 (로그아웃한 계정의 마감 알림이 이 기기로 계속 오지 않게)
+        void forgetPushOnThisDevice(client)
+          .catch(() => {})
+          .then(() => client.auth.signOut());
       },
       deleteAccount: async () => {
         if (!supabase || !userId) return false;
