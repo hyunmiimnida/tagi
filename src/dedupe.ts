@@ -36,7 +36,9 @@ function sameSourceCandidate(a: Program, b: Program, similarity: number): boolea
   const days = Math.abs(Date.parse(a.postedAt) - Date.parse(b.postedAt)) / 86_400_000;
   if (!Number.isFinite(days) || days > 90) return false;
   const sameKey = repostKey(a.title) === repostKey(b.title);
-  if (sameKey && days <= REPOST_DAYS) return false; // 이미 재게시 규칙으로 합친다
+  if (canCollapseRepost(a, b)) return false; // 이미 재게시 규칙으로 합친다
+  // 같은 제목의 다른 회차인지 애매하면 일정이 달라도 AI에게 묻는다
+  if (!sameKey && !datesCompatible(a, b)) return false;
   // 달·회차·연도가 다르면 다른 공고다. 마감 머리말만 바뀐 재게시는 남긴다
   if (!sameKey && numbers(a.title) !== numbers(b.title)) return false;
   return sameKey || similarity >= SAME_SOURCE_SIMILARITY;
@@ -48,13 +50,13 @@ export function findAmbiguousPairs(programs: Program[]): [Program, Program][] {
   for (let i = 0; i < programs.length; i++) {
     for (let j = i + 1; j < programs.length; j++) {
       const [a, b] = [programs[i], programs[j]];
-      if (a.campus !== b.campus || !sameSchool(a, b) || !datesCompatible(a, b)) continue;
+      if (a.campus !== b.campus || !sameSchool(a, b)) continue;
       const similarity = titleSimilarity(a.title, b.title);
       const sharedSource = a.sources.some((s) => b.sources.includes(s));
       // 같은 게시판은 한 단어만 달라도 다른 프로그램일 수 있어 상한을 두지 않는다
       // 다른 게시판끼리는 45~80%를 묻고, 80% 넘게 비슷해도 숫자가 다르면(회차인지 날짜 표기인지 규칙으로는 모름) 규칙으로 합치지 않고 묻는다
       const crossSource = similarity >= 0.45 && (similarity < 0.8 || numbers(a.title) !== numbers(b.title));
-      if (sharedSource ? sameSourceCandidate(a, b, similarity) : crossSource) pairs.push([a, b]);
+      if (sharedSource ? sameSourceCandidate(a, b, similarity) : crossSource && datesCompatible(a, b)) pairs.push([a, b]);
     }
   }
   return pairs;
@@ -108,7 +110,9 @@ function mergeInto(base: Program, extra: Program): void {
   }
 }
 
-// AI 없이 다시 수집한 결과가 AI가 추출해 둔 주최·대상·태그를 덮어쓰지 않게 한다
+// AI 없이 다시 수집한 결과가 AI가 추출해 둔 주최·대상·태그를 덮어쓰지 않게 한다.
+// 기간은 새로 읽은 날짜를 따른다: 다시 읽히는 AI 글은 목록에 일정이 정리된 출처(영남대 취업정보)뿐이라
+// 그 날짜가 기간 연장까지 반영한 최신 값이다 (상세를 읽는 출처는 AI로 정리한 글을 다시 읽지 않는다)
 function keepAiFields(saved: Program, fresh: Program): Program {
   if (saved.extractedBy !== "ai" || fresh.extractedBy === "ai") return fresh;
   return {
@@ -183,6 +187,16 @@ export const repostKey = (title: string) =>
   normalize(stripDeadlineHead(title).replace(REPOST_MARK, "").replace(/재안내/g, "안내").replace(/^\s*\[(재)?홍보\]\s*/, "").replace(REPOST_MARK, ""));
 const REPOST_DAYS = 60;
 
+function canCollapseRepost(a: Program, b: Program): boolean {
+  if (!a.postedAt || !b.postedAt || a.campus !== b.campus) return false;
+  if (!a.sources.some((source) => b.sources.includes(source)) || repostKey(a.title) !== repostKey(b.title)) return false;
+  const days = (Date.parse(b.postedAt) - Date.parse(a.postedAt)) / 86_400_000;
+  if (!Number.isFinite(days) || Math.abs(days) > REPOST_DAYS) return false;
+  const later = days >= 0 ? b : a;
+  // 시작일이 다르면 나중 글에 재게시·변경 표시가 있어야 합친다
+  return !conflicts(a.activityPeriod.start, b.activityPeriod.start) || normalize(later.title) !== repostKey(later.title);
+}
+
 export function collapseReposts(programs: Program[]): Program[] {
   const groups = new Map<string, Program[]>();
   for (const program of programs) {
@@ -199,9 +213,8 @@ export function collapseReposts(programs: Program[]): Program[] {
     // 두 게시판에 함께 올라와 이미 합쳐진 글(출처 여럿, 순서도 제각각)도 그중 한 게시판의 재게시와 합친다
     const kept: Program[] = [];
     for (const next of group) {
-      const gap = (base: Program) => (Date.parse(next.postedAt!) - Date.parse(base.postedAt!)) / 86_400_000;
       // 두 달 넘게 지나 다시 올린 글은 다른 회차로 본다
-      const base = kept.findLast((p) => p.sources.some((s) => next.sources.includes(s)) && p.campus === next.campus && gap(p) <= REPOST_DAYS);
+      const base = kept.findLast((p) => canCollapseRepost(p, next));
       if (!base) {
         kept.push(next);
         continue;

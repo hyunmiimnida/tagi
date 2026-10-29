@@ -201,13 +201,14 @@ export async function assignSeries(current: Program[], archive: Program[], { use
 
   let count = 0;
   for (const members of groups.values()) {
-    if (members.length < 2) {
-      delete members[0].seriesId;
-      continue;
-    }
-    // 묶음 id는 가장 오래된 공고의 id. 묶음에 이미 id가 있으면 그대로 써서 댓글이 이어지게 한다
+    // 혼자 남은 공고도 예전 묶음 id는 지우지 않는다 (그 id에 달린 후기 댓글이 상세 화면에서 끊기지 않게).
+    // 처음부터 혼자인 공고에는 id를 만들지 않는다
+    if (members.length < 2) continue;
+    // 묶음 id는 가장 오래된 공고의 id. 묶음에 이미 id가 있으면 그대로 써서 댓글이 이어지게 한다:
+    // 대표 공고가 남아 있는 id를 먼저, 대표가 없어졌어도 쓰던 id가 있으면 그것을 쓴다
     const oldest = [...members].sort((a, b) => startOf(a).localeCompare(startOf(b)))[0];
-    const kept = members.find((p) => p.seriesId && members.some((m) => m.id === p.seriesId))?.seriesId;
+    const kept =
+      members.find((p) => p.seriesId && members.some((m) => m.id === p.seriesId))?.seriesId ?? members.find((p) => p.seriesId)?.seriesId;
     for (const p of members) p.seriesId = kept ?? oldest.id;
     count++;
   }

@@ -168,6 +168,108 @@ const dated = (over: Record<string, unknown>) =>
     ...over,
   }) as never;
 
+test("신청 없는 미래 행사는 게시 후 30일이 지나도 열려 있다", async () => {
+  const { isClosed, isCurrent, lastDay } = await import("./filter.ts");
+  const program = dated({
+    noApplication: true,
+    postedAt: "2026-09-01",
+    activityPeriod: { start: "2026-11-10", end: null },
+  });
+  assert.equal(isClosed(program, "2026-10-29"), false);
+  assert.equal(isCurrent(program, "2026-10-29"), true);
+  assert.equal(lastDay(program), "2026-11-10");
+});
+
+test("신청 없는 행사는 활동 종료일, 없으면 시작일 당일까지 열어 둔다", async () => {
+  const { isClosed, isCurrent, lastDay } = await import("./filter.ts");
+  for (const activityPeriod of [
+    { start: "2026-10-29", end: null },
+    { start: null, end: "2026-10-29" },
+    { start: "2026-10-01", end: "2026-10-29" },
+  ]) {
+    for (const postedAt of ["2026-09-01", "2026-10-28"]) {
+      const program = dated({ noApplication: true, postedAt, activityPeriod });
+      assert.equal(lastDay(program), "2026-10-29");
+      assert.equal(isClosed(program, "2026-10-28"), false);
+      assert.equal(isClosed(program, "2026-10-29"), false);
+      assert.equal(isClosed(program, "2026-10-30"), true);
+      assert.equal(isCurrent(program, "2026-10-29"), true);
+      assert.equal(isCurrent(program, "2026-10-30"), true); // 하루 여유는 유지한다
+      assert.equal(isCurrent(program, "2026-10-31"), false);
+    }
+  }
+});
+
+test("신청 없는 행사는 모집 날짜가 있어도 알려진 활동 기간으로 판단한다", async () => {
+  const { isClosed, isCurrent, lastDay } = await import("./filter.ts");
+  for (const activityPeriod of [
+    { start: "2026-11-10", end: null },
+    { start: null, end: "2026-11-10" },
+    { start: "2026-10-01", end: "2026-11-10" },
+  ]) {
+    const program = dated({
+      noApplication: true,
+      recruitPeriod: { start: null, end: "2026-09-20" },
+      activityPeriod,
+    });
+    assert.equal(lastDay(program), "2026-11-10");
+    assert.equal(isClosed(program, "2026-10-29"), false);
+    assert.equal(isCurrent(program, "2026-10-29"), true);
+  }
+  const ended = dated({
+    noApplication: true,
+    recruitPeriod: { start: null, end: "2026-11-10" },
+    activityPeriod: { start: "2026-10-01", end: "2026-10-20" },
+  });
+  assert.equal(lastDay(ended), "2026-10-20");
+  assert.equal(isClosed(ended, "2026-10-29"), true);
+  assert.equal(isCurrent(ended, "2026-10-29"), false);
+});
+
+test("활동 기간을 모르는 신청 없는 행사는 기존 마감 기준을 쓴다", async () => {
+  const { isClosed, isCurrent, lastDay } = await import("./filter.ts");
+  const undated = dated({ noApplication: true, postedAt: "2026-09-01" });
+  assert.equal(lastDay(undated), null);
+  assert.equal(isClosed(undated, "2026-10-01"), false);
+  assert.equal(isClosed(undated, "2026-10-02"), true);
+  assert.equal(isCurrent(undated, "2026-10-03"), false);
+  const recruiting = dated({ noApplication: true, recruitPeriod: { start: null, end: "2026-11-10" } });
+  assert.equal(lastDay(recruiting), "2026-11-10");
+  assert.equal(isClosed(recruiting, "2026-10-29"), false);
+});
+
+test("일반 모집 공고는 미래 활동이 있어도 기존 모집 마감 기준을 쓴다", async () => {
+  const { isClosed, isCurrent, lastDay } = await import("./filter.ts");
+  for (const noApplication of [false, undefined]) {
+    const closed = dated({
+      noApplication,
+      recruitPeriod: { start: null, end: "2026-09-20" },
+      activityPeriod: { start: "2026-11-10", end: "2026-11-20" },
+    });
+    assert.equal(lastDay(closed), "2026-09-20");
+    assert.equal(isClosed(closed, "2026-10-29"), true);
+    assert.equal(isCurrent(closed, "2026-10-29"), true);
+    const undated = dated({ noApplication, activityPeriod: { start: "2026-11-10", end: null } });
+    assert.equal(lastDay(undated), null);
+    assert.equal(isClosed(undated, "2026-10-29"), true);
+    const activityEnd = dated({ noApplication, activityPeriod: { start: null, end: "2026-11-20" } });
+    assert.equal(lastDay(activityEnd), "2026-11-20");
+    assert.equal(isClosed(activityEnd, "2026-10-29"), false);
+  }
+});
+
+test("신청 없는 행사도 활동 날짜로 마감순 정렬한다", async () => {
+  const { compareDeadline } = await import("./filter.ts");
+  const list = [
+    dated({ id: "ended", noApplication: true, activityPeriod: { start: "2026-10-20", end: null } }),
+    dated({ id: "later", noApplication: true, activityPeriod: { start: "2026-11-10", end: null } }),
+    dated({ id: "soon", noApplication: true, recruitPeriod: { start: null, end: "2026-09-20" }, activityPeriod: { start: null, end: "2026-10-30" } }),
+    dated({ id: "undated", postedAt: "2026-10-28" }),
+  ];
+  const order = [...list].sort((a, b) => compareDeadline(a, b, "2026-10-29")).map((p: { id: string }) => p.id);
+  assert.deepEqual(order, ["soon", "later", "undated", "ended"]);
+});
+
 test("새 공고는 올라온 지 3일 안", async () => {
   const { isNew } = await import("./filter.ts");
   assert.ok(isNew(dated({ postedAt: "2026-10-01" }), "2026-10-02"));

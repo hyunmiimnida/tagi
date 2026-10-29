@@ -213,9 +213,21 @@ function runAi(bin: string, prompt: string, dir: string, images: string[] = []):
 }
 
 // 형식이 맞고 실제 달력에 있는 날짜만 받는다 (2026-02-30 같은 날짜는 버린다)
-const date = (v: unknown) =>
-  typeof v === "string" && DATE.test(v) && new Date(`${v}T00:00:00Z`).toISOString().startsWith(v) ? v : null;
+function date(v: unknown): string | null {
+  if (typeof v !== "string" || !DATE.test(v)) return null;
+  const parsed = new Date(`${v}T00:00:00Z`);
+  return Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0, 10) === v ? v : null;
+}
 const strings = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : []);
+const isStringArray = (v: unknown): v is string[] => Array.isArray(v) && v.every((x) => typeof x === "string");
+
+// 번호 하나라도 틀리면 묶음 전체를 다시 묻는다.
+function sameIndices(value: unknown, count: number): number[] {
+  if (!Array.isArray(value) || !value.every((n) => Number.isInteger(n) && n >= 0 && n < count)) {
+    throw new Error("same은 범위 안 정수의 배열이어야 합니다");
+  }
+  return value;
+}
 
 type AiFailure = Partial<ExecFileException> & { stdout?: string | Buffer; stderr?: string | Buffer };
 const failureDetails = (error: unknown): AiFailure => error && typeof error === "object" ? error as AiFailure : {};
@@ -303,6 +315,9 @@ async function askAi(bin: string, prompt: string): Promise<{ items?: Record<stri
     return askBackup(backup, prompt);
   }
 }
+
+// 호출 부분을 바꿔 끼워 실제 AI 없이 응답 처리를 검사할 수 있다.
+const aiClient = { find: findAi, ask: askAi };
 
 // 포스터 읽기: 본문 글자가 거의 없고 그림만 있는 글은 그림(최대 2장)의 글자를 AI가 읽어 본문 뒤에 붙인다.
 // 읽은 글자는 정보 추출에만 쓰고 저장하지 않는다 (원문을 복사하지 않는다)
@@ -393,11 +408,15 @@ export function withoutOwnSchool(program: Program, organizer: string): string {
 // 반영하면 true, 학생 대상이 아니면 false, 응답이 불완전해 반영하지 않으면 null (다음에 다시 추출한다)
 export function applyAiResult(item: CollectedItem, data: Record<string, unknown>, categories: TagCategory[]): boolean | null {
   const { program } = item;
-  const complete = typeof data.forStudents === "boolean" && Array.isArray(data.tags) && Array.isArray(data.grades);
+  const complete = typeof data.forStudents === "boolean" &&
+    ["tags", "grades", "colleges", "departments", "statuses", "excludedStatuses"].every((key) => isStringArray(data[key]));
   if (!complete) return null;
   if (data.forStudents === false) return false;
   const allowedTags = new Set(categories.flatMap((c) => c.tags.map((t) => t.name)));
   const organizerTypes = categories.find((c) => c.matchOn === "organizer")?.tags.map((t) => t.name) ?? [];
+  const recruit = { start: date(data.recruitStart), end: date(data.recruitEnd) };
+  const activity = { start: date(data.activityStart), end: date(data.activityEnd) };
+  const valid = (p: { start: string | null; end: string | null }) => !p.start || !p.end || p.start <= p.end;
 
   // 기관 이름은 짧은 이름만 받는다 (본문의 엉뚱한 긴 글이 들어오지 않게)
   if (typeof data.organizer === "string" && data.organizer.trim() && data.organizer.length <= 60) program.organizer = withoutOwnSchool(program, data.organizer.trim());
@@ -405,9 +424,6 @@ export function applyAiResult(item: CollectedItem, data: Record<string, unknown>
 
   // 기간 칸이 있으면 null·잘못된 순서도 반영해 틀렸을 수 있는 규칙 날짜를 남기지 않는다.
   // 칸이 없는 옛 답만 규칙 값을 유지한다. AI는 연도를 판단하므로 추측 표시를 붙이지 않는다.
-  const recruit = { start: date(data.recruitStart), end: date(data.recruitEnd) };
-  const activity = { start: date(data.activityStart), end: date(data.activityEnd) };
-  const valid = (p: { start: string | null; end: string | null }) => !p.start || !p.end || p.start <= p.end;
   if ("recruitStart" in data || "recruitEnd" in data) program.recruitPeriod = valid(recruit) ? recruit : { start: null, end: null };
   if ("activityStart" in data || "activityEnd" in data) program.activityPeriod = valid(activity) ? activity : { start: null, end: null };
   cleanPeriods(program);
@@ -466,8 +482,8 @@ ${posts}`;
 }
 
 // 두 게시물이 같은 프로그램인지 AI에게 묻는다. 같다고 답한 쌍의 번호를 돌려준다. 묻지 못했으면 null
-export async function confirmDuplicates(pairs: [Program, Program][]): Promise<number[] | null> {
-  const bin = findAi();
+export async function confirmDuplicates(pairs: [Program, Program][], client = aiClient): Promise<number[] | null> {
+  const bin = client.find();
   if (!bin || pairs.length === 0) return null;
   const describe = (p: Program) =>
     `${p.title} / 주최 ${p.organizer ?? "모름"} / 모집 ${p.recruitPeriod.start ?? "?"}~${p.recruitPeriod.end ?? "?"} / 활동 ${p.activityPeriod.start ?? "?"}~${p.activityPeriod.end ?? "?"}`;
@@ -477,9 +493,8 @@ export async function confirmDuplicates(pairs: [Program, Program][]): Promise<nu
 
 ${pairs.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join("\n")}`;
   try {
-    const answer = await askAi(bin, prompt);
-    const same = (answer as { same?: unknown }).same;
-    return Array.isArray(same) ? same.filter((n): n is number => Number.isInteger(n) && n >= 0 && n < pairs.length) : null;
+    const answer = await client.ask(bin, prompt);
+    return sameIndices(answer.same, pairs.length);
   } catch (error) {
     console.error("  AI 중복 판단 실패:", failureReason(error));
     return null;
@@ -492,8 +507,9 @@ ${pairs.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join
 export async function confirmSameSeries(
   pairs: [Program, Program][],
   onBatch?: (answers: Map<number, boolean>) => Promise<void>,
+  client = aiClient,
 ): Promise<(boolean | undefined)[] | null> {
-  const bin = findAi();
+  const bin = client.find();
   if (!bin) return null;
   const describe = (p: Program) => `${p.title} / 주최 ${p.organizer ?? "모름"} / 게시 ${p.postedAt ?? "?"}`;
   const answers: (boolean | undefined)[] = [];
@@ -507,8 +523,8 @@ export async function confirmSameSeries(
 
 ${batch.map(([a, b], i) => `${i}. A: ${describe(a)}\n   B: ${describe(b)}`).join("\n")}`;
     try {
-      const same = (await askAi(bin, prompt)).same;
-      const set = new Set(Array.isArray(same) ? same : []);
+      const same = (await client.ask(bin, prompt)).same;
+      const set = new Set(sameIndices(same, batch.length));
       const part = new Map(batch.map((_, i) => [start + i, set.has(i)] as const));
       batch.forEach((_, i) => answers.push(set.has(i)));
       await onBatch?.(part);
@@ -549,9 +565,10 @@ export async function enrichWithAi(
   categories: TagCategory[],
   // posters: 본문이 그림뿐인 글의 포스터를 읽을지 (오래된 글을 쌓는 backfill은 느려서 기본으로 끈다)
   { batchSize = BATCH_SIZE, maxText = MAX_TEXT, posters = true } = {},
+  client = aiClient,
 ): Promise<{ done: number; notForStudents: Set<string> }> {
   const notForStudents = new Set<string>();
-  const bin = findAi();
+  const bin = client.find();
   if (!bin || items.length === 0) return { done: 0, notForStudents };
 
   // 묶음 여러 개를 동시에 Codex에 보낸다 (묶음마다 1분쯤 걸려서 차례로 보내면 오래 걸린다)
@@ -569,13 +586,17 @@ export async function enrichWithAi(
         console.log(`  포스터 읽기 ${withPoster.length}개`);
       }
       try {
-        const answer = await askAi(bin, buildPrompt(batch, categories, maxText));
+        const answer = await client.ask(bin, buildPrompt(batch, categories, maxText));
         for (const data of answer.items ?? []) {
-          const item = batch.find((b) => b.program.id === data.id);
-          if (!item) continue;
-          const result = applyAiResult(item, data, categories);
-          if (result === true) done++;
-          else if (result === false) notForStudents.add(item.program.id);
+          try {
+            const item = batch.find((b) => b.program.id === data.id);
+            if (!item) continue;
+            const result = applyAiResult(item, data, categories);
+            if (result === true) done++;
+            else if (result === false) notForStudents.add(item.program.id);
+          } catch (error) {
+            console.error("  AI 추출 항목 반영 실패, 다음 항목을 계속 처리:", failureReason(error).replace(/[\r\n]+/g, " "));
+          }
         }
       } catch (error) {
         console.error("  AI 추출 실패, 규칙 결과를 사용:", failureReason(error));

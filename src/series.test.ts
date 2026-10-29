@@ -1,7 +1,23 @@
 import assert from "node:assert/strict";
-import test from "node:test";
-import { baseTitle, seriesMatch } from "./series.ts";
+import fs from "node:fs/promises";
+import { syncBuiltinESMExports } from "node:module";
+import test, { afterEach, beforeEach, mock } from "node:test";
+import { assignSeries, baseTitle, seriesMatch } from "./series.ts";
 import type { Program } from "./types.ts";
+
+// 저장된 판단 파일 대신 빈 판단 목록으로 검사한다.
+beforeEach(() => {
+  mock.method(fs, "readFile", async (file: URL) => {
+    assert.equal(file.href, new URL("../data/series-decisions.json", import.meta.url).href);
+    return "{}";
+  });
+  syncBuiltinESMExports();
+});
+
+afterEach(() => {
+  mock.restoreAll();
+  syncBuiltinESMExports();
+});
 
 const program = (title: string, organizer: string | null = "국제교류팀") => {
   const year = title.match(/20\d{2}/)?.[0] ?? "2026";
@@ -71,4 +87,80 @@ test("titleInfo: 회차·연도를 지운 기본 제목과 글자쌍(유사도 �
   assert.ok(a.base.length > 0 && !/\d/.test(a.base));
   assert.ok(a.grams.size > 0);
   assert.deepEqual([...a.grams].sort(), [...b.grams].sort());
+});
+
+const round = (id: string, year: number, seriesId?: string): Program => ({
+  ...program(`${year} 하계 글로벌 해외탐방 모집`),
+  id,
+  organizerType: "학교",
+  sources: ["yu-news"],
+  ...(seriesId ? { seriesId } : {}),
+});
+
+test("목록이나 보관함에 혼자 남아도 기존 묶음 id를 유지한다", async () => {
+  for (const archived of [false, true]) {
+    for (const seriesId of ["remaining", "removed"]) {
+      const remaining = round("remaining", 2026, seriesId);
+      const count = await assignSeries(archived ? [] : [remaining], archived ? [remaining] : [], { useAi: false });
+      assert.equal(remaining.seriesId, seriesId);
+      assert.equal(count, 0);
+    }
+  }
+});
+
+test("처음부터 혼자인 공고에는 묶음 id를 만들지 않는다", async () => {
+  for (const archived of [false, true]) {
+    const single = round("single", 2026);
+    assert.equal(await assignSeries(archived ? [] : [single], archived ? [single] : [], { useAi: false }), 0);
+    assert.equal(Object.hasOwn(single, "seriesId"), false);
+  }
+});
+
+test("새 묶음은 목록과 보관함 중 가장 오래된 공고의 id를 쓴다", async () => {
+  const current = round("current", 2026);
+  const archived = round("archived", 2025);
+  assert.equal(await assignSeries([current], [archived], { useAi: false }), 1);
+  assert.equal(current.seriesId, "archived");
+  assert.equal(archived.seriesId, "archived");
+});
+
+test("대표 공고가 없어져도 남은 여러 공고의 기존 묶음 id를 유지한다", async () => {
+  const current = round("current", 2026, "removed");
+  const archived = round("archived", 2025, "removed");
+  assert.equal(await assignSeries([current], [archived], { useAi: false }), 1);
+  assert.equal(current.seriesId, "removed");
+  assert.equal(archived.seriesId, "removed");
+});
+
+test("묶음이 하나로 줄었다가 새 회차가 붙어도 같은 id로 이어진다", async () => {
+  const first = round("first", 2025);
+  const remaining = round("remaining", 2026);
+  await assignSeries([remaining], [first], { useAi: false });
+  assert.equal(remaining.seriesId, "first");
+
+  await assignSeries([remaining], [], { useAi: false });
+  assert.equal(remaining.seriesId, "first");
+
+  const next = round("next", 2027);
+  await assignSeries([next], [remaining], { useAi: false });
+  assert.equal(next.seriesId, "first");
+  assert.equal(remaining.seriesId, "first");
+  await assignSeries([next], [remaining], { useAi: false });
+  assert.equal(next.seriesId, "first");
+});
+
+test("묶음을 합칠 때 대표 공고가 남아 있는 기존 id를 먼저 쓴다", async () => {
+  const absent = round("absent", 2024, "removed");
+  const left = round("left", 2025, "left");
+  const right = round("right", 2026, "right");
+  assert.equal(await assignSeries([absent, left, right], [], { useAi: false }), 1);
+  assert.deepEqual([absent.seriesId, left.seriesId, right.seriesId], ["left", "left", "left"]);
+});
+
+test("합칠 묶음의 대표가 모두 없어졌으면 첫 기존 id를 재사용한다", async () => {
+  const current = round("current", 2026, "removed-current");
+  const archived = round("archived", 2025, "removed-archive");
+  assert.equal(await assignSeries([current], [archived], { useAi: false }), 1);
+  assert.equal(current.seriesId, "removed-current");
+  assert.equal(archived.seriesId, "removed-current");
 });

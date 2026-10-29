@@ -27,6 +27,46 @@ test("마감일만 있으면 모집 마감으로 본다", () => {
   assert.deepEqual(extractPeriods(["[10/7(수) 12:00까지] 행정보조직 채용"], 2026).recruit, { start: null, end: "2026-10-07", yearGuessed: true });
 });
 
+test("다음 일정 항목의 날짜를 모집 기간으로 가져오지 않는다", () => {
+  for (const label of ["행사일시", "활동기간", "발표일", "합격자 발표일", "면접일시", "접수마감", "일시"]) {
+    for (const gap of [[], ["추후 안내"]]) {
+      const { recruit } = extractPeriods(["신청기간", ...gap, `• ${label}: 2026.10.30.`], 2026);
+      assert.deepEqual(recruit, label === "접수마감"
+        ? { start: null, end: "2026-10-30" }
+        : { start: null, end: null }, label);
+    }
+  }
+});
+
+test("날짜 없는 다음 항목에서도 멈추고 그 항목의 날짜는 따로 읽는다", () => {
+  assert.deepEqual(extractPeriods(["신청기간", "활동 기간", "10월 30일"], 2026), {
+    recruit: { start: null, end: null },
+    activity: { start: "2026-10-30", end: "2026-10-30", yearGuessed: true },
+  });
+  assert.deepEqual(extractPeriods(["활동기간", "신청 기간", "2026.10.30."], 2026), {
+    recruit: { start: null, end: "2026-10-30" },
+    activity: { start: null, end: null },
+  });
+  assert.deepEqual(extractPeriods(["신청기간", "발표일", "2026.10.30."], 2026), {
+    recruit: { start: null, end: null },
+    activity: { start: null, end: null },
+  });
+});
+
+test("표에서 항목 이름과 날짜가 나뉘어도 두 줄 안의 값은 읽는다", () => {
+  for (const gap of [[], [""], [":"]]) {
+    assert.deepEqual(extractPeriods([
+      "신청 기간", ...gap, "2026.10.1. ~ 2026.10.7.",
+      "활동 기간", ...gap, "10월 13일 ~ 10월 14일",
+    ], 2026), {
+      recruit: { start: "2026-10-01", end: "2026-10-07" },
+      activity: { start: "2026-10-13", end: "2026-10-14", yearGuessed: true },
+    });
+  }
+  assert.deepEqual(extractPeriods(["신청기간", "", "", "2026.10.30."], 2026).recruit,
+    { start: null, end: null });
+});
+
 test("기간에 사용한 날짜 중 연도가 없는 날짜만 추측 표시를 붙인다", () => {
   const { recruit, activity } = extractPeriods([
     "신청 기간: 2026.1.1. ~ 2026.1.10. (확인 2월 1일)",

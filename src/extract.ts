@@ -13,6 +13,11 @@ const DATE = new RegExp(
 const RECRUIT_LABEL = /(신청|접수|모집|지원|제출)\s*(기간|기한|마감|일정)|마감일|까지/;
 const ACTIVITY_LABEL = /(운영|활동|교육|행사|진행|실시|개최|프로그램)\s*(기간|일시|일자|일정)|^[^가-힣]*(일시|일자|기간|일정)(?![가-힣])/;
 
+// 글머리 기호 뒤의 일정 항목 이름도 알아본다
+function startsWithScheduleLabel(line: string): boolean {
+  return /^[^가-힣]*(?:(?:신청|접수|모집|지원|제출)\s*(?:기간|기한|마감|일정)|(?:운영|활동|교육|행사|진행|실시|개최|프로그램)\s*(?:기간|일시|일자|일정)|(?:(?:합격자|선정자|결과)\s*)?(?:발표|면접|심사)\s*(?:일시|일자|일정|기간|일)|마감일|일시|일자|기간|일정)(?![가-힣])/.test(line);
+}
+
 const pad = (n: number) => String(n).padStart(2, "0");
 
 // 글에서 날짜를 순서대로 찾는다. 연도가 없으면 앞 날짜나 기준 연도를 따른다
@@ -49,10 +54,12 @@ export function extractPeriods(lines: string[], baseYear: number): { recruit: Pe
     const isActivity = !isRecruit && ACTIVITY_LABEL.test(line);
     if (!isRecruit && !isActivity) return;
 
-    // 항목 이름만 있는 줄이면 바로 아래 두 줄에서 날짜를 찾는다
+    // 아래 두 줄에서 날짜를 찾되 다른 일정 항목을 만나면 멈춘다
     let dates = parseDatesWithYear(line, baseYear);
     for (let next = 1; dates.length === 0 && line.length < 20 && next <= 2; next++) {
-      dates = parseDatesWithYear(lines[i + next] ?? "", baseYear);
+      const nextLine = lines[i + next] ?? "";
+      if (startsWithScheduleLabel(nextLine)) break;
+      dates = parseDatesWithYear(nextLine, baseYear);
     }
     if (dates.length === 0) return;
 
