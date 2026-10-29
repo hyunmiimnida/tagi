@@ -52,6 +52,7 @@
 - 모집 대상 학교: 기본은 게시한 학교. AI가 다른 학교 학생도 지원할 수 있다고 보면 `target.openTo`(예: "전국 대학생")를 쓰고 `target.schools`를 비운다. 학교 배지는 게시한 학교 기준이고, 학교 필터는 openTo 공고도 기본으로 함께 보여 준다("다른 학교도 지원" 배지, 필터 안 스위치로 끄면 주소에 `open=0`)
 - 캘린더의 "지난 관심 공고": 보관함으로 간 관심 공고를 `public/api/ids.json`에서 찾아 제목·원문·이번 회차를 보여 준다 (`components/PastFavorites.tsx`)
 - 댓글 도배 막기: `supabase/spam.sql` 트리거(20초 안 재작성, 하루 20개, 같은 내용 반복, 링크 2개 이상). 걸리면 `spam:이유` 오류 → `components/Comments.tsx`가 안내
+  - `supabase/insert-guard.sql`: 댓글·의견을 쓸 때 작성 시각을 서버 시각으로, 댓글 숨김·검토 시각을 처음 값으로 덮어쓴다(작성 시각을 과거로 넣어 도배 검사를 피하거나 검토 시각을 미래로 넣어 자동 숨김을 피하지 못하게). 트리거 이름 `*_aa_guard_insert`는 도배 검사보다 먼저 실행되게 지은 것
 - 마감 알림(웹 푸시): 프로필에서 켜면 `lib/push.ts`가 기기 알림 주소를 `push_subscriptions` 표에 저장. 매일 오전 9시 `.github/workflows/notify.yml`이 `scripts/notify.ts deadline`으로 내일 모집 마감인 관심 공고를 보낸다(`public/sw.js`가 받아 표시). 켜면 그 기기에 확인 알림을 바로 띄우고, 다른 기기에서 켠 알림이면 프로필에 "이 기기에서도 받기"가 보인다. 비밀 값 `SUPABASE_SERVICE_ROLE_KEY`·`VAPID_PRIVATE_KEY`는 GitHub Secrets에만
 - 신고 알림: 같은 워크플로가 새 의견·댓글 신고·정보 오류 신고를 "신고·의견 확인 필요" GitHub 이슈로 올린다(저장소 주인에게 메일). 알린 것은 `alerted_at`에 표시
 - 관리자 화면 `/admin` (`components/admin/`, 관리 함수는 `supabase/admin.sql`): `admins` 표에 있는 계정만 데이터가 보인다. 관리 함수(security definer)가 매번 `assert_admin()`으로 확인하므로 사이트에 비밀 키를 넣지 않는다. 탭은 주소 끝(`#users` 등)에 기억
