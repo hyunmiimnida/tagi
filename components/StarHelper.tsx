@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ACTION_HEIGHT, ACTION_WIDTH, EFFECT_ROWS, actionRows } from "../lib/pixel-pals.ts";
+import { ACTION_HEIGHT, ACTION_WIDTH, EFFECT_ROWS, actionRows, skillOf } from "../lib/pixel-pals.ts";
 import type { ActionFrame, Avatar } from "../lib/pixel-pals.ts";
 import { useUser } from "../lib/user.tsx";
 import { PixelSprite } from "./PixelPal.tsx";
 
-// 관심 표시(☆)를 켜면 내 캐릭터가 직접 별을 켜 준다. 동작은 내 캐릭터에 저장된 것(avatar.action):
+// 관심 표시(☆)를 켜면 내 캐릭터가 직접 별을 켜 준다. 스킬은 손에 든 무기로 정해진다(skillOf, 검·활·마법 지팡이·성직자 지팡이):
 //   칼     카드에서 뛰어내려 별까지 달려가 칼을 휘두른다(칼바람) → 뒤돌아 달려서 복귀
 //   활     그 자리에서 일어나 활을 꺼내 쏜다 → 화살이 별에 꽂힌다 → 다시 숨는다
 //   마법   펑! 사라져 별 옆에 나타나 지팡이로 마법을 건다 → 펑! 사라져 제자리에 나타난다
@@ -103,7 +103,7 @@ export function StarHelper() {
         const place = (p: { cx: number; feet: number }): Point => ({ x: p.cx - CENTER, y: p.feet - H });
         let at = place(home);
         source.style.visibility = "hidden";
-        setActor({ avatar, frame: "stand", flip: avatar.action === "slash" || avatar.action === "magic" ? faceLeft : star.x < home.cx, start: at });
+        setActor({ avatar, frame: "stand", flip: skillOf(avatar) === "slash" || skillOf(avatar) === "magic" ? faceLeft : star.x < home.cx, start: at });
         // 그려질 때까지 기다린다
         for (let i = 0; i < 20 && !actorEl.current; i++) await new Promise((resolve) => requestAnimationFrame(resolve));
         const el = actorEl.current;
@@ -137,7 +137,8 @@ export function StarHelper() {
           ).finished;
         const bodyCenter = (): Point => ({ x: at.x + CENTER, y: at.y + H / 2 });
 
-        if (avatar.action === "slash") {
+        const skill = skillOf(avatar);
+        if (skill === "slash") {
           // 카드에서 뛰어내려 별 가까이 착지 → 달려가서 → 칼을 치켜들었다 휘두르기 → 뒤돌아 달려서 → 뛰어올라 복귀
           const dir = faceLeft ? -1 : 1;
           const landing = place({ cx: Math.min(Math.max(beside.cx - dir * 56, 28), window.innerWidth - 28), feet: beside.feet });
@@ -159,7 +160,7 @@ export function StarHelper() {
           await move(place(home), 300, 36);
           frame("stand");
           await sleep(60);
-        } else if (avatar.action === "arrow") {
+        } else if (skill === "arrow") {
           // 그 자리에서 일어나 활을 꺼내 당기고 → 화살이 별까지 날아가 꽂힘 → 활을 거두고 숨기
           await popUp();
           await sleep(90);
@@ -176,7 +177,7 @@ export function StarHelper() {
           frame("stand");
           await sleep(120);
           await sinkDown();
-        } else if (avatar.action === "magic") {
+        } else if (skill === "magic") {
           // 지팡이를 들고 펑! 사라짐 → 별 옆에 펑! 나타남 → 마법 → 펑! → 제자리에 나타남
           frame("cast");
           await sleep(150);

@@ -1,8 +1,8 @@
--- 내 도트 캐릭터(머리 장식·옷·색·별 켜기 동작)를 계정에 저장한다.
+-- 내 도트 캐릭터(머리 장식·옷·색·무기)를 계정에 저장한다.
 -- schema.sql, profile.sql을 실행한 뒤 Supabase의 SQL Editor에 붙여 넣고 한 번 실행한다. (여러 번 실행해도 괜찮다)
 -- 실행하기 전에도 캐릭터는 이 기기(브라우저)에 저장되어 동작한다. 실행하면 로그인한 어느 기기에서든 같은 캐릭터가 나온다.
 
--- 모습은 {"headwear": "...", "headwearColor": "...", "outfit": "...", "outfitColor": "...", "action": "..."} 같은 묶음 하나.
+-- 모습은 {"headwear": "...", "headwearColor": "...", "outfit": "...", "outfitColor": "...", "weapon": "..."} 같은 묶음 하나.
 -- 어떤 값이 맞는지는 화면 코드(lib/pixel-pals.ts의 toValidAvatar)가 확인하고, 여기서는 묶음 모양과 크기만 막는다.
 alter table profiles add column if not exists avatar jsonb
   check (avatar is null or (jsonb_typeof(avatar) = 'object' and pg_column_size(avatar) < 2000));
