@@ -1398,7 +1398,7 @@
         "name": "학연산클러스터교육팀 공지",
         "collector": "rss-board",
         "url": "https://erica.hanyang.ac.kr/-5?p_p_id=kr_ac_hanyang_bbs_web_portlet_BbsPortlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_kr_ac_hanyang_bbs_web_portlet_BbsPortlet_cmd=rss",
-        "enabled": true,
+        "enabled": false,
         "pages": 1,
         "useAi": true,
         "defaultOrganizer": "학연산클러스터교육팀",
