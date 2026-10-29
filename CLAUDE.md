@@ -14,7 +14,7 @@
 ## 기술 스택
 
 - 언어: TypeScript (Node.js 24 이상, 수집기는 `.ts` 파일을 바로 실행)
-- 웹: Next.js (App Router). 화면은 빌드할 때 `data/programs.json`을 읽어 미리 만든다
+- 웹: Next.js (App Router). 화면은 빌드할 때 `data/programs.json`을 읽어 미리 만든다. 단 공고 상세 `/programs/[id]`와 공고별 공유 미리보기 그림은 미리 만들지 않고 처음 열 때 한 번 만들어 다음 배포까지 저장한다(2026-10-30, 미리 다 만들면 배포 하나가 약 860MB라 Vercel 무료 배포 보관 공간 10GB가 넘쳤다). 서버가 읽는 파일은 `next.config.ts`의 `outputFileTracingIncludes`에 적고, 지난 회차는 큰 보관함 대신 `public/api/series/`에서 읽는다
 - 프로그램 데이터: `data/programs.json` 파일 (git에 저장)
 - 로그인·학교 설정·관심 표시: Supabase (구글·카카오 소셜 로그인). 설정이 없으면 "체험 모드"로 브라우저에만 저장
 - 하루 1회 자동 수집 (2026-10-30부터, 둘 다 수집 후 `data/`를 main에 커밋 → Vercel이 자동 재배포):
@@ -140,7 +140,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `data/programs.json` — 수집 결과(최근 90일), `data/archive.json` — 지난 공고 보관함, `data/collect-log.json` — 마지막 수집 기록 (출처마다 `lastSuccessAt`·`lastSuccessCount`를 이전 기록에서 이어받는다)
 - 결과 올리기: GitHub Actions와 내 컴퓨터 수집이 겹쳐 push가 실패하면, 최신을 받아 다시 수집하고 올린다(최대 3번). Actions는 한 번에 하나만 실행
 - 검색엔진: `app/sitemap.ts`(홈·목록·상세 전체), `app/robots.ts`
-- 공유 미리보기 이미지: `app/opengraph-image.tsx`(사이트), `app/programs/[id]/opengraph-image.tsx`(공고마다), 그리는 부품 `lib/og.tsx`. 빌드할 때 Pretendard otf를 CDN에서 한 번 받아 쓴다(woff는 그림 만들 때 오류)
+- 공유 미리보기 이미지: `app/opengraph-image.tsx`(사이트), `app/programs/[id]/opengraph-image.tsx`(공고마다), 그리는 부품 `lib/og.tsx`. 그림을 만들 때(공고별 그림은 처음 요청될 때) Pretendard otf를 CDN에서 한 번 받아 쓴다(woff는 그림 만들 때 오류)
 - 그림: 분야 아이콘 `components/FieldIcon.tsx`, 빈 화면 그림 `components/EmptyArt.tsx`. 원문 포스터는 쓰지 않는다(원문 복사·robots.txt의 첨부 경로 차단)
 - `app/` — 화면. 하단 탭 바(`components/BottomNav.tsx`)로 홈 `/`, 공고 `/programs`, 캘린더 `/calendar`, 프로필 `/my`를 오간다. 상세는 `/programs/[id]`
   - 목록 필터는 주소(`?school=yu&unit=...&tag=...&q=...&closed=1&sort=recent`)에 저장된다

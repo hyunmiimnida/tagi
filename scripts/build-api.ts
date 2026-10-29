@@ -61,10 +61,11 @@ for (const program of [...programs, ...archive]) {
   members.set(program.seriesId, [...(members.get(program.seriesId) ?? []), program]);
 }
 for (const [id, list] of members) {
-  // 회차 목록에는 제목·일정·원문 링크만 있으면 된다
+  // 회차 목록에는 제목·일정·원문 링크만 있으면 된다 (태그는 "모집/접수" 말을 고르는 데 쓴다). 사이트 상세 화면도 이 파일을 읽는다 (lib/data.ts)
   const rounds = list.map((p) => ({
     id: p.id,
     title: p.title,
+    tags: p.tags,
     postedAt: p.postedAt,
     collectedAt: p.collectedAt,
     recruitPeriod: p.recruitPeriod,
