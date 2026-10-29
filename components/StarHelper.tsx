@@ -379,17 +379,36 @@ export function StarHelper() {
         // ── 영웅 ──
         // 벚꽃검 '춘풍': 꽃잎 검기 3연발
         SKILLS["blossom-wave"] = async () => {
+          // 큰 검기 3연발(지나간 자리에 꽃잎 잔상) → 마지막 검기가 별에 닿으면 X자 베기와 함께 벚꽃이 피어남 → 꽃잎이 흩날리며 가라앉음
           await standUp();
+          const petalFrames = EFFECTS.petal.ambient;
           for (const k of [0, 1, 2]) {
             frame("windup");
-            await sleep(110);
+            await sleep(90);
             frame("strike");
-            const hit = shoot(SKILL_FX["blossom-wave"], handTip(11), { x: star.x, y: star.y + (k - 1) * 6 }, 260, (k - 1) * 14, 70);
+            const from = handTip(11);
+            const to = { x: star.x, y: star.y + (k - 1) * 10 };
+            const ms = 230;
+            // 꽃잎 잔상: 검기가 지나가는 길을 따라 차례로
+            for (const t of [0.3, 0.55, 0.8]) {
+              setTimeout(() => playFx(petalFrames, { x: from.x + (to.x - from.x) * t, y: from.y + (to.y - from.y) * t - (k - 1) * 12 * Math.sin(Math.PI * t) }, 90), ms * t);
+            }
+            const hit = shoot(SKILL_FX["blossom-wave-2"], from, to, ms, (k - 1) * 12, 60);
             if (k === 2) await hit;
-            else await sleep(150);
+            else await sleep(130);
           }
+          const bloom = playFx(SKILL_FX["cross-bloom"], star, 85);
+          await sleep(85 * 2); // X자가 완성되는 순간 별이 켜진다
           tap();
-          await sleep(420);
+          // 흩날리는 꽃잎
+          [-34, -14, 8, 26, 40].forEach((dx, n) => {
+            const start = { x: star.x + dx, y: star.y - 20 - (n % 2) * 12 };
+            setTimeout(
+              () => fx({ kind: "proj", from: start, to: { x: start.x + 14, y: start.y + 56 }, frames: petalFrames, frameMs: 140, ms: 900, arc: -8, scale: 2 }, 900),
+              120 + n * 70,
+            );
+          });
+          await sleep(bloom - 85 * 2 + 120);
           await hideAgain();
         };
         // 해일의 지팡이: 지팡이를 치켜들면 화면 아래에서 해일이 솟아 별을 덮침
