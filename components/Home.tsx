@@ -69,6 +69,10 @@ export function Home({ categories }: Props) {
         .sort((a, b) => compareDeadline(a, b, today)),
     [open, today],
   );
+  // 오늘 마감하는 내 관심 공고 (있으면 마감 임박 맨 위에 두고 캐릭터가 알려 준다)
+  const alertProgram = useMemo(() => urgent.find((p) => favorites.has(p.id) && p.recruitPeriod.end === today) ?? null, [urgent, favorites, today]);
+  const alertId = alertProgram?.id ?? null;
+  const urgentShown = alertProgram ? [alertProgram, ...urgent.filter((p) => p !== alertProgram)].slice(0, 4) : urgent.slice(0, 4);
 
   const fresh = useMemo(
     () => open.filter((p) => isNew(p, today)).sort((a, b) => addedAt(b).localeCompare(addedAt(a))),
@@ -155,13 +159,14 @@ export function Home({ categories }: Props) {
       <ProfileNudge />
       <InstallCard />
 
-      <Section title="마감 임박 공고" href="/programs" peek>
+      {/* 오늘 마감하는 관심 공고가 있으면 빼꼼 대신 캐릭터가 그 줄로 달려와 "!"를 띄운다 */}
+      <Section title="마감 임박 공고" href="/programs" peek={!alertId}>
         {urgent.length === 0 ? (
           <p className="section-empty">일주일 안에 마감되는 공고가 없어요.</p>
         ) : (
           <ul className="rows">
-            {urgent.slice(0, 4).map((p) => (
-              <ProgramRow key={p.id} program={p} today={today} compact />
+            {urgentShown.map((p) => (
+              <ProgramRow key={p.id} program={p} today={today} compact alert={p.id === alertId} />
             ))}
           </ul>
         )}

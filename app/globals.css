@@ -3601,3 +3601,31 @@ button.stat {
     animation: none;
   }
 }
+
+/* 마감 경고 (components/ProgramRow.tsx의 alert): 오른쪽에서 달려와 별 버튼 왼쪽, 줄 윗선에 앉아 "!"를 띄운다 (별을 가리지 않게) */
+.row-alert {
+  position: absolute;
+  top: -22px;
+  right: 52px;
+  z-index: 3;
+  line-height: 0;
+  pointer-events: none;
+  animation: row-alert-run 0.55s steps(6, end) both, row-alert-bob 1.2s steps(2, end) 0.6s infinite;
+}
+
+@keyframes row-alert-run {
+  0% { transform: translateX(60px); opacity: 0; }
+  60% { transform: translateX(-4px); opacity: 1; }
+  100% { transform: translateX(0); }
+}
+
+@keyframes row-alert-bob {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -2px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row-alert {
+    animation: none;
+  }
+}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { daysUntil, formatPeriod, isClosed, isNew, recruitWord } from "../lib/filter.ts";
 import type { ProgramView as Program } from "../lib/filter.ts";
 import { FavoriteButton } from "./FavoriteButton.tsx";
+import { MyPal } from "./MyPal.tsx";
 
 // 남은 날을 배지로. 마감일을 모르면 표시하지 않는다
 export function DdayBadge({ program, today }: { program: Program; today: string }) {
@@ -21,11 +22,13 @@ export function ProgramRow({
   today,
   hiddenTags,
   compact = false,
+  alert = false,
 }: {
   program: Program;
   today: string;
   hiddenTags?: Set<string>;
   compact?: boolean;
+  alert?: boolean; // 오늘 마감하는 내 관심 공고: 내 캐릭터가 달려와 "!"를 띄운다 (홈)
 }) {
   const year = Number(today.slice(0, 4));
   const recruit = formatPeriod(program.recruitPeriod, year);
@@ -36,6 +39,11 @@ export function ProgramRow({
 
   return (
     <li className={`row ${isClosed(program, today) ? "closed" : ""}`}>
+      {alert && (
+        <span className="row-alert" aria-hidden="true">
+          <MyPal pose="sit" scale={2} bubble="exclaim" />
+        </span>
+      )}
       <div className="row-body">
         <div className="row-meta">
           {isNew(program, today) && <span className="new-dot" role="img" aria-label="새 공고" />}
