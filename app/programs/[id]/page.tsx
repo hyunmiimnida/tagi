@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { ReportInfo } from "../../../components/ReportInfo.tsx";
+import { ApplyCheer } from "../../../components/ApplyCheer.tsx";
 import { BackLink } from "../../../components/BackLink.tsx";
 import { Comments } from "../../../components/Comments.tsx";
 import { DetailActions } from "../../../components/DetailActions.tsx";
@@ -142,6 +143,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
       {program.seriesId && <Comments seriesId={program.seriesId} />}
 
       <div className="cta">
+        <ApplyCheer />
         {links.map((link, index) => (
           <a
             key={link.url}

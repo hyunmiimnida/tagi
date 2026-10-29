@@ -3539,3 +3539,38 @@ button.stat {
   60% { transform: scale(1.1); opacity: 1; }
   100% { transform: scale(0.6); opacity: 0; }
 }
+
+/* 신청 배웅 (components/ApplyCheer.tsx): 버튼 오른쪽 위로 폴짝 올라와 좌우로 흔들고 사라진다 */
+.cheer-anchor {
+  position: absolute;
+  right: 36px;
+  top: 2px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.cheer {
+  position: absolute;
+  bottom: 0;
+  left: -16px;
+  animation: cheer 1.5s steps(12, end) forwards;
+  transform-origin: 50% 100%;
+}
+
+.cheer-twinkle {
+  left: 30px;
+  top: 4px;
+}
+
+@keyframes cheer {
+  0% { transform: translateY(14px); opacity: 0; }
+  12% { transform: translateY(-8px); opacity: 1; }
+  22% { transform: translateY(0) rotate(0); }
+  34% { transform: rotate(-9deg); }
+  46% { transform: rotate(9deg); }
+  58% { transform: rotate(-9deg); }
+  70% { transform: rotate(9deg) translateY(-3px); }
+  82% { transform: rotate(0) translateY(0); opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
