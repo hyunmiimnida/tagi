@@ -42,13 +42,17 @@ export async function enablePush(supabase: SupabaseClient, userId: string): Prom
     const subscription =
       (await reg.pushManager.getSubscription()) ??
       (await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: keyBytes(VAPID_PUBLIC_KEY) }));
-    const json = subscription.toJSON();
-    const { error } = await supabase.from("push_subscriptions").upsert({
-      endpoint: subscription.endpoint,
-      user_id: userId,
-      p256dh: json.keys?.p256dh,
-      auth: json.keys?.auth,
-    });
+    const save = (sub: PushSubscription) => {
+      const json = sub.toJSON();
+      return supabase.from("push_subscriptions").upsert({ endpoint: sub.endpoint, user_id: userId, p256dh: json.keys?.p256dh, auth: json.keys?.auth });
+    };
+    let { error } = await save(subscription);
+    if (error) {
+      // 이 기기의 알림 주소가 다른 계정 것으로 남아 있으면(같은 브라우저에서 계정을 바꿈) 고칠 수 없으니 새 주소를 만든다
+      await subscription.unsubscribe().catch(() => {});
+      const fresh = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: keyBytes(VAPID_PUBLIC_KEY) });
+      ({ error } = await save(fresh));
+    }
     if (error) return "failed";
     // 이 기기에서 알림이 실제로 보이는지 바로 확인할 수 있게 확인 알림을 띄운다
     await reg
@@ -72,6 +76,15 @@ export async function disablePush(supabase: SupabaseClient): Promise<PushResult>
     await subscription.unsubscribe().catch(() => {});
   }
   return "off";
+}
+
+// 로그아웃할 때: 이 기기의 알림 주소를 지운다 (다른 기기 알림과 계정의 "마감 알림" 설정은 그대로)
+export async function forgetPushOnThisDevice(supabase: SupabaseClient): Promise<void> {
+  if (!pushSupported()) return;
+  const subscription = await (await navigator.serviceWorker.getRegistration())?.pushManager.getSubscription();
+  if (!subscription) return;
+  await supabase.from("push_subscriptions").delete().eq("endpoint", subscription.endpoint);
+  await subscription.unsubscribe().catch(() => {});
 }
 
 // 이 기기가 알림 받을 주소를 가지고 있는지 (다른 기기에서 알림을 켰으면 이 기기는 없을 수 있다)

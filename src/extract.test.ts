@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { isDuplicate, titleSimilarity } from "./dedupe.ts";
-import { extractPeriods, isMandatoryNotice, isStaffHiring, notForStudentsByTitle, parseDates } from "./extract.ts";
+import { cleanPeriods, enrich, extractPeriods, isMandatoryNotice, isStaffHiring, notForStudentsByTitle, parseDates, plausiblePeriod } from "./extract.ts";
+import { emptyProgram } from "./types.ts";
 
 test("여러 형태의 날짜를 읽는다", () => {
   assert.deepEqual(parseDates("2026. 9. 30.(수) ~ 10. 14.(수)", 2026), ["2026-09-30", "2026-10-14"]);
@@ -18,12 +19,97 @@ test("모집 기간과 활동 기간을 구분한다", () => {
     ["특강 참가자 모집", "신청 기간 : 2026.10.1.(목) ~ 10.7.(수)", "일시", "2026.10.13.(화) 14:00~16:00"],
     2026,
   );
-  assert.deepEqual(recruit, { start: "2026-10-01", end: "2026-10-07" });
+  assert.deepEqual(recruit, { start: "2026-10-01", end: "2026-10-07", yearGuessed: true });
   assert.deepEqual(activity, { start: "2026-10-13", end: "2026-10-13" });
 });
 
 test("마감일만 있으면 모집 마감으로 본다", () => {
-  assert.deepEqual(extractPeriods(["[10/7(수) 12:00까지] 행정보조직 채용"], 2026).recruit, { start: null, end: "2026-10-07" });
+  assert.deepEqual(extractPeriods(["[10/7(수) 12:00까지] 행정보조직 채용"], 2026).recruit, { start: null, end: "2026-10-07", yearGuessed: true });
+});
+
+test("다음 일정 항목의 날짜를 모집 기간으로 가져오지 않는다", () => {
+  for (const label of ["행사일시", "활동기간", "발표일", "합격자 발표일", "면접일시", "접수마감", "일시"]) {
+    for (const gap of [[], ["추후 안내"]]) {
+      const { recruit } = extractPeriods(["신청기간", ...gap, `• ${label}: 2026.10.30.`], 2026);
+      assert.deepEqual(recruit, label === "접수마감"
+        ? { start: null, end: "2026-10-30" }
+        : { start: null, end: null }, label);
+    }
+  }
+});
+
+test("날짜 없는 다음 항목에서도 멈추고 그 항목의 날짜는 따로 읽는다", () => {
+  assert.deepEqual(extractPeriods(["신청기간", "활동 기간", "10월 30일"], 2026), {
+    recruit: { start: null, end: null },
+    activity: { start: "2026-10-30", end: "2026-10-30", yearGuessed: true },
+  });
+  assert.deepEqual(extractPeriods(["활동기간", "신청 기간", "2026.10.30."], 2026), {
+    recruit: { start: null, end: "2026-10-30" },
+    activity: { start: null, end: null },
+  });
+  assert.deepEqual(extractPeriods(["신청기간", "발표일", "2026.10.30."], 2026), {
+    recruit: { start: null, end: null },
+    activity: { start: null, end: null },
+  });
+});
+
+test("표에서 항목 이름과 날짜가 나뉘어도 두 줄 안의 값은 읽는다", () => {
+  for (const gap of [[], [""], [":"]]) {
+    assert.deepEqual(extractPeriods([
+      "신청 기간", ...gap, "2026.10.1. ~ 2026.10.7.",
+      "활동 기간", ...gap, "10월 13일 ~ 10월 14일",
+    ], 2026), {
+      recruit: { start: "2026-10-01", end: "2026-10-07" },
+      activity: { start: "2026-10-13", end: "2026-10-14", yearGuessed: true },
+    });
+  }
+  assert.deepEqual(extractPeriods(["신청기간", "", "", "2026.10.30."], 2026).recruit,
+    { start: null, end: null });
+});
+
+test("기간에 사용한 날짜 중 연도가 없는 날짜만 추측 표시를 붙인다", () => {
+  const { recruit, activity } = extractPeriods([
+    "신청 기간: 2026.1.1. ~ 2026.1.10. (확인 2월 1일)",
+    "활동 기간",
+    "2월 10일 ~ 2월 20일",
+  ], 2026);
+  assert.deepEqual(recruit, { start: "2026-01-01", end: "2026-01-10" });
+  assert.deepEqual(activity, { start: "2026-02-10", end: "2026-02-20", yearGuessed: true });
+  assert.deepEqual(extractPeriods(["26.1.10.까지"], 2025).recruit, { start: null, end: "2026-01-10" });
+  assert.deepEqual(extractPeriods(["날짜 없음"], 2026).recruit, { start: null, end: null });
+});
+
+test("enrich는 원문의 연도를 유지하고 연도 없는 연초 마감만 다음 해로 고친다", () => {
+  const source = { id: "s", name: "공지", collector: "test", url: "u", enabled: true };
+  const school = { id: "x", name: "학교", shortName: "학교", region: "지역", sources: [source] };
+  for (const [text, postedAt, end] of [
+    ["2026. 1. 10.까지", "2026-10-01", "2026-01-10"],
+    ["1월 10일까지", "2025-12-20", "2026-01-10"],
+  ]) {
+    const program = emptyProgram(school, source, "1", "참가자 모집", "u1");
+    program.postedAt = postedAt;
+    enrich({ program, writer: null, text }, source, []);
+    assert.deepEqual(program.recruitPeriod, { start: null, end });
+    cleanPeriods(program);
+    assert.deepEqual(program.recruitPeriod, { start: null, end });
+  }
+});
+
+test("추측 표시가 없는 지난 기간은 보정하지 않고 너무 이르거나 늦은 기간만 비운다", () => {
+  assert.deepEqual(plausiblePeriod({ start: null, end: "2026-01-10" }, "2026-10-01"), { start: null, end: "2026-01-10" });
+  for (const marker of [{}, { yearGuessed: true as const }]) {
+    assert.deepEqual(plausiblePeriod({ start: "2024-01-01", end: "2026-10-10", ...marker }, "2026-10-01"), { start: null, end: null });
+    assert.deepEqual(plausiblePeriod({ start: null, end: "2028-10-10", ...marker }, "2026-10-01"), { start: null, end: null });
+  }
+});
+
+test("보정한 기간은 표시를 지워 다시 연도를 더하지 않는다", () => {
+  const corrected = plausiblePeriod({ start: "2025-01-01", end: "2025-01-10", yearGuessed: true }, "2025-12-20");
+  assert.deepEqual(corrected, { start: "2026-01-01", end: "2026-01-10" });
+  assert.deepEqual(plausiblePeriod(corrected, "2026-12-20"), corrected);
+  const unchanged = { start: null, end: "2026-10-10", yearGuessed: true as const };
+  assert.deepEqual(plausiblePeriod(unchanged, "2026-10-01"), unchanged);
+  assert.deepEqual(plausiblePeriod(unchanged, null), unchanged);
 });
 
 test("표현이 조금 다른 같은 프로그램은 중복으로 본다", () => {
@@ -138,13 +224,13 @@ test("AI 없이 수집할 때 신청할 것이 없는 단순 안내 제목을 �
   assert.ok(!looksLikeNoticeOnly("2026학년도 MY 포트폴리오 공모전"));
 });
 
-test("끝나는 날이 게시일보다 한참 앞서면 연도 넘김을 고치거나 모르는 값으로 둔다", async () => {
+test("연도를 추측했고 끝나는 날이 게시일보다 한참 앞서면 연도 넘김을 고치거나 모르는 값으로 둔다", async () => {
   const { plausiblePeriod } = await import("./extract.ts");
   // 12/30에 올린 "~1/4" 마감을 같은 해로 읽은 경우 → 다음 해로
-  assert.deepEqual(plausiblePeriod({ start: null, end: "2025-01-04" }, "2025-12-30"), { start: null, end: "2026-01-04" });
+  assert.deepEqual(plausiblePeriod({ start: null, end: "2025-01-04", yearGuessed: true }, "2025-12-30"), { start: null, end: "2026-01-04" });
   // 1년을 더해도 이미 지난 날 → 모름
-  assert.deepEqual(plausiblePeriod({ start: null, end: "2025-04-24" }, "2026-08-18"), { start: null, end: null });
-  assert.deepEqual(plausiblePeriod({ start: null, end: "1954-06-01" }, "2026-02-20"), { start: null, end: null });
+  assert.deepEqual(plausiblePeriod({ start: null, end: "2025-04-24", yearGuessed: true }, "2026-08-18"), { start: null, end: null });
+  assert.deepEqual(plausiblePeriod({ start: null, end: "1954-06-01", yearGuessed: true }, "2026-02-20"), { start: null, end: null });
   // 60일 안쪽은 재게시일 수 있어 그대로
   assert.deepEqual(plausiblePeriod({ start: null, end: "2026-09-18" }, "2026-09-22"), { start: null, end: "2026-09-18" });
 });

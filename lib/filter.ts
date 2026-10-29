@@ -100,8 +100,15 @@ export function describeTarget(program: Program, schoolNames: Record<string, str
 export const matchesUnits = (program: ProgramView, units: Set<string>) =>
   units.size === 0 || program.units.some((unit) => units.has(unit));
 
-// 마지막 일정. 모집 마감일이 있으면 그 날짜, 없으면 활동 종료일
-export const lastDay = (program: Program) => program.recruitPeriod.end ?? program.activityPeriod.end;
+// 마지막 일정. 모집 마감일이 있으면 그 날짜, 없으면 활동 종료일.
+// 신청 없이 참여하는 행사(noApplication)는 활동 기간이 알려져 있으면 활동 종료일(없으면 시작일)까지 열어 둔다
+// (모집 날짜가 없어 "올라온 지 30일" 규칙으로 아직 열리지도 않은 행사가 마감되지 않게)
+export const lastDay = (program: Program) => {
+  if (program.noApplication && (program.activityPeriod.end || program.activityPeriod.start)) {
+    return program.activityPeriod.end ?? program.activityPeriod.start;
+  }
+  return program.recruitPeriod.end ?? program.activityPeriod.end;
+};
 
 // 마감일을 모르는 공고는 올라온 지 이만큼 지나면 마감된 것으로 본다 (오래된 공고가 계속 "모집 중"으로 보이지 않게)
 export const UNDATED_OPEN_DAYS = 30;
@@ -115,6 +122,8 @@ export function isClosed(program: Program, today: string): boolean {
 // 아직 볼 만한 공고: 마감되지 않았거나 남은 일정이 있다 (홈·프로필용. 시간대 차이를 생각해 하루 여유를 둔다)
 export function isCurrent(program: Program, today: string): boolean {
   const day = toDateString(new Date(Date.parse(today) - 86_400_000));
+  // 신청 없는 행사는 활동 기간만 본다 (lastDay와 같은 기준)
+  if (program.noApplication && (program.activityPeriod.end || program.activityPeriod.start)) return !isClosed(program, day);
   return (
     !isClosed(program, day) ||
     [program.recruitPeriod.end, program.activityPeriod.start, program.activityPeriod.end].some((d) => d !== null && d >= day)

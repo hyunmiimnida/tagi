@@ -13,11 +13,21 @@ const DATE = new RegExp(
 const RECRUIT_LABEL = /(신청|접수|모집|지원|제출)\s*(기간|기한|마감|일정)|마감일|까지/;
 const ACTIVITY_LABEL = /(운영|활동|교육|행사|진행|실시|개최|프로그램)\s*(기간|일시|일자|일정)|^[^가-힣]*(일시|일자|기간|일정)(?![가-힣])/;
 
+// 글머리 기호 뒤의 일정 항목 이름도 알아본다
+function startsWithScheduleLabel(line: string): boolean {
+  return /^[^가-힣]*(?:(?:신청|접수|모집|지원|제출)\s*(?:기간|기한|마감|일정)|(?:운영|활동|교육|행사|진행|실시|개최|프로그램)\s*(?:기간|일시|일자|일정)|(?:(?:합격자|선정자|결과)\s*)?(?:발표|면접|심사)\s*(?:일시|일자|일정|기간|일)|마감일|일시|일자|기간|일정)(?![가-힣])/.test(line);
+}
+
 const pad = (n: number) => String(n).padStart(2, "0");
 
 // 글에서 날짜를 순서대로 찾는다. 연도가 없으면 앞 날짜나 기준 연도를 따른다
 export function parseDates(text: string, baseYear: number): string[] {
-  const dates: string[] = [];
+  return parseDatesWithYear(text, baseYear).map((d) => d.date);
+}
+
+// 기간에 쓸 날짜마다 연도를 추측했는지도 함께 기억한다
+function parseDatesWithYear(text: string, baseYear: number): { date: string; yearGuessed: boolean }[] {
+  const dates: { date: string; yearGuessed: boolean }[] = [];
   let year = baseYear;
   for (const m of text.matchAll(DATE)) {
     if (m[1]) year = Number(m[1].length === 2 ? "20" + m[1] : m[1]);
@@ -26,11 +36,11 @@ export function parseDates(text: string, baseYear: number): string[] {
     if (month < 1 || month > 12 || day < 1 || day > 31) continue;
     let date = `${year}-${pad(month)}-${pad(day)}`;
     // "12.20 ~ 1.10"처럼 해를 넘기는 기간 (달이 앞으로 돌아갈 때만. "4.23 → 4.21"처럼 같은 달에서 날짜만 줄면 일정 변경이다)
-    const prev = dates[dates.length - 1];
+    const prev = dates[dates.length - 1]?.date;
     if (!m[1] && prev && month < Number(prev.slice(5, 7)) && date < prev) {
       date = `${++year}-${pad(month)}-${pad(day)}`;
     }
-    dates.push(date);
+    dates.push({ date, yearGuessed: !m[1] });
   }
   return dates;
 }
@@ -44,19 +54,23 @@ export function extractPeriods(lines: string[], baseYear: number): { recruit: Pe
     const isActivity = !isRecruit && ACTIVITY_LABEL.test(line);
     if (!isRecruit && !isActivity) return;
 
-    // 항목 이름만 있는 줄이면 바로 아래 두 줄에서 날짜를 찾는다
-    let dates = parseDates(line, baseYear);
+    // 아래 두 줄에서 날짜를 찾되 다른 일정 항목을 만나면 멈춘다
+    let dates = parseDatesWithYear(line, baseYear);
     for (let next = 1; dates.length === 0 && line.length < 20 && next <= 2; next++) {
-      dates = parseDates(lines[i + next] ?? "", baseYear);
+      const nextLine = lines[i + next] ?? "";
+      if (startsWithScheduleLabel(nextLine)) break;
+      dates = parseDatesWithYear(nextLine, baseYear);
     }
     if (dates.length === 0) return;
 
     if (isRecruit && !recruit.end) {
-      recruit.start = dates.length > 1 ? dates[0] : null;
-      recruit.end = dates[1] ?? dates[0];
+      recruit.start = dates.length > 1 ? dates[0].date : null;
+      recruit.end = (dates[1] ?? dates[0]).date;
+      if (dates.slice(0, 2).some((d) => d.yearGuessed)) recruit.yearGuessed = true;
     } else if (isActivity && !activity.start) {
-      activity.start = dates[0];
-      activity.end = dates[1] ?? dates[0];
+      activity.start = dates[0].date;
+      activity.end = (dates[1] ?? dates[0]).date;
+      if (dates.slice(0, 2).some((d) => d.yearGuessed)) activity.yearGuessed = true;
     }
   });
 
@@ -102,9 +116,8 @@ export function enrich(item: CollectedItem, source: Source, categories: TagCateg
 // 말이 안 되는 기간은 버린다 (본문에 나온 다른 날짜를 잘못 읽은 경우).
 // 게시일보다 1년 넘게 앞서 시작하거나, 게시일보다 1년 반 넘게 뒤에 끝나는 기간은 모르는 값으로 둔다
 const DAY = 86_400_000;
-// 끝나는 날이 게시일보다 60일 넘게 앞서면(이미 끝난 일을 새로 올릴 리 없음):
-//  - 연도를 하나 더하면 말이 되면 연도 넘김 실수로 보고 고친다 (12/30에 올린 "~1/4"를 같은 해로 읽은 경우)
-//  - 그래도 안 되면 모르는 값으로 둔다. 60일 안쪽은 재게시·추가 안내일 수 있어 그대로 둔다
+// 규칙이 연도를 추측했고 마감이 게시일보다 60일 넘게 앞서면 다음 해로 고친다.
+// 그래도 맞지 않으면 비운다. 원문에 연도가 있거나 AI가 정한 지난 일정은 그대로 둔다.
 const ENDED_BEFORE_POST_DAYS = 60;
 const nextYear = (date: string | null) => (date ? `${Number(date.slice(0, 4)) + 1}${date.slice(4)}` : null);
 // maxDays: 게시일 뒤로 이만큼까지만 믿는다 (모집 마감은 1년을 넘기지 않는다. 활동 기간은 1년 반)
@@ -114,7 +127,7 @@ export function plausiblePeriod(period: Period, postedAt: string | null, maxDays
   const tooEarly = period.start !== null && Date.parse(period.start) < posted - 365 * DAY;
   const tooLate = period.end !== null && Date.parse(period.end) > posted + maxDays * DAY;
   const endedLongBefore = (p: Period) => p.end !== null && Date.parse(p.end) < posted - ENDED_BEFORE_POST_DAYS * DAY;
-  if (endedLongBefore(period)) {
+  if (period.yearGuessed === true && endedLongBefore(period)) {
     const shifted = { start: nextYear(period.start), end: nextYear(period.end) };
     const fits = !endedLongBefore(shifted) && Date.parse(shifted.end!) <= posted + 365 * DAY;
     return fits ? plausiblePeriod(shifted, postedAt, maxDays) : { start: null, end: null };

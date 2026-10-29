@@ -97,7 +97,8 @@ async function run() {
         if (!posts) {
           console.log(`${label} ${since} 이후 목록 훑는 중`);
           posts = await archiver.list(ctx, since);
-          await writeJson(listFile(source.id), posts);
+          // RSS 피드의 본문(summary)은 이번 실행 동안만 쓰고 파일에는 남기지 않는다 (원문을 저장하지 않는다)
+          await writeJson(listFile(source.id), posts.map(({ summary: _body, ...post }: ArchivePost & { summary?: string }) => post));
         }
         const unique = [...new Map(posts.map((post) => [post.url, post])).values()];
         const todo = unique.filter((post) => !known.has(post.url));

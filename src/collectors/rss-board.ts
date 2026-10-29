@@ -1,8 +1,8 @@
 import * as cheerio from "cheerio";
-import { RobotsBlockedError } from "../fetch.ts";
 import { emptyProgram } from "../types.ts";
 import type { Archiver, ArchivePost, CollectContext, CollectedItem, Collector, RssBoard } from "../types.ts";
 import { htmlToText, imagesIn } from "./news-board.ts";
+import { skipPost } from "./post-errors.ts";
 import { writerName } from "./table-board.ts";
 
 // 피드 본문도 목록과 함께 보관해 상세 요청 없이 다시 읽는다
@@ -77,10 +77,7 @@ async function readPost(ctx: CollectContext, post: FeedPost): Promise<CollectedI
 }
 
 const readSafely = (ctx: CollectContext, post: FeedPost) =>
-  readPost(ctx, post).catch((error) => {
-    if (error instanceof RobotsBlockedError) return null; // 막힌 글만 건너뛴다
-    throw error;
-  });
+  readPost(ctx, post).catch((error) => skipPost(ctx, post.url, error));
 
 export const collectRssBoard: Collector = async (ctx) => {
   const posts = await listFeed(ctx);

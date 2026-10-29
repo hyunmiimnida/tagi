@@ -41,6 +41,8 @@ const aiDoneUrls = new Set(refresh ? [] : urlsOf([...existing, ...archived].filt
 const incoming: Program[] = [];
 const excluded = new Set<string>(); // 학생 대상이 아니라서 뺀 게시물 id
 const log: SourceLog[] = [];
+// 일부 글만 읽지 못한 출처 (성공으로 기록하되 이유를 남긴다)
+const partial = new Map<string, string>();
 
 // 1단계: 출처별로 새 게시물을 읽는다. 서로 다른 사이트는 동시에 읽는다 (같은 사이트는 fetch.ts가 1초씩 띄운다)
 // 한 출처가 실패해도 나머지 출처는 계속 수집한다
@@ -67,7 +69,17 @@ async function readSource({ school, source }: (typeof tasks)[number]) {
       log.push({ source: source.id, ok: true, count: 0, message: "robots.txt에서 막음" });
       return;
     }
-    const items = await collector({ school, source, fetchHtml, isKnown: (url) => knownUrls.has(url) });
+    // 글 하나를 읽지 못해도 그 글만 건너뛰고, 실패한 글 수와 첫 이유를 기록에 남긴다
+    const postErrors: string[] = [];
+    const onPostError = (url: string, error: unknown) => {
+      const reason = error instanceof Error ? error.message : String(error);
+      postErrors.push(reason);
+      console.error(`${label} 글 읽기 실패 ${url}: ${reason}`);
+    };
+    const items = await collector({ school, source, fetchHtml, isKnown: (url) => knownUrls.has(url), onPostError });
+    // 읽으려던 글을 하나도 못 읽었으면 출처 실패로 본다 (수집 점검이 알리게)
+    if (items.length === 0 && postErrors.length > 0) throw new Error(`글 ${postErrors.length}개를 모두 읽지 못함 (${postErrors[0]})`);
+    if (postErrors.length > 0) partial.set(source.id, `글 ${postErrors.length}개 읽기 실패 (${postErrors[0]})`.slice(0, 300));
     for (const item of items) {
       enrich(item, source, categories);
       applyCampus(item.program, school, item.campusLabel); // 같은 게시판의 다른 캠퍼스 글은 그 캠퍼스로 분류한다
@@ -117,7 +129,7 @@ for (const { source, label, items } of results) {
   incoming.push(...studentItems.map((item) => item.program));
   const aiCount = items.filter((item) => item.program.extractedBy === "ai").length;
   console.log(`${label} ${items.length}개 수집` + (aiCount ? ` (AI 추출 ${aiCount}개)` : ""));
-  log.push({ source: source.id, ok: true, count: items.length, message: "" });
+  log.push({ source: source.id, ok: true, count: items.length, message: partial.get(source.id) ?? "" });
 }
 
 // 마지막 일정이 오래 지난 항목은 지우지 않고 보관함(archive.json)으로 옮긴다

@@ -10,7 +10,7 @@ export function ReportInfo({ programId }: { programId: string }) {
   const [open, setOpen] = useState(false);
   const [reason, setReason] = useState<string | null>(null);
   const [note, setNote] = useState("");
-  const [state, setState] = useState<"idle" | "sending" | "done" | "failed">("idle");
+  const [state, setState] = useState<"idle" | "sending" | "done" | "already" | "failed" | "busy">("idle");
 
   if (!supabase) return null;
 
@@ -20,11 +20,18 @@ export function ReportInfo({ programId }: { programId: string }) {
     const { error } = await supabase
       .from("program_reports")
       .insert({ program_id: programId, reason, note: note.trim() || null });
-    setState(error ? "failed" : "done");
+    // 도배 막기(supabase/program-reports-guard.sql)에 걸리면 이유에 맞게 안내한다
+    const spam = error?.message.match(/spam:(\w+)/)?.[1];
+    if (spam === "duplicate" || spam === "program") setState("already");
+    else if (spam === "too_many") setState("busy");
+    else setState(error ? "failed" : "done");
   }
 
   if (state === "done") {
     return <p className="report-info-done">알려 주셔서 고마워요. 확인하고 바로잡을게요.</p>;
+  }
+  if (state === "already") {
+    return <p className="report-info-done">같은 내용이 이미 접수됐어요. 확인하고 바로잡을게요.</p>;
   }
 
   return (
@@ -57,6 +64,7 @@ export function ReportInfo({ programId }: { programId: string }) {
             onChange={(event) => setNote(event.target.value)}
           />
           {state === "failed" && <p className="report-info-error">보내지 못했어요. 잠시 후 다시 시도해 주세요.</p>}
+          {state === "busy" && <p className="report-info-error">신고가 너무 많이 들어오고 있어요. 1시간쯤 뒤에 다시 보내 주세요.</p>}
           <div className="report-info-actions">
             <button className="text-button" onClick={() => setOpen(false)}>
               취소

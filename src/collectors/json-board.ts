@@ -1,8 +1,8 @@
 import * as cheerio from "cheerio";
-import { RobotsBlockedError } from "../fetch.ts";
 import { emptyProgram } from "../types.ts";
 import type { Archiver, ArchivePost, CollectContext, CollectedItem, Collector, JsonBoard } from "../types.ts";
 import { htmlToText, imagesIn } from "./news-board.ts";
+import { skipPost } from "./post-errors.ts";
 import { toIsoDate, writerName } from "./table-board.ts";
 
 // 목록을 화면이 아니라 데이터 주소(JSON)로 불러오는 게시판 수집기 (서강대·중앙대 본부 공지처럼 화면을 스크립트로 그리는 곳).
@@ -75,10 +75,7 @@ async function readPost(ctx: CollectContext, post: ArchivePost): Promise<Collect
 }
 
 const readSafely = (ctx: CollectContext, post: ArchivePost) =>
-  readPost(ctx, post).catch((error) => {
-    if (error instanceof RobotsBlockedError) return null; // robots.txt가 막은 글은 건너뛴다 (fetch.ts가 기록)
-    throw error;
-  });
+  readPost(ctx, post).catch((error) => skipPost(ctx, post.url, error));
 
 export const collectJsonBoard: Collector = async (ctx) => {
   const items = new Map<string, CollectedItem>();

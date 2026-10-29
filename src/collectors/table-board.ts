@@ -1,8 +1,8 @@
 import * as cheerio from "cheerio";
-import { RobotsBlockedError } from "../fetch.ts";
 import { emptyProgram } from "../types.ts";
 import type { Archiver, ArchivePost, CollectContext, CollectedItem, Collector, TableBoard } from "../types.ts";
 import { htmlToText, imagesIn } from "./news-board.ts";
+import { skipPost } from "./post-errors.ts";
 
 // 표 모양 게시판 수집기 (번호·제목·작성자·등록일이 한 줄인 학교 공지 게시판).
 // 학교마다 다른 선택자·주소 규칙은 config/schools.json의 "board"에 적는다.
@@ -124,10 +124,7 @@ export const collectTableBoard: Collector = async (ctx) => {
     }
     for (const post of posts) {
       if (ctx.isKnown(post.url) || items.has(post.postId)) continue;
-      const item = await readPost(ctx, post).catch((error) => {
-        if (error instanceof RobotsBlockedError) return null; // robots.txt가 막은 글은 건너뛴다 (fetch.ts가 기록)
-        throw error;
-      });
+      const item = await readPost(ctx, post).catch((error) => skipPost(ctx, post.url, error));
       if (item) items.set(post.postId, item);
     }
   }
