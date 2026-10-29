@@ -575,6 +575,31 @@ main {
   letter-spacing: -0.03em;
 }
 
+.hero-setup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.hero-setup p {
+  flex: 1;
+  color: var(--text-2);
+  font-size: 0.875rem;
+  word-break: keep-all;
+}
+
+.hero-setup-pal {
+  flex: none;
+  margin-left: auto;
+  line-height: 0;
+}
+
+.hero-setup .button {
+  flex: none;
+}
+
 .hero h1 strong {
   color: var(--accent);
 }
