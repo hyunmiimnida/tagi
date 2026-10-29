@@ -112562,7 +112562,8 @@
     "collectedAt": "2026-10-18T04:39:58.517Z",
     "summary": "성적과 소득 기준을 충족한 학부생이 생활비성 장학금 200만원을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-18T04:39:58.517Z"
+    "firstSeenAt": "2026-10-18T04:39:58.517Z",
+    "seriesId": "inha-notice-44261"
   },
   {
     "id": "ssu-notice-hhnefh21p8kn14",
@@ -205502,7 +205503,8 @@
     "collectedAt": "2026-10-02T19:15:16.574Z",
     "summary": "연구를 3분 안에 발표하는 대회에 참가하고 상금을 받을 수 있어요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T19:15:16.574Z"
+    "firstSeenAt": "2026-10-02T19:15:16.574Z",
+    "seriesId": "korea-notice-000060000000059549"
   },
   {
     "id": "konkuk-general-1173187",
@@ -548311,7 +548313,7 @@
     "summary": "겨울방학에 취업과 연계된 인턴십 실습에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-18T09:29:38.512Z",
-    "seriesId": "kookmin-notice-8478"
+    "seriesId": "kookmin-notice-9149"
   },
   {
     "id": "ssu-job-etc-595843f281e09048ff3f0d1900656edf",
@@ -561529,7 +561531,8 @@
     "collectedAt": "2026-10-02T19:17:06.813Z",
     "summary": "대학원 연구 발표와 진로 상담 부스, 특강이 열리는 연구페스티벌에 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T19:17:06.813Z"
+    "firstSeenAt": "2026-10-02T19:17:06.813Z",
+    "seriesId": "korea-notice-000060000000059549"
   },
   {
     "id": "sogang-notice-548235",
@@ -890119,7 +890122,7 @@
     "summary": "하계 취업연계 인턴십에서 실습에 참여해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-18T13:01:09.142Z",
-    "seriesId": "kookmin-notice-8478"
+    "seriesId": "kookmin-notice-9149"
   },
   {
     "id": "inha-international-153086",
@@ -1134021,7 +1134024,7 @@
     "summary": "동계방학 취업연계 인턴십 실습에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-18T13:41:32.807Z",
-    "seriesId": "kookmin-notice-8478"
+    "seriesId": "kookmin-notice-9149"
   },
   {
     "id": "kookmin-notice-8912",
@@ -1409951,7 +1409954,7 @@
     "summary": "취업과 연계된 하계 인턴십 실습에 참여해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-18T18:14:27.012Z",
-    "seriesId": "kookmin-notice-8478"
+    "seriesId": "kookmin-notice-9149"
   },
   {
     "id": "kookmin-notice-8408",
