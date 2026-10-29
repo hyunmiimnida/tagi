@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { DAILY_KEYS, DRAW_COST, DRAW_POOL, ODDS, ODDS_TOTAL, REFUND, REVIEW_DAILY_MAX, REVIEW_KEYS, drawOnce, gradeOf, keysAfter, oddsPercent } from "./gacha.ts";
+import { WELCOME_KEYS, DAILY_KEYS, DRAW_COST, DRAW_POOL, ODDS, ODDS_TOTAL, REFUND, REVIEW_DAILY_MAX, REVIEW_KEYS, drawOnce, gradeOf, keysAfter, oddsPercent } from "./gacha.ts";
 import { WEAPONS } from "./weapons.ts";
 
 const sql = readFileSync(new URL("../supabase/gacha.sql", import.meta.url), "utf8");
@@ -69,5 +69,6 @@ test("서버(supabase/gacha.sql)와 화면의 규칙이 같다", () => {
   assert.match(sql, new RegExp(`wallet.keys < ${DRAW_COST} then`));
   assert.match(sql, new RegExp(`when 'common' then ${REFUND.common} when 'rare' then ${REFUND.rare} else ${REFUND.heroic} end`));
   assert.match(sql, new RegExp(`granted := ${DAILY_KEYS};`));
+  assert.match(sql, new RegExp(`welcome := ${WELCOME_KEYS};`));
   assert.match(sql, new RegExp(`if given < ${REVIEW_DAILY_MAX} then\\s+update key_wallets set keys = keys \\+ ${REVIEW_KEYS}`));
 });

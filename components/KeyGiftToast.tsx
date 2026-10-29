@@ -22,6 +22,8 @@ export const KeyShardIcon = ({ scale = 2 }: { scale?: number }) => (
   </span>
 );
 
+const GIFT_NAMES = { welcome: "처음 오신 선물", daily: "오늘의 접속 선물", review: "후기 선물", demo: "체험 모드" } as const;
+
 // 열쇠조각을 받으면 잠깐 띄우는 알림 (하루 첫 접속, 후기 작성). 뽑을 수 있으면 보물상자로 가는 링크
 export function KeyGiftToast() {
   const { keyGift, clearKeyGift, keys } = useUser();
@@ -37,7 +39,7 @@ export function KeyGiftToast() {
     <div className="toast key-toast" role="status">
       <KeyShardIcon />
       <span>
-        {keyGift.reason === "daily" ? "오늘의 접속 선물" : "후기 선물"} · 열쇠조각 +{keyGift.amount}
+        {GIFT_NAMES[keyGift.reason]} · 열쇠조각 +{keyGift.amount}
       </span>
       {keys !== null && keys >= DRAW_COST && (
         <Link href="/my/avatar" className="key-toast-link" onClick={clearKeyGift}>

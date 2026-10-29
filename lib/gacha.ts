@@ -4,12 +4,14 @@ import type { Grade, WeaponId } from "./weapons.ts";
 // 무기 뽑기 (보물상자). 계정이 있으면 서버(supabase/gacha.sql)가 같은 규칙으로 뽑고 이 파일은 화면 표시와
 // 체험 모드(Supabase 설정 없음)의 이 기기 뽑기에 쓴다. 숫자를 바꾸면 gacha.sql도 함께 바꾼다 (lib/gacha.test.ts가 맞는지 확인)
 
+export const WELCOME_KEYS = 20; // 처음 온 사람 (계정마다 한 번, 그날 접속 선물과 따로)
 export const DAILY_KEYS = 5; // 하루 첫 접속 (한국 날짜 기준)
+export const DEMO_KEYS = 100; // 체험 모드(Supabase 설정 없음)는 들어올 때마다 이만큼 채워 준다 (무기도 모두 열림)
 export const REVIEW_KEYS = 5; // 후기 댓글 하나
 export const REVIEW_DAILY_MAX = 3; // 후기 선물은 하루 3번까지 (지운 댓글도 센다)
 export const DRAW_COST = 10; // 열쇠조각 10개 = 뽑기 한 번
 
-// 등급 확률 (1만 분의 몇). 전설 무기는 아직 없어서 그 자리에 "전설의 파편"이 나온다 (모아 두면 나중에 보상)
+// 등급 확률 (1만 분의 몇, 화면에는 공개하지 않는다). 전설 무기는 아직 없어서 그 자리에 "전설의 파편"이 나온다 (모아 두면 나중에 보상)
 export type DrawGrade = Exclude<Grade, "legendary"> | "shard";
 export const ODDS: [DrawGrade, number][] = [
   ["common", 8000],

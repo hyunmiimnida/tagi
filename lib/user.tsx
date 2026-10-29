@@ -6,24 +6,23 @@ import { toDateString } from "./filter.ts";
 import { forgetPushOnThisDevice } from "./push.ts";
 import { randomAvatar, toValidAvatar } from "./pixel-pals.ts";
 import type { Avatar } from "./pixel-pals.ts";
-import { DAILY_KEYS, DRAW_COST, drawOnce, keysAfter } from "./gacha.ts";
+import { DEMO_KEYS, DRAW_COST, drawOnce, keysAfter } from "./gacha.ts";
 import type { DrawResult } from "./gacha.ts";
 import { STARTER_WEAPON, WEAPONS, WEAPON_IDS, isWeaponId, owns } from "./weapons.ts";
 import type { WeaponId } from "./weapons.ts";
 
 // 얻은 무기(맨손 말고 전부)는 보물상자 뽑기(lib/gacha.ts)로 얻는다.
 // 로그인하면 계정(supabase/gacha.sql의 owned_weapons)에 있는 것이 전부다. 이 기기 기록은 고쳐 쓸 수 있으므로 쓰지 않는다.
-// 체험 모드(Supabase 설정 없음)에서만 이 기기에 열쇠조각·무기를 기억하고 이 기기에서 뽑는다 (LOCAL_*).
-// 내 컴퓨터에서 화면을 시험할 때(npm run dev)는 모든 무기를 가진 것으로 보인다 (뽑기 결과는 실제 기록으로 정한다)
+// 체험 모드(Supabase 설정 없음, 데모)는 이 기기에 열쇠조각·무기를 기억하고 이 기기에서 뽑는다 (LOCAL_*).
+// 체험 모드와 내 컴퓨터 시험(npm run dev)에서는 모든 무기가 열려 있다 (뽑기 결과의 "처음 얻음"은 실제 기록으로 정한다)
 const LOCAL_OWNED_KEY = "ownedWeapons";
 const LOCAL_WALLET_KEY = "keyWallet";
 const DEV_ALL = process.env.NODE_ENV === "development";
-const withDev = (owned: ReadonlySet<string>): ReadonlySet<string> => (DEV_ALL ? new Set(WEAPON_IDS) : owned);
+const withDev = (owned: ReadonlySet<string>): ReadonlySet<string> => (DEV_ALL || !supabase ? new Set(WEAPON_IDS) : owned);
 
 interface LocalWallet {
   keys: number;
   shards: number;
-  lastDaily: string | null;
 }
 
 function readLocalOwned(): Set<string> {
@@ -35,19 +34,16 @@ const count = (value: unknown): number => (Number.isInteger(value) && (value as 
 function readLocalWallet(): LocalWallet {
   try {
     const value = JSON.parse(readLocal(LOCAL_WALLET_KEY) ?? "{}") as Partial<LocalWallet>;
-    return { keys: count(value.keys), shards: count(value.shards), lastDaily: typeof value.lastDaily === "string" ? value.lastDaily : null };
+    return { keys: count(value.keys), shards: count(value.shards) };
   } catch {
-    return { keys: 0, shards: 0, lastDaily: null };
+    return { keys: 0, shards: 0 };
   }
 }
-
-// 한국 날짜 (접속 선물은 하루 한 번, 서버의 kst_today와 같은 기준)
-const kstToday = () => new Date(Date.now() + 9 * 3600_000).toISOString().slice(0, 10);
 
 // 갖지 않은 무기를 들고 있으면(저장값을 고쳤거나 무기를 잃은 경우) 맨손으로 바꾼다
 const holdable = (avatar: Avatar, owned: ReadonlySet<string>): Avatar => (owns(owned, avatar.weapon) ? avatar : { ...avatar, weapon: STARTER_WEAPON });
 
-export type KeyGift = { amount: number; reason: "daily" | "review" };
+export type KeyGift = { amount: number; reason: "welcome" | "daily" | "review" | "demo" };
 
 // 로그인, 학교 설정, 관심 표시를 한곳에서 관리한다.
 // Supabase 설정(.env.local)이 없으면 "체험 모드"로 동작해 이 브라우저에만 저장한다.
@@ -284,17 +280,15 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   const [keyGift, setKeyGift] = useState<KeyGift | null>(null);
   const [revealing, setRevealing] = useState<DrawResult | null>(null);
 
-  // 체험 모드: 이 기기의 기록. 접속 선물도 이 기기에서
+  // 체험 모드: 이 기기의 기록. 열쇠조각은 들어올 때마다 DEMO_KEYS개로 채운다
   useEffect(() => {
     if (supabase) return;
     setOwned(readLocalOwned());
     const wallet = readLocalWallet();
-    const today = kstToday();
-    if (wallet.lastDaily !== today) {
-      wallet.keys += DAILY_KEYS;
-      wallet.lastDaily = today;
+    if (wallet.keys < DEMO_KEYS) {
+      setKeyGift({ amount: DEMO_KEYS - wallet.keys, reason: "demo" });
+      wallet.keys = DEMO_KEYS;
       writeLocal(LOCAL_WALLET_KEY, JSON.stringify(wallet));
-      setKeyGift({ amount: DAILY_KEYS, reason: "daily" });
     }
     setKeys(wallet.keys);
     setLegendShards(wallet.shards);
@@ -319,10 +313,12 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         setKeys(null);
         return;
       }
-      const wallet = daily.data as { granted: number; keys: number; shards: number };
+      const wallet = daily.data as { welcome?: number; granted: number; keys: number; shards: number };
       setKeys(wallet.keys);
       setLegendShards(wallet.shards);
-      if (wallet.granted > 0) setKeyGift({ amount: wallet.granted, reason: "daily" });
+      const welcome = wallet.welcome ?? 0;
+      if (welcome > 0) setKeyGift({ amount: welcome + wallet.granted, reason: "welcome" });
+      else if (wallet.granted > 0) setKeyGift({ amount: wallet.granted, reason: "daily" });
     });
     return () => {
       cancelled = true;
