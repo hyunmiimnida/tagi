@@ -818,6 +818,28 @@ main {
   gap: 14px;
 }
 
+/* 필터 줄은 화면 위에 붙어 있어서, 패널이 화면보다 길면 아래쪽 항목에 닿을 수 없다.
+   패널 높이를 "화면 − 위쪽 머리말·검색창·필터 칩 줄(약 186px) − 아래 탭 바"로 막고 패널 안에서 스크롤한다 */
+.filter-bar .tag-panel {
+  max-height: calc(100vh - 186px - var(--nav-height) - env(safe-area-inset-bottom));
+  max-height: calc(100dvh - 186px - var(--nav-height) - env(safe-area-inset-bottom));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* 높이를 막아도 안의 묶음이 찌그러지거나 옆 칸으로 넘어가지 않게, 옆으로는 스크롤되지 않게 */
+.filter-bar .tag-panel {
+  overflow-x: hidden;
+}
+
+.filter-bar .tag-panel.stacked {
+  flex-wrap: nowrap;
+}
+
+.filter-bar .tag-panel > * {
+  flex-shrink: 0;
+}
+
 .panel-group {
   display: flex;
   flex-wrap: wrap;
@@ -2732,6 +2754,27 @@ button.stat {
 .region-tabs {
   align-self: flex-start;
   margin-top: 4px;
+}
+
+/* 학교 패널 안을 스크롤해도 지역 탭은 위에 붙어 있게 (뒤로 지나가는 항목이 비치지 않게 카드 색으로 가린다) */
+.tag-panel .region-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: linear-gradient(color-mix(in srgb, var(--text) 6%, transparent) 0 0), var(--surface);
+  box-shadow: 0 0 0 14px var(--surface);
+  /* 지역이 많아 카드보다 넓으면 탭 줄만 옆으로 밀어 본다 */
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tag-panel .region-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tag-panel .region-tabs button {
+  flex-shrink: 0;
 }
 
 .my-region {
