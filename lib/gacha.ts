@@ -19,7 +19,7 @@ export const ODDS: [DrawGrade, number][] = [
 ];
 export const ODDS_TOTAL = 10000;
 
-// 이미 가진 무기가 나오면 열쇠조각을 일부 돌려준다 (일반 무기는 누구나 가지고 있어 늘 돌려받는다)
+// 이미 가진 무기가 나오면 열쇠조각을 일부 돌려준다
 export const REFUND: Record<Exclude<DrawGrade, "shard">, number> = { common: 2, rare: 5, heroic: 10 };
 
 // 확률 표에 쓰는 글자 (80%, 0.99%, 0.01%)
@@ -46,13 +46,13 @@ export type DrawResult =
   | { kind: "weapon"; weapon: WeaponId; grade: Exclude<DrawGrade, "shard">; duplicate: boolean; refund: number }
   | { kind: "shard" };
 
-// 뽑기 한 번 (random은 0 이상 1 미만). owned에는 얻은 무기(희귀 이상)를 넣는다
+// 뽑기 한 번 (random은 0 이상 1 미만). owned에는 얻은 무기를 넣는다
 export function drawOnce(owned: ReadonlySet<string>, random: () => number = Math.random): DrawResult {
   const grade = gradeOf(Math.floor(random() * ODDS_TOTAL));
   if (grade === "shard") return { kind: "shard" };
   const pool = DRAW_POOL[grade];
   const weapon = pool[Math.floor(random() * pool.length)];
-  const duplicate = grade === "common" || owned.has(weapon);
+  const duplicate = owned.has(weapon);
   return { kind: "weapon", weapon, grade, duplicate, refund: duplicate ? REFUND[grade] : 0 };
 }
 

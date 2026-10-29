@@ -8,10 +8,10 @@ import { randomAvatar, toValidAvatar } from "./pixel-pals.ts";
 import type { Avatar } from "./pixel-pals.ts";
 import { DAILY_KEYS, DRAW_COST, drawOnce, keysAfter } from "./gacha.ts";
 import type { DrawResult } from "./gacha.ts";
-import { WEAPONS, WEAPON_IDS, isWeaponId, owns, starterOf } from "./weapons.ts";
+import { STARTER_WEAPON, WEAPONS, WEAPON_IDS, isWeaponId, owns } from "./weapons.ts";
 import type { WeaponId } from "./weapons.ts";
 
-// 얻은 무기(희귀 이상, 일반 무기는 누구나 가진다)는 보물상자 뽑기(lib/gacha.ts)로 얻는다.
+// 얻은 무기(맨손 말고 전부)는 보물상자 뽑기(lib/gacha.ts)로 얻는다.
 // 로그인하면 계정(supabase/gacha.sql의 owned_weapons)에 있는 것이 전부다. 이 기기 기록은 고쳐 쓸 수 있으므로 쓰지 않는다.
 // 체험 모드(Supabase 설정 없음)에서만 이 기기에 열쇠조각·무기를 기억하고 이 기기에서 뽑는다 (LOCAL_*).
 // 내 컴퓨터에서 화면을 시험할 때(npm run dev)는 모든 무기를 가진 것으로 보인다 (뽑기 결과는 실제 기록으로 정한다)
@@ -44,9 +44,8 @@ function readLocalWallet(): LocalWallet {
 // 한국 날짜 (접속 선물은 하루 한 번, 서버의 kst_today와 같은 기준)
 const kstToday = () => new Date(Date.now() + 9 * 3600_000).toISOString().slice(0, 10);
 
-// 갖지 않은 무기를 들고 있으면(저장값을 고쳤거나 무기를 잃은 경우) 그 계열의 일반 무기로 바꾼다
-const holdable = (avatar: Avatar, owned: ReadonlySet<string>): Avatar =>
-  owns(owned, avatar.weapon) ? avatar : { ...avatar, weapon: starterOf(WEAPONS[avatar.weapon].family) };
+// 갖지 않은 무기를 들고 있으면(저장값을 고쳤거나 무기를 잃은 경우) 맨손으로 바꾼다
+const holdable = (avatar: Avatar, owned: ReadonlySet<string>): Avatar => (owns(owned, avatar.weapon) ? avatar : { ...avatar, weapon: STARTER_WEAPON });
 
 export type KeyGift = { amount: number; reason: "daily" | "review" };
 
@@ -96,7 +95,7 @@ interface UserState {
   deleteAccount: () => Promise<boolean>; // 계정과 계정에 저장된 모든 데이터를 지운다
   // 내 도트 캐릭터 (화면 곳곳에서 같이 다니는 캐릭터). 브라우저에서 읽기 전에는 null
   avatar: Avatar | null;
-  ownedWeapons: ReadonlySet<string>; // 얻은 무기 (희귀 이상. 일반 무기는 누구나 가진다)
+  ownedWeapons: ReadonlySet<string>; // 얻은 무기 (맨손은 누구나 가진다)
   setAvatar: (next: Avatar) => void;
   // 보물상자 뽑기 (lib/gacha.ts). keys가 null이면 뽑기를 쓸 수 없다 (로그인 전, supabase/gacha.sql 실행 전)
   keys: number | null;
@@ -332,7 +331,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
 
   const ownedWeapons = useMemo(() => withDev(owned ?? new Set()), [owned]);
 
-  // 갖지 않은 무기를 들고 있으면 그 계열의 일반 무기로 (무기 기록을 불러온 뒤에만)
+  // 갖지 않은 무기를 들고 있으면 맨손으로 (무기 기록을 불러온 뒤에만)
   useEffect(() => {
     if (!avatar || !owned) return;
     const fixed = holdable(avatar, ownedWeapons);

@@ -3,7 +3,7 @@ import { EXTRA_WEAPONS } from "./weapons-extra.ts";
 
 // 무기: 내 캐릭터가 손에 드는 것. 무기가 관심 표시(☆)를 켜 주는 스킬과 이펙트를 정한다.
 //   계열(family)이 스킬의 종류를, 등급(grade)이 화려함을 정한다. 일반은 단출하게, 영웅으로 갈수록 화려하게.
-//   일반 무기는 모두 기본으로 받는다. 희귀부터는 정해진 경로로 얻는다 (얻는 방법은 아직 미정 → 잠긴 채로 보인다).
+//   처음부터 가진 무기는 맨손 하나. 일반 무기부터는 보물상자 뽑기(lib/gacha.ts)로 얻는다 (못 얻은 무기는 잠긴 채로 보인다).
 //   화면에서는 무기와 스킬의 관계를 설명하지 않는다 (바꿔 보며 알아채는 숨은 재미)
 // 손에 든 그림은 lib/weapon-sprites.ts, 스킬 동작은 components/StarHelper.tsx, 이펙트는 lib/pixel-effects.ts
 
@@ -90,13 +90,9 @@ export const WEAPON_IDS = Object.keys(WEAPONS) as WeaponId[];
 export const weaponOf = (id: WeaponId): WeaponDef => WEAPONS[id];
 export const isWeaponId = (value: unknown): value is WeaponId => typeof value === "string" && value in WEAPONS;
 
-// 기본으로 받는 무기 (일반 등급 전부)
-export const STARTER_WEAPONS = WEAPON_IDS.filter((id) => WEAPONS[id].grade === "common");
-
-// 그 계열의 일반 무기 (가진 적 없는 무기를 들고 있으면 이것으로 바꾼다)
-export function starterOf(family: WeaponFamily): WeaponId {
-  return STARTER_WEAPONS.find((id) => WEAPONS[id].family === family) ?? "bare-hands";
-}
+// 처음부터 가진 무기는 맨손 하나. 나머지(일반 포함)는 보물상자 뽑기(lib/gacha.ts)로 얻는다.
+// 가진 적 없는 무기를 들고 있으면 맨손으로 바꾼다
+export const STARTER_WEAPON: WeaponId = "bare-hands";
 
 // 예전에 저장한 무기 이름 (계열 이름) → 그 계열의 일반 무기
 const LEGACY: Record<string, WeaponId> = {
@@ -109,5 +105,5 @@ const LEGACY: Record<string, WeaponId> = {
 export const upgradeWeaponId = (value: unknown): WeaponId | null =>
   isWeaponId(value) ? value : typeof value === "string" ? (LEGACY[value] ?? null) : null;
 
-// 이 무기를 가졌는지. 일반은 누구나, 그 밖에는 얻은 무기 목록(owned)에 있어야 한다
-export const owns = (owned: ReadonlySet<string>, id: WeaponId) => WEAPONS[id].grade === "common" || owned.has(id);
+// 이 무기를 가졌는지. 맨손은 누구나, 그 밖에는 얻은 무기 목록(owned)에 있어야 한다
+export const owns = (owned: ReadonlySet<string>, id: WeaponId) => id === STARTER_WEAPON || owned.has(id);

@@ -220,7 +220,8 @@ export function toValidAvatar(value: unknown): Avatar | null {
 // 처음 온 사람에게 주는 캐릭터: 기본 네 캐릭터 중 하나
 export function randomAvatar(random = Math.random): Avatar {
   const names = Object.keys(PAL_PRESETS) as PalName[];
-  return { ...PAL_PRESETS[names[Math.floor(random() * names.length) % names.length]] };
+  // 모습만 기본 캐릭터에서 고르고 무기는 맨손 (무기는 보물상자에서 얻는다)
+  return { ...PAL_PRESETS[names[Math.floor(random() * names.length) % names.length]], weapon: "bare-hands" };
 }
 
 // 부품 그림의 A·a·O·o를 고른 색의 글자로 바꾼다

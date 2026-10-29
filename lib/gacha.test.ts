@@ -45,10 +45,11 @@ test("이미 가진 무기는 열쇠조각을 돌려주고, 처음 얻으면 돌
   assert.equal(again.kind === "weapon" && again.refund, REFUND.rare);
   assert.equal(keysAfter(10, again), 5);
 
-  // 일반 무기는 누구나 가지고 있어 늘 돌려받는다
-  const common = drawOnce(new Set(), dice(0.1, 0.5));
-  assert.equal(common.kind === "weapon" && common.duplicate, true);
-  assert.equal(keysAfter(10, common), 2);
+  // 일반 무기도 처음 나오면 얻고, 가진 것이면 2개를 돌려받는다
+  const common = drawOnce(new Set(), dice(0.1, 0));
+  assert.equal(common.kind === "weapon" && common.duplicate, false);
+  const commonAgain = drawOnce(new Set([DRAW_POOL.common[0]]), dice(0.1, 0));
+  assert.equal(keysAfter(10, commonAgain), 2);
 
   const heroic = drawOnce(new Set(DRAW_POOL.heroic), dice(0.995, 0.99));
   assert.equal(heroic.kind === "weapon" && heroic.refund, REFUND.heroic);

@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { ACTION_HEIGHT, ACTION_WIDTH, PAL_COLORS, PAL_PRESETS, actionRows } from "./pixel-pals.ts";
 import { FAMILY_POSES, WEAPON_SPRITES } from "./weapon-sprites.ts";
-import { GRADES, STARTER_WEAPONS, WEAPONS, WEAPON_IDS, owns, starterOf, upgradeWeaponId } from "./weapons.ts";
+import { GRADES, STARTER_WEAPON, WEAPONS, WEAPON_IDS, owns, upgradeWeaponId } from "./weapons.ts";
 
 test("계열마다 일반·희귀·영웅 무기가 있고, 전설은 자리 하나", () => {
   for (const family of ["sword", "staff", "bow", "relic", "pen", "instrument"] as const) {
@@ -16,12 +16,12 @@ test("계열마다 일반·희귀·영웅 무기가 있고, 전설은 자리 하
   for (const id of WEAPON_IDS) assert.ok(GRADES.includes(WEAPONS[id].grade), id);
 });
 
-test("일반 무기는 누구나 갖고, 희귀 이상은 얻어야 한다", () => {
+test("맨손만 누구나 갖고, 일반 무기부터는 얻어야 한다", () => {
   const none = new Set<string>();
-  for (const id of STARTER_WEAPONS) assert.ok(owns(none, id), id);
+  assert.ok(owns(none, STARTER_WEAPON));
+  assert.ok(!owns(none, "wooden-sword"));
   assert.ok(!owns(none, "blossom-blade"));
   assert.ok(owns(new Set(["blossom-blade"]), "blossom-blade"));
-  assert.equal(starterOf("pen"), "pencil");
   assert.equal(upgradeWeaponId("wand"), "apprentice-wand");
   assert.equal(upgradeWeaponId("tide-staff"), "tide-staff");
   assert.equal(upgradeWeaponId("spoon"), null);

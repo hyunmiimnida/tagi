@@ -4,7 +4,7 @@
 --
 -- 열쇠조각: 하루 첫 접속 5개(한국 날짜), 후기 댓글 하나 5개(하루 3번까지, 지운 댓글도 셈). 10개 = 뽑기 한 번.
 -- 확률: 일반 80% / 희귀 19% / 영웅 0.99% / 전설의 파편 0.01%. 등급 안에서는 무기마다 같은 확률.
--- 이미 가진 무기가 나오면 열쇠조각을 돌려준다: 일반 2, 희귀 5, 영웅 10 (일반 무기는 누구나 가지고 있어 늘 돌려받음).
+-- 이미 가진 무기가 나오면 열쇠조각을 돌려준다: 일반 2, 희귀 5, 영웅 10. 처음부터 가진 무기는 맨손 하나뿐이다.
 -- 뽑기·지급은 모두 아래 함수(security definer)만 한다. 사람은 자기 줄을 읽기만 할 수 있어 열쇠조각을 고쳐 쓸 수 없다.
 
 -- 내 열쇠조각과 전설의 파편
@@ -16,7 +16,7 @@ create table if not exists key_wallets (
   updated_at timestamptz not null default now()
 );
 
--- 얻은 무기 (희귀 이상. 일반 무기는 누구나 가진다)
+-- 얻은 무기 (맨손 말고 전부)
 create table if not exists owned_weapons (
   user_id uuid not null references auth.users on delete cascade,
   weapon_id text not null,
@@ -124,7 +124,7 @@ begin
   end if;
 
   select weapon_id into picked from gacha_pool where grade = picked_grade order by random() limit 1;
-  duplicate := picked_grade = 'common' or exists (select 1 from owned_weapons where user_id = me and weapon_id = picked);
+  duplicate := exists (select 1 from owned_weapons where user_id = me and weapon_id = picked);
   update key_wallets set keys = keys - 10, updated_at = now() where user_id = me;
   insert into key_ledger (user_id, change, reason, detail) values (me, -10, 'draw', picked);
   if duplicate then

@@ -96,8 +96,8 @@ test("저장해 둔 캐릭터 값은 그릴 수 있는 것만 받고, 처음 온
   for (const bad of [null, "wizard", {}, { ...PAL_PRESETS.knight, outfit: "bikini" }, { ...PAL_PRESETS.knight, outfitColor: "rainbow" }, { ...PAL_PRESETS.knight, weapon: "spoon" }, { ...PAL_PRESETS.knight, weapon: undefined }]) {
     assert.equal(toValidAvatar(bad), null, JSON.stringify(bad));
   }
-  assert.deepEqual(randomAvatar(() => 0), PAL_PRESETS.wizard);
-  assert.deepEqual(randomAvatar(() => 0.99), PAL_PRESETS.cleric);
+  assert.deepEqual(randomAvatar(() => 0), { ...PAL_PRESETS.wizard, weapon: "bare-hands" });
+  assert.deepEqual(randomAvatar(() => 0.99), { ...PAL_PRESETS.cleric, weapon: "bare-hands" });
   // 예전에 저장한 무기 이름(계열 이름)은 그 계열의 일반 무기로 바뀐다
   assert.equal(toValidAvatar({ ...PAL_PRESETS.cleric, weapon: "sword" })?.weapon, "wooden-sword");
   assert.equal(toValidAvatar({ ...PAL_PRESETS.cleric, weapon: "none", effect: "petal" })?.weapon, "bare-hands");
