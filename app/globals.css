@@ -3602,11 +3602,11 @@ button.stat {
   }
 }
 
-/* 마감 경고 (components/ProgramRow.tsx의 alert): 오른쪽에서 달려와 별 버튼 왼쪽, 줄 윗선에 앉아 "!"를 띄운다 (별을 가리지 않게) */
+/* 마감 경고 (components/ProgramRow.tsx의 alert): 오른쪽에서 달려와 별 버튼 왼쪽에 서서 "!"를 띄운다 (목록이 바깥을 잘라 줄 안에 둔다, 별을 가리지 않게) */
 .row-alert {
   position: absolute;
-  top: -22px;
-  right: 52px;
+  top: 10px;
+  right: 44px;
   z-index: 3;
   line-height: 0;
   pointer-events: none;
@@ -3643,4 +3643,136 @@ button.stat {
   overflow: hidden;
   line-height: 0;
   vertical-align: middle;
+}
+
+/* 무기를 얻는 순간 (components/WeaponReveal.tsx): 화면을 덮는 어두운 막 위에서 보물상자가 열린다 */
+.reveal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(18 12 34 / 82%);
+  animation: reveal-fade 0.25s ease-out;
+}
+
+@keyframes reveal-fade {
+  from { opacity: 0; }
+}
+
+.reveal {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  width: min(340px, 100%);
+}
+
+/* 상자에서 터져 나오는 등급 빛 (일반은 금빛, 나머지는 아우라 색) */
+.reveal-light {
+  --aura: #ffe08a;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  width: 260px;
+  height: 260px;
+  margin-left: -130px;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(from 0deg, color-mix(in srgb, var(--aura) 45%, transparent) 0deg 10deg, transparent 10deg 30deg),
+    radial-gradient(closest-side, color-mix(in srgb, var(--aura) 70%, transparent), transparent);
+  opacity: 0;
+  transform: scale(0.3);
+  pointer-events: none;
+}
+
+.reveal-light.aura-rare { --aura: #ffffff; }
+.reveal-light.aura-heroic { --aura: #b48cff; }
+.reveal-light.aura-legendary { --aura: #ffb02e; }
+
+.stage-open .reveal-light,
+.stage-silhouette .reveal-light,
+.stage-reveal .reveal-light {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s, transform 0.5s steps(5, end);
+  animation: reveal-spin 8s linear infinite;
+}
+
+@keyframes reveal-spin {
+  to { rotate: 1turn; }
+}
+
+/* 무기: 상자에서 떠올라 실루엣 → 진짜 모습 */
+.reveal-weapon {
+  position: absolute;
+  top: 40px;
+  line-height: 0;
+  animation: reveal-rise 0.5s steps(6, end) both;
+}
+
+.stage-reveal .reveal-weapon {
+  animation: reveal-flash 0.35s steps(3, end);
+}
+
+@keyframes reveal-rise {
+  from { transform: translateY(90px) scale(0.6); opacity: 0; }
+}
+
+@keyframes reveal-flash {
+  0% { filter: brightness(3); }
+}
+
+.reveal-chest {
+  margin-top: 170px;
+  line-height: 0;
+}
+
+.stage-shake .reveal-chest {
+  animation: reveal-shake 0.5s steps(4, end) infinite;
+}
+
+@keyframes reveal-shake {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-4deg) translateX(-2px); }
+  75% { transform: rotate(4deg) translateX(2px); }
+}
+
+.reveal-text {
+  min-height: 132px;
+  margin-top: 16px;
+  text-align: center;
+  color: #f2eefc;
+}
+
+.reveal-name {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  animation: reveal-fade 0.4s ease-out;
+}
+
+.reveal-flavor {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #c9c1e6;
+  word-break: keep-all;
+}
+
+.reveal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-backdrop,
+  .reveal-light,
+  .reveal-weapon,
+  .reveal-chest,
+  .reveal-name {
+    animation: none !important;
+    transition: none !important;
+  }
 }

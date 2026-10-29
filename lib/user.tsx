@@ -7,14 +7,27 @@ import { forgetPushOnThisDevice } from "./push.ts";
 import { randomAvatar, toValidAvatar } from "./pixel-pals.ts";
 import type { Avatar } from "./pixel-pals.ts";
 import { WEAPONS, WEAPON_IDS, owns, starterOf } from "./weapons.ts";
+import type { WeaponId } from "./weapons.ts";
 
-// 얻은 무기(희귀 이상). 얻는 방법이 아직 없어 지금은 비어 있다 (일반 무기는 누구나 가진다).
+// 얻은 무기(희귀 이상, 일반 무기는 누구나 가진다). grantWeapon으로 얻으면 이 기기에 기억한다 (OWNED_KEY).
+// 얻는 경로는 아직 정하지 않았다. 경로를 만들 때는 계정(서버)에도 기록해야 한다 (이 기기 기록은 고쳐 쓸 수 있으므로).
 // 내 컴퓨터에서 화면을 시험할 때(npm run dev)만 모든 무기를 가진 것으로 본다
-const OWNED_WEAPONS: ReadonlySet<string> = new Set(process.env.NODE_ENV === "development" ? WEAPON_IDS : []);
+const OWNED_KEY = "ownedWeapons";
+const DEV_ALL = process.env.NODE_ENV === "development";
+
+function readOwned(): Set<string> {
+  if (DEV_ALL) return new Set(WEAPON_IDS);
+  try {
+    const value: unknown = JSON.parse(localStorage.getItem(OWNED_KEY) ?? "[]");
+    return new Set(Array.isArray(value) ? value.filter((v): v is string => typeof v === "string" && v in WEAPONS) : []);
+  } catch {
+    return new Set();
+  }
+}
 
 // 갖지 않은 무기를 들고 있으면(저장값을 고쳤거나 무기를 잃은 경우) 그 계열의 일반 무기로 바꾼다
-const holdable = (avatar: Avatar): Avatar =>
-  owns(OWNED_WEAPONS, avatar.weapon) ? avatar : { ...avatar, weapon: starterOf(WEAPONS[avatar.weapon].family) };
+const holdable = (avatar: Avatar, owned: ReadonlySet<string> = readOwned()): Avatar =>
+  owns(owned, avatar.weapon) ? avatar : { ...avatar, weapon: starterOf(WEAPONS[avatar.weapon].family) };
 
 // 로그인, 학교 설정, 관심 표시를 한곳에서 관리한다.
 // Supabase 설정(.env.local)이 없으면 "체험 모드"로 동작해 이 브라우저에만 저장한다.
@@ -64,6 +77,10 @@ interface UserState {
   avatar: Avatar | null;
   ownedWeapons: ReadonlySet<string>; // 얻은 무기 (희귀 이상. 일반 무기는 누구나 가진다)
   setAvatar: (next: Avatar) => void;
+  // 무기를 얻는다: 처음 얻는 무기면 보물상자 연출(components/WeaponReveal.tsx)을 띄운다
+  grantWeapon: (id: WeaponId) => void;
+  revealing: WeaponId | null; // 지금 연출 중인 무기
+  closeReveal: () => void;
 }
 
 const UserContext = createContext<UserState | null>(null);
@@ -235,6 +252,19 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     };
   }, [userId]);
 
+  const [ownedWeapons, setOwnedWeapons] = useState<ReadonlySet<string>>(() => new Set(DEV_ALL ? WEAPON_IDS : []));
+  const [revealing, setRevealing] = useState<WeaponId | null>(null);
+  useEffect(() => setOwnedWeapons(readOwned()), []);
+
+  const grantWeapon = useCallback((id: WeaponId) => {
+    setOwnedWeapons((owned) => {
+      if (!DEV_ALL && !owned.has(id)) writeLocal(OWNED_KEY, JSON.stringify([...owned, id]));
+      return owned.has(id) ? owned : new Set([...owned, id]);
+    });
+    setRevealing(id);
+  }, []);
+  const closeReveal = useCallback(() => setRevealing(null), []);
+
   const setAvatar = useCallback(
     (next: Avatar) => {
       setAvatarState(next);
@@ -399,10 +429,13 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         return true;
       },
       avatar,
-      ownedWeapons: OWNED_WEAPONS,
+      ownedWeapons,
       setAvatar,
+      grantWeapon,
+      revealing,
+      closeReveal,
     }),
-    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite, avatar, setAvatar],
+    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite, avatar, setAvatar, ownedWeapons, grantWeapon, revealing, closeReveal],
   );
 
   return <UserContext value={value}>{children}</UserContext>;
