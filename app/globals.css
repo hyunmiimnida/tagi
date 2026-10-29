@@ -3505,3 +3505,37 @@ button.stat {
 .avatar-section {
   padding: 18px 16px 16px;
 }
+
+/* 장착 연출: 미리보기 캐릭터의 무기 쪽(오른쪽 위)에서 이펙트가 한 번 터진다 */
+.equip-flash {
+  position: absolute;
+  left: 78%;
+  top: 38%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.equip-flash .pfx {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+/* 이펙트가 없는 일반 무기: 하얀 반짝 한 번 */
+.equip-flash.plain i {
+  position: absolute;
+  left: -14px;
+  top: -14px;
+  width: 28px;
+  height: 28px;
+  background:
+    linear-gradient(#fff, #fff) center / 4px 100% no-repeat,
+    linear-gradient(#fff, #fff) center / 100% 4px no-repeat;
+  animation: equip-twinkle 0.4s steps(4, end) forwards;
+}
+
+@keyframes equip-twinkle {
+  0% { transform: scale(0.3); opacity: 1; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.6); opacity: 0; }
+}

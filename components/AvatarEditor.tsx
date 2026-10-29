@@ -8,7 +8,9 @@ import { WEAPON_SPRITES } from "../lib/weapon-sprites.ts";
 import { GRADES, WEAPONS, WEAPON_IDS, owns } from "../lib/weapons.ts";
 import type { WeaponDef, WeaponId } from "../lib/weapons.ts";
 import { ChevronIcon, LockIcon, StarIcon } from "./Icons.tsx";
-import { AmbientEffect } from "./PixelEffect.tsx";
+import { AmbientEffect, BurstEffect } from "./PixelEffect.tsx";
+import type { ActionFrame } from "../lib/pixel-pals.ts";
+import type { WeaponFamily } from "../lib/weapons.ts";
 import { PixelSprite } from "./PixelPal.tsx";
 import { requestStarHelper } from "./StarHelper.tsx";
 
@@ -19,6 +21,17 @@ import { requestStarHelper } from "./StarHelper.tsx";
 const HEADWEARS = Object.keys(HEADWEAR_NAMES) as Headwear[];
 const OUTFITS = Object.keys(OUTFIT_NAMES) as Outfit[];
 const FAMILY_ORDER = ["fist", "sword", "staff", "bow", "relic", "pen", "instrument"];
+
+// 장착 연출: 새 무기를 한 번 써 보는 자세들 [자세, 머무는 시간]
+const TRY_SWING: Record<WeaponFamily, [ActionFrame, number][]> = {
+  sword: [["windup", 160], ["strike", 300]],
+  staff: [["cast", 420]],
+  bow: [["draw", 240], ["release", 240]],
+  relic: [["pray", 420]],
+  pen: [["poke", 380]],
+  instrument: [["play", 420]],
+  fist: [["punch", 360]],
+};
 
 // 도감 순서: 등급(일반 → 전설) → 계열
 const CODEX: WeaponId[] = [...WEAPON_IDS].sort(
@@ -44,6 +57,10 @@ export function AvatarEditor() {
   const stageRef = useRef<HTMLDivElement | null>(null);
   const stripRef = useRef<HTMLDivElement | null>(null);
   const swipe = useRef<number | null>(null);
+  const [swing, setSwing] = useState<ActionFrame | null>(null); // 장착 연출 중인 자세
+  const [flash, setFlash] = useState(0); // 장착 순간 이펙트 (바뀔 때마다 다시 재생)
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  useEffect(() => () => timers.current.forEach(clearTimeout), []);
 
   // 처음에는 들고 있는 무기의 쪽을 펼친다
   useEffect(() => {
@@ -72,6 +89,21 @@ export function AvatarEditor() {
     user.setAvatar({ ...avatar, ...patch });
     setNotice(message);
   };
+  // 장착하면 캐릭터가 새 무기를 한 번 휘둘러 보고, 마지막 자세에서 그 무기의 이펙트가 터진다 (동작 줄이기면 바로)
+  function equip(id: WeaponId) {
+    change({ weapon: id }, "장착했어요.");
+    timers.current.forEach(clearTimeout);
+    timers.current = [];
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let at = 120;
+    for (const [pose, ms] of TRY_SWING[WEAPONS[id].family]) {
+      timers.current.push(setTimeout(() => setSwing(pose), at));
+      at += ms;
+    }
+    timers.current.push(setTimeout(() => setFlash((n) => n + 1), at - 180));
+    timers.current.push(setTimeout(() => setSwing(null), at + 260));
+  }
+
   const go = (step: number) => {
     setIndex((index + step + CODEX.length) % CODEX.length);
     setNotice("");
@@ -116,7 +148,12 @@ export function AvatarEditor() {
       {/* 내 캐릭터: 들고 있는 무기의 아우라가 뒤에서 빛난다 */}
       <section className="card vitrine avatar-stage-card">
         <div className={`avatar-preview aura aura-${equipped.grade}`}>
-          <PixelSprite rows={actionRows(avatar, "stand")} scale={6} />
+          <PixelSprite rows={actionRows(avatar, swing ?? "stand")} scale={6} />
+          {flash > 0 && (
+            <span key={flash} className={`equip-flash ${equipped.effect ? "" : "plain"}`} aria-hidden="true">
+              {equipped.effect ? <BurstEffect effect={equipped.effect} scale={3} /> : <i />}
+            </span>
+          )}
           {equipped.effect && <AmbientEffect key={equipped.effect} effect={equipped.effect} every={equipped.grade === "rare" ? 2400 : 1400} />}
         </div>
         <p className="avatar-weapon-name">{equipped.name}</p>
@@ -182,7 +219,7 @@ export function AvatarEditor() {
           ) : equippedHere ? (
             <span className="codex-status equipped">장착 중</span>
           ) : (
-            <button type="button" className="button primary" onClick={() => change({ weapon: shownId }, "장착했어요.")}>
+            <button type="button" className="button primary" onClick={() => equip(shownId)}>
               장착하기
             </button>
           )}
