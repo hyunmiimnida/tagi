@@ -151,6 +151,7 @@ export interface CollectContext {
   source: Source;
   fetchHtml: (url: string) => Promise<string>;
   isKnown: (url: string) => boolean; // 이미 저장된 게시물인지
+  onPostError?: (url: string, error: unknown) => void; // 글 하나를 읽지 못했을 때 (있으면 그 글만 건너뛰고 계속한다)
 }
 
 export type Collector = (ctx: CollectContext) => Promise<CollectedItem[]>;

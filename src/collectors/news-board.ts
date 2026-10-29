@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { RobotsBlockedError } from "../fetch.ts";
+import { skipPost } from "./post-errors.ts";
 import { emptyProgram } from "../types.ts";
 import type { ArchivePost, Archiver, CollectContext, CollectedItem, Collector } from "../types.ts";
 
@@ -8,6 +8,7 @@ import type { ArchivePost, Archiver, CollectContext, CollectedItem, Collector } 
 
 const PAGE_SIZE = 10;
 const ARCHIVE_PAGE_SIZE = 100; // 과거 글을 훑을 때는 한 쪽에 많이 받아 요청 수를 줄인다
+const ARCHIVE_MAX_PAGES = 300; // 끝없이 넘기지 않게 막는 안전장치
 
 // 줄바꿈을 살려서 본문 글자만 뽑는다. 표는 한 줄(tr)을 한 줄로 만든다
 export function htmlToText(html: string): string {
@@ -105,10 +106,7 @@ export const collectNewsBoard: Collector = async (ctx) => {
 
     for (const post of posts) {
       if (ctx.isKnown(post.url) || items.has(post.postId)) continue;
-      const item = await readPost(ctx, post).catch((error) => {
-        if (error instanceof RobotsBlockedError) return null; // robots.txt가 막은 글은 건너뛴다 (fetch.ts가 기록)
-        throw error;
-      });
+      const item = await readPost(ctx, post).catch((error) => skipPost(ctx, post.url, error));
       if (item) items.set(post.postId, item);
     }
   }
@@ -120,13 +118,18 @@ export const collectNewsBoard: Collector = async (ctx) => {
 export const archiveNewsBoard: Archiver = {
   async list(ctx, since) {
     const posts: ArchivePost[] = [];
-    for (let offset = 0; ; offset += ARCHIVE_PAGE_SIZE) {
+    const seen = new Set<string>();
+    // 마지막 쪽 뒤에도 같은 고정 공지만 계속 돌려주는 게시판에서 끝없이 넘기지 않게:
+    // 새 글이 없는 쪽이 나오면 멈추고, 쪽 수에도 상한을 둔다 (table-board와 같은 안전장치)
+    for (let offset = 0, pages = 0; pages < ARCHIVE_MAX_PAGES; offset += ARCHIVE_PAGE_SIZE, pages++) {
       const page = await listPage(ctx, offset, ARCHIVE_PAGE_SIZE);
-      if (page.length === 0) break;
-      posts.push(...page.filter((post) => !post.postedAt || post.postedAt >= since));
-      console.log(`  목록 ${offset + page.length}개 확인 (${page.at(-1)?.postedAt ?? "?"})`);
-      // 공지 고정 글 때문에 날짜가 섞일 수 있어 쪽 전체가 기준보다 오래되었을 때 멈춘다
-      if (page.every((post) => post.postedAt && post.postedAt < since)) break;
+      const fresh = page.filter((post) => !seen.has(post.postId));
+      if (fresh.length === 0) break;
+      for (const post of fresh) seen.add(post.postId);
+      posts.push(...fresh.filter((post) => !post.postedAt || post.postedAt >= since));
+      console.log(`  목록 ${offset + page.length}개 확인 (${fresh.at(-1)?.postedAt ?? "?"})`);
+      // 공지 고정 글 때문에 날짜가 섞일 수 있어 새로 나온 글이 모두 기준보다 오래되었을 때 멈춘다
+      if (fresh.every((post) => post.postedAt && post.postedAt < since)) break;
     }
     return posts;
   },

@@ -11,12 +11,14 @@ const queues = new Map<string, Promise<unknown>>();
 const crawlDelays = new Map<string, number>();
 const MAX_CRAWL_DELAY_S = 60;
 
-function politeFetch(url: string): Promise<Response> {
+// redirect "manual": 다른 주소로 보내는 응답(3xx)을 따라가지 않고 그대로 돌려준다 (followFetch가 robots.txt를 확인하고 따라간다)
+function politeFetch(url: string, redirect: RequestRedirect = "follow"): Promise<Response> {
   const host = new URL(url).host;
   const turn = (queues.get(host) ?? Promise.resolve()).then(async () => {
     const response = await fetch(url, {
       headers: { "User-Agent": USER_AGENT },
       signal: AbortSignal.timeout(30_000),
+      redirect,
     });
     const wait = Math.max(DELAY_MS, Math.min(crawlDelays.get(host) ?? 0, MAX_CRAWL_DELAY_S) * 1000);
     await new Promise((r) => setTimeout(r, wait)); // 다음 요청까지 쉰다
@@ -35,15 +37,43 @@ export class RobotsBlockedError extends Error {
   }
 }
 
+// robots.txt를 받지 못해(접속 오류·응답 오류) 이 주소를 읽어도 되는지 모를 때 나는 오류.
+// 막힌 것(RobotsBlockedError)과 달리 수집 실패로 기록한다 (수집 점검이 알리게)
+export class RobotsUnavailableError extends Error {
+  url: string;
+  constructor(url: string, reason: string) {
+    super(`robots.txt를 확인하지 못해 읽지 않음: ${url} (${reason})`);
+    this.url = url;
+  }
+}
+
 // 이번 실행에서 robots.txt 때문에 건너뛴 주소 (수집 기록에 남긴다)
 export const robotsBlocked: string[] = [];
 
+// 이 주소를 읽어도 되는지 확인한다. 막혔으면 RobotsBlockedError, 확인하지 못했으면 RobotsUnavailableError
+async function checkRobots(url: string): Promise<void> {
+  if (await isAllowedByRobots(url)) return;
+  const problem = robotsProblemOf(url);
+  if (problem) throw new RobotsUnavailableError(url, problem);
+  robotsBlocked.push(url);
+  throw new RobotsBlockedError(url);
+}
+
+// 다른 주소로 보내면(3xx) 그 주소도 robots.txt를 확인하고, 그 사이트의 요청 간격을 지키며 따라간다 (최대 5번)
+const MAX_REDIRECTS = 5;
+async function followFetch(url: string, hops = 0): Promise<Response> {
+  const res = await politeFetch(url, "manual");
+  const location = res.headers.get("location");
+  if (res.status < 300 || res.status >= 400 || !location) return res;
+  if (hops >= MAX_REDIRECTS) throw new Error(`${url} 다른 주소로 너무 많이 보냄`);
+  const next = new URL(location, url).href;
+  await checkRobots(next);
+  return followFetch(next, hops + 1);
+}
+
 export async function fetchHtml(url: string): Promise<string> {
-  if (!(await isAllowedByRobots(url))) {
-    robotsBlocked.push(url);
-    throw new RobotsBlockedError(url);
-  }
-  const res = await politeFetch(url);
+  await checkRobots(url);
+  const res = await followFetch(url);
   if (!res.ok) throw new Error(`${url} 응답 오류 (${res.status})`);
   return res.text();
 }
@@ -53,7 +83,7 @@ const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
 // (robots.txt가 막은 그림은 글이 아니라서 robotsBlocked에 남기지 않는다)
 export async function fetchImage(url: string): Promise<{ data: Buffer; type: string } | null> {
   if (!(await isAllowedByRobots(url))) return null;
-  const res = await politeFetch(url).catch(() => null);
+  const res = await followFetch(url).catch(() => null);
   const type = res?.headers.get("content-type")?.split(";")[0].trim() ?? "";
   if (!res?.ok || !/^image\/(png|jpeg|gif|webp)$/.test(type)) return null;
   const data = Buffer.from(await res.arrayBuffer());

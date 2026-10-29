@@ -69,6 +69,8 @@
 
 1. 출처별 수집기가 새 게시물을 가져온다. 서로 다른 사이트는 동시에 읽고, 같은 사이트는 요청 사이 1초 쉰다 (robots.txt에 Crawl-delay가 있으면 그 초만큼, 최대 60초)
    - robots.txt는 사이트마다 한 번 받아 기억하고, 목록·상세 등 **읽는 모든 주소**를 `fetchHtml`이 확인한다. 막힌 글은 건너뛰고 `collect-log.json`의 `robotsBlocked`에 남긴다
+   - 다른 주소로 보내는 응답(3xx)은 자동으로 따라가지 않고, 가는 곳마다 robots.txt와 그 사이트의 요청 간격을 지키며 최대 5번 따라간다 (`followFetch`). 상세 글 사이트의 robots.txt를 받지 못하면 "막힘"이 아니라 `RobotsUnavailableError`(실패)
+   - 글 하나를 읽지 못해도(접속 오류 등) 그 글만 건너뛰고 나머지는 저장한다 (`src/collectors/post-errors.ts`의 `skipPost`). 출처 기록에 "글 N개 읽기 실패"를 남기고, 하나도 못 읽었으면 출처 실패
    - robots.txt를 받지 못하면(접속 오류·응답 오류) 5·10초 쉬고 3번까지 다시 받는다. 끝내 못 받으면 수집하지 않되 "막음"이 아니라 **실패**로 기록해 수집 점검(`check-health`)이 알린다 (2026-10 계명대·서강대가 이 일로 일주일 조용히 멈췄었다)
 2. `src/extract.ts`가 규칙으로 주최·기간·태그를 채운다
 3. `useAi` 출처는 AI CLI가 있으면 `src/ai.ts`가 게시물을 묶어(Codex 10개·Claude 15개씩) 추출한다 (실패하면 규칙 결과를 그대로 쓴다)

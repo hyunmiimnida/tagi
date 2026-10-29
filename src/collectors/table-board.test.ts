@@ -44,3 +44,31 @@ test("JSON 게시판: 점 경로로 값을 꺼내고 붙여 쓴 날짜도 읽는
   assert.equal(jsonDate("20261001150309"), "2026-10-01");
   assert.equal(jsonDate("2026-10-02 17:07:00.0"), "2026-10-02");
 });
+
+test("글 하나를 읽지 못해도 나머지 글은 돌려주고 실패한 글을 알린다", async () => {
+  const list = `<ul><li class="card"><a href="#" onclick="jf_view('1')">하나</a><span class="d">2026.10.01</span></li>` +
+    `<li class="card"><a href="#" onclick="jf_view('2')">둘</a><span class="d">2026.10.02</span></li></ul>`;
+  const pages: Record<string, string> = {
+    "https://v.example/list?page=1": list,
+    "https://v.example/view/1": '<h2>하나</h2><div class="c">본문</div><p class="w">2026-10-01</p>',
+  };
+  const school = { id: "y", name: "예시대학교", shortName: "예시대", region: "영남권", sources: [] };
+  const source = {
+    id: "y-notice", name: "공지", collector: "table-board", url: "https://v.example/list", enabled: true, pages: 1,
+    board: { link: "li.card a", row: "li", idAttr: "onclick", idPattern: "jf_view\\('(\\d+)'\\)", viewUrl: "https://v.example/view/{id}",
+      pageParam: "page", title: "h2", content: ".c", listDate: ".d", date: ".w" },
+  };
+  const failed: string[] = [];
+  const items = await collectTableBoard({
+    school,
+    source,
+    fetchHtml: async (url) => {
+      if (url === "https://v.example/view/2") throw new Error("응답 오류 (500)");
+      return pages[url] ?? "";
+    },
+    isKnown: () => false,
+    onPostError: (url) => failed.push(url),
+  });
+  assert.deepEqual(items.map((i) => i.program.title), ["하나"]);
+  assert.deepEqual(failed, ["https://v.example/view/2"]);
+});
