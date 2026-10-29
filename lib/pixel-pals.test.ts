@@ -73,3 +73,19 @@ test("별 켜기 동작 그림(24×17)과 효과 그림은 정해진 색만 쓴�
   assert.notDeepEqual(actionRows("wizard", "stand"), actionRows("wizard", "cast"));
   for (const rows of Object.values(EFFECT_ROWS)) for (const ch of rows.join("")) assert.ok(ch === "." || PAL_COLORS[ch], ch);
 });
+
+test("캐릭터는 부품(머리 장식·옷)과 색을 바꿔 꾸밀 수 있다", async () => {
+  const { PAL_PRESETS } = await import("./pixel-pals.ts");
+  // 기본 캐릭터 이름과 그 모습을 넘겼을 때 같은 그림
+  for (const name of names) assert.deepEqual(palRows(PAL_PRESETS[name], "sit"), palRows(name, "sit"));
+  // 마법사 모자에 기사 갑옷, 색은 초록 모자·하얀 옷
+  const mixed = palRows({ headwear: "wizard-hat", headwearColor: "green", outfit: "armor", outfitColor: "white" }, "sit");
+  assert.equal(mixed.length, PAL_HEIGHT.sit);
+  const hat = mixed.slice(0, 6).join("");
+  const body = mixed.slice(12).join("");
+  assert.ok(hat.includes("N") && !hat.includes("H"), "모자는 초록");
+  assert.ok(body.includes("B") && body.includes("b") && !body.includes("M"), "옷은 하양과 그 어두운 색");
+  for (const ch of mixed.join("")) assert.ok(ch === "." || PAL_COLORS[ch], ch);
+  // 없는 색 이름은 바로 알린다
+  assert.throws(() => palRows({ ...PAL_PRESETS.wizard, outfitColor: "rainbow" }, "sit"), /없는 색/);
+});

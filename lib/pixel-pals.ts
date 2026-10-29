@@ -73,64 +73,120 @@ const face = (side: string) => [
 
 const EYE_ROWS = [7, 8, 9]; // 머리 지도에서 눈이 있는 줄 (깜빡일 때 바꾼다)
 
-const HEADS: Record<PalName, string[]> = {
-  wizard: [
+// ───────── 부품 ─────────
+// 캐릭터는 머리 장식 + 얼굴 + 옷(몸) 부품을 겹쳐 그린다. 부품 그림의 아래 글자는 "고른 색"으로 바뀐다
+//   A·a: 머리 장식 색·그 어두운 색, O·o: 옷 색·그 어두운 색 (나머지 글자는 PAL_COLORS의 고정 색)
+export type Headwear = "wizard-hat" | "helmet" | "hood" | "veil";
+export type Outfit = "robe" | "armor" | "tunic" | "vestment";
+
+// 한 사람의 캐릭터 모습. 색은 PAL_HEX의 이름(app/globals.css의 --px-*)
+export interface Avatar {
+  headwear: Headwear;
+  headwearColor: string;
+  outfit: Outfit;
+  outfitColor: string;
+}
+
+const HEADWEAR: Record<Headwear, string[]> = {
+  "wizard-hat": [
     "..........KK....",
-    ".........KHK....",
-    "......KKKHHK....",
-    ".....KHHHHK.....",
-    "....KHHYHHHK....",
+    ".........KAK....",
+    "......KKKAAK....",
+    ".....KAAAAK.....",
+    "....KAAYAAAK....",
     "KKKKKKKKKKKKKKK.",
     ...face("S"),
   ],
-  knight: [
+  helmet: [
     ".......KCK......",
     "......KCCK......",
     "....KKKKKKKK....",
-    "...KMMMMMMMMK...",
-    "..KMMMMMMMMMMK..",
-    ".KMMMKKKKKKMMMK.",
-    ...face("M"),
+    "...KAAAAAAAAK...",
+    "..KAAAAAAAAAAK..",
+    ".KAAAKKKKKKAAAK.",
+    ...face("A"),
   ],
-  ranger: [
+  hood: [
     "................",
     "......KKKK......",
-    "....KKNNNNKK....",
-    "...KNNNNNNNNK...",
-    "..KNNNNNNNNNNK..",
-    ".KNNNNNNNNNNNNK.",
-    ...face("N"),
+    "....KKAAAAKK....",
+    "...KAAAAAAAAK...",
+    "..KAAAAAAAAAAK..",
+    ".KAAAAAAAAAAAAK.",
+    ...face("A"),
   ],
-  cleric: [
+  veil: [
     "................",
     "......KKKK......",
-    "....KKBYYBKK....",
-    "...KBBBYYBBBK...",
-    "..KBBBBBBBBBBK..",
-    ".KBBBBBBBBBBBBK.",
-    ...face("B"),
+    "....KKAYYAKK....",
+    "...KAAAYYAAAK...",
+    "..KAAAAAAAAAAK..",
+    ".KAAAAAAAAAAAAK.",
+    ...face("A"),
   ],
 };
 
-// 앉은 몸: 손을 양옆에 짚고 다리를 늘어뜨린다 (마지막 2줄이 다리)
-const BODIES: Record<PalName, string[]> = {
-  wizard: ["...KHHHHHHHK....", "..KSHHHYHHHSK...", "..KKHHHHHHHKK...", "...KhhKKKhhK....", "...KtK...KtK...."],
-  knight: ["...KMMMYMMMK....", "..KSMMYYYMMSK...", "..KKMMMYMMMKK...", "...KmmKKKmmK....", "...KmK...KmK...."],
-  ranger: ["...KNNTTNNNK....", "..KSNNTYTNNSK...", "..KKNNNNNNNKK...", "...KTTKKKTTK....", "...KTK...KTK...."],
-  cleric: ["...KBBYYBBBK....", "..KSBYYYYBBSK...", "..KKBBYYBBBKK...", "...KbbKKKbbK....", "...KbK...KbK...."],
+// 앉은 몸: 손을 양옆에 짚고 다리를 늘어뜨린다 (마지막 2줄이 다리). legs: 서 있는 동작 그림의 다리 색 글자
+const OUTFITS: Record<Outfit, { rows: string[]; legs: string }> = {
+  robe: { rows: ["...KOOOOOOOK....", "..KSOOOYOOOSK...", "..KKOOOOOOOKK...", "...KooKKKooK....", "...KtK...KtK...."], legs: "t" },
+  armor: { rows: ["...KOOOYOOOK....", "..KSOOYYYOOSK...", "..KKOOOYOOOKK...", "...KooKKKooK....", "...KoK...KoK...."], legs: "o" },
+  tunic: { rows: ["...KOOTTOOOK....", "..KSOOTYTOOSK...", "..KKOOOOOOOKK...", "...KTTKKKTTK....", "...KTK...KTK...."], legs: "T" },
+  vestment: { rows: ["...KOOYYOOOK....", "..KSOYYYYOOSK...", "..KKOOYYOOOKK...", "...KooKKKooK....", "...KoK...KoK...."], legs: "o" },
 };
 
-// 빼꼼: 카드 윗선을 잡은 두 손 (마지막 2줄이 카드 선에 걸친다)
-const HANDS = ["..KSSK....KSSK..", "..KKKK....KKKK.."];
+// 처음부터 있던 네 캐릭터. 화면 곳곳의 기본 캐릭터이자, 내 캐릭터를 꾸밀 때의 출발점
+export const PAL_PRESETS: Record<PalName, Avatar> = {
+  wizard: { headwear: "wizard-hat", headwearColor: "violet", outfit: "robe", outfitColor: "violet" },
+  knight: { headwear: "helmet", headwearColor: "steel", outfit: "armor", outfitColor: "steel" },
+  ranger: { headwear: "hood", headwearColor: "green", outfit: "tunic", outfitColor: "green" },
+  cleric: { headwear: "veil", headwearColor: "white", outfit: "vestment", outfitColor: "white" },
+};
 
-export function palRows(name: PalName, pose: PalPose, blink = false): string[] {
-  const head = HEADS[name].map((row, i) => {
+// 색 이름 → 그 색의 어두운 색 (없으면 같은 색)
+const DARKER: Record<string, string> = { violet: "violet-dark", steel: "steel-dark", white: "white-dark" };
+
+// 색 이름 → 그 색을 뜻하는 글자 (PAL_COLORS를 거꾸로)
+const LETTER_OF: Record<string, string> = Object.fromEntries(
+  Object.entries(PAL_COLORS)
+    .filter(([letter]) => letter !== "#")
+    .map(([letter, color]) => [color, letter]),
+);
+
+const toAvatar = (who: PalName | Avatar): Avatar => (typeof who === "string" ? PAL_PRESETS[who] : who);
+
+// 부품 그림의 A·a·O·o를 고른 색의 글자로 바꾼다
+function paint(rows: string[], avatar: Avatar): string[] {
+  const letter = (color: string) => {
+    const found = LETTER_OF[color];
+    if (!found) throw new Error(`없는 색: ${color}`);
+    return found;
+  };
+  const swap: Record<string, string> = {
+    A: letter(avatar.headwearColor),
+    a: letter(DARKER[avatar.headwearColor] ?? avatar.headwearColor),
+    O: letter(avatar.outfitColor),
+    o: letter(DARKER[avatar.outfitColor] ?? avatar.outfitColor),
+  };
+  return rows.map((row) => row.replace(/[AaOo]/g, (ch) => swap[ch]));
+}
+
+function headRows(avatar: Avatar, blink = false): string[] {
+  const head = HEADWEAR[avatar.headwear].map((row, i) => {
     if (!blink || !EYE_ROWS.includes(i)) return row;
     // 눈 감기: 위 두 줄의 눈은 지우고(피부), 맨 아래 줄만 선으로 남긴다 → ‿‿
     const eyes = (r: string) => r.slice(0, 3) + r.slice(3, 12).replace(/[KW]/g, "S") + r.slice(12);
     return i === 9 ? row : eyes(row);
   });
-  return [...head, ...(pose === "sit" ? BODIES[name] : HANDS)];
+  return paint(head, avatar);
+}
+
+// 빼꼼: 카드 윗선을 잡은 두 손 (마지막 2줄이 카드 선에 걸친다)
+const HANDS = ["..KSSK....KSSK..", "..KKKK....KKKK.."];
+
+// 캐릭터 그림. who: 기본 캐릭터 이름이나 꾸민 캐릭터 모습
+export function palRows(who: PalName | Avatar, pose: PalPose, blink = false): string[] {
+  const avatar = toAvatar(who);
+  return [...headRows(avatar, blink), ...(pose === "sit" ? paint(OUTFITS[avatar.outfit].rows, avatar) : HANDS)];
 }
 
 // 같은 색이 옆으로 이어진 픽셀을 한 덩어리로 묶어 색마다 path 하나로 만든다 (그림 요소 수를 줄이려고)
@@ -165,7 +221,6 @@ export const ACTION_WIDTH = 24;
 export const ACTION_HEIGHT = 17;
 export type ActionFrame = "stand" | "runA" | "runB" | "windup" | "strike" | "draw" | "release" | "cast" | "pray";
 
-const LEG_COLOR: Record<PalName, string> = { wizard: "t", knight: "m", ranger: "T", cleric: "b" };
 const LEGS: Record<"stand" | "runA" | "runB", string[]> = {
   stand: ["....KxK.KxK.....", "...KKKK.KKKK...."],
   runA: ["...KxK...KxK....", "..KKK.....KKK..."],
@@ -215,9 +270,11 @@ function stamp(canvas: string[][], rows: string[], ox: number, oy: number): void
 export function actionRows(name: PalName, frame: ActionFrame): string[] {
   const canvas = Array.from({ length: ACTION_HEIGHT }, () => Array<string>(ACTION_WIDTH).fill("."));
   const legs = frame === "runA" || frame === "runB" ? LEGS[frame] : LEGS.stand;
-  stamp(canvas, HEADS[name], 4, 0);
-  stamp(canvas, BODIES[name].slice(0, 3), 4, 12);
-  stamp(canvas, legs.map((row) => row.replace(/x/g, LEG_COLOR[name])), 4, 15);
+  const avatar = PAL_PRESETS[name];
+  const outfit = OUTFITS[avatar.outfit];
+  stamp(canvas, headRows(avatar), 4, 0);
+  stamp(canvas, paint(outfit.rows.slice(0, 3), avatar), 4, 12);
+  stamp(canvas, paint(legs.map((row) => row.replace(/x/g, outfit.legs)), avatar), 4, 15);
   const prop = PROPS[name]?.[frame];
   if (prop) stamp(canvas, ...prop);
   return canvas.map((row) => row.join(""));
