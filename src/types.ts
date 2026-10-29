@@ -6,6 +6,7 @@ export const STUDENT_STATUSES = ["재학생", "휴학생", "졸업생"];
 export interface Period {
   start: string | null;
   end: string | null;
+  yearGuessed?: true; // 규칙이 날짜 중 하나라도 연도 없이 읽었을 때만 표시
 }
 
 // 공통 데이터 형식: 출처가 달라도 모든 정보를 이 틀에 담는다

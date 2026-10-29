@@ -391,7 +391,7 @@ export function withoutOwnSchool(program: Program, organizer: string): string {
 }
 
 // 반영하면 true, 학생 대상이 아니면 false, 응답이 불완전해 반영하지 않으면 null (다음에 다시 추출한다)
-function apply(item: CollectedItem, data: Record<string, unknown>, categories: TagCategory[]): boolean | null {
+export function applyAiResult(item: CollectedItem, data: Record<string, unknown>, categories: TagCategory[]): boolean | null {
   const { program } = item;
   const complete = typeof data.forStudents === "boolean" && Array.isArray(data.tags) && Array.isArray(data.grades);
   if (!complete) return null;
@@ -403,12 +403,13 @@ function apply(item: CollectedItem, data: Record<string, unknown>, categories: T
   if (typeof data.organizer === "string" && data.organizer.trim() && data.organizer.length <= 60) program.organizer = withoutOwnSchool(program, data.organizer.trim());
   if (organizerTypes.includes(data.organizerType as string)) program.organizerType = data.organizerType as string;
 
-  // AI가 날짜를 하나라도 찾았으면 그 기간은 AI 결과를 따른다
+  // 기간 칸이 있으면 null·잘못된 순서도 반영해 틀렸을 수 있는 규칙 날짜를 남기지 않는다.
+  // 칸이 없는 옛 답만 규칙 값을 유지한다. AI는 연도를 판단하므로 추측 표시를 붙이지 않는다.
   const recruit = { start: date(data.recruitStart), end: date(data.recruitEnd) };
   const activity = { start: date(data.activityStart), end: date(data.activityEnd) };
   const valid = (p: { start: string | null; end: string | null }) => !p.start || !p.end || p.start <= p.end;
-  if ((recruit.start || recruit.end) && valid(recruit)) program.recruitPeriod = recruit;
-  if ((activity.start || activity.end) && valid(activity)) program.activityPeriod = activity;
+  if ("recruitStart" in data || "recruitEnd" in data) program.recruitPeriod = valid(recruit) ? recruit : { start: null, end: null };
+  if ("activityStart" in data || "activityEnd" in data) program.activityPeriod = valid(activity) ? activity : { start: null, end: null };
   cleanPeriods(program);
 
   program.target.colleges = strings(data.colleges);
@@ -572,7 +573,7 @@ export async function enrichWithAi(
         for (const data of answer.items ?? []) {
           const item = batch.find((b) => b.program.id === data.id);
           if (!item) continue;
-          const result = apply(item, data, categories);
+          const result = applyAiResult(item, data, categories);
           if (result === true) done++;
           else if (result === false) notForStudents.add(item.program.id);
         }
