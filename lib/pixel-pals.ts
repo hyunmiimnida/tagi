@@ -78,6 +78,8 @@ const EYE_ROWS = [7, 8, 9]; // 머리 지도에서 눈이 있는 줄 (깜빡일 
 //   A·a: 머리 장식 색·그 어두운 색, O·o: 옷 색·그 어두운 색 (나머지 글자는 PAL_COLORS의 고정 색)
 export type Headwear = "wizard-hat" | "helmet" | "hood" | "veil";
 export type Outfit = "robe" | "armor" | "tunic" | "vestment";
+// 관심 표시(☆)를 켜 줄 때의 동작 (components/StarHelper.tsx): 마법·칼·활·기도
+export type StarAction = "magic" | "slash" | "arrow" | "pray";
 
 // 한 사람의 캐릭터 모습. 색은 PAL_HEX의 이름(app/globals.css의 --px-*)
 export interface Avatar {
@@ -85,6 +87,7 @@ export interface Avatar {
   headwearColor: string;
   outfit: Outfit;
   outfitColor: string;
+  action: StarAction;
 }
 
 const HEADWEAR: Record<Headwear, string[]> = {
@@ -136,10 +139,10 @@ const OUTFITS: Record<Outfit, { rows: string[]; legs: string }> = {
 
 // 처음부터 있던 네 캐릭터. 화면 곳곳의 기본 캐릭터이자, 내 캐릭터를 꾸밀 때의 출발점
 export const PAL_PRESETS: Record<PalName, Avatar> = {
-  wizard: { headwear: "wizard-hat", headwearColor: "violet", outfit: "robe", outfitColor: "violet" },
-  knight: { headwear: "helmet", headwearColor: "steel", outfit: "armor", outfitColor: "steel" },
-  ranger: { headwear: "hood", headwearColor: "green", outfit: "tunic", outfitColor: "green" },
-  cleric: { headwear: "veil", headwearColor: "white", outfit: "vestment", outfitColor: "white" },
+  wizard: { headwear: "wizard-hat", headwearColor: "violet", outfit: "robe", outfitColor: "violet", action: "magic" },
+  knight: { headwear: "helmet", headwearColor: "steel", outfit: "armor", outfitColor: "steel", action: "slash" },
+  ranger: { headwear: "hood", headwearColor: "green", outfit: "tunic", outfitColor: "green", action: "arrow" },
+  cleric: { headwear: "veil", headwearColor: "white", outfit: "vestment", outfitColor: "white", action: "pray" },
 };
 
 // 색 이름 → 그 색의 어두운 색 (없으면 같은 색)
@@ -153,6 +156,33 @@ const LETTER_OF: Record<string, string> = Object.fromEntries(
 );
 
 const toAvatar = (who: PalName | Avatar): Avatar => (typeof who === "string" ? PAL_PRESETS[who] : who);
+
+const STAR_ACTIONS: StarAction[] = ["magic", "slash", "arrow", "pray"];
+
+// 저장해 둔 값(브라우저·계정)이 그릴 수 있는 캐릭터 모습인지. 아니면 null
+export function toValidAvatar(value: unknown): Avatar | null {
+  if (!value || typeof value !== "object") return null;
+  const v = value as Record<string, unknown>;
+  const ok =
+    typeof v.headwear === "string" &&
+    v.headwear in HEADWEAR &&
+    typeof v.outfit === "string" &&
+    v.outfit in OUTFITS &&
+    typeof v.headwearColor === "string" &&
+    v.headwearColor in LETTER_OF &&
+    typeof v.outfitColor === "string" &&
+    v.outfitColor in LETTER_OF &&
+    STAR_ACTIONS.includes(v.action as StarAction);
+  if (!ok) return null;
+  const { headwear, headwearColor, outfit, outfitColor, action } = v as unknown as Avatar;
+  return { headwear, headwearColor, outfit, outfitColor, action };
+}
+
+// 처음 온 사람에게 주는 캐릭터: 기본 네 캐릭터 중 하나
+export function randomAvatar(random = Math.random): Avatar {
+  const names = Object.keys(PAL_PRESETS) as PalName[];
+  return { ...PAL_PRESETS[names[Math.floor(random() * names.length) % names.length]] };
+}
 
 // 부품 그림의 A·a·O·o를 고른 색의 글자로 바꾼다
 function paint(rows: string[], avatar: Avatar): string[] {
@@ -246,17 +276,17 @@ const BOW = BOW_DRAWN.map((row, i) => (i === 5 ? "........T.." : row));
 const WAND = [".Y.", "YWY", ".Y.", ".t.", ".t."];
 const STAFF = ["YYY", "YWY", "YYY", ".t.", ".t.", ".t.", ".t.", ".t.", ".t.", ".t.", ".t."];
 
-const PROPS: Partial<Record<PalName, Partial<Record<ActionFrame, Prop>>>> = {
-  knight: {
+const PROPS: Record<StarAction, Partial<Record<ActionFrame, Prop>>> = {
+  slash: {
     stand: [SWORD, 17, 6],
     runA: [SWORD, 17, 6],
     runB: [SWORD, 17, 6],
     windup: [SWORD, 18, 0], // 칼을 높이 치켜든다
     strike: [SWORD_FORWARD, 16, 12], // 앞으로 휘두른다
   },
-  ranger: { draw: [BOW_DRAWN, 13, 8], release: [BOW, 13, 8] },
-  wizard: { stand: [WAND, 17, 9], cast: [WAND, 19, 3] },
-  cleric: { stand: [STAFF, 17, 4], pray: [STAFF, 18, 1] },
+  arrow: { draw: [BOW_DRAWN, 13, 8], release: [BOW, 13, 8] },
+  magic: { stand: [WAND, 17, 9], cast: [WAND, 19, 3] },
+  pray: { stand: [STAFF, 17, 4], pray: [STAFF, 18, 1] },
 };
 
 function stamp(canvas: string[][], rows: string[], ox: number, oy: number): void {
@@ -267,15 +297,15 @@ function stamp(canvas: string[][], rows: string[], ox: number, oy: number): void
   );
 }
 
-export function actionRows(name: PalName, frame: ActionFrame): string[] {
+export function actionRows(who: PalName | Avatar, frame: ActionFrame): string[] {
   const canvas = Array.from({ length: ACTION_HEIGHT }, () => Array<string>(ACTION_WIDTH).fill("."));
   const legs = frame === "runA" || frame === "runB" ? LEGS[frame] : LEGS.stand;
-  const avatar = PAL_PRESETS[name];
+  const avatar = toAvatar(who);
   const outfit = OUTFITS[avatar.outfit];
   stamp(canvas, headRows(avatar), 4, 0);
   stamp(canvas, paint(outfit.rows.slice(0, 3), avatar), 4, 12);
   stamp(canvas, paint(legs.map((row) => row.replace(/x/g, outfit.legs)), avatar), 4, 15);
-  const prop = PROPS[name]?.[frame];
+  const prop = PROPS[avatar.action][frame];
   if (prop) stamp(canvas, ...prop);
   return canvas.map((row) => row.join(""));
 }

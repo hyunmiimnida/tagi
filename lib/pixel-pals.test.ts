@@ -79,7 +79,7 @@ test("캐릭터는 부품(머리 장식·옷)과 색을 바꿔 꾸밀 수 있다
   // 기본 캐릭터 이름과 그 모습을 넘겼을 때 같은 그림
   for (const name of names) assert.deepEqual(palRows(PAL_PRESETS[name], "sit"), palRows(name, "sit"));
   // 마법사 모자에 기사 갑옷, 색은 초록 모자·하얀 옷
-  const mixed = palRows({ headwear: "wizard-hat", headwearColor: "green", outfit: "armor", outfitColor: "white" }, "sit");
+  const mixed = palRows({ headwear: "wizard-hat", headwearColor: "green", outfit: "armor", outfitColor: "white", action: "magic" }, "sit");
   assert.equal(mixed.length, PAL_HEIGHT.sit);
   const hat = mixed.slice(0, 6).join("");
   const body = mixed.slice(12).join("");
@@ -88,4 +88,18 @@ test("캐릭터는 부품(머리 장식·옷)과 색을 바꿔 꾸밀 수 있다
   for (const ch of mixed.join("")) assert.ok(ch === "." || PAL_COLORS[ch], ch);
   // 없는 색 이름은 바로 알린다
   assert.throws(() => palRows({ ...PAL_PRESETS.wizard, outfitColor: "rainbow" }, "sit"), /없는 색/);
+});
+
+test("저장해 둔 캐릭터 값은 그릴 수 있는 것만 받고, 처음 온 사람은 기본 캐릭터 중 하나를 받는다", async () => {
+  const { PAL_PRESETS, randomAvatar, toValidAvatar } = await import("./pixel-pals.ts");
+  assert.deepEqual(toValidAvatar({ ...PAL_PRESETS.knight, extra: 1 }), PAL_PRESETS.knight); // 모르는 칸은 버린다
+  for (const bad of [null, "wizard", {}, { ...PAL_PRESETS.knight, outfit: "bikini" }, { ...PAL_PRESETS.knight, outfitColor: "rainbow" }, { ...PAL_PRESETS.knight, action: "dance" }]) {
+    assert.equal(toValidAvatar(bad), null, JSON.stringify(bad));
+  }
+  assert.deepEqual(randomAvatar(() => 0), PAL_PRESETS.wizard);
+  assert.deepEqual(randomAvatar(() => 0.99), PAL_PRESETS.cleric);
+  // 꾸민 캐릭터는 고른 동작의 소품을 든다: 사제복 차림이어도 칼 동작이면 칼날(강철색 M)이 보인다
+  const { actionRows } = await import("./pixel-pals.ts");
+  assert.ok(!actionRows("cleric", "windup").join("").includes("M"));
+  assert.ok(actionRows({ ...PAL_PRESETS.cleric, action: "slash" }, "windup").join("").includes("M"));
 });

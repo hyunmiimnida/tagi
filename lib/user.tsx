@@ -3,6 +3,8 @@
 import { createClient } from "@supabase/supabase-js";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { toDateString } from "./filter.ts";
+import { randomAvatar, toValidAvatar } from "./pixel-pals.ts";
+import type { Avatar } from "./pixel-pals.ts";
 
 // 로그인, 학교 설정, 관심 표시를 한곳에서 관리한다.
 // Supabase 설정(.env.local)이 없으면 "체험 모드"로 동작해 이 브라우저에만 저장한다.
@@ -48,6 +50,9 @@ interface UserState {
   signIn: (provider: ProviderId) => void;
   signOut: () => void;
   deleteAccount: () => Promise<boolean>; // 계정과 계정에 저장된 모든 데이터를 지운다
+  // 내 도트 캐릭터 (화면 곳곳에서 같이 다니는 캐릭터). 브라우저에서 읽기 전에는 null
+  avatar: Avatar | null;
+  setAvatar: (next: Avatar) => void;
 }
 
 const UserContext = createContext<UserState | null>(null);
@@ -55,6 +60,15 @@ const UserContext = createContext<UserState | null>(null);
 const SCHOOL_KEY = "schoolId";
 const FAVORITES_KEY = "favorites";
 const PROFILE_KEY = "profile";
+const AVATAR_KEY = "avatar";
+
+function readLocalAvatar(): Avatar | null {
+  try {
+    return toValidAvatar(JSON.parse(readLocal(AVATAR_KEY) ?? "null"));
+  } catch {
+    return null;
+  }
+}
 
 function readLocalProfile(): Profile {
   try {
@@ -101,10 +115,15 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
   const [profile, setProfileState] = useState<Profile>(EMPTY_PROFILE);
   const [loginOpen, setLoginOpen] = useState(false);
+  const [avatar, setAvatarState] = useState<Avatar | null>(null);
 
   useEffect(() => {
     setSchoolId(readLocal(SCHOOL_KEY));
     setProfileState(readLocalProfile());
+    // 처음 온 사람에게는 기본 캐릭터 하나를 골라 주고 이 기기에 기억한다
+    const savedAvatar = readLocalAvatar() ?? randomAvatar();
+    setAvatarState(savedAvatar);
+    writeLocal(AVATAR_KEY, JSON.stringify(savedAvatar));
 
     if (!supabase) {
       setFavorites(readLocalList(FAVORITES_KEY));
@@ -157,6 +176,42 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       cancelled = true;
     };
   }, [userId]);
+
+  // 로그인하면 계정의 캐릭터를 불러온다. 계정에 아직 없으면 이 기기의 캐릭터를 계정에 올린다.
+  // 저장 칸(supabase/avatar.sql)을 아직 만들지 않았으면 오류가 나지만 이 기기 저장만으로 계속 쓴다
+  useEffect(() => {
+    if (!supabase || !userId) return;
+    let cancelled = false;
+    const client = supabase;
+    void client
+      .from("profiles")
+      .select("avatar")
+      .eq("user_id", userId)
+      .maybeSingle()
+      .then(({ data, error }) => {
+        if (cancelled || error) return;
+        const saved = toValidAvatar((data as { avatar?: unknown } | null)?.avatar);
+        if (saved) {
+          setAvatarState(saved);
+          writeLocal(AVATAR_KEY, JSON.stringify(saved));
+        } else {
+          const local = readLocalAvatar();
+          if (local) void client.from("profiles").upsert({ user_id: userId, avatar: local }).then();
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [userId]);
+
+  const setAvatar = useCallback(
+    (next: Avatar) => {
+      setAvatarState(next);
+      writeLocal(AVATAR_KEY, JSON.stringify(next));
+      if (supabase && userId) void supabase.from("profiles").upsert({ user_id: userId, avatar: next }).then();
+    },
+    [userId],
+  );
 
   const setSchool = useCallback(
     (next: string | null) => {
@@ -271,13 +326,16 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         writeLocal(SCHOOL_KEY, null);
         writeLocal(FAVORITES_KEY, null);
         writeLocal(PROFILE_KEY, null);
+        writeLocal(AVATAR_KEY, null);
         setProfileState(EMPTY_PROFILE);
         setSchoolId(null);
         await supabase.auth.signOut({ scope: "local" });
         return true;
       },
+      avatar,
+      setAvatar,
     }),
-    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite],
+    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite, avatar, setAvatar],
   );
 
   return <UserContext value={value}>{children}</UserContext>;

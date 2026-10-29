@@ -2,15 +2,16 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ACTION_HEIGHT, ACTION_WIDTH, EFFECT_ROWS, actionRows } from "../lib/pixel-pals.ts";
-import type { ActionFrame, PalName } from "../lib/pixel-pals.ts";
+import type { ActionFrame, Avatar } from "../lib/pixel-pals.ts";
+import { useUser } from "../lib/user.tsx";
 import { PixelSprite } from "./PixelPal.tsx";
 
-// 관심 표시(☆)를 켜면 도트 캐릭터가 직접 별을 켜 준다. 캐릭터마다 동작이 다르다:
-//   기사   카드에서 뛰어내려 별까지 달려가 칼을 휘두른다(칼바람) → 뒤돌아 달려서 복귀
-//   궁수   그 자리에서 일어나 활을 꺼내 쏜다 → 화살이 별에 꽂힌다 → 다시 숨는다
-//   마법사 펑! 사라져 별 옆에 나타나 지팡이로 마법을 건다 → 펑! 사라져 제자리에 나타난다
-//   성직자 일어나 지팡이를 들고 기도한다 → 하늘에서 빛기둥이 별에 내려온다 → 다시 숨는다
-// 출발하는 캐릭터: 그 카드에서 빼꼼하던 캐릭터(화면에 보일 때), 아니면 아래 탭 바의 캐릭터.
+// 관심 표시(☆)를 켜면 내 캐릭터가 직접 별을 켜 준다. 동작은 내 캐릭터에 저장된 것(avatar.action):
+//   칼     카드에서 뛰어내려 별까지 달려가 칼을 휘두른다(칼바람) → 뒤돌아 달려서 복귀
+//   활     그 자리에서 일어나 활을 꺼내 쏜다 → 화살이 별에 꽂힌다 → 다시 숨는다
+//   마법   펑! 사라져 별 옆에 나타나 지팡이로 마법을 건다 → 펑! 사라져 제자리에 나타난다
+//   기도   일어나 지팡이를 들고 기도한다 → 하늘에서 빛기둥이 별에 내려온다 → 다시 숨는다
+// 출발하는 자리: 그 카드에서 빼꼼하던 캐릭터(화면에 보일 때), 아니면 아래 탭 바의 캐릭터.
 // 별이 켜지는 순간 onTap(components/FavoriteButton.tsx가 별을 노랗게 바꾸고 반짝이를 띄운다).
 // 기기의 "동작 줄이기"가 켜져 있거나 이미 한 명이 다녀오는 중이면 캐릭터 없이 바로 별이 켜진다 (false를 돌려준다)
 
@@ -36,7 +37,7 @@ type Fx =
 type FxInput = Fx extends infer T ? (T extends Fx ? Omit<T, "id"> : never) : never;
 
 interface Actor {
-  name: PalName;
+  avatar: Avatar;
   frame: ActionFrame;
   flip: boolean;
   start: Point; // 처음 그릴 자리 (그 뒤 움직임은 애니메이션이 맡는다)
@@ -51,6 +52,9 @@ function onScreen(el: Element): boolean {
 }
 
 export function StarHelper() {
+  const { avatar } = useUser();
+  const avatarRef = useRef(avatar);
+  avatarRef.current = avatar;
   const [actor, setActor] = useState<Actor | null>(null);
   const [effects, setEffects] = useState<Fx[]>([]);
   const busy = useRef(false);
@@ -69,10 +73,10 @@ export function StarHelper() {
       if (busy.current || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
       const wallPal = button.closest(".pal-wall")?.querySelector<SVGElement>(".pal-peek-anchor svg[data-pal]");
       const source = wallPal && onScreen(wallPal) ? wallPal : document.querySelector<SVGElement>(".tab-pal[data-pal]");
-      const name = source?.dataset.pal as PalName | undefined;
-      if (!source || !name) return false;
+      const me = avatarRef.current;
+      if (!source || !me) return false;
       busy.current = true;
-      void perform(name, source, button, onTap).finally(() => {
+      void perform(me, source, button, onTap).finally(() => {
         source.style.visibility = "";
         setActor(null);
         busy.current = false;
@@ -80,7 +84,7 @@ export function StarHelper() {
       return true;
     };
 
-    async function perform(name: PalName, source: SVGElement, button: HTMLElement, onTap: () => void) {
+    async function perform(avatar: Avatar, source: SVGElement, button: HTMLElement, onTap: () => void) {
       let tapped = false;
       const tap = () => {
         if (!tapped) onTap();
@@ -99,7 +103,7 @@ export function StarHelper() {
         const place = (p: { cx: number; feet: number }): Point => ({ x: p.cx - CENTER, y: p.feet - H });
         let at = place(home);
         source.style.visibility = "hidden";
-        setActor({ name, frame: "stand", flip: name === "knight" || name === "wizard" ? faceLeft : star.x < home.cx, start: at });
+        setActor({ avatar, frame: "stand", flip: avatar.action === "slash" || avatar.action === "magic" ? faceLeft : star.x < home.cx, start: at });
         // 그려질 때까지 기다린다
         for (let i = 0; i < 20 && !actorEl.current; i++) await new Promise((resolve) => requestAnimationFrame(resolve));
         const el = actorEl.current;
@@ -133,7 +137,7 @@ export function StarHelper() {
           ).finished;
         const bodyCenter = (): Point => ({ x: at.x + CENTER, y: at.y + H / 2 });
 
-        if (name === "knight") {
+        if (avatar.action === "slash") {
           // 카드에서 뛰어내려 별 가까이 착지 → 달려가서 → 칼을 치켜들었다 휘두르기 → 뒤돌아 달려서 → 뛰어올라 복귀
           const dir = faceLeft ? -1 : 1;
           const landing = place({ cx: Math.min(Math.max(beside.cx - dir * 56, 28), window.innerWidth - 28), feet: beside.feet });
@@ -155,7 +159,7 @@ export function StarHelper() {
           await move(place(home), 300, 36);
           frame("stand");
           await sleep(60);
-        } else if (name === "ranger") {
+        } else if (avatar.action === "arrow") {
           // 그 자리에서 일어나 활을 꺼내 당기고 → 화살이 별까지 날아가 꽂힘 → 활을 거두고 숨기
           await popUp();
           await sleep(90);
@@ -172,7 +176,7 @@ export function StarHelper() {
           frame("stand");
           await sleep(120);
           await sinkDown();
-        } else if (name === "wizard") {
+        } else if (avatar.action === "magic") {
           // 지팡이를 들고 펑! 사라짐 → 별 옆에 펑! 나타남 → 마법 → 펑! → 제자리에 나타남
           frame("cast");
           await sleep(150);
@@ -223,7 +227,7 @@ export function StarHelper() {
       {actor && (
         <div ref={actorEl} className="star-actor" style={{ transform: `translate(${actor.start.x}px, ${actor.start.y}px)` }} aria-hidden="true">
           <div ref={spriteEl} className={`star-actor-sprite ${actor.flip ? "flip" : ""}`} style={{ transformOrigin: `${CENTER}px 100%` }}>
-            <PixelSprite rows={actionRows(actor.name, actor.frame)} scale={SCALE} />
+            <PixelSprite rows={actionRows(actor.avatar, actor.frame)} scale={SCALE} />
           </div>
         </div>
       )}

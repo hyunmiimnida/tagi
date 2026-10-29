@@ -15,7 +15,6 @@ import {
   visibleForSchool,
 } from "../lib/filter.ts";
 import type { FilterCategory } from "../lib/filter.ts";
-import type { PalName } from "../lib/pixel-pals.ts";
 import { useListPrograms } from "../lib/use-list.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import type { ProgramView as Program } from "../lib/filter.ts";
@@ -24,7 +23,7 @@ import { FieldIcon } from "./FieldIcon.tsx";
 import { InstallCard } from "./InstallCard.tsx";
 import { ProfileNudge } from "./ProfileNudge.tsx";
 import { ListError } from "./ListError.tsx";
-import { PeekPal } from "./PixelPal.tsx";
+import { MyPeekPal } from "./MyPal.tsx";
 import { ProgramRow } from "./ProgramRow.tsx";
 
 const URGENT_DAYS = 7;
@@ -33,11 +32,11 @@ interface Props {
   categories: FilterCategory[];
 }
 
-// pal: 이 카드를 벽 삼아 고개를 내민 도트 캐릭터
-function Section({ title, href, pal, children }: { title: string; href?: string; pal?: PalName; children: React.ReactNode }) {
+// peek: 내 캐릭터가 이 카드를 벽 삼아 고개를 내민다 (한 화면에 한 곳만)
+function Section({ title, href, peek, children }: { title: string; href?: string; peek?: boolean; children: React.ReactNode }) {
   return (
-    <section className={`section ${pal ? "pal-wall" : ""}`}>
-      {pal && <PeekPal name={pal} right={pal === "knight" ? 104 : 40} delay={pal === "knight" ? 0 : 1.7} />}
+    <section className={`section ${peek ? "pal-wall" : ""}`}>
+      {peek && <MyPeekPal right={104} />}
       <div className="section-head">
         <h2>{title}</h2>
         {href && (
@@ -156,7 +155,7 @@ export function Home({ categories }: Props) {
       <ProfileNudge />
       <InstallCard />
 
-      <Section title="마감 임박 공고" href="/programs" pal="knight">
+      <Section title="마감 임박 공고" href="/programs" peek>
         {urgent.length === 0 ? (
           <p className="section-empty">일주일 안에 마감되는 공고가 없어요.</p>
         ) : (
@@ -207,7 +206,7 @@ export function Home({ categories }: Props) {
         </Section>
       )}
 
-      <Section title="새로 올라온 공고" href="/programs?sort=recent" pal="ranger">
+      <Section title="새로 올라온 공고" href="/programs?sort=recent">
         {fresh.length === 0 ? (
           <p className="section-empty">최근 3일 동안 새로 올라온 공고가 없어요.</p>
         ) : (

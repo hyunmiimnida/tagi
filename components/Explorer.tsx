@@ -19,7 +19,7 @@ import { LIST_QUERY_KEY } from "./BackLink.tsx";
 import { ChevronIcon, CloseIcon, SearchIcon } from "./Icons.tsx";
 import { EmptyArt } from "./EmptyArt.tsx";
 import { ListError } from "./ListError.tsx";
-import { PeekPal, PixelPal } from "./PixelPal.tsx";
+import { MyPal, MyPeekPal } from "./MyPal.tsx";
 import { ProgramRow } from "./ProgramRow.tsx";
 
 interface Props {
@@ -461,7 +461,7 @@ export function Explorer({ categories, schools }: Props) {
         <div className="empty">
           <div className="empty-pal">
             <EmptyArt />
-            <PixelPal name="knight" pose="sit" scale={3} />
+            <MyPal pose="sit" scale={3} />
           </div>
           <p className="empty-title">조건에 맞는 공고가 없어요</p>
           <p>필터를 줄이거나 다른 검색어를 써 보세요.</p>
@@ -489,7 +489,7 @@ export function Explorer({ categories, schools }: Props) {
         </div>
       ) : (
         <div className="pal-wall list-wall">
-          <PeekPal name="ranger" right={28} delay={0.6} />
+          <MyPeekPal right={28} delay={0.6} />
           <ul className="rows">
             {visible.slice(0, limit).map((program) => (
               <ProgramRow key={program.id} program={program} today={today} hiddenTags={organizerTags} />
