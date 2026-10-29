@@ -79,7 +79,7 @@ test("캐릭터는 부품(머리 장식·옷)과 색을 바꿔 꾸밀 수 있다
   // 기본 캐릭터 이름과 그 모습을 넘겼을 때 같은 그림
   for (const name of names) assert.deepEqual(palRows(PAL_PRESETS[name], "sit"), palRows(name, "sit"));
   // 마법사 모자에 기사 갑옷, 색은 초록 모자·하얀 옷
-  const mixed = palRows({ headwear: "wizard-hat", headwearColor: "green", outfit: "armor", outfitColor: "white", weapon: "wand" }, "sit");
+  const mixed = palRows({ headwear: "wizard-hat", headwearColor: "green", outfit: "armor", outfitColor: "white", weapon: "wand", effect: "none" }, "sit");
   assert.equal(mixed.length, PAL_HEIGHT.sit);
   const hat = mixed.slice(0, 6).join("");
   const body = mixed.slice(12).join("");

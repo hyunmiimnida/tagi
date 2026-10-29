@@ -2,6 +2,9 @@
 // 그림은 글자 지도로 그린다: 글자 하나 = 픽셀 하나, "." = 투명. 색은 app/globals.css의 --px-* 변수.
 // 자세: sit(앉아서 다리를 늘어뜨림, 16×17) · peek(카드 모서리를 두 손으로 잡고 고개만 내밂, 16×14)
 
+import { EFFECT_COLORS, EFFECTS } from "./pixel-effects.ts";
+import type { EffectId } from "./pixel-effects.ts";
+
 export type PalName = "wizard" | "knight" | "ranger" | "cleric";
 export type PalPose = "sit" | "peek";
 export type PalBubble = "question" | "exclaim";
@@ -28,6 +31,8 @@ export const PAL_COLORS: Record<string, string> = {
   B: "white",
   b: "white-dark",
   "#": "shine", // 말풍선 바탕
+  // 이펙트 전용 색 (lib/pixel-effects.ts)
+  ...Object.fromEntries(Object.entries(EFFECT_COLORS).map(([letter, [name]]) => [letter, name])),
 };
 
 // 색 변수의 실제 값 (app/globals.css의 --px-*와 같아야 한다. 공유 이미지·아이콘처럼 변수를 못 쓰는 그림에 쓴다)
@@ -47,6 +52,7 @@ export const PAL_HEX: Record<string, string> = {
   leather: "#a06a42",
   white: "#fbf7ef",
   "white-dark": "#d9cdb8",
+  ...Object.fromEntries(Object.values(EFFECT_COLORS)),
 };
 
 // 머리 오른쪽 위의 작은 말풍선 (7×7): 물음표·느낌표
@@ -93,6 +99,7 @@ export interface Avatar {
   outfit: Outfit;
   outfitColor: string;
   weapon: Weapon;
+  effect: EffectId | "none"; // 별이 켜질 때 터지고, 평소에 주변을 떠다니는 이펙트 (lib/pixel-effects.ts)
 }
 
 const HEADWEAR: Record<Headwear, string[]> = {
@@ -144,10 +151,10 @@ const OUTFITS: Record<Outfit, { rows: string[]; legs: string }> = {
 
 // 처음부터 있던 네 모습(코드 안의 이름일 뿐, 화면에서 직업으로 나누지 않는다). 처음 온 사람이 받는 캐릭터이자 꾸미기의 출발점
 export const PAL_PRESETS: Record<PalName, Avatar> = {
-  wizard: { headwear: "wizard-hat", headwearColor: "violet", outfit: "robe", outfitColor: "violet", weapon: "wand" },
-  knight: { headwear: "helmet", headwearColor: "steel", outfit: "armor", outfitColor: "steel", weapon: "sword" },
-  ranger: { headwear: "hood", headwearColor: "green", outfit: "tunic", outfitColor: "green", weapon: "bow" },
-  cleric: { headwear: "veil", headwearColor: "white", outfit: "vestment", outfitColor: "white", weapon: "staff" },
+  wizard: { headwear: "wizard-hat", headwearColor: "violet", outfit: "robe", outfitColor: "violet", weapon: "wand", effect: "none" },
+  knight: { headwear: "helmet", headwearColor: "steel", outfit: "armor", outfitColor: "steel", weapon: "sword", effect: "none" },
+  ranger: { headwear: "hood", headwearColor: "green", outfit: "tunic", outfitColor: "green", weapon: "bow", effect: "none" },
+  cleric: { headwear: "veil", headwearColor: "white", outfit: "vestment", outfitColor: "white", weapon: "staff", effect: "none" },
 };
 
 // 색 이름 → 그 색의 어두운 색 (없으면 같은 색)
@@ -179,7 +186,9 @@ export function toValidAvatar(value: unknown): Avatar | null {
     v.weapon in SKILL_OF;
   if (!ok) return null;
   const { headwear, headwearColor, outfit, outfitColor, weapon } = v as unknown as Avatar;
-  return { headwear, headwearColor, outfit, outfitColor, weapon };
+  // 이펙트는 나중에 생긴 칸이라 없거나 모르는 값이면 "없음"으로 둔다
+  const effect = typeof v.effect === "string" && v.effect in EFFECTS ? (v.effect as EffectId) : "none";
+  return { headwear, headwearColor, outfit, outfitColor, weapon, effect };
 }
 
 // 처음 온 사람에게 주는 캐릭터: 기본 네 캐릭터 중 하나

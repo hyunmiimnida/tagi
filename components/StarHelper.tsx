@@ -5,6 +5,8 @@ import { ACTION_HEIGHT, ACTION_WIDTH, EFFECT_ROWS, actionRows, skillOf } from ".
 import type { ActionFrame, Avatar } from "../lib/pixel-pals.ts";
 import { useUser } from "../lib/user.tsx";
 import { PixelSprite } from "./PixelPal.tsx";
+import { BurstEffect } from "./PixelEffect.tsx";
+import type { EffectId } from "../lib/pixel-effects.ts";
 
 // 관심 표시(☆)를 켜면 내 캐릭터가 직접 별을 켜 준다. 스킬은 손에 든 무기로 정해진다(skillOf, 검·활·마법 지팡이·성직자 지팡이·맨손):
 //   칼     카드에서 뛰어내려 별까지 달려가 칼을 휘두른다(칼바람) → 뒤돌아 달려서 복귀
@@ -34,7 +36,8 @@ type Fx =
   | { id: number; kind: "arrow"; from: Point; to: Point }
   | { id: number; kind: "poof"; at: Point }
   | { id: number; kind: "spark"; at: Point; color: string }
-  | { id: number; kind: "beam"; at: Point };
+  | { id: number; kind: "beam"; at: Point }
+  | { id: number; kind: "burst"; at: Point; effect: EffectId };
 type FxInput = Fx extends infer T ? (T extends Fx ? Omit<T, "id"> : never) : never;
 
 interface Actor {
@@ -87,8 +90,13 @@ export function StarHelper() {
 
     async function perform(avatar: Avatar, source: SVGElement, button: HTMLElement, onTap: () => void) {
       let tapped = false;
+      let starAt: Point | null = null;
       const tap = () => {
-        if (!tapped) onTap();
+        if (!tapped) {
+          onTap();
+          // 내 캐릭터의 이펙트가 별 위치에서 터진다
+          if (starAt && avatar.effect !== "none") fx({ kind: "burst", at: starAt, effect: avatar.effect }, 520);
+        }
         tapped = true;
       };
       try {
@@ -96,6 +104,7 @@ export function StarHelper() {
         const b = button.getBoundingClientRect();
         const home = { cx: s.left + s.width / 2, feet: s.bottom - 4 }; // 카드 윗선(또는 탭 아이콘) 위에 선 자리
         const star = { x: b.left + b.width / 2, y: b.top + b.height / 2 };
+        starAt = star;
         // 별 왼쪽에 서서 오른쪽을 본다 (왼쪽 공간이 없으면 반대로)
         const faceLeft = star.x - 30 - CENTER < 4;
         const beside = { cx: faceLeft ? star.x + 30 : star.x - 30, feet: b.bottom - 2 };
@@ -286,6 +295,12 @@ function Effect({ effect }: { effect: Fx }) {
         </div>
       );
     }
+    case "burst":
+      return (
+        <div className="fx fx-burst" style={style(effect.at)} aria-hidden="true">
+          <BurstEffect effect={effect.effect} />
+        </div>
+      );
     case "beam":
       return <div className="fx fx-beam" style={style(effect.at)} aria-hidden="true" />;
     case "poof":

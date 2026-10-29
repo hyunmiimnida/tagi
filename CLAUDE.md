@@ -182,11 +182,12 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - 도트 캐릭터(중세 마법 RPG 2등신): **사용자마다 자기 캐릭터(아바타) 한 명**이 화면 곳곳에서 같이 다닌다. 그림은 `lib/pixel-pals.ts`의 글자 지도(머리 장식 `HEADWEAR`·옷 `OUTFITS` 부품 + 고른 색, A·a·O·o 글자가 고른 색으로 바뀜), 그리는 부품 `components/PixelPal.tsx`(`who`: 기본 캐릭터 이름이나 모습), 내 캐릭터는 `components/MyPal.tsx`, 색은 `--px-*` 변수. 깔끔한 바탕은 그대로 두고 장식으로만 쓴다(aria-hidden, 눌리지 않음, 글자·버튼을 가리지 않게)
   - 내 캐릭터 모습(`Avatar`: 머리 장식·색, 옷·색, 무기)은 `lib/user.tsx`의 `avatar`. 처음 온 사람은 기본 네 모습(`PAL_PRESETS`, 코드 안 이름 wizard·knight·ranger·cleric) 중 하나를 무작위로 받는다. 이 기기에 저장, 로그인하면 `profiles.avatar`에도(`supabase/avatar.sql`). 저장값은 `toValidAvatar`로 확인
   - 꾸밀 거리(외형·장비·효과)는 활동으로 해금하는 방향 (해금 조건은 아직 미정)
+  - 이펙트(`Avatar.effect`, `lib/pixel-effects.ts`, 12종): 별이 켜질 때 별 위치에서 터지는 burst(17×17·6프레임)와 탭 바 캐릭터 주변을 가끔 떠다니는 ambient(7×7·4프레임, rise·fall·drift·twinkle). 그리는 부품 `components/PixelEffect.tsx`(프레임을 겹쳐 두고 CSS `.pfx`가 하나씩 보여 줌). 그림은 Codex가 그리고 밝은·어두운 바탕에서 검수, 이펙트 전용 색은 `EFFECT_COLORS`(globals.css `--px-*`에도 같은 값). 기본은 "none"
   - 아래 탭 바: 지금 탭 아이콘 위에 내 캐릭터가 걸터앉는다, 탭을 바꾸면 폴짝
   - `PeekPal`(`MyPeekPal`): 카드를 벽 삼아 두 손으로 윗선을 잡고 빼꼼(카드에 `pal-wall` 클래스). **한 화면에 한 곳만**: 홈 "마감 임박", 공고 목록, 캘린더, 프로필 첫 카드. 빈 화면에는 앉은 캐릭터
   - 움직임은 살짝만: 가끔 깜빡임, 빼꼼은 1픽셀 들썩임. 기기의 "동작 줄이기"를 켜면 멈춘다
   - 말풍선(`bubble`: ?·!): 없는 공고·페이지(궁수 ?, `components/NotFound.tsx`), 목록을 못 받음(마법사 !, `components/ListError.tsx`)
-  - 관심 표시(☆)를 켜면 `components/StarHelper.tsx`가 내 캐릭터의 스킬로 별을 켠다. **스킬은 손에 든 무기로 정해진다**(`skillOf`: 마법 지팡이→마법, 검→칼, 활→활, 성직자 지팡이→기도). 직업으로 나누지 않고, 화면에서 이 연결을 설명하지 않는다(무기를 바꿔 보다 알아채는 숨은 재미). 동작 그림 24×17 `actionRows`, 무기 그림 `PROPS`·효과 그림 `EFFECT_ROWS` (`lib/pixel-pals.ts`). 출발은 그 카드에서 빼꼼하던 캐릭터(화면에 보일 때) 아니면 탭 바 캐릭터
+  - 관심 표시(☆)를 켜면 `components/StarHelper.tsx`가 내 캐릭터의 스킬로 별을 켠다. **스킬은 손에 든 무기로 정해진다**(`skillOf`: 마법 지팡이→마법, 검→칼, 활→활, 성직자 지팡이→기도, 맨손→달려가 주먹으로 톡). 직업으로 나누지 않고, 화면에서 이 연결을 설명하지 않는다(무기를 바꿔 보다 알아채는 숨은 재미). 동작 그림 24×17 `actionRows`, 무기 그림 `PROPS`·효과 그림 `EFFECT_ROWS` (`lib/pixel-pals.ts`). 출발은 그 카드에서 빼꼼하던 캐릭터(화면에 보일 때) 아니면 탭 바 캐릭터
     - 칼(slash): 뛰어내려 달려가(다리 번갈아) 칼을 치켜들었다 휘두름(칼바람) → 뒤돌아 달려서 복귀 / 활(arrow): 일어나 활을 꺼내 당겨 쏨(화살이 별까지) → 숨음 / 마법(magic): 펑 사라져 별 옆에 나타나 마법 → 펑 복귀 / 기도(pray): 일어나 기도 → 빛기둥 → 숨음
     - 별은 맞는 순간 노랗게 바뀌며 반짝(`components/FavoriteButton.tsx`의 `star-burst`). 저장은 누르자마자 되고, 3초 안에 못 오면 그냥 켬. 끌 때·동작 줄이기·한 명이 다녀오는 중에는 캐릭터 없이 바로
   - 공유 미리보기 이미지(`lib/og.tsx`)의 흰 카드 위에도 마법사가 빼꼼(`palSvg`, 색 값은 `PAL_HEX` = globals.css의 `--px-*`)

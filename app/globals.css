@@ -31,6 +31,21 @@
   --px-leather: #a06a42;
   --px-white: #fbf7ef;
   --px-white-dark: #d9cdb8;
+  /* 이펙트 전용 색 (lib/pixel-effects.ts의 EFFECT_COLORS와 같은 값) */
+  --px-gold-shadow: #98621c;
+  --px-gold-light: #fff1a0;
+  --px-rose: #ed78a6;
+  --px-rose-shadow: #9e416f;
+  --px-tangerine: #ff963e;
+  --px-ember-shadow: #b94332;
+  --px-sky: #80ddf5;
+  --px-sky-shadow: #3779a6;
+  --px-ice-light: #dcfaff;
+  --px-leaf-light: #b5e575;
+  --px-leaf-shadow: #327551;
+  --px-lavender: #bba7fa;
+  --px-indigo: #3e3c79;
+  --px-smoke-mid: #7974af;
   --shadow: 0 1px 2px rgb(0 0 0 / 4%);
 }
 
@@ -2957,6 +2972,94 @@ button.stat {
   .star-pop,
   .star-burst {
     animation: none;
+    display: none;
+  }
+}
+
+/* 도트 이펙트 (components/PixelEffect.tsx): 겹쳐 둔 프레임(g)을 하나씩 차례로 보여 준다 */
+.pfx g {
+  visibility: hidden;
+}
+
+.pfx-once g {
+  animation: pfx-once var(--pfx-ms) steps(1, end) forwards;
+  animation-delay: calc(var(--i) * var(--pfx-ms));
+}
+
+@keyframes pfx-once {
+  0%,
+  99% { visibility: visible; }
+  100% { visibility: hidden; }
+}
+
+/* 반복: 4프레임 (ambient). 음수 지연으로 처음부터 첫 프레임이 보인다 */
+.pfx-loop g {
+  animation: pfx-loop-4 calc(var(--pfx-n) * var(--pfx-ms)) steps(1, end) infinite;
+  animation-delay: calc((var(--i) - var(--pfx-n)) * var(--pfx-ms));
+}
+
+@keyframes pfx-loop-4 {
+  0% { visibility: visible; }
+  25%,
+  100% { visibility: hidden; }
+}
+
+/* 별 위치에서 터지는 이펙트: 기준점이 가운데 */
+.fx-burst .pfx {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+/* 캐릭터 주변을 떠다니는 입자: 탭 바 캐릭터의 머리 위쪽에서 나와 움직이며 사라진다 (2.2초) */
+.amb-anchor {
+  position: absolute;
+  bottom: calc(100% + 18px);
+  left: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.amb {
+  position: absolute;
+  left: calc(var(--dx) - 7px);
+  top: -7px;
+  opacity: 0;
+  animation: amb-rise 2.2s ease-out forwards;
+}
+
+.amb-fall { animation-name: amb-fall; }
+.amb-drift { animation-name: amb-drift; }
+.amb-twinkle { animation-name: amb-twinkle; }
+
+@keyframes amb-rise {
+  0% { transform: translateY(6px); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-22px); opacity: 0; }
+}
+
+@keyframes amb-fall {
+  0% { transform: translateY(-14px); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+
+@keyframes amb-drift {
+  0% { transform: translate(-8px, 0); opacity: 0; }
+  20% { opacity: 1; }
+  50% { transform: translate(4px, -8px); }
+  100% { transform: translate(12px, -14px); opacity: 0; }
+}
+
+@keyframes amb-twinkle {
+  0% { opacity: 0; }
+  20%,
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .amb-anchor {
     display: none;
   }
 }
