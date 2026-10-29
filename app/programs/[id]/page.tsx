@@ -6,20 +6,18 @@ import { Comments } from "../../../components/Comments.tsx";
 import { DetailActions } from "../../../components/DetailActions.tsx";
 import { ExternalIcon } from "../../../components/Icons.tsx";
 import { getPastRounds, getPrograms, getSchools, getSourceNames } from "../../../lib/data.ts";
-import type { Round } from "../../../lib/data.ts";
 import { describeTarget, formatDate, formatPeriod, recruitWord } from "../../../lib/filter.ts";
 import { jsonLdScript, programJsonLd } from "../../../lib/jsonld.ts";
 import type { Program } from "../../../src/types.ts";
 
+export const dynamicParams = false;
+
 // 지난 회차의 연도: 모집 시작 → 게시일 → 활동 시작
-const roundYear = (p: Round) =>
+const roundYear = (p: Program) =>
   Number((p.recruitPeriod.start ?? p.postedAt ?? p.activityPeriod.start ?? p.collectedAt).slice(0, 4));
 
-// 공고 화면은 배포 때 미리 만들지 않고, 누군가 처음 열 때 한 번 만들어 다음 배포까지 저장해 둔다.
-// (공고 수천 개를 배포마다 모두 만들면 Vercel 배포 보관 공간이 금방 찬다. 읽는 데이터 파일은 next.config.ts)
-// 없는 공고 id는 app/not-found.tsx가 새 주소나 보관 안내를 찾아 준다
 export function generateStaticParams() {
-  return [];
+  return getPrograms().map((program) => ({ id: program.id }));
 }
 
 // 링크를 공유했을 때 보이는 제목과 설명
@@ -42,7 +40,7 @@ function applyLinks(program: Program) {
 
 const HISTORY_SHOWN = 8; // 지난 공고는 최근 몇 개만 먼저 보여 주고 나머지는 접어 둔다
 
-function historyRow(round: Round) {
+function historyRow(round: Program) {
   const year = roundYear(round);
   const recruitText = formatPeriod(round.recruitPeriod, year);
   const period = recruitText

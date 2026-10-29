@@ -56,32 +56,19 @@ function getArchive(): Program[] {
   return archiveCache;
 }
 
-// 반복 프로그램 한 회차: 지난 공고 목록에 필요한 칸만 (public/api/series/<묶음id>.json의 rounds)
-export type Round = Pick<Program, "id" | "title" | "tags" | "postedAt" | "collectedAt" | "recruitPeriod" | "activityPeriod" | "links">;
-
-const roundStart = (p: Round) => p.recruitPeriod.start ?? p.postedAt ?? p.activityPeriod.start ?? p.collectedAt.slice(0, 10);
+const roundStart = (p: Program) => p.recruitPeriod.start ?? p.postedAt ?? p.activityPeriod.start ?? p.collectedAt.slice(0, 10);
 const NEAR_MS = 14 * 86_400_000; // 2주 안의 글은 같은 회차를 다른 곳에 올린 것으로 친다 (재게시는 수집 때 이미 합친다)
 
-// 묶음의 모든 회차. 공고 화면은 처음 열 때 서버에서 만들어지므로, 큰 보관함 대신
-// 빌드 직전 scripts/build-api.ts가 묶음마다 만들어 둔 작은 파일을 읽는다
-function readRounds(seriesId: string): Round[] {
-  try {
-    return readJson<{ rounds: Round[] }>(join("public", "api", "series", `${encodeURIComponent(seriesId)}.json`)).rounds;
-  } catch {
-    return [];
-  }
-}
-
 // 같은 반복 프로그램의 지난 회차들 (최근 순)
-export function getPastRounds(program: Program): Round[] {
+export function getPastRounds(program: Program): Program[] {
   if (!program.seriesId) return [];
   const mine = roundStart(program);
   const near = (a: string, b: string) => Math.abs(Date.parse(a) - Date.parse(b)) < NEAR_MS;
-  const members = readRounds(program.seriesId)
-    .filter((p) => p.id !== program.id && roundStart(p) < mine)
+  const members = [...getPrograms(), ...getArchive()]
+    .filter((p) => p.seriesId === program.seriesId && p.id !== program.id && roundStart(p) < mine)
     .sort((a, b) => roundStart(b).localeCompare(roundStart(a)));
 
-  const rounds: Round[] = [];
+  const rounds: Program[] = [];
   for (const p of members) {
     if (near(roundStart(p), mine) || rounds.some((r) => near(roundStart(r), roundStart(p)))) continue;
     rounds.push(p);
