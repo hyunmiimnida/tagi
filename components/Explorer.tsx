@@ -13,6 +13,7 @@ import {
   visibleForSchool,
 } from "../lib/filter.ts";
 import type { FilterCategory, ProgramView, SchoolOption } from "../lib/filter.ts";
+import { GRADES, STUDENT_STATUSES } from "../src/types.ts";
 import { useListPrograms } from "../lib/use-list.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import { LIST_QUERY_KEY } from "./BackLink.tsx";
@@ -105,6 +106,7 @@ export function Explorer({ categories, schools }: Props) {
   const [who, setWho] = useState<Set<string>>(new Set());
   const [whoFromUrl, setWhoFromUrl] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [tagsFromUrl, setTagsFromUrl] = useState(false);
   const [openPanel, setOpenPanel] = useState<string | null>(null);
   const [showClosed, setShowClosed] = useState(false);
   const [includeOpen, setIncludeOpen] = useState(true);
@@ -126,6 +128,7 @@ export function Explorer({ categories, schools }: Props) {
       setWhoFromUrl(true);
     }
     setSelected(query.tags);
+    setTagsFromUrl(query.tags.size > 0);
     setKeyword(query.keyword);
     setShowClosed(query.showClosed);
     setIncludeOpen(query.includeOpen);
@@ -139,12 +142,28 @@ export function Explorer({ categories, schools }: Props) {
     if (loaded && !schoolFromUrl) setSchool(user.schoolId);
   }, [loaded, schoolFromUrl, user.schoolId]);
 
-  // 주소에 대상이 없으면 프로필의 신분·학년을 기본으로 쓴다 (졸업생은 학년을 쓰지 않는다)
-  const { status, grade } = user.profile;
+  // 주소에 대상·분야가 없으면 지난번에 고른 신분·학년·분야(내 설정에 기억해 둔 것)를 처음 한 번 걸어 둔다 (졸업생은 학년을 쓰지 않는다)
+  const fieldTags = useMemo(() => new Set(categories.find((c) => c.id === "field")?.tags ?? []), [categories]);
+  const defaultsApplied = useRef(false);
   useEffect(() => {
-    if (!loaded || whoFromUrl) return;
-    setWho(new Set([status, status === "졸업생" ? null : grade].filter((w): w is string => Boolean(w))));
-  }, [loaded, whoFromUrl, status, grade]);
+    if (!loaded || !user.ready || defaultsApplied.current) return;
+    defaultsApplied.current = true;
+    const { status, grade, interests } = user.profile;
+    if (!whoFromUrl) setWho(new Set([status, status === "졸업생" ? null : grade].filter((w): w is string => Boolean(w))));
+    if (!tagsFromUrl) setSelected(new Set(interests.filter((t) => fieldTags.has(t))));
+  }, [loaded, user.ready, user.profile, whoFromUrl, tagsFromUrl, fieldTags]);
+
+  // 대상·분야를 직접 고르면 기억한다 (학교처럼). 신분·학년은 하나씩만 기억할 수 있어 여러 개 고르면 비워 둔다
+  function pickWho(next: Set<string>) {
+    setWho(next);
+    const statuses = STUDENT_STATUSES.filter((w) => next.has(w));
+    const grades = GRADES.filter((w) => next.has(w));
+    void user.setProfile({ status: statuses.length === 1 ? statuses[0] : null, grade: grades.length === 1 ? grades[0] : null });
+  }
+  function pickTags(next: Set<string>) {
+    setSelected(next);
+    void user.setProfile({ interests: [...next].filter((t) => fieldTags.has(t)) });
+  }
 
   useEffect(() => {
     if (loaded) writeQuery({ school, region, units, who, tags: selected, keyword, showClosed, includeOpen, sort });
@@ -272,9 +291,9 @@ export function Explorer({ categories, schools }: Props) {
   };
 
   function reset() {
-    setSelected(new Set());
+    pickTags(new Set());
     setUnits(new Set());
-    setWho(new Set());
+    pickWho(new Set());
     setKeyword("");
   }
 
@@ -374,7 +393,7 @@ export function Explorer({ categories, schools }: Props) {
             )}
             <div className="panel-group">
               <p className="panel-label">대상</p>
-              {ELIGIBILITY.map((w) => option(w, w, who.has(w), counts.who.get(w), () => setWho(toggle(who, w))))}
+              {ELIGIBILITY.map((w) => option(w, w, who.has(w), counts.who.get(w), () => pickWho(toggle(who, w))))}
             </div>
             {school && (
               <label className="toggle panel-toggle">
@@ -396,7 +415,7 @@ export function Explorer({ categories, schools }: Props) {
         {openedCategory && (
           <div className="tag-panel">
             {openedCategory.tags.map((tag) =>
-              option(tag, tag, selected.has(tag), counts.tag.get(tag), () => setSelected(toggle(selected, tag))),
+              option(tag, tag, selected.has(tag), counts.tag.get(tag), () => pickTags(toggle(selected, tag))),
             )}
           </div>
         )}
@@ -404,7 +423,7 @@ export function Explorer({ categories, schools }: Props) {
         {hasChips && (
           <div className="selected-tags">
             {[...who].map((w) => (
-              <button key={w} className="selected-tag" onClick={() => setWho(toggle(who, w))} aria-label={`${w} 필터 해제`}>
+              <button key={w} className="selected-tag" onClick={() => pickWho(toggle(who, w))} aria-label={`${w} 필터 해제`}>
                 {w}
                 <CloseIcon size={14} />
               </button>
@@ -416,7 +435,7 @@ export function Explorer({ categories, schools }: Props) {
               </button>
             ))}
             {[...selected].map((tag) => (
-              <button key={tag} className="selected-tag" onClick={() => setSelected(toggle(selected, tag))} aria-label={`${tag} 필터 해제`}>
+              <button key={tag} className="selected-tag" onClick={() => pickTags(toggle(selected, tag))} aria-label={`${tag} 필터 해제`}>
                 {tag}
                 <CloseIcon size={14} />
               </button>

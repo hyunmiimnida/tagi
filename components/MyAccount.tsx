@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
-import { GRADES, STUDENT_STATUSES } from "../src/types.ts";
-import { daysUntil, formatDate, isCurrent, recruitWord, upcomingEvents } from "../lib/filter.ts";
+import { daysUntil, isCurrent } from "../lib/filter.ts";
 import type { ProgramView, SchoolOption } from "../lib/filter.ts";
 import { downloadIcs } from "../lib/ics.ts";
 import { CONTACT } from "../lib/policy.ts";
@@ -19,7 +18,6 @@ import { CalendarPlusIcon, ChevronIcon, ProfileIcon } from "./Icons.tsx";
 
 interface Props {
   schools: SchoolOption[];
-  fieldTags: string[]; // 관심 분야로 고를 수 있는 태그
   sources: string; // 모으는 곳 요약 (예: "영남대학교·경북대학교… 공지 40곳")
 }
 
@@ -34,7 +32,7 @@ const NICKNAME = /^.{2,12}$/u;
 const SOON_DAYS = 7; // "곧 마감"으로 셀 기간
 
 // 프로필: 머리(닉네임·활동 수), 맞춤 설정 안내, 다가오는 내 일정, 내 정보, 관심 분야, 알림·캘린더, 내 댓글, 숨긴 사용자, 안내, 계정
-export function MyAccount({ schools, fieldTags, sources }: Props) {
+export function MyAccount({ schools, sources }: Props) {
   const user = useUser();
   const router = useRouter();
   const today = useToday();
@@ -98,24 +96,9 @@ export function MyAccount({ schools, fieldTags, sources }: Props) {
 
   // 관심 공고: 지금 목록에 있는 것만 일정을 계산한다 (보관함으로 간 공고는 캘린더의 "지난 관심 공고"에 있다)
   const favoritePrograms = useMemo(() => programs.filter((p) => user.favorites.has(p.id)), [programs, user.favorites]);
-  const events = useMemo(() => (today ? upcomingEvents(programs, user.favorites, today) : []), [programs, user.favorites, today]);
   const soonCount = today
     ? favoritePrograms.filter((p) => p.recruitPeriod.end && daysUntil(p.recruitPeriod.end, today) >= 0 && daysUntil(p.recruitPeriod.end, today) <= SOON_DAYS).length
     : 0;
-  const interestCount = useMemo(
-    () => (today ? programs.filter((p) => p.tags.some((t) => profile.interests.includes(t)) && !(p.recruitPeriod.end && p.recruitPeriod.end < today)).length : 0),
-    [programs, profile.interests, today],
-  );
-  const interestHref = `/programs?${profile.interests.map((t) => `tag=${encodeURIComponent(t)}`).join("&")}&sort=recent`;
-
-  // 맞춤 추천에 쓰는 설정이 얼마나 채워졌는지
-  const steps = [
-    { id: "my-info", label: "내 학교", done: user.schoolId !== null },
-    { id: "my-info", label: "신분·학년", done: profile.status !== null },
-    { id: "my-interests", label: "관심 분야", done: profile.interests.length > 0 },
-  ];
-  const remaining = steps.filter((step) => !step.done);
-
   async function saveNickname(event: React.FormEvent) {
     event.preventDefault();
     const value = nickname.trim();
@@ -163,9 +146,6 @@ export function MyAccount({ schools, fieldTags, sources }: Props) {
     await update({ notifyDeadline: on });
   }
 
-  const toggle = (list: string[], value: string) =>
-    list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
-
   async function unblockAll() {
     if (!supabase || !user.userId || !window.confirm("숨긴 사람들의 글을 다시 볼까요?")) return;
     const { error } = await supabase.from("blocks").delete().eq("user_id", user.userId);
@@ -191,9 +171,6 @@ export function MyAccount({ schools, fieldTags, sources }: Props) {
 
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   const providerName = LOGIN_PROVIDERS.find((p) => p.id === user.provider)?.name;
-  const schoolName = schools.find((s) => s.id === user.schoolId)?.name ?? "전체 학교";
-  const whoText = [profile.status, profile.status !== "졸업생" ? profile.grade : null].filter(Boolean).join(" ") || "선택 안 함";
-  const year = today ? Number(today.slice(0, 4)) : new Date().getFullYear();
   const guest = user.loginEnabled && user.ready && !user.signedIn; // 로그인을 쓸 수 있는데 아직 안 함
 
   return (
@@ -271,10 +248,10 @@ export function MyAccount({ schools, fieldTags, sources }: Props) {
                 <strong>{myComments?.length ?? 0}</strong>
               </button>
             ) : (
-              <button type="button" className="stat" onClick={() => scrollTo("my-info")}>
+              <Link href="/programs" className="stat">
                 <span>내 학교</span>
                 <strong className="stat-text">{schools.find((s) => s.id === user.schoolId)?.shortName ?? "전체"}</strong>
-              </button>
+              </Link>
             )}
           </div>
         )}
@@ -300,151 +277,6 @@ export function MyAccount({ schools, fieldTags, sources }: Props) {
         </span>
         <ChevronIcon size={18} />
       </Link>
-
-      {/* 2. 맞춤 설정 안내: 아직 안 고른 것이 있으면 */}
-      {user.ready && remaining.length > 0 && (
-        <section className="card my-card my-setup">
-          <h2 className="card-title">맞춤 공고를 위해 {remaining.length}가지만 골라 주세요</h2>
-          <p className="card-sub">고른 대로 공고 목록 필터와 홈의 추천이 맞춰져요.</p>
-          <div className="my-steps">
-            {steps.map((step) => (
-              <button key={step.label} className={`my-step ${step.done ? "done" : ""}`} onClick={() => scrollTo(step.id)}>
-                {step.done ? "✓ " : ""}
-                {step.label}
-              </button>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* 3. 다가오는 내 일정 */}
-      <section className="card my-card">
-        <div className="my-section-head">
-          <h2 className="card-title">다가오는 내 일정</h2>
-          <Link href="/calendar" className="my-more">
-            캘린더 <ChevronIcon size={16} />
-          </Link>
-        </div>
-        {events.length === 0 ? (
-          <p className="card-sub">
-            {guest
-              ? "로그인하고 공고에서 ☆를 누르면 마감일과 활동 일정이 여기 모여요."
-              : user.favorites.size === 0
-                ? "공고에서 ☆를 누르면 마감일과 활동 일정이 여기 모여요."
-                : "관심 공고에 다가오는 일정이 없어요."}
-          </p>
-        ) : (
-          <ul className="rows my-events">
-            {events.map(({ date, kind, program }) => {
-              const left = daysUntil(date, today);
-              return (
-                <li key={program.id + kind} className="row event-row">
-                  <div className="event-date">
-                    <strong className={kind === "마감" && left <= 3 ? "warn" : ""}>{left === 0 ? "오늘" : `D-${left}`}</strong>
-                    <span>{formatDate(date, year)}</span>
-                  </div>
-                  <div className="row-body">
-                    <div className="row-meta">
-                      <span className={kind === "마감" ? "warn" : "accent"}>{kind === "마감" ? `${recruitWord(program)} 마감` : "활동 시작"}</span>
-                    </div>
-                    <Link href={`/programs/${program.id}`} className="row-title">
-                      {program.title}
-                    </Link>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-        {user.favorites.size === 0 && (
-          <Link href="/programs" className="button wide">
-            공고 둘러보기
-          </Link>
-        )}
-      </section>
-
-      {/* 4. 내 정보 */}
-      <section className="card my-card" id="my-info">
-        <h2 className="card-title">내 정보</h2>
-        <p className="card-sub">고른 대로 공고 목록의 학교·대상 필터가 처음부터 맞춰져요.</p>
-
-        <h3 className="my-label">
-          학교 <em>{schoolName}</em>
-        </h3>
-        <div className="my-options">
-          <button className={`tag-option ${user.schoolId === null ? "on" : ""}`} onClick={() => user.setSchool(null)}>
-            전체 학교
-          </button>
-        </div>
-        {/* 학교가 많아 지역별로 나눠 보여 준다 */}
-        {[...new Set(schools.map((s) => s.region))].map((region) => (
-          <div key={region}>
-            <p className="my-region">{region}</p>
-            <div className="my-options">
-              {schools
-                .filter((s) => s.region === region)
-                .map((s) => (
-                  <button key={s.id} className={`tag-option ${user.schoolId === s.id ? "on" : ""}`} onClick={() => user.setSchool(s.id)}>
-                    {s.name}
-                  </button>
-                ))}
-            </div>
-          </div>
-        ))}
-
-        <h3 className="my-label">
-          신분·학년 <em>{whoText}</em>
-        </h3>
-        <div className="my-options">
-          {STUDENT_STATUSES.map((s) => (
-            <button
-              key={s}
-              className={`tag-option ${profile.status === s ? "on" : ""}`}
-              aria-pressed={profile.status === s}
-              onClick={() => update({ status: profile.status === s ? null : s })}
-            >
-              {s}
-            </button>
-          ))}
-        </div>
-        {profile.status !== "졸업생" && (
-          <div className="my-options spaced">
-            {GRADES.map((g) => (
-              <button
-                key={g}
-                className={`tag-option ${profile.grade === g ? "on" : ""}`}
-                aria-pressed={profile.grade === g}
-                onClick={() => update({ grade: profile.grade === g ? null : g })}
-              >
-                {g}
-              </button>
-            ))}
-          </div>
-        )}
-      </section>
-
-      {/* 5. 관심 분야 */}
-      <section className="card my-card" id="my-interests">
-        <h2 className="card-title">관심 분야</h2>
-        <p className="card-sub">고른 분야의 공고를 홈에서 따로 모아 보여 드려요. 여러 개 고를 수 있어요.</p>
-        <div className="my-options spaced">
-          {fieldTags.map((tag) => (
-            <button
-              key={tag}
-              className={`tag-option ${profile.interests.includes(tag) ? "on" : ""}`}
-              aria-pressed={profile.interests.includes(tag)}
-              onClick={() => update({ interests: toggle(profile.interests, tag) })}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
-        {profile.interests.length > 0 && (
-          <Link href={interestHref} className="button wide">
-            관심 분야 공고 {interestCount}개 보기
-          </Link>
-        )}
-      </section>
 
       {savedLocally && (
         <p className="my-message" role="status">
