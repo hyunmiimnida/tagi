@@ -45,8 +45,8 @@
 - 태그 필터링: 같은 카테고리 안은 "또는", 다른 카테고리끼리는 "그리고"
 - 개인 캘린더: 관심 표시한 항목의 일정만 모아 보기
 - 로그인(소셜 로그인)과 학교 설정. 학교는 공고 화면의 "학교" 필터에서 고르고, 고른 학교가 내 학교 설정으로 저장된다
-- 지역: 학교마다 `config/schools.json`의 `region`(영남권·수도권·충청권·호남권·강원권·제주권, 학교 목록도 지역별로 모아 둔다). 공고 화면의 학교 패널은 지역 탭 → 그 지역 학교, "○○권 전체"를 고르면 그 지역 학교 공고만(주소 `?region=수도권`, 내 학교 설정은 그대로). 프로필의 학교 고르기도 지역별로 나뉘고, 바닥글은 지역별 학교 수·지역별 마지막 수집 시각(가장 최근 수집보다 3일 넘게 뒤처진 학교는 이름, 자동 수집을 통째로 쉬어도 모두 멈춤으로 보이지 않게)을 보여 준다. 새 지역을 쓰려면 `region` 값만 적으면 된다
-- 학교 필터 안의 교내 기관 필터: `config/schools.json`의 `units` (산학협력단을 뺀 "~단" 기관). 주최 유형이 학교이고 주최 이름에 키워드가 있으면 그 기관
+- 지역: 학교마다 `config/schools.json`의 `region`(영남권·수도권·충청권·호남권·강원권·제주권, 학교 목록도 지역별로 모아 둔다). 공고 화면의 학교 패널은 지역 탭 → 그 지역 학교, "○○권 전체"를 고르면 그 지역 학교 공고만(주소 `?region=수도권`, 내 학교 설정은 그대로). 프로필의 학교 고르기도 지역별로 나뉘고, 바닥글은 지역별 학교 수·지역별 마지막 수집 시각(가장 최근 수집보다 3일 넘게 뒤처진 학교는 이름, 자동 수집을 통째로 쉬어도 모두 멈춤으로 보이지 않게)을 보여 준다. 새 지역을 쓰려면 `region` 값만 적으면 된다. 학교·지역 옆 숫자는 그 학교가 직접 올린 공고만 센다("다른 학교도 지원" 공고는 빼고, 패널 아래 `.panel-note` 안내). 홈의 "학교 고르기"(`/programs?pick=school`)로 오면 학교 패널이 열려 있다
+- 학교 필터 안의 교내 기관 필터: `config/schools.json`의 `units` (산학협력단을 뺀 "~단" 기관). 주최 유형이 학교이고 주최 이름에 키워드가 있으면 그 기관. 공고가 0개인 기관은 숨긴다
 - 공고 출처가 속한 학교는 목록에 학교 배지(`shortName`, 예: 영남대)로 보인다 (`lib/data.ts`가 빌드할 때 계산)
 - 중복 제거: 같은 프로그램은 하나로 합치고 원문 링크는 모두 보관. 합치기와 반복 프로그램 묶기는 같은 학교 출처끼리만 한다 (`src/school-of.ts`)
 - 반복 프로그램: 해마다·학기마다 다시 열리는 프로그램을 `seriesId`로 묶어(`src/series.ts`) 상세 화면에 "지난 공고"와 후기 댓글(Supabase `comments` 표)을 보여 준다
@@ -146,13 +146,14 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
   - 목록 필터는 주소(`?school=yu&unit=...&tag=...&q=...&closed=1&sort=recent`)에 저장된다
   - 상세·캘린더에서 `.ics` 캘린더 파일로 내보낼 수 있다 (`lib/ics.ts`, 마감 일정에는 하루 전 오전 9시 알림)
   - 검색(`matchesKeyword`)은 제목·주최·한 줄 요약·태그에서 찾고, 띄어 쓴 단어는 모두 들어 있어야 한다(띄어쓰기 무시)
-- 화면 데이터: 홈·목록·캘린더·프로필·관리자는 공고를 HTML에 넣지 않고 `public/api/list.json`(빌드 때 `scripts/build-api.ts`가 만드는 가벼운 목록, 형식 `lib/list.ts`)을 한 번 받아 같이 쓴다(`lib/use-list.ts`의 `useListPrograms`). 반복 프로그램 이름표는 `public/api/series-info.json`(댓글이 있을 때만). `npm run dev`도 시작 전에 이 파일을 만든다(`predev`). 목록은 30개씩 그리고 끝까지 내리면 더 그린다
+- 화면 데이터: 홈·목록·캘린더·프로필·관리자는 공고를 HTML에 넣지 않고 빌드 때 `scripts/build-api.ts`가 만드는 가벼운 목록(형식 `lib/list.ts`)을 한 번 받아 같이 쓴다(`lib/use-list.ts`의 `useListPrograms`). 처음 받는 양을 줄이려고 둘로 나눈다: `public/api/list.json`(아직 볼 만한 공고 `isCurrent`, 빌드한 날 하루 전 기준)과 `list-past.json`(끝난 공고). 끝난 공고는 `useListPrograms({ past: true })`일 때만 더 받는다(공고 화면 "마감 포함"·캘린더·프로필·관리자). 반복 프로그램 이름표는 `public/api/series-info.json`(댓글이 있을 때만). `npm run dev`도 시작 전에 이 파일을 만든다(`predev`). 목록은 30개씩 그리고 끝까지 내리면 더 그린다
 - `components/` — 화면 부품, `lib/` — 필터 규칙·데이터 읽기·로그인 상태
 - `supabase/schema.sql` — 로그인 사용자 데이터 표(학교 설정, 관심 표시, 후기 댓글)
 - `supabase/admin.sql` — 관리자 화면: 관리자(`admins`), 이용 정지(`suspensions`), 의견함(`feedback`), 사이트 공지(`announcements`), 관리 기록(`admin_log`), 관리 함수(`admin_*`)
 - `supabase/moderation.sql` — 회원 탈퇴, 댓글 신고(`reports`)·숨기기(`blocks`), 이용 규칙 동의. 댓글은 `comment_feed` 뷰로만 읽는다(글쓴이 id 비공개)
 - `/my` 프로필 (`components/MyAccount.tsx`): 머리(닉네임 아바타·로그인 방법·닉네임 바로 고치기·활동 수 관심 공고/7일 안 마감/내 댓글. 로그인 전에는 숫자 대신 로그인 안내 — 로그인을 쓸 수 있으면 관심 표시는 로그인이 필요), 내 캐릭터(꾸미기로), 알림과 캘린더(마감 알림·.ics 내보내기·홈 화면 추가), 내 댓글, 숨긴 사용자(있을 때만), 서비스 안내, 로그아웃·탈퇴. 학교·대상(신분·학년)·분야는 프로필에서 고르지 않고 **공고 화면에서 고른 것을 기억**한다(`Explorer`의 `pickWho`·`pickTags` → `lib/user.tsx`의 `profile`, 로그인하면 `profiles` 표에도, `supabase/profile.sql`). 다음에 공고 화면을 열면 그대로 걸려 있고, 분야는 홈 "내 관심 분야 공고"에 쓴다. 신분·학년은 하나씩만 기억(여러 개 고르면 비움)
-  - 홈의 `components/ProfileNudge.tsx`: 학교·신분·관심 분야를 하나도 안 고른 사람에게 프로필로 가는 안내(닫으면 다시 안 보임)
+  - 홈 안내: 학교를 안 골랐으면 머리말이 "대학교를 설정해 보세요!"와 "학교 고르기"로만 묻는다. `components/ProfileNudge.tsx`는 학교는 골랐지만 신분·관심 분야를 안 고른 사람에게 공고 화면으로 가는 안내(닫으면 다시 안 보임). "홈 화면에 추가"(`components/InstallCard.tsx`)는 두 번째 방문부터
+  - 홈 머리말은 고른 학교가 오늘 올린 공고 수, 0개면 "최근 3일 동안 N개". "새로 올라온 공고"는 일정이 있는 글 먼저, 마감 임박은 같은 마감일이면 학교를 섞는다(`lib/filter.ts`의 `compareDeadlineMixed`)
 - 검색엔진 소유 확인 코드: `lib/policy.ts`의 `SITE_VERIFICATION`(공개값, 비어 있으면 안 넣음) → `app/layout.tsx` metadata
 - 약관: `/terms`(이용약관), `/privacy`(개인정보처리방침). 문의처·규칙 문구는 `lib/policy.ts`
 - PWA: `app/manifest.ts`, `public/sw.js`(오프라인 때 마지막 화면), 아이콘 `public/icon-*.png`, `app/apple-icon.png`
@@ -187,7 +188,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - 색은 `app/globals.css`의 변수만 쓴다 (다크 모드가 자동으로 맞춰진다)
 - 공고 한 줄은 `components/ProgramRow.tsx`, 아이콘은 `components/Icons.tsx`를 재사용한다
 - 도트 캐릭터(중세 마법 RPG 2등신): **사용자마다 자기 캐릭터(아바타) 한 명**이 화면 곳곳에서 같이 다닌다. 그림은 `lib/pixel-pals.ts`의 글자 지도(머리 장식 `HEADWEAR`·옷 `OUTFITS` 부품 + 고른 색, A·a·O·o 글자가 고른 색으로 바뀜), 그리는 부품 `components/PixelPal.tsx`(`who`: 기본 캐릭터 이름이나 모습), 내 캐릭터는 `components/MyPal.tsx`, 색은 `--px-*` 변수. 깔끔한 바탕은 그대로 두고 장식으로만 쓴다(aria-hidden, 눌리지 않음, 글자·버튼을 가리지 않게)
-  - 내 캐릭터 모습(`Avatar`: 머리 장식·색, 옷·색, 무기)은 `lib/user.tsx`의 `avatar`. 처음 온 사람은 기본 네 모습(`PAL_PRESETS`, 코드 안 이름 wizard·knight·ranger·cleric) 중 하나를 무작위로 받는다. 이 기기에 저장, 로그인하면 `profiles.avatar`에도(`supabase/avatar.sql`). 저장값은 `toValidAvatar`로 확인(예전 무기 이름 sword·wand 등은 그 계열 일반 무기로)
+  - 내 캐릭터 모습(`Avatar`: 머리 장식·색, 옷·색, 무기)은 `lib/user.tsx`의 `avatar`. **로그인 전에는 캐릭터가 없다**(화면 곳곳의 캐릭터도 안 보이고, 프로필 카드·꾸미기 화면은 회색 실루엣 `PalSilhouette`와 로그인 안내). 회원가입(첫 로그인) 때 계정에 캐릭터가 없으면 기본 네 모습(`PAL_PRESETS`, 코드 안 이름 wizard·knight·ranger·cleric) 중 하나를 무작위로(이 기기에 예전 캐릭터가 있으면 그것) 받아 `profiles.avatar`에 저장하고(`supabase/avatar.sql`) "나만의 캐릭터가 생겼어요" 알림(`avatarGiven` → `components/KeyGiftToast.tsx`). 이 기기에도 기억하고 로그아웃하면 안 보인다. 체험 모드(Supabase 설정 없음)만 처음 온 사람이 바로 무작위 캐릭터를 받는다. 저장값은 `toValidAvatar`로 확인(예전 무기 이름 sword·wand 등은 그 계열 일반 무기로)
   - **무기**(`lib/weapons.ts`): 계열(검·지팡이·활·성물·펜·악기, 맨손) × 등급(일반·희귀·영웅·전설). 계열이 스킬 종류를, 등급이 화려함을 정한다. 처음부터 가진 무기는 맨손 하나(`STARTER_WEAPON`, 새 캐릭터도 맨손), 일반(단출한 동작·이펙트 없음)부터 모두 보물상자 뽑기로 얻는다(못 얻은 무기는 잠긴 채로 보임, `owns`). 전설은 자리 1개(`legend-1`, 디자인 예정). 갖지 않은 무기를 들고 있으면 맨손으로 바꾼다. `npm run dev`에서만 모든 무기를 가진 것으로 본다
     - 무기 그림 `lib/weapon-sprites.ts`(계열별 자세 `FAMILY_POSES`, 동작 그림 위에 찍는 도장), 스킬 효과 그림 `lib/skill-fx.ts`(검기·마법탄·해일·날개·음파 등), 이펙트 `lib/pixel-effects.ts`(희귀·영웅 무기 12개에 하나씩, 별이 켜질 때 터지고 탭 바 캐릭터 주변을 떠다님, 영웅은 더 자주). 그림은 모두 Codex가 그리고 밝은·어두운 바탕에서 검수
     - 추가 무기(`lib/weapons-extra.ts`, Codex가 기획·제작): 은니검·영겁의 시침검·호박당 마법봉·유리정원 지팡이·전령의 활·운명을 잣는 활·행운의 열쇠·맹약의 나침반·망각의 백필·설계자의 금필·무희의 캐스터네츠·축제의 종금. 스킬은 코드 대신 **대본**(`recipe`, `RecipeStep`: standUp/goToStar·pose·shoot·play·tap·hide/goHome)으로 적고 `StarHelper`의 `runRecipe`가 실행한다. 새 무기는 대본만으로 추가할 수 있다
