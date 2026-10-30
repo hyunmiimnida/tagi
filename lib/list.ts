@@ -2,11 +2,14 @@ import type { Period } from "../src/types.ts";
 import type { ProgramView } from "./filter.ts";
 
 // 목록 데이터 파일(public/api/list.json). 홈·공고 목록·캘린더·프로필이 함께 받아 쓴다.
+// 처음 온 사람이 받는 양을 줄이려고 둘로 나눈다: list.json은 아직 볼 만한 공고(isCurrent), list-past.json은 이미 끝난 공고.
+// 끝난 공고는 "마감 포함"을 켰을 때와 캘린더·프로필·관리자(관심 공고가 끝났을 수 있음)에서만 더 받는다
 // 화면마다 공고 1,000개를 HTML에 넣으면 페이지가 무거워져서, 목록에 필요한 칸만 담은 파일 하나를 한 번 받아
 // 브라우저가 기억해 두고 모든 화면이 같이 쓴다 (빌드할 때 scripts/build-api.ts가 만든다).
 // 빈 값(null·빈 목록·false)은 빼서 가볍게 하고, 화면에서 원래 모양(ProgramView)으로 되돌린다.
 
 export const LIST_URL = "/api/list.json";
+export const PAST_LIST_URL = "/api/list-past.json";
 export const LIST_VERSION = 1;
 
 export interface ListProgram {

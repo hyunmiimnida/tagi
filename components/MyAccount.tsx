@@ -9,11 +9,12 @@ import { downloadIcs } from "../lib/ics.ts";
 import { CONTACT } from "../lib/policy.ts";
 import { disablePush, enablePush, needsInstallForPush, pushOnThisDevice } from "../lib/push.ts";
 import { canInstall, install, subscribeInstall } from "../lib/pwa.ts";
+import { DAILY_KEYS, WELCOME_KEYS } from "../lib/gacha.ts";
 import { useListPrograms, useSeriesInfo } from "../lib/use-list.ts";
 import { LOGIN_PROVIDERS, supabase, useToday, useUser } from "../lib/user.tsx";
 import type { Profile } from "../lib/user.tsx";
 import { FeedbackBox } from "./FeedbackBox.tsx";
-import { MyPal, MyPeekPal } from "./MyPal.tsx";
+import { MyPal, MyPeekPal, PalSilhouette } from "./MyPal.tsx";
 import { CalendarPlusIcon, ChevronIcon, ProfileIcon } from "./Icons.tsx";
 
 interface Props {
@@ -37,7 +38,7 @@ export function MyAccount({ schools, sources }: Props) {
   const router = useRouter();
   const today = useToday();
   // 관심 공고 일정·관심 분야 공고 수: 아직 볼 만한 공고만 (목록 데이터는 홈·공고 화면과 같이 쓴다)
-  const { programs: loaded } = useListPrograms();
+  const { programs: loaded } = useListPrograms({ past: true }); // 관심 공고는 이미 끝났을 수 있다
   const programs: ProgramView[] = useMemo(() => (loaded && today ? loaded.filter((p) => isCurrent(p, today)) : []), [loaded, today]);
   const { profile } = user;
   const [blockCount, setBlockCount] = useState<number | null>(null);
@@ -266,7 +267,19 @@ export function MyAccount({ schools, sources }: Props) {
         )}
       </section>
 
-      {/* 내 캐릭터: 누르면 꾸미기 */}
+      {/* 내 캐릭터: 누르면 꾸미기. 로그인 전에는 캐릭터가 없어서 실루엣과 로그인 안내 */}
+      {user.loginEnabled && !user.signedIn ? (
+        <button type="button" className="card my-card my-pal-card" onClick={() => user.setLoginOpen(true)}>
+          <span className="pal-frame">
+            <PalSilhouette />
+          </span>
+          <span className="my-pal-text">
+            <strong>내 캐릭터</strong>
+            <span>로그인하면 나만의 캐릭터가 생기고 열쇠조각 {WELCOME_KEYS + DAILY_KEYS}개를 받아요</span>
+          </span>
+          <ChevronIcon size={18} />
+        </button>
+      ) : (
       <Link href="/my/avatar" className="card my-card my-pal-card">
         <span className="pal-frame">
           <MyPal pose="sit" scale={3} />
@@ -279,6 +292,7 @@ export function MyAccount({ schools, sources }: Props) {
         </span>
         <ChevronIcon size={18} />
       </Link>
+      )}
 
       {savedLocally && (
         <p className="my-message" role="status">

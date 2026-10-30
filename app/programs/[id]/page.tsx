@@ -4,6 +4,7 @@ import { ApplyCheer } from "../../../components/ApplyCheer.tsx";
 import { BackLink } from "../../../components/BackLink.tsx";
 import { Comments } from "../../../components/Comments.tsx";
 import { DetailActions } from "../../../components/DetailActions.tsx";
+import { DetailDday } from "../../../components/DetailDday.tsx";
 import { ExternalIcon } from "../../../components/Icons.tsx";
 import { getPastRounds, getPrograms, getSchools, getSourceNames } from "../../../lib/data.ts";
 import { describeTarget, formatDate, formatPeriod, recruitWord } from "../../../lib/filter.ts";
@@ -90,7 +91,10 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
       <BackLink />
 
       <header className="detail-head">
-        <p className="detail-org">{program.organizer ?? "주최 미확인"}</p>
+        <p className="detail-org">
+          <DetailDday end={program.recruitPeriod.end} />
+          {program.organizer ?? "주최 미확인"}
+        </p>
         <h1>{program.title}</h1>
         {program.summary && <p className="detail-summary">{program.summary}</p>}
         {program.tags.length > 0 && (

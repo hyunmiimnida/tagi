@@ -14,6 +14,8 @@ import type { WeaponFamily } from "../lib/weapons.ts";
 import { PixelSprite } from "./PixelPal.tsx";
 import { requestStarHelper } from "./StarHelper.tsx";
 import { TreasureBox } from "./TreasureBox.tsx";
+import { PalSilhouette } from "./MyPal.tsx";
+import { DAILY_KEYS, WELCOME_KEYS } from "../lib/gacha.ts";
 
 // 내 캐릭터 꾸미기 (/my/avatar): 무기 도감에서 무기를 골라 장착하고, 머리 장식·옷과 그 색을 바꾼다. 고르면 바로 내 캐릭터에 반영된다.
 // 등급은 글자로 쓰지 않는다: 무기를 감싼 아우라(.aura-*)와 이름 색(.grade-name-*: 일반 회색·희귀 파랑·영웅 보라·전설 호박), 아래 칸은 등급마다 한 줄 (app/globals.css)
@@ -75,6 +77,22 @@ export function AvatarEditor() {
   }, [index]);
 
   const ownedCount = useMemo(() => CODEX.filter((id) => owns(user.ownedWeapons, id)).length, [user.ownedWeapons]);
+
+  // 로그인 전에는 캐릭터가 없다: 실루엣과 로그인하면 받는 것 (회원가입하면 기본 캐릭터 하나와 열쇠조각을 준다, lib/user.tsx)
+  if (user.ready && user.loginEnabled && !user.signedIn) {
+    return (
+      <section className="card vitrine avatar-locked">
+        <PalSilhouette scale={6} />
+        <p className="avatar-locked-title">아직 나만의 캐릭터가 없어요</p>
+        <p className="avatar-locked-text">
+          로그인하면 캐릭터가 생기고 열쇠조각 {WELCOME_KEYS + DAILY_KEYS}개로 보물상자를 바로 열 수 있어요. 무기를 모으고 머리 장식·옷을 바꿔 꾸며 보세요.
+        </p>
+        <button type="button" className="button primary" onClick={() => user.setLoginOpen(true)}>
+          로그인하고 캐릭터 받기
+        </button>
+      </section>
+    );
+  }
 
   if (!avatar || index === null) {
     return <div className="card avatar-editor skeleton-block tall" aria-busy="true" />;

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ELIGIBILITY,
   addedAt,
-  compareDeadline,
+  compareDeadlineMixed,
   isClosed,
   matchesEligibility,
   matchesKeyword,
@@ -68,6 +68,7 @@ function readQuery() {
     showClosed: params.get("closed") === "1",
     includeOpen: params.get("open") !== "0",
     sort: (params.get("sort") === "recent" ? "recent" : "deadline") as Sort,
+    pick: params.get("pick"), // 홈의 "학교 고르기"로 왔으면 학교 패널을 열어 둔다 (주소에는 남기지 않는다)
   };
 }
 
@@ -94,7 +95,9 @@ function writeQuery({ school, region, units, who, tags, keyword, showClosed, inc
 export function Explorer({ categories, schools }: Props) {
   const user = useUser();
   const today = useToday();
-  const { programs: loadedPrograms, failed, retry } = useListPrograms();
+  const [showClosed, setShowClosed] = useState(false);
+  // 끝난 공고는 "마감 포함"을 켰을 때만 더 받는다
+  const { programs: loadedPrograms, failed, retry } = useListPrograms({ past: showClosed });
   const programs: ProgramView[] = useMemo(() => loadedPrograms ?? [], [loadedPrograms]);
   const [limit, setLimit] = useState(PAGE_SIZE);
   const [loaded, setLoaded] = useState(false);
@@ -108,7 +111,6 @@ export function Explorer({ categories, schools }: Props) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [tagsFromUrl, setTagsFromUrl] = useState(false);
   const [openPanel, setOpenPanel] = useState<string | null>(null);
-  const [showClosed, setShowClosed] = useState(false);
   const [includeOpen, setIncludeOpen] = useState(true);
   const [keyword, setKeyword] = useState("");
   const [typing, setTyping] = useState(false); // 검색창에 글자를 치는 중 (빼꼼 캐릭터가 돋보기를 든다)
@@ -134,6 +136,7 @@ export function Explorer({ categories, schools }: Props) {
     setShowClosed(query.showClosed);
     setIncludeOpen(query.includeOpen);
     setSort(query.sort);
+    if (query.pick === SCHOOL_PANEL) setOpenPanel(SCHOOL_PANEL);
     setLimit(readLimit());
     setLoaded(true);
   }, []);
@@ -237,7 +240,7 @@ export function Explorer({ categories, schools }: Props) {
       open
         .filter((p) => inPlace(p, school, region) && matchesUnits(p, units) && matchesEligibility(p, who))
         .filter((p) => matchesTags(p.tags, selected, categories))
-        .sort((a, b) => (sort === "recent" ? addedAt(b).localeCompare(addedAt(a)) : compareDeadline(a, b, today))),
+        .sort((a, b) => (sort === "recent" ? addedAt(b).localeCompare(addedAt(a)) : compareDeadlineMixed(a, b, today))),
     [open, categories, school, region, inPlace, units, who, selected, sort, today],
   );
 
@@ -245,8 +248,11 @@ export function Explorer({ categories, schools }: Props) {
   const counts = useMemo(() => {
     const byTags = open.filter((p) => matchesTags(p.tags, selected, categories));
     const inSchool = (id: string | null) => byTags.filter((p) => visibleForSchool(p, id, includeOpen));
-    const schoolCounts = new Map(schools.map((s) => [s.id, inSchool(s.id).length]));
-    const regionCounts = new Map([...regions.keys()].map((name) => [name, byTags.filter((p) => inPlace(p, null, name)).length]));
+    // 학교·지역 옆 숫자는 그 학교(지역 학교들)가 직접 올린 공고만 센다. "다른 학교도 지원" 공고까지 세면 학교마다 비슷하게 커져서 헷갈린다
+    const schoolCounts = new Map(schools.map((s) => [s.id, byTags.filter((p) => p.schoolIds.includes(s.id)).length]));
+    const regionCounts = new Map(
+      [...regions.entries()].map(([name, ids]) => [name, byTags.filter((p) => p.schoolIds.some((id) => ids.has(id))).length]),
+    );
     const here = byTags.filter((p) => inPlace(p, school, region));
     const unitCounts = new Map<string, number>();
     for (const p of here.filter((p) => matchesEligibility(p, who))) {
@@ -299,6 +305,8 @@ export function Explorer({ categories, schools }: Props) {
   }
 
   const currentSchool = schools.find((s) => s.id === school) ?? null;
+  // 교내 기관: 지금 공고가 없는 기관은 숨긴다 (골라 둔 기관은 그대로)
+  const shownUnits = currentSchool ? currentSchool.units.filter((unit) => units.has(unit) || (counts.unit.get(unit) ?? 0) > 0) : [];
   const regionNames = [...regions.keys()];
   const shownRegion = panelRegion ?? currentSchool?.region ?? region ?? regionNames[0] ?? null;
   const openedCategory = categories.find((category) => category.id === openPanel);
@@ -392,6 +400,7 @@ export function Explorer({ categories, schools }: Props) {
                   .map((s) =>
                     option(s.id, s.name, school === s.id, counts.school.get(s.id), () => chooseSchool(school === s.id ? null : s.id)),
                   )}
+                <p className="panel-note">숫자는 그 학교가 직접 올린 공고예요. 학교를 고르면 다른 학교 학생도 지원할 수 있는 공고가 함께 보여요.</p>
               </div>
             )}
             <div className="panel-group">
@@ -404,12 +413,10 @@ export function Explorer({ categories, schools }: Props) {
                 <span>다른 학교에 올라온 공고 중 우리 학교 학생도 지원할 수 있는 것 함께 보기</span>
               </label>
             )}
-            {currentSchool && currentSchool.units.length > 0 && (
+            {currentSchool && shownUnits.length > 0 && (
               <div className="panel-group">
                 <p className="panel-label">{currentSchool.shortName} 교내 기관</p>
-                {currentSchool.units.map((unit) =>
-                  option(unit, unit, units.has(unit), counts.unit.get(unit), () => setUnits(toggle(units, unit))),
-                )}
+                {shownUnits.map((unit) => option(unit, unit, units.has(unit), counts.unit.get(unit), () => setUnits(toggle(units, unit))))}
               </div>
             )}
           </div>

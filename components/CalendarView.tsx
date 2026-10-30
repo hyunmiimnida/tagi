@@ -35,7 +35,7 @@ const isDeadline = (event: CalendarEvent) => event.kind.endsWith("마감"); // �
 
 export function CalendarView() {
   const user = useUser();
-  const { programs: loaded, failed, retry } = useListPrograms();
+  const { programs: loaded, failed, retry } = useListPrograms({ past: true }); // 관심 공고는 이미 끝났을 수 있다
   const programs = useMemo(() => loaded ?? [], [loaded]);
   const today = useToday();
   const [offset, setOffset] = useState(0); // 이번 달에서 몇 달 떨어져 있는지

@@ -187,6 +187,13 @@ export const NEW_DAYS = 3;
 export const isNew = (program: Program, today: string) => daysUntil(today, addedAt(program)) < NEW_DAYS;
 
 // 마감이 가까운 순. 마감된 항목은 뒤로, 마감일을 모르는 항목은 최근 게시 순으로 그 사이에 둔다
+// 순서가 같은 공고끼리 섞는 값 (id로 정해져 매번 같다). 마감일이 같은 날 한 학교 공고만 몰려 보이지 않게 한다
+export function mixKey(id: string): number {
+  let hash = 2166136261;
+  for (let i = 0; i < id.length; i++) hash = Math.imul(hash ^ id.charCodeAt(i), 16777619);
+  return hash >>> 0;
+}
+
 export function compareDeadline(a: Program, b: Program, today: string): number {
   const x = lastDay(a);
   const y = lastDay(b);
@@ -197,3 +204,7 @@ export function compareDeadline(a: Program, b: Program, today: string): number {
   if (x || y) return x ? -1 : 1;
   return (b.postedAt ?? "").localeCompare(a.postedAt ?? "");
 }
+
+// 마감순 + 같은 날이면 학교가 섞이게
+export const compareDeadlineMixed = (a: Program, b: Program, today: string): number =>
+  compareDeadline(a, b, today) || mixKey(a.id) - mixKey(b.id);

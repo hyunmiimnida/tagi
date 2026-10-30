@@ -49,7 +49,7 @@ export function AdminApp(props: PageProps) {
   const [focusUser, setFocusUser] = useState<string | null>(null); // 다른 탭에서 "이 회원 보기"를 눌렀을 때
 
   // 신고·관심 공고·댓글의 id를 제목으로 보여 주려고 목록 데이터와 합쳐진 id 표를 받는다 (관리자일 때만)
-  const { programs } = useListPrograms();
+  const { programs } = useListPrograms({ past: true }); // 관리자 화면은 끝난 공고까지 본다
   const seriesInfo = useSeriesInfo(isAdmin === true);
   const [moved, setMoved] = useState<Record<string, string>>({});
   useEffect(() => {

@@ -2,29 +2,36 @@
 
 import { useEffect, useState } from "react";
 import type { ProgramView } from "./filter.ts";
-import { fromListProgram, LIST_URL } from "./list.ts";
+import { fromListProgram, LIST_URL, PAST_LIST_URL } from "./list.ts";
 import type { ListProgram } from "./list.ts";
 
-// 목록 데이터(public/api/list.json)를 한 번만 받아 모든 화면이 같이 쓴다.
+// 목록 데이터(public/api/list.json, 끝난 공고는 list-past.json)를 한 번만 받아 모든 화면이 같이 쓴다.
 // 화면을 옮겨 다녀도 다시 받지 않고, 오프라인이면 서비스 워커(public/sw.js)가 저장해 둔 것을 준다
-let listPromise: Promise<ProgramView[]> | null = null;
+const cache = new Map<string, Promise<ProgramView[]>>();
 
-function loadList(): Promise<ProgramView[]> {
-  listPromise ??= fetch(LIST_URL)
-    .then((response) => {
-      if (!response.ok) throw new Error(`목록을 받지 못함 (${response.status})`);
-      return response.json() as Promise<{ programs: ListProgram[] }>;
-    })
-    .then((data) => data.programs.map(fromListProgram))
-    .catch((error: unknown) => {
-      listPromise = null; // 다음에 다시 시도한다
-      throw error;
-    });
-  return listPromise;
+function loadFile(url: string): Promise<ProgramView[]> {
+  let promise = cache.get(url);
+  if (!promise) {
+    promise = fetch(url)
+      .then((response) => {
+        if (!response.ok) throw new Error(`목록을 받지 못함 (${response.status})`);
+        return response.json() as Promise<{ programs: ListProgram[] }>;
+      })
+      .then((data) => data.programs.map(fromListProgram))
+      .catch((error: unknown) => {
+        cache.delete(url); // 다음에 다시 시도한다
+        throw error;
+      });
+    cache.set(url, promise);
+  }
+  return promise;
 }
 
-// 받는 중이면 null, 받지 못하면 failed가 true
-export function useListPrograms(): { programs: ProgramView[] | null; failed: boolean; retry: () => void } {
+const loadList = (past: boolean): Promise<ProgramView[]> =>
+  past ? Promise.all([loadFile(LIST_URL), loadFile(PAST_LIST_URL)]).then(([now, old]) => [...now, ...old]) : loadFile(LIST_URL);
+
+// 받는 중이면 null, 받지 못하면 failed가 true. past: 이미 끝난 공고까지 (마감 포함·캘린더·프로필·관리자)
+export function useListPrograms({ past = false }: { past?: boolean } = {}): { programs: ProgramView[] | null; failed: boolean; retry: () => void } {
   const [programs, setPrograms] = useState<ProgramView[] | null>(null);
   const [failed, setFailed] = useState(false);
   const [attempt, setAttempt] = useState(0);
@@ -32,14 +39,14 @@ export function useListPrograms(): { programs: ProgramView[] | null; failed: boo
   useEffect(() => {
     let cancelled = false;
     setFailed(false);
-    loadList().then(
+    loadList(past).then(
       (list) => !cancelled && setPrograms(list),
       () => !cancelled && setFailed(true),
     );
     return () => {
       cancelled = true;
     };
-  }, [attempt]);
+  }, [attempt, past]);
 
   return { programs, failed, retry: () => setAttempt((n) => n + 1) };
 }

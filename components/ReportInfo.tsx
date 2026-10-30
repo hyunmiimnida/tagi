@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { supabase } from "../lib/user.tsx";
 
 // "정보가 틀렸어요": 공고 정보 오류를 운영자에게 알린다 (supabase/program-reports.sql). 로그인하지 않아도 된다
@@ -11,6 +11,12 @@ export function ReportInfo({ programId }: { programId: string }) {
   const [reason, setReason] = useState<string | null>(null);
   const [note, setNote] = useState("");
   const [state, setState] = useState<"idle" | "sending" | "done" | "already" | "failed" | "busy">("idle");
+  const formRef = useRef<HTMLDivElement | null>(null);
+
+  // 열면 보내기 버튼까지 보이게 올린다 (화면 아래에 붙어 있는 "원문에서 신청하기" 줄에 가리지 않게, CSS scroll-margin-bottom)
+  useEffect(() => {
+    if (open) formRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }, [open]);
 
   if (!supabase) return null;
 
@@ -41,7 +47,7 @@ export function ReportInfo({ programId }: { programId: string }) {
           정보가 틀렸어요
         </button>
       ) : (
-        <div className="report-info-form">
+        <div className="report-info-form" ref={formRef}>
           <p className="report-info-title">어떤 정보가 틀렸나요?</p>
           <div className="report-reasons" role="group" aria-label="틀린 정보">
             {REASONS.map((r) => (

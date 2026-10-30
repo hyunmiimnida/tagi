@@ -600,6 +600,20 @@ main {
   flex: none;
 }
 
+.hero-sub {
+  margin-top: 6px;
+  color: var(--text-2);
+  font-size: 0.9375rem;
+}
+
+.hero-sub a {
+  color: inherit;
+}
+
+.hero-sub strong {
+  color: var(--accent);
+}
+
 .hero h1 strong {
   color: var(--accent);
 }
@@ -851,6 +865,14 @@ main {
   border-top: 1px solid var(--line);
 }
 
+.panel-note {
+  width: 100%;
+  margin: 2px 0 0;
+  color: var(--text-3);
+  font-size: 0.75rem;
+  word-break: keep-all;
+}
+
 .panel-label {
   width: 100%;
   margin: 0 0 2px;
@@ -1058,6 +1080,10 @@ main {
 }
 
 .detail-org {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
   color: var(--text-3);
   font-size: 0.9375rem;
   font-weight: 600;
@@ -1714,6 +1740,11 @@ main {
 
 .cta .button.primary {
   box-shadow: 0 6px 20px rgb(49 130 246 / 28%);
+}
+
+/* 정보 오류 신고 창을 열면 아래에 붙은 신청 버튼 줄(약 120px) 위로 올라오게 */
+.report-info-form {
+  scroll-margin-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom) + 130px);
 }
 
 /* 홈 화면에 추가 안내 */
@@ -3951,4 +3982,37 @@ button.stat {
   margin-left: 4px;
   color: #ffe08a;
   font-weight: 700;
+}
+
+/* 로그인 전 내 캐릭터 자리 (components/AvatarEditor.tsx, MyAccount.tsx) */
+button.my-pal-card {
+  width: 100%;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.avatar-locked {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 28px 20px 22px;
+  text-align: center;
+}
+
+.avatar-locked-title {
+  margin: 6px 0 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.avatar-locked-text {
+  margin: 0 0 6px;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #c9c1e6;
+  word-break: keep-all;
 }

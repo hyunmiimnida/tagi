@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useMemo } from "react";
 import {
   addedAt,
-  compareDeadline,
+  compareDeadlineMixed,
   daysUntil,
   formatDate,
   isClosed,
@@ -67,7 +67,7 @@ export function Home({ categories, schools }: Props) {
     () =>
       open
         .filter((p) => p.recruitPeriod.end && daysUntil(p.recruitPeriod.end, today) <= URGENT_DAYS)
-        .sort((a, b) => compareDeadline(a, b, today)),
+        .sort((a, b) => compareDeadlineMixed(a, b, today)),
     [open, today],
   );
   // 오늘 마감하는 내 관심 공고 (있으면 마감 임박 맨 위에 두고 캐릭터가 알려 준다)
@@ -90,7 +90,14 @@ export function Home({ categories, schools }: Props) {
 
   // 머리말: 마지막으로 고른 학교(공고 화면의 학교 필터)가 오늘 올린 소식 수. 다른 학교가 올린 "다른 학교도 지원" 공고는 세지 않는다
   const mySchool = schools.find((s) => s.id === schoolId) ?? null;
-  const todayCount = mySchool ? fresh.filter((p) => addedAt(p) === today && p.schoolIds.includes(mySchool.id)).length : 0;
+  const mineFresh = mySchool ? fresh.filter((p) => p.schoolIds.includes(mySchool.id)) : [];
+  const todayCount = mineFresh.filter((p) => addedAt(p) === today).length;
+
+  // 홈의 "새로 올라온 공고"는 일정을 알아낸 글을 먼저 (같은 묶음 안에서는 최신순 그대로). 날짜 없는 글만 먼저 보이면 정보가 빈약해 보인다
+  const freshShown = useMemo(() => {
+    const dated = (p: Program) => Boolean(p.recruitPeriod.end || p.activityPeriod.start || p.activityPeriod.end);
+    return [...fresh].sort((a, b) => Number(dated(b)) - Number(dated(a)));
+  }, [fresh]);
 
   // 내 관심 공고의 다가오는 일정 3개
   const myEvents = useMemo(() => upcomingEvents(programs, favorites, today), [programs, favorites, today]);
@@ -136,6 +143,22 @@ export function Home({ categories, schools }: Props) {
             </>
           )}
         </h1>
+        {/* 오늘 소식이 없는 날: 최근 3일 동안 올라온 그 학교 공고로 이어 준다 */}
+        {mySchool && todayCount === 0 && (
+          <p className="hero-sub">
+            {mineFresh.length > 0 ? (
+              <>
+                최근 3일 동안{" "}
+                <Link href={`/programs?school=${mySchool.id}&sort=recent`}>
+                  <strong>{mineFresh.length}개</strong>
+                </Link>
+                가 올라왔어요
+              </>
+            ) : (
+              "최근 3일 동안 올라온 새 공고가 없어요"
+            )}
+          </p>
+        )}
         {!mySchool && (
           // 학교를 아직 고르지 않았으면 내 캐릭터가 버튼 옆에 앉아 바라본다 (그동안 마감 임박의 빼꼼은 숨김, 한 화면에 한 명)
           <div className="hero-setup">
@@ -143,7 +166,7 @@ export function Home({ categories, schools }: Props) {
             <span className="hero-setup-pal">
               <MyPal pose="sit" scale={3} />
             </span>
-            <Link href="/programs" className="button primary">
+            <Link href="/programs?pick=school" className="button primary">
               학교 고르기
             </Link>
           </div>
@@ -224,7 +247,7 @@ export function Home({ categories, schools }: Props) {
           <p className="section-empty">최근 3일 동안 새로 올라온 공고가 없어요.</p>
         ) : (
           <ul className="rows">
-            {fresh.slice(0, 4).map((p) => (
+            {freshShown.slice(0, 4).map((p) => (
               <ProgramRow key={p.id} program={p} today={today} compact />
             ))}
           </ul>

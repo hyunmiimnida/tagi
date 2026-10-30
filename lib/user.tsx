@@ -89,7 +89,9 @@ interface UserState {
   signIn: (provider: ProviderId) => void;
   signOut: () => void;
   deleteAccount: () => Promise<boolean>; // 계정과 계정에 저장된 모든 데이터를 지운다
-  // 내 도트 캐릭터 (화면 곳곳에서 같이 다니는 캐릭터). 브라우저에서 읽기 전에는 null
+  // 내 도트 캐릭터 (화면 곳곳에서 같이 다니는 캐릭터). 로그인 전(체험 모드 제외)과 브라우저에서 읽기 전에는 null
+  avatarGiven: boolean; // 방금 회원가입해서 캐릭터를 받았다 (알림 한 번)
+  clearAvatarGiven: () => void;
   avatar: Avatar | null;
   ownedWeapons: ReadonlySet<string>; // 얻은 무기 (맨손은 누구나 가진다)
   setAvatar: (next: Avatar) => void;
@@ -170,16 +172,17 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   const [profile, setProfileState] = useState<Profile>(EMPTY_PROFILE);
   const [loginOpen, setLoginOpen] = useState(false);
   const [avatar, setAvatarState] = useState<Avatar | null>(null);
+  const [avatarGiven, setAvatarGiven] = useState(false); // 방금 회원가입해서 캐릭터를 받음
 
   useEffect(() => {
     setSchoolId(readLocal(SCHOOL_KEY));
     setProfileState(readLocalProfile());
-    // 처음 온 사람에게는 기본 캐릭터 하나를 골라 주고 이 기기에 기억한다
-    const savedAvatar = readLocalAvatar() ?? randomAvatar();
-    setAvatarState(savedAvatar);
-    writeLocal(AVATAR_KEY, JSON.stringify(savedAvatar));
-
+    // 캐릭터는 회원가입(첫 로그인) 때 생긴다. 로그인 전에는 캐릭터가 없다 (화면 곳곳의 캐릭터도 보이지 않는다).
+    // 체험 모드(Supabase 설정 없음, 로그인이 없음)만 처음 온 사람에게 기본 캐릭터 하나를 골라 이 기기에 기억한다
     if (!supabase) {
+      const savedAvatar = readLocalAvatar() ?? randomAvatar();
+      setAvatarState(savedAvatar);
+      writeLocal(AVATAR_KEY, JSON.stringify(savedAvatar));
       setFavorites(readLocalList(FAVORITES_KEY));
       setReady(true);
       return;
@@ -195,11 +198,11 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         writeLocal(PROFILE_KEY, null);
         setSchoolId(null);
         setProfileState(EMPTY_PROFILE);
-        // 캐릭터도 이전 계정 것을 넘기지 않는다 (새 계정에 저장된 캐릭터가 있으면 곧 불러온다)
-        const fresh = randomAvatar();
-        writeLocal(AVATAR_KEY, JSON.stringify(fresh));
-        setAvatarState(fresh);
+        // 캐릭터도 이전 계정 것을 넘기지 않는다 (새 계정의 캐릭터는 곧 불러오거나 새로 준다)
+        writeLocal(AVATAR_KEY, null);
       }
+      // 같은 계정이 다시 들어오면 이 기기에 기억해 둔 캐릭터를 먼저 보여 준다 (계정의 캐릭터는 곧 불러온다). 로그아웃하면 캐릭터가 없다
+      setAvatarState(nextUser ? (nextUser === lastUser || !lastUser ? readLocalAvatar() : null) : null);
       if (nextUser) writeLocal(LAST_USER_KEY, nextUser);
       setUserId(nextUser);
       setEmail(session?.user.email ?? null);
@@ -246,8 +249,8 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     };
   }, [userId]);
 
-  // 로그인하면 계정의 캐릭터를 불러온다. 계정에 아직 없으면 이 기기의 캐릭터를 계정에 올린다.
-  // 저장 칸(supabase/avatar.sql)을 아직 만들지 않았으면 오류가 나지만 이 기기 저장만으로 계속 쓴다
+  // 로그인하면 계정의 캐릭터를 불러온다. 계정에 아직 없으면(회원가입) 기본 캐릭터 하나를 무작위로 주고 계정에 저장한다
+  // (예전에 이 기기에서 꾸며 둔 캐릭터가 있으면 그것을 이어 쓴다). 저장 칸(supabase/avatar.sql)이 없으면 이 기기에만 저장한다
   useEffect(() => {
     if (!supabase || !userId) return;
     let cancelled = false;
@@ -258,14 +261,19 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       .eq("user_id", userId)
       .maybeSingle()
       .then(({ data, error }) => {
-        if (cancelled || error) return;
-        const saved = toValidAvatar((data as { avatar?: unknown } | null)?.avatar);
+        if (cancelled) return;
+        const saved = error ? null : toValidAvatar((data as { avatar?: unknown } | null)?.avatar);
         if (saved) {
           setAvatarState(saved);
           writeLocal(AVATAR_KEY, JSON.stringify(saved));
-        } else {
-          const local = readLocalAvatar();
-          if (local) void client.from("profiles").upsert({ user_id: userId, avatar: local }).then();
+          return;
+        }
+        const given = readLocalAvatar() ?? randomAvatar();
+        setAvatarState(given);
+        writeLocal(AVATAR_KEY, JSON.stringify(given));
+        if (!error) {
+          void client.from("profiles").upsert({ user_id: userId, avatar: given }).then();
+          setAvatarGiven(true); // 처음 받은 캐릭터를 알려 준다 (components/KeyGiftToast.tsx)
         }
       });
     return () => {
@@ -390,6 +398,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       });
   }, [userId]);
   const clearKeyGift = useCallback(() => setKeyGift(null), []);
+  const clearAvatarGiven = useCallback(() => setAvatarGiven(false), []);
 
   const grantWeapon = useCallback((id: WeaponId) => {
     const grade = WEAPONS[id].grade;
@@ -561,6 +570,8 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         return true;
       },
       avatar,
+      avatarGiven,
+      clearAvatarGiven,
       ownedWeapons,
       setAvatar,
       keys,
@@ -573,7 +584,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       revealing,
       closeReveal,
     }),
-    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite, avatar, setAvatar, ownedWeapons, keys, legendShards, drawWeapon, refreshKeys, keyGift, clearKeyGift, grantWeapon, revealing, closeReveal],
+    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite, avatar, avatarGiven, clearAvatarGiven, setAvatar, ownedWeapons, keys, legendShards, drawWeapon, refreshKeys, keyGift, clearKeyGift, grantWeapon, revealing, closeReveal],
   );
 
   return <UserContext value={value}>{children}</UserContext>;

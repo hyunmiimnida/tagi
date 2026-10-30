@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { getCategories, getPrograms, getSchools, getSeriesInfo, getSourceNames } from "../lib/data.ts";
+import { isCurrent } from "../lib/filter.ts";
 import { LIST_VERSION, toListProgram } from "../lib/list.ts";
 import type { Program } from "../src/types.ts";
 
@@ -11,7 +12,8 @@ import type { Program } from "../src/types.ts";
 //   api/series/<묶음id>.json  반복 프로그램의 모든 회차 (상세 화면을 열 때만 받는다)
 //   api/moved.json           합쳐져 없어진 공고 id → 지금 id (관심 표시를 새 공고로 옮길 때)
 //   api/ids.json             합쳐지거나 보관된 공고의 예전 id를 찾는 표 (없는 주소를 열었을 때만 받는다)
-//   api/list.json            사이트의 홈·목록·캘린더·프로필이 함께 쓰는 가벼운 목록 (lib/list.ts)
+//   api/list.json            사이트의 홈·목록·캘린더·프로필이 함께 쓰는 가벼운 목록 중 아직 볼 만한 공고 (lib/list.ts)
+//   api/list-past.json       같은 형식의 이미 끝난 공고 ("마감 포함"·캘린더·프로필에서만 받는다)
 //   api/series-info.json     반복 프로그램 묶음 → [최근 회차 제목, 지금 공고 id] (내 댓글·관리자 화면)
 
 const OUT = join(process.cwd(), "public", "api");
@@ -94,7 +96,12 @@ write("ids.json", { version: VERSION, moved, archived });
 write("moved.json", { version: VERSION, moved });
 
 // 사이트 화면용 가벼운 목록과 반복 프로그램 이름표
-write("list.json", { version: LIST_VERSION, programs: programs.map(toListProgram) });
+// 빌드한 날(한국 날짜)보다 하루 앞을 기준으로 나눈다 (배포가 늦어지거나 시간대가 달라도 볼 만한 공고가 빠지지 않게)
+const splitDay = new Date(Date.now() + 9 * 3600_000 - 86_400_000).toISOString().slice(0, 10);
+const current = programs.filter((p) => isCurrent(p, splitDay));
+const past = programs.filter((p) => !isCurrent(p, splitDay));
+write("list.json", { version: LIST_VERSION, programs: current.map(toListProgram) });
+write("list-past.json", { version: LIST_VERSION, programs: past.map(toListProgram) });
 write("series-info.json", getSeriesInfo());
 
 console.log(`앱 데이터: 공고 ${programs.length}개, 반복 프로그램 ${members.size}개 → public/api/`);
