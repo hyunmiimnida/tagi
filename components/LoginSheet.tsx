@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { LOGIN_PROVIDERS, useUser } from "../lib/user.tsx";
 import { CloseIcon } from "./Icons.tsx";
@@ -14,7 +15,7 @@ export function LoginSheet() {
     if (!loginOpen) return;
     // 키보드로 쓰는 사람을 위해: 열리면 창 안으로 초점을 옮기고, Tab은 창 안에서만 돌며, 닫히면 원래 자리로 돌려 놓는다
     const opener = document.activeElement as HTMLElement | null;
-    const buttons = () => [...(sheetRef.current?.querySelectorAll<HTMLButtonElement>("button") ?? [])];
+    const buttons = () => [...(sheetRef.current?.querySelectorAll<HTMLElement>("button, a[href]") ?? [])];
     buttons()[1]?.focus(); // 닫기 버튼 다음의 첫 로그인 버튼
 
     const onKey = (event: KeyboardEvent) => {
@@ -55,13 +56,24 @@ export function LoginSheet() {
         </button>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/logo.svg" alt="" width={48} height={48} className="sheet-logo" />
-        <h2>3초 만에 시작하기</h2>
+        <h2>간편하게 시작하기</h2>
         <p>관심 공고를 저장하고 마감 일정을 캘린더로 모아 보세요.</p>
         {LOGIN_PROVIDERS.map((provider) => (
           <button key={provider.id} className={`login-button ${provider.id}`} onClick={() => user.signIn(provider.id)}>
             {provider.name}로 계속하기
           </button>
         ))}
+        <p className="sheet-legal">
+          로그인하면{" "}
+          <Link href="/terms" onClick={() => setLoginOpen(false)}>
+            이용약관
+          </Link>
+          에 동의하고{" "}
+          <Link href="/privacy" onClick={() => setLoginOpen(false)}>
+            개인정보처리방침
+          </Link>
+          을 확인한 것으로 봅니다. 만 14세 미만은 가입할 수 없어요.
+        </p>
       </div>
     </div>
   );

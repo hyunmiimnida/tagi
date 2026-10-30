@@ -69,6 +69,7 @@ export function ReportInfo({ programId }: { programId: string }) {
             aria-label="자세한 내용"
             onChange={(event) => setNote(event.target.value)}
           />
+          <p className="nickname-note">이름·전화번호 같은 개인정보는 적지 마세요.</p>
           {state === "failed" && <p className="report-info-error">보내지 못했어요. 잠시 후 다시 시도해 주세요.</p>}
           {state === "busy" && <p className="report-info-error">신고가 너무 많이 들어오고 있어요. 1시간쯤 뒤에 다시 보내 주세요.</p>}
           <div className="report-info-actions">

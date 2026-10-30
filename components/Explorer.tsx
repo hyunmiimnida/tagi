@@ -309,6 +309,18 @@ export function Explorer({ categories, schools }: Props) {
   const shownUnits = currentSchool ? currentSchool.units.filter((unit) => units.has(unit) || (counts.unit.get(unit) ?? 0) > 0) : [];
   const regionNames = [...regions.keys()];
   const shownRegion = panelRegion ?? currentSchool?.region ?? region ?? regionNames[0] ?? null;
+  // 키보드로 쓰는 사람을 위해: 필터 패널은 Esc로 닫고, 초점은 그 패널을 연 버튼으로 돌려 놓는다
+  useEffect(() => {
+    if (!openPanel) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      document.querySelector<HTMLElement>('.filter-bar [aria-expanded="true"]')?.focus();
+      setOpenPanel(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [openPanel]);
+
   const openedCategory = categories.find((category) => category.id === openPanel);
   const ready = loaded && today !== "" && loadedPrograms !== null;
   const hasChips = selected.size > 0 || units.size > 0 || who.size > 0;

@@ -49,8 +49,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <UserProvider>
+          <a className="skip-link" href="#main">
+            본문 바로가기
+          </a>
           <Header />
-          <main>
+          <main id="main" tabIndex={-1}>
             <SiteNotice />
             {children}
           </main>

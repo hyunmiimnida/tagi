@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useUser } from "../lib/user.tsx";
 import { WEAPON_SPRITES } from "../lib/weapon-sprites.ts";
 import { DRAW_COST } from "../lib/gacha.ts";
@@ -79,6 +79,7 @@ export function WeaponReveal() {
   const { revealing, closeReveal, grantWeapon } = user;
   const [stage, setStage] = useState<Stage>("shake");
   const [busy, setBusy] = useState(false);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   // 시험용: 내 컴퓨터(npm run dev)에서 ?reveal=무기id
   useEffect(() => {
@@ -98,6 +99,40 @@ export function WeaponReveal() {
     return () => timers.forEach(clearTimeout);
   }, [revealing]);
 
+  // 키보드로 쓰는 사람을 위해: Esc로 닫고, Tab은 창 안에서만 돌며, 닫히면 원래 자리로 돌려 놓는다
+  const isOpen = revealing !== null;
+  useEffect(() => {
+    if (!isOpen) return;
+    const opener = document.activeElement as HTMLElement | null;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeReveal();
+      if (event.key !== "Tab") return;
+      const list = [...(dialogRef.current?.querySelectorAll<HTMLButtonElement>("button:not(:disabled)") ?? [])];
+      const first = list[0];
+      const last = list[list.length - 1];
+      if (!first) event.preventDefault();
+      else if (event.shiftKey && (document.activeElement === first || document.activeElement === dialogRef.current)) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      opener?.focus();
+    };
+  }, [isOpen, closeReveal]);
+
+  // 연출 중에는 창에, 결과가 나오면 첫 버튼에 초점을 둔다 ("한 번 더"를 눌러 버튼이 사라져도 초점을 잃지 않게)
+  useEffect(() => {
+    if (!isOpen) return;
+    const first = stage === "reveal" ? dialogRef.current?.querySelector<HTMLButtonElement>("button") : null;
+    (first ?? dialogRef.current)?.focus();
+  }, [isOpen, stage]);
+
   if (!revealing) return null;
   const weapon = revealing.kind === "weapon" ? WEAPONS[revealing.weapon] : null;
   const grade = weapon ? weapon.grade : "legendary";
@@ -114,7 +149,7 @@ export function WeaponReveal() {
   }
 
   return (
-    <div className="reveal-backdrop" role="dialog" aria-modal="true" aria-label={shown ? name : "보물상자"}>
+    <div ref={dialogRef} tabIndex={-1} className="reveal-backdrop" role="dialog" aria-modal="true" aria-label={shown ? name : "보물상자"}>
       <div className={`reveal stage-${stage}`}>
         <div className={`reveal-light aura-${grade}`} aria-hidden="true" />
         {(stage === "silhouette" || stage === "reveal") && (
