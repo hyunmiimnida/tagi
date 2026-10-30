@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import webpush from "web-push";
 import { SITE_URL } from "../lib/filter.ts";
 import type { Program } from "../src/types.ts";
+import { reportAlertMarkdown } from "./report-alert.ts";
 
 // 매일 아침 GitHub Actions(.github/workflows/notify.yml)가 실행한다.
 //   node scripts/notify.ts deadline        마감 알림: 내일 모집이 끝나는 관심 공고를 알림을 켠 사람에게 웹 푸시로 보낸다
@@ -82,37 +83,15 @@ async function deadline() {
   console.log(`마감 알림: 알림을 켠 사람 ${users.length}명, 보낸 알림 ${sent}개 (내일 ${tomorrow} 마감)`);
 }
 
-const short = (text: string | null | undefined, n = 80) => (text ?? "").replace(/\s+/g, " ").slice(0, n);
-
 async function reports(out: string) {
-  const comments = await all<{ comment_id: number; reason: string; created_at: string; comments: { body: string; hidden: boolean } | null }>(
-    (a, b) => db.from("reports").select("comment_id, reason, created_at, comments(body, hidden)").is("alerted_at", null).range(a, b),
-  );
-  const programs = await all<{ id: number; program_id: string; reason: string; note: string | null }>((a, b) =>
-    db.from("program_reports").select("id, program_id, reason, note").is("alerted_at", null).eq("resolved", false).range(a, b),
+  // 이슈는 공개 저장소에 올라가므로 내용은 읽지도 적지도 않는다. 건수와 관리자 화면 링크만 (scripts/report-alert.ts)
+  const comments = await all<{ comment_id: number }>((a, b) => db.from("reports").select("comment_id").is("alerted_at", null).range(a, b));
+  const programs = await all<{ id: number }>((a, b) =>
+    db.from("program_reports").select("id").is("alerted_at", null).eq("resolved", false).range(a, b),
   );
   // 의견함(supabase/admin.sql). 아직 표를 만들지 않았으면 건너뛴다
-  const feedback = await all<{ id: number; category: string; body: string }>((a, b) =>
-    db.from("feedback").select("id, category, body").is("alerted_at", null).range(a, b),
-  ).catch(() => []);
-  const lines: string[] = [];
-  if (feedback.length > 0) {
-    lines.push(`## 새 의견 ${feedback.length}건`, "", `관리자 화면 → 의견함에서 답장: ${SITE}/admin#feedback`, "");
-    for (const f of feedback) lines.push(`- (${f.category}) ${short(f.body, 200)}`);
-    lines.push("");
-  }
-  if (comments.length > 0) {
-    lines.push(`## 댓글 신고 ${comments.length}건`, "", `관리자 화면 → 댓글에서 확인: ${SITE}/admin#comments (3건이 쌓이면 자동으로 숨겨져요)`, "");
-    for (const r of comments) {
-      lines.push(`- 댓글 #${r.comment_id} (${r.reason})${r.comments?.hidden ? " **숨겨짐**" : ""}: ${short(r.comments?.body)}`);
-    }
-    lines.push("");
-  }
-  if (programs.length > 0) {
-    lines.push(`## 공고 정보 오류 신고 ${programs.length}건`, "", `고친 뒤 관리자 화면 → 정보 오류에서 "해결함": ${SITE}/admin#reports`, "");
-    for (const r of programs) lines.push(`- [${r.program_id}](${SITE}/programs/${r.program_id}) ${r.reason}${r.note ? `: ${short(r.note, 200)}` : ""}`);
-  }
-  writeFileSync(out, lines.join("\n"));
+  const feedback = await all<{ id: number }>((a, b) => db.from("feedback").select("id").is("alerted_at", null).range(a, b)).catch(() => []);
+  writeFileSync(out, reportAlertMarkdown(SITE, { feedback: feedback.length, comments: comments.length, programs: programs.length }));
   writeFileSync(
     IDS_FILE,
     JSON.stringify({ comments: comments.map((r) => r.comment_id), programs: programs.map((r) => r.id), feedback: feedback.map((f) => f.id) }),
