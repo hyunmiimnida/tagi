@@ -1,0 +1,80 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "scale": 3
+  },
+  "now": "2026-11-13T10:00:00+09:00",
+  "states": [
+    {
+      "name": "v01-list-all",
+      "file": "v01-list-all.png",
+      "tap": {
+        "x": 16,
+        "y": 128,
+        "width": 70.203125,
+        "height": 36
+      }
+    },
+    {
+      "name": "v02-school-panel",
+      "file": "v02-school-panel.png",
+      "tap": {
+        "x": 30,
+        "y": 553.5,
+        "width": 132.40625,
+        "height": 36
+      }
+    },
+    {
+      "name": "v03-school-list",
+      "file": "v03-school-list.png",
+      "tap": {
+        "x": 224.140625,
+        "y": 128,
+        "width": 70.203125,
+        "height": 36
+      }
+    },
+    {
+      "name": "v04-tag-panel",
+      "file": "v04-tag-panel.png",
+      "tap": {
+        "x": 207.015625,
+        "y": 188,
+        "width": 115.390625,
+        "height": 36
+      }
+    },
+    {
+      "name": "v05-tag-picked",
+      "file": "v05-tag-picked.png",
+      "tap": null
+    },
+    {
+      "name": "v06-tag-list",
+      "file": "v06-tag-list.png",
+      "tap": null
+    },
+    {
+      "name": "v07-detail",
+      "file": "v07-detail.png",
+      "tap": {
+        "x": 16,
+        "y": 327.78125,
+        "width": 114,
+        "height": 68
+      }
+    },
+    {
+      "name": "v08-detail-starred",
+      "file": "v08-detail-starred.png",
+      "tap": null
+    },
+    {
+      "name": "v09-calendar",
+      "file": "v09-calendar.png",
+      "tap": null
+    }
+  ]
+}

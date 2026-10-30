@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080, initial-scale=1">
+  <title>캠퍼스모아</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <style>
+    * { box-sizing: border-box; word-break: keep-all; }
+    html, body { width: 1080px; height: 1350px; margin: 0; }
+    body { background: #f2f4f6; color: #191f28; font-family: "Pretendard Variable", "Malgun Gothic", sans-serif; }
+    [hidden] { display: none !important; }
+    #canvas { position: relative; width: 1080px; height: 1350px; }
+    .brand { position: absolute; top: 72px; left: 80px; display: flex; align-items: center; gap: 12px; height: 40px; }
+    .icon { flex: none; width: 40px; height: 40px; border-radius: 10px; }
+    .brand-name { font-size: 26px; font-weight: 700; line-height: 1.4; }
+    .heading { position: absolute; top: 156px; left: 80px; width: 920px; }
+    #title { margin: 0; font-size: 76px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.22; white-space: nowrap; }
+    em { color: #1c68e3; font-style: normal; }
+    #subtitle { margin: 20px 0 0; font-size: 34px; font-weight: 500; line-height: 1.4; color: #4e5968; white-space: nowrap; }
+    .card { position: absolute; left: 80px; width: 920px; background: #fff; border: 1px solid #e5e8eb; border-radius: 36px; box-shadow: 0 16px 40px rgba(25,31,40,0.08); }
+    #screen { overflow: hidden; }
+    #screen-image { position: absolute; display: block; max-width: none; height: auto; image-rendering: auto; }
+    #notification { position: absolute; z-index: 1; left: 110px; width: 860px; padding: 28px 32px; border: 1px solid #e5e8eb; border-radius: 28px; background: #fff; box-shadow: 0 16px 40px rgba(25,31,40,0.14); }
+    .notification-row { display: flex; align-items: center; gap: 12px; font-size: 24px; line-height: 1.4; color: #4e5968; }
+    .notification-time { margin-left: auto; color: #8b95a1; }
+    #notification-title { margin: 14px 0 0; font-size: 32px; font-weight: 700; line-height: 1.4; }
+    #notification-body { margin: 6px 0 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 28px; line-height: 1.4; color: #4e5968; }
+    #start-card { padding: 64px; }
+    #start-icon { display: block; width: 112px; height: 112px; margin-bottom: 36px; border-radius: 26px; }
+    .url { margin: 0; font-size: 64px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.22; color: #1c68e3; white-space: nowrap; }
+    .divider { height: 1px; margin: 28px 0; background: #e5e8eb; }
+    #steps { display: flex; flex-direction: column; gap: 44px; margin: 0; padding: 0; list-style: none; }
+    .step { display: flex; align-items: center; gap: 24px; }
+    .step-number { display: flex; flex: none; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%; background: #f2f4f6; font-size: 28px; font-weight: 700; line-height: 1; }
+    .step-text { min-width: 0; font-size: 38px; font-weight: 600; line-height: 1.4; white-space: nowrap; }
+    #footer { position: absolute; left: 80px; bottom: 72px; margin: 0; font-size: 28px; line-height: 1.4; color: #8b95a1; }
+  </style>
+</head>
+<body>
+  <main id="canvas">
+    <div class="brand"><img id="brand-icon" class="icon" alt=""><span class="brand-name">캠퍼스모아</span></div>
+    <header class="heading"><h1 id="title"></h1><p id="subtitle"></p></header>
+    <div id="screen" class="card" hidden><img id="screen-image" alt=""></div>
+    <aside id="notification" hidden>
+      <div class="notification-row"><img id="notification-icon" class="icon" alt=""><span>캠퍼스모아</span><span class="notification-time">지금</span></div>
+      <p id="notification-title"></p><p id="notification-body"></p>
+    </aside>
+    <section id="start-card" class="card" hidden>
+      <img id="start-icon" alt="">
+      <p class="url">tagi-ten.vercel.app</p><div class="divider"></div><ol id="steps"></ol>
+    </section>
+    <p id="footer" hidden>프로필 링크에서 바로 열 수 있어요</p>
+  </main>
+</body>
+</html>
