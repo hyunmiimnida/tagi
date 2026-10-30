@@ -9,7 +9,7 @@ export const CONTACT = { label: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` }
 export const SITE_VERIFICATION = { google: "", naver: "" };
 
 // 문서를 고치면 날짜도 바꾼다
-export const POLICY_DATE = "2026년 10월 2일";
+export const POLICY_DATE = "2026년 10월 31일";
 
 export const COMMENT_RULES = [
   "욕설, 비방, 차별, 성적인 표현은 쓰지 않아요.",

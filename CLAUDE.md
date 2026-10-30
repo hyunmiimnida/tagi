@@ -155,7 +155,8 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
   - 홈 안내: 학교를 안 골랐으면 머리말이 "대학교를 설정해 보세요!"와 "학교 고르기"로만 묻는다. `components/ProfileNudge.tsx`는 학교는 골랐지만 신분·관심 분야를 안 고른 사람에게 공고 화면으로 가는 안내(닫으면 다시 안 보임). "홈 화면에 추가"(`components/InstallCard.tsx`)는 두 번째 방문부터
   - 홈 머리말은 고른 학교가 오늘 올린 공고 수, 0개면 "최근 3일 동안 N개". "새로 올라온 공고"는 일정이 있는 글 먼저, 마감 임박은 같은 마감일이면 학교를 섞는다(`lib/filter.ts`의 `compareDeadlineMixed`)
 - 검색엔진 소유 확인 코드: `lib/policy.ts`의 `SITE_VERIFICATION`(공개값, 비어 있으면 안 넣음) → `app/layout.tsx` metadata
-- 약관: `/terms`(이용약관), `/privacy`(개인정보처리방침). 문의처·규칙 문구는 `lib/policy.ts`
+- 약관: `/terms`(이용약관), `/privacy`(개인정보처리방침). 문의처·규칙 문구는 `lib/policy.ts`. 모으는 정보·맡기는 곳·브라우저 저장이 바뀌면 방침도 같이 고치고 `POLICY_DATE`와 문서 끝 변경 기록을 고친다. 판매 전이라 방침은 "팔지 않습니다", 학교 제공·유료 문장은 판매를 결정할 때 넣는다. 만 14세 미만은 가입 불가(로그인 창 안내, 생년월일은 받지 않음)
+- 접근성: 본문 바로가기(`.skip-link`, `app/layout.tsx`), 창(`LoginSheet`·`WeaponReveal`)은 Esc로 닫고 Tab이 창 안에서 돈다, 켜진 별은 `--star-edge` 테두리
 - PWA: `app/manifest.ts`, `public/sw.js`(오프라인 때 마지막 화면), 아이콘 `public/icon-*.png`, `app/apple-icon.png`
 - `mobile/` — 앱(Expo) 뼈대. **비용 문제로 잠시 멈춤** (스토어 개발자 등록비가 든다). 지금은 PWA(홈 화면에 추가)와 웹 푸시로 앱 역할을 대신한다. 아이콘은 파랑 바탕에서 도트 마법사가 공고 카드 너머로 빼꼼하는 그림(2026-10-04, 예전 참새 B는 `design/app-icon/`에 남김). `node scripts/make-icons.ts`가 `lib/pixel-pals.ts`의 캐릭터로 `public/icon-*.png`·`app/apple-icon.png`·`app/icon.svg`·`public/logo.svg`를 한 번에 만든다(앱 `mobile/`의 아이콘은 아직 참새). 사이트를 바꿀 때 앱 전환에 걸림돌이 생기지 않게 한다 (데이터는 `public/api`로 계속 제공)
 - `.github/workflows/collect.yml` — 하루 1회 자동 수집
