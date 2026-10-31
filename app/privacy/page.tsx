@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SITE_NAME } from "../../lib/filter.ts";
-import { CONTACT, POLICY_DATE } from "../../lib/policy.ts";
+import { CONTACT, POLICY_DATE, PRIVACY_OFFICER } from "../../lib/policy.ts";
 
 export const metadata = { title: "개인정보처리방침" };
 
@@ -158,7 +158,7 @@ export default function PrivacyPage() {
 
       <h2>9. 개인정보 보호 책임자와 문의</h2>
       <p>
-        {SITE_NAME} 운영자 ·{" "}
+        개인정보 보호 책임자: {PRIVACY_OFFICER} ·{" "}
         <a href={CONTACT.href}>
           {CONTACT.label}
         </a>
@@ -176,7 +176,7 @@ export default function PrivacyPage() {
       <h2>11. 방침 변경</h2>
       <p>방침을 바꾸면 시행 전에 사이트 공지로 알리고, 아래에 바뀐 날짜와 내용을 남깁니다.</p>
       <ul>
-        <li>{POLICY_DATE}: 캐릭터·열쇠조각·정보 오류 신고, 글꼴 제공 업체, 파기 방법과 탈퇴 예외, 브라우저 저장, 만 14세 미만, 안전 조치, 구제 방법 추가</li>
+        <li>{POLICY_DATE}: 캐릭터·열쇠조각·정보 오류 신고, 글꼴 제공 업체, 파기 방법과 탈퇴 예외, 브라우저 저장, 만 14세 미만, 안전 조치, 구제 방법, 개인정보 보호 책임자 이름 추가</li>
         <li>2026년 10월 2일: 처음 시행</li>
       </ul>
     </article>
