@@ -94,6 +94,9 @@ export interface Feedback {
   admin_note: string | null;
   reply: string | null;
   replied_at: string | null;
+  ai_type?: string | null;
+  ai_urgency?: string | null;
+  ai_summary?: string | null;
   created_at: string;
 }
 

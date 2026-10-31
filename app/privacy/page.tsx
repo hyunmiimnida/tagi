@@ -49,8 +49,8 @@ export default function PrivacyPage() {
             <td>틀린 공고 정보 바로잡기, 도배 막기</td>
           </tr>
           <tr>
-            <td>보낸 의견과 운영자 답장</td>
-            <td>버그 고치기, 서비스 개선, 답장하기</td>
+            <td>보낸 문의와 운영자 답장, AI가 만든 분류·요약</td>
+            <td>버그 고치기, 서비스 개선, 요청 처리, 답장하기</td>
           </tr>
           <tr>
             <td>운영 조치 기록(이용 정지 기간·이유, 운영자가 한 조치)</td>
@@ -93,6 +93,7 @@ export default function PrivacyPage() {
         <li>GitHub: 매일 아침 마감 알림을 보내는 작업 실행</li>
         <li>브라우저 알림 서비스(구글·애플·모질라 등, 쓰는 브라우저에 따라): 마감 알림 전달 (공고 제목을 암호화해 보냄)</li>
         <li>jsDelivr: 글꼴 파일 제공 (사이트를 열 때 접속 정보가 전달될 수 있음)</li>
+        <li>OpenAI, Anthropic: 문의 분류·요약 (이메일·전화번호·이름 등으로 보이는 부분을 자동으로 가린 내용을 보냄. 가리는 규칙이 모두 잡지는 못하므로 문의에 개인정보를 적지 말아 주세요)</li>
       </ul>
 
       <h2>4-1. 국외 이전</h2>
@@ -102,7 +103,7 @@ export default function PrivacyPage() {
             <th>받는 곳과 연락처</th>
             <td>
               Supabase Inc.(supabase.com, 로그인·계정 정보 저장), Vercel Inc.(vercel.com, 사이트 운영), GitHub Inc.(github.com, 알림 보내기
-              작업), jsDelivr(jsdelivr.com, 글꼴 제공), 브라우저 알림 서비스(마감 알림을 켠 경우)
+              작업), jsDelivr(jsdelivr.com, 글꼴 제공), OpenAI(openai.com)·Anthropic(anthropic.com, 문의 분류·요약), 브라우저 알림 서비스(마감 알림을 켠 경우)
             </td>
           </tr>
           <tr>
@@ -111,7 +112,7 @@ export default function PrivacyPage() {
           </tr>
           <tr>
             <th>옮기는 정보</th>
-            <td>1번 표의 정보(Supabase), 접속 기록(Vercel·jsDelivr), 알림 받을 기기 주소와 관심 공고(GitHub·알림 서비스, 알림을 보낼 때만)</td>
+            <td>1번 표의 정보(Supabase), 접속 기록(Vercel·jsDelivr), 알림 받을 기기 주소와 관심 공고(GitHub·알림 서비스, 알림을 보낼 때만), 자동으로 가린 문의 내용(OpenAI·Anthropic, 문의를 보낸 경우)</td>
           </tr>
           <tr>
             <th>시기·방법</th>
@@ -146,7 +147,7 @@ export default function PrivacyPage() {
       <p>
         내 정보를 보거나 고치거나 지우거나 처리를 멈추도록 언제든 요청할 수 있고, 대리인을 통해서도 요청할 수 있습니다. 학교 설정과 관심 표시는
         직접 바꿀 수 있고, 댓글은 직접 지울 수 있으며, <Link href="/my">프로필</Link>에서 바로 탈퇴할 수 있습니다. 이메일로 요청하면 받은 날부터 10일
-        안에 처리하고 결과를 알려 드립니다. 본인 확인은 계정 이메일로 회신받는 방식으로 하며 신분증은 받지 않습니다.
+        안에 처리하고 결과를 알려 드립니다. 프로필의 문의하기로 보내도 같습니다. 본인 확인은 계정 이메일로 회신받는 방식으로 하며 신분증은 받지 않습니다.
       </p>
 
       <h2>8. 안전하게 지키는 방법</h2>
@@ -176,7 +177,7 @@ export default function PrivacyPage() {
       <h2>11. 방침 변경</h2>
       <p>방침을 바꾸면 시행 전에 사이트 공지로 알리고, 아래에 바뀐 날짜와 내용을 남깁니다.</p>
       <ul>
-        <li>{POLICY_DATE}: 캐릭터·열쇠조각·정보 오류 신고, 글꼴 제공 업체, 파기 방법과 탈퇴 예외, 브라우저 저장, 만 14세 미만, 안전 조치, 구제 방법, 개인정보 보호 책임자 이름 추가</li>
+        <li>{POLICY_DATE}: 캐릭터·열쇠조각·정보 오류 신고, 글꼴 제공 업체, 파기 방법과 탈퇴 예외, 브라우저 저장, 만 14세 미만, 안전 조치, 구제 방법, 개인정보 보호 책임자 이름, 문의 AI 분류(OpenAI·Anthropic) 추가</li>
         <li>2026년 10월 2일: 처음 시행</li>
       </ul>
     </article>

@@ -19,6 +19,9 @@ function Save-Data {
 }
 
 try {
+  # 문의 AI 확인. 실패해도 수집은 계속한다 (git·data와 상관없는 작업이라 맨 앞에서 한다)
+  try { node scripts/triage-feedback.ts } catch { Write-Output "문의 AI 확인 실패: $_" }
+
   # 손으로 하던 data 작업(과거 글 저장 등)이 아직 안 올라갔으면 섞이지 않게 이번 자동 수집은 건너뛴다
   # (2026-10-16 자동 수집과 과거 글 저장이 겹쳐 git 충돌 표시가 든 목록이 올라간 적이 있다)
   if (git status --porcelain -- data) {

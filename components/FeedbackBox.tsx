@@ -8,6 +8,8 @@ import { supabase, useUser } from "../lib/user.tsx";
 const CATEGORIES = [
   { id: "버그", label: "안 돼요 (버그)" },
   { id: "제안", label: "이런 게 있으면 좋겠어요" },
+  { id: "개인정보 요청", label: "내 정보 보기·고치기·지우기" },
+  { id: "권리 침해 신고", label: "권리 침해 신고" },
   { id: "기타", label: "기타" },
 ];
 const STATUS: Record<string, string> = { new: "보냄", doing: "확인 중", done: "완료" };
@@ -81,11 +83,11 @@ export function FeedbackBox() {
   return (
     <section className="card my-card" id="my-feedback">
       <div className="my-section-head">
-        <h2 className="card-title">의견 보내기</h2>
+        <h2 className="card-title">문의하기</h2>
         {replied > 0 && <span className="admin-tag accent-tag">답장 {replied}</span>}
       </div>
       <p className="card-sub">
-        안 되는 기능, 있었으면 하는 기능, 빠진 학교·게시판을 알려 주세요.
+        안 되는 기능, 있었으면 하는 기능, 빠진 학교·게시판, 내 정보 요청을 보내 주세요.
         {user.signedIn ? " 답장은 여기에 보여 드려요." : " 로그인하고 보내면 답장을 받을 수 있어요."}
       </p>
       {state === "done" && !open && (
@@ -96,7 +98,7 @@ export function FeedbackBox() {
 
       {!open ? (
         <button className="button wide" onClick={() => setOpen(true)}>
-          의견 쓰기
+          문의 쓰기
         </button>
       ) : (
         <form onSubmit={send}>
@@ -119,10 +121,10 @@ export function FeedbackBox() {
             maxLength={1000}
             rows={4}
             placeholder={category === "버그" ? "어느 화면에서 무엇을 눌렀을 때 어떻게 안 되는지 적어 주세요." : "자유롭게 적어 주세요."}
-            aria-label="의견 내용"
+            aria-label="문의 내용"
             onChange={(e) => setBody(e.target.value)}
           />
-          <p className="nickname-note">이름·전화번호 같은 개인정보는 적지 마세요.</p>
+          <p className="nickname-note">이름·전화번호 같은 개인정보는 적지 마세요. 문의 분류와 요약에 AI를 써요. 답장은 운영자가 직접 해요.</p>
           {error && <p className="report-info-error">{error}</p>}
           <div className="report-info-actions">
             <button type="button" className="text-button" onClick={() => setOpen(false)}>
@@ -137,7 +139,7 @@ export function FeedbackBox() {
 
       {mine.length > 0 && (
         <>
-          <h3 className="my-label">내가 보낸 의견</h3>
+          <h3 className="my-label">내가 보낸 문의</h3>
           <ul className="my-comments">
             {mine.map((f) => (
               <li key={f.id}>

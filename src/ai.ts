@@ -481,6 +481,18 @@ ${posts}`;
   }
 }
 
+// 수집 밖의 작업(문의 확인 등)이 같은 엔진·같은 안전 장치(빈 임시 폴더, 도구 없음)로 묻는다. 묻지 못했으면 null
+export async function askAiJson(prompt: string, client = aiClient): Promise<{ items?: Record<string, unknown>[] } | null> {
+  const bin = client.find();
+  if (!bin) return null;
+  try {
+    return await client.ask(bin, prompt);
+  } catch (error) {
+    console.error("  AI 실패:", failureReason(error));
+    return null;
+  }
+}
+
 // 두 게시물이 같은 프로그램인지 AI에게 묻는다. 같다고 답한 쌍의 번호를 돌려준다. 묻지 못했으면 null
 export async function confirmDuplicates(pairs: [Program, Program][], client = aiClient): Promise<number[] | null> {
   const bin = client.find();

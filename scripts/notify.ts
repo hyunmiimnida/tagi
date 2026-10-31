@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import webpush from "web-push";
 import { SITE_URL } from "../lib/filter.ts";
 import type { Program } from "../src/types.ts";
+import { DEADLINE_TYPES, dueSoon, FEEDBACK_TYPES } from "./feedback-triage.ts";
 import { reportAlertMarkdown } from "./report-alert.ts";
 
 // 매일 아침 GitHub Actions(.github/workflows/notify.yml)가 실행한다.
@@ -89,9 +90,25 @@ async function reports(out: string) {
   const programs = await all<{ id: number }>((a, b) =>
     db.from("program_reports").select("id").is("alerted_at", null).eq("resolved", false).range(a, b),
   );
-  // 의견함(supabase/admin.sql). 아직 표를 만들지 않았으면 건너뛴다
-  const feedback = await all<{ id: number }>((a, b) => db.from("feedback").select("id").is("alerted_at", null).range(a, b)).catch(() => []);
-  writeFileSync(out, reportAlertMarkdown(SITE, { feedback: feedback.length, comments: comments.length, programs: programs.length }));
+  // 끝나지 않은 문의 전체. 새 문의 건수와, 처리될 때까지 날마다 다시 알릴 급한 문의·기한 임박을 여기서 센다
+  const open = await all<{ id: number; category: string; created_at: string; alerted_at: string | null; ai_urgency: string | null; ai_checked_at: string | null }>(
+    (a, b) => db.from("feedback").select("id, category, created_at, alerted_at, ai_urgency, ai_checked_at").neq("status", "done").range(a, b),
+  );
+  const feedback = open.filter((f) => !f.alerted_at);
+  const feedbackTypes: Record<string, number> = {};
+  for (const f of feedback) if (FEEDBACK_TYPES.includes(f.category)) feedbackTypes[f.category] = (feedbackTypes[f.category] ?? 0) + 1;
+  writeFileSync(
+    out,
+    reportAlertMarkdown(SITE, {
+      feedback: feedback.length,
+      feedbackTypes,
+      urgent: open.filter((f) => f.ai_urgency === "high").length,
+      dueSoon: open.filter((f) => DEADLINE_TYPES.includes(f.category) && dueSoon(f.created_at)).length,
+      aiPending: feedback.filter((f) => !f.ai_checked_at).length,
+      comments: comments.length,
+      programs: programs.length,
+    }),
+  );
   writeFileSync(
     IDS_FILE,
     JSON.stringify({ comments: comments.map((r) => r.comment_id), programs: programs.map((r) => r.id), feedback: feedback.map((f) => f.id) }),

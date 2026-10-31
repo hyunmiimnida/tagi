@@ -12,7 +12,8 @@ const VIEWS: { id: FeedbackStatus | "all"; label: string }[] = [
   { id: "done", label: "완료" },
   { id: "all", label: "전체" },
 ];
-const CATEGORIES = ["전체", "버그", "제안", "기타"];
+const CATEGORIES = ["전체", "개인정보 요청", "권리 침해 신고", "버그", "제안", "기타"];
+const URGENCY: Record<string, string> = { high: "급함", normal: "보통", low: "낮음" };
 
 interface Props {
   onChange: () => void;
@@ -132,6 +133,13 @@ function FeedbackCard({ item, openUser, onSaved }: { item: Feedback; openUser: (
         <span>· {formatDateTime(item.created_at)}</span>
         {item.page && <span>· {item.page}</span>}
       </div>
+      {item.ai_summary && (
+        <p className="admin-meta">
+          <span className={`admin-tag ${item.ai_urgency === "high" ? "warn" : ""}`}>AI {URGENCY[item.ai_urgency ?? ""] ?? "확인"}</span>{" "}
+          {item.ai_type && item.ai_type !== item.category ? `${item.ai_type} 같아요 · ` : ""}
+          {item.ai_summary}
+        </p>
+      )}
       <p className="admin-body">{item.body}</p>
       <div className="admin-meta">
         {item.user_id ? (

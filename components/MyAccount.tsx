@@ -420,7 +420,7 @@ export function MyAccount({ schools, sources }: Props) {
         <Link href="/privacy">
           개인정보처리방침 <ChevronIcon size={18} />
         </Link>
-        <a href={CONTACT.href}>
+        <a href={supabase ? "#my-feedback" : CONTACT.href}>
           문의하기 <ChevronIcon size={18} />
         </a>
         {isAdmin && (
