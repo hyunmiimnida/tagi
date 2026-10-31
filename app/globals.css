@@ -2956,6 +2956,17 @@ button.stat {
 }
 
 /* 관심 표시: 도트 캐릭터가 날아와 별을 누르면(components/StarHelper.tsx) 별이 노랗게 바뀌며 도트 반짝이가 퍼진다 */
+/* 캐릭터·효과를 얹는 판: 스킬 중에 스크롤한 만큼 옮겨 별을 따라간다 (안의 fixed는 이 판 기준이 된다) */
+.star-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 41;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
 .star-actor {
   position: fixed;
   top: 0;

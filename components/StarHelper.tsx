@@ -74,9 +74,18 @@ export function StarHelper() {
   const busy = useRef(false);
   const actorEl = useRef<HTMLDivElement | null>(null);
   const spriteEl = useRef<HTMLDivElement | null>(null);
+  const layerEl = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     let fxId = 0;
+    // 캐릭터와 효과는 모두 한 판(layer) 위에 그린다. 스킬 중에 스크롤하면 판을 같은 만큼 옮겨 별을 따라가게 한다
+    let scrollStart = { x: window.scrollX, y: window.scrollY };
+    const scrolled = () => ({ x: window.scrollX - scrollStart.x, y: window.scrollY - scrollStart.y });
+    const moveLayer = () => {
+      const d = scrolled();
+      if (layerEl.current) layerEl.current.style.transform = `translate(${-d.x}px, ${-d.y}px)`;
+    };
+    window.addEventListener("scroll", moveLayer, { passive: true });
     const fx = (effect: FxInput, ms = 650) => {
       const id = ++fxId;
       setEffects((list) => [...list, { ...effect, id } as Fx]);
@@ -111,6 +120,8 @@ export function StarHelper() {
         tapped = true;
       };
       try {
+        scrollStart = { x: window.scrollX, y: window.scrollY };
+        moveLayer();
         const s = source.getBoundingClientRect();
         const b = button.getBoundingClientRect();
         const home = { cx: s.left + s.width / 2, feet: s.bottom - 4 }; // 카드 윗선(또는 탭 아이콘) 위에 선 자리
@@ -174,8 +185,12 @@ export function StarHelper() {
           frame("stand", !faceLeft); // 뒤돌기
           await sleep(80);
           await run(landing, 240);
-          frame("runB", home.cx < landing.x + CENTER);
-          await move(place(home), 300, 36);
+          // 돌아갈 자리는 지금 다시 잰다 (스크롤했으면 탭 바 캐릭터는 판 위에서 다른 곳에 있다)
+          const r = source.getBoundingClientRect();
+          const d = scrolled();
+          const back = { cx: r.left + r.width / 2 + d.x, feet: r.bottom - 4 + d.y };
+          frame("runB", back.cx < landing.x + CENTER);
+          await move(place(back), 300, 36);
           frame("stand");
           await sleep(60);
         };
@@ -574,11 +589,12 @@ export function StarHelper() {
 
     return () => {
       start = null;
+      window.removeEventListener("scroll", moveLayer);
     };
   }, []);
 
   return (
-    <>
+    <div ref={layerEl} className="star-layer">
       {actor && (
         <div ref={actorEl} className="star-actor" style={{ transform: `translate(${actor.start.x}px, ${actor.start.y}px)` }} aria-hidden="true">
           <div ref={spriteEl} className={`star-actor-sprite ${actor.flip ? "flip" : ""}`} style={{ transformOrigin: `${CENTER}px 100%` }}>
@@ -589,7 +605,7 @@ export function StarHelper() {
       {effects.map((e) => (
         <Effect key={e.id} effect={e} />
       ))}
-    </>
+    </div>
   );
 }
 
