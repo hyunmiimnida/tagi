@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { COMMENT_RULES, REPORT_REASONS } from "../lib/policy.ts";
+import { COMMENT_RULES, REPORT_REASONS, REVIEW_USE_NOTICE } from "../lib/policy.ts";
 import { palRows, toValidAvatar } from "../lib/pixel-pals.ts";
 import type { Avatar } from "../lib/pixel-pals.ts";
 import { supabase, useUser } from "../lib/user.tsx";
@@ -188,6 +188,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
                   <li key={rule}>{rule}</li>
                 ))}
               </ul>
+              <p>{REVIEW_USE_NOTICE}</p>
               <p>
                 규칙을 어긴 글은 신고가 쌓이면 숨겨지고 지워질 수 있어요. 자세한 내용은 <Link href="/terms">이용약관</Link>에
                 있어요.
