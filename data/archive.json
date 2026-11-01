@@ -153518,47 +153518,6 @@
     "seriesId": "dongguk-scholarship-26755307"
   },
   {
-    "id": "yu-news-229782420",
-    "title": "2026년 국어문화연구소 연구원(KIIP) 채용 공고 (접수기간: 26.5.7 ~ 5.20)",
-    "organizer": "국어문화연구소",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-05-07",
-      "end": "2026-05-20"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229782420"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-04",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T03:51:28.803Z",
-    "firstSeenAt": "2026-10-01T03:51:28.803Z"
-  },
-  {
     "id": "gnu-external-6309401",
     "title": "[진주시] 2026년 인구정책 「우리 가족 진주 네 컷」 인생사진 공모전",
     "organizer": "진주시",
@@ -157054,48 +157013,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:23:33.613Z",
     "seriesId": "dongguk-scholarship-26755542"
-  },
-  {
-    "id": "yu-news-229810478",
-    "title": "2026학년도 영남대학교 정규직원 신규 채용",
-    "organizer": "직원인사팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-05-13",
-      "end": "2026-05-19"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229810478"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-06",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T03:51:23.949Z",
-    "firstSeenAt": "2026-10-01T03:51:23.949Z",
-    "seriesId": "yu-news-85422"
   },
   {
     "id": "gnu-external-6986922",
@@ -170523,48 +170440,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:23:38.471Z",
     "seriesId": "dongguk-scholarship-26760058"
-  },
-  {
-    "id": "yu-news-229810461",
-    "title": "[연구원 채용] 영남대학교 사회공헌단 ESG혁신센터 연구원 신규 채용 공고",
-    "organizer": "연구원 채용",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-05-06",
-      "end": "2026-05-14"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229810461"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-05-06",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T03:51:26.237Z",
-    "firstSeenAt": "2026-10-01T03:51:26.237Z",
-    "seriesId": "yu-news-5995782"
   },
   {
     "id": "gnu-notice-6867826",
@@ -226482,54 +226357,6 @@
     "firstSeenAt": "2026-10-03T14:40:26.455Z"
   },
   {
-    "id": "yu-news-228909534",
-    "title": "★2026학년도 Y형 폴리매스 <신입생> 핵심역량 정기진단 참여 안내★",
-    "organizer": "교육혁신센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229585437"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=228909534"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-04-20",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:05:14.632Z",
-    "firstSeenAt": "2026-10-01T04:05:14.632Z",
-    "seriesId": "yu-news-85206",
-    "aliases": [
-      "yu-news-229585437"
-    ]
-  },
-  {
     "id": "gnu-external-6438703",
     "title": "[세종특별자치시] 한글문화도시 홍보단 「한마디」 1기 모집",
     "organizer": "세종특별자치시, 세종시문화관광재단",
@@ -228778,47 +228605,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:25:54.935Z",
     "seriesId": "dongguk-scholarship-26754256"
-  },
-  {
-    "id": "yu-news-229487005",
-    "title": "[지역혁신사업본부] RISE사업단 및 글로컬대학사업단 연구원 채용 안내",
-    "organizer": "사업운영팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-04-13",
-      "end": "2026-04-19"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229487005"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-04-13",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T03:55:51.166Z",
-    "firstSeenAt": "2026-10-01T03:55:51.166Z"
   },
   {
     "id": "gnu-notice-6142669",
@@ -237961,48 +237747,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:25:46.464Z",
     "seriesId": "dongguk-scholarship-26754256"
-  },
-  {
-    "id": "yu-news-229430838",
-    "title": "[교육개발센터] 연구원 채용 공고",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2026-04-09",
-      "end": "2026-04-15"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=229430838"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-04-09",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T03:57:06.392Z",
-    "firstSeenAt": "2026-10-01T03:57:06.392Z",
-    "seriesId": "yu-news-1609137"
   },
   {
     "id": "gnu-notice-6099763",
@@ -432228,47 +431972,6 @@
     "seriesId": "khu-notice-305189"
   },
   {
-    "id": "yu-news-227973527",
-    "title": "[학생상담센터] 2025학년도 인터넷스마트폰 과의존 예방교육(~1.18까지)",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-01-18"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227973527"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-12-26",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:12:53.680Z",
-    "firstSeenAt": "2026-10-01T04:12:53.680Z",
-    "seriesId": "yu-news-10339449"
-  },
-  {
     "id": "jbnu-notice-198303",
     "title": "외국인 유학생 국내 기업 탐방",
     "organizer": "국제협력과",
@@ -466596,47 +466299,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-224095659",
-    "title": "2025학년도 재학생 장애인식개선교육 실시 안내 (2025.03.17.~12.31.)",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2025-03-17",
-      "end": "2025-12-31"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224095659"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-03-17",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:54:41.015Z",
-    "firstSeenAt": "2026-10-01T04:54:41.015Z",
-    "seriesId": "yu-news-85184"
-  },
-  {
     "id": "gnu-notice-4118083",
     "title": "2025년 제11회 창의･융합 3D Printing 아이디어 경진대회 개최 안내",
     "organizer": "공과대학",
@@ -498856,88 +498518,6 @@
     "seriesId": "yu-news-5993638",
     "summary": "온라인 강의로 대학생활 정보를 배우고 모두 수강하면 마일리지를 받아요.",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-227739215",
-    "title": "[재게시](수정)2025학년도 재학생 장애인식개선교육 오프라인 실시 안내(올리브영 상품권 증정)",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2025-12-12",
-      "end": "2025-12-12"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227739215"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-12-09",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:15:35.116Z",
-    "firstSeenAt": "2026-10-01T04:15:35.116Z",
-    "seriesId": "yu-news-85184"
-  },
-  {
-    "id": "yu-news-227657588",
-    "title": "★2025학년도 재학생 장애인식개선교육 오프라인 실시 안내★",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2025-12-12",
-      "end": "2025-12-12"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227657588"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-12-03",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:16:50.471Z",
-    "firstSeenAt": "2026-10-01T04:16:50.471Z",
-    "seriesId": "yu-news-85184"
   },
   {
     "id": "gnu-notice-4721262",
@@ -592085,47 +591665,6 @@
     "seriesId": "dongguk-scholarship-26758042"
   },
   {
-    "id": "yu-news-227250271",
-    "title": "★2025학년도 Y형 폴리매스 재학생 핵심역량 정기진단 참여 안내★",
-    "organizer": "교육혁신센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227250271"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-11-03",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:23:24.459Z",
-    "firstSeenAt": "2026-10-01T04:23:24.459Z",
-    "seriesId": "yu-news-85206"
-  },
-  {
     "id": "gnu-external-3850541",
     "title": "[서울특별시] 글로벌 서울 아이디어 제안 숏폼 챌린지 공모전(Seoul My Soul, Seoul My Hope)",
     "organizer": "서울특별시",
@@ -612822,47 +612361,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-227168868",
-    "title": "[학생상담센터] 2025학년도 인터넷·스마트폰 과의존 예방교육",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227168868"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-10-28",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:25:01.933Z",
-    "firstSeenAt": "2026-10-01T04:25:01.933Z",
-    "seriesId": "yu-news-10339449"
-  },
-  {
     "id": "gnu-notice-4089044",
     "title": "[공모전] 쉽고 바른 언어 생활 아이디어 공모전",
     "organizer": "국어문화원",
@@ -623989,46 +623487,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:40:47.102Z",
     "seriesId": "dongguk-startup-527"
-  },
-  {
-    "id": "yu-news-227100755",
-    "title": "스토킹·교제폭력 피해자 지원 웹포스터",
-    "organizer": "인권센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=227100755"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-10-23",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:26:08.506Z",
-    "firstSeenAt": "2026-10-01T04:26:08.506Z"
   },
   {
     "id": "gnu-external-3273523",
@@ -656009,54 +655467,6 @@
     "seriesId": "yu-news-85288",
     "summary": "하반기 채용에 대비해 실전 모의면접에 참여해요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-226449686",
-    "title": "[건강관리센터] 2025년 1학기(직전학기) 진료비, 약값 환불 관련 서류제출 기한 안내",
-    "organizer": "건강관리센터 행정실",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2025-09-30"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=226680220"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=226449686"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-09-22",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:34:06.345Z",
-    "firstSeenAt": "2026-10-01T04:34:06.345Z",
-    "seriesId": "yu-news-226449686",
-    "aliases": [
-      "yu-news-226680220"
-    ]
   },
   {
     "id": "gnu-notice-3595661",
@@ -804568,54 +803978,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-224972238",
-    "title": "[학생상담센터] 2025학년도 인터넷·스마트폰 과의존 예방교육",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=225690470"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224972238"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-07-11",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:45:56.280Z",
-    "firstSeenAt": "2026-10-01T04:45:56.280Z",
-    "seriesId": "yu-news-10339449",
-    "aliases": [
-      "yu-news-225690470"
-    ]
-  },
-  {
     "id": "gnu-notice-2468503",
     "title": "로컬혁신 데이터 애널리틱스 융합전공 학생 모집",
     "organizer": "경영정보학과, 식품자원경제학과, 로컬콘텐츠중점대학사업단",
@@ -929923,54 +929285,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-03T14:34:59.869Z",
     "seriesId": "dongguk-scholarship-26756737"
-  },
-  {
-    "id": "yu-news-223921347",
-    "title": "★2025학년도 Y형 폴리매스 <신입생> 핵심역량 정기진단 참여 안내★",
-    "organizer": "교육성과관리센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=224566556"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=223921347"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-04-21",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T04:56:39.916Z",
-    "firstSeenAt": "2026-10-01T04:56:39.916Z",
-    "seriesId": "yu-news-85206",
-    "aliases": [
-      "yu-news-224566556"
-    ]
   },
   {
     "id": "gnu-external-2274495",
@@ -1070378,69 +1069692,6 @@
     "firstSeenAt": "2026-10-01T05:01:43.600Z"
   },
   {
-    "id": "yu-news-222289427",
-    "title": "★2024학년도 Y형 폴리매스 재학생 핵심역량 정기진단 참여 안내★",
-    "organizer": "교육성과관리센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=223279386"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222933518"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222827669"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222602654"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222289427"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2025-01-15",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:10:58.806Z",
-    "firstSeenAt": "2026-10-01T05:10:58.806Z",
-    "seriesId": "yu-news-85206",
-    "aliases": [
-      "yu-news-223279386",
-      "yu-news-222933518",
-      "yu-news-222827669",
-      "yu-news-222602654"
-    ]
-  },
-  {
     "id": "yu-news-9947737",
     "title": "★2024학년도 Y마일리지 장학금 제도 안내(Y형 폴리매스 인증 비교과프로그램, 자기주도적활동)★",
     "organizer": "비교과통합관리부",
@@ -1090381,47 +1089632,6 @@
     "seriesId": "yu-news-84274",
     "summary": "도시재생 기자단으로 9개월간 취재·기사를 쓰고 원고료를 받아요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-10261161",
-    "title": "2024학년도 재학생 장애인식개선교육 실시 안내 (2024.04.04.~12.31.)",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2024-04-04",
-      "end": "2024-12-31"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=10261161"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-04-11",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:38:41.948Z",
-    "firstSeenAt": "2026-10-01T05:38:41.948Z",
-    "seriesId": "yu-news-85184"
   },
   {
     "id": "yu-news-9947670",
@@ -1124543,47 +1123753,6 @@
     "aliases": [
       "yu-news-222695293"
     ]
-  },
-  {
-    "id": "yu-news-222602676",
-    "title": "★2024학년도 재학생 장애인식개선교육 오프라인 실시 안내★",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2024-12-02",
-      "end": "2024-12-02"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222602676"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-11-25",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:06:35.759Z",
-    "firstSeenAt": "2026-10-01T05:06:35.759Z",
-    "seriesId": "yu-news-85184"
   },
   {
     "id": "gnu-notice-2257902",
@@ -1174454,47 +1173623,6 @@
     "seriesId": "dongguk-scholarship-26757597"
   },
   {
-    "id": "yu-news-222289443",
-    "title": "[스마트교육센터] 대학혁신지원사업 연구원 채용 공고",
-    "organizer": "스마트교육기획팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222289443"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-11-01",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:10:56.450Z",
-    "firstSeenAt": "2026-10-01T05:10:56.450Z"
-  },
-  {
     "id": "yu-news-222146248",
     "title": "[학생상담센터] [설문] 2024년 재학생 실태조사 참여 안내",
     "organizer": "학생상담센터",
@@ -1189594,97 +1188722,6 @@
     "seriesId": "dongguk-scholarship-26754402"
   },
   {
-    "id": "yu-news-222081106",
-    "title": "[교육개발센터] 연구원 채용 공고",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2024-10-16",
-      "end": "2024-10-23"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222159255"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222081106"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-10-22",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:13:16.217Z",
-    "firstSeenAt": "2026-10-01T05:13:16.217Z",
-    "seriesId": "yu-news-1609137",
-    "aliases": [
-      "yu-news-222159255"
-    ]
-  },
-  {
-    "id": "yu-news-222002908",
-    "title": "[지방대학활성화사업단] 연구원 채용공고",
-    "organizer": "사업운영팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2024-10-10",
-      "end": "2024-10-23"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222002908"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-10-10",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:14:01.729Z",
-    "firstSeenAt": "2026-10-01T05:14:01.729Z",
-    "seriesId": "yu-news-1609137"
-  },
-  {
     "id": "gnu-notice-2256010",
     "title": "[홍보] 경남국제개발협력센터 2024 KOICA WFK 해외봉사단 1:N 컨설팅 10월 모집(~10.23)",
     "organizer": "경남국제개발협력센터",
@@ -1191687,49 +1190724,6 @@
     "firstSeenAt": "2026-10-01T05:14:26.248Z",
     "summary": "여성 청년 소셜벤처 창업캠퍼스와 청년창업 프로그램 참가자를 모집해요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-222055028",
-    "title": "[국제개발협력원]계약직 연구원 채용 공고",
-    "organizer": "국제개발사업팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2024-10-21"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "해외·글로벌"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=222055028"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-10-14",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:13:30.491Z",
-    "firstSeenAt": "2026-10-01T05:13:30.491Z",
-    "seriesId": "yu-news-1609137"
   },
   {
     "id": "yu-news-222015952",
@@ -1338690,48 +1337684,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-220348811",
-    "title": "영남대학교 국제개발협력원 2024년 하반기 KOICA 개발협력 영프로페셔널(YP) 채용 공고",
-    "organizer": "국제개발사업팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2024-06-05",
-      "end": "2024-07-05"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "해외·글로벌"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=220348811"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-06-05",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:27:51.564Z",
-    "firstSeenAt": "2026-10-01T05:27:51.564Z"
-  },
-  {
     "id": "gnu-notice-2228965",
     "title": "2024학년도 GNU 하계 해외봉사 봉사단 모집",
     "organizer": "학생과",
@@ -1348457,47 +1347409,6 @@
     "seriesId": "yu-news-5993638",
     "summary": "대학생활 적응 정보를 담은 온라인 강의를 듣고 마일리지를 받아요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-10051539",
-    "title": "2024학년도 1학기 법정 연구실 안전교육 수강 안내",
-    "organizer": "안전관리팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2024-06-28"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=10051539"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-03-26",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:41:03.181Z",
-    "firstSeenAt": "2026-10-01T05:41:03.181Z"
   },
   {
     "id": "gnu-notice-2233295",
@@ -1457756,47 +1456667,6 @@
     "firstSeenAt": "2026-10-04T01:40:49.246Z"
   },
   {
-    "id": "yu-news-10339449",
-    "title": "[학생상담센터] 2024학년도 인터넷·스마트폰 과의존 예방교육",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=10339449"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-04-17",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:37:27.972Z",
-    "firstSeenAt": "2026-10-01T05:37:27.972Z",
-    "seriesId": "yu-news-10339449"
-  },
-  {
     "id": "gnu-notice-2232242",
     "title": "[홍보] 2024 KOICA WFK 해외봉사단 1:N 컨설팅 4월 모집 (~04.17)",
     "organizer": "경남국제개발협력센터",
@@ -1466770,52 +1465640,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-04T04:06:21.718Z",
     "seriesId": "dongguk-scholarship-26754628"
-  },
-  {
-    "id": "yu-news-9856870",
-    "title": "원격교육지원센터 연구원 채용 공고",
-    "organizer": "원격교육지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2024-03-27",
-      "end": "2024-04-10"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=10077608"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=9856870"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-03-28",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:43:49.875Z",
-    "firstSeenAt": "2026-10-01T05:43:49.875Z",
-    "seriesId": "yu-news-4212789"
   },
   {
     "id": "gnu-scholarship-2228696",
@@ -1479182,46 +1478006,6 @@
     "seriesId": "dongguk-scholarship-26754282"
   },
   {
-    "id": "yu-news-10091855",
-    "title": "[천마아트센터] 뮤지컬 캐치! 티니핑 <두근두근 싱어롱 콘서트!>",
-    "organizer": "천마아트센터 운영팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=10091855"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-03-29",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:40:18.388Z",
-    "firstSeenAt": "2026-10-01T05:40:18.388Z"
-  },
-  {
     "id": "gnu-notice-2230617",
     "title": "2024학년도 1학기 중소기업 취업연계 장학사업(희망사다리 I유형) 신규장학생 모집 안내 (연장)",
     "organizer": "인재개발원",
@@ -1481535,56 +1480319,6 @@
     "summary": null,
     "noApplication": false,
     "firstSeenAt": "2026-10-04T04:06:20.523Z"
-  },
-  {
-    "id": "yu-news-9701997",
-    "title": "[교육개발센터] 연구원 채용 공고",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2024-03-15",
-      "end": "2024-03-24"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=10077574"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=9908824"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=9701997"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-03-28",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:45:45.968Z",
-    "firstSeenAt": "2026-10-01T05:45:45.968Z",
-    "seriesId": "yu-news-1609137"
   },
   {
     "id": "cnu-intl-recruit-508698",
@@ -1492798,51 +1491532,6 @@
     "firstSeenAt": "2026-10-01T05:48:16.952Z",
     "summary": "파이썬으로 경제금융 데이터를 분석하는 방법을 특강으로 배워요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-9766340",
-    "title": "★2024학년도 Y형 폴리매스 <신입생> 핵심역량 정기진단 참여 안내★",
-    "organizer": "교육성과관리센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=9973653"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=9766340"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-03-20",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:45:32.953Z",
-    "firstSeenAt": "2026-10-01T05:45:32.953Z",
-    "seriesId": "yu-news-85206"
   },
   {
     "id": "gnu-notice-2221490",
@@ -1522866,47 +1521555,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-9637487",
-    "title": "2024학년도 입학식 및 신입생 환영회 안내",
-    "organizer": "홍보팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=9637487"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-02-23",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:46:32.532Z",
-    "firstSeenAt": "2026-10-01T05:46:32.532Z",
-    "seriesId": "yu-news-9637487"
-  },
-  {
     "id": "kangwon-contest-2308",
     "title": "2024년 굿네이버스 강원지부 NGO 원데이클래스 2기 모집 안내",
     "organizer": "굿네이버스 강원지부",
@@ -1523873,47 +1522521,6 @@
     "firstSeenAt": "2026-10-01T05:48:06.574Z",
     "summary": "사업단 홍보대사 인포미로 활동해요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-9521482",
-    "title": "교육혁신처 연구교원/연구원 채용 공고(모집분야: 교육혁신연구부)",
-    "organizer": "혁신사업팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2024-02-14",
-      "end": "2024-02-22"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=9521482"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-02-14",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:47:48.839Z",
-    "firstSeenAt": "2026-10-01T05:47:48.839Z"
   },
   {
     "id": "cnu-intl-event-503640",
@@ -1526016,48 +1524623,6 @@
     "seriesId": "yu-news-222840893",
     "summary": "단기근로장학생으로 연말정산 서류 검토와 확인 업무를 돕고 수당을 받아요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-9598812",
-    "title": "[SW중심대학사업단] 연구원 채용 공고",
-    "organizer": "SW중심대학사업단 행정지원실",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=9598812"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-02-20",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:47:04.472Z",
-    "firstSeenAt": "2026-10-01T05:47:04.472Z",
-    "seriesId": "yu-news-1609137"
   },
   {
     "id": "ssu-notice-h25tobr10enkd5",
@@ -1529860,46 +1528425,6 @@
     "summary": "성적과 경제적 여건을 심사해 학기마다 장학금 250만원을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-04T04:07:51.655Z"
-  },
-  {
-    "id": "yu-news-9534435",
-    "title": "[공학교육혁신센터] 특정사업 계약직 연구원 모집 안내",
-    "organizer": "공학교육혁신센터 행정실",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=9534435"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-02-15",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:47:34.144Z",
-    "firstSeenAt": "2026-10-01T05:47:34.144Z"
   },
   {
     "id": "kangwon-contest-2312",
@@ -1549758,59 +1548283,6 @@
     "firstSeenAt": "2026-10-04T04:08:08.581Z"
   },
   {
-    "id": "yu-news-8253714",
-    "title": "★2023학년도 Y형 폴리매스 재학생 핵심역량 정기진단 참여 안내★",
-    "organizer": "교육성과관리센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=9227120"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=8782727"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=8605682"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=8253714"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2024-01-22",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:00:18.329Z",
-    "firstSeenAt": "2026-10-01T06:00:18.329Z",
-    "seriesId": "yu-news-85206"
-  },
-  {
     "id": "gnu-scholarship-2216833",
     "title": "★★【장학금】2024년 1학기 농림축산식품부(청년창업농) 장학생 모집 안내(농식품계열학과 1학년 2학기~4학년, 일반학과 3~4학년 대상)",
     "organizer": "농림축산식품부, 농어촌희망재단",
@@ -1562312,47 +1560784,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-5996728",
-    "title": "2023학년도 재학생 장애인식개선교육 실시 안내 (2023.05.01.~12.30.)",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2023-05-01",
-      "end": "2023-12-30"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5996728"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-05-02",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:24:27.982Z",
-    "firstSeenAt": "2026-10-01T06:24:27.982Z",
-    "seriesId": "yu-news-85184"
-  },
-  {
     "id": "dcu-notice-170318",
     "title": "2023학년도 2학기 산업인턴 실습생 모집(추가) - 졸업예정 공과계열, 월 201만원",
     "organizer": "한국산학연협회",
@@ -1570024,46 +1568455,6 @@
     "firstSeenAt": "2026-10-01T02:17:09.863Z"
   },
   {
-    "id": "yu-news-8542606",
-    "title": "영남대학교 장기발전계획 수정을 위한 구성원 의견 수렴 안내",
-    "organizer": "기획팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=8542606"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-11-29",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:56:02.196Z",
-    "firstSeenAt": "2026-10-01T05:56:02.196Z"
-  },
-  {
     "id": "yu-news-8542593",
     "title": "[학생공지] 대구은행 2024년 상반기 체험형 장기인턴 모집 안내",
     "organizer": "DGB대구은행",
@@ -1573491,47 +1571882,6 @@
     "firstSeenAt": "2026-10-01T05:58:16.060Z",
     "summary": "저소득층 초·중학생의 멘토로 활동하고 시간당 지원금을 받아요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-8366266",
-    "title": "★2023학년도 재학생 장애인식개선교육 오프라인 실시 안내★",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2023-11-17"
-    },
-    "activityPeriod": {
-      "start": "2023-11-21",
-      "end": "2023-11-21"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=8366266"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-11-15",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T05:58:42.224Z",
-    "firstSeenAt": "2026-10-01T05:58:42.224Z",
-    "seriesId": "yu-news-85184"
   },
   {
     "id": "yu-news-8278727",
@@ -1589137,46 +1587487,6 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T06:06:06.164Z",
     "firstSeenAt": "2026-10-01T06:06:06.164Z"
-  },
-  {
-    "id": "yu-news-7755284",
-    "title": "[천마아트센터] 뽀로로 어린이 뮤지컬",
-    "organizer": "천마아트센터 운영팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=7755284"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-09-27",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:06:08.473Z",
-    "firstSeenAt": "2026-10-01T06:06:08.473Z"
   },
   {
     "id": "yu-news-7742797",
@@ -1627643,47 +1625953,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-6021870",
-    "title": "★2023학년도 Y형 폴리매스 신입생 핵심역량 정기진단 시행 안내★(재게시)",
-    "organizer": "교육성과관리센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=6021870"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-05-11",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:23:27.745Z",
-    "firstSeenAt": "2026-10-01T06:23:27.745Z",
-    "seriesId": "yu-news-85206"
-  },
-  {
     "id": "yu-news-5996441",
     "title": "[외국어교육원] 5월 무료 모의 TOEIC 시험 실시 안내",
     "organizer": "외국어교육원",
@@ -1627778,52 +1626047,6 @@
     "seriesId": "yu-news-1655882",
     "summary": "무료 모의 OPIc과 TOEIC Speaking 시험으로 영어 말하기 실력을 점검해요.",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-5995782",
-    "title": "2023년 영남대학교 사회공헌단 ESG혁신센터 연구원 채용 공고",
-    "organizer": "ESG운영팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=6034329"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5995782"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-05-11",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:27:12.982Z",
-    "firstSeenAt": "2026-10-01T06:27:12.982Z",
-    "seriesId": "yu-news-5995782"
   },
   {
     "id": "knu-startup-253",
@@ -1630772,48 +1628995,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-5995159",
-    "title": "2023학년도 1학기 연구실 신규·정기 안전교육 수강 안내",
-    "organizer": "안전관리팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2023-04-28"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5995159"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-04-04",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:29:47.818Z",
-    "firstSeenAt": "2026-10-01T06:29:47.818Z",
-    "seriesId": "yu-news-4001932"
-  },
-  {
     "id": "dcu-notice-168941",
     "title": "[SW] 2023학년도 여름계절제 국내현장실습 안내",
     "organizer": "SW중심대학사업단",
@@ -1632991,48 +1631172,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-5995873",
-    "title": "교육혁신처 연구원 채용 공고",
-    "organizer": "혁신사업팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2023-04-13",
-      "end": "2023-04-21"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5995873"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-04-14",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:27:07.657Z",
-    "firstSeenAt": "2026-10-01T06:27:07.657Z",
-    "seriesId": "yu-news-1691280"
-  },
-  {
     "id": "yu-news-5995436",
     "title": "「2023년도 경산시 청년예비창업가 육성사업」(예비) 창업자 모집 공고",
     "organizer": "경산시",
@@ -1634638,47 +1632777,6 @@
     "firstSeenAt": "2026-10-01T02:17:14.831Z"
   },
   {
-    "id": "yu-news-5995954",
-    "title": "[학생상담센터] 2023학년도 인터넷·스마트폰 과의존 예방교육",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5995954"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-04-14",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:26:48.395Z",
-    "firstSeenAt": "2026-10-01T06:26:48.395Z",
-    "seriesId": "yu-news-10339449"
-  },
-  {
     "id": "yu-news-5995920",
     "title": "제12회 경찰청 인권영화제 소재 공모전",
     "organizer": "경찰청",
@@ -1634766,48 +1632864,6 @@
     "seriesId": "yu-career-1513",
     "summary": "AI 역량검사를 알아보는 프로그램에 참여해요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-5995870",
-    "title": "2023학년도 영남대학교 정규직원 신규채용",
-    "organizer": "직원인사팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5995870"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-04-14",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:27:09.432Z",
-    "firstSeenAt": "2026-10-01T06:27:09.432Z",
-    "seriesId": "yu-news-85422"
   },
   {
     "id": "yu-news-5994692",
@@ -1637273,51 +1635329,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-5994474",
-    "title": "★2023학년도 Y형 폴리매스 <신입생> 핵심역량 정기진단 참여 안내★",
-    "organizer": "교육혁신연구부",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5995320"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5994474"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-04-06",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:32:16.839Z",
-    "firstSeenAt": "2026-10-01T06:32:16.839Z",
-    "seriesId": "yu-news-85206"
-  },
-  {
     "id": "yu-news-5993835",
     "title": "[교육개발센터] 2023학년도 1학기 호기로운 학과생활 프로그램 신청 안내",
     "organizer": "교육개발센터",
@@ -1638444,51 +1636455,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-5993061",
-    "title": "2022년 2학기(직전학기) 진료비, 약값 환불 관련 서류제출 기한 안내",
-    "organizer": "건강관리센터 행정실",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2023-03-31"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5994752"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5993061"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-03-28",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:35:14.934Z",
-    "firstSeenAt": "2026-10-01T06:35:14.934Z",
-    "seriesId": "yu-news-226449686"
-  },
-  {
     "id": "knu-notice-1328047",
     "title": "[전자정보기기사업단] [RIS 공유캠퍼스] 종합설계 및 프로젝트 무료 제작 지원",
     "organizer": "전자정보기기사업단",
@@ -1639122,47 +1637088,6 @@
     "firstSeenAt": "2026-10-01T06:30:42.858Z",
     "summary": "인문·사회계열 인재양성 프로그램에 참여해요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-5994147",
-    "title": "2023학년도 실험동물 사용·관리 등에 관한 교육 안내",
-    "organizer": "실험동물센터 행정실",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2023-03-06",
-      "end": "2023-03-27"
-    },
-    "activityPeriod": {
-      "start": "2023-03-30",
-      "end": "2023-03-30"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5994147"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-03-17",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:33:07.435Z",
-    "firstSeenAt": "2026-10-01T06:33:07.435Z",
-    "seriesId": "yu-news-2850371"
   },
   {
     "id": "dcu-notice-168501",
@@ -1651658,48 +1649583,6 @@
     ]
   },
   {
-    "id": "yu-news-4001932",
-    "title": "2022학년도 2학기 연구실 신규·정기 안전교육 수강 안내",
-    "organizer": "나길조",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2023-02-17"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=4001932"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-09-16",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:56:42.751Z",
-    "firstSeenAt": "2026-10-01T06:56:42.751Z",
-    "seriesId": "yu-news-4001932"
-  },
-  {
     "id": "yu-news-5724064",
     "title": "[2.10_업데이트] 2023학년도 2학기 파견교환학생 모집(일본어권)",
     "organizer": "국제협력팀",
@@ -1652782,49 +1650665,6 @@
     "extractedBy": "rules",
     "collectedAt": "2026-10-01T06:37:03.412Z",
     "firstSeenAt": "2026-10-01T06:37:03.412Z"
-  },
-  {
-    "id": "yu-news-5663206",
-    "title": "[국제개발협력원(IIDC)] 연구원 채용 안내",
-    "organizer": "국제개발사업팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2023-02-13"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "해외·글로벌"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5663206"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-02-03",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:39:00.494Z",
-    "firstSeenAt": "2026-10-01T06:39:00.494Z",
-    "seriesId": "yu-news-1609137"
   },
   {
     "id": "yu-news-5122952",
@@ -1654609,48 +1652449,6 @@
     "firstSeenAt": "2026-10-01T06:39:10.999Z",
     "summary": "대구 행복기숙사의 입주를 신청해요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-5614613",
-    "title": "[교육개발센터] 석사학위 이상 연구원 채용 공고",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2023-01-26",
-      "end": "2023-02-02"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5614613"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-01-30",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:39:31.593Z",
-    "firstSeenAt": "2026-10-01T06:39:31.593Z"
   },
   {
     "id": "yu-news-5206013",
@@ -1658868,52 +1656666,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-5087309",
-    "title": "[교육개발센터] 연구원 채용 공고",
-    "organizer": "교육개발센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2023-01-03",
-      "end": "2023-01-12"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5277236"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5087309"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2023-01-02",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:44:38.415Z",
-    "firstSeenAt": "2026-10-01T06:44:38.415Z",
-    "seriesId": "yu-news-1609137"
-  },
-  {
     "id": "yu-news-5111035",
     "title": "[학생상담센터] 진로탐색 집단상담 프로그램: 커리어맨! 진로역량을 JOB아라!(기본) 모집",
     "organizer": "학생상담센터",
@@ -1660945,47 +1658697,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-2440990",
-    "title": "2022학년도 재학생 장애인식개선교육 실시 안내 (2022.05.09.~12.31.)",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2022-05-09",
-      "end": "2022-12-31"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=2440990"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-05-06",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:17:58.668Z",
-    "firstSeenAt": "2026-10-01T07:17:58.668Z",
-    "seriesId": "yu-news-85184"
-  },
-  {
     "id": "knu-startup-167",
     "title": "[제피러스랩] 2022년 부산 특화산업 기반 소셜 비즈니스 육성 프로그램 모집 안내",
     "organizer": "(유)제피러스랩",
@@ -1661256,47 +1658967,6 @@
     "firstSeenAt": "2026-10-01T06:44:32.808Z",
     "summary": "파이썬을 활용한 빅데이터 분석과 AI 기초를 배워요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-4166070",
-    "title": "2022학년도 실험동물 사용·관리 등에 관한 교육 안내 - 강의포털시스템 (LMS)",
-    "organizer": "실험동물센터 행정실",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2022-10-24",
-      "end": "2022-12-30"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=4166070"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-09-30",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:54:50.131Z",
-    "firstSeenAt": "2026-10-01T06:54:50.131Z",
-    "seriesId": "yu-news-2850371"
   },
   {
     "id": "yu-news-4037096",
@@ -1662606,47 +1660276,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-5039783",
-    "title": "★2022학년도 재학생 장애인식개선교육 오프라인 실시 안내★",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2022-12-20",
-      "end": "2022-12-20"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5039783"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-12-13",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:45:11.524Z",
-    "firstSeenAt": "2026-10-01T06:45:11.524Z",
-    "seriesId": "yu-news-85184"
-  },
-  {
     "id": "yu-news-4897135",
     "title": "[재게시][교육개발센터] 2022학년도 교육개발센터 프로그램 후기 및 제안 공모전",
     "organizer": "교육개발센터",
@@ -1662743,55 +1660372,6 @@
     "seriesId": "yu-news-4447897",
     "summary": "직접 수강한 강좌 중 좋은 강의를 추천하는 공모전에 참여해요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-4541886",
-    "title": "★2022학년도 Y형 폴리매스 인재 핵심역량 정기진단 참여 안내★",
-    "organizer": "교육혁신연구부",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5122917"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=4802036"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=4541886"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-12-20",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:51:09.245Z",
-    "firstSeenAt": "2026-10-01T06:51:09.245Z",
-    "seriesId": "yu-news-85206"
   },
   {
     "id": "knu-startup-479",
@@ -1662942,48 +1660522,6 @@
     "seriesId": "yu-news-5027905",
     "summary": "야구에서 데이터를 활용하는 방법에 관한 강의를 들어요",
     "noApplication": true
-  },
-  {
-    "id": "yu-news-5027888",
-    "title": "[대학혁신지원사업] 교육혁신처 연구원 추가 채용 공고",
-    "organizer": "혁신사업팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2022-12-13",
-      "end": "2022-12-19"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=5027888"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-12-12",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:45:31.741Z",
-    "firstSeenAt": "2026-10-01T06:45:31.741Z",
-    "seriesId": "yu-news-1691280"
   },
   {
     "id": "yu-news-2733492",
@@ -1673799,48 +1671337,6 @@
     "seriesId": "yu-career-1527"
   },
   {
-    "id": "yu-news-4212789",
-    "title": "영남대학교 원격교육지원센터 연구원 채용 공고",
-    "organizer": "원격교육지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=4212789"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-10-04",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T06:54:39.693Z",
-    "firstSeenAt": "2026-10-01T06:54:39.693Z",
-    "seriesId": "yu-news-4212789"
-  },
-  {
     "id": "yu-news-4212773",
     "title": "[대구지방고용노동청] 2022년 대구·경북 온·오프라인 채용박람회 개최 안내 및 홍보",
     "organizer": "대구지방고용노동청",
@@ -1674912,51 +1672408,6 @@
     "firstSeenAt": "2026-10-01T06:55:27.599Z",
     "summary": "AMK 채용설명회에 참여하고 스타벅스 상품권을 받아요.",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-3790686",
-    "title": "[학생상담센터] 2022학년도 인터넷·스마트폰 과의존 예방교육 안내",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=4130789"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=3790686"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-09-27",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:00:13.441Z",
-    "firstSeenAt": "2026-10-01T07:00:13.441Z",
-    "seriesId": "yu-news-10339449"
   },
   {
     "id": "knu-startup-212",
@@ -1690298,47 +1687749,6 @@
     "seriesId": "yu-career-887"
   },
   {
-    "id": "yu-news-3085564",
-    "title": "정부출연금 사업 수행 계약직 연구원 신규 채용 공고",
-    "organizer": "공학교육혁신센터 행정실",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=3085564"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-06-30",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:07:38.517Z",
-    "firstSeenAt": "2026-10-01T07:07:38.517Z"
-  },
-  {
     "id": "yu-news-2932367",
     "title": "[대구광역시] 대구시민대학 ‘뭐하노학교’ 지식셀러 모집 홍보",
     "organizer": "대구광역시",
@@ -1692152,47 +1689562,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-2850371",
-    "title": "2022학년도 실험동물 사용·관리 등에 관한 교육 시행 안내",
-    "organizer": "박성일",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2022-06-23",
-      "end": "2022-06-23"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=2850371"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-06-10",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:11:06.775Z",
-    "firstSeenAt": "2026-10-01T07:11:06.775Z",
-    "seriesId": "yu-news-2850371"
-  },
-  {
     "id": "yu-news-2838582",
     "title": "[교육개발센터]Learn To YU(교수-학생 소통 간담회) 학생대상 설문조사 안내",
     "organizer": "교육개발센터",
@@ -1693152,47 +1690521,6 @@
     "seriesId": "yu-news-83801",
     "summary": "미국 한상기업의 청년채용 인턴십에 지원해요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-2920593",
-    "title": "[학생상담센터] 2022학년도 인터넷·스마트폰 과의존 예방교육 안내",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=2920593"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-06-16",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:10:09.332Z",
-    "firstSeenAt": "2026-10-01T07:10:09.332Z",
-    "seriesId": "yu-news-10339449"
   },
   {
     "id": "knu-startup-175",
@@ -1707181,47 +1704509,6 @@
     "seriesId": "yu-career-605"
   },
   {
-    "id": "yu-news-1995834",
-    "title": "법학전문대학원 학생지도센터 연구원 모집",
-    "organizer": "법학전문대학원 행정실",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2022-04-04",
-      "end": "2022-04-07"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=1995834"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-03-29",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:23:41.394Z",
-    "firstSeenAt": "2026-10-01T07:23:41.394Z",
-    "seriesId": "yu-news-84032"
-  },
-  {
     "id": "yu-career-1334",
     "title": "2022 상반기 채용대비_수·추리 이론&문제풀이 집중교육(with 해커스)",
     "organizer": "해커스",
@@ -1710265,47 +1707552,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-1819990",
-    "title": "영남대학교 교육혁신처 연구원 추가 채용 공고(모집기간: 2022.3.14.~3.21.)",
-    "organizer": "혁신사업팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2022-03-14",
-      "end": "2022-03-21"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=1819990"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-03-14",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:26:36.225Z",
-    "firstSeenAt": "2026-10-01T07:26:36.225Z"
-  },
-  {
     "id": "yu-news-1679331",
     "title": "경제금융학부 영어스피치 사업단 영웅회(H.E.S.C) 22기 신입회원 모집안내",
     "organizer": "경제금융학부 영어스피치 사업단 영웅회",
@@ -1712465,48 +1709711,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-1691280",
-    "title": "영남대학교 교육혁신처 연구원 추가 채용 공고",
-    "organizer": "혁신사업팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2022-02-28",
-      "end": "2022-03-07"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=1691280"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-03-03",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:27:31.035Z",
-    "firstSeenAt": "2026-10-01T07:27:31.035Z",
-    "seriesId": "yu-news-1691280"
-  },
-  {
     "id": "yu-news-1573953",
     "title": "[영대문화] 2022년 54기 수습위원 모집 안내",
     "organizer": "영대문화",
@@ -1712603,46 +1709807,6 @@
     "seriesId": "yu-news-84001",
     "summary": "2022학년도 2학기에 해외 협정 대학으로 교환학생을 다녀와요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-1679288",
-    "title": "★ 2022학년도 신입생 핵심역량 진단 참여 안내 ★",
-    "organizer": "교육혁신연구부",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=1679288"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-03-02",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:27:48.290Z",
-    "firstSeenAt": "2026-10-01T07:27:48.290Z"
   },
   {
     "id": "yu-news-1527302",
@@ -1713858,49 +1711022,6 @@
     "firstSeenAt": "2026-10-01T02:17:20.856Z"
   },
   {
-    "id": "yu-news-1609137",
-    "title": "[국제개발협력원(IIDC)] 연구원 채용 안내",
-    "organizer": "국제개발사업팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "해외·글로벌"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=1609137"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-02-24",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:28:20.248Z",
-    "firstSeenAt": "2026-10-01T07:28:20.248Z",
-    "seriesId": "yu-news-1609137"
-  },
-  {
     "id": "yu-news-1538994",
     "title": "[문화인류학과 4단계 BK21] 교육연구팀 제2회 문화유산 콘텐츠 캠프 안내",
     "organizer": "지역재생을 위한 문화유산 큐레이팅팀",
@@ -1714173,89 +1711294,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-1574003",
-    "title": "[대학혁신지원사업] 기초교육대학 연구원 채용 공고",
-    "organizer": "기초교육대학 행정실",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2022-02-22"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=1574003"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-02-21",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:28:36.907Z",
-    "firstSeenAt": "2026-10-01T07:28:36.907Z"
-  },
-  {
-    "id": "yu-news-1574008",
-    "title": "영남대학교 학생상담센터 연구원 채용공고",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2022-02-21",
-      "end": "2022-02-21"
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=1574008"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-02-21",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:28:34.241Z",
-    "firstSeenAt": "2026-10-01T07:28:34.241Z",
-    "seriesId": "yu-news-91637"
-  },
-  {
     "id": "yu-news-1574002",
     "title": "[외국어교육원]2022학년도 봄학기 전화외국어과정 개설 안내",
     "organizer": "외국어교육원",
@@ -1714389,48 +1711427,6 @@
     "seriesId": "yu-news-1527357",
     "summary": "헤리티지 콜로키움과 사업성과보고회를 줌으로 들어요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-1486256",
-    "title": "영남대학교 교육혁신본부 연구원 채용 공고",
-    "organizer": "혁신사업팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2022-02-15",
-      "end": "2022-02-21"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=1486256"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-02-15",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:29:43.990Z",
-    "firstSeenAt": "2026-10-01T07:29:43.990Z",
-    "seriesId": "yu-news-85699"
   },
   {
     "id": "yu-career-1300",
@@ -1715088,47 +1712084,6 @@
     "firstSeenAt": "2026-10-01T07:30:06.181Z",
     "summary": "학과별 권장 교양교과목 로드맵을 온라인으로 보고 설문에 참여해요",
     "noApplication": true
-  },
-  {
-    "id": "yu-news-1515570",
-    "title": "교육개발센터 연구원 채용 공고",
-    "organizer": "스마트교육팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=1515570"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2022-02-16",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:29:26.977Z",
-    "firstSeenAt": "2026-10-01T07:29:26.977Z"
   },
   {
     "id": "yu-news-1439547",
@@ -1720923,47 +1717878,6 @@
     "firstSeenAt": "2026-10-01T07:34:11.056Z",
     "summary": "미술과 향기를 활용한 마음건강 집단상담을 5회 받아요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-86916",
-    "title": "2021년도 하반기 재학생 장애인식개선교육(온라인) 실시 안내(수정)",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2021-09-13",
-      "end": "2021-12-31"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=86916"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2021-09-10",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:55:13.575Z",
-    "firstSeenAt": "2026-10-01T07:55:13.575Z",
-    "seriesId": "yu-news-85184"
   },
   {
     "id": "yu-news-681828",
@@ -1728695,48 +1725609,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-91637",
-    "title": "영남대학교 학생상담센터 연구원 채용공고",
-    "organizer": "학생상담센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=91637"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2021-11-16",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:39:47.537Z",
-    "firstSeenAt": "2026-10-01T07:39:47.537Z",
-    "seriesId": "yu-news-91637"
-  },
-  {
     "id": "yu-career-1141",
     "title": "2021 제4차 진로특강 (스트레스 감정 관리, 마인드테라피)",
     "organizer": "학생성공처",
@@ -1731018,48 +1727890,6 @@
     "seriesId": "yu-news-90391",
     "summary": "영·호남 상생 유공 장학생으로 추천받아 장학금을 받아요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-90010",
-    "title": "영남대학교 교육혁신본부 연구원 채용 공고문",
-    "organizer": "교육혁신연구부",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": "2021-11-01",
-      "end": "2021-11-09"
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=90010"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2021-11-01",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T07:43:32.955Z",
-    "firstSeenAt": "2026-10-01T07:43:32.955Z",
-    "seriesId": "yu-news-85699"
   },
   {
     "id": "knu-startup-120",
@@ -1772288,47 +1769118,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-86190",
-    "title": "[재학생 전원 필수 이수] 2021학년도 장애인식개선교육(온라인) 기간 수정 안내",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=86190"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2021-05-14",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T08:21:20.398Z",
-    "firstSeenAt": "2026-10-01T08:21:20.398Z",
-    "seriesId": "yu-news-85184"
-  },
-  {
     "id": "yu-news-86176",
     "title": "[청년희망 Y-STAR 사업단] 성년의 날 기념 와플(Y-STAR FLOWER) 데이 행사 안내",
     "organizer": "청년희망 Y-STAR 사업단",
@@ -1783008,47 +1779797,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-85929",
-    "title": "2021년도 장애인식개선교육(사이버)실시 안내",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=85929"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2021-04-02",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T08:26:13.378Z",
-    "firstSeenAt": "2026-10-01T08:26:13.378Z",
-    "seriesId": "yu-news-85184"
-  },
-  {
     "id": "yu-news-85928",
     "title": "2021년 전공연계 해외취업(인턴) 프로그램 참가자 모집",
     "organizer": "취업및현장실습지원팀",
@@ -1788247,52 +1784995,6 @@
     "seriesId": "yu-news-84077",
     "summary": "건강실천을 위한 대학생 서포터즈로 활동해요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-85699",
-    "title": "영남대학교 교육혁신본부 연구원 채용 공고문",
-    "organizer": "교육혁신연구부",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=85795"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=85699"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2021-03-12",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T08:31:27.774Z",
-    "firstSeenAt": "2026-10-01T08:31:27.774Z",
-    "seriesId": "yu-news-85699"
   },
   {
     "id": "yu-news-85735",
@@ -1794457,52 +1791159,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-85422",
-    "title": "2020학년도 영남대학교 정규직원 신규채용(정수시설 운영분야)",
-    "organizer": "직원인사팀.",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=85613"
-      },
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=85422"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2021-02-05",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T08:37:43.020Z",
-    "firstSeenAt": "2026-10-01T08:37:43.020Z",
-    "seriesId": "yu-news-85422"
-  },
-  {
     "id": "yu-news-85462",
     "title": "[재게시] ★2020 동계 NCS 직업기초능력평가 집중 교육(석치수, 박준범, 이찬욱 강사)★",
     "organizer": "학생성공처",
@@ -1795094,47 +1791750,6 @@
     "firstSeenAt": "2026-10-01T08:33:40.472Z",
     "summary": "해운대2040 정책 아이디어 공모전에 참여해요.",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-85595",
-    "title": "★[교육개발센터]대학혁신지원사업 연구원(MOOC 및 교수설계) 채용",
-    "organizer": "스마트교육팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=85595"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2021-02-02",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T08:33:42.022Z",
-    "firstSeenAt": "2026-10-01T08:33:42.022Z"
   },
   {
     "id": "yu-news-85594",
@@ -1797569,47 +1794184,6 @@
     "seriesId": "yu-news-83713",
     "summary": "영양군 향토생활관 입사생 선발에 지원해요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-85542",
-    "title": "교육개발센터 대학혁신지원사업 연구원 채용 계획",
-    "organizer": "스마트교육팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=85542"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2021-01-20",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T08:34:56.372Z",
-    "firstSeenAt": "2026-10-01T08:34:56.372Z"
   },
   {
     "id": "yu-news-85541",
@@ -1809415,46 +1805989,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-85223",
-    "title": "[국민겅강보험공단] 2020년도 국가건강검진(2030 청년세대)",
-    "organizer": "국민겅강보험공단",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=85223"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2020-11-06",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T08:42:41.730Z",
-    "firstSeenAt": "2026-10-01T08:42:41.730Z"
-  },
-  {
     "id": "yu-news-85222",
     "title": "[재게시] 전국 학생들과의 토론(대화) 모집 기한 연장 안내",
     "organizer": "학생지원팀",
@@ -1809846,47 +1806380,6 @@
     "firstSeenAt": "2026-10-01T08:43:02.042Z",
     "summary": "대구형 배달앱에 관한 아이디어 공모에 참여해요.",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-85206",
-    "title": "★필독★ 2020 Y형인재 핵심역량 정기진단 안내 ★",
-    "organizer": "교육혁신연구부",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=85206"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2020-11-04",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T08:43:05.212Z",
-    "firstSeenAt": "2026-10-01T08:43:05.212Z",
-    "seriesId": "yu-news-85206"
   },
   {
     "id": "yu-news-85205",
@@ -1810554,47 +1807047,6 @@
     "firstSeenAt": "2026-10-01T08:43:41.011Z",
     "summary": "TRIZ를 활용해 창의적으로 문제를 해결하는 경진대회에 참가해요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-85184",
-    "title": "2020년도 장애인식개선교육(사이버) 실시 안내",
-    "organizer": "장애학생지원센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=85184"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2020-10-30",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T08:43:42.648Z",
-    "firstSeenAt": "2026-10-01T08:43:42.648Z",
-    "seriesId": "yu-news-85184"
   },
   {
     "id": "yu-news-85183",
@@ -1839181,48 +1835633,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-84418",
-    "title": "[영남대학교 법학연구소] 연구원 채용 공고",
-    "organizer": "법학연구소",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=84418"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2020-06-12",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T09:01:42.359Z",
-    "firstSeenAt": "2026-10-01T09:01:42.359Z",
-    "seriesId": "yu-news-1609137"
-  },
-  {
     "id": "yu-news-84417",
     "title": "[교육부/한국과학창의재단] 2020년 대학생 온라인 교육기부 동아리 모집",
     "organizer": "교육부, 한국과학창의재단",
@@ -1846941,46 +1843351,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-84224",
-    "title": "디지털 성범죄 피해자 불법촬영물 삭제지원 안내",
-    "organizer": "양성평등센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=84224"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2020-05-14",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T09:06:28.216Z",
-    "firstSeenAt": "2026-10-01T09:06:28.216Z"
-  },
-  {
     "id": "yu-news-84222",
     "title": "[도서관] 기간연장- 1학년을 위한 도서관 경품 이벤트 안내",
     "organizer": "도서관",
@@ -1852488,47 +1848858,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-84086",
-    "title": "(재게시) 2020학년도 Y형인재 핵심역량 진단안내 (*미참여시 Y마일리지 장학 대상에서 제외)",
-    "organizer": "교육혁신연구부",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=84086"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2020-04-14",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T09:09:49.361Z",
-    "firstSeenAt": "2026-10-01T09:09:49.361Z"
-  },
-  {
     "id": "yu-news-84084",
     "title": "2020학년도 학군사관후보생(ROTC) 모집 선발일정 조정 안내",
     "organizer": "학생군사교육단",
@@ -1854283,47 +1850612,6 @@
     "noApplication": false
   },
   {
-    "id": "yu-news-84032",
-    "title": "법학전문대학원 학생지도센터 연구원 모집",
-    "organizer": "법학전문대학원 행정실",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=84032"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2020-03-31",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T09:11:04.513Z",
-    "firstSeenAt": "2026-10-01T09:11:04.513Z",
-    "seriesId": "yu-news-84032"
-  },
-  {
     "id": "yu-news-84031",
     "title": "[학생상담센터] Y또! 프로그램 참여자 모집",
     "organizer": "학생상담센터",
@@ -1855418,47 +1851706,6 @@
     "seriesId": "yu-news-84001",
     "summary": "중화권으로 파견되는 교환학생에 지원해요.",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-84000",
-    "title": "Y형인재 핵심역량 진단 안내",
-    "organizer": "교육혁신본부",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=84000"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2020-03-24",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T09:11:42.669Z",
-    "firstSeenAt": "2026-10-01T09:11:42.669Z",
-    "seriesId": "yu-news-85206"
   },
   {
     "id": "yu-news-83997",
@@ -1865794,47 +1862041,6 @@
     "seriesId": "yu-news-83697",
     "summary": "대구혁신아카데미 2기 교육생으로 참여해요",
     "noApplication": false
-  },
-  {
-    "id": "yu-news-83696",
-    "title": "[취업처] 2019년 하반기 영남대학교 의료원 사무직(정규직) 공개채용",
-    "organizer": "취업및현장실습지원팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=83696"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2020-01-02",
-    "extractedBy": "rules",
-    "collectedAt": "2026-10-01T09:18:06.983Z",
-    "firstSeenAt": "2026-10-01T09:18:06.983Z"
   },
   {
     "id": "knu-startup-53",
