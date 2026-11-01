@@ -172,7 +172,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
     const id = comment.id;
     const question = comment.parent_id != null ? "답글을 지울까요?"
       : comment.kind === "talk" ? "글을 지울까요? 답글이 있으면 내용만 지우고 자리만 남아요."
-      : "후기를 지울까요? 답글이 있으면 내용만 지우고 자리만 남아요. 이 글로 받은 열쇠조각은 회수되고, 다시 써도 받지 못해요.";
+      : "후기를 지울까요? 답글이 있으면 내용만 지우고 자리만 남아요. 이 글로 받은 열쇠조각은 회수되고, 다시 써도 받지 못해요. 못 돌려받은 열쇠조각은 다음 후기 보상에서 빠져요.";
     if (!supabase || !window.confirm(question)) return;
     const { error } = await supabase.rpc("delete_my_comment", { target: id });
     if (error) { setNotice("지우지 못했어요. 잠시 후 다시 시도해 주세요."); return; }

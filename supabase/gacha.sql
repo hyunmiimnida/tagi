@@ -16,6 +16,9 @@ create table if not exists key_wallets (
   updated_at timestamptz not null default now()
 );
 
+-- 후기 삭제 때 못 돌려받은 양. 다음 후기 보상에서만 갚는다 (기존 지갑도 유지).
+alter table key_wallets add column if not exists key_debt int not null default 0 check (key_debt >= 0);
+
 -- 얻은 무기 (맨손 말고 전부)
 create table if not exists owned_weapons (
   user_id uuid not null references auth.users on delete cascade,
@@ -39,6 +42,8 @@ alter table key_ledger add constraint key_ledger_reason_check
   check (reason in ('welcome', 'daily', 'review', 'review_undo', 'draw', 'refund'));
 -- 후기 선물을 어느 프로그램에 줬는지 (같은 프로그램은 계정당 한 번만)
 alter table key_ledger add column if not exists series_id text;
+-- 이 후기 보상으로 갚은 양. 예전 기록은 0이라 받은 양만 회수한다.
+alter table key_ledger add column if not exists debt_paid int not null default 0;
 create index if not exists key_ledger_user_idx on key_ledger (user_id, reason, created_at desc);
 
 -- 뽑기에 나오는 무기 (lib/weapons.ts의 무기와 등급. 맨손·전설 자리는 빼고). 무기를 더하면 여기에도 한 줄
@@ -160,18 +165,26 @@ alter table comments add column if not exists parent_id bigint;
 
 create or replace function reward_review_keys() returns trigger
 language plpgsql security definer set search_path = public as $$
-declare given int;
+declare
+  wallet key_wallets;
+  given int;
+  paid int;
+  granted int;
 begin
   if new.kind <> 'review' or new.parent_id is not null then return new; end if;
-  perform lock_wallet(new.user_id);
+  wallet := lock_wallet(new.user_id);
   select count(*) into given from key_ledger
     where user_id = new.user_id and reason = 'review'
       and created_at >= (kst_today()::timestamp at time zone 'Asia/Seoul');
   if given < 3 and not exists (
     select 1 from key_ledger where user_id = new.user_id and reason = 'review' and series_id = new.series_id
   ) then
-    update key_wallets set keys = keys + 5, updated_at = now() where user_id = new.user_id;
-    insert into key_ledger (user_id, change, reason, detail, series_id) values (new.user_id, 5, 'review', new.id::text, new.series_id);
+    paid := least(wallet.key_debt, 5);
+    granted := 5 - paid;
+    update key_wallets set keys = keys + granted, key_debt = key_debt - paid, updated_at = now() where user_id = new.user_id;
+    -- 지급이 0이어도 하루 횟수와 프로그램당 한 번 규칙에 포함한다.
+    insert into key_ledger (user_id, change, debt_paid, reason, detail, series_id)
+      values (new.user_id, granted, paid, 'review', new.id::text, new.series_id);
   end if;
   return new;
 end $$;
@@ -180,22 +193,26 @@ drop trigger if exists comments_reward_keys on comments;
 create trigger comments_reward_keys after insert on comments
   for each row execute function reward_review_keys();
 
--- 후기를 지우면 그 글로 받은 열쇠조각을 회수한다. 이미 써서 모자라면 0까지만 내린다
+-- 그 글로 받은 양만 회수하고, 못 돌려받은 양과 그 글로 갚았던 양을 빚에 더한다.
 create or replace function reclaim_review_keys() returns trigger
 language plpgsql security definer set search_path = public as $$
 declare
   wallet key_wallets;
+  reward key_ledger;
   taken int;
 begin
+  if old.kind <> 'review' or old.parent_id is not null then return old; end if;
   -- 탈퇴로 계정과 함께 지워지는 중이면 회수하지 않는다 (없는 계정으로 기록을 남기려다 탈퇴가 실패하지 않게)
   if not exists (select 1 from auth.users where id = old.user_id) then return old; end if;
-  if not exists (select 1 from key_ledger where user_id = old.user_id and reason = 'review' and detail = old.id::text)
-    or exists (select 1 from key_ledger where user_id = old.user_id and reason = 'review_undo' and detail = old.id::text) then
+  select * into reward from key_ledger where user_id = old.user_id and reason = 'review' and detail = old.id::text;
+  if not found then return old; end if;
+  wallet := lock_wallet(old.user_id);
+  if exists (select 1 from key_ledger where user_id = old.user_id and reason = 'review_undo' and detail = old.id::text) then
     return old;
   end if;
-  wallet := lock_wallet(old.user_id);
-  taken := least(wallet.keys, 5);
-  update key_wallets set keys = keys - taken, updated_at = now() where user_id = old.user_id;
+  taken := least(wallet.keys, reward.change);
+  update key_wallets set keys = keys - taken, key_debt = key_debt + (reward.change - taken) + reward.debt_paid,
+    updated_at = now() where user_id = old.user_id;
   insert into key_ledger (user_id, change, reason, detail, series_id) values (old.user_id, -taken, 'review_undo', old.id::text, old.series_id);
   return old;
 end $$;

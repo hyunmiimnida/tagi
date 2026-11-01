@@ -114,7 +114,7 @@ export function MyAccount({ schools, sources }: Props) {
   }
 
   async function removeComment(id: number) {
-    if (!supabase || !window.confirm("댓글을 지울까요? 답글이 달린 글은 내용만 지우고 자리만 남아요.")) return;
+    if (!supabase || !window.confirm("댓글을 지울까요? 답글이 달린 글은 내용만 지우고 자리만 남아요. 후기로 받은 열쇠조각은 회수되고, 못 돌려받은 열쇠조각은 다음 후기 보상에서 빠져요.")) return;
     const { error } = await supabase.rpc("delete_my_comment", { target: id });
     if (error) { setMessage("지우지 못했어요. 잠시 후 다시 시도해 주세요."); return; }
     user.refreshKeys();

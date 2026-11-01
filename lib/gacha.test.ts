@@ -63,12 +63,14 @@ test("서버(supabase/gacha.sql)와 화면의 규칙이 같다", () => {
   assert.match(sql, new RegExp(`granted := ${DAILY_KEYS};`));
   assert.match(sql, new RegExp(`welcome := ${WELCOME_KEYS};`));
   assert.match(sql, new RegExp(`if given < ${REVIEW_DAILY_MAX} and not exists`));
-  assert.match(sql, new RegExp(`update key_wallets set keys = keys \\+ ${REVIEW_KEYS}, updated_at`));
+  assert.match(sql, new RegExp(`paid := least\\(wallet\\.key_debt, ${REVIEW_KEYS}\\)`));
+  assert.match(sql, new RegExp(`granted := ${REVIEW_KEYS} - paid`));
 });
 
 test("후기는 프로그램마다 한 번, 지우면 회수하고 탈퇴 때는 건너뛴다", () => {
   assert.match(sql, /reason = 'review' and series_id = new\.series_id/);
   assert.match(sql, /create trigger comments_reclaim_keys after delete on comments/);
-  assert.match(sql, new RegExp(`taken := least\\(wallet\\.keys, ${REVIEW_KEYS}\\)`));
+  assert.match(sql, /taken := least\(wallet\.keys, reward\.change\)/);
+  assert.match(sql, /key_debt = key_debt \+ \(reward\.change - taken\) \+ reward\.debt_paid/);
   assert.match(sql, /if not exists \(select 1 from auth\.users where id = old\.user_id\) then return old/);
 });
