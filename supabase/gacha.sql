@@ -36,7 +36,9 @@ create table if not exists key_ledger (
 -- 열쇠조각이 바뀐 까닭 (처음 만든 뒤에 welcome을 더해서 따로 고친다)
 alter table key_ledger drop constraint if exists key_ledger_reason_check;
 alter table key_ledger add constraint key_ledger_reason_check
-  check (reason in ('welcome', 'daily', 'review', 'draw', 'refund'));
+  check (reason in ('welcome', 'daily', 'review', 'review_undo', 'draw', 'refund'));
+-- 후기 선물을 어느 프로그램에 줬는지 (같은 프로그램은 계정당 한 번만)
+alter table key_ledger add column if not exists series_id text;
 create index if not exists key_ledger_user_idx on key_ledger (user_id, reason, created_at desc);
 
 -- 뽑기에 나오는 무기 (lib/weapons.ts의 무기와 등급. 맨손·전설 자리는 빼고). 무기를 더하면 여기에도 한 줄
@@ -149,7 +151,8 @@ begin
     'refund', refund, 'keys', wallet.keys, 'shards', wallet.legend_shards);
 end $$;
 
--- 후기 댓글 선물: 댓글이 저장되면(도배 막기·이용 정지를 통과한 뒤) 하루 3번까지 5개씩
+-- 후기 댓글 선물: 댓글이 저장되면(도배 막기·이용 정지를 통과한 뒤) 하루 3번까지 5개씩.
+-- 같은 프로그램은 계정당 한 번만 준다. 지워도 기록이 남으므로 지웠다 다시 써도 또 받지 못한다
 create or replace function reward_review_keys() returns trigger
 language plpgsql security definer set search_path = public as $$
 declare given int;
@@ -158,9 +161,11 @@ begin
   select count(*) into given from key_ledger
     where user_id = new.user_id and reason = 'review'
       and created_at >= (kst_today()::timestamp at time zone 'Asia/Seoul');
-  if given < 3 then
+  if given < 3 and not exists (
+    select 1 from key_ledger where user_id = new.user_id and reason = 'review' and series_id = new.series_id
+  ) then
     update key_wallets set keys = keys + 5, updated_at = now() where user_id = new.user_id;
-    insert into key_ledger (user_id, change, reason, detail) values (new.user_id, 5, 'review', new.id::text);
+    insert into key_ledger (user_id, change, reason, detail, series_id) values (new.user_id, 5, 'review', new.id::text, new.series_id);
   end if;
   return new;
 end $$;
@@ -169,7 +174,31 @@ drop trigger if exists comments_reward_keys on comments;
 create trigger comments_reward_keys after insert on comments
   for each row execute function reward_review_keys();
 
+-- 후기를 지우면 그 글로 받은 열쇠조각을 회수한다. 이미 써서 모자라면 0까지만 내린다
+create or replace function reclaim_review_keys() returns trigger
+language plpgsql security definer set search_path = public as $$
+declare
+  wallet key_wallets;
+  taken int;
+begin
+  -- 탈퇴로 계정과 함께 지워지는 중이면 회수하지 않는다 (없는 계정으로 기록을 남기려다 탈퇴가 실패하지 않게)
+  if not exists (select 1 from auth.users where id = old.user_id) then return old; end if;
+  if not exists (select 1 from key_ledger where user_id = old.user_id and reason = 'review' and detail = old.id::text)
+    or exists (select 1 from key_ledger where user_id = old.user_id and reason = 'review_undo' and detail = old.id::text) then
+    return old;
+  end if;
+  wallet := lock_wallet(old.user_id);
+  taken := least(wallet.keys, 5);
+  update key_wallets set keys = keys - taken, updated_at = now() where user_id = old.user_id;
+  insert into key_ledger (user_id, change, reason, detail, series_id) values (old.user_id, -taken, 'review_undo', old.id::text, old.series_id);
+  return old;
+end $$;
+
+drop trigger if exists comments_reclaim_keys on comments;
+create trigger comments_reclaim_keys after delete on comments
+  for each row execute function reclaim_review_keys();
+
 -- 함수는 로그인한 사람만 부른다 (lock_wallet·reward_review_keys는 안에서만 쓰므로 막아 둔다)
-revoke execute on function lock_wallet(uuid), reward_review_keys() from public, anon, authenticated;
+revoke execute on function lock_wallet(uuid), reward_review_keys(), reclaim_review_keys() from public, anon, authenticated;
 revoke execute on function claim_daily_keys(), draw_weapon() from public, anon;
 grant execute on function claim_daily_keys(), draw_weapon() to authenticated;

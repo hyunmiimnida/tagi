@@ -133,13 +133,14 @@ export function Comments({ seriesId }: { seriesId: string }) {
       return;
     }
     setDraft("");
-    user.refreshKeys(); // 후기 선물 열쇠조각 (supabase/gacha.sql, 하루 3번까지)
+    user.refreshKeys(); // 후기 선물 열쇠조각 (supabase/gacha.sql, 프로그램마다 한 번, 하루 3번까지)
     void load();
   }
 
   async function remove(id: number) {
-    if (!supabase || !window.confirm("댓글을 지울까요?")) return;
+    if (!supabase || !window.confirm("댓글을 지울까요? 이 글로 받은 열쇠조각은 회수되고, 다시 써도 받지 못해요.")) return;
     await supabase.rpc("delete_my_comment", { target: id });
+    user.refreshKeys();
     void load();
   }
 
@@ -170,7 +171,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
     <section className="card comments">
       <h2 className="card-title">후기·정보 나눔</h2>
       <p className="card-sub">지난 회차에 참여했다면 준비 팁이나 후기를 남겨 주세요. 다음 회차를 준비하는 학생에게 도움이 돼요.</p>
-      {user.loginEnabled && !missingTable && <p className="card-sub">후기를 쓰면 열쇠조각을 받을 수 있어요. 별점이나 내용과는 상관없어요.</p>}
+      {user.loginEnabled && !missingTable && <p className="card-sub">후기를 쓰면 프로그램마다 한 번 열쇠조각을 받아요. 별점이나 내용과는 상관없어요.</p>}
 
       {!user.loginEnabled || missingTable ? (
         <p className="comment-empty">댓글 기능을 준비하고 있어요. 곧 후기를 남길 수 있어요.</p>

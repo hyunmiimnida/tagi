@@ -7,7 +7,7 @@ import type { Grade, WeaponId } from "./weapons.ts";
 export const WELCOME_KEYS = 20; // 처음 온 사람 (계정마다 한 번, 그날 접속 선물과 따로)
 export const DAILY_KEYS = 5; // 하루 첫 접속 (한국 날짜 기준)
 export const DEMO_KEYS = 100; // 체험 모드(Supabase 설정 없음)는 들어올 때마다 이만큼 채워 준다 (무기도 모두 열림)
-export const REVIEW_KEYS = 5; // 후기 댓글 하나
+export const REVIEW_KEYS = 5; // 후기 댓글 하나 (프로그램마다 계정당 한 번. 지우면 회수하고, 다시 써도 주지 않는다)
 export const REVIEW_DAILY_MAX = 3; // 후기 선물은 하루 3번까지 (지운 댓글도 센다)
 export const DRAW_COST = 10; // 열쇠조각 10개 = 뽑기 한 번
 

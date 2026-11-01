@@ -72,7 +72,7 @@ export function TreasureBox() {
           <li>처음 오면 · 열쇠조각 {WELCOME_KEYS}개</li>
           <li>매일 첫 접속 · {DAILY_KEYS}개</li>
           <li>
-            후기 남기기 · {REVIEW_KEYS}개 (하루 {REVIEW_DAILY_MAX}번까지)
+            후기 남기기 · {REVIEW_KEYS}개 (프로그램마다 한 번, 하루 {REVIEW_DAILY_MAX}번까지)
           </li>
           <li>이미 가진 무기가 나오면 열쇠조각 일부를 돌려받아요</li>
         </ul>
