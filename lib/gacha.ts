@@ -24,9 +24,6 @@ export const ODDS_TOTAL = 10000;
 // 이미 가진 무기가 나오면 열쇠조각을 일부 돌려준다
 export const REFUND: Record<Exclude<DrawGrade, "shard">, number> = { common: 2, rare: 5, heroic: 10 };
 
-// 확률 표에 쓰는 글자 (80%, 0.99%, 0.01%)
-export const oddsPercent = (weight: number): string => `${Number(((weight / ODDS_TOTAL) * 100).toFixed(2))}%`;
-
 // 등급마다 나올 수 있는 무기 (맨손·전설 자리는 빼고)
 export const DRAW_POOL: Record<Exclude<DrawGrade, "shard">, WeaponId[]> = {
   common: WEAPON_IDS.filter((id) => WEAPONS[id].grade === "common" && WEAPONS[id].family !== "fist"),

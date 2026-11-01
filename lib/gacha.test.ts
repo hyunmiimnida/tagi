@@ -1,22 +1,14 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { WELCOME_KEYS, DAILY_KEYS, DRAW_COST, DRAW_POOL, ODDS, ODDS_TOTAL, REFUND, REVIEW_DAILY_MAX, REVIEW_KEYS, drawOnce, gradeOf, keysAfter, oddsPercent } from "./gacha.ts";
+import { WELCOME_KEYS, DAILY_KEYS, DRAW_COST, DRAW_POOL, ODDS, ODDS_TOTAL, REFUND, REVIEW_DAILY_MAX, REVIEW_KEYS, drawOnce, gradeOf, keysAfter } from "./gacha.ts";
 import { WEAPONS } from "./weapons.ts";
 
 const sql = readFileSync(new URL("../supabase/gacha.sql", import.meta.url), "utf8");
 
 test("확률은 80% / 19% / 0.99% / 0.01%이고 합이 100%", () => {
   assert.equal(ODDS.reduce((sum, [, weight]) => sum + weight, 0), ODDS_TOTAL);
-  assert.deepEqual(
-    ODDS.map(([grade, weight]) => [grade, oddsPercent(weight)]),
-    [
-      ["common", "80%"],
-      ["rare", "19%"],
-      ["heroic", "0.99%"],
-      ["shard", "0.01%"],
-    ],
-  );
+  assert.deepEqual(ODDS, [["common", 8000], ["rare", 1900], ["heroic", 99], ["shard", 1]]);
   assert.equal(gradeOf(0), "common");
   assert.equal(gradeOf(7999), "common");
   assert.equal(gradeOf(8000), "rare");

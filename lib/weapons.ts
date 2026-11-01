@@ -10,7 +10,6 @@ import { EXTRA_WEAPONS } from "./weapons-extra.ts";
 export type WeaponFamily = "sword" | "staff" | "bow" | "relic" | "pen" | "instrument" | "fist";
 export type Grade = "common" | "rare" | "heroic" | "legendary";
 
-export const GRADE_NAMES: Record<Grade, string> = { common: "일반", rare: "희귀", heroic: "영웅", legendary: "전설" };
 export const GRADES: Grade[] = ["common", "rare", "heroic", "legendary"];
 
 // 스킬: 별을 켜 주는 동작 (components/StarHelper.tsx의 SKILLS)
@@ -87,7 +86,6 @@ export const WEAPONS = { ...BASE_WEAPONS, ...EXTRA_WEAPONS };
 export type WeaponId = keyof typeof WEAPONS;
 export const WEAPON_IDS = Object.keys(WEAPONS) as WeaponId[];
 
-export const weaponOf = (id: WeaponId): WeaponDef => WEAPONS[id];
 export const isWeaponId = (value: unknown): value is WeaponId => typeof value === "string" && value in WEAPONS;
 
 // 처음부터 가진 무기는 맨손 하나. 나머지(일반 포함)는 보물상자 뽑기(lib/gacha.ts)로 얻는다.

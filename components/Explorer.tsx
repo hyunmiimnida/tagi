@@ -97,7 +97,7 @@ export function Explorer({ categories, schools }: Props) {
   const today = useToday();
   const [showClosed, setShowClosed] = useState(false);
   // 끝난 공고는 "마감 포함"을 켰을 때만 더 받는다
-  const { programs: loadedPrograms, failed, retry } = useListPrograms({ past: showClosed });
+  const { programs: loadedPrograms, failed, pending, retry } = useListPrograms({ past: showClosed });
   const programs: ProgramView[] = useMemo(() => loadedPrograms ?? [], [loadedPrograms]);
   const [limit, setLimit] = useState(PAGE_SIZE);
   const [loaded, setLoaded] = useState(false);
@@ -327,15 +327,15 @@ export function Explorer({ categories, schools }: Props) {
   const hasChips = selected.size > 0 || units.size > 0 || who.size > 0;
   const schoolFilterCount = units.size + who.size;
 
-  const option = (key: string, label: string, on: boolean, count: number | undefined, onClick: () => void) => (
+  const option = (key: string, label: string, on: boolean, count: number | undefined, onClick: () => void, note?: string) => (
     <button
       key={key}
-      className={`tag-option ${on ? "on" : ""} ${count === 0 && !on ? "dim" : ""}`}
+      className={`tag-option ${on ? "on" : ""} ${count === 0 && !on && !note ? "dim" : ""}`}
       aria-pressed={on}
       onClick={onClick}
     >
       {label}
-      <span>{ready ? (count ?? 0) : ""}</span>
+      <span>{ready ? (note ?? count ?? 0) : ""}</span>
     </button>
   );
 
@@ -411,7 +411,8 @@ export function Explorer({ categories, schools }: Props) {
                 {schools
                   .filter((s) => s.region === shownRegion)
                   .map((s) =>
-                    option(s.id, s.name, school === s.id, counts.school.get(s.id), () => chooseSchool(school === s.id ? null : s.id)),
+                    // 직접 올린 공고가 없어도 고르면 "다른 학교도 지원" 공고가 보여서 0개라고 쓰지 않는다
+                    option(s.id, s.name, school === s.id, counts.school.get(s.id), () => chooseSchool(school === s.id ? null : s.id), includeOpen && counts.school.get(s.id) === 0 ? "다른 학교 공고만" : undefined),
                   )}
                 <p className="panel-note">숫자는 그 학교가 직접 올린 공고예요. 학교를 고르면 다른 학교 학생도 지원할 수 있는 공고가 함께 보여요.</p>
               </div>
@@ -477,7 +478,7 @@ export function Explorer({ categories, schools }: Props) {
       </div>
 
       <div className="list-head">
-        <span className="list-count">{ready ? <>공고 <strong>{visible.length}</strong>개</> : " "}</span>
+        <span className="list-count">{ready ? <>공고 <strong>{visible.length}</strong>개{pending && " · 지난 공고 불러오는 중"}</> : " "}</span>
         <div className="list-options">
           <div className="segmented" role="group" aria-label="정렬">
             <button className={sort === "deadline" ? "on" : ""} onClick={() => setSort("deadline")}>

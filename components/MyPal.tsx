@@ -1,6 +1,6 @@
 "use client";
 
-import { palRows } from "../lib/pixel-pals.ts";
+import { palSilhouetteRows, withBubble } from "../lib/pixel-pals.ts";
 import type { PalBubble, PalPose } from "../lib/pixel-pals.ts";
 import { useUser } from "../lib/user.tsx";
 import { PeekPal, PixelPal, PixelSprite } from "./PixelPal.tsx";
@@ -15,7 +15,7 @@ export function MyPal(props: { pose: PalPose; scale?: number; delay?: number; bu
 
 // 아직 캐릭터가 없을 때(로그인 전) 자리에 두는 회색 실루엣 (무기 도감의 잠긴 무기와 같은 느낌)
 export function PalSilhouette({ scale = 3 }: { scale?: number }) {
-  return <PixelSprite rows={palRows("wizard", "sit").map((row) => row.replace(/[^.]/g, "b"))} scale={scale} />;
+  return <PixelSprite rows={withBubble(palSilhouetteRows(), "question")} scale={scale} />;
 }
 
 export function MyPeekPal(props: { right?: number; delay?: number; searching?: boolean }) {

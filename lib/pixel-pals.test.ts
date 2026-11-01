@@ -109,3 +109,11 @@ test("저장해 둔 캐릭터 값은 그릴 수 있는 것만 받고, 처음 온
   assert.ok(actionRows(bare, "punch").some((row) => row.slice(16).includes("S")));
   assert.notDeepEqual(actionRows(bare, "stand"), actionRows("knight", "stand")); // 같은 차림이어도 맨손은 칼을 들지 않는다
 });
+
+test("실루엣은 캐릭터와 같은 모양이고 회색 두 가지만 쓴다", async () => {
+  const { palRows, palSilhouetteRows } = await import("./pixel-pals.ts");
+  const rows = palSilhouetteRows();
+  const shape = (r: string[]) => r.map((row) => row.replace(/[^.]/g, "x"));
+  assert.deepEqual(shape(rows), shape(palRows("wizard", "sit")));
+  assert.deepEqual([...new Set(rows.join("").replaceAll(".", ""))].sort(), ["M", "m"]);
+});

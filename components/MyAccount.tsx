@@ -38,7 +38,7 @@ export function MyAccount({ schools, sources }: Props) {
   const router = useRouter();
   const today = useToday();
   // 관심 공고 일정·관심 분야 공고 수: 아직 볼 만한 공고만 (목록 데이터는 홈·공고 화면과 같이 쓴다)
-  const { programs: loaded } = useListPrograms({ past: true }); // 관심 공고는 이미 끝났을 수 있다
+  const { programs: loaded } = useListPrograms({ past: user.favorites.size > 0 }); // 관심 공고는 이미 끝났을 수 있다
   const programs: ProgramView[] = useMemo(() => (loaded && today ? loaded.filter((p) => isCurrent(p, today)) : []), [loaded, today]);
   const { profile } = user;
   const [blockCount, setBlockCount] = useState<number | null>(null);

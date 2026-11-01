@@ -69,6 +69,15 @@ export function withBubble(rows: string[], bubble: PalBubble): string[] {
   return rows.map((row, y) => row + (BUBBLES[bubble][y] ?? pad));
 }
 
+// 아직 캐릭터가 없을 때의 실루엣: 사람 모양이 보이게 바깥쪽 칸은 진한 회색, 안쪽은 연한 회색
+export function palSilhouetteRows(): string[] {
+  const rows = palRows("wizard", "sit");
+  const empty = (x: number, y: number) => (rows[y]?.[x] ?? ".") === ".";
+  return rows.map((row, y) =>
+    [...row].map((ch, x) => (ch === "." ? "." : empty(x - 1, y) || empty(x + 1, y) || empty(x, y - 1) || empty(x, y + 1) ? "m" : "M")).join(""),
+  );
+}
+
 // 얼굴 6줄. side는 얼굴 양옆(모자·두건) 색. 눈은 2×3에 반짝이 한 점, 볼 터치, 작은 입
 const face = (side: string) => [
   `.K${side}SSSSSSSSS${side}K..`,

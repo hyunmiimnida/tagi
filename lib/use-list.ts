@@ -30,17 +30,23 @@ function loadFile(url: string): Promise<ProgramView[]> {
 const loadList = (past: boolean): Promise<ProgramView[]> =>
   past ? Promise.all([loadFile(LIST_URL), loadFile(PAST_LIST_URL)]).then(([now, old]) => [...now, ...old]) : loadFile(LIST_URL);
 
-// 받는 중이면 null, 받지 못하면 failed가 true. past: 이미 끝난 공고까지 (마감 포함·캘린더·프로필·관리자)
-export function useListPrograms({ past = false }: { past?: boolean } = {}): { programs: ProgramView[] | null; failed: boolean; retry: () => void } {
+// 받는 중이면 null, 받지 못하면 failed가 true. past: 이미 끝난 공고까지 (마감 포함·캘린더·프로필·관리자).
+// pending: 이미 보여 주는 목록이 있는 채로 끝난 공고를 더 받는 중
+export function useListPrograms({ past = false }: { past?: boolean } = {}): { programs: ProgramView[] | null; failed: boolean; pending: boolean; retry: () => void } {
   const [programs, setPrograms] = useState<ProgramView[] | null>(null);
   const [failed, setFailed] = useState(false);
   const [attempt, setAttempt] = useState(0);
+  const [loadedPast, setLoadedPast] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
     setFailed(false);
     loadList(past).then(
-      (list) => !cancelled && setPrograms(list),
+      (list) => {
+        if (cancelled) return;
+        setPrograms(list);
+        setLoadedPast(past);
+      },
       () => !cancelled && setFailed(true),
     );
     return () => {
@@ -48,7 +54,7 @@ export function useListPrograms({ past = false }: { past?: boolean } = {}): { pr
     };
   }, [attempt, past]);
 
-  return { programs, failed, retry: () => setAttempt((n) => n + 1) };
+  return { programs, failed, pending: past && !loadedPast && programs !== null && !failed, retry: () => setAttempt((n) => n + 1) };
 }
 
 // 반복 프로그램 묶음 → [최근 회차 제목, 지금 목록의 공고 id]. 내 댓글·관리자 화면에서 댓글이 어느 공고인지 보여 줄 때만 받는다
