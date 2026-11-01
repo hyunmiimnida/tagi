@@ -12,13 +12,14 @@ import {
 } from "./archive.ts";
 import { mergeCollectLog } from "./collect-log.ts";
 import type { CollectLog, SourceLog } from "./collect-log.ts";
-import { collectors } from "./collectors/index.ts";
+import { archivers, collectors } from "./collectors/index.ts";
 import { collapseReposts, findAmbiguousPairs, mergePair, mergePrograms } from "./dedupe.ts";
 import { applyCampus } from "./campus.ts";
 import { cleanPeriods, looksLikeNoticeOnly, notForStudentsByTitle } from "./extract.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots, robotsBlocked, robotsProblemOf } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
+import { finishRecheck, readRechecks, recheckLimit } from "./recheck-open.ts";
 import type { CollectedItem, Program, School, Source, TagCategory } from "./types.ts";
 
 const CONFIG_DIR = new URL("../config/", import.meta.url);
@@ -102,10 +103,29 @@ await Promise.all(
   }),
 );
 
+// 모집 중인 공고는 정해진 수만 다시 읽는다.
+const checkedAt = new Date().toISOString();
+const rechecked = await readRechecks(existing, checkedAt, recheckLimit(process.env.RECHECK_LIMIT), {
+  schools, archivers, githubActions: process.env.GITHUB_ACTIONS === "true",
+}, fetchHtml);
+const changed = rechecked.checks.filter((check) => check.state === "changed");
+const checkedById = new Map(rechecked.checks.map((check) => [check.saved.id, check]));
+const checkedUrls = new Set(rechecked.checks.flatMap((check) => check.saved.links.map((link) => link.url)));
+for (const check of changed) {
+  const { school, source } = tasks.find(({ source }) => source.id === check.saved.links[0].sourceId)!;
+  enrich(check.item, source, categories);
+  applyCampus(check.item.program, school, check.item.campusLabel);
+}
+// 목록에서도 읽힌 글은 재확인 결과만 쓴다.
+for (const result of results) result.items = result.items.filter((item) => !checkedUrls.has(item.program.links[0].url));
+console.log(`원문 다시 확인 ${rechecked.attempted}개, 바뀜 ${changed.length}개`);
+if (rechecked.skipped) console.log(`원문 다시 확인 건너뜀 ${rechecked.skipped}개`);
+
 // 2단계: AI 추출이 필요한 글을 모두 모아 한꺼번에 보낸다 (ai.ts가 여러 묶음을 동시에 보낸다)
 const needAi = results
   .filter(({ source }) => source.useAi)
-  .flatMap(({ items }) => items.filter((item) => !aiDoneUrls.has(item.program.links[0].url) && !notForStudentsByTitle(item.program.title)));
+  .flatMap(({ items }) => items.filter((item) => !aiDoneUrls.has(item.program.links[0].url) && !notForStudentsByTitle(item.program.title)))
+  .concat(changed.map((check) => check.item));
 // 어떤 AI로 정리하는지 기록에 남긴다 (작업 스케줄러처럼 앱 밖에서 돌 때 AI를 못 찾으면 규칙으로만 정리된다)
 if (needAi.length > 0) console.log(`AI 정리: ${AI_ENGINE} ${findAi() ?? "→ 찾지 못해 규칙으로만 정리"} (${needAi.length}개)`);
 const ai = needAi.length > 0 ? await enrichWithAi(needAi, categories) : null;
@@ -135,8 +155,20 @@ for (const { source, label, items } of results) {
 // 마지막 일정이 오래 지난 항목은 지우지 않고 보관함(archive.json)으로 옮긴다
 // 같은 게시판에 다시 올린 글은 하나로 합치고, 말이 안 되는 기간은 지운다
 // 제목 규칙이 나중에 늘어도 이미 저장된 글까지 빠지도록 여기서도 거른다
-const keep = (p: Program) => !excluded.has(p.id) && !notForStudentsByTitle(p.title);
-const combined = collapseReposts(mergePrograms(existing, incoming).filter(keep));
+const keep = (p: Program) => checkedById.has(p.id) || (!excluded.has(p.id) && !notForStudentsByTitle(p.title));
+// 일반 수집으로 덮어쓸 때도 마지막 확인 기록은 이어받는다.
+const savedByUrl = new Map(existing.flatMap((p) => p.links.map((link) => [link.url, p] as const)));
+for (const p of incoming) {
+  const saved = savedByUrl.get(p.links[0].url);
+  if (saved?.links[0].url === p.links[0].url) {
+    p.contentHash = saved.contentHash;
+    p.checkedAt = saved.checkedAt;
+  }
+}
+const combined = collapseReposts(mergePrograms(existing, incoming).map((p) => {
+  const check = checkedById.get(p.id);
+  return check ? finishRecheck(check, checkedAt, ai?.notForStudents.has(check.saved.id)) : p;
+}).filter(keep));
 // 이미 저장된 공고도 제목으로 다른 캠퍼스를 가린다 (캠퍼스 설정을 나중에 더했을 때)
 const schoolOfSource = new Map(schools.flatMap((school) => school.sources.map((source) => [source.id, school] as const)));
 for (const program of combined) {

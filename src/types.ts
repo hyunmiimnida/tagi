@@ -34,6 +34,8 @@ export interface Program {
   postedAt: string | null; // 원문 게시일
   extractedBy: "rules" | "ai"; // 정보 추출 방법
   collectedAt: string;
+  contentHash?: string; // 본문 대신 저장하는 짧은 해시
+  checkedAt?: string; // 원문을 마지막으로 확인한 시각
   firstSeenAt?: string; // 처음 수집한 시각 (새로 올라온 항목 표시용)
   aliases?: string[]; // 이 공고에 합쳐져 없어진 공고 id (예전 주소를 이 공고로 연결한다)
   // 무엇을 하는(받는) 기회인지 AI가 쓴 한 문장 요약. null = 알 수 없음, 없음(undefined) = 아직 묻지 않음
