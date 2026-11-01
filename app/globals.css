@@ -3826,7 +3826,7 @@ button.stat {
   vertical-align: middle;
 }
 
-/* 무기를 얻는 순간 (components/WeaponReveal.tsx): 화면을 덮는 어두운 막 위에서 보물상자가 열린다 */
+/* 뽑기 결과 (components/WeaponReveal.tsx): 화면을 덮는 어두운 막 위에서 보물상자가 열린다 */
 .reveal-backdrop {
   position: fixed;
   inset: 0;
@@ -3834,7 +3834,7 @@ button.stat {
   display: grid;
   place-items: center;
   padding: 24px;
-  background: rgb(18 12 34 / 82%);
+  background: rgb(18 12 34 / 93%);
   animation: reveal-fade 0.25s ease-out;
 }
 
@@ -3843,80 +3843,208 @@ button.stat {
 }
 
 .reveal {
+  --g: #d5d9e0;
   position: relative;
   display: grid;
   justify-items: center;
   width: min(340px, 100%);
 }
 
-/* 상자에서 터져 나오는 등급 빛 (일반은 금빛, 나머지는 아우라 색) */
-.reveal-light {
-  --aura: #ffe08a;
+.reveal-flash { --g: #d5d9e0; }
+.grade-rare { --g: #6cc0ff; }
+.grade-heroic { --g: #c79bff; }
+.grade-legendary { --g: #ffbf47; }
+
+/* 상자: 떨어져 쿵 → 덜컥덜컥 → 틈새 빛 → 열림. 도트 느낌을 살리려고 모두 끊어서(steps) 움직인다 */
+.reveal-chest {
+  position: relative;
+  margin-top: 150px;
+  line-height: 0;
+}
+
+.stage-drop .reveal-chest {
+  animation: reveal-drop 0.24s steps(5, end) both;
+}
+
+@keyframes reveal-drop {
+  0% { transform: translateY(-260px); }
+  70% { transform: translateY(0) scale(1.08, 0.9); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.stage-rattle .reveal-chest {
+  animation: reveal-rattle 0.22s steps(2, end) infinite;
+}
+
+.stage-crack .reveal-chest {
+  animation: reveal-rattle 0.1s steps(2, end) infinite;
+  filter: drop-shadow(0 0 0 var(--g)) drop-shadow(0 -6px 14px var(--g));
+}
+
+@keyframes reveal-rattle {
+  0%, 100% { transform: translateX(-3px) rotate(-1.5deg); }
+  50% { transform: translateX(3px) rotate(1.5deg); }
+}
+
+.stage-burst .reveal-chest {
+  animation: reveal-pop 0.18s steps(3, end);
+  filter: drop-shadow(0 -10px 22px var(--g));
+}
+
+@keyframes reveal-pop {
+  0% { transform: scale(1.14, 0.86); }
+}
+
+.stage-rise .reveal-chest,
+.stage-done .reveal-chest {
+  filter: drop-shadow(0 -6px 14px var(--g));
+}
+
+/* 귀한 등급: 화면 전체가 흔들린다 */
+.grade-heroic.stage-crack,
+.grade-legendary.stage-crack,
+.grade-heroic.stage-burst,
+.grade-legendary.stage-burst {
+  animation: reveal-quake 0.12s steps(2, end) infinite;
+}
+
+@keyframes reveal-quake {
+  0%, 100% { transform: translate(-3px, 2px); }
+  50% { transform: translate(3px, -2px); }
+}
+
+/* 열쇠조각이 아래에서 날아와 자물쇠에 꽂히고 찰칵 */
+.reveal-key {
   position: absolute;
-  top: 18px;
+  top: 70px;
   left: 50%;
-  width: 260px;
-  height: 260px;
-  margin-left: -130px;
-  border-radius: 50%;
-  background:
-    repeating-conic-gradient(from 0deg, color-mix(in srgb, var(--aura) 45%, transparent) 0deg 10deg, transparent 10deg 30deg),
-    radial-gradient(closest-side, color-mix(in srgb, var(--aura) 70%, transparent), transparent);
+  margin-left: -15px;
+  animation: reveal-key-in 0.2s steps(5, end) both;
+}
+
+@keyframes reveal-key-in {
+  from { transform: translateY(110px); }
+}
+
+.reveal-click {
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  width: 34px;
+  height: 34px;
+  margin-left: -17px;
+  border: 3px solid #fff1a0;
   opacity: 0;
-  transform: scale(0.3);
+  animation: reveal-click 0.12s steps(3, end) 0.16s both;
+}
+
+@keyframes reveal-click {
+  0% { opacity: 1; transform: scale(0.4); }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+
+/* 떨어질 때 양옆으로 퍼지는 먼지 */
+.reveal-dust {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+}
+
+.reveal-dust i {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #c9c1e6;
+  opacity: 0;
+  animation: reveal-dust 0.2s steps(4, end) 0.16s both;
+}
+
+@keyframes reveal-dust {
+  0% { opacity: 0.9; transform: translate(0, 0); }
+  100% { opacity: 0; transform: translate(var(--dx), -10px); }
+}
+
+/* 열리는 순간 화면 전체가 번쩍 */
+.reveal-flash {
+  position: fixed;
+  inset: 0;
+  background: var(--g);
+  opacity: 0;
   pointer-events: none;
+  animation: reveal-flash-all 0.26s steps(4, end);
 }
 
-.reveal-light.aura-rare { --aura: #ffffff; }
-.reveal-light.aura-heroic { --aura: #b48cff; }
-.reveal-light.aura-legendary { --aura: #ffb02e; }
-
-.stage-open .reveal-light,
-.stage-silhouette .reveal-light,
-.stage-reveal .reveal-light {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.3s, transform 0.5s steps(5, end);
-  animation: reveal-spin 8s linear infinite;
+@keyframes reveal-flash-all {
+  0% { opacity: 0.85; }
+  100% { opacity: 0; }
 }
 
-@keyframes reveal-spin {
-  to { rotate: 1turn; }
+/* 터져 나가는 픽셀 조각 */
+.reveal-chips {
+  position: absolute;
+  top: 44px;
+  left: 50%;
 }
 
-/* 무기: 상자에서 떠올라 실루엣 → 진짜 모습 */
+.reveal-chips i {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--g);
+  box-shadow: 2px 2px 0 rgb(0 0 0 / 35%);
+  opacity: 0;
+  animation: reveal-chip 0.5s steps(8, end) var(--delay) both;
+}
+
+.reveal-chips i:nth-child(3n) {
+  width: 5px;
+  height: 5px;
+  background: #fff;
+}
+
+@keyframes reveal-chip {
+  0% { opacity: 1; transform: translate(0, 0); }
+  70% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--dx), calc(var(--dy) + 24px)); }
+}
+
+/* 무기: 상자에서 튀어 올라 실루엣 → 진짜 모습으로 번쩍 */
 .reveal-weapon {
   position: absolute;
-  top: 40px;
+  top: 8px;
+  z-index: 1;
   line-height: 0;
-  animation: reveal-rise 0.5s steps(6, end) both;
+  animation: reveal-rise 0.28s steps(6, end) both;
 }
 
-.stage-reveal .reveal-weapon {
-  animation: reveal-flash 0.35s steps(3, end);
+.stage-done .reveal-weapon {
+  animation: reveal-land 0.32s steps(5, end);
 }
 
 @keyframes reveal-rise {
-  from { transform: translateY(90px) scale(0.6); opacity: 0; }
+  from { transform: translateY(110px) scale(0.5); opacity: 0; }
 }
 
-@keyframes reveal-flash {
-  0% { filter: brightness(3); }
+@keyframes reveal-land {
+  0% { filter: brightness(4); transform: translateY(-14px) scale(1.12); }
+  60% { filter: brightness(1.4); transform: translateY(3px) scale(0.98); }
 }
 
-.reveal-chest {
-  margin-top: 170px;
-  line-height: 0;
+/* 결과 화면에 떠다니는 빛 알갱이 (희귀 이상) */
+.reveal-sparkle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: var(--g);
+  opacity: 0;
+  pointer-events: none;
+  animation: reveal-sparkle 1.6s steps(8, end) infinite;
 }
 
-.stage-shake .reveal-chest {
-  animation: reveal-shake 0.5s steps(4, end) infinite;
-}
-
-@keyframes reveal-shake {
-  0%, 100% { transform: rotate(0); }
-  25% { transform: rotate(-4deg) translateX(-2px); }
-  75% { transform: rotate(4deg) translateX(2px); }
+@keyframes reveal-sparkle {
+  0%, 100% { opacity: 0; transform: translateY(8px); }
+  50% { opacity: 1; }
+  100% { transform: translateY(-16px); }
 }
 
 .reveal-text {
@@ -3949,9 +4077,9 @@ button.stat {
 
 @media (prefers-reduced-motion: reduce) {
   .reveal-backdrop,
-  .reveal-light,
   .reveal-weapon,
   .reveal-chest,
+  .reveal-sparkle,
   .reveal-name {
     animation: none !important;
     transition: none !important;
