@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { WELCOME_KEYS, DAILY_KEYS, DRAW_COST, DRAW_POOL, ODDS, ODDS_TOTAL, REFUND, REVIEW_DAILY_MAX, REVIEW_KEYS, drawOnce, gradeOf, keysAfter } from "./gacha.ts";
+import { WELCOME_KEYS, DAILY_KEYS, DRAW_COST, DRAW_POOL, ODDS, ODDS_TOTAL, REFUND, REVIEW_DAILY_MAX, REVIEW_KEYS, drawOnce, gradeOf, keysAfter, reviewRewardNote } from "./gacha.ts";
 import { WEAPONS } from "./weapons.ts";
 
 const sql = readFileSync(new URL("../supabase/gacha.sql", import.meta.url), "utf8");
@@ -65,6 +65,14 @@ test("서버(supabase/gacha.sql)와 화면의 규칙이 같다", () => {
   assert.match(sql, new RegExp(`if given < ${REVIEW_DAILY_MAX} and not exists`));
   assert.match(sql, new RegExp(`paid := least\\(wallet\\.key_debt, ${REVIEW_KEYS}\\)`));
   assert.match(sql, new RegExp(`granted := ${REVIEW_KEYS} - paid`));
+});
+
+test("후기 보상 안내는 남은 횟수와 받는 양을 알려 준다", () => {
+  assert.match(reviewRewardNote(1, 0, false), /2번 남았어요.*5개를 받아요/);
+  assert.match(reviewRewardNote(3, 0, false), /모두 받았어요/);
+  assert.match(reviewRewardNote(0, 0, true), /이미 보상을 받아서/);
+  assert.match(reviewRewardNote(0, 3, false), /3개를 갚고 2개를 받아요/);
+  assert.match(reviewRewardNote(0, 7, false), /7개가 있어서.*5개를 갚고 받는 열쇠조각은 없어요/);
 });
 
 test("후기는 프로그램마다 한 번, 지우면 회수하고 탈퇴 때는 건너뛴다", () => {

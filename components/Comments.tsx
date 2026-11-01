@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { reviewRewardNote } from "../lib/gacha.ts";
 import { COMMENT_RULES, REVIEW_USE_NOTICE } from "../lib/policy.ts";
 import { toValidAvatar } from "../lib/pixel-pals.ts";
 import type { Avatar } from "../lib/pixel-pals.ts";
@@ -55,6 +56,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
   const [hasReplies, setHasReplies] = useState(false);
   const [replying, setReplying] = useState<number | null>(null);
   const [replyDraft, setReplyDraft] = useState("");
+  const [rewardNote, setRewardNote] = useState<string | null>(null);
   const loadVersion = useRef(0);
   const { userId } = user;
   const text = KIND_TEXT[hasKinds ? kind : "review"];
@@ -104,6 +106,25 @@ export function Comments({ seriesId }: { seriesId: string }) {
     void load();
     return () => { loadVersion.current++; };
   }, [load]);
+
+  // 오늘 남은 후기 보상 (내 기록만 읽을 수 있다, supabase/gacha.sql. 못 읽으면 안내 없이 둔다)
+  const loadReward = useCallback(async () => {
+    setRewardNote(null);
+    if (!supabase || !userId) return;
+    const today = new Date(Date.now() + 9 * 3_600_000).toISOString().slice(0, 10);
+    const [ledger, wallet] = await Promise.all([
+      supabase.from("key_ledger").select("created_at, series_id").eq("user_id", userId).eq("reason", "review"),
+      supabase.from("key_wallets").select("key_debt").eq("user_id", userId).maybeSingle(),
+    ]);
+    if (ledger.error || wallet.error) return;
+    const rows = ledger.data as { created_at: string; series_id: string | null }[];
+    const usedToday = rows.filter((r) => Date.parse(r.created_at) >= Date.parse(`${today}T00:00:00+09:00`)).length;
+    setRewardNote(reviewRewardNote(usedToday, wallet.data?.key_debt ?? 0, rows.some((r) => r.series_id === seriesId)));
+  }, [seriesId, userId]);
+
+  useEffect(() => {
+    void loadReward();
+  }, [loadReward]);
 
   // 이용 규칙에 동의했는지 (계정에 저장)
   useEffect(() => {
@@ -164,7 +185,10 @@ export function Comments({ seriesId }: { seriesId: string }) {
     setNotice(null);
     if (parentId === null) setDraft("");
     else { setReplyDraft(""); setReplying(null); }
-    if (parentId === null) user.refreshKeys(); // 답글에는 후기 선물이 없다
+    if (parentId === null) {
+      user.refreshKeys(); // 답글에는 후기 선물이 없다
+      void loadReward();
+    }
     void load();
   }
 
@@ -177,6 +201,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
     const { error } = await supabase.rpc("delete_my_comment", { target: id });
     if (error) { setNotice("지우지 못했어요. 잠시 후 다시 시도해 주세요."); return; }
     user.refreshKeys();
+    void loadReward();
     void load();
   }
 
@@ -219,6 +244,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
       {user.loginEnabled && !missingTable && text === KIND_TEXT.review && (
         <p className="card-sub">후기를 쓰면 프로그램마다 한 번 열쇠조각을 받아요. 별점이나 내용과는 상관없고, 답글에는 없어요.</p>
       )}
+      {rewardNote && text === KIND_TEXT.review && user.signedIn && <p className="card-sub">{rewardNote}</p>}
 
       {!user.loginEnabled || missingTable ? (
         <p className="comment-empty">댓글 기능을 준비하고 있어요. 곧 후기를 남길 수 있어요.</p>

@@ -11,6 +11,18 @@ export const REVIEW_KEYS = 5; // 후기 보상 (못 돌려받은 양부터 갚�
 export const REVIEW_DAILY_MAX = 3; // 후기 선물은 하루 3번까지 (지운 댓글도 센다)
 export const DRAW_COST = 10; // 열쇠조각 10개 = 뽑기 한 번
 
+// 후기를 쓰기 전에 보여 주는 안내: 이 후기로 열쇠조각을 얼마나 받는지, 오늘 몇 번 남았는지
+export function reviewRewardNote(usedToday: number, debt: number, rewardedHere: boolean): string {
+  const left = Math.max(0, REVIEW_DAILY_MAX - usedToday);
+  const today = `오늘 후기 보상 ${left}번 남았어요.`;
+  if (left === 0) return "오늘 후기 보상을 모두 받았어요. 내일 다시 받을 수 있어요.";
+  if (rewardedHere) return `${today} 이 프로그램은 이미 보상을 받아서 다른 프로그램에 쓰면 받을 수 있어요.`;
+  if (debt <= 0) return `${today} 이 후기를 쓰면 ${REVIEW_KEYS}개를 받아요.`;
+  const paid = Math.min(debt, REVIEW_KEYS);
+  const got = REVIEW_KEYS - paid;
+  return `${today} 지운 후기에서 못 돌려받은 ${debt}개가 있어서 이 후기로 ${paid}개를 갚고 ${got === 0 ? "받는 열쇠조각은 없어요" : `${got}개를 받아요`}.`;
+}
+
 // 등급 확률 (1만 분의 몇, 화면에는 공개하지 않는다). 전설 무기는 아직 없어서 그 자리에 "전설의 파편"이 나온다 (모아 두면 나중에 보상)
 export type DrawGrade = Exclude<Grade, "legendary"> | "shard";
 export const ODDS: [DrawGrade, number][] = [
