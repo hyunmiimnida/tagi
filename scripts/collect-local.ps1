@@ -20,7 +20,8 @@ function Save-Data {
 
 try {
   # 문의 AI 확인. 실패해도 수집은 계속한다 (git·data와 상관없는 작업이라 맨 앞에서 한다)
-  try { node scripts/triage-feedback.ts } catch { Write-Output "문의 AI 확인 실패: $_" }
+  # cmd로 감싸야 출력이 기록 파일에 남는다 (건수만 찍고 문의 내용은 찍지 않는다)
+  try { cmd /c "node scripts/triage-feedback.ts 2>&1" | Write-Output } catch { Write-Output "문의 AI 확인 실패: $_" }
 
   # 손으로 하던 data 작업(과거 글 저장 등)이 아직 안 올라갔으면 섞이지 않게 이번 자동 수집은 건너뛴다
   # (2026-10-16 자동 수집과 과거 글 저장이 겹쳐 git 충돌 표시가 든 목록이 올라간 적이 있다)
