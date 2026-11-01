@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { describeSources } from "../../lib/data.ts";
 import { SITE_NAME } from "../../lib/filter.ts";
-import { COMMENT_RULES, CONTACT, POLICY_DATE } from "../../lib/policy.ts";
+import { COMMENT_RULES, CONTACT, TERMS_DATE } from "../../lib/policy.ts";
 
 export const metadata = { title: "이용약관" };
 
@@ -10,7 +10,7 @@ export default function TermsPage() {
   return (
     <article className="card doc">
       <h1>이용약관</h1>
-      <p className="doc-date">시행일 {POLICY_DATE}</p>
+      <p className="doc-date">시행일 {TERMS_DATE}</p>
 
       <h2>1. 서비스 내용</h2>
       <p>
@@ -63,7 +63,7 @@ export default function TermsPage() {
         약관을 바꿀 때도 시행 전에 같은 방법으로 알리고, 아래에 바뀐 날짜를 남깁니다.
       </p>
       <ul>
-        <li>{POLICY_DATE}: 이용 나이, 책임 범위, 열쇠조각, 금지 행위, 변경 안내 방법, 분쟁 해결, 후기 통계·요약 이용 추가</li>
+        <li>{TERMS_DATE}: 이용 나이, 책임 범위, 열쇠조각, 금지 행위, 변경 안내 방법, 분쟁 해결, 후기 통계·요약 이용 추가</li>
         <li>2026년 10월 2일: 처음 시행</li>
       </ul>
 
