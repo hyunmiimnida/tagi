@@ -31,17 +31,17 @@ test("이미 가진 무기는 열쇠조각을 돌려주고, 처음 얻으면 돌
   const dice = (...values: number[]) => () => values.shift() ?? 0;
   const rare = drawOnce(new Set(), dice(0.85, 0));
   assert.deepEqual(rare, { kind: "weapon", weapon: DRAW_POOL.rare[0], grade: "rare", duplicate: false, refund: 0 });
-  assert.equal(keysAfter(10, rare), 0);
+  assert.equal(keysAfter(10, rare), 5);
 
   const again = drawOnce(new Set([DRAW_POOL.rare[0]]), dice(0.85, 0));
   assert.equal(again.kind === "weapon" && again.refund, REFUND.rare);
-  assert.equal(keysAfter(10, again), 5);
+  assert.equal(keysAfter(10, again), 10);
 
   // 일반 무기도 처음 나오면 얻고, 가진 것이면 2개를 돌려받는다
   const common = drawOnce(new Set(), dice(0.1, 0));
   assert.equal(common.kind === "weapon" && common.duplicate, false);
   const commonAgain = drawOnce(new Set([DRAW_POOL.common[0]]), dice(0.1, 0));
-  assert.equal(keysAfter(10, commonAgain), 2);
+  assert.equal(keysAfter(10, commonAgain), 7);
 
   const heroic = drawOnce(new Set(DRAW_POOL.heroic), dice(0.995, 0.99));
   assert.equal(heroic.kind === "weapon" && heroic.refund, REFUND.heroic);
@@ -59,6 +59,8 @@ test("서버(supabase/gacha.sql)와 화면의 규칙이 같다", () => {
   // 확률 경계, 비용, 돌려주는 값, 선물
   assert.match(sql, /roll < 8000 then 'common' when roll < 9900 then 'rare' when roll < 9999 then 'heroic' else 'shard'/);
   assert.match(sql, new RegExp(`wallet.keys < ${DRAW_COST} then`));
+  assert.equal(sql.match(new RegExp(`set keys = keys - ${DRAW_COST},`, "g"))?.length, 2);
+  assert.equal(sql.match(new RegExp(`values \\(me, -${DRAW_COST}, 'draw'`, "g"))?.length, 2);
   assert.match(sql, new RegExp(`when 'common' then ${REFUND.common} when 'rare' then ${REFUND.rare} else ${REFUND.heroic} end`));
   assert.match(sql, new RegExp(`granted := ${DAILY_KEYS};`));
   assert.match(sql, new RegExp(`welcome := ${WELCOME_KEYS};`));

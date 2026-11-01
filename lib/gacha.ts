@@ -9,7 +9,7 @@ export const DAILY_KEYS = 5; // 하루 첫 접속 (한국 날짜 기준)
 export const DEMO_KEYS = 100; // 체험 모드(Supabase 설정 없음)는 들어올 때마다 이만큼 채워 준다 (무기도 모두 열림)
 export const REVIEW_KEYS = 5; // 후기 보상 (못 돌려받은 양부터 갚고 지급. 프로그램마다 계정당 한 번, 지워도 다시 주지 않는다)
 export const REVIEW_DAILY_MAX = 3; // 후기 선물은 하루 3번까지 (지운 댓글도 센다)
-export const DRAW_COST = 10; // 열쇠조각 10개 = 뽑기 한 번
+export const DRAW_COST = 5; // 열쇠조각 5개 = 뽑기 한 번
 
 // 후기를 쓰기 전에 보여 주는 안내: 이 후기로 열쇠조각을 얼마나 받는지, 오늘 몇 번 남았는지
 export function reviewRewardNote(usedToday: number, debt: number, rewardedHere: boolean): string {

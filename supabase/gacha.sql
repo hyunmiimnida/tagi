@@ -2,7 +2,7 @@
 -- schema.sql, spam.sql을 실행한 뒤 Supabase의 SQL Editor에 붙여 넣고 한 번 실행한다. (여러 번 실행해도 괜찮다)
 -- 실행하기 전에는 화면의 뽑기 칸이 "준비 중"으로 보이고 나머지는 그대로 동작한다.
 --
--- 열쇠조각: 처음 온 사람 20개(계정마다 한 번), 하루 첫 접속 5개(한국 날짜), 후기 댓글 하나 5개(하루 3번까지, 지운 댓글도 셈). 10개 = 뽑기 한 번.
+-- 열쇠조각: 처음 온 사람 20개(계정마다 한 번), 하루 첫 접속 5개(한국 날짜), 후기 댓글 하나 5개(하루 3번까지, 지운 댓글도 셈). 5개 = 뽑기 한 번.
 -- 확률: 일반 80% / 희귀 19% / 영웅 0.99% / 전설의 파편 0.01%. 등급 안에서는 무기마다 같은 확률.
 -- 이미 가진 무기가 나오면 열쇠조각을 돌려준다: 일반 2, 희귀 5, 영웅 10. 처음부터 가진 무기는 맨손 하나뿐이다.
 -- 뽑기·지급은 모두 아래 함수(security definer)만 한다. 사람은 자기 줄을 읽기만 할 수 있어 열쇠조각을 고쳐 쓸 수 없다.
@@ -114,7 +114,7 @@ begin
   return json_build_object('welcome', welcome, 'granted', granted, 'keys', wallet.keys, 'shards', wallet.legend_shards);
 end $$;
 
--- 뽑기 한 번: 열쇠조각 10개를 쓰고 등급 → 그 등급의 무기 하나. 결과를 돌려준다
+-- 뽑기 한 번: 열쇠조각 5개를 쓰고 등급 → 그 등급의 무기 하나. 결과를 돌려준다
 create or replace function draw_weapon() returns json
 language plpgsql security definer set search_path = public as $$
 declare
@@ -128,22 +128,22 @@ declare
 begin
   if me is null then raise exception 'login required'; end if;
   wallet := lock_wallet(me);
-  if wallet.keys < 10 then raise exception 'gacha:not-enough'; end if;
+  if wallet.keys < 5 then raise exception 'gacha:not-enough'; end if;
 
   roll := floor(random() * 10000)::int; -- 0 ~ 9999
   picked_grade := case when roll < 8000 then 'common' when roll < 9900 then 'rare' when roll < 9999 then 'heroic' else 'shard' end;
 
   if picked_grade = 'shard' then
-    update key_wallets set keys = keys - 10, legend_shards = legend_shards + 1, updated_at = now()
+    update key_wallets set keys = keys - 5, legend_shards = legend_shards + 1, updated_at = now()
       where user_id = me returning * into wallet;
-    insert into key_ledger (user_id, change, reason, detail) values (me, -10, 'draw', 'shard');
+    insert into key_ledger (user_id, change, reason, detail) values (me, -5, 'draw', 'shard');
     return json_build_object('kind', 'shard', 'keys', wallet.keys, 'shards', wallet.legend_shards);
   end if;
 
   select weapon_id into picked from gacha_pool where grade = picked_grade order by random() limit 1;
   duplicate := exists (select 1 from owned_weapons where user_id = me and weapon_id = picked);
-  update key_wallets set keys = keys - 10, updated_at = now() where user_id = me;
-  insert into key_ledger (user_id, change, reason, detail) values (me, -10, 'draw', picked);
+  update key_wallets set keys = keys - 5, updated_at = now() where user_id = me;
+  insert into key_ledger (user_id, change, reason, detail) values (me, -5, 'draw', picked);
   if duplicate then
     refund := case picked_grade when 'common' then 2 when 'rare' then 5 else 10 end;
     update key_wallets set keys = keys + refund where user_id = me;
