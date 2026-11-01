@@ -155,12 +155,14 @@ end $$;
 -- 같은 프로그램은 계정당 한 번만 준다. 지워도 기록이 남으므로 지웠다 다시 써도 또 받지 못한다.
 -- 대화 글(kind = 'talk', comment-threads.sql)에는 주지 않는다
 alter table comments add column if not exists kind text not null default 'review' check (kind in ('review', 'talk'));
+-- 답글 기능 SQL 실행 전에도 보상 함수가 정상 동작하게 칸부터 보장한다 (kind와 같은 방식).
+alter table comments add column if not exists parent_id bigint;
 
 create or replace function reward_review_keys() returns trigger
 language plpgsql security definer set search_path = public as $$
 declare given int;
 begin
-  if new.kind <> 'review' then return new; end if;
+  if new.kind <> 'review' or new.parent_id is not null then return new; end if;
   perform lock_wallet(new.user_id);
   select count(*) into given from key_ledger
     where user_id = new.user_id and reason = 'review'
@@ -201,6 +203,12 @@ end $$;
 drop trigger if exists comments_reclaim_keys on comments;
 create trigger comments_reclaim_keys after delete on comments
   for each row execute function reclaim_review_keys();
+
+-- 답글이 있어 실제 DELETE 대신 작성자 연결을 지우고 자리만 남겨도, OLD의 보상은 한 번 회수한다.
+drop trigger if exists comments_reclaim_thread_keys on comments;
+create trigger comments_reclaim_thread_keys after update of user_id on comments
+  for each row when (old.user_id is not null and new.user_id is null)
+  execute function reclaim_review_keys();
 
 -- 함수는 로그인한 사람만 부른다 (lock_wallet·reward_review_keys는 안에서만 쓰므로 막아 둔다)
 revoke execute on function lock_wallet(uuid), reward_review_keys(), reclaim_review_keys() from public, anon, authenticated;

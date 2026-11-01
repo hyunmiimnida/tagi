@@ -53,6 +53,7 @@
 - 모집 대상 학교: 기본은 게시한 학교. AI가 다른 학교 학생도 지원할 수 있다고 보면 `target.openTo`(예: "전국 대학생")를 쓰고 `target.schools`를 비운다. 학교 배지는 게시한 학교 기준이고, 학교 필터는 openTo 공고도 기본으로 함께 보여 준다("다른 학교도 지원" 배지, 필터 안 스위치로 끄면 이 기기에 기억해 다른 화면을 보고 와도 꺼져 있고(`lib/user.tsx`의 `includeOpen`, 홈 숫자도 따름) 주소에 `open=0`)
 - 캘린더의 "지난 관심 공고": 보관함으로 간 관심 공고를 `public/api/ids.json`에서 찾아 제목·원문·이번 회차를 보여 준다 (`components/PastFavorites.tsx`)
 - 댓글 도배 막기: `supabase/spam.sql` 트리거(20초 안 재작성, 하루 20개, 같은 내용 반복, 링크 2개 이상). 걸리면 `spam:이유` 오류 → `components/Comments.tsx`가 안내
+  - 후기·대화 답글은 한 단계·보상 없음(`supabase/comment-threads.sql`, gacha도 재실행). 답글 있는 원글은 본인·관리자 삭제·탈퇴 모두 본문·작성자·신고 연결을 지우고 자리만 남기며 마지막 답글 삭제 때 자리도 지움. 새 뷰 실행 전에는 답글 없이 기존 탭 유지.
   - `supabase/program-reports-guard.sql`: 정보 오류 신고(로그인 없이도 됨) 도배 막기 — 작성 시각·처리 상태를 서버가 정하고, 같은 공고·같은 이유 하루 1번, 한 공고에 처리 안 된 신고 5개까지, 한 사람 1시간 10개(비로그인은 모두 합쳐 60개). 걸리면 `spam:이유` → `components/ReportInfo.tsx`가 안내
   - `supabase/insert-guard.sql`: 댓글·의견을 쓸 때 작성 시각을 서버 시각으로, 댓글 숨김·검토 시각을 처음 값으로 덮어쓴다(작성 시각을 과거로 넣어 도배 검사를 피하거나 검토 시각을 미래로 넣어 자동 숨김을 피하지 못하게). 트리거 이름 `*_aa_guard_insert`는 도배 검사보다 먼저 실행되게 지은 것
 - 마감 알림(웹 푸시): 프로필에서 켜면 `lib/push.ts`가 기기 알림 주소를 `push_subscriptions` 표에 저장. 매일 오전 9시 `.github/workflows/notify.yml`이 `scripts/notify.ts deadline`으로 내일 모집 마감인 관심 공고를 보낸다(`public/sw.js`가 받아 표시). 켜면 그 기기에 확인 알림을 바로 띄우고, 다른 기기에서 켠 알림이면 프로필에 "이 기기에서도 받기"가 보인다. 비밀 값 `SUPABASE_SERVICE_ROLE_KEY`·`VAPID_PRIVATE_KEY`는 GitHub Secrets에만

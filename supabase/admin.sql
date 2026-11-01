@@ -367,7 +367,7 @@ begin
   q := btrim(coalesce(q, ''));
   with base as (
     select c.id, c.series_id, c.body, c.created_at, c.hidden, c.reviewed_at, c.user_id,
-      coalesce(nullif(btrim(p.nickname), ''), '익명') as author,
+      case when c.user_id is null then '삭제된 글' else coalesce(nullif(btrim(p.nickname), ''), '익명') end as author,
       is_suspended(c.user_id) as author_suspended,
       (select count(*) from reports r where r.comment_id = c.id) as reports,
       (select count(*) from reports r where r.comment_id = c.id
@@ -397,13 +397,14 @@ declare
   snippet text;
 begin
   perform assert_admin();
-  select left(body, 40) into snippet from comments where id = target;
+  select left(body, 40) into snippet from comments where id = target for update;
   if act = 'hide' then
     update comments set hidden = true, reviewed_at = now() where id = target;
   elsif act in ('show', 'keep') then
     update comments set hidden = false, reviewed_at = now() where id = target;
   elsif act = 'delete' then
     delete from comments where id = target;
+    snippet := null; -- 삭제한 본문을 관리 기록에 다시 남기지 않는다
   else
     raise exception 'unknown_action';
   end if;

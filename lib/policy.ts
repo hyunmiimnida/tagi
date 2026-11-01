@@ -12,7 +12,7 @@ export const PRIVACY_OFFICER = "조현민";
 export const SITE_VERIFICATION = { google: "", naver: "" };
 
 // 문서를 고치면 날짜도 바꾼다
-export const POLICY_DATE = "2026년 11월 1일"; // 개인정보처리방침
+export const POLICY_DATE = "2026년 11월 1일"; // 개인정보처리방침 (답글·삭제 자리 처리도 같은 날 반영)
 export const TERMS_DATE = "2026년 11월 1일"; // 이용약관
 
 export const COMMENT_RULES = [

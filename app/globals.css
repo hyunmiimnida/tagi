@@ -1402,6 +1402,7 @@ main:focus,
 
 .comment-meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   color: var(--text-3);
@@ -1417,6 +1418,17 @@ main:focus,
   display: flex;
   gap: 2px;
   margin-left: auto;
+}
+
+.comment-replies {
+  margin: 10px 0 0 16px;
+  padding: 0 0 0 12px;
+  border-left: 2px solid var(--line);
+  list-style: none;
+}
+
+.comment-list .comment-unavailable {
+  color: var(--text-3);
 }
 
 /* 첫 댓글 전 이용 규칙 */

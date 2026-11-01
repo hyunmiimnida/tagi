@@ -73,7 +73,7 @@ export interface AdminComment {
   created_at: string;
   hidden: boolean;
   reviewed_at: string | null;
-  user_id: string;
+  user_id: string | null;
   author: string;
   author_suspended: boolean;
   reports: number;

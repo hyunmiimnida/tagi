@@ -99,15 +99,16 @@ export function AdminComments({ context, onChange, openUser }: Props) {
             <div className="admin-meta">
               {currentId ? <Link href={`/programs/${currentId}`}>{title}</Link> : title}
             </div>
-            <p className="admin-body">{c.body}</p>
+            <p className="admin-body">{c.user_id === null ? "삭제된 글이에요" : c.body}</p>
             {c.reasons && c.reasons.length > 0 && <p className="admin-meta">신고 이유: {c.reasons.join(", ")}</p>}
             <div className="admin-meta">
-              <button className="link-button" onClick={() => openUser(c.user_id)}>
+              {c.user_id && <button className="link-button" onClick={() => openUser(c.user_id!)}>
                 {c.author}
-              </button>
+              </button>}
+              {c.user_id === null && <span>답글을 보관하기 위해 자리만 남아 있어요.</span>}
               {c.author_suspended && <span className="warn"> · 정지 중</span>}
             </div>
-            <div className="report-info-actions">
+            {c.user_id !== null && <div className="report-info-actions">
               <button className="text-button" disabled={busy === c.id} onClick={() => act(c.id, "delete")}>
                 지우기
               </button>
@@ -125,7 +126,7 @@ export function AdminComments({ context, onChange, openUser }: Props) {
                   문제 없음
                 </button>
               )}
-            </div>
+            </div>}
           </section>
         );
       })}

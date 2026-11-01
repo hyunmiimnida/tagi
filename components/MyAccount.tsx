@@ -71,7 +71,8 @@ export function MyAccount({ schools, sources }: Props) {
       .eq("mine", true)
       .order("created_at", { ascending: false })
       .limit(50);
-    setMyComments(error ? null : (data as MyComment[]));
+    // 삭제된 자리는 mine=false라 뷰에서 내 글에 포함되지 않는다. 빈 자리도 한 번 더 걸러 준다.
+    setMyComments(error ? null : (data as MyComment[]).filter((c) => c.body.trim()));
   }, [user.userId]);
 
   useEffect(() => {
@@ -113,8 +114,10 @@ export function MyAccount({ schools, sources }: Props) {
   }
 
   async function removeComment(id: number) {
-    if (!supabase || !window.confirm("댓글을 지울까요?")) return;
-    await supabase.rpc("delete_my_comment", { target: id });
+    if (!supabase || !window.confirm("댓글을 지울까요? 답글이 달린 글은 내용만 지우고 자리만 남아요.")) return;
+    const { error } = await supabase.rpc("delete_my_comment", { target: id });
+    if (error) { setMessage("지우지 못했어요. 잠시 후 다시 시도해 주세요."); return; }
+    user.refreshKeys();
     void loadMyComments();
   }
 
@@ -156,7 +159,7 @@ export function MyAccount({ schools, sources }: Props) {
 
   async function deleteAccount() {
     const ok = window.confirm(
-      "탈퇴하면 학교 설정, 관심 공고, 내가 쓴 댓글이 모두 지워지고 되돌릴 수 없어요. 탈퇴할까요?",
+      "탈퇴하면 학교 설정, 관심 공고, 내가 쓴 댓글 내용이 지워져요. 다른 사람의 답글이 있으면 글쓴이 정보 없이 자리만 남아요. 되돌릴 수 없어요. 탈퇴할까요?",
     );
     if (!ok) return;
     setDeleting(true);
