@@ -3826,7 +3826,13 @@ button.stat {
   vertical-align: middle;
 }
 
-/* 뽑기 결과 (components/WeaponReveal.tsx): 화면을 덮는 어두운 막 위에서 보물상자가 열린다 */
+/* 뽑기 결과 (components/WeaponReveal.tsx): 화면을 덮는 어두운 막 위에서 내 캐릭터가 보물상자를 연다 */
+/* 연출 중에는 뒤 화면의 캐릭터를 숨겨 한 명만 보이게 한다 */
+body:has(.reveal-backdrop) .tab-pal,
+body:has(.reveal-backdrop) .pal-peek-anchor {
+  visibility: hidden;
+}
+
 .reveal-backdrop {
   position: fixed;
   inset: 0;
@@ -3834,7 +3840,7 @@ button.stat {
   display: grid;
   place-items: center;
   padding: 24px;
-  background: rgb(18 12 34 / 93%);
+  background: rgb(18 12 34 / 97%);
   animation: reveal-fade 0.25s ease-out;
 }
 
@@ -3855,11 +3861,107 @@ button.stat {
 .grade-heroic { --g: #c79bff; }
 .grade-legendary { --g: #ffbf47; }
 
+/* 무대: 왼쪽에 캐릭터, 오른쪽에 상자, 그 위로 무기가 튀어 오른다 (폭 340 기준) */
+.reveal-scene {
+  position: relative;
+  width: 340px;
+  max-width: 100%;
+  height: 280px;
+}
+
 /* 상자: 떨어져 쿵 → 덜컥덜컥 → 틈새 빛 → 열림. 도트 느낌을 살리려고 모두 끊어서(steps) 움직인다 */
 .reveal-chest {
-  position: relative;
-  margin-top: 150px;
+  position: absolute;
+  left: 150px;
+  bottom: 0;
   line-height: 0;
+}
+
+/* 내 캐릭터: 달려와서 열쇠를 들고, 꽂고, 놀라 물러나고, 튕겨 나고, 좋아한다 */
+.reveal-pal {
+  position: absolute;
+  left: 58px;
+  bottom: 5px;
+  z-index: 2;
+  line-height: 0;
+}
+
+.stage-drop .reveal-pal {
+  visibility: hidden;
+}
+
+.stage-run .reveal-pal {
+  animation: reveal-pal-run 0.32s steps(7, end) both;
+}
+
+.grade-rare.stage-run .reveal-pal { animation-duration: 0.4s; }
+.grade-heroic.stage-run .reveal-pal,
+.grade-legendary.stage-run .reveal-pal { animation-duration: 0.52s; }
+
+@keyframes reveal-pal-run {
+  from { transform: translateX(-260px); }
+}
+
+.stage-key .reveal-pal {
+  animation: reveal-pal-hop 0.16s steps(4, end);
+}
+
+@keyframes reveal-pal-hop {
+  50% { transform: translateY(-14px); }
+}
+
+.stage-insert .reveal-pal {
+  transform: translateX(8px);
+}
+
+.stage-rattle .reveal-pal {
+  animation: reveal-pal-back 0.14s steps(3, end) both;
+}
+
+@keyframes reveal-pal-back {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-14px, -12px); }
+  100% { transform: translateX(-26px); }
+}
+
+.stage-crack .reveal-pal {
+  animation: reveal-pal-tremble 0.1s steps(2, end) infinite;
+}
+
+@keyframes reveal-pal-tremble {
+  0%, 100% { transform: translateX(-28px); }
+  50% { transform: translateX(-24px); }
+}
+
+/* 뚜껑이 열리며 튕겨 난다 */
+.stage-burst .reveal-pal {
+  animation: reveal-pal-blown 0.2s steps(4, end) both;
+}
+
+@keyframes reveal-pal-blown {
+  0% { transform: translateX(-26px) rotate(0); }
+  50% { transform: translate(-44px, -22px) rotate(-14deg); }
+  100% { transform: translateX(-54px) rotate(0); }
+}
+
+.stage-rise .reveal-pal,
+.stage-done .reveal-pal {
+  transform: translateX(-54px);
+}
+
+.stage-done .reveal-pal.happy {
+  animation: reveal-pal-happy 0.48s steps(4, end) 3;
+}
+
+.grade-rare.stage-done .reveal-pal.happy,
+.grade-heroic.stage-done .reveal-pal.happy,
+.grade-legendary.stage-done .reveal-pal.happy {
+  animation-iteration-count: infinite;
+}
+
+@keyframes reveal-pal-happy {
+  0%, 100% { transform: translate(-54px, 0); }
+  50% { transform: translate(-54px, -16px); }
 }
 
 .stage-drop .reveal-chest {
@@ -3913,17 +4015,26 @@ button.stat {
   50% { transform: translate(3px, -2px); }
 }
 
-/* 열쇠조각이 아래에서 날아와 자물쇠에 꽂히고 찰칵 */
+/* 열쇠: 머리 위로 번쩍 들었다가, 날아가 자물쇠에 꽂힌다 (캐릭터·상자와 같은 무대 기준) */
 .reveal-key {
   position: absolute;
-  top: 70px;
-  left: 50%;
-  margin-left: -15px;
-  animation: reveal-key-in 0.2s steps(5, end) both;
+  z-index: 3;
+  top: 150px;
+  left: 92px;
+  line-height: 0;
+  animation: reveal-key-up 0.14s steps(3, end) both;
+}
+
+@keyframes reveal-key-up {
+  from { transform: translateY(34px); opacity: 0; }
+}
+
+.stage-insert .reveal-key {
+  animation: reveal-key-in 0.14s steps(4, end) both;
 }
 
 @keyframes reveal-key-in {
-  from { transform: translateY(110px); }
+  to { transform: translate(113px, 70px); }
 }
 
 .reveal-click {
@@ -3935,7 +4046,7 @@ button.stat {
   margin-left: -17px;
   border: 3px solid #fff1a0;
   opacity: 0;
-  animation: reveal-click 0.12s steps(3, end) 0.16s both;
+  animation: reveal-click 0.12s steps(3, end) 0.12s both;
 }
 
 @keyframes reveal-click {
@@ -4011,10 +4122,15 @@ button.stat {
 /* 무기: 상자에서 튀어 올라 실루엣 → 진짜 모습으로 번쩍 */
 .reveal-weapon {
   position: absolute;
-  top: 8px;
+  bottom: 132px; /* 열린 상자 바로 위에 선다 */
+  left: 150px;
   z-index: 1;
+  filter: drop-shadow(0 0 6px rgb(255 255 255 / 45%)); /* 어두운 무기도 바탕에 묻히지 않게 */
+  display: grid;
+  place-items: center;
+  width: 140px;
   line-height: 0;
-  animation: reveal-rise 0.28s steps(6, end) both;
+  animation: reveal-rise 0.26s steps(6, end) both;
 }
 
 .stage-done .reveal-weapon {
@@ -4079,6 +4195,9 @@ button.stat {
   .reveal-backdrop,
   .reveal-weapon,
   .reveal-chest,
+  .reveal-pal,
+  .reveal-pal.happy,
+  .reveal-key,
   .reveal-sparkle,
   .reveal-name {
     animation: none !important;

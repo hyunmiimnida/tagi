@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { actionRows, withBubble } from "../lib/pixel-pals.ts";
+import type { ActionFrame } from "../lib/pixel-pals.ts";
 import { useUser } from "../lib/user.tsx";
 import { WEAPON_SPRITES } from "../lib/weapon-sprites.ts";
 import { DRAW_COST } from "../lib/gacha.ts";
@@ -8,9 +10,10 @@ import { WEAPONS, isWeaponId } from "../lib/weapons.ts";
 import { KeyShardIcon } from "./KeyGiftToast.tsx";
 import { PixelSprite } from "./PixelPal.tsx";
 
-// 보물상자 뽑기 결과 (lib/user.tsx의 drawWeapon). 상자가 떨어져 쿵 → 열쇠가 꽂힘 → 덜컥거리며 틈새로 등급 색 빛 →
-// 번쩍 열리며 픽셀 조각이 터짐 → 실루엣이 튀어 올라 진짜 무기(또는 전설의 파편)가 된다.
-// 등급이 높을수록 길고 화려하다(일반 약 1.2초, 희귀 1.8초, 영웅·파편 3초). "한 번 더"는 앞 두 박자를 건너뛰고,
+// 보물상자 뽑기 결과 (lib/user.tsx의 drawWeapon). 내 캐릭터가 직접 상자를 연다: 상자가 떨어져 쿵 → 캐릭터가 달려옴 →
+// 열쇠를 번쩍 들었다가 자물쇠에 꽂음(찰칵) → 상자가 덜컥거리자 "!" 하고 물러남 → 번쩍 열리며 튕겨 나고 픽셀 조각이 터짐 →
+// 실루엣이 튀어 올라 진짜 무기(또는 전설의 파편)가 된다. 처음 얻으면 폴짝폴짝 좋아하고, 이미 가진 무기면 "?" 하고 갸웃.
+// 등급이 높을수록 길고 화려하다(일반 약 1.5초, 희귀 2.3초, 영웅·파편 3.8초). "한 번 더"는 캐릭터가 이미 있으니 열쇠부터,
 // 화면을 누르면 바로 결과로 간다. 동작 줄이기면 바로 마지막 장면.
 // 내 컴퓨터에서 시험할 때(npm run dev)는 주소 끝에 ?reveal=무기id 를 붙이면 연출을 볼 수 있다
 
@@ -147,21 +150,23 @@ const SHARD = [
 const SHARD_NAME = "전설의 파편";
 const SHARD_FLAVOR = "아직 잠든 전설의 한 조각. 모아 두면 언젠가 특별한 보상이 돼요.";
 
-type Stage = "drop" | "key" | "rattle" | "crack" | "burst" | "rise" | "done";
-const ORDER: Stage[] = ["drop", "key", "rattle", "crack", "burst", "rise", "done"];
+type Stage = "drop" | "run" | "key" | "insert" | "rattle" | "crack" | "burst" | "rise" | "done";
+const ORDER: Stage[] = ["drop", "run", "key", "insert", "rattle", "crack", "burst", "rise", "done"];
 // 박자마다 머무는 시간(ms). 일반은 80%나 나오니 짧게, 귀할수록 길게 뜸 들인다
 const BEATS: Record<string, Record<Exclude<Stage, "done">, number>> = {
-  common: { drop: 240, key: 220, rattle: 160, crack: 140, burst: 160, rise: 280 },
-  rare: { drop: 280, key: 280, rattle: 320, crack: 300, burst: 220, rise: 400 },
-  heroic: { drop: 340, key: 360, rattle: 800, crack: 700, burst: 360, rise: 440 },
-  legendary: { drop: 340, key: 360, rattle: 800, crack: 700, burst: 360, rise: 440 },
+  common: { drop: 200, run: 320, key: 160, insert: 180, rattle: 140, crack: 120, burst: 160, rise: 260 },
+  rare: { drop: 240, run: 400, key: 240, insert: 240, rattle: 300, crack: 280, burst: 220, rise: 380 },
+  heroic: { drop: 320, run: 520, key: 360, insert: 320, rattle: 760, crack: 700, burst: 360, rise: 440 },
+  legendary: { drop: 320, run: 520, key: 360, insert: 320, rattle: 760, crack: 700, burst: 360, rise: 440 },
 };
 const CHIPS: Record<string, number> = { common: 14, rare: 22, heroic: 36, legendary: 36 }; // 터지는 픽셀 조각 수
 const SPARKLES: Record<string, number> = { common: 0, rare: 8, heroic: 16, legendary: 16 }; // 결과 화면에 떠다니는 빛
 
 const CHEST_FRAME: Record<Stage, string[]> = {
   drop: CHEST_CLOSED,
+  run: CHEST_CLOSED,
   key: CHEST_CLOSED,
+  insert: CHEST_CLOSED,
   rattle: CHEST_RATTLE,
   crack: CHEST_CRACK,
   burst: CHEST_OPEN,
@@ -181,6 +186,7 @@ export function WeaponReveal() {
   const { revealing, closeReveal, grantWeapon } = user;
   const [stage, setStage] = useState<Stage>("drop");
   const [busy, setBusy] = useState(false);
+  const [legs, setLegs] = useState(false); // 달릴 때 번갈아 가는 다리
   const dialogRef = useRef<HTMLDivElement>(null);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const isAgain = useRef(false); // "한 번 더"로 열었는지 (상자가 이미 있으니 앞 두 박자를 건너뛴다)
@@ -213,6 +219,13 @@ export function WeaponReveal() {
     timers.current = list;
     return () => list.forEach(clearTimeout);
   }, [revealing, grade]);
+
+  // 달리는 동안 다리를 번갈아 움직인다
+  useEffect(() => {
+    if (stage !== "run") return;
+    const timer = setInterval(() => setLegs((on) => !on), 80);
+    return () => clearInterval(timer);
+  }, [stage]);
 
   // 화면을 누르면 건너뛰고 바로 결과로
   function skip() {
@@ -273,6 +286,13 @@ export function WeaponReveal() {
   const shown = stage === "done";
   const canEquip = revealing.kind === "weapon" && user.avatar && user.avatar.weapon !== revealing.weapon;
   const canAgain = user.keys !== null && user.keys >= DRAW_COST;
+  const duplicate = revealing.kind === "weapon" && revealing.duplicate;
+
+  // 상자를 여는 캐릭터: 맨손으로 그린다. 놀라면 "!", 이미 가진 무기가 나오면 "?"
+  const pal = user.avatar && { ...user.avatar, weapon: "bare-hands" as const };
+  const palFrame: ActionFrame = stage === "run" ? (legs ? "runA" : "runB") : stage === "insert" ? "punch" : "stand";
+  const palBubble = stage === "rattle" ? "exclaim" : stage === "done" && duplicate ? "question" : null;
+  const palSprite = pal && (palBubble ? withBubble(actionRows(pal, palFrame), palBubble) : actionRows(pal, palFrame));
 
   async function again() {
     isAgain.current = true;
@@ -286,23 +306,31 @@ export function WeaponReveal() {
       {/* 번쩍임은 흔들리는 .reveal 밖에 둔다 (안에 두면 화면 전체를 덮지 못한다) */}
       {stage === "burst" && <div className={`reveal-flash grade-${grade}`} aria-hidden="true" />}
       <div className={`reveal stage-${stage} grade-${grade}`}>
+        <div className="reveal-scene" aria-hidden="true">
         {(stage === "rise" || shown) && (
-          <div className={`reveal-weapon aura aura-${grade}`} aria-hidden="true">
-            <PixelSprite rows={stage === "rise" ? silhouette(rows) : rows} scale={7} />
+          <div className="reveal-weapon">
+            <span className={`aura aura-${grade}`}>
+              <PixelSprite rows={stage === "rise" ? silhouette(rows) : rows} scale={7} />
+            </span>
           </div>
         )}
         {shown &&
           Array.from({ length: SPARKLES[grade] }, (_, i) => (
             <i key={i} className="reveal-sparkle" aria-hidden="true" style={{ left: `${(i * 61) % 100}%`, top: `${(i * 37) % 170}px`, animationDelay: `${(i * 170) % 1400}ms` }} />
           ))}
-        <div className="reveal-chest" aria-hidden="true">
+        {palSprite && (
+          <div className={`reveal-pal ${shown && !duplicate ? "happy" : ""}`}>
+            <PixelSprite rows={palSprite} scale={4} />
+          </div>
+        )}
+        {(stage === "key" || stage === "insert") && (
+          <span className="reveal-key">
+            <KeyShardIcon scale={3} />
+          </span>
+        )}
+        <div className="reveal-chest">
           <PixelSprite rows={CHEST_FRAME[stage]} scale={5} />
-          {stage === "key" && (
-            <span className="reveal-key">
-              <KeyShardIcon scale={3} />
-            </span>
-          )}
-          {stage === "key" && <i className="reveal-click" />}
+          {stage === "insert" && <i className="reveal-click" />}
           {stage === "drop" && (
             <span className="reveal-dust">
               {[-70, -44, -18, 18, 44, 70].map((x) => (
@@ -317,6 +345,7 @@ export function WeaponReveal() {
               ))}
             </span>
           )}
+        </div>
         </div>
         <div className="reveal-text" aria-live="polite">
           {shown && (
