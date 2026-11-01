@@ -13,7 +13,7 @@ export const SITE_VERIFICATION = { google: "", naver: "" };
 
 // 문서를 고치면 날짜도 바꾼다
 export const POLICY_DATE = "2026년 11월 1일"; // 개인정보처리방침
-export const TERMS_DATE = "2026년 10월 31일"; // 이용약관
+export const TERMS_DATE = "2026년 11월 1일"; // 이용약관
 
 export const COMMENT_RULES = [
   "욕설, 비방, 차별, 성적인 표현은 쓰지 않아요.",
@@ -24,6 +24,6 @@ export const COMMENT_RULES = [
 
 // 처음 후기를 쓸 때 규칙과 함께 보여 주고 동의를 받는다. 방침·약관도 같은 내용으로 맞춘다
 export const REVIEW_USE_NOTICE =
-  "남겨 주신 후기는 학교의 프로그램 개선을 위한 자료로 쓰일 수 있어요. 이때는 누가 썼는지 알 수 없는 통계와 요약으로만 전달하고, 닉네임과 계정, 글 원문은 전달하지 않아요.";
+  "남겨 주신 후기는 학교의 프로그램 개선을 위한 자료로 쓰일 수 있어요. 이때는 누가 썼는지 알 수 없는 통계와 요약으로만 전달하고, 닉네임과 계정, 글 원문은 전달하지 않아요. 대화 글은 전달하지 않아요.";
 
 export const REPORT_REASONS = ["욕설·비방", "광고·스팸", "개인정보 노출", "거짓 정보", "기타"];

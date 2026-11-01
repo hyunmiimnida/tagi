@@ -8,7 +8,7 @@ alter table profiles add column if not exists notify_deadline boolean not null d
 alter table profiles add column if not exists nickname text check (char_length(btrim(nickname)) between 2 and 12);
 
 -- 댓글 읽기 뷰에 글쓴이 닉네임(없으면 "익명")을 더한다. 계정 번호(user_id)는 계속 공개하지 않는다
--- (칸이 늘어 create or replace가 안 될 수 있어 지우고 다시 만든다)
+-- (칸이 늘어 create or replace가 안 될 수 있어 지우고 다시 만든다. 이 파일을 다시 실행하면 comment-threads.sql도 다시 실행한다)
 drop view if exists comment_feed;
 create view comment_feed as
   select c.id, c.series_id, c.body, c.created_at,

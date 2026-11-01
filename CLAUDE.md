@@ -152,6 +152,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 - `supabase/schema.sql` — 로그인 사용자 데이터 표(학교 설정, 관심 표시, 후기 댓글)
 - `supabase/admin.sql` — 관리자 화면: 관리자(`admins`), 이용 정지(`suspensions`), 의견함(`feedback`), 사이트 공지(`announcements`), 관리 기록(`admin_log`), 관리 함수(`admin_*`)
 - `supabase/moderation.sql` — 회원 탈퇴, 댓글 신고(`reports`)·숨기기(`blocks`), 이용 규칙 동의. 댓글은 `comment_feed` 뷰로만 읽는다(글쓴이 id 비공개)
+- `supabase/comment-threads.sql` — 글 종류 `comments.kind`(후기 `review`/대화 `talk`). 상세 화면 탭이 곧 쓰는 글의 종류이고(`components/Comments.tsx`), 쓴 뒤에는 못 바꾼다. 열쇠조각(`gacha.sql`)과 학교 전달 통계·요약은 후기만. 뷰는 이 파일이 마지막으로 만든다(`profile.sql`을 다시 실행하면 이 파일도). 실행 전에는 탭 없이 모두 후기
 - `/my` 프로필 (`components/MyAccount.tsx`): 머리(닉네임 아바타·로그인 방법·닉네임 바로 고치기·활동 수 관심 공고/7일 안 마감/내 댓글. 로그인 전에는 숫자 대신 로그인 안내 — 로그인을 쓸 수 있으면 관심 표시는 로그인이 필요), 내 캐릭터(꾸미기로), 알림과 캘린더(마감 알림·.ics 내보내기·홈 화면 추가), 내 댓글, 숨긴 사용자(있을 때만), 서비스 안내, 로그아웃·탈퇴. 학교·대상(신분·학년)·분야는 프로필에서 고르지 않고 **공고 화면에서 고른 것을 기억**한다(`Explorer`의 `pickWho`·`pickTags` → `lib/user.tsx`의 `profile`, 로그인하면 `profiles` 표에도, `supabase/profile.sql`). 다음에 공고 화면을 열면 그대로 걸려 있고, 분야는 홈 "내 관심 분야 공고"에 쓴다. 신분·학년은 하나씩만 기억(여러 개 고르면 비움)
   - 홈 안내: 학교를 안 골랐으면 머리말이 "대학교를 설정해 보세요!"와 "학교 고르기"로만 묻는다. `components/ProfileNudge.tsx`는 학교는 골랐지만 신분·관심 분야를 안 고른 사람에게 공고 화면으로 가는 안내(닫으면 다시 안 보임). "홈 화면에 추가"(`components/InstallCard.tsx`)는 두 번째 방문부터
   - 홈 머리말은 고른 학교가 오늘 올린 공고 수, 0개면 "최근 3일 동안 N개". "새로 올라온 공고"는 일정이 있는 글 먼저, 마감 임박은 같은 마감일이면 학교를 섞는다(`lib/filter.ts`의 `compareDeadlineMixed`)

@@ -21,12 +21,31 @@ const SPAM_NOTICES: Record<string, string> = {
   suspended: "이용 규칙 위반으로 댓글 쓰기가 정지된 계정이에요.",
 };
 
+type CommentKind = "review" | "talk"; // 참여 후기(열쇠조각, 학교 전달 통계에 쓰임) / 프로그램 이야기
+
+const KIND_TEXT: Record<CommentKind, { label: string; sub: string; placeholder: string; empty: string }> = {
+  review: {
+    label: "후기",
+    sub: "지난 회차에 참여했다면 준비 팁이나 후기를 남겨 주세요. 다음 회차를 준비하는 학생에게 도움이 돼요.",
+    placeholder: "예: 서류는 2주 전부터 준비했어요. 면접에서는 지원 동기를 물어봤어요.",
+    empty: "아직 후기가 없어요. 첫 후기를 남겨 주세요.",
+  },
+  talk: {
+    label: "대화",
+    sub: "궁금한 점이나 프로그램 이야기를 자유롭게 나눠요.",
+    placeholder: "예: 이번 회차도 비슷한 때에 모집할까요?",
+    empty: "아직 대화가 없어요. 먼저 말을 걸어 보세요.",
+  },
+};
+const KINDS = Object.keys(KIND_TEXT) as CommentKind[];
+
 interface Comment {
   id: number;
   body: string;
   created_at: string;
   mine: boolean;
   author?: string; // 닉네임 (없으면 "익명")
+  kind?: CommentKind; // supabase/comment-threads.sql 실행 전에는 없음
 }
 
 // 글쓴이 캐릭터 얼굴 (머리 장식까지 위쪽 12줄). 캐릭터를 아직 저장하지 않은 사람은 빈 동그라미
@@ -58,15 +77,21 @@ export function Comments({ seriesId }: { seriesId: string }) {
   const [reporting, setReporting] = useState<number | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [faces, setFaces] = useState<Map<number, Avatar>>(new Map()); // 댓글 id → 글쓴이 캐릭터
+  const [kind, setKind] = useState<CommentKind>("review"); // 보고 있는 탭이 곧 쓰는 글의 종류
+  const [hasKinds, setHasKinds] = useState(false); // comment-threads.sql을 실행했는지
   const { userId } = user;
+  const text = KIND_TEXT[hasKinds ? kind : "review"];
+  const visible = hasKinds ? comments?.filter((c) => (c.kind ?? "review") === kind) : comments;
 
   // 로그인이 바뀌면 "내 글"과 숨긴 글이 달라지므로 다시 불러온다
   const load = useCallback(async () => {
     if (!supabase) return;
     const query = (columns: string) =>
       supabase!.from("comment_feed").select(columns).eq("series_id", seriesId).order("created_at", { ascending: false }).limit(100);
-    // 닉네임 칸(supabase/profile.sql)이 아직 없으면 닉네임 없이 불러온다
-    let { data, error } = await query("id, body, created_at, mine, author");
+    // 종류 칸(supabase/comment-threads.sql)이나 닉네임 칸(supabase/profile.sql)이 아직 없으면 그 칸 없이 불러온다
+    let { data, error } = await query("id, body, created_at, mine, author, kind");
+    setHasKinds(!error);
+    if (error?.code === "42703") ({ data, error } = await query("id, body, created_at, mine, author"));
     if (error?.code === "42703") ({ data, error } = await query("id, body, created_at, mine"));
     // 댓글 표를 아직 만들지 않았으면(supabase/*.sql 미실행) 준비 중으로 보여 준다
     if (error) (error.code === "PGRST205" || error.code === "42P01" ? setMissingTable : setFailed)(true);
@@ -118,7 +143,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
     const body = draft.trim();
     if (!supabase || !userId || !body || sending) return;
     setSending(true);
-    const { error } = await supabase.from("comments").insert({ series_id: seriesId, user_id: userId, body });
+    const { error } = await supabase.from("comments").insert({ series_id: seriesId, user_id: userId, body, ...(hasKinds ? { kind } : {}) });
     setSending(false);
     if (error) {
       // 도배 막기 규칙(supabase/spam.sql)에 걸리면 이유를 알려 주고, 쓴 글은 그대로 둔다
@@ -137,8 +162,10 @@ export function Comments({ seriesId }: { seriesId: string }) {
     void load();
   }
 
-  async function remove(id: number) {
-    if (!supabase || !window.confirm("댓글을 지울까요? 이 글로 받은 열쇠조각은 회수되고, 다시 써도 받지 못해요.")) return;
+  async function remove(comment: Comment) {
+    const id = comment.id;
+    const question = comment.kind === "talk" ? "글을 지울까요?" : "후기를 지울까요? 이 글로 받은 열쇠조각은 회수되고, 다시 써도 받지 못해요.";
+    if (!supabase || !window.confirm(question)) return;
     await supabase.rpc("delete_my_comment", { target: id });
     user.refreshKeys();
     void load();
@@ -169,9 +196,20 @@ export function Comments({ seriesId }: { seriesId: string }) {
 
   return (
     <section className="card comments">
-      <h2 className="card-title">후기·정보 나눔</h2>
-      <p className="card-sub">지난 회차에 참여했다면 준비 팁이나 후기를 남겨 주세요. 다음 회차를 준비하는 학생에게 도움이 돼요.</p>
-      {user.loginEnabled && !missingTable && <p className="card-sub">후기를 쓰면 프로그램마다 한 번 열쇠조각을 받아요. 별점이나 내용과는 상관없어요.</p>}
+      <h2 className="card-title">{hasKinds ? "후기·대화" : "후기·정보 나눔"}</h2>
+      {hasKinds && (
+        <div className="segmented comment-kinds" role="group" aria-label="글 종류">
+          {KINDS.map((k) => (
+            <button key={k} type="button" className={kind === k ? "on" : ""} aria-pressed={kind === k} onClick={() => setKind(k)}>
+              {KIND_TEXT[k].label} {comments?.filter((c) => (c.kind ?? "review") === k).length ?? 0}
+            </button>
+          ))}
+        </div>
+      )}
+      <p className="card-sub">{text.sub}</p>
+      {user.loginEnabled && !missingTable && text === KIND_TEXT.review && (
+        <p className="card-sub">후기를 쓰면 프로그램마다 한 번 열쇠조각을 받아요. 별점이나 내용과는 상관없어요.</p>
+      )}
 
       {!user.loginEnabled || missingTable ? (
         <p className="comment-empty">댓글 기능을 준비하고 있어요. 곧 후기를 남길 수 있어요.</p>
@@ -179,7 +217,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
         <>
           {!user.signedIn ? (
             <button className="button wide" onClick={() => user.setLoginOpen(true)}>
-              로그인하고 후기 남기기
+              로그인하고 {text.label === "후기" ? "후기" : "글"} 남기기
             </button>
           ) : agreed === false ? (
             <div className="comment-rules">
@@ -195,7 +233,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
                 있어요.
               </p>
               <button className="button primary small" onClick={agree}>
-                동의하고 후기 쓰기
+                동의하고 글 쓰기
               </button>
             </div>
           ) : agreed ? (
@@ -204,8 +242,8 @@ export function Comments({ seriesId }: { seriesId: string }) {
                 value={draft}
                 maxLength={MAX_LENGTH}
                 rows={3}
-                placeholder="예: 서류는 2주 전부터 준비했어요. 면접에서는 지원 동기를 물어봤어요."
-                aria-label="댓글 내용"
+                placeholder={text.placeholder}
+                aria-label={`${text.label} 내용`}
                 onChange={(event) => setDraft(event.target.value)}
               />
               <div className="comment-form-foot">
@@ -213,7 +251,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
                   {draft.length}/{MAX_LENGTH} · {user.profile.nickname ? `"${user.profile.nickname}"(으)로` : "익명으로"} 올라가요
                 </span>
                 <button className="button primary small" disabled={!draft.trim() || sending}>
-                  {sending ? "올리는 중" : "올리기"}
+                  {sending ? "올리는 중" : hasKinds ? `${text.label} 올리기` : "올리기"}
                 </button>
               </div>
             </form>
@@ -225,10 +263,10 @@ export function Comments({ seriesId }: { seriesId: string }) {
             </p>
           )}
           {failed && <p className="comment-empty">댓글을 불러오거나 올리지 못했어요. 잠시 후 다시 시도해 주세요.</p>}
-          {comments && comments.length === 0 && !failed && <p className="comment-empty">아직 댓글이 없어요. 첫 후기를 남겨 주세요.</p>}
-          {comments && comments.length > 0 && (
+          {visible && visible.length === 0 && !failed && <p className="comment-empty">{text.empty}</p>}
+          {visible && visible.length > 0 && (
             <ul className="comment-list">
-              {comments.map((comment) => (
+              {visible.map((comment) => (
                 <li key={comment.id}>
                   <div className="comment-meta">
                     <CommentFace avatar={comment.mine ? (user.avatar ?? faces.get(comment.id)) : faces.get(comment.id)} />
@@ -236,7 +274,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
                     <span>{timeAgo(comment.created_at)}</span>
                     <span className="comment-tools">
                       {comment.mine ? (
-                        <button className="text-button" onClick={() => remove(comment.id)}>
+                        <button className="text-button" onClick={() => remove(comment)}>
                           삭제
                         </button>
                       ) : (

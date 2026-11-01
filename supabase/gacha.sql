@@ -152,11 +152,15 @@ begin
 end $$;
 
 -- 후기 댓글 선물: 댓글이 저장되면(도배 막기·이용 정지를 통과한 뒤) 하루 3번까지 5개씩.
--- 같은 프로그램은 계정당 한 번만 준다. 지워도 기록이 남으므로 지웠다 다시 써도 또 받지 못한다
+-- 같은 프로그램은 계정당 한 번만 준다. 지워도 기록이 남으므로 지웠다 다시 써도 또 받지 못한다.
+-- 대화 글(kind = 'talk', comment-threads.sql)에는 주지 않는다
+alter table comments add column if not exists kind text not null default 'review' check (kind in ('review', 'talk'));
+
 create or replace function reward_review_keys() returns trigger
 language plpgsql security definer set search_path = public as $$
 declare given int;
 begin
+  if new.kind <> 'review' then return new; end if;
   perform lock_wallet(new.user_id);
   select count(*) into given from key_ledger
     where user_id = new.user_id and reason = 'review'

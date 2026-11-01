@@ -1326,6 +1326,16 @@ main:focus,
   padding: 20px;
 }
 
+.comment-kinds {
+  display: flex;
+  margin: 10px 0;
+}
+
+.comment-kinds button {
+  flex: 1;
+  padding: 7px 10px;
+}
+
 .comment-form {
   margin-top: 14px;
 }
