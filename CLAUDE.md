@@ -50,7 +50,7 @@
 - 공고 출처가 속한 학교는 목록에 학교 배지(`shortName`, 예: 영남대)로 보인다 (`lib/data.ts`가 빌드할 때 계산)
 - 중복 제거: 같은 프로그램은 하나로 합치고 원문 링크는 모두 보관. 합치기와 반복 프로그램 묶기는 같은 학교 출처끼리만 한다 (`src/school-of.ts`)
 - 반복 프로그램: 해마다·학기마다 다시 열리는 프로그램을 `seriesId`로 묶어(`src/series.ts`) 상세 화면에 "지난 공고"와 후기 댓글(Supabase `comments` 표)을 보여 준다
-- 모집 대상 학교: 기본은 게시한 학교. AI가 다른 학교 학생도 지원할 수 있다고 보면 `target.openTo`(예: "전국 대학생")를 쓰고 `target.schools`를 비운다. 학교 배지는 게시한 학교 기준이고, 학교 필터는 openTo 공고도 기본으로 함께 보여 준다("다른 학교도 지원" 배지, 필터 안 스위치로 끄면 주소에 `open=0`)
+- 모집 대상 학교: 기본은 게시한 학교. AI가 다른 학교 학생도 지원할 수 있다고 보면 `target.openTo`(예: "전국 대학생")를 쓰고 `target.schools`를 비운다. 학교 배지는 게시한 학교 기준이고, 학교 필터는 openTo 공고도 기본으로 함께 보여 준다("다른 학교도 지원" 배지, 필터 안 스위치로 끄면 이 기기에 기억해 다른 화면을 보고 와도 꺼져 있고(`lib/user.tsx`의 `includeOpen`, 홈 숫자도 따름) 주소에 `open=0`)
 - 캘린더의 "지난 관심 공고": 보관함으로 간 관심 공고를 `public/api/ids.json`에서 찾아 제목·원문·이번 회차를 보여 준다 (`components/PastFavorites.tsx`)
 - 댓글 도배 막기: `supabase/spam.sql` 트리거(20초 안 재작성, 하루 20개, 같은 내용 반복, 링크 2개 이상). 걸리면 `spam:이유` 오류 → `components/Comments.tsx`가 안내
   - `supabase/program-reports-guard.sql`: 정보 오류 신고(로그인 없이도 됨) 도배 막기 — 작성 시각·처리 상태를 서버가 정하고, 같은 공고·같은 이유 하루 1번, 한 공고에 처리 안 된 신고 5개까지, 한 사람 1시간 10개(비로그인은 모두 합쳐 60개). 걸리면 `spam:이유` → `components/ReportInfo.tsx`가 안내

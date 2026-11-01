@@ -66,7 +66,7 @@ function readQuery() {
     tags: new Set(params.getAll("tag")),
     keyword: params.get("q") ?? "",
     showClosed: params.get("closed") === "1",
-    includeOpen: params.get("open") !== "0",
+    openOff: params.get("open") === "0", // 주소에 적힌 값은 이 화면에서만 쓰고 저장하지 않는다 (공유 링크)
     sort: (params.get("sort") === "recent" ? "recent" : "deadline") as Sort,
     pick: params.get("pick"), // 홈의 "학교 고르기"로 왔으면 학교 패널을 열어 둔다 (주소에는 남기지 않는다)
   };
@@ -111,7 +111,8 @@ export function Explorer({ categories, schools }: Props) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [tagsFromUrl, setTagsFromUrl] = useState(false);
   const [openPanel, setOpenPanel] = useState<string | null>(null);
-  const [includeOpen, setIncludeOpen] = useState(true);
+  const [openOffByUrl, setOpenOffByUrl] = useState(false);
+  const includeOpen = user.includeOpen && !openOffByUrl;
   const [keyword, setKeyword] = useState("");
   const [typing, setTyping] = useState(false); // 검색창에 글자를 치는 중 (빼꼼 캐릭터가 돋보기를 든다)
   const [sort, setSort] = useState<Sort>("deadline");
@@ -134,7 +135,7 @@ export function Explorer({ categories, schools }: Props) {
     setTagsFromUrl(query.tags.size > 0);
     setKeyword(query.keyword);
     setShowClosed(query.showClosed);
-    setIncludeOpen(query.includeOpen);
+    setOpenOffByUrl(query.openOff);
     setSort(query.sort);
     if (query.pick === SCHOOL_PANEL) setOpenPanel(SCHOOL_PANEL);
     setLimit(readLimit());
@@ -421,7 +422,10 @@ export function Explorer({ categories, schools }: Props) {
             </div>
             {school && (
               <label className="toggle panel-toggle">
-                <input type="checkbox" checked={includeOpen} onChange={(event) => setIncludeOpen(event.target.checked)} />
+                <input type="checkbox" checked={includeOpen} onChange={(event) => {
+                    setOpenOffByUrl(false);
+                    user.setIncludeOpen(event.target.checked);
+                  }} />
                 <span>다른 학교에 올라온 공고 중 우리 학교 학생도 지원할 수 있는 것 함께 보기</span>
               </label>
             )}

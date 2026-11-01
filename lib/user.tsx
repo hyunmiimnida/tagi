@@ -89,6 +89,8 @@ interface UserState {
   signIn: (provider: ProviderId) => void;
   signOut: () => void;
   deleteAccount: () => Promise<boolean>; // 계정과 계정에 저장된 모든 데이터를 지운다
+  includeOpen: boolean; // 다른 학교도 지원할 수 있는 공고 함께 보기 (홈·공고 화면)
+  setIncludeOpen: (next: boolean) => void;
   // 내 도트 캐릭터 (화면 곳곳에서 같이 다니는 캐릭터). 로그인 전(체험 모드 제외)과 브라우저에서 읽기 전에는 null
   avatarGiven: boolean; // 방금 회원가입해서 캐릭터를 받았다 (알림 한 번)
   clearAvatarGiven: () => void;
@@ -117,6 +119,8 @@ const PROFILE_KEY = "profile";
 const LAST_USER_KEY = "lastUserId";
 
 const AVATAR_KEY = "avatar";
+// 학교를 골랐을 때 다른 학교에 올라온 "다른 학교도 지원" 공고도 볼지 (끈 것만 이 기기에 기억)
+const INCLUDE_OPEN_KEY = "includeOpen";
 
 function readLocalAvatar(): Avatar | null {
   try {
@@ -172,11 +176,13 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   const [profile, setProfileState] = useState<Profile>(EMPTY_PROFILE);
   const [loginOpen, setLoginOpen] = useState(false);
   const [avatar, setAvatarState] = useState<Avatar | null>(null);
+  const [includeOpen, setIncludeOpenState] = useState(true);
   const [avatarGiven, setAvatarGiven] = useState(false); // 방금 회원가입해서 캐릭터를 받음
 
   useEffect(() => {
     setSchoolId(readLocal(SCHOOL_KEY));
     setProfileState(readLocalProfile());
+    setIncludeOpenState(readLocal(INCLUDE_OPEN_KEY) !== "0");
     // 캐릭터는 회원가입(첫 로그인) 때 생긴다. 로그인 전에는 캐릭터가 없다 (화면 곳곳의 캐릭터도 보이지 않는다).
     // 체험 모드(Supabase 설정 없음, 로그인이 없음)만 처음 온 사람에게 기본 캐릭터 하나를 골라 이 기기에 기억한다
     if (!supabase) {
@@ -398,6 +404,10 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       });
   }, [userId]);
   const clearKeyGift = useCallback(() => setKeyGift(null), []);
+  const setIncludeOpen = useCallback((next: boolean) => {
+    setIncludeOpenState(next);
+    writeLocal(INCLUDE_OPEN_KEY, next ? null : "0");
+  }, []);
   const clearAvatarGiven = useCallback(() => setAvatarGiven(false), []);
 
   const grantWeapon = useCallback((id: WeaponId) => {
@@ -569,6 +579,8 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         await supabase.auth.signOut({ scope: "local" });
         return true;
       },
+      includeOpen,
+      setIncludeOpen,
       avatar,
       avatarGiven,
       clearAvatarGiven,
@@ -584,7 +596,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       revealing,
       closeReveal,
     }),
-    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite, avatar, avatarGiven, clearAvatarGiven, setAvatar, ownedWeapons, keys, legendShards, drawWeapon, refreshKeys, keyGift, clearKeyGift, grantWeapon, revealing, closeReveal],
+    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite, includeOpen, setIncludeOpen, avatar, avatarGiven, clearAvatarGiven, setAvatar, ownedWeapons, keys, legendShards, drawWeapon, refreshKeys, keyGift, clearKeyGift, grantWeapon, revealing, closeReveal],
   );
 
   return <UserContext value={value}>{children}</UserContext>;
