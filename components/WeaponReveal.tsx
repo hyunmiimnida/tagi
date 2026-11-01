@@ -154,8 +154,8 @@ type Stage = "drop" | "run" | "key" | "insert" | "rattle" | "crack" | "burst" | 
 const ORDER: Stage[] = ["drop", "run", "key", "insert", "rattle", "crack", "burst", "rise", "done"];
 // 박자마다 머무는 시간(ms). 일반은 80%나 나오니 짧게, 귀할수록 길게 뜸 들인다
 const BEATS: Record<string, Record<Exclude<Stage, "done">, number>> = {
-  common: { drop: 200, run: 320, key: 160, insert: 180, rattle: 220, crack: 260, burst: 420, rise: 420 },
-  rare: { drop: 240, run: 400, key: 240, insert: 240, rattle: 420, crack: 480, burst: 620, rise: 520 },
+  common: { drop: 200, run: 320, key: 160, insert: 180, rattle: 450, crack: 500, burst: 480, rise: 420 },
+  rare: { drop: 240, run: 400, key: 240, insert: 240, rattle: 600, crack: 700, burst: 620, rise: 520 },
   heroic: { drop: 320, run: 520, key: 360, insert: 320, rattle: 900, crack: 1000, burst: 1100, rise: 700 },
   legendary: { drop: 320, run: 520, key: 360, insert: 320, rattle: 900, crack: 1000, burst: 1100, rise: 700 },
 };
