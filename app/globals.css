@@ -3840,7 +3840,8 @@ body:has(.reveal-backdrop) .pal-peek-anchor {
   display: grid;
   place-items: center;
   padding: 24px;
-  background: rgb(18 12 34 / 97%);
+  overflow: hidden;
+  background: rgb(18 12 34);
   animation: reveal-fade 0.25s ease-out;
 }
 
@@ -3867,6 +3868,24 @@ body:has(.reveal-backdrop) .pal-peek-anchor {
   width: 340px;
   max-width: 100%;
   height: 280px;
+  transform-origin: 65% 75%;
+}
+
+/* 터지기 직전 상자 쪽으로 서서히 다가갔다가, 터지면 물러난다 */
+.stage-crack .reveal-scene {
+  animation: reveal-zoom var(--crack) steps(10, end) both;
+}
+
+.stage-burst .reveal-scene {
+  animation: reveal-zoom-out 0.3s steps(5, end) both;
+}
+
+@keyframes reveal-zoom {
+  to { transform: scale(1.1); }
+}
+
+@keyframes reveal-zoom-out {
+  from { transform: scale(1.1); }
 }
 
 /* 상자: 떨어져 쿵 → 덜컥덜컥 → 틈새 빛 → 열림. 도트 느낌을 살리려고 모두 끊어서(steps) 움직인다 */
@@ -3980,7 +3999,23 @@ body:has(.reveal-backdrop) .pal-peek-anchor {
 
 .stage-crack .reveal-chest {
   animation: reveal-rattle 0.1s steps(2, end) infinite;
-  filter: drop-shadow(0 0 0 var(--g)) drop-shadow(0 -6px 14px var(--g));
+  filter: drop-shadow(0 -6px 14px var(--g));
+}
+
+/* 틈새로 새어 나온 빛기둥이 점점 굵어진다 */
+.reveal-beam {
+  position: absolute;
+  left: 220px;
+  bottom: 96px;
+  width: 8px;
+  height: 320px;
+  margin-left: -4px;
+  background: linear-gradient(to top, #fff, var(--g) 35%, transparent);
+  animation: reveal-beam var(--crack) steps(6, end) both;
+}
+
+@keyframes reveal-beam {
+  to { transform: scaleX(7); }
 }
 
 @keyframes reveal-rattle {
@@ -4082,12 +4117,74 @@ body:has(.reveal-backdrop) .pal-peek-anchor {
   background: var(--g);
   opacity: 0;
   pointer-events: none;
-  animation: reveal-flash-all 0.26s steps(4, end);
+  animation: reveal-flash-all var(--burst) steps(12, end);
 }
 
+/* 두 번 번쩍 */
 @keyframes reveal-flash-all {
-  0% { opacity: 0.85; }
+  0% { opacity: 0.95; }
+  20% { opacity: 0.1; }
+  32% { opacity: 0.75; }
   100% { opacity: 0; }
+}
+
+/* 뒤에서 도는 빛살 */
+.reveal-rays {
+  position: absolute;
+  top: 130px;
+  left: 220px;
+  width: 620px;
+  height: 620px;
+  margin: -310px 0 0 -310px;
+  background: repeating-conic-gradient(var(--g) 0 11deg, transparent 11deg 30deg);
+  -webkit-mask-image: radial-gradient(circle, #000 20%, transparent 68%);
+  mask-image: radial-gradient(circle, #000 20%, transparent 68%);
+  opacity: 0.32;
+  animation: reveal-rays-open 0.4s steps(6, end), reveal-rays-spin 14s steps(140, end) infinite;
+}
+
+@keyframes reveal-rays-open {
+  from { opacity: 0.9; scale: 0.2; }
+}
+
+@keyframes reveal-rays-spin {
+  to { rotate: 360deg; }
+}
+
+/* 퍼져 나가는 충격파 (일반 1겹, 희귀 2겹, 영웅·파편 3겹) */
+.reveal-waves {
+  position: absolute;
+  top: 44px;
+  left: 50%;
+}
+
+.reveal-waves i {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  border: 6px solid var(--g);
+  opacity: 0;
+  animation: reveal-wave 0.7s steps(9, end) both;
+}
+
+.reveal-waves i:nth-child(2) {
+  border-color: #fff;
+  animation-delay: 0.16s;
+}
+
+.reveal-waves i:nth-child(3) {
+  animation-delay: 0.34s;
+}
+
+.grade-common .reveal-waves i:nth-child(n + 2),
+.grade-rare .reveal-waves i:nth-child(3) {
+  display: none;
+}
+
+@keyframes reveal-wave {
+  0% { opacity: 1; transform: rotate(45deg) scale(0.2); }
+  100% { opacity: 0; transform: rotate(45deg) scale(6); }
 }
 
 /* 터져 나가는 픽셀 조각 */
@@ -4104,7 +4201,7 @@ body:has(.reveal-backdrop) .pal-peek-anchor {
   background: var(--g);
   box-shadow: 2px 2px 0 rgb(0 0 0 / 35%);
   opacity: 0;
-  animation: reveal-chip 0.5s steps(8, end) var(--delay) both;
+  animation: reveal-chip 1s steps(14, end) var(--delay) both;
 }
 
 .reveal-chips i:nth-child(3n) {
@@ -4113,10 +4210,49 @@ body:has(.reveal-backdrop) .pal-peek-anchor {
   background: #fff;
 }
 
+.reveal-chips i:nth-child(5n) {
+  background: #ffd84a;
+}
+
+/* 솟구쳤다가 떨어진다 */
 @keyframes reveal-chip {
   0% { opacity: 1; transform: translate(0, 0); }
-  70% { opacity: 1; }
-  100% { opacity: 0; transform: translate(var(--dx), calc(var(--dy) + 24px)); }
+  50% { opacity: 1; transform: translate(var(--dx), var(--dy)); }
+  100% { opacity: 0; transform: translate(calc(var(--dx) * 1.2), calc(var(--dy) + 130px)); }
+}
+
+/* 화면 위에서 쏟아지는 조각 (희귀 이상) */
+.reveal-rain {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.reveal-rain i {
+  position: absolute;
+  top: -12px;
+  width: 7px;
+  height: 7px;
+  background: var(--g);
+  opacity: 0;
+  animation: reveal-rain 1.5s steps(20, end) both;
+}
+
+.reveal-rain i:nth-child(3n) {
+  background: #ffd84a;
+}
+
+.reveal-rain i:nth-child(4n) {
+  width: 4px;
+  height: 4px;
+  background: #fff;
+}
+
+@keyframes reveal-rain {
+  0% { opacity: 1; transform: translateY(0); }
+  85% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(105vh); }
 }
 
 /* 무기: 상자에서 튀어 올라 실루엣 → 진짜 모습으로 번쩍 */
@@ -4164,6 +4300,7 @@ body:has(.reveal-backdrop) .pal-peek-anchor {
 }
 
 .reveal-text {
+  position: relative;
   min-height: 132px;
   margin-top: 16px;
   text-align: center;
@@ -4198,10 +4335,17 @@ body:has(.reveal-backdrop) .pal-peek-anchor {
   .reveal-pal,
   .reveal-pal.happy,
   .reveal-key,
+  .reveal-rays,
   .reveal-sparkle,
   .reveal-name {
     animation: none !important;
     transition: none !important;
+  }
+
+  .reveal-chips,
+  .reveal-waves,
+  .reveal-rain {
+    display: none;
   }
 }
 

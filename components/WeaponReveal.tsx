@@ -154,13 +154,14 @@ type Stage = "drop" | "run" | "key" | "insert" | "rattle" | "crack" | "burst" | 
 const ORDER: Stage[] = ["drop", "run", "key", "insert", "rattle", "crack", "burst", "rise", "done"];
 // 박자마다 머무는 시간(ms). 일반은 80%나 나오니 짧게, 귀할수록 길게 뜸 들인다
 const BEATS: Record<string, Record<Exclude<Stage, "done">, number>> = {
-  common: { drop: 200, run: 320, key: 160, insert: 180, rattle: 140, crack: 120, burst: 160, rise: 260 },
-  rare: { drop: 240, run: 400, key: 240, insert: 240, rattle: 300, crack: 280, burst: 220, rise: 380 },
-  heroic: { drop: 320, run: 520, key: 360, insert: 320, rattle: 760, crack: 700, burst: 360, rise: 440 },
-  legendary: { drop: 320, run: 520, key: 360, insert: 320, rattle: 760, crack: 700, burst: 360, rise: 440 },
+  common: { drop: 200, run: 320, key: 160, insert: 180, rattle: 220, crack: 260, burst: 420, rise: 420 },
+  rare: { drop: 240, run: 400, key: 240, insert: 240, rattle: 420, crack: 480, burst: 620, rise: 520 },
+  heroic: { drop: 320, run: 520, key: 360, insert: 320, rattle: 900, crack: 1000, burst: 1100, rise: 700 },
+  legendary: { drop: 320, run: 520, key: 360, insert: 320, rattle: 900, crack: 1000, burst: 1100, rise: 700 },
 };
-const CHIPS: Record<string, number> = { common: 14, rare: 22, heroic: 36, legendary: 36 }; // 터지는 픽셀 조각 수
+const CHIPS: Record<string, number> = { common: 24, rare: 44, heroic: 80, legendary: 80 }; // 터지는 픽셀 조각 수
 const SPARKLES: Record<string, number> = { common: 0, rare: 8, heroic: 16, legendary: 16 }; // 결과 화면에 떠다니는 빛
+const RAIN: Record<string, number> = { common: 0, rare: 16, heroic: 40, legendary: 40 }; // 화면 위에서 쏟아지는 조각
 
 const CHEST_FRAME: Record<Stage, string[]> = {
   drop: CHEST_CLOSED,
@@ -273,8 +274,8 @@ export function WeaponReveal() {
     () =>
       Array.from({ length: CHIPS[grade] }, (_, i) => {
         const angle = (i / CHIPS[grade]) * Math.PI * 2;
-        const far = 90 + ((i * 37) % 80);
-        return { "--dx": `${Math.round(Math.cos(angle) * far)}px`, "--dy": `${Math.round(Math.sin(angle) * far - 30)}px`, "--delay": `${(i % 4) * 20}ms` } as React.CSSProperties;
+        const far = 100 + ((i * 37) % 130);
+        return { "--dx": `${Math.round(Math.cos(angle) * far)}px`, "--dy": `${Math.round(Math.sin(angle) * far - 60)}px`, "--delay": `${(i % 5) * 70}ms` } as React.CSSProperties;
       }),
     [grade],
   );
@@ -292,6 +293,8 @@ export function WeaponReveal() {
   const pal = user.avatar && { ...user.avatar, weapon: "bare-hands" as const };
   const palFrame: ActionFrame = stage === "run" ? (legs ? "runA" : "runB") : stage === "insert" ? "punch" : "stand";
   const palBubble = stage === "rattle" ? "exclaim" : stage === "done" && duplicate ? "question" : null;
+  const beats = BEATS[grade];
+  const timing = { "--crack": `${beats.crack}ms`, "--burst": `${beats.burst}ms` } as React.CSSProperties;
   const palSprite = pal && (palBubble ? withBubble(actionRows(pal, palFrame), palBubble) : actionRows(pal, palFrame));
 
   async function again() {
@@ -302,11 +305,21 @@ export function WeaponReveal() {
   }
 
   return (
-    <div ref={dialogRef} tabIndex={-1} className="reveal-backdrop" role="dialog" aria-modal="true" aria-label={shown ? name : "보물상자"} onClick={skip}>
+    <div ref={dialogRef} tabIndex={-1} className="reveal-backdrop" role="dialog" aria-modal="true" aria-label={shown ? name : "보물상자"} style={timing} onClick={skip}>
       {/* 번쩍임은 흔들리는 .reveal 밖에 둔다 (안에 두면 화면 전체를 덮지 못한다) */}
       {stage === "burst" && <div className={`reveal-flash grade-${grade}`} aria-hidden="true" />}
+      {(stage === "rise" || shown) && (
+        <span className={`reveal-rain grade-${grade}`} aria-hidden="true">
+          {Array.from({ length: RAIN[grade] }, (_, i) => (
+            <i key={i} style={{ left: `${(i * 37) % 100}%`, animationDelay: `${(i * 83) % 1300}ms` }} />
+          ))}
+        </span>
+      )}
       <div className={`reveal stage-${stage} grade-${grade}`}>
         <div className="reveal-scene" aria-hidden="true">
+        {/* 등급 색 빛살: 터질 때 펼쳐져, 희귀 이상은 결과 화면에서도 천천히 돈다 */}
+        {(stage === "burst" || stage === "rise" || (shown && grade !== "common")) && <i className="reveal-rays" />}
+        {stage === "crack" && <i className="reveal-beam" />}
         {(stage === "rise" || shown) && (
           <div className="reveal-weapon">
             <span className={`aura aura-${grade}`}>
@@ -338,7 +351,14 @@ export function WeaponReveal() {
               ))}
             </span>
           )}
-          {(stage === "burst" || stage === "rise") && (
+          {(stage === "burst" || stage === "rise" || shown) && (
+            <span className="reveal-waves">
+              <i />
+              <i />
+              <i />
+            </span>
+          )}
+          {(stage === "burst" || stage === "rise" || shown) && (
             <span className="reveal-chips">
               {chips.map((style, i) => (
                 <i key={i} style={style} />
