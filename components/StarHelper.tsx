@@ -219,6 +219,15 @@ export function StarHelper() {
           await sleep(ms);
         };
         const hideAgain = async () => {
+          // 스킬 중에 스크롤해서 원래 자리(탭 바 등)와 멀어졌으면 호다닥 달려 돌아온 뒤 사라진다
+          const r = source.getBoundingClientRect();
+          const d = scrolled();
+          const back = place({ cx: r.left + r.width / 2 + d.x, feet: r.bottom - 4 + d.y });
+          const far = Math.hypot(back.x - at.x, back.y - at.y);
+          if (far > 8) {
+            frame("stand", back.x < at.x);
+            await run(back, Math.min(350, 120 + far));
+          }
           frame("stand");
           await sleep(100);
           await sinkDown();
