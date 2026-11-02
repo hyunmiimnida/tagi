@@ -30,6 +30,12 @@ function toView(program: Program, schools: School[]): ProgramView {
   };
 }
 
+// 지원 목록에서 뺀 학교(unlisted)의 출처에서만 온 공고는 사이트에 보이지 않는다 (data/의 기록은 그대로 둔다)
+function isVisible(program: Program, schools: School[]): boolean {
+  const hidden = new Set(schools.filter((school) => school.unlisted).flatMap((school) => school.sources.map((source) => source.id)));
+  return !program.sources.length || program.sources.some((id) => !hidden.has(id));
+}
+
 // 빌드할 때는 공고 페이지 수백 개가 같은 데이터를 쓰므로 한 번만 읽는다.
 // 개발 중(npm run dev)에는 데이터가 바뀌면 바로 보이도록 매번 읽는다
 const cacheable = process.env.NODE_ENV === "production";
@@ -38,7 +44,9 @@ let programsCache: ProgramView[] | null = null;
 export function getPrograms(): ProgramView[] {
   if (cacheable && programsCache) return programsCache;
   const schools = readSchools();
-  const programs = readJson<Program[]>("data/programs.json").map((program) => toView(program, schools));
+  const programs = readJson<Program[]>("data/programs.json")
+    .filter((program) => isVisible(program, schools))
+    .map((program) => toView(program, schools));
   if (cacheable) programsCache = programs;
   return programs;
 }
@@ -47,9 +55,12 @@ export const getProgram = (id: string) => getPrograms().find((program) => progra
 
 // 보관함(마지막 일정이 오래 지난 공고). 반복 프로그램의 지난 회차를 보여 줄 때만 쓴다
 let archiveCache: Program[] | null = null;
-function getArchive(): Program[] {
+export function getArchive(): Program[] {
   try {
-    if (!cacheable || !archiveCache) archiveCache = readJson<Program[]>("data/archive.json");
+    if (!cacheable || !archiveCache) {
+      const schools = readSchools();
+      archiveCache = readJson<Program[]>("data/archive.json").filter((program) => isVisible(program, schools));
+    }
   } catch {
     archiveCache = [];
   }

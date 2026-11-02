@@ -1,6 +1,6 @@
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { getCategories, getPrograms, getSchools, getSeriesInfo, getSourceNames } from "../lib/data.ts";
+import { getArchive, getCategories, getPrograms, getSchools, getSeriesInfo, getSourceNames } from "../lib/data.ts";
 import { isCurrent } from "../lib/filter.ts";
 import { LIST_VERSION, toListProgram } from "../lib/list.ts";
 import type { Program } from "../src/types.ts";
@@ -50,12 +50,7 @@ write("meta.json", {
 });
 
 // 반복 프로그램 묶음별 회차 목록. 지금 목록에 있는 공고가 속한 묶음만 만든다
-let archive: Program[] = [];
-try {
-  archive = JSON.parse(readFileSync(join(process.cwd(), "data", "archive.json"), "utf8"));
-} catch {
-  // 보관함이 없으면 목록만으로 묶는다
-}
+const archive = getArchive(); // 보관함이 없으면 목록만으로 묶는다
 const seriesIds = new Set(programs.map((p) => p.seriesId).filter((id): id is string => Boolean(id)));
 const members = new Map<string, Program[]>();
 for (const program of [...programs, ...archive]) {

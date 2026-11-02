@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { createClient } from "@supabase/supabase-js";
 import webpush from "web-push";
+import { getPrograms } from "../lib/data.ts";
 import { SITE_URL } from "../lib/filter.ts";
 import type { Program } from "../src/types.ts";
 import { DEADLINE_TYPES, dueSoon, FEEDBACK_TYPES } from "./feedback-triage.ts";
@@ -49,7 +50,7 @@ async function deadline() {
   }
   webpush.setVapidDetails(`${SITE}/privacy`, VAPID_PUBLIC_KEY, privateKey);
 
-  const programs: Program[] = JSON.parse(readFileSync(new URL("../data/programs.json", import.meta.url), "utf8"));
+  const programs: Program[] = getPrograms(); // 사이트에서 숨긴 공고는 알리지 않는다
   // 관심 표시는 합쳐지기 전 예전 id일 수도 있다
   const byId = new Map<string, Program>();
   for (const p of programs) for (const id of [p.id, ...(p.aliases ?? [])]) byId.set(id, p);
