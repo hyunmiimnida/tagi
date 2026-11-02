@@ -611,13 +611,6 @@ main:focus,
   margin-top: 8px;
 }
 
-.hero-setup p {
-  flex: 1;
-  color: var(--text-2);
-  font-size: 0.875rem;
-  word-break: keep-all;
-}
-
 .hero-setup-pal {
   flex: none;
   margin-left: auto;
@@ -891,14 +884,6 @@ main:focus,
 .panel-group + .panel-group {
   padding-top: 14px;
   border-top: 1px solid var(--line);
-}
-
-.panel-note {
-  width: 100%;
-  margin: 2px 0 0;
-  color: var(--text-3);
-  font-size: 0.75rem;
-  word-break: keep-all;
 }
 
 .panel-label {
@@ -1230,6 +1215,68 @@ main:focus,
 .detail .card + .card,
 .notice + .card {
   margin-top: 12px;
+}
+
+/* 제목 + 오른쪽 위 물음표 */
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 눌러야 보이는 설명 (components/HelpTip.tsx) */
+.help-tip {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  margin-left: auto;
+}
+
+.help-tip-button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--text-2);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.help-tip-box {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 20;
+  width: min(260px, 72vw);
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 14%);
+  color: var(--text-2);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.help-tip-box p + p {
+  margin-top: 6px;
+}
+
+.help-tip-box ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.help-tip-box li + li {
+  margin-top: 4px;
 }
 
 .card-title {
@@ -2493,10 +2540,6 @@ button.stat {
   line-height: 1.9;
 }
 
-.my-login-why {
-  margin-top: 16px;
-}
-
 .my-setup {
   background: var(--accent-soft);
 }
@@ -3598,12 +3641,6 @@ button.stat {
   color: #c9c1e6;
 }
 
-.avatar-try-hint {
-  align-self: center;
-  font-size: 13px;
-  color: #c9c1e6;
-}
-
 /* ── 무기 도감 ── */
 .codex-head {
   display: flex;
@@ -4568,6 +4605,12 @@ body:has(.reveal-backdrop) .pal-peek-anchor {
   align-items: center;
 }
 
+.treasure-side {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .treasure-keys {
   display: inline-flex;
   align-items: center;
@@ -4605,14 +4648,6 @@ body:has(.reveal-backdrop) .pal-peek-anchor {
 
 .treasure .button {
   width: 100%;
-}
-
-.treasure-ways {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 13px;
-  color: var(--text-3);
 }
 
 .reveal-refund {

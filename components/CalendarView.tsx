@@ -56,8 +56,7 @@ export function CalendarView() {
           <CalendarIcon size={40} />
           <MyPal pose="sit" scale={3} />
         </div>
-        <p className="empty-title">관심 공고의 일정을 한눈에</p>
-        <p>로그인하고 공고에 ☆를 누르면 모집 마감일과 활동 일정이 여기에 모여요.</p>
+        <p className="empty-title">공고에 ☆를 누르면 여기에 모여요</p>
         <button className="button primary" onClick={() => user.setLoginOpen(true)}>
           로그인하기
         </button>

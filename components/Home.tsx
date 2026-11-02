@@ -164,7 +164,6 @@ export function Home({ categories, schools }: Props) {
         {!mySchool && (
           // 학교를 아직 고르지 않았으면 내 캐릭터가 버튼 옆에 앉아 바라본다 (그동안 마감 임박의 빼꼼은 숨김, 한 화면에 한 명)
           <div className="hero-setup">
-            <p>학교를 고르면 그 학교에 오늘 올라온 소식을 알려 드려요.</p>
             <span className="hero-setup-pal">
               <MyPal pose="sit" scale={3} />
             </span>

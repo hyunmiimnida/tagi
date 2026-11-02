@@ -183,7 +183,6 @@ export function AvatarEditor() {
           <button type="button" className={`favorite avatar-try-star ${demoOn ? "on" : ""}`} aria-pressed={demoOn} aria-label="별 눌러 보기" onClick={tryStar}>
             <StarIcon filled={demoOn} />
           </button>
-          <span className="avatar-try-hint">별을 눌러 보세요</span>
         </div>
       </section>
 
@@ -226,7 +225,7 @@ export function AvatarEditor() {
               )}
             </div>
             <p className={`codex-name grade-name-${shown.grade}`}>{shownLocked ? "???" : shown.name}</p>
-            <p className="codex-flavor">{shownLocked ? (shown.grade === "legendary" ? "아직 잠들어 있는 전설이에요." : "보물상자에서 나올지도 몰라요.") : (shown.flavor ?? "")}</p>
+            <p className="codex-flavor">{shownLocked ? (shown.grade === "legendary" ? "아직 잠들어 있는 전설이에요." : "") : (shown.flavor ?? "")}</p>
           </div>
           <button type="button" className="codex-arrow" aria-label="다음 무기" onClick={() => go(1)}>
             <ChevronIcon dir="right" size={22} />

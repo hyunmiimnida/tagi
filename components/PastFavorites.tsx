@@ -40,7 +40,6 @@ export function PastFavorites({ listedIds }: { listedIds: Set<string> }) {
       <div className="section-head">
         <h2>지난 관심 공고</h2>
       </div>
-      <p className="section-empty">마감된 지 오래되어 보관함으로 옮겨진 공고예요.</p>
       <ul className="rows">
         {found.map(([id, [title, url, currentId]]) => (
           <li key={id} className="row">

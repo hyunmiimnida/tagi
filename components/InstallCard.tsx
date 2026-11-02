@@ -56,7 +56,6 @@ export function InstallCard() {
     <section className="section install-card">
       <div>
         <strong>홈 화면에 추가하기</strong>
-        <p>앱처럼 바로 열고, 인터넷이 끊겨도 마지막으로 본 공고를 볼 수 있어요.</p>
       </div>
       <div className="install-actions">
         <button className="text-button" onClick={close}>

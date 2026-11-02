@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { DAILY_KEYS, DEMO_KEYS, DRAW_COST, REVIEW_DAILY_MAX, REVIEW_KEYS, WELCOME_KEYS } from "../lib/gacha.ts";
+import { HelpTip } from "./HelpTip.tsx";
 import { useUser } from "../lib/user.tsx";
 import { KeyShardIcon } from "./KeyGiftToast.tsx";
 
@@ -44,11 +45,27 @@ export function TreasureBox() {
     <section className="card treasure" aria-label="보물상자">
       <div className="treasure-head">
         <h2 className="card-title">보물상자</h2>
-        {keys !== null && (
-          <span className="treasure-keys" aria-label={`열쇠조각 ${keys}개`}>
-            <KeyShardIcon /> {keys}
-          </span>
-        )}
+        <span className="treasure-side">
+          {keys !== null && (
+            <span className="treasure-keys" aria-label={`열쇠조각 ${keys}개`}>
+              <KeyShardIcon /> {keys}
+            </span>
+          )}
+          <HelpTip label="열쇠조각 모으는 방법">
+            {user.loginEnabled ? (
+              <ul>
+                <li>처음 오면 · 열쇠조각 {WELCOME_KEYS}개</li>
+                <li>매일 첫 접속 · {DAILY_KEYS}개</li>
+                <li>
+                  후기 남기기 · {REVIEW_KEYS}개 (프로그램마다 한 번, 하루 {REVIEW_DAILY_MAX}번까지)
+                </li>
+                <li>이미 가진 무기가 나오면 열쇠조각 일부를 돌려받아요</li>
+              </ul>
+            ) : (
+              <p>체험 모드라 모든 무기가 열려 있고, 열쇠조각은 들어올 때마다 {DEMO_KEYS}개로 채워져요.</p>
+            )}
+          </HelpTip>
+        </span>
       </div>
       {keys !== null && (
         <div className="treasure-meter" aria-hidden="true">
@@ -66,18 +83,6 @@ export function TreasureBox() {
         <p className="avatar-notice" role="status">
           {notice}
         </p>
-      )}
-      {user.loginEnabled ? (
-        <ul className="treasure-ways">
-          <li>처음 오면 · 열쇠조각 {WELCOME_KEYS}개</li>
-          <li>매일 첫 접속 · {DAILY_KEYS}개</li>
-          <li>
-            후기 남기기 · {REVIEW_KEYS}개 (프로그램마다 한 번, 하루 {REVIEW_DAILY_MAX}번까지)
-          </li>
-          <li>이미 가진 무기가 나오면 열쇠조각 일부를 돌려받아요</li>
-        </ul>
-      ) : (
-        <p className="treasure-ways">체험 모드라 모든 무기가 열려 있고, 열쇠조각은 들어올 때마다 {DEMO_KEYS}개로 채워져요.</p>
       )}
     </section>
   );

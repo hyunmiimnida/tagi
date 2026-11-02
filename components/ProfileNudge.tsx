@@ -35,7 +35,6 @@ export function ProfileNudge() {
     <section className="section install-card">
       <div>
         <strong>학년·관심 분야도 골라 보세요</strong>
-        <p>공고 화면에서 대상과 분야를 고르면 기억해 두고, 홈에 내 관심 분야 공고를 모아 드려요.</p>
       </div>
       <div className="install-actions">
         <button className="text-button" onClick={close}>

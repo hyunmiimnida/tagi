@@ -14,6 +14,7 @@ import { useListPrograms, useSeriesInfo } from "../lib/use-list.ts";
 import { LOGIN_PROVIDERS, supabase, useToday, useUser } from "../lib/user.tsx";
 import type { Profile } from "../lib/user.tsx";
 import { FeedbackBox } from "./FeedbackBox.tsx";
+import { HelpTip } from "./HelpTip.tsx";
 import { MyPal, MyPeekPal, PalSilhouette } from "./MyPal.tsx";
 import { CalendarPlusIcon, ChevronIcon, ProfileIcon } from "./Icons.tsx";
 
@@ -262,7 +263,6 @@ export function MyAccount({ schools, sources }: Props) {
 
         {guest && (
           <>
-            <p className="card-sub my-login-why">로그인하면 어느 기기에서든 같은 관심 공고를 보고, 마감 알림을 받고, 후기를 남길 수 있어요.</p>
             <button className="button primary wide" onClick={() => user.setLoginOpen(true)}>
               로그인
             </button>
@@ -305,13 +305,20 @@ export function MyAccount({ schools, sources }: Props) {
 
       {/* 6. 알림과 캘린더 */}
       <section className="card my-card">
-        <h2 className="card-title">알림과 캘린더</h2>
+        <div className="card-head">
+          <h2 className="card-title">알림과 캘린더</h2>
+          <HelpTip label="알림과 캘린더">
+            <p>마감 알림은 관심 공고 모집 마감 하루 전 아침 9시에 이 기기로 와요.</p>
+            <p>내보내기는 관심 공고 일정을 구글·애플·삼성 캘린더에 넣어요. 마감 하루 전 알림도 함께 들어가요.</p>
+            {installable && <p>홈 화면에 추가하면 앱처럼 바로 열고, 인터넷이 끊겨도 마지막으로 본 공고를 볼 수 있어요.</p>}
+          </HelpTip>
+        </div>
         <label className="my-switch my-row">
           <span>
             <strong>마감 알림</strong>
             <small>
-              관심 공고 모집 마감 하루 전 아침 9시에 이 기기로 알려 드려요.
-              {!user.signedIn && " 로그인하면 켤 수 있어요."}
+              마감 하루 전 아침 9시
+              {!user.signedIn && " · 로그인하면 켤 수 있어요"}
             </small>
           </span>
           <input
@@ -338,7 +345,7 @@ export function MyAccount({ schools, sources }: Props) {
         <div className="my-row">
           <span>
             <strong>캘린더 앱으로 내보내기</strong>
-            <small>관심 공고 일정을 구글·애플·삼성 캘린더에 넣어요. 마감 하루 전 알림도 함께 들어가요.{favoritePrograms.length === 0 && " 관심 공고가 있으면 켜져요."}</small>
+            {favoritePrograms.length === 0 && <small>관심 공고가 있으면 켜져요</small>}
           </span>
           <button
             className="button small"
@@ -353,7 +360,6 @@ export function MyAccount({ schools, sources }: Props) {
           <div className="my-row">
             <span>
               <strong>홈 화면에 추가</strong>
-              <small>앱처럼 바로 열고, 인터넷이 끊겨도 마지막으로 본 공고를 볼 수 있어요.</small>
             </span>
             <button className="button small" onClick={() => void install()}>
               추가
@@ -371,7 +377,7 @@ export function MyAccount({ schools, sources }: Props) {
         <section className="card my-card" id="my-comments">
           <h2 className="card-title">내 댓글</h2>
           {myComments.length === 0 ? (
-            <p className="card-sub">아직 쓴 댓글이 없어요. 해마다 열리는 프로그램의 상세 화면에서 후기를 남길 수 있어요.</p>
+            <p className="card-sub">아직 쓴 댓글이 없어요</p>
           ) : (
             <ul className="my-comments">
               {myComments.map((comment) => {

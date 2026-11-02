@@ -17,6 +17,7 @@ import { GRADES, STUDENT_STATUSES } from "../src/types.ts";
 import { useListPrograms } from "../lib/use-list.ts";
 import { useToday, useUser } from "../lib/user.tsx";
 import { LIST_QUERY_KEY } from "./BackLink.tsx";
+import { HelpTip } from "./HelpTip.tsx";
 import { ChevronIcon, CloseIcon, SearchIcon } from "./Icons.tsx";
 import { EmptyArt } from "./EmptyArt.tsx";
 import { ListError } from "./ListError.tsx";
@@ -388,6 +389,10 @@ export function Explorer({ categories, schools }: Props) {
           <div className="tag-panel stacked">
             <div className="panel-group">
               {option("all", "전체 학교", school === null && region === null, counts.all, () => chooseSchool(null))}
+              <HelpTip label="학교 고르기">
+                <p>숫자는 그 학교가 직접 올린 공고예요.</p>
+                <p>학교를 고르면 다른 학교 학생도 지원할 수 있는 공고가 함께 보여요.</p>
+              </HelpTip>
             </div>
             {regionNames.length > 1 && (
               <div className="segmented region-tabs" role="tablist" aria-label="지역">
@@ -415,7 +420,6 @@ export function Explorer({ categories, schools }: Props) {
                     // 직접 올린 공고가 없어도 고르면 "다른 학교도 지원" 공고가 보여서 0개라고 쓰지 않는다
                     option(s.id, s.name, school === s.id, counts.school.get(s.id), () => chooseSchool(school === s.id ? null : s.id), includeOpen && counts.school.get(s.id) === 0 ? "다른 학교 공고만" : undefined),
                   )}
-                <p className="panel-note">숫자는 그 학교가 직접 올린 공고예요. 학교를 고르면 다른 학교 학생도 지원할 수 있는 공고가 함께 보여요.</p>
               </div>
             )}
             <div className="panel-group">
@@ -511,7 +515,6 @@ export function Explorer({ categories, schools }: Props) {
             <MyPal pose="sit" scale={3} />
           </div>
           <p className="empty-title">조건에 맞는 공고가 없어요</p>
-          <p>필터를 줄이거나 다른 검색어를 써 보세요.</p>
           <div className="empty-actions">
             {/* 학교를 골라 둔 것을 잊고 검색하는 경우가 많아, 다른 학교에 결과가 있으면 바로 넓혀 볼 수 있게 한다 (내 학교 설정은 그대로) */}
             {(school || region) && (counts.all ?? 0) > 0 && (
