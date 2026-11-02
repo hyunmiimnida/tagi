@@ -98,6 +98,14 @@ export const ProfileIcon = ({ size, filled }: IconProps) => (
   </Svg>
 );
 
+export const HelpIcon = ({ size = 18 }: IconProps) => (
+  <Svg size={size}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M9.5 9.5a2.5 2.5 0 1 1 3.9 2.1c-.9.6-1.4 1.1-1.4 2.1" />
+    <path d="M12 17h.01" />
+  </Svg>
+);
+
 export const LockIcon = ({ size = 16 }: IconProps) => (
   <Svg size={size}>
     <rect x="5" y="11" width="14" height="10" rx="2" />

@@ -1233,17 +1233,25 @@ main:focus,
   margin-left: auto;
 }
 
+/* 보이는 아이콘은 18px, 누르는 자리는 32px (바깥 여백을 당겨 줄 높이를 늘리지 않는다) */
 .help-tip-button {
-  width: 24px;
-  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin: -7px;
+  padding: 0;
+  border: 0;
   border-radius: 50%;
-  background: var(--bg);
-  color: var(--text-2);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  line-height: 24px;
-  text-align: center;
+  background: none;
+  color: var(--text-3);
   cursor: pointer;
+}
+
+.help-tip-button:hover,
+.help-tip-button[aria-expanded="true"] {
+  color: var(--text);
 }
 
 .help-tip-box {

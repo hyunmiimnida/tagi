@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { HelpIcon } from "./Icons.tsx";
 
 // 카드 오른쪽 위의 물음표: 눌러야 설명이 보인다. 바깥을 누르거나 Esc를 누르면 닫힌다
 export function HelpTip({ label, children }: { label: string; children: React.ReactNode }) {
@@ -34,7 +35,7 @@ export function HelpTip({ label, children }: { label: string; children: React.Re
         aria-controls={open ? id : undefined}
         onClick={() => setOpen(!open)}
       >
-        ?
+        <HelpIcon />
       </button>
       {open && (
         <div id={id} className="help-tip-box" role="note">
