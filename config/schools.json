@@ -2947,7 +2947,7 @@
           "title": ".card-header h3",
           "content": ".editor-wrap",
           "date": ".view-header-info p:first-child",
-          "writer": "th:contains('작성자') + td"
+          "writer": ""
         }
       },
       {

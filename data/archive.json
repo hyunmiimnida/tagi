@@ -22896,7 +22896,7 @@
   {
     "id": "kangwon-scholarship-2434",
     "title": "2026-2학기 재학생 우선감면장학금 신청 안내",
-    "organizer": "춘천학생지원과",
+    "organizer": "학생과",
     "organizerType": "학교",
     "target": {
       "schools": [
@@ -36955,8 +36955,8 @@
   {
     "id": "kangwon-notice-11191",
     "title": "2026 해양수산 창업 콘테스트 \"바다에서 찾는 나만의 창업 아이디어!\"",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [],
       "colleges": [],
@@ -36975,7 +36975,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "창업",
       "공모전·대회"
     ],
@@ -83336,8 +83335,8 @@
   {
     "id": "kangwon-scholarship-2425",
     "title": "2027 엔젤루트 일본 어학연수 학비지원 장학생 선발 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -83358,7 +83357,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금",
       "해외·글로벌"
     ],
@@ -155401,8 +155399,8 @@
   {
     "id": "kangwon-scholarship-2402",
     "title": "2026년도 희망장학금 장학생 선발 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -155423,7 +155421,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금"
     ],
     "links": [
@@ -178639,8 +178636,8 @@
   {
     "id": "kangwon-scholarship-2391",
     "title": "2026년도 세종이도인재 장학금 장학생 선발안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -178661,7 +178658,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금"
     ],
     "links": [
@@ -183293,8 +183289,8 @@
   {
     "id": "kangwon-notice-10925",
     "title": "2026년 상반기 ISIC 국제학생증 인증비 지원행사 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": "신한은행, 하나은행",
+    "organizerType": "기업",
     "target": {
       "schools": [
         "kangwon"
@@ -183318,8 +183314,7 @@
       "end": "2026-05-10"
     },
     "tags": [
-      "학교",
-      "장학·지원금"
+      "기업"
     ],
     "links": [
       {
@@ -187574,8 +187569,8 @@
   {
     "id": "kangwon-notice-10897",
     "title": "★ 50기 WFK 월드프렌즈코리아 청년봉사단 단원(대학추천자) 모집(~2026. 5. 8. 17시까지)",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": "한국대학사회봉사협의회",
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -187600,9 +187595,8 @@
       "end": null
     },
     "tags": [
-      "학교",
-      "봉사",
       "해외·글로벌",
+      "봉사",
       "해외탐방"
     ],
     "links": [
@@ -193530,8 +193524,8 @@
   {
     "id": "kangwon-scholarship-2384",
     "title": "2026 화성시 꿈드림 장학생 모집 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -193552,7 +193546,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금"
     ],
     "links": [
@@ -193574,8 +193567,8 @@
   {
     "id": "kangwon-scholarship-2383",
     "title": "2026년도 화성지 주거비지원 장학금 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -193596,7 +193589,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금"
     ],
     "links": [
@@ -203982,8 +203974,8 @@
   {
     "id": "kangwon-notice-10845",
     "title": "★ 2025-2027 KOICA 청년중기봉사단 (아프리카,중남미) 2차 파견 단원(대학추천자) 모집(~2026. 4. 30.(목) 17시까지)",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": "KOICA",
+    "organizerType": "공공기관",
     "target": {
       "schools": [
         "kangwon"
@@ -204008,9 +204000,11 @@
       "end": null
     },
     "tags": [
-      "학교",
+      "공공기관",
+      "장학·지원금",
+      "해외·글로벌",
       "봉사",
-      "해외·글로벌"
+      "해외탐방"
     ],
     "links": [
       {
@@ -228505,8 +228499,8 @@
   {
     "id": "kangwon-scholarship-2363",
     "title": "2026년 서울독립유공자후손장학금 선발안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -228527,7 +228521,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금"
     ],
     "links": [
@@ -271662,8 +271655,8 @@
   {
     "id": "kangwon-scholarship-2335",
     "title": "2026년도 인천 청년 해외배낭연수 장학생 선발안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -271684,7 +271677,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "해외탐방",
       "장학·지원금"
     ],
@@ -276030,8 +276022,8 @@
   {
     "id": "kangwon-notice-10776",
     "title": "2026학년도 1학기 ISIC 국제학생증 발급비 지원행사 안내(재공지)",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": "신한은행",
+    "organizerType": "기업",
     "target": {
       "schools": [
         "kangwon"
@@ -276054,8 +276046,7 @@
       "end": "2026-03-31"
     },
     "tags": [
-      "학교",
-      "장학·지원금"
+      "기업"
     ],
     "links": [
       {
@@ -285555,8 +285546,8 @@
   {
     "id": "kangwon-scholarship-2325",
     "title": "2026년도 기후변화 장학생 모집 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -285577,7 +285568,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금"
     ],
     "links": [
@@ -303388,8 +303378,8 @@
   {
     "id": "kangwon-scholarship-2286",
     "title": "2026년도 1학기 중소기업취업연계장학금(희망사다리I) 신청 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -303410,7 +303400,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금",
       "취업·채용"
     ],
@@ -308615,8 +308604,8 @@
   {
     "id": "kangwon-scholarship-2314",
     "title": "2026년 KSD꿈이룸장학사업 신규 장학생 선발 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -308637,7 +308626,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금"
     ],
     "links": [
@@ -312896,8 +312884,8 @@
   {
     "id": "kangwon-scholarship-2313",
     "title": "2026년 상반기 서울인재대학장학생 선발 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -312918,7 +312906,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금"
     ],
     "links": [
@@ -324636,8 +324623,8 @@
   {
     "id": "kangwon-scholarship-2299",
     "title": "독일어 교육 프로그램 장학금 지원자 모집 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -324658,7 +324645,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금",
       "교육·특강"
     ],
@@ -327502,8 +327488,8 @@
   {
     "id": "kangwon-notice-10720",
     "title": "2026년 전반기 전문사관(전산 및 사이버 특기) 장교 선발 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -327524,7 +327510,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "취업·채용"
     ],
     "links": [
@@ -331235,8 +331220,8 @@
   {
     "id": "kangwon-scholarship-2291",
     "title": "2026년도 월곡장학생 모집 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [
         "kangwon"
@@ -331257,7 +331242,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금"
     ],
     "links": [

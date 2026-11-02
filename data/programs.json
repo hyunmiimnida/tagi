@@ -205140,8 +205140,8 @@
   {
     "id": "kangwon-scholarship-2410",
     "title": "2027년도 소아청소년 당뇨인 푸른 빛 희망 장학금 지원 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": null,
+    "organizerType": null,
     "target": {
       "schools": [],
       "colleges": [],
@@ -205160,7 +205160,6 @@
       "end": null
     },
     "tags": [
-      "학교",
       "장학·지원금"
     ],
     "links": [
@@ -211429,8 +211428,8 @@
   {
     "id": "kangwon-notice-11382",
     "title": "2026학년도 2학기 ISIC 국제학생증 발급비 지원행사 안내",
-    "organizer": "춘천학생지원과",
-    "organizerType": "학교",
+    "organizer": "신한은행, 하나은행",
+    "organizerType": "기업",
     "target": {
       "schools": [
         "kangwon"
@@ -211453,7 +211452,7 @@
       "end": "2026-09-20"
     },
     "tags": [
-      "학교"
+      "기업"
     ],
     "links": [
       {

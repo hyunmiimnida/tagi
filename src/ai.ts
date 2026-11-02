@@ -244,7 +244,7 @@ export function failureReason(error: unknown): string {
   const lastLine = (output: string | Buffer | undefined) => String(output ?? "")
     .split(/[\r\n]+/)
     .map((line) => line.trim())
-    .filter((line) => line && line !== details.cmd?.trim() && !commandLine.test(line))
+    .filter((line) => line && line !== details.cmd?.trim() && !commandLine.test(line) && !/ERROR rmcp::/.test(line)) // rmcp: Codex 연결 도구의 잡음이라 실패 이유가 아니다
     .at(-1);
   const reason = timedOut ? "시간 초과" : lastLine(details.stderr) || lastLine(details.stdout) || lastLine(message) || "명령 실행 실패";
   const code = details.code == null ? "" : ` (${typeof details.code === "number" ? "종료" : "오류"} 코드: ${details.code})`;

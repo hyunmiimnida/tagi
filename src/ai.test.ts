@@ -289,3 +289,11 @@ test("사용 한도는 message와 stderr·stdout 전체에서 감지한다", () 
   assert.ok(isUsageLimitError(cliError({ stdout: Buffer.from("usage limit reached") })));
   assert.ok(!isUsageLimitError(cliError({ stderr: "연결 실패" })));
 });
+
+test("failureReason은 Codex 연결 도구의 잡음 줄을 실패 이유로 쓰지 않는다", () => {
+  const error = Object.assign(new Error("Command failed: codex exec"), {
+    code: 1,
+    stderr: "진짜 이유\n2026-11-02T03:22:43Z ERROR rmcp::transport::worker: worker quit with fatal: HTTP 403",
+  });
+  assert.equal(failureReason(error), "진짜 이유 (종료 코드: 1)");
+});
