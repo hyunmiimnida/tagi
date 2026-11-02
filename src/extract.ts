@@ -167,7 +167,7 @@ export const isMandatoryNotice = (title: string) => MANDATORY_OR_SYSTEM.test(tit
 const LOAN = /학자금\s*대출/;
 const VACCINE = /예방\s*접종/;
 const SUPPORT = /지원|이자|경감|할인|장학금/;
-const MILITARY_OR_ELECTION = /현역병\s*모집\s*계획|예비군|입후보|후보자\s*등록/;
+const MILITARY_OR_ELECTION = /현역병\s*모집\s*(계획|일정)|예비군|입후보|후보자\s*등록/;
 export const isAdminNotice = (title: string) =>
   ((LOAN.test(title) || VACCINE.test(title)) && !SUPPORT.test(title)) || MILITARY_OR_ELECTION.test(title);
 

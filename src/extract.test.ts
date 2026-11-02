@@ -259,6 +259,7 @@ test("의무 교육·제도 안내는 빼고, 그 주제의 공모전·참여자
 test("학자금 대출·병역·예방접종·선거 입후보 안내는 빼고, 장학생 모집은 남긴다", () => {
   assert.ok(notForStudentsByTitle("2026-2학기 정부 학자금대출 안내(7/1(수)~)"));
   assert.ok(notForStudentsByTitle("(예비군연대) 2026년 9월 각 군 현역병 모집계획 안내"));
+  assert.ok(notForStudentsByTitle("각 군 현역병 모집일정 안내"));
   assert.ok(notForStudentsByTitle("[보건실] 2026학년도 인플루엔자(독감) 예방접종 안내"));
   assert.ok(notForStudentsByTitle("2027학년도 총학생회장 후보자 및 입후보 예정자 지원 안내"));
   assert.ok(!notForStudentsByTitle("2026년 5.18 기념재단 '5.18 희망장학생' 모집 안내"));
