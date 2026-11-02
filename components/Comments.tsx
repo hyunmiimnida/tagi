@@ -11,7 +11,7 @@ import { CommentForm } from "./CommentForm.tsx";
 import { CommentThreadList } from "./CommentThreadList.tsx";
 import { COMMENT_PAGE_SIZE, countOriginals, loadCommentFeed } from "../lib/comment-threads.ts";
 import type { Comment, CommentKind } from "../lib/comment-threads.ts";
-import { emptyReview, loadReviewSummary, REVIEW_SUMMARY_COLUMNS, REVIEW_SUMMARY_PAGE_SIZE, reviewErrorNotice, reviewPayload, reviewRoundsForToday, validateReview, writableReviewRounds } from "../lib/program-reviews.ts";
+import { emptyReview, loadAdminReviewRounds, loadReviewSummary, REVIEW_SUMMARY_COLUMNS, REVIEW_SUMMARY_PAGE_SIZE, reviewErrorNotice, reviewPayload, reviewRoundsForToday, validateReview, writableReviewRounds } from "../lib/program-reviews.ts";
 import type { ReviewRound, ReviewSummary as Summary } from "../lib/program-reviews.ts";
 import { ReviewFields } from "./ReviewFields.tsx";
 import { ReviewSummary } from "./ReviewSummary.tsx";
@@ -28,16 +28,14 @@ const SPAM_NOTICES: Record<string, string> = {
   suspended: "이용 규칙 위반으로 댓글 쓰기가 정지된 계정이에요.",
 };
 
-const KIND_TEXT: Record<CommentKind, { label: string; sub: string; placeholder: string; empty: string }> = {
+const KIND_TEXT: Record<CommentKind, { label: string; placeholder: string; empty: string }> = {
   review: {
     label: "후기",
-    sub: "지난 회차에 참여했다면 준비 팁이나 후기를 남겨 주세요. 다음 회차를 준비하는 학생에게 도움이 돼요.",
     placeholder: "예: 서류는 2주 전부터 준비했어요. 면접에서는 지원 동기를 물어봤어요.",
     empty: "아직 후기가 없어요. 첫 후기를 남겨 주세요.",
   },
   talk: {
     label: "대화",
-    sub: "궁금한 점이나 프로그램 이야기를 자유롭게 나눠요.",
     placeholder: "예: 이번 회차도 비슷한 때에 모집할까요?",
     empty: "아직 대화가 없어요. 먼저 말을 걸어 보세요.",
   },
@@ -46,6 +44,7 @@ const KINDS = Object.keys(KIND_TEXT) as CommentKind[];
 
 export function Comments({ seriesId, rounds }: { seriesId: string; rounds: ReviewRound[] }) {
   const user = useUser();
+  const { userId } = user;
   const today = useToday();
   const [comments, setComments] = useState<Comment[] | null>(null);
   const [failed, setFailed] = useState(false);
@@ -63,6 +62,8 @@ export function Comments({ seriesId, rounds }: { seriesId: string; rounds: Revie
   const [replyDraft, setReplyDraft] = useState("");
   const [rewardNote, setRewardNote] = useState<string | null>(null);
   const [reviews, setReviews] = useState<{ available: boolean; rows: Summary[] } | null>(null);
+  const [adminReviews, setAdminReviews] = useState<{ userId: string; seriesId: string; rows: Summary[] } | null>(null);
+  const isAdmin = Boolean(userId && adminReviews?.userId === userId && adminReviews.seriesId === seriesId);
   const currentRounds = reviewRoundsForToday(rounds, today);
   const writableRounds = writableReviewRounds(currentRounds);
   const [review, setReview] = useState(() => emptyReview(writableRounds[0]?.id ?? ""));
@@ -72,7 +73,6 @@ export function Comments({ seriesId, rounds }: { seriesId: string; rounds: Revie
   const writingReview = !hasKinds || kind === "review";
   const waitingForRound = hasRatings && writingReview && writableRounds.length === 0;
   const loadVersion = useRef(0);
-  const { userId } = user;
   const text = KIND_TEXT[hasKinds ? kind : "review"];
   const visible = hasKinds ? comments?.filter((c) => (c.kind ?? "review") === kind) : comments;
 
@@ -82,17 +82,24 @@ export function Comments({ seriesId, rounds }: { seriesId: string; rounds: Revie
     const version = ++loadVersion.current;
     setFailed(false);
     setMissingTable(false);
-    const [result, reviewResult] = await Promise.all([loadCommentFeed((columns, after) => {
+    const [result, reviewResult, adminResult] = await Promise.all([loadCommentFeed((columns, after) => {
       let query = supabase!.from("comment_feed").select(columns).eq("series_id", seriesId)
         .order("id", { ascending: true }).limit(COMMENT_PAGE_SIZE);
       if (after !== null) query = query.gt("id", after);
       return query;
     }), loadReviewSummary((offset) => supabase!.from("review_summary").select(REVIEW_SUMMARY_COLUMNS)
       .eq("series_id", seriesId).order("program_id", { ascending: true, nullsFirst: true })
-      .range(offset, offset + REVIEW_SUMMARY_PAGE_SIZE - 1))]);
+      .range(offset, offset + REVIEW_SUMMARY_PAGE_SIZE - 1)), (async () => {
+        if (!userId) return null;
+        const rows = await loadAdminReviewRounds(() => supabase!.rpc("is_admin"),
+          (offset) => supabase!.rpc("admin_review_rounds", { target_series: seriesId })
+          .order("program_id").range(offset, offset + REVIEW_SUMMARY_PAGE_SIZE - 1));
+        return rows === null ? null : { userId, seriesId, rows };
+      })()]);
     const { error } = result;
     if (version !== loadVersion.current) return;
     setReviews(reviewResult);
+    setAdminReviews(adminResult);
     setHasKinds(result.hasKinds);
     setHasReplies(result.hasReplies);
     // 댓글 표를 아직 만들지 않았으면(supabase/*.sql 미실행) 준비 중으로 보여 준다
@@ -118,6 +125,7 @@ export function Comments({ seriesId, rounds }: { seriesId: string; rounds: Revie
 
   useEffect(() => {
     setComments(null);
+    setAdminReviews(null);
     setReplying(null);
     setReplyDraft("");
     void load();
@@ -219,9 +227,11 @@ export function Comments({ seriesId, rounds }: { seriesId: string; rounds: Revie
   async function remove(comment: Comment) {
     const id = comment.id;
     const question = comment.parent_id != null ? "답글을 지울까요?"
-      : comment.kind === "talk" ? "글을 지울까요? 답글이 있으면 내용만 지우고 자리만 남아요."
-      : "후기를 지울까요? 답글이 있으면 내용만 지우고 자리만 남아요. 이 글로 받은 열쇠조각은 회수되고, 다시 써도 받지 못해요. 못 돌려받은 열쇠조각은 다음 후기 보상에서 빠져요.";
-    if (!supabase || !window.confirm(question)) return;
+      : comment.kind === "talk" ? "글을 지울까요?"
+      : "후기를 지울까요? 받은 열쇠조각은 회수돼요.";
+    const replyNote = comments?.some((reply) => reply.parent_id === id)
+      ? " 답글은 남고 내용만 지워져요." : "";
+    if (!supabase || !window.confirm(question + replyNote)) return;
     const { error } = await supabase.rpc("delete_my_comment", { target: id });
     if (error) { setNotice("지우지 못했어요. 잠시 후 다시 시도해 주세요."); return; }
     user.refreshKeys();
@@ -264,11 +274,8 @@ export function Comments({ seriesId, rounds }: { seriesId: string; rounds: Revie
           ))}
         </div>
       )}
-      {hasRatings && writingReview && <ReviewSummary rows={reviews!.rows} rounds={currentRounds} />}
-      <p className="card-sub">{text.sub}</p>
-      {user.loginEnabled && !missingTable && text === KIND_TEXT.review && (
-        <p className="card-sub">후기를 쓰면 프로그램마다 한 번 열쇠조각을 받아요. 별점이나 내용과는 상관없고, 답글에는 없어요.</p>
-      )}
+      {hasRatings && writingReview && <ReviewSummary key={`${seriesId}:${userId ?? ""}`} rows={reviews!.rows.filter((row) => row.series_id === seriesId && row.program_id === null)}
+        roundRows={isAdmin ? adminReviews!.rows : []} rounds={currentRounds} isAdmin={isAdmin} />}
       {rewardNote && text === KIND_TEXT.review && user.signedIn && <p className="card-sub">{rewardNote}</p>}
 
       {!user.loginEnabled || missingTable ? (
@@ -303,10 +310,9 @@ export function Comments({ seriesId, rounds }: { seriesId: string; rounds: Revie
           ) : agreed ? (
             <CommentForm draft={draft} onDraft={setDraft} onSubmit={submit} sending={sending}
               label={hasKinds ? text.label : "글"} placeholder={text.placeholder} nickname={user.profile.nickname}>
-              {hasRatings && writingReview && <>
+              {hasRatings && writingReview &&
                 <ReviewFields draft={selectedReview} rounds={writableRounds} onChange={setReview} disabled={sending} />
-                <p className="card-sub">{REVIEW_USE_NOTICE}</p>
-              </>}
+              }
             </CommentForm>
           ) : null}
 

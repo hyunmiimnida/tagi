@@ -82,7 +82,8 @@ export interface ReviewSummary extends ItemStats {
 export const REVIEW_SUMMARY_COLUMNS = "series_id, program_id, response_count, rating_count, overall_avg, distribution, "
   + REVIEW_ITEMS.map(({ key }) => `${key}_avg, ${key}_count`).join(", ") + ", again_rate, again_count";
 export const REVIEW_SUMMARY_PAGE_SIZE = 100;
-export async function loadReviewSummary(fetchPage: (offset: number) => PromiseLike<{ data: unknown; error: unknown }>) {
+type SummaryPage = (offset: number) => PromiseLike<{ data: unknown; error: unknown }>;
+export async function loadReviewSummary(fetchPage: SummaryPage) {
   const rows: ReviewSummary[] = [];
   for (let offset = 0; ; offset += REVIEW_SUMMARY_PAGE_SIZE) {
     let page;
@@ -94,4 +95,15 @@ export async function loadReviewSummary(fetchPage: (offset: number) => PromiseLi
     rows.push(...batch);
     if (batch.length < REVIEW_SUMMARY_PAGE_SIZE) return { available: true, rows };
   }
+}
+
+// 관리자 확인에 성공했을 때만 회차 RPC를 호출한다. 확인 실패는 공개 통계에 영향을 주지 않는다.
+export async function loadAdminReviewRounds(
+  checkAdmin: () => PromiseLike<{ data: unknown; error: unknown }>, fetchPage: SummaryPage,
+): Promise<ReviewSummary[] | null> {
+  try {
+    const { data, error } = await checkAdmin();
+    if (error || data !== true) return null;
+    return (await loadReviewSummary(fetchPage)).rows;
+  } catch { return null; }
 }

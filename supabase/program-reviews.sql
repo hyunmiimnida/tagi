@@ -105,11 +105,12 @@ create index if not exists comments_review_summary_idx on comments (series_id, p
 
 -- 표를 직접 읽지 못하게 하고, 통계만 owner 권한으로 공개한다. security_barrier로 집계 전 행의 노출을 막는다.
 -- comment_feed에는 점수·참여 정보를 추가하지 않는다.
--- 묶음 전체도 서로 다른 참여자 3명이 필요하다. 한 사람이 여러 회차에 쓴 것으로 이 기준을 채울 수 없다.
+-- 공개 뷰는 묶음 전체만 반환하며 서로 다른 참여자 3명이 필요하다.
+-- 한 사람이 여러 회차에 쓴 것으로 이 기준을 채울 수 없다.
 alter table comments enable row level security;
 revoke select on comments from public, anon, authenticated;
 create or replace view review_summary with (security_barrier = true) as
-select series_id, program_id,
+select series_id, null::text as program_id,
   case when count(distinct user_id) filter (where rating_overall is not null) >= 3 then count(*) end as response_count,
   case when count(distinct user_id) filter (where rating_overall is not null) >= 3 then count(rating_overall) end as rating_count,
   case when count(distinct user_id) filter (where rating_overall is not null) >= 3 then round(avg(rating_overall), 1) end as overall_avg,
@@ -132,7 +133,34 @@ select series_id, program_id,
   case when count(distinct user_id) filter (where rating_overall is not null) >= 3 then count(again) end as again_count
 from comments
 where kind = 'review' and parent_id is null and program_id is not null and not hidden and not deleted
-group by grouping sets ((series_id, program_id), (series_id));
+group by series_id;
 revoke all on review_summary from public, anon, authenticated;
 grant select on review_summary to anon, authenticated;
+
+-- 회차별 집계는 관리자 함수로만 읽는다. 공개 뷰와 같은 칸을 반환한다.
+create or replace function admin_review_rounds(target_series text) returns setof review_summary
+language plpgsql stable security definer set search_path = public as $$
+begin
+  perform assert_admin();
+  return query
+    select c.series_id, c.program_id,
+      count(*) as response_count, count(c.rating_overall) as rating_count,
+      round(avg(c.rating_overall), 1) as overall_avg,
+      array[count(*) filter (where c.rating_overall = 1), count(*) filter (where c.rating_overall = 2),
+        count(*) filter (where c.rating_overall = 3), count(*) filter (where c.rating_overall = 4),
+        count(*) filter (where c.rating_overall = 5)] as distribution,
+      round(avg(c.rating_content), 1), count(c.rating_content),
+      round(avg(c.rating_apply), 1), count(c.rating_apply),
+      round(avg(c.rating_operation), 1), count(c.rating_operation),
+      round(avg(c.rating_schedule), 1), count(c.rating_schedule),
+      round(avg(c.rating_benefit), 1), count(c.rating_benefit),
+      (count(*) filter (where c.again = 'yes'))::numeric / nullif(count(c.again), 0), count(c.again)
+    from comments c
+    where c.series_id = target_series and c.kind = 'review' and c.parent_id is null
+      and c.program_id is not null and not c.hidden and not c.deleted
+    group by c.series_id, c.program_id
+    order by c.program_id;
+end $$;
+revoke execute on function admin_review_rounds(text) from public, anon, authenticated;
+grant execute on function admin_review_rounds(text) to authenticated;
 commit;

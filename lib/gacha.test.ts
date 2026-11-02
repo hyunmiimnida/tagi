@@ -69,9 +69,12 @@ test("서버(supabase/gacha.sql)와 화면의 규칙이 같다", () => {
   assert.match(sql, new RegExp(`granted := ${REVIEW_KEYS} - paid`));
 });
 
-test("후기 보상 안내는 남은 횟수와 받는 양을 알려 준다", () => {
-  assert.match(reviewRewardNote(1, 0, false), /2번 남았어요.*5개를 받아요/);
-  assert.match(reviewRewardNote(3, 0, false), /모두 받았어요/);
+test("후기 보상 안내는 남은 횟수만, 예상과 다를 때는 이유도 알려 준다", () => {
+  for (let used = 0; used <= 4; used++) {
+    assert.equal(reviewRewardNote(used, 0, false), `오늘 후기 보상 ${Math.max(0, 3 - used)}번 남았어요.`);
+  }
+  assert.equal(reviewRewardNote(3, 7, false), "오늘 후기 보상 0번 남았어요.");
+  assert.equal(reviewRewardNote(3, 0, true), "오늘 후기 보상 0번 남았어요.");
   assert.match(reviewRewardNote(0, 0, true), /이미 보상을 받아서/);
   assert.match(reviewRewardNote(0, 3, false), /3개를 갚고 2개를 받아요/);
   assert.match(reviewRewardNote(0, 7, false), /7개가 있어서.*5개를 갚고 받는 열쇠조각은 없어요/);

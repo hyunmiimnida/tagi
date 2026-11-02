@@ -1421,15 +1421,33 @@ main:focus,
   border-radius: 6px;
 }
 
-.review-stars label > span[aria-hidden] {
-  color: var(--text-3);
-  font-size: 1.75rem;
+.review-star {
+  display: inline-flex;
+  vertical-align: middle;
+  pointer-events: none;
 }
 
-.review-stars label > span.filled,
-.review-star {
-  color: var(--star);
-  -webkit-text-stroke: 1px var(--star-edge);
+.review-star.empty {
+  --px-gold-shadow: var(--px-steel-dark);
+  --px-gold: var(--px-steel);
+  --px-gold-light: var(--px-steel);
+}
+
+.review-star-burst {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-star-burst {
+    display: none;
+  }
+  .review-star-burst .pfx-once g {
+    animation: none;
+  }
 }
 
 .review-score {
@@ -1445,7 +1463,15 @@ main:focus,
   background: var(--surface-2);
 }
 
+.review-summary-title {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
 .review-overall {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   margin-top: 12px;
   font-size: 1.125rem;
   font-weight: 700;
