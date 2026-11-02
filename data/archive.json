@@ -29685,7 +29685,8 @@
       "yu-news-230711014",
       "yu-news-230781281"
     ],
-    "summary": "반도체 기업 현직 선배에게 직무 실무와 자기소개서·면접 준비 팁을 배워요"
+    "summary": "반도체 기업 현직 선배에게 직무 실무와 자기소개서·면접 준비 팁을 배워요",
+    "seriesId": "yu-career-608"
   },
   {
     "id": "yu-news-230781314",
@@ -109368,7 +109369,8 @@
     "collectedAt": "2026-10-15T14:07:59.260Z",
     "summary": "마음건강 관리 프로그램에 참여하고 마일리지와 굿즈를 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T14:07:59.260Z"
+    "firstSeenAt": "2026-10-15T14:07:59.260Z",
+    "seriesId": "cbnu-cieat-BOM000000000415"
   },
   {
     "id": "jnu-cba-1044657",
@@ -131479,7 +131481,8 @@
     "collectedAt": "2026-10-15T18:00:20.844Z",
     "summary": "국제학생증 겸용 체크카드를 무료로 발급받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T18:00:20.844Z"
+    "firstSeenAt": "2026-10-15T18:00:20.844Z",
+    "seriesId": "jbnu-notice-194906"
   },
   {
     "id": "jbnu-notice-210783",
@@ -220076,47 +220079,6 @@
     "firstSeenAt": "2026-10-03T03:21:53.727Z"
   },
   {
-    "id": "skku-notice-136605",
-    "title": "각 군 현역병 모집일정(2026년 5월 지원) 안내",
-    "organizer": null,
-    "organizerType": null,
-    "target": {
-      "schools": [
-        "skku"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [],
-    "links": [
-      {
-        "sourceId": "skku-notice",
-        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=136605"
-      }
-    ],
-    "sources": [
-      "skku-notice"
-    ],
-    "postedAt": "2026-04-23",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-03T03:21:54.834Z",
-    "summary": "각 군 현역병 모집에 지원해요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-03T03:21:54.834Z"
-  },
-  {
     "id": "skku-notice-136224",
     "title": "정천초등학교 AI/SW 멘토링 인원 모집",
     "organizer": "정천초등학교",
@@ -292367,57 +292329,6 @@
     "summary": "서산에서 일주일 동안 지내 보는 체험에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-16T03:13:23.455Z"
-  },
-  {
-    "id": "kangwon-contest-3942",
-    "title": "각 군 현역병 모집일정 안내",
-    "organizer": null,
-    "organizerType": null,
-    "target": {
-      "schools": [
-        "kangwon"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "kangwon-contest",
-        "url": "https://www.kangwon.ac.kr/ko/bbs/719/detail.do?pstSn=4035"
-      },
-      {
-        "sourceId": "kangwon-contest",
-        "url": "https://www.kangwon.ac.kr/ko/bbs/719/detail.do?pstSn=3942"
-      }
-    ],
-    "sources": [
-      "kangwon-contest"
-    ],
-    "postedAt": "2026-03-25",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-16T03:15:13.177Z",
-    "summary": "각 군 현역병 모집 일정을 안내받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-16T03:15:13.177Z",
-    "aliases": [
-      "kangwon-contest-4035"
-    ],
-    "seriesId": "kangwon-contest-3836"
   },
   {
     "id": "ewha-oia-external-33138",
@@ -454193,7 +454104,8 @@
     "collectedAt": "2026-10-02T19:16:38.902Z",
     "summary": "여수에서 열리는 공동융합캠프에서 강의를 듣고 교통편과 1학점을 지원받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T19:16:38.902Z"
+    "firstSeenAt": "2026-10-02T19:16:38.902Z",
+    "seriesId": "korea-notice-000060000000059704"
   },
   {
     "id": "korea-scholarship-000100000000003593",
@@ -520288,7 +520200,8 @@
     "collectedAt": "2026-10-16T02:23:29.551Z",
     "summary": "청소년 힐링캠프에서 멘토 자원봉사로 활동하고 활동증명서와 봉사시간을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-16T02:23:29.551Z"
+    "firstSeenAt": "2026-10-16T02:23:29.551Z",
+    "seriesId": "jbnu-student-194192"
   },
   {
     "id": "kangwon-notice-5563",
@@ -536657,7 +536570,8 @@
     "collectedAt": "2026-10-16T02:18:46.404Z",
     "summary": "학교를 알리는 제26기 학생홍보대사로 활동할 학생을 뽑아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-16T02:18:46.404Z"
+    "firstSeenAt": "2026-10-16T02:18:46.404Z",
+    "seriesId": "jbnu-student-184784"
   },
   {
     "id": "jbnu-notice-194028",
@@ -539485,7 +539399,8 @@
     "collectedAt": "2026-10-16T12:49:54.180Z",
     "summary": "국제학생증 ISIC 발급비를 무료로 지원받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-16T12:49:54.180Z"
+    "firstSeenAt": "2026-10-16T12:49:54.180Z",
+    "seriesId": "jbnu-notice-194906"
   },
   {
     "id": "ssu-notice-hog6gv1oia4yn",
@@ -546779,51 +546694,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-16T02:58:18.523Z",
     "seriesId": "kangwon-scholarship-893"
-  },
-  {
-    "id": "kangwon-contest-3836",
-    "title": "각 군 현역병 모집일정 안내",
-    "organizer": "학생과",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "kangwon"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용"
-    ],
-    "links": [
-      {
-        "sourceId": "kangwon-contest",
-        "url": "https://www.kangwon.ac.kr/ko/bbs/719/detail.do?pstSn=3836"
-      }
-    ],
-    "sources": [
-      "kangwon-contest"
-    ],
-    "postedAt": "2025-11-21",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-16T03:16:37.972Z",
-    "summary": "각 군 현역병 모집 일정을 확인하고 지원해요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-16T03:16:37.972Z",
-    "seriesId": "kangwon-contest-3836"
   },
   {
     "id": "jbnu-notice-194853",
@@ -557505,7 +557375,8 @@
     "collectedAt": "2026-10-03T07:17:23.086Z",
     "summary": "기숙사 생활의 경험과 노하우를 영상이나 웹툰으로 만들어 응모해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:17:23.086Z"
+    "firstSeenAt": "2026-10-03T07:17:23.086Z",
+    "seriesId": "skku-notice-131466"
   },
   {
     "id": "skku-notice-130769",
@@ -597892,7 +597763,8 @@
     "collectedAt": "2026-10-03T03:02:22.734Z",
     "summary": null,
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T03:02:22.734Z"
+    "firstSeenAt": "2026-10-03T03:02:22.734Z",
+    "seriesId": "cau-notice-28308"
   },
   {
     "id": "cau-notice-29307",
@@ -610156,7 +610028,8 @@
     "collectedAt": "2026-10-15T13:07:45.822Z",
     "summary": "문화체육관광부 대학생기자단 21기로 활동할 수 있어요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T13:07:45.822Z"
+    "firstSeenAt": "2026-10-15T13:07:45.822Z",
+    "seriesId": "gnu-external-4093901"
   },
   {
     "id": "gnu-academic-3996886",
@@ -617865,7 +617738,8 @@
     "collectedAt": "2026-10-15T13:07:49.538Z",
     "summary": "힐링캠프 멘토 자원봉사단으로 활동할 수 있어요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T13:07:49.538Z"
+    "firstSeenAt": "2026-10-15T13:07:49.538Z",
+    "seriesId": "gnu-external-2227540"
   },
   {
     "id": "gnu-external-3814002",
@@ -754295,7 +754169,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T19:26:44.945Z",
     "summary": "시간관리 특강과 주간 상담을 통해 취업 준비 루틴을 만들고 미션을 수행해요",
-    "firstSeenAt": "2026-10-01T19:26:44.945Z"
+    "firstSeenAt": "2026-10-01T19:26:44.945Z",
+    "seriesId": "dcu-program-168458"
   },
   {
     "id": "pknu-notice-720464",
@@ -1179711,7 +1179586,8 @@
     "collectedAt": "2026-10-04T00:32:48.723Z",
     "summary": "인권지기로 추천받아 선정돼요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-04T00:32:48.723Z"
+    "firstSeenAt": "2026-10-04T00:32:48.723Z",
+    "seriesId": "cau-notice-28308"
   },
   {
     "id": "cau-notice-28303",
@@ -1400774,54 +1400650,6 @@
     "seriesId": "inha-notice-37398"
   },
   {
-    "id": "ssu-notice-hd5p1nv145ybet",
-    "title": "각 군 현역병 모집일정(2024년 5월) 안내",
-    "organizer": null,
-    "organizerType": null,
-    "target": {
-      "schools": [
-        "ssu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [],
-    "links": [
-      {
-        "sourceId": "ssu-notice",
-        "url": "https://scatch.ssu.ac.kr/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/?f&category&slug=%EA%B0%81-%EA%B5%B0-%ED%98%84%EC%97%AD%EB%B3%91-%EB%AA%A8%EC%A7%91%EC%9D%BC%EC%A0%952024%EB%85%84-5%EC%9B%94-%EC%95%88%EB%82%B4-2&keyword"
-      },
-      {
-        "sourceId": "ssu-notice",
-        "url": "https://scatch.ssu.ac.kr/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/?f&category&slug=%EA%B0%81-%EA%B5%B0-%ED%98%84%EC%97%AD%EB%B3%91-%EB%AA%A8%EC%A7%91%EC%9D%BC%EC%A0%952024%EB%85%84-5%EC%9B%94-%EC%95%88%EB%82%B4&keyword"
-      }
-    ],
-    "sources": [
-      "ssu-notice"
-    ],
-    "postedAt": "2024-05-24",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-18T13:45:45.564Z",
-    "summary": "각 군 현역병 모집에 지원해요.",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-18T13:45:45.564Z",
-    "aliases": [
-      "ssu-notice-hpx27uo15bxyri"
-    ]
-  },
-  {
     "id": "kookmin-notice-8563",
     "title": "[성북구] 쉽고 재미있는 미디어 교육(6월) 안내",
     "organizer": "성북구",
@@ -1431397,7 +1431225,8 @@
     "collectedAt": "2026-10-16T13:04:12.302Z",
     "summary": "국방 공공데이터를 활용하는 경진대회에 참가해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-16T13:04:12.302Z"
+    "firstSeenAt": "2026-10-16T13:04:12.302Z",
+    "seriesId": "kangwon-contest-2502"
   },
   {
     "id": "kangwon-contest-2501",
@@ -1471255,7 +1471084,8 @@
     "collectedAt": "2026-10-15T13:24:44.494Z",
     "summary": "어려움을 겪는 청소년의 힐링캠프 멘토 자원봉사자로 활동해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T13:24:44.494Z"
+    "firstSeenAt": "2026-10-15T13:24:44.494Z",
+    "seriesId": "gnu-external-2227540"
   },
   {
     "id": "gnu-scholarship-2229510",
