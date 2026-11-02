@@ -54,6 +54,7 @@
 - 캘린더의 "지난 관심 공고": 보관함으로 간 관심 공고를 `public/api/ids.json`에서 찾아 제목·원문·이번 회차를 보여 준다 (`components/PastFavorites.tsx`)
 - 댓글 도배 막기: `supabase/spam.sql` 트리거(20초 안 재작성, 하루 20개, 같은 내용 반복, 링크 2개 이상). 걸리면 `spam:이유` 오류 → `components/Comments.tsx`가 안내
   - 후기·대화 답글은 한 단계·보상 없음(`supabase/comment-threads.sql`, gacha도 재실행). 답글 있는 원글은 본인·관리자 삭제·탈퇴 모두 본문·작성자·신고 연결을 지우고 자리만 남기며 마지막 답글 삭제 때 자리도 지움. 새 뷰 실행 전에는 답글 없이 기존 탭 유지.
+  - 후기 별점은 본문과 함께 `comments` 칸에 저장(`supabase/program-reviews.sql`, 수정한 comment-threads 다음 실행). 한 사람 한 회차 후기 하나, 참여자 종합 별점 필수·세부 항목 선택. 미선정·미참여는 신청 과정만. `review_summary`는 참여자 3명 이상 별점만 숫자 공개, 숨김 제외·삭제/탈퇴 시 점수도 삭제. 뷰를 못 읽으면 기존 양식·기존 insert 유지. 개별 별점은 목록에 넣지 않고 gacha 보상은 그대로.
   - `supabase/program-reports-guard.sql`: 정보 오류 신고(로그인 없이도 됨) 도배 막기 — 작성 시각·처리 상태를 서버가 정하고, 같은 공고·같은 이유 하루 1번, 한 공고에 처리 안 된 신고 5개까지, 한 사람 1시간 10개(비로그인은 모두 합쳐 60개). 걸리면 `spam:이유` → `components/ReportInfo.tsx`가 안내
   - `supabase/insert-guard.sql`: 댓글·의견을 쓸 때 작성 시각을 서버 시각으로, 댓글 숨김·검토 시각을 처음 값으로 덮어쓴다(작성 시각을 과거로 넣어 도배 검사를 피하거나 검토 시각을 미래로 넣어 자동 숨김을 피하지 못하게). 트리거 이름 `*_aa_guard_insert`는 도배 검사보다 먼저 실행되게 지은 것
 - 마감 알림(웹 푸시): 프로필에서 켜면 `lib/push.ts`가 기기 알림 주소를 `push_subscriptions` 표에 저장. 매일 오전 9시 `.github/workflows/notify.yml`이 `scripts/notify.ts deadline`으로 내일 모집 마감인 관심 공고를 보낸다(`public/sw.js`가 받아 표시). 켜면 그 기기에 확인 알림을 바로 띄우고, 다른 기기에서 켠 알림이면 프로필에 "이 기기에서도 받기"가 보인다. 비밀 값 `SUPABASE_SERVICE_ROLE_KEY`·`VAPID_PRIVATE_KEY`는 GitHub Secrets에만

@@ -9,12 +9,14 @@ interface Props {
   placeholder: string;
   nickname?: string | null;
   onCancel?: () => void;
+  children?: React.ReactNode;
 }
 
-export function CommentForm({ draft, onDraft, onSubmit, sending, label, placeholder, nickname, onCancel }: Props) {
+export function CommentForm({ draft, onDraft, onSubmit, sending, label, placeholder, nickname, onCancel, children }: Props) {
   return (
     <form className="comment-form" onSubmit={onSubmit}>
-      <textarea value={draft} maxLength={MAX_LENGTH} rows={3} placeholder={placeholder} autoFocus={Boolean(onCancel)}
+      {children}
+      <textarea value={draft} required maxLength={MAX_LENGTH} rows={3} placeholder={placeholder} autoFocus={Boolean(onCancel)}
         aria-label={`${label} 내용`} onChange={(event) => onDraft(event.target.value)} />
       <div className="comment-form-foot">
         <span>{draft.length}/{MAX_LENGTH} · {nickname ? `"${nickname}"(으)로` : "익명으로"} 올라가요</span>

@@ -7,7 +7,7 @@ import { DetailActions } from "../../../components/DetailActions.tsx";
 import { DetailDday } from "../../../components/DetailDday.tsx";
 import { ExternalIcon } from "../../../components/Icons.tsx";
 import { getAllSchools, getPastRounds, getPrograms, getSourceNames } from "../../../lib/data.ts";
-import { describeTarget, formatDate, formatPeriod, recruitWord } from "../../../lib/filter.ts";
+import { describeTarget, formatDate, formatPeriod, isClosed, recruitWord, toDateString } from "../../../lib/filter.ts";
 import { jsonLdScript, programJsonLd } from "../../../lib/jsonld.ts";
 import type { Program } from "../../../src/types.ts";
 
@@ -144,7 +144,9 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
         </section>
       )}
 
-      {program.seriesId && <Comments seriesId={program.seriesId} />}
+      {program.seriesId && <Comments key={program.id} seriesId={program.seriesId} rounds={[program, ...pastRounds].map((round) => ({
+        id: round.id, title: round.title, closed: isClosed(round, toDateString(new Date())), recruitEnd: round.recruitPeriod.end,
+      }))} />}
 
       <div className="cta">
         <ApplyCheer />

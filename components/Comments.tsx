@@ -6,11 +6,15 @@ import { reviewRewardNote } from "../lib/gacha.ts";
 import { COMMENT_RULES, REVIEW_USE_NOTICE } from "../lib/policy.ts";
 import { toValidAvatar } from "../lib/pixel-pals.ts";
 import type { Avatar } from "../lib/pixel-pals.ts";
-import { supabase, useUser } from "../lib/user.tsx";
+import { supabase, useToday, useUser } from "../lib/user.tsx";
 import { CommentForm } from "./CommentForm.tsx";
 import { CommentThreadList } from "./CommentThreadList.tsx";
 import { COMMENT_PAGE_SIZE, countOriginals, loadCommentFeed } from "../lib/comment-threads.ts";
 import type { Comment, CommentKind } from "../lib/comment-threads.ts";
+import { emptyReview, loadReviewSummary, REVIEW_SUMMARY_COLUMNS, REVIEW_SUMMARY_PAGE_SIZE, reviewErrorNotice, reviewPayload, reviewRoundsForToday, validateReview, writableReviewRounds } from "../lib/program-reviews.ts";
+import type { ReviewRound, ReviewSummary as Summary } from "../lib/program-reviews.ts";
+import { ReviewFields } from "./ReviewFields.tsx";
+import { ReviewSummary } from "./ReviewSummary.tsx";
 
 // 반복 프로그램 후기·정보 나눔. 같은 묶음(seriesId)의 모든 회차가 댓글을 함께 본다.
 // 누구나 읽을 수 있고, 이용 규칙에 동의한 로그인 사용자만 쓴다.
@@ -40,8 +44,9 @@ const KIND_TEXT: Record<CommentKind, { label: string; sub: string; placeholder: 
 };
 const KINDS = Object.keys(KIND_TEXT) as CommentKind[];
 
-export function Comments({ seriesId }: { seriesId: string }) {
+export function Comments({ seriesId, rounds }: { seriesId: string; rounds: ReviewRound[] }) {
   const user = useUser();
+  const today = useToday();
   const [comments, setComments] = useState<Comment[] | null>(null);
   const [failed, setFailed] = useState(false);
   const [missingTable, setMissingTable] = useState(false);
@@ -57,6 +62,15 @@ export function Comments({ seriesId }: { seriesId: string }) {
   const [replying, setReplying] = useState<number | null>(null);
   const [replyDraft, setReplyDraft] = useState("");
   const [rewardNote, setRewardNote] = useState<string | null>(null);
+  const [reviews, setReviews] = useState<{ available: boolean; rows: Summary[] } | null>(null);
+  const currentRounds = reviewRoundsForToday(rounds, today);
+  const writableRounds = writableReviewRounds(currentRounds);
+  const [review, setReview] = useState(() => emptyReview(writableRounds[0]?.id ?? ""));
+  const selectedReview = writableRounds.some((round) => round.id === review.program_id)
+    ? review : { ...review, program_id: writableRounds[0]?.id ?? "" };
+  const hasRatings = Boolean(reviews?.available && hasKinds);
+  const writingReview = !hasKinds || kind === "review";
+  const waitingForRound = hasRatings && writingReview && writableRounds.length === 0;
   const loadVersion = useRef(0);
   const { userId } = user;
   const text = KIND_TEXT[hasKinds ? kind : "review"];
@@ -68,14 +82,17 @@ export function Comments({ seriesId }: { seriesId: string }) {
     const version = ++loadVersion.current;
     setFailed(false);
     setMissingTable(false);
-    const result = await loadCommentFeed((columns, after) => {
+    const [result, reviewResult] = await Promise.all([loadCommentFeed((columns, after) => {
       let query = supabase!.from("comment_feed").select(columns).eq("series_id", seriesId)
         .order("id", { ascending: true }).limit(COMMENT_PAGE_SIZE);
       if (after !== null) query = query.gt("id", after);
       return query;
-    });
+    }), loadReviewSummary((offset) => supabase!.from("review_summary").select(REVIEW_SUMMARY_COLUMNS)
+      .eq("series_id", seriesId).order("program_id", { ascending: true, nullsFirst: true })
+      .range(offset, offset + REVIEW_SUMMARY_PAGE_SIZE - 1))]);
     const { error } = result;
     if (version !== loadVersion.current) return;
+    setReviews(reviewResult);
     setHasKinds(result.hasKinds);
     setHasReplies(result.hasReplies);
     // 댓글 표를 아직 만들지 않았으면(supabase/*.sql 미실행) 준비 중으로 보여 준다
@@ -152,12 +169,19 @@ export function Comments({ seriesId }: { seriesId: string }) {
   async function submit(event: React.FormEvent, parentId: number | null = null) {
     event.preventDefault();
     const body = (parentId === null ? draft : replyDraft).trim();
-    if (!supabase || !userId || !agreed || !body || sending) return;
+    if (!supabase || !userId || !agreed || !body || sending || reviews === null) return;
+    if (hasRatings && writingReview && parentId === null) {
+      const invalid = validateReview(selectedReview, currentRounds);
+      if (invalid) { setNotice(invalid); return; }
+    }
     setSending(true);
     const { error } = await supabase.from("comments").insert({ series_id: seriesId, user_id: userId, body,
-      ...(hasKinds ? { kind } : {}), ...(parentId !== null ? { parent_id: parentId } : {}) });
+      ...(hasKinds ? { kind } : {}), ...(parentId !== null ? { parent_id: parentId } : {}),
+      ...reviewPayload(selectedReview, hasRatings, hasKinds ? kind : "review", parentId) });
     setSending(false);
     if (error) {
+      const ratingNotice = reviewErrorNotice(error);
+      if (ratingNotice) { setNotice(ratingNotice); return; }
       const reply = error.message.match(/reply:(\w+)/)?.[1];
       if (reply) {
         const notices: Record<string, string> = {
@@ -183,7 +207,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
       return;
     }
     setNotice(null);
-    if (parentId === null) setDraft("");
+    if (parentId === null) { setDraft(""); setReview(emptyReview(selectedReview.program_id)); }
     else { setReplyDraft(""); setReplying(null); }
     if (parentId === null) {
       user.refreshKeys(); // 답글에는 후기 선물이 없다
@@ -240,6 +264,7 @@ export function Comments({ seriesId }: { seriesId: string }) {
           ))}
         </div>
       )}
+      {hasRatings && writingReview && <ReviewSummary rows={reviews!.rows} rounds={currentRounds} />}
       <p className="card-sub">{text.sub}</p>
       {user.loginEnabled && !missingTable && text === KIND_TEXT.review && (
         <p className="card-sub">후기를 쓰면 프로그램마다 한 번 열쇠조각을 받아요. 별점이나 내용과는 상관없고, 답글에는 없어요.</p>
@@ -250,7 +275,11 @@ export function Comments({ seriesId }: { seriesId: string }) {
         <p className="comment-empty">댓글 기능을 준비하고 있어요. 곧 후기를 남길 수 있어요.</p>
       ) : (
         <>
-          {!user.signedIn ? (
+          {reviews === null ? (
+            <p className="comment-empty">댓글을 불러오는 중이에요.</p>
+          ) : waitingForRound ? (
+            <p className="comment-empty">모집이 끝나면 후기를 쓸 수 있어요</p>
+          ) : !user.signedIn ? (
             <button className="button wide" onClick={() => user.setLoginOpen(true)}>
               로그인하고 {text.label === "후기" ? "후기" : "글"} 남기기
             </button>
@@ -273,7 +302,12 @@ export function Comments({ seriesId }: { seriesId: string }) {
             </div>
           ) : agreed ? (
             <CommentForm draft={draft} onDraft={setDraft} onSubmit={submit} sending={sending}
-              label={hasKinds ? text.label : "글"} placeholder={text.placeholder} nickname={user.profile.nickname} />
+              label={hasKinds ? text.label : "글"} placeholder={text.placeholder} nickname={user.profile.nickname}>
+              {hasRatings && writingReview && <>
+                <ReviewFields draft={selectedReview} rounds={writableRounds} onChange={setReview} disabled={sending} />
+                <p className="card-sub">{REVIEW_USE_NOTICE}</p>
+              </>}
+            </CommentForm>
           ) : null}
 
           {notice && (

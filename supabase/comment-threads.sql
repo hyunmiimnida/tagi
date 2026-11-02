@@ -56,7 +56,15 @@ begin
   elsif exists (select 1 from comments where parent_id = old.id) then
     if not old.deleted then
       delete from reports where comment_id = old.id;
-      update comments set body = '', user_id = null, deleted = true, hidden = false, reviewed_at = null where id = old.id;
+      -- 새 별점 SQL 전에도 실행할 수 있다. 새 칸이 있으면 참여·점수도 모두 지운다.
+      if to_jsonb(old) ? 'program_id' then
+        update comments set body = '', user_id = null, deleted = true, hidden = false, reviewed_at = null,
+          program_id = null, participation = null, rating_overall = null, rating_content = null,
+          rating_apply = null, rating_operation = null, rating_schedule = null, rating_benefit = null, again = null
+          where id = old.id;
+      else
+        update comments set body = '', user_id = null, deleted = true, hidden = false, reviewed_at = null where id = old.id;
+      end if;
     end if;
     return null;
   end if;
