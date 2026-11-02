@@ -104,4 +104,5 @@ export const upgradeWeaponId = (value: unknown): WeaponId | null =>
   isWeaponId(value) ? value : typeof value === "string" ? (LEGACY[value] ?? null) : null;
 
 // 이 무기를 가졌는지. 맨손은 누구나, 그 밖에는 얻은 무기 목록(owned)에 있어야 한다
-export const owns = (owned: ReadonlySet<string>, id: WeaponId) => id === STARTER_WEAPON || owned.has(id);
+// legend-1은 아직 없는 전설 무기 자리라 누구도 가질 수 없다 (도감에서는 잠긴 ??? 칸, 파편 수만 보여 준다)
+export const owns = (owned: ReadonlySet<string>, id: WeaponId) => id === STARTER_WEAPON || (id !== "legend-1" && owned.has(id));

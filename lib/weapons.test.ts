@@ -22,6 +22,7 @@ test("맨손만 누구나 갖고, 일반 무기부터는 얻어야 한다", () =
   assert.ok(!owns(none, "wooden-sword"));
   assert.ok(!owns(none, "blossom-blade"));
   assert.ok(owns(new Set(["blossom-blade"]), "blossom-blade"));
+  assert.ok(!owns(new Set(["legend-1"]), "legend-1")); // 아직 없는 전설 무기는 체험 모드에서도 못 가진다
   assert.equal(upgradeWeaponId("wand"), "apprentice-wand");
   assert.equal(upgradeWeaponId("tide-staff"), "tide-staff");
   assert.equal(upgradeWeaponId("spoon"), null);

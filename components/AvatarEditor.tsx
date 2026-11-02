@@ -236,7 +236,7 @@ export function AvatarEditor() {
         <div className="codex-actions">
           {shownLocked ? (
             <span className="codex-status">
-              <LockIcon size={14} /> 잠김
+              <LockIcon size={14} /> {shown.grade === "legendary" ? `전설의 파편 ${user.legendShards}/???` : "잠김"}
             </span>
           ) : equippedHere ? (
             <span className="codex-status equipped">장착 중</span>
