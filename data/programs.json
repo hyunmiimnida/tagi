@@ -141891,49 +141891,6 @@
     "firstSeenAt": "2026-10-14T04:01:25.957Z"
   },
   {
-    "id": "snu-student-398",
-    "title": "[안내] 학생처 챗봇 명칭 공모전 결과 발표 및 정식명칭 공개",
-    "organizer": "학생처",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "snu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "snu-student",
-        "url": "https://student.snu.ac.kr/%ec%86%8c%ec%8b%9d%c2%b7%ec%95%8c%eb%a6%bc/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/?mod=document&uid=398"
-      }
-    ],
-    "sources": [
-      "snu-student"
-    ],
-    "postedAt": "2026-10-13",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-14T04:01:36.907Z",
-    "summary": "학생처 챗봇 답변에 피드백을 남기고 우수 의견으로 뽑히면 상품권을 받아요",
-    "noApplication": true,
-    "firstSeenAt": "2026-10-14T04:01:36.907Z"
-  },
-  {
     "id": "dcu-program-187408",
     "title": "[해외취업]2026년 하반기 미국 해외인턴 및 취업 전략특강 신청 안내",
     "organizer": "대학일자리플러스센터",
@@ -183687,49 +183644,6 @@
     "seriesId": "jbnu-student-215254"
   },
   {
-    "id": "jbnu-student-217779",
-    "title": "(국가보훈부) 제87주년 순국선열의 날 계기 독립유공 정부포상 추천후보자 공개검증 참여 안내",
-    "organizer": "국가보훈부",
-    "organizerType": "정부부처",
-    "target": {
-      "schools": [
-        "jbnu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "정부부처"
-    ],
-    "links": [
-      {
-        "sourceId": "jbnu-student",
-        "url": "https://www.jbnu.ac.kr/web/Board/217779/detailView.do?menu=2378"
-      }
-    ],
-    "sources": [
-      "jbnu-student"
-    ],
-    "postedAt": "2026-09-21",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-15T17:56:46.247Z",
-    "summary": "독립유공 정부포상 추천후보자 공개검증에 참여해요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-15T17:56:46.247Z"
-  },
-  {
     "id": "jbnu-student-217723",
     "title": "(포항시) 「포항시-글로벌녹색성장기구(GGGI) 단기 행정 인턴 모집」 안내",
     "organizer": "포항시",
@@ -192491,50 +192405,6 @@
     "summary": "전기안전 분야 국내외 기술동향과 전문가 발표를 듣는 세미나예요",
     "noApplication": true,
     "firstSeenAt": "2026-10-15T18:13:33.715Z"
-  },
-  {
-    "id": "jbnu-notice-217210",
-    "title": "평생지도교수제 교과목 [진로개발 및 상담] 이수사항 및 취업진로지원과 상담이수 안내",
-    "organizer": "학생취업진로처 취업진로지원과",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "jbnu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "상담·심리"
-    ],
-    "links": [
-      {
-        "sourceId": "jbnu-notice",
-        "url": "https://www.jbnu.ac.kr/web/Board/217210/detailView.do?menu=2377"
-      }
-    ],
-    "sources": [
-      "jbnu-notice"
-    ],
-    "postedAt": "2026-09-08",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-15T18:13:36.688Z",
-    "summary": "진로개발 및 상담 이수와 취업진로 상담 이수를 안내해요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-15T18:13:36.688Z"
   },
   {
     "id": "jbnu-notice-217205",
@@ -233177,50 +233047,6 @@
     "firstSeenAt": "2026-10-18T04:37:10.854Z"
   },
   {
-    "id": "ewha-notice-366344",
-    "title": "2026년 2학기 주거안정장학금 이화여자대학교 자체 기준 공지",
-    "organizer": "학생처 장학복지팀",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "ewha"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "ewha-notice",
-        "url": "https://www.ewha.ac.kr/ewha/news/notice.do?mode=view&articleNo=366344"
-      }
-    ],
-    "sources": [
-      "ewha-notice"
-    ],
-    "postedAt": "2026-08-19",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-18T04:37:12.044Z",
-    "summary": "2학기 주거안정장학금의 학교 자체 지원·제한 기준을 안내해요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-18T04:37:12.044Z"
-  },
-  {
     "id": "ewha-notice-366330",
     "title": "[인재개발원] 26-2학기 취업마스터 교육 OPEN (8/19(수) 부터 신청!)",
     "organizer": "인재개발원",
@@ -234009,53 +233835,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-18T04:37:23.694Z",
     "seriesId": "inha-notice-37135"
-  },
-  {
-    "id": "inha-notice-45214",
-    "title": "[학부-국가장학] 2026학년도 2학기 주거안정장학금 대학별 자체 기준(우선지원 및 지급 제외 기준) 안내",
-    "organizer": "한국장학재단",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "inha"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2027-05-22",
-      "end": "2027-06-22"
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "inha-notice",
-        "url": "https://www.inha.ac.kr/bbs/kr/8/45214/artclView.do"
-      }
-    ],
-    "sources": [
-      "inha-notice"
-    ],
-    "postedAt": "2026-08-28",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-18T04:37:24.995Z",
-    "summary": "원거리 대학에 다니는 저소득층 학생이 월 최대 20만 원 주거비를 지원받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-18T04:37:24.995Z",
-    "seriesId": "inha-notice-43486"
   },
   {
     "id": "inha-notice-45212",
@@ -246653,53 +246432,6 @@
     "firstSeenAt": "2026-10-18T04:42:22.325Z"
   },
   {
-    "id": "ssu-notice-h1tqqyv8ynwkaq",
-    "title": "2026학년도 2학기 한국장학재단 주거안정장학금 대학 자체 우선지원 기준 안내",
-    "organizer": "한국장학재단",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "ssu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "ssu-notice",
-        "url": "https://scatch.ssu.ac.kr/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/?f&category&slug=2026%ED%95%99%EB%85%84%EB%8F%84-2%ED%95%99%EA%B8%B0-%ED%95%9C%EA%B5%AD%EC%9E%A5%ED%95%99%EC%9E%AC%EB%8B%A8-%EC%A3%BC%EA%B1%B0%EC%95%88%EC%A0%95%EC%9E%A5%ED%95%99%EA%B8%88-%EB%8C%80%ED%95%99-%EC%9E%90&keyword"
-      }
-    ],
-    "sources": [
-      "ssu-notice"
-    ],
-    "postedAt": "2026-08-31",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-18T04:42:23.567Z",
-    "summary": "원거리 대학 진학 저소득 학생이 주거 생활비를 장학금으로 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-18T04:42:23.567Z",
-    "seriesId": "ssu-notice-h2kfsm51yo20f3"
-  },
-  {
     "id": "ssu-notice-105735",
     "title": "2026-2학기 숭실평화통일연구원 대학생 인턴 모집",
     "organizer": "숭실평화통일연구원",
@@ -257125,55 +256857,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-18T09:23:48.071Z",
     "seriesId": "inha-notice-36761"
-  },
-  {
-    "id": "inha-notice-43486",
-    "title": "[학부-국가장학] 2026학년도 1학기 주거안정장학금 대학별 자체 우선지원 및 지원 제외 기준 안내",
-    "organizer": "한국장학재단",
-    "organizerType": "공공기관",
-    "target": {
-      "schools": [
-        "inha"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "휴학생"
-      ],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-11-20",
-      "end": "2026-12-26"
-    },
-    "tags": [
-      "공공기관",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "inha-notice",
-        "url": "https://www.inha.ac.kr/bbs/kr/8/43486/artclView.do"
-      }
-    ],
-    "sources": [
-      "inha-notice"
-    ],
-    "postedAt": "2026-03-16",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-18T09:22:57.601Z",
-    "summary": "원거리 진학으로 주거비 부담이 큰 저소득층 대학생이 월 최대 20만 원을 지원받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-18T09:22:57.601Z",
-    "seriesId": "inha-notice-43486"
   },
   {
     "id": "inha-notice-43435",
@@ -278895,53 +278578,6 @@
     "seriesId": "yu-career-1703"
   },
   {
-    "id": "yu-news-232161971",
-    "title": "[건강관리센터] 치과 진료 안내 (학기중) ✨",
-    "organizer": "건강관리센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "yu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [
-        "졸업생"
-      ],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "yu-news",
-        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=232161971"
-      }
-    ],
-    "sources": [
-      "yu-news"
-    ],
-    "postedAt": "2026-10-20",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-20T14:18:03.086Z",
-    "summary": "치과 검진과 스케일링 등을 저렴하게 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-20T14:01:39.473Z"
-  },
-  {
     "id": "knu-notice-1338594",
     "title": "[진로취업과] 일본 해외취업 설명회(일본기업 TMES, NCD 테크놀로지) 개최",
     "organizer": "TMES, NCD 테크놀로지",
@@ -281752,54 +281388,6 @@
     "summary": "아이티센그룹 본사를 직접 방문해 기업을 탐방해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-20T14:02:38.359Z"
-  },
-  {
-    "id": "ssu-notice-h1mr42r8ndy4yu",
-    "title": "2026-2 비전채플 보충채플 이수 안내",
-    "organizer": null,
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "ssu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [
-        "4학년"
-      ],
-      "statuses": [
-        "재학생"
-      ],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-11-16",
-      "end": "2026-11-16"
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "ssu-notice",
-        "url": "https://scatch.ssu.ac.kr/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/?f&category&slug=2026-2-%EB%B9%84%EC%A0%84%EC%B1%84%ED%94%8C-%EB%B3%B4%EC%B6%A9%EC%B1%84%ED%94%8C-%EC%9D%B4%EC%88%98-%EC%95%88%EB%82%B4&keyword"
-      }
-    ],
-    "sources": [
-      "ssu-notice"
-    ],
-    "postedAt": "2026-10-20",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-20T14:19:00.588Z",
-    "summary": "비전채플 출석이 1회 모자란 4학년이 보충채플로 이수를 채워요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-20T14:02:36.833Z"
   },
   {
     "id": "ewha-notice-367521",
@@ -284701,49 +284289,6 @@
     "firstSeenAt": "2026-10-20T14:03:42.774Z"
   },
   {
-    "id": "seoultech-notice-896180",
-    "title": "[이벤트 종료 경품 소진완료] 꾹! 도장 찍고 선물 GET! 공릉동 소상공인 스탬프 투어",
-    "organizer": "대외협력처",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "seoultech"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-12-11"
-    },
-    "activityPeriod": {
-      "start": "2026-09-21",
-      "end": "2026-12-11"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "seoultech-notice",
-        "url": "https://www.seoultech.ac.kr/service/info/notice/?do=commonview&bnum=4691&bidx=896180"
-      }
-    ],
-    "sources": [
-      "seoultech-notice"
-    ],
-    "postedAt": "2026-10-02",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-20T14:20:06.954Z",
-    "summary": "공릉동 매장을 방문해 스탬프를 모으고 경품을 받는 이벤트예요",
-    "noApplication": true,
-    "firstSeenAt": "2026-10-20T14:03:43.927Z"
-  },
-  {
     "id": "seoultech-notice-896154",
     "title": "[국제교류처] 2026학년도 제4회 모의 TOEIC Speaking, OPIc 시험접수 안내(2026. 10. 24. 시행)",
     "organizer": "국제교류처",
@@ -285653,50 +285198,6 @@
     "summary": "찾아가는 문화마당에서 공연할 대학생·청년 예술인 팀을 모집해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-20T14:04:17.894Z"
-  },
-  {
-    "id": "seoultech-global-hbjopzv1p5eb0x",
-    "title": "[안내/중요] 외국인 등록증 및 비자 단체 접수(온라인) 안내(Registration Card & VISA - Online)",
-    "organizer": "국제교류처",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "seoultech"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "학사·행정"
-    ],
-    "links": [
-      {
-        "sourceId": "seoultech-global",
-        "url": "https://global.seoultech.ac.kr/notice/notice?do=view&bnum=58434&bidx=893622"
-      }
-    ],
-    "sources": [
-      "seoultech-global"
-    ],
-    "postedAt": "2026-08-06",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-20T14:20:50.144Z",
-    "summary": "외국인 유학생이 외국인등록증과 비자를 학교를 통해 단체로 신청해요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-20T14:04:24.694Z"
   },
   {
     "id": "seoultech-global-h15kyuen104t0jx",
@@ -301300,50 +300801,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-26T05:06:40.682Z",
     "seriesId": "dcu-scholarship-176173"
-  },
-  {
-    "id": "knu-notice-1338642",
-    "title": "2027학년도 경북대학교 어린이집 원아모집 및 입학설명",
-    "organizer": "어린이집",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "knu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": "2026-11-23",
-      "end": "2026-11-27"
-    },
-    "activityPeriod": {
-      "start": "2026-11-06",
-      "end": "2026-11-06"
-    },
-    "tags": [
-      "학교",
-      "박람회·설명회"
-    ],
-    "links": [
-      {
-        "sourceId": "knu-notice",
-        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.bbs_cde=1&btin.doc_no=1338642&btin.appl_no=000000&menu_idx=67"
-      }
-    ],
-    "sources": [
-      "knu-notice"
-    ],
-    "postedAt": "2026-10-23",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-26T05:06:17.347Z",
-    "summary": "자녀의 어린이집 입소를 신청하고 입학설명회에 참여해요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-26T05:06:17.347Z"
   },
   {
     "id": "knu-notice-1338633",
@@ -323631,50 +323088,6 @@
     "firstSeenAt": "2026-10-29T03:49:52.751Z"
   },
   {
-    "id": "pnu-notice-1511787",
-    "title": "[에듀테크센터] 대학 계열별 맞춤 AI+X 전공 실무 교육 장소 변경 안내(11월 2일~3일 장전캠)",
-    "organizer": "에듀테크센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "pnu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-11-02",
-      "end": "2026-11-03"
-    },
-    "tags": [
-      "학교",
-      "교육·특강"
-    ],
-    "links": [
-      {
-        "sourceId": "pnu-notice",
-        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq=1511787"
-      }
-    ],
-    "sources": [
-      "pnu-notice"
-    ],
-    "postedAt": "2026-10-27",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-29T03:49:53.998Z",
-    "summary": "계열별 전공에 맞춘 AI 활용 실무 교육을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-29T03:49:53.998Z"
-  },
-  {
     "id": "pnu-notice-1511786",
     "title": "[부산대 AI 콜로퀴엄 2026] 26.11.6(금), 주재걸 교수(KAIST), Improving vision-language-action models for robot manipulation via computer vision techniques",
     "organizer": "장영실AI융합연구원",
@@ -334479,50 +333892,6 @@
     "seriesId": "jbnu-notice-213590"
   },
   {
-    "id": "jbnu-notice-219098",
-    "title": "교내 보건진료소 11월 구강진료 예약 안내",
-    "organizer": "보건진료소",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "jbnu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": "2026-11-04",
-      "end": "2026-11-27"
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "jbnu-notice",
-        "url": "https://www.jbnu.ac.kr/web/Board/219098/detailView.do?menu=2377"
-      }
-    ],
-    "sources": [
-      "jbnu-notice"
-    ],
-    "postedAt": "2026-10-29",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-29T03:52:44.471Z",
-    "summary": "교내 보건진료소에서 구강검진과 충치치료 등 치과 진료를 무료로 받아요.",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-29T03:52:44.471Z",
-    "seriesId": "jbnu-notice-195700"
-  },
-  {
     "id": "jbnu-notice-219093",
     "title": "[동국대학교 WISE캠퍼스] 2026학년도 동기 계절수업 교류수학 안내",
     "organizer": "동국대학교 WISE캠퍼스",
@@ -335324,50 +334693,6 @@
     "summary": "중앙도서관에서 열리는 DCU 영화제에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-29T16:26:44.666Z"
-  },
-  {
-    "id": "pnu-notice-1511842",
-    "title": "[글로컬대학 30] 디지털인문학센터 플랫폼 구축을 위한 자유공모형 인문 데이터 융합연구 용역과제 추진 및 신청 안내",
-    "organizer": "디지털인문학센터",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "pnu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": "2026-11-06"
-    },
-    "activityPeriod": {
-      "start": "2026-10-26",
-      "end": "2027-02-12"
-    },
-    "tags": [
-      "학교",
-      "장학·지원금"
-    ],
-    "links": [
-      {
-        "sourceId": "pnu-notice",
-        "url": "https://www.pusan.ac.kr/kor/CMS/Board/Board.do?mCode=MN095&mode=view&mgr_seq=3&board_seq=1511842"
-      }
-    ],
-    "sources": [
-      "pnu-notice"
-    ],
-    "postedAt": "2026-10-29",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-29T16:26:50.624Z",
-    "summary": "부산 관련 인문 데이터 융합연구팀에 보조연구원으로 참여하고 장학금을 받아요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-29T16:26:50.624Z"
   },
   {
     "id": "pnu-notice-1511836",
@@ -337994,49 +337319,6 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-30T16:59:57.337Z",
     "seriesId": "knu-notice-1338452"
-  },
-  {
-    "id": "knu-event-1338690",
-    "title": "[교수회]경북대학교 개교 80주년 기념 교수회 포럼 개최",
-    "organizer": "교수회",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "knu"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": [],
-      "openTo": null
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교"
-    ],
-    "links": [
-      {
-        "sourceId": "knu-event",
-        "url": "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=11&btin.bbs_cde=11&btin.doc_no=1338690&btin.appl_no=000000&menu_idx=73"
-      }
-    ],
-    "sources": [
-      "knu-event"
-    ],
-    "postedAt": "2026-10-30",
-    "extractedBy": "ai",
-    "collectedAt": "2026-10-30T17:00:03.559Z",
-    "summary": "경북대학교 개교 80주년을 기념하는 교수회 포럼에 참여해요",
-    "noApplication": false,
-    "firstSeenAt": "2026-10-30T17:00:03.559Z"
   },
   {
     "id": "knu-event-1338688",
