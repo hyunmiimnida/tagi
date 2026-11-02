@@ -6,7 +6,7 @@ import { Comments } from "../../../components/Comments.tsx";
 import { DetailActions } from "../../../components/DetailActions.tsx";
 import { DetailDday } from "../../../components/DetailDday.tsx";
 import { ExternalIcon } from "../../../components/Icons.tsx";
-import { getPastRounds, getPrograms, getSchools, getSourceNames } from "../../../lib/data.ts";
+import { getAllSchools, getPastRounds, getPrograms, getSourceNames } from "../../../lib/data.ts";
 import { describeTarget, formatDate, formatPeriod, recruitWord } from "../../../lib/filter.ts";
 import { jsonLdScript, programJsonLd } from "../../../lib/jsonld.ts";
 import type { Program } from "../../../src/types.ts";
@@ -69,7 +69,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
   const pastRounds = getPastRounds(program);
   const links = applyLinks(program);
   const sourceNames = getSourceNames();
-  const schoolNames = Object.fromEntries(getSchools().map((school) => [school.id, school.name]));
+  const schoolNames = Object.fromEntries(getAllSchools().map((school) => [school.id, school.name]));
   const year = new Date().getFullYear();
   const recruit = formatPeriod(program.recruitPeriod, year);
   const activity = formatPeriod(program.activityPeriod, year);

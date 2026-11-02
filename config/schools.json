@@ -368,6 +368,7 @@
     "name": "계명대학교",
     "shortName": "계명대",
     "region": "영남권",
+    "unlisted": true,
     "units": [
       {
         "name": "창업지원단",

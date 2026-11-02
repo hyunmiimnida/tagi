@@ -104,7 +104,12 @@ export const getCategories = (): FilterCategory[] =>
     tags: tags.map((tag) => tag.name),
   }));
 
-export const getSchools = (): SchoolOption[] =>
+// 지원 학교 목록(unlisted는 뺀다). 이미 모은 공고의 학교 이름까지 찾을 때는 getAllSchools
+export const getSchools = (): SchoolOption[] => getAllSchools().filter((school) => !unlistedIds().has(school.id));
+
+const unlistedIds = () => new Set(readSchools().filter((school) => school.unlisted).map((school) => school.id));
+
+export const getAllSchools = (): SchoolOption[] =>
   readSchools().map(({ id, name, shortName, region, units }) => ({
     id,
     name,
@@ -128,7 +133,7 @@ export function describeSources(): string {
   const count = schools.reduce((n, school) => n + school.sources.filter((s) => s.enabled).length, 0);
   // 학교가 많아 이름 대신 지역별 학교 수로 보여 준다 (다른 캠퍼스는 본교와 같이 센다)
   const byRegion = new Map<string, number>();
-  for (const school of schools.filter((s) => !s.campusOf)) byRegion.set(school.region, (byRegion.get(school.region) ?? 0) + 1);
+  for (const school of schools.filter((s) => !s.campusOf && !s.unlisted)) byRegion.set(school.region, (byRegion.get(school.region) ?? 0) + 1);
   return `${[...byRegion].map(([region, n]) => `${region} ${n}개`).join("·")} 대학 공지 ${count}곳`;
 }
 

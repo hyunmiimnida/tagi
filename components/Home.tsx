@@ -52,7 +52,9 @@ function Section({ title, href, peek, children }: { title: string; href?: string
 }
 
 export function Home({ categories, schools }: Props) {
-  const { schoolId, favorites, signedIn, loginEnabled, profile, includeOpen } = useUser();
+  const { schoolId: savedSchoolId, favorites, signedIn, loginEnabled, profile, includeOpen } = useUser();
+  // 지원 목록에서 빠진 학교를 골라 둔 사람은 전체로 본다
+  const schoolId = schools.some((s) => s.id === savedSchoolId) ? savedSchoolId : null;
   const today = useToday();
   // 홈은 아직 볼 만한 공고(마감 전이거나 남은 일정이 있는 것)만 쓴다
   const { programs: loaded, failed, retry } = useListPrograms();

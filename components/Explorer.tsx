@@ -144,8 +144,9 @@ export function Explorer({ categories, schools }: Props) {
 
   // 주소에 학교가 없으면 내 학교 설정을 기본으로 쓴다
   useEffect(() => {
-    if (loaded && !schoolFromUrl) setSchool(user.schoolId);
-  }, [loaded, schoolFromUrl, user.schoolId]);
+    // 지원 목록에서 빠진 학교를 골라 둔 사람은 전체로 본다
+    if (loaded && !schoolFromUrl) setSchool(schools.some((s) => s.id === user.schoolId) ? user.schoolId : null);
+  }, [loaded, schoolFromUrl, user.schoolId, schools]);
 
   // 주소에 대상·분야가 없으면 지난번에 고른 신분·학년·분야(내 설정에 기억해 둔 것)를 처음 한 번 걸어 둔다 (졸업생은 학년을 쓰지 않는다)
   const fieldTags = useMemo(() => new Set(categories.find((c) => c.id === "field")?.tags ?? []), [categories]);
