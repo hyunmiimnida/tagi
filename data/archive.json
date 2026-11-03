@@ -55223,7 +55223,8 @@
     "collectedAt": "2026-10-18T04:40:53.327Z",
     "summary": "영어졸업인증을 대신하는 온라인 특강을 무료로 들어요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-18T04:40:53.327Z"
+    "firstSeenAt": "2026-10-18T04:40:53.327Z",
+    "seriesId": "inha-notice-37356"
   },
   {
     "id": "ssu-notice-hw5i4wu1ph1dmo",
@@ -541788,7 +541789,8 @@
     "collectedAt": "2026-10-02T18:57:38.431Z",
     "summary": "등록금 전액 또는 학업장려금 400만원을 받는 장학생을 뽑아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:57:38.431Z"
+    "firstSeenAt": "2026-10-02T18:57:38.431Z",
+    "seriesId": "sogang-scholarship-545461"
   },
   {
     "id": "korea-notice-000060000000059706",
@@ -578441,7 +578443,8 @@
     "collectedAt": "2026-10-18T09:29:45.911Z",
     "summary": "관정재단 장학생으로 선발되면 등록금 또는 생활비 장학금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-18T09:29:45.911Z"
+    "firstSeenAt": "2026-10-18T09:29:45.911Z",
+    "seriesId": "kookmin-notice-10906"
   },
   {
     "id": "kookmin-notice-10857",
@@ -881112,7 +881115,8 @@
     "extractedBy": "ai",
     "collectedAt": "2026-10-01T18:25:38.632Z",
     "summary": "교수학습지원센터 홍보부스에 참여해요",
-    "firstSeenAt": "2026-10-01T18:25:38.632Z"
+    "firstSeenAt": "2026-10-01T18:25:38.632Z",
+    "seriesId": "dcu-notice-179769"
   },
   {
     "id": "dcu-notice-178782",
@@ -1131190,7 +1131194,8 @@
     "collectedAt": "2026-10-03T23:37:15.661Z",
     "summary": "최대 4학기 동안 학기당 400만~600만원의 장학금을 지원받아요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T23:37:15.661Z"
+    "firstSeenAt": "2026-10-03T23:37:15.661Z",
+    "seriesId": "sogang-scholarship-545461"
   },
   {
     "id": "korea-startup-578",
@@ -1332643,7 +1332648,8 @@
     "collectedAt": "2026-10-18T09:35:11.307Z",
     "summary": "무료 온라인 영어특강을 듣고 평가를 통과해 영어졸업인증을 취득해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-18T09:35:11.307Z"
+    "firstSeenAt": "2026-10-18T09:35:11.307Z",
+    "seriesId": "inha-notice-37356"
   },
   {
     "id": "ssu-notice-h1ux0apx1uon4xj",
