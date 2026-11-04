@@ -6,7 +6,7 @@
 -- · 기기마다 브라우저가 만든 무작위 값(anon_id)으로 구분한다. IP·기기 정보·입력한 글자·검색어 원문은 저장하지 않는다
 --   (검색은 "검색함"과 글자 수만). 로그인한 사람은 계정 번호도 남고, 탈퇴하면 그 계정의 기록을 지운다.
 -- · 프로필의 "이용 기록 보내기"를 끄거나 브라우저의 추적 안 함(DNT·GPC)이 켜져 있으면 사이트가 아무것도 보내지 않는다 (lib/analytics.ts).
--- · 180일이 지난 기록은 purge_old_events()로 지운다 (실행 방법은 docs/설정-안내.md).
+-- · 3년(1095일)이 지난 기록은 purge_old_events()로 지운다 (개인정보처리방침 제4조) (실행 방법은 docs/설정-안내.md).
 -- · 넣기는 track_event()·submit_survey() 함수로만, 읽기는 관리자 함수로만 한다.
 
 -- ───────── 이용 기록 ─────────
@@ -54,8 +54,8 @@ begin
   return added;
 end $$;
 
--- 오래된 기록 지우기 (기본 180일). SQL Editor·예약 작업(서비스 키)에서 부르거나 관리자가 부른다
-create or replace function purge_old_events(keep_days int default 180) returns int
+-- 오래된 기록 지우기 (기본 1095일 = 3년, 방침과 같게). SQL Editor·예약 작업(서비스 키)에서 부르거나 관리자가 부른다
+create or replace function purge_old_events(keep_days int default 1095) returns int
 language plpgsql security definer set search_path = public as $$
 declare
   removed int;
