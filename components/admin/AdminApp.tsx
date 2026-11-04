@@ -12,6 +12,7 @@ import { supabase, useUser } from "../../lib/user.tsx";
 import { AdminComments } from "./AdminComments.tsx";
 import { AdminDashboard } from "./AdminDashboard.tsx";
 import { AdminFeedback } from "./AdminFeedback.tsx";
+import { AdminGacha } from "./AdminGacha.tsx";
 import { AdminLog } from "./AdminLog.tsx";
 import { AdminNotices } from "./AdminNotices.tsx";
 import { AdminReports } from "./AdminReports.tsx";
@@ -30,6 +31,7 @@ export interface AdminContext extends PageProps {
 const TABS = [
   { id: "dashboard", label: "대시보드" },
   { id: "users", label: "회원" },
+  { id: "gacha", label: "뽑기" },
   { id: "feedback", label: "의견함" },
   { id: "comments", label: "댓글" },
   { id: "reports", label: "정보 오류" },
@@ -174,6 +176,7 @@ export function AdminApp(props: PageProps) {
       {statsError && tab === "dashboard" && <p className="admin-error">{statsError}</p>}
       {tab === "dashboard" && <AdminDashboard stats={stats} context={context} goTo={setTab} />}
       {tab === "users" && <AdminUsers context={context} focus={focusUser} onFocused={() => setFocusUser(null)} onChange={refreshStats} />}
+      {tab === "gacha" && <AdminGacha openUser={openUser} />}
       {tab === "feedback" && <AdminFeedback onChange={refreshStats} openUser={openUser} />}
       {tab === "comments" && <AdminComments context={context} onChange={refreshStats} openUser={openUser} />}
       {tab === "reports" && <AdminReports context={context} onChange={refreshStats} />}

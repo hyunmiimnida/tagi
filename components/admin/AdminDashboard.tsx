@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { formatDateTime, sourceProblems, timeAgo } from "../../lib/admin.ts";
-import type { AdminStats } from "../../lib/admin.ts";
+import { useEffect, useState } from "react";
+import { adminRpc } from "../../lib/admin-rpc.ts";
+import { formatDateTime, GRADE_NAMES, gradeShares, sinceOf, sourceProblems, timeAgo } from "../../lib/admin.ts";
+import type { AdminStats, GachaStats } from "../../lib/admin.ts";
 import type { AdminContext, TabId } from "./AdminApp.tsx";
 
 const STALE_DAYS = 3; // 이보다 오래 성공하지 못한 출처는 빨갛게
@@ -71,6 +72,8 @@ export function AdminDashboard({ stats, context, goTo }: Props) {
         </section>
       )}
 
+      <GachaToday goTo={goTo} />
+
       <section className="card my-card">
         <h2 className="card-title">수집 상태</h2>
         <p className="card-sub">
@@ -109,6 +112,31 @@ export function AdminDashboard({ stats, context, goTo }: Props) {
         </button>
       </section>
     </div>
+  );
+}
+
+// 오늘의 뽑기: 지급·회수·뽑기 수와 오늘 나온 등급 (admin-keys.sql을 실행하기 전에는 보이지 않는다)
+function GachaToday({ goTo }: { goTo: (tab: TabId) => void }) {
+  const [stats, setStats] = useState<GachaStats | null>(null);
+  useEffect(() => {
+    void adminRpc<GachaStats>("admin_gacha_stats", { since: sinceOf("today") }).then((r) => setStats(r.data));
+  }, []);
+  if (!stats) return null;
+  const given = Object.values(stats.today.given).reduce((n, v) => n + (v ?? 0), 0);
+  const grades = gradeShares(stats.grades).filter((g) => g.count > 0);
+  return (
+    <section className="card my-card">
+      <h2 className="card-title">오늘의 뽑기</h2>
+      <div className="admin-numbers">
+        <Num label="준 열쇠조각" value={given} onClick={() => goTo("gacha")} />
+        <Num label="회수" value={stats.today.revoked} />
+        <Num label="뽑기" value={stats.today.draws} sub={`${stats.today.drawers}명`} />
+        <Num label="남은 열쇠조각" value={stats.wallets.keys} />
+      </div>
+      {grades.length > 0 && (
+        <p className="admin-meta admin-spaced">{grades.map((g) => `${GRADE_NAMES[g.grade]} ${g.count}`).join(" · ")}</p>
+      )}
+    </section>
   );
 }
 

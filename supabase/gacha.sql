@@ -39,7 +39,8 @@ create table if not exists key_ledger (
 -- 열쇠조각이 바뀐 까닭 (처음 만든 뒤에 welcome을 더해서 따로 고친다)
 alter table key_ledger drop constraint if exists key_ledger_reason_check;
 alter table key_ledger add constraint key_ledger_reason_check
-  check (reason in ('welcome', 'daily', 'review', 'review_undo', 'draw', 'refund'));
+  check (reason in ('welcome', 'daily', 'review', 'review_undo', 'draw', 'refund',
+                    'admin_grant', 'admin_revoke', 'weapon_grant', 'weapon_revoke')); -- admin_*·weapon_*: 관리자 지급·회수(admin-keys.sql)
 -- 후기 선물을 어느 프로그램에 줬는지 (같은 프로그램은 계정당 한 번만)
 alter table key_ledger add column if not exists series_id text;
 -- 이 후기 보상으로 갚은 양. 예전 기록은 0이라 받은 양만 회수한다.
@@ -149,6 +150,8 @@ begin
     update key_wallets set keys = keys + refund where user_id = me;
     insert into key_ledger (user_id, change, reason, detail) values (me, refund, 'refund', picked);
   else
+    -- owned_weapons는 뽑기·관리자 지급 함수 안에서만 넣을 수 있다 (admin-keys.sql의 트리거가 이 표시를 본다)
+    perform set_config('app.weapon_grant', 'on', true);
     insert into owned_weapons (user_id, weapon_id) values (me, picked);
   end if;
   select * into wallet from key_wallets where user_id = me;

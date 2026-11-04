@@ -2347,7 +2347,8 @@ main:focus,
   gap: 8px;
 }
 
-.nickname-row input {
+.nickname-row input,
+.nickname-row select {
   flex: 1;
   min-width: 0;
   height: 42px;
@@ -3060,6 +3061,50 @@ button.stat {
 
 .admin-spaced {
   margin-top: 8px;
+}
+
+/* 뽑기 관리 (components/admin/AdminGacha.tsx) */
+.admin-grid {
+  width: 100%;
+  margin-top: 8px;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.admin-grid th,
+.admin-grid td {
+  padding: 6px 4px;
+  border-top: 1px solid var(--line);
+  text-align: right;
+}
+
+.admin-grid th {
+  border-top: 0;
+  color: var(--text-3);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.admin-grid th:first-child,
+.admin-grid td:first-child {
+  text-align: left;
+}
+
+.admin-plus {
+  color: var(--accent);
+}
+
+.admin-block {
+  display: block;
+}
+
+.admin-actions .button {
+  margin: 0;
+}
+
+.admin-actions:has(.button) {
+  gap: 8px;
 }
 
 .my-card .button.admin-danger,

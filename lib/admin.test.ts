@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { describeError, formatDateTime, pendingCount, sourceProblems, timeAgo } from "./admin.ts";
-import type { AdminStats } from "./admin.ts";
+import { describeError, formatDateTime, gradeShares, groupIssues, pendingCount, sinceOf, sourceProblems, tableProblems, timeAgo } from "./admin.ts";
+import type { AdminStats, IntegrityIssue } from "./admin.ts";
 
 test("시각을 한국 시간으로 짧게 보여 준다 (올해가 아니면 연도를 붙인다)", () => {
   assert.equal(formatDateTime(null), "-");
@@ -51,4 +51,43 @@ test("살펴볼 수집 출처: 실패·성공 기록 없음·3일 넘게 성공 
   ];
   assert.deepEqual(sourceProblems(sources, now).map((s) => s.id), ["failed", "never", "stale"]);
   assert.deepEqual(sourceProblems(sources, now, 5).map((s) => s.id), ["failed", "never"]);
+});
+
+test("뽑기 관리 오류도 안내 문장으로, 함수가 없으면 알려 준 SQL 파일을 안내한다", () => {
+  assert.equal(describeError({ message: "keys:reason" }), "이유를 적어 주세요.");
+  assert.equal(describeError({ message: "weapon:owned" }), "이미 가진 무기예요.");
+  assert.match(describeError({ message: "x", code: "PGRST202" }, "admin-keys.sql"), /admin-keys\.sql/);
+});
+
+test("실제 등급 비율과 설정 확률을 나란히 (뽑기가 없으면 실제는 비움)", () => {
+  const shares = gradeShares({ common: 80, rare: 19, heroic: 1, unknown: 3 });
+  const round = (n: number | null) => (n === null ? null : Math.round(n * 100) / 100);
+  assert.deepEqual(shares.map((s) => [s.grade, s.count, round(s.actual), round(s.expected)]), [
+    ["common", 80, 80, 80],
+    ["rare", 19, 19, 19],
+    ["heroic", 1, 1, 0.99],
+    ["shard", 0, 0, 0.01],
+  ]);
+  assert.ok(gradeShares({}).every((s) => s.actual === null));
+});
+
+test("조작 점검 결과를 사람마다 묶고, '확인 필요'만 있는 사람은 뒤로", () => {
+  const issue = (user_id: string, kind: IntegrityIssue["kind"]): IntegrityIssue => ({ user_id, nickname: user_id, admin: false, kind, detail: "" });
+  const people = groupIssues([issue("a", "lucky"), issue("b", "wallet"), issue("b", "orphan_weapon"), issue("c", "lucky")]);
+  assert.deepEqual(people.map((p) => [p.user_id, p.issues.length]), [["b", 2], ["a", 1], ["c", 1]]);
+});
+
+test("열쇠조각 표 보호가 깨진 곳만 알려 준다", () => {
+  assert.deepEqual(tableProblems([{ table: "key_ledger", rls: true, write_grant: false, write_policies: 0 }]), []);
+  const bad = tableProblems([{ table: "key_wallets", rls: false, write_grant: true, write_policies: 1 }]);
+  assert.equal(bad.length, 3);
+  assert.ok(bad.every((line) => line.startsWith("key_wallets")));
+});
+
+test("기간의 시작: 오늘은 한국 날짜 0시, 전체는 비움", () => {
+  // UTC 2026-11-04 16:30 = 한국 11-05 01:30 → 한국 11-05 0시 = UTC 11-04 15:00
+  const now = Date.parse("2026-11-04T16:30:00Z");
+  assert.equal(sinceOf("today", now), "2026-11-04T15:00:00.000Z");
+  assert.equal(sinceOf("7", now), "2026-10-28T16:30:00.000Z");
+  assert.equal(sinceOf("all", now), null);
 });

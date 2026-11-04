@@ -6,6 +6,7 @@ import { adminRpc } from "../../lib/admin-rpc.ts";
 import { formatDateTime, PAGE_SIZE, PROVIDER_NAMES, FEEDBACK_STATUS, timeAgo } from "../../lib/admin.ts";
 import type { AdminUser, AdminUserDetail, Page } from "../../lib/admin.ts";
 import type { AdminContext } from "./AdminApp.tsx";
+import { AdminUserKeys } from "./AdminUserKeys.tsx";
 import { ChevronIcon } from "../Icons.tsx";
 
 const VIEWS = [
@@ -353,6 +354,8 @@ function UserDetail({ id, context, schoolName, onBack, onChange }: DetailProps) 
           </div>
         </section>
       )}
+
+      <AdminUserKeys id={id} nickname={user.nickname ?? "이 회원"} />
 
       <section className="card my-card">
         <h2 className="card-title">댓글 {user.comments.length}개</h2>
