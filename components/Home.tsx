@@ -22,6 +22,7 @@ import { ChevronIcon } from "./Icons.tsx";
 import { FieldIcon } from "./FieldIcon.tsx";
 import { InstallCard } from "./InstallCard.tsx";
 import { ProfileNudge } from "./ProfileNudge.tsx";
+import { SurveyCard } from "./SurveyCard.tsx";
 import { ListError } from "./ListError.tsx";
 import { MyPal, MyPeekPal } from "./MyPal.tsx";
 import { ProgramRow } from "./ProgramRow.tsx";
@@ -189,6 +190,7 @@ export function Home({ categories, schools }: Props) {
       </section>
 
       <ProfileNudge />
+      <SurveyCard />
       <InstallCard />
 
       {/* 오늘 마감하는 관심 공고가 있으면 빼꼼 대신 캐릭터가 그 줄로 달려와 "!"를 띄운다 */}

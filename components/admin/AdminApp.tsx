@@ -16,6 +16,7 @@ import { AdminGacha } from "./AdminGacha.tsx";
 import { AdminLog } from "./AdminLog.tsx";
 import { AdminNotices } from "./AdminNotices.tsx";
 import { AdminReports } from "./AdminReports.tsx";
+import { AdminResearch } from "./AdminResearch.tsx";
 import { AdminUsers } from "./AdminUsers.tsx";
 
 interface PageProps {
@@ -36,6 +37,7 @@ const TABS = [
   { id: "comments", label: "댓글" },
   { id: "reports", label: "정보 오류" },
   { id: "notices", label: "공지" },
+  { id: "research", label: "리서치" },
   { id: "log", label: "기록" },
 ] as const;
 
@@ -181,6 +183,7 @@ export function AdminApp(props: PageProps) {
       {tab === "comments" && <AdminComments context={context} onChange={refreshStats} openUser={openUser} />}
       {tab === "reports" && <AdminReports context={context} onChange={refreshStats} />}
       {tab === "notices" && <AdminNotices />}
+      {tab === "research" && <AdminResearch context={context} />}
       {tab === "log" && <AdminLog openUser={openUser} />}
     </div>
   );

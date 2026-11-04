@@ -14,6 +14,7 @@ import { useListPrograms, useSeriesInfo } from "../lib/use-list.ts";
 import { LOGIN_PROVIDERS, supabase, useToday, useUser } from "../lib/user.tsx";
 import type { Profile } from "../lib/user.tsx";
 import { FeedbackBox } from "./FeedbackBox.tsx";
+import { AnalyticsSwitch } from "./AnalyticsSwitch.tsx";
 import { HelpTip } from "./HelpTip.tsx";
 import { MyPal, MyPeekPal, PalSilhouette } from "./MyPal.tsx";
 import { CalendarPlusIcon, ChevronIcon, ProfileIcon } from "./Icons.tsx";
@@ -413,6 +414,8 @@ export function MyAccount({ schools, sources }: Props) {
 
       {/* 9. 의견 보내기 (운영자 답장도 여기에) */}
       <FeedbackBox />
+
+      <AnalyticsSwitch />
 
       {/* 10. 안내 */}
       <section className="card my-card my-about">

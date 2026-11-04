@@ -1,6 +1,7 @@
 "use client";
 
 import { createClient } from "@supabase/supabase-js";
+import { track } from "./analytics.ts";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { toDateString } from "./filter.ts";
 import { forgetPushOnThisDevice } from "./push.ts";
@@ -166,6 +167,24 @@ function writeLocal(name: string, value: string | null): void {
   }
 }
 
+// 로그인 버튼을 누른 탭 표시 (돌아왔을 때 "로그인 완료" 기록을 한 번만 남기려고, lib/analytics.ts)
+const LOGIN_STARTED_KEY = "loginStarted";
+function readSession(name: string): string | null {
+  try {
+    return sessionStorage.getItem(name);
+  } catch {
+    return null;
+  }
+}
+function writeSession(name: string, value: string | null): void {
+  try {
+    if (value === null) sessionStorage.removeItem(name);
+    else sessionStorage.setItem(name, value);
+  } catch {
+    // 저장소를 쓸 수 없으면 기록하지 않는다
+  }
+}
+
 export function UserProvider({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
   const [userId, setUserId] = useState<string | null>(null);
@@ -194,8 +213,13 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       return;
     }
 
-    const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data } = supabase.auth.onAuthStateChange((event, session) => {
       const nextUser = session?.user.id ?? null;
+      // 이 탭에서 로그인 버튼을 누르고 돌아온 경우만 "로그인 완료"로 센다 (새로 고침마다 세지 않게)
+      if (event === "SIGNED_IN" && nextUser && readSession(LOGIN_STARTED_KEY)) {
+        writeSession(LOGIN_STARTED_KEY, null);
+        track("login_done");
+      }
       // 이 브라우저에서 다른 계정이 로그인하면 이전 계정의 학교·프로필을 넘겨받지 않는다.
       // 처음 로그인하는 경우(이전 계정 없음)는 로그인 전에 고른 설정을 그대로 이어 쓴다
       const lastUser = readLocal(LAST_USER_KEY);
@@ -384,6 +408,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       setOwned((current) => new Set([...(current ?? []), weapon]));
     }
     setRevealing(result);
+    track("draw");
     return "ok";
   }, [keys]);
 
@@ -555,6 +580,8 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       setSchool,
       toggleFavorite,
       signIn: (provider) => {
+        writeSession(LOGIN_STARTED_KEY, provider);
+        track("login_start", { provider });
         void supabase?.auth.signInWithOAuth({ provider, options: { redirectTo: window.location.origin } });
       },
       signOut: () => {

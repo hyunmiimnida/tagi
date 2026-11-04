@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
+import { Analytics } from "../components/Analytics.tsx";
 import { BottomNav } from "../components/BottomNav.tsx";
 import { Header } from "../components/Header.tsx";
 import { PwaSetup } from "../components/InstallCard.tsx";
@@ -86,6 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <WeaponReveal />
           <KeyGiftToast />
           <PwaSetup />
+          <Analytics />
         </UserProvider>
       </body>
     </html>

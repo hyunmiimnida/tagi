@@ -60,7 +60,7 @@ export function ProgramRow({
           <span className="row-org">{program.organizer ?? "주최 미확인"}</span>
           {program.organizerType && <span className="row-type">{program.organizerType}</span>}
         </div>
-        <Link href={`/programs/${program.id}`} className="row-title">
+        <Link href={`/programs/${program.id}`} className="row-title" data-hm="program-row">
           {program.title}
         </Link>
         <div className="row-dates">

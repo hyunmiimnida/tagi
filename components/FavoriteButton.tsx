@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { track } from "../lib/analytics.ts";
 import { useUser } from "../lib/user.tsx";
 import { StarIcon } from "./Icons.tsx";
 import { requestStarHelper } from "./StarHelper.tsx";
@@ -26,6 +27,7 @@ export function FavoriteButton({ programId, title, withLabel = false }: { progra
 
   return (
     <button
+      data-hm="favorite"
       className={`favorite ${lit ? "on" : ""} ${withLabel ? "with-label" : ""}`}
       aria-pressed={on}
       aria-label={`${title} ${on ? "관심 해제" : "관심 표시"}`}
@@ -40,6 +42,7 @@ export function FavoriteButton({ programId, title, withLabel = false }: { progra
           if (coming) setWaiting(true);
           else setBurst((n) => n + 1);
         }
+        if (!on && (!loginEnabled || signedIn)) track("favorite_on");
         toggleFavorite(programId);
       }}
     >
