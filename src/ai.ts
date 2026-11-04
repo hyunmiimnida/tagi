@@ -8,7 +8,7 @@ import { cleanPeriods } from "./extract.ts";
 import { fetchImage } from "./fetch.ts";
 import { postingSchoolNames, SCHOOL_NAMES } from "./school-of.ts";
 import { GRADES, STUDENT_STATUSES } from "./types.ts";
-import type { CollectedItem, Program, TagCategory } from "./types.ts";
+import type { CollectedItem, Digest, Program, TagCategory } from "./types.ts";
 
 // AI 정보 추출: AI CLI가 있으면 게시물 본문을 읽혀서 규칙으로 못 찾은 정보를 보완한다.
 // 게시물 여러 개를 한 번에 보내 비용을 줄인다. 실패하면 규칙 기반 결과를 그대로 쓴다.
@@ -111,6 +111,48 @@ const NO_APPLICATION_RULE = `- noApplication: 미리 신청·접수하지 않고
 
 const summary = (v: unknown) => (typeof v === "string" && v.trim() && v.length <= 90 ? v.trim() : null);
 
+// 상세 화면의 항목별 요약. 본 추출과 다시 확인(recheckFields)이 함께 쓴다
+const DIGEST_RULE = `- digest: 상세 화면에 보여 줄 항목별 요약. 원문 문장을 그대로 옮기지 말고 네 말로 짧게("~해요" 말투) 쓴다. 글에 없는 항목은 추측하지 말고 null이나 빈 배열.
+  - about: 어떤 프로그램인지 한두 문장(80자 안). summary를 그대로 반복하지 말고 목적·운영 방식을 조금 더 풀어 쓴다.
+  - activities: 참여하면 하는 일(교육 내용·활동·대회 과제 등). 한 줄 40자 안, 최대 4줄.
+  - eligibility: 지원 자격·대상·우대 조건. 한 줄 40자 안, 최대 4줄.
+  - benefits: 받는 것(장학금·상금·활동비·수료증·교통비·기념품 등, 금액이 적혀 있으면 금액도). 한 줄 40자 안, 최대 4줄.
+  - howToApply: 신청 절차·방법·제출 서류(예: "홈페이지에서 신청서 제출"). 한 줄 40자 안, 최대 4줄. 날짜는 넣지 않는다(기간 칸에 있다).
+  - chips: 한눈에 보는 짧은 칩 최대 4개, 각 12자 안. 온라인/오프라인/온·오프라인, 장소(캠퍼스·도시), 모집 인원(예: "20명 선발"), 비용(예: "참가비 무료") 중 글에 있는 것만. 기간·학년·태그는 넣지 않는다.
+  - 전화번호·이메일·담당자 이름은 어디에도 쓰지 않는다. 쓸 내용이 하나도 없으면 digest는 null.`;
+
+// 이 길이 이상 원문과 똑같은 줄은 옮겨 적은 것으로 보고 버린다 (공백 무시)
+const COPY_MIN = 25;
+const squash = (s: string) => s.replace(/\s+/g, "");
+
+// AI 답을 Digest로 확인한다. 너무 긴 줄·원문을 그대로 옮긴 줄·연락처가 든 줄은 버리고, 남은 것이 없으면 null
+export function toDigest(v: unknown, sourceText = ""): Digest | null {
+  if (!v || typeof v !== "object" || Array.isArray(v)) return null;
+  const data = v as Record<string, unknown>;
+  const source = squash(sourceText);
+  const ok = (line: string, max: number) => {
+    const flat = squash(line);
+    return flat.length > 0 && line.length <= max &&
+      !/@|\d{2,4}-\d{3,4}-\d{4}/.test(line) && // 이메일·전화번호
+      !(flat.length >= COPY_MIN && source.includes(flat));
+  };
+  const list = (value: unknown, max: number) =>
+    [...new Set(strings(value).map((s) => s.trim().replace(/^[-•·*]\s*/, "")).filter((s) => ok(s, max)))].slice(0, 4);
+  const about = typeof data.about === "string" ? data.about.trim() : "";
+  const digest: Digest = {
+    about: about && ok(about, 120) ? about : null,
+    activities: list(data.activities, 60),
+    eligibility: list(data.eligibility, 60),
+    benefits: list(data.benefits, 60),
+    howToApply: list(data.howToApply, 60),
+    chips: list(data.chips, 16),
+  };
+  const lists = [digest.activities, digest.eligibility, digest.benefits, digest.howToApply, digest.chips];
+  return !digest.about && lists.every((l) => l.length === 0) ? null : digest;
+}
+
+const DIGEST_SHAPE = `"digest":{"about":null,"activities":[],"eligibility":[],"benefits":[],"howToApply":[],"chips":[]}`;
+
 function setOpenTo(program: Program, value: string | null) {
   program.target.openTo = value;
   // 다른 학교 학생도 되면 모집 대상 학교를 비운다 (게시한 학교는 학교 배지·필터에 그대로 남는다)
@@ -163,6 +205,7 @@ ${item.text.slice(0, maxText) || "(본문 없음, 이미지로만 안내됨)"}`,
 - excludedStatuses: 글에 "휴학생 제외"·"졸업생 제외"처럼 명시적으로 뺀 신분만 같은 이름으로 적는다.
 ${OPEN_TO_RULE}
 ${SUMMARY_RULE}
+${DIGEST_RULE}
 ${NO_APPLICATION_RULE}
 - tags: 아래 목록의 이름만. 그 프로그램의 핵심 내용일 때만 붙인다. 본문에 단어가 한 번 나온다고 붙이지 마라.
   본문이 없거나 아주 짧으면 제목에서 분명히 드러나는 태그만 1~2개 붙인다 (추측해서 늘리지 마라).
@@ -176,7 +219,7 @@ ${NO_APPLICATION_RULE}
 ${tagList}
 
 출력 형식 (게시물 수만큼, 설명 없이 JSON만):
-{"items":[{"id":"...","forStudents":true,"organizer":null,"organizerType":null,"recruitStart":null,"recruitEnd":null,"activityStart":null,"activityEnd":null,"colleges":[],"departments":[],"grades":[],"statuses":[],"excludedStatuses":[],"openTo":null,"summary":null,"noApplication":false,"tags":[]}]}
+{"items":[{"id":"...","forStudents":true,"organizer":null,"organizerType":null,"recruitStart":null,"recruitEnd":null,"activityStart":null,"activityEnd":null,"colleges":[],"departments":[],"grades":[],"statuses":[],"excludedStatuses":[],"openTo":null,"summary":null,${DIGEST_SHAPE},"noApplication":false,"tags":[]}]}
 
 게시물:
 
@@ -435,6 +478,7 @@ export function applyAiResult(item: CollectedItem, data: Record<string, unknown>
   program.target.excludedStatuses = strings(data.excludedStatuses).filter((s) => STUDENT_STATUSES.includes(s));
   if ("openTo" in data) setOpenTo(program, openTo(data.openTo));
   if ("summary" in data) program.summary = summary(data.summary);
+  if ("digest" in data) program.digest = toDigest(data.digest, item.text);
   if (typeof data.noApplication === "boolean") program.noApplication = data.noApplication;
 
   const tags = strings(data.tags).filter((t) => allowedTags.has(t) && !organizerTypes.includes(t));
@@ -444,8 +488,8 @@ export function applyAiResult(item: CollectedItem, data: Record<string, unknown>
   return true;
 }
 
-// 이미 추출한 글에 나중에 생긴 칸(다른 학교 지원 가능 여부, 요약)만 다시 묻는다. 확인하지 않은 칸만 채운다. 답을 받은 글 수를 돌려준다
-export async function recheckFields(items: CollectedItem[], maxText = 1500): Promise<number> {
+// 이미 추출한 글에 나중에 생긴 칸(다른 학교 지원 가능 여부, 요약, 항목별 요약)만 다시 묻는다. 확인하지 않은 칸만 채운다. 답을 받은 글 수를 돌려준다
+export async function recheckFields(items: CollectedItem[], maxText = MAX_TEXT): Promise<number> {
   const bin = findAi();
   if (!bin || items.length === 0) return 0;
   await Promise.all(items.filter(needsPoster).map((item) => readPoster(bin, item)));
@@ -455,22 +499,25 @@ export async function recheckFields(items: CollectedItem[], maxText = 1500): Pro
   const prompt = `너는 대학 공지에서 사실 정보만 뽑는 추출기다. 파일을 읽거나 명령을 실행하지 말고, 아래 글만 보고 JSON으로만 답해라.
 ${OPEN_TO_RULE}
 ${SUMMARY_RULE}
+${DIGEST_RULE}
 ${NO_APPLICATION_RULE}
 
-출력 형식 (게시물 수만큼, 설명 없이 JSON만): {"items":[{"id":"...","openTo":null,"summary":null,"noApplication":false}]}
+출력 형식 (게시물 수만큼, 설명 없이 JSON만): {"items":[{"id":"...","openTo":null,"summary":null,${DIGEST_SHAPE},"noApplication":false}]}
 
 게시물:
 
 ${posts}`;
   try {
     const answer = await askAi(bin, prompt);
-    const byId = new Map(items.map((item) => [item.program.id, item.program]));
+    const byId = new Map(items.map((item) => [item.program.id, item]));
     let answered = 0;
     for (const data of answer.items ?? []) {
-      const program = byId.get(String(data.id));
-      if (!program || !("openTo" in data)) continue;
+      const item = byId.get(String(data.id));
+      if (!item || !("openTo" in data)) continue;
+      const { program } = item;
       if (program.target.openTo === undefined) setOpenTo(program, openTo(data.openTo));
       if (program.summary === undefined && "summary" in data) program.summary = summary(data.summary);
+      if (program.digest === undefined && "digest" in data) program.digest = toDigest(data.digest, item.text);
       if (program.noApplication === undefined && typeof data.noApplication === "boolean") program.noApplication = data.noApplication;
       answered++;
     }

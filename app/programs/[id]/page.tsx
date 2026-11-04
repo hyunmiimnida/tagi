@@ -6,6 +6,7 @@ import { Comments } from "../../../components/Comments.tsx";
 import { DetailActions } from "../../../components/DetailActions.tsx";
 import { DetailDday } from "../../../components/DetailDday.tsx";
 import { ExternalIcon } from "../../../components/Icons.tsx";
+import { ProgramDigest } from "../../../components/ProgramDigest.tsx";
 import { getAllSchools, getPastRounds, getPrograms, getSourceNames } from "../../../lib/data.ts";
 import { describeTarget, formatDate, formatPeriod, isClosed, recruitWord, toDateString } from "../../../lib/filter.ts";
 import { jsonLdScript, programJsonLd } from "../../../lib/jsonld.ts";
@@ -118,6 +119,8 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
           ))}
         </dl>
       </section>
+
+      {program.digest && <ProgramDigest digest={program.digest} />}
 
       {((!recruit && !walkIn) || !activity) && (
         <p className="notice">일부 일정은 자동으로 찾지 못했어요. 신청 전에 원문에서 꼭 확인해 주세요.</p>

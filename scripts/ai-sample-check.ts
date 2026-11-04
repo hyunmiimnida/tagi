@@ -72,6 +72,7 @@ const rows = items.map((item) => {
     tags: [[...saved.tags].sort().join(","), [...fresh.tags].sort().join(",")], // 순서만 다른 것은 같게 본다
     summary: fresh.summary ?? null,
     noApplication: fresh.noApplication ?? null,
+    digest: fresh.digest ?? null,
     dateLines,
   };
   const mark = (pair: unknown[]) => (pair[0] === pair[1] ? "  " : "≠ ");
@@ -80,6 +81,13 @@ const rows = items.map((item) => {
     console.log(`  ${mark(row[key])}${key.padEnd(9)} ${row[key][0]} → ${row[key][1]}`);
   }
   console.log(`    요약 ${row.summary} · 신청 없이 참여 ${row.noApplication}`);
+  if (row.digest) {
+    const d = row.digest;
+    console.log(`    항목별 요약: ${d.about ?? "-"} [칩 ${d.chips.join(", ")}]`);
+    for (const [name, lines] of [["활동", d.activities], ["자격", d.eligibility], ["혜택", d.benefits], ["신청", d.howToApply]] as const) {
+      if (lines.length) console.log(`      ${name}: ${lines.join(" / ")}`);
+    }
+  }
   for (const line of dateLines) console.log(`    원문: ${line}`);
   return row;
 });

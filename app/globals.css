@@ -5508,3 +5508,93 @@ html.embedded body {
     transition: none;
   }
 }
+
+/* ───────── 상세 화면 항목별 요약 카드 (components/ProgramDigest.tsx) ───────── */
+.digest-card {
+  margin-top: 12px;
+  padding: 20px;
+}
+
+.digest-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 4px;
+  padding: 0;
+  list-style: none;
+}
+
+.digest-chips li {
+  padding: 3px 10px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--text-2);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.digest-section {
+  margin-top: 18px;
+}
+
+.digest-chips + .digest-section {
+  margin-top: 14px;
+}
+
+.digest-card > .digest-section:first-child {
+  margin-top: 0;
+}
+
+.digest-section h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.digest-section p,
+.digest-section li {
+  color: var(--text-2);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.digest-section p {
+  margin-top: 6px;
+}
+
+.digest-section ul {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.digest-section li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.digest-section li + li {
+  margin-top: 2px;
+}
+
+.digest-section li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.72em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.digest-note {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--text-3);
+  font-size: 0.8125rem;
+}

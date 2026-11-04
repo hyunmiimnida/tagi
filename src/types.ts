@@ -42,8 +42,20 @@ export interface Program {
   summary?: string | null;
   // 사전 신청 없이 기간 중에 참여·이용하는 행사·서비스(박람회, 상설 상담실 등)인지 AI가 판단. 없음(undefined) = 아직 묻지 않음
   noApplication?: boolean;
+  // 상세 화면의 항목별 요약 (AI가 자기 말로 짧게). null = 요약할 내용 없음, 없음(undefined) = 아직 묻지 않음
+  digest?: Digest | null;
   campus?: string; // 다른 캠퍼스 글이면 그 캠퍼스(학교 설정의 id, 예: "hanyang-erica"). 학교 배지·필터가 출처 학교 대신 이 캠퍼스를 쓴다
   seriesId?: string; // 해마다·학기마다 반복되는 같은 프로그램의 묶음 id (src/series.ts)
+}
+
+// 공고 내용을 항목별로 짧게 요약한 것. 원문에 없는 항목은 빈 값으로 둔다 (원문 문장을 그대로 옮기지 않는다)
+export interface Digest {
+  about: string | null; // 어떤 프로그램인가요 (한두 문장)
+  activities: string[]; // 이런 걸 해요
+  eligibility: string[]; // 이런 분이 지원할 수 있어요
+  benefits: string[]; // 받을 수 있는 것
+  howToApply: string[]; // 신청 방법 (절차·제출 서류)
+  chips: string[]; // 짧은 칩: 온라인/오프라인·장소·인원·비용 등 (기간·학년은 다른 칸에서 만든다)
 }
 
 // 수집기가 돌려주는 값. text는 정보 추출에만 쓰고 저장하지 않는다

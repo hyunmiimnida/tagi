@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { applyAiResult, confirmDuplicates, confirmSameSeries, enrichWithAi, failureReason, isUsageLimitError } from "./ai.ts";
+import { applyAiResult, confirmDuplicates, confirmSameSeries, enrichWithAi, failureReason, isUsageLimitError, toDigest } from "./ai.ts";
 import { cleanPeriods } from "./extract.ts";
 import type { CollectedItem, Program } from "./types.ts";
 
@@ -296,4 +296,30 @@ test("failureReason은 Codex 연결 도구의 잡음 줄을 실패 이유로 쓰
     stderr: "진짜 이유\n2026-11-02T03:22:43Z ERROR rmcp::transport::worker: worker quit with fatal: HTTP 403",
   });
   assert.equal(failureReason(error), "진짜 이유 (종료 코드: 1)");
+});
+
+test("항목별 요약: 내용이 있는 줄만 남기고, 원문을 그대로 옮긴 줄·연락처·너무 긴 줄은 버린다", () => {
+  const source = "본 프로그램은 지역 청년 창업가를 위한 실전 멘토링과 사업화 자금을 지원합니다. 문의 053-810-1234";
+  const digest = toDigest({
+    about: "창업을 준비하는 학생에게 멘토링과 자금을 지원해요",
+    activities: ["- 전문가 1:1 멘토링을 받아요", "지역 청년 창업가를 위한 실전 멘토링과 사업화 자금을 지원합니다", 3],
+    eligibility: ["재학생 누구나", "재학생 누구나"],
+    benefits: ["사업화 자금 최대 500만 원", "가".repeat(61)],
+    howToApply: ["문의 053-810-1234", "메일 a@b.kr로 제출"],
+    chips: ["오프라인", "아주아주아주아주아주아주아주긴칩이름입니다"],
+  }, source);
+  assert.deepEqual(digest, {
+    about: "창업을 준비하는 학생에게 멘토링과 자금을 지원해요",
+    activities: ["전문가 1:1 멘토링을 받아요"],
+    eligibility: ["재학생 누구나"],
+    benefits: ["사업화 자금 최대 500만 원"],
+    howToApply: [],
+    chips: ["오프라인"],
+  });
+});
+
+test("항목별 요약: 남는 내용이 없거나 모양이 틀리면 null", () => {
+  assert.equal(toDigest(null), null);
+  assert.equal(toDigest(["a"]), null);
+  assert.equal(toDigest({ about: "", activities: [], chips: [] }), null);
 });
