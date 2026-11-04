@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { useExit } from "../lib/use-exit.ts";
 import { LOGIN_PROVIDERS, useUser } from "../lib/user.tsx";
 import { CloseIcon } from "./Icons.tsx";
 
@@ -29,6 +30,7 @@ export function LoginSheet() {
   const user = useUser();
   const { loginOpen, setLoginOpen } = user;
   const sheetRef = useRef<HTMLDivElement>(null);
+  const { mounted, closing } = useExit(loginOpen); // 닫을 때 페이드아웃
 
   useEffect(() => {
     if (!loginOpen) return;
@@ -58,13 +60,13 @@ export function LoginSheet() {
     };
   }, [loginOpen, setLoginOpen]);
 
-  if (!loginOpen) return null;
+  if (!mounted) return null;
 
   return (
-    <div className="overlay" onClick={() => setLoginOpen(false)}>
+    <div className={`overlay${closing ? " closing" : ""}`} onClick={() => setLoginOpen(false)}>
       <div
         ref={sheetRef}
-        className="sheet"
+        className={`sheet${closing ? " closing" : ""}`}
         role="dialog"
         aria-modal="true"
         aria-label="로그인"

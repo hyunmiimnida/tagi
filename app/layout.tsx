@@ -41,8 +41,15 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const collected = getCollectedByRegion();
   return (
-    <html lang="ko">
+    // suppressHydrationWarning: 아래 스크립트가 그리기 전에 embedded 표시를 붙이기 때문
+    <html lang="ko" suppressHydrationWarning>
       <head>
+        {/* 가입 동의 화면의 문서 보기 창(components/DocViewer.tsx, iframe ?embed=1) 안이면 머리말·탭 바를 숨긴다 (html.embedded) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "try{if(window.self!==window.top&&/[?&]embed=1/.test(location.search))document.documentElement.classList.add('embedded')}catch(e){}",
+          }}
+        />
         {/* 한글이 깔끔하게 보이는 프리텐다드 글꼴 */}
         <link
           rel="stylesheet"

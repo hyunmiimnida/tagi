@@ -1,41 +1,50 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { CONSENT_PRIVACY_SUMMARY } from "../lib/policy.ts";
+import { useExit } from "../lib/use-exit.ts";
 import { useUser } from "../lib/user.tsx";
+import { DocViewer } from "./DocViewer.tsx";
 import { ChevronIcon } from "./Icons.tsx";
 
 // 가입 동의 화면: 처음 로그인(가입)했거나 약관 판(CONSENT_VERSION)이 바뀐 뒤 처음 들어온 회원에게 한 번 보여 준다.
-// 필수 세 가지를 모두 체크해야 시작할 수 있고, 동의하지 않으면 로그아웃한다. 기록은 supabase/consent.sql (lib/user.tsx의 agreeTerms)
+// 필수 세 가지를 모두 체크해야 시작할 수 있고, 동의하지 않으면 로그아웃한다. 기록은 supabase/consent.sql (lib/user.tsx의 agreeTerms).
+// "보기"는 이 창 위에 문서를 띄운다(components/DocViewer.tsx). 약관·방침 화면 자체와 그 iframe 안에서는 이 창을 띄우지 않는다
 const ITEMS = [
   { id: "age", label: "만 14세 이상이에요" },
-  { id: "terms", label: "이용약관 동의", href: "/terms" },
-  { id: "privacy", label: "개인정보 수집·이용 동의", href: "/privacy", summary: CONSENT_PRIVACY_SUMMARY },
+  { id: "terms", label: "이용약관 동의", doc: { title: "이용약관", href: "/terms" } },
+  { id: "privacy", label: "개인정보 수집·이용 동의", doc: { title: "개인정보처리방침", href: "/privacy" }, summary: CONSENT_PRIVACY_SUMMARY },
 ] as const;
 
 type ItemId = (typeof ITEMS)[number]["id"];
+const DOC_PATHS = new Set(["/terms", "/privacy"]);
 
 export function ConsentSheet() {
   const { consentNeeded, agreeTerms, declineTerms } = useUser();
+  const pathname = usePathname();
   const [checked, setChecked] = useState<ReadonlySet<ItemId>>(new Set());
-  const [opened, setOpened] = useState<ItemId | null>(null);
+  const [viewing, setViewing] = useState<ItemId | null>(null);
   const [sending, setSending] = useState(false);
   const [failed, setFailed] = useState(false);
   const [preview, setPreview] = useState(false); // npm run dev에서 주소에 ?consent를 붙이면 로그인 없이 화면만 본다 (저장 안 함)
+  const [embedded, setEmbedded] = useState(false);
   const sheetRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
   const all = checked.size === ITEMS.length;
-  const show = consentNeeded || preview;
+  const open = (consentNeeded || preview) && !embedded && !DOC_PATHS.has(pathname);
+  const { mounted, closing } = useExit(open);
 
   useEffect(() => {
+    setEmbedded(window.self !== window.top);
     if (process.env.NODE_ENV === "development" && new URLSearchParams(window.location.search).has("consent")) setPreview(true);
   }, []);
 
   useEffect(() => {
-    if (!show) return;
+    if (!open || viewing) return;
     // 키보드로 쓰는 사람을 위해: 창 안으로 초점을 옮기고 Tab은 창 안에서만 돈다 (꼭 골라야 하는 창이라 Esc로 닫지 않는다)
     const focusable = () => [...(sheetRef.current?.querySelectorAll<HTMLElement>("input, button:not(:disabled), a[href]") ?? [])];
-    focusable()[0]?.focus();
+    if (!sheetRef.current?.contains(document.activeElement)) focusable()[0]?.focus();
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== "Tab") return;
       const list = focusable();
@@ -51,15 +60,15 @@ export function ConsentSheet() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [show]);
+  }, [open, viewing]);
 
-  if (!show) return null;
+  if (!mounted) return null;
 
-  const toggle = (id: ItemId) =>
+  const setItem = (id: ItemId, on: boolean) =>
     setChecked((previous) => {
       const next = new Set(previous);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
+      if (on) next.add(id);
+      else next.delete(id);
       return next;
     });
 
@@ -73,15 +82,18 @@ export function ConsentSheet() {
     if (!ok) setFailed(true);
   };
 
+  const viewingItem = ITEMS.find((item) => item.id === viewing);
+  const viewingDoc = viewingItem && "doc" in viewingItem ? viewingItem.doc : null;
+
   return (
-    <div className="overlay">
-      <div ref={sheetRef} className="sheet consent-sheet" role="dialog" aria-modal="true" aria-labelledby={titleId}>
+    <div className={`overlay${closing ? " closing" : ""}`}>
+      <div ref={sheetRef} className={`sheet consent-sheet${closing ? " closing" : ""}`} role="dialog" aria-modal="true" aria-labelledby={titleId}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/logo.svg" alt="" width={48} height={48} className="sheet-logo" />
         <h2 id={titleId}>캠퍼스모아 시작하기</h2>
         <p>서비스 이용을 위해 약관에 동의해 주세요.</p>
 
-        <label className="consent-all">
+        <label className={`consent-all${all ? " on" : ""}`}>
           <input
             type="checkbox"
             checked={all}
@@ -95,37 +107,23 @@ export function ConsentSheet() {
             <li key={item.id}>
               <div className="consent-row">
                 <label>
-                  <input type="checkbox" checked={checked.has(item.id)} onChange={() => toggle(item.id)} />
+                  <input type="checkbox" checked={checked.has(item.id)} onChange={(event) => setItem(item.id, event.target.checked)} />
                   <span>
                     <span className="consent-required">(필수)</span> {item.label}
                   </span>
                 </label>
-                {"summary" in item ? (
-                  <button
-                    type="button"
-                    className="consent-view"
-                    aria-expanded={opened === item.id}
-                    onClick={() => setOpened(opened === item.id ? null : item.id)}
-                  >
+                {"doc" in item && (
+                  <button type="button" className="consent-view" onClick={() => setViewing(item.id)}>
                     보기 <ChevronIcon size={14} />
                   </button>
-                ) : "href" in item ? (
-                  <a className="consent-view" href={item.href} target="_blank" rel="noreferrer">
-                    보기 <ChevronIcon size={14} />
-                  </a>
-                ) : null}
+                )}
               </div>
-              {"summary" in item && opened === item.id && (
-                <div className="consent-detail">
-                  <ul>
-                    {item.summary.map((line) => (
-                      <li key={line}>{line}</li>
-                    ))}
-                  </ul>
-                  <a href={item.href} target="_blank" rel="noreferrer">
-                    개인정보처리방침 전문 보기
-                  </a>
-                </div>
+              {"summary" in item && (
+                <ul className="consent-summary">
+                  {item.summary.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
               )}
             </li>
           ))}
@@ -143,6 +141,14 @@ export function ConsentSheet() {
           동의하지 않고 나가기
         </button>
       </div>
+      <DocViewer
+        doc={viewingDoc}
+        onClose={() => setViewing(null)}
+        onAgree={() => {
+          if (viewing) setItem(viewing, true);
+          setViewing(null);
+        }}
+      />
     </div>
   );
 }
