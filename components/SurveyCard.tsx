@@ -8,6 +8,18 @@ import { supabase, useUser } from "../lib/user.tsx";
 
 const HIDE_KEY = "survey-hidden"; // 닫았거나 답한 설문 번호
 
+const SAMPLE_SURVEY: Survey = {
+  id: -1,
+  title: "캠퍼스모아 써 보니 어때요?",
+  audience: "all",
+  school_id: null,
+  questions: [
+    { id: "q1", type: "choice", title: "어떻게 알게 되었나요?", options: ["친구 추천", "검색", "SNS", "기타"] },
+    { id: "q2", type: "rating", title: "공고 찾기가 얼마나 쉬웠나요?" },
+    { id: "q3", type: "text", title: "더 있었으면 하는 기능이 있나요?" },
+  ],
+} as Survey;
+
 function readHidden(): Set<number> {
   try {
     const value: unknown = JSON.parse(localStorage.getItem(HIDE_KEY) ?? "[]");
@@ -32,8 +44,16 @@ export function SurveyCard() {
   const [survey, setSurvey] = useState<Survey | null>(null);
   const [answers, setAnswers] = useState<Answers>({});
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
+  // 질문을 하나씩 보여 준다: 지금 몇 번째인지(위 점 표시)와 넘기는 방향(밀려 들어오는 모션)
+  const [step, setStep] = useState(0);
+  const [direction, setDirection] = useState<"forward" | "back">("forward");
 
   useEffect(() => {
+    // npm run dev에서 주소에 ?survey를 붙이면 견본 설문으로 화면만 본다 (보내지 않음)
+    if (process.env.NODE_ENV === "development" && new URLSearchParams(window.location.search).has("survey")) {
+      setSurvey(SAMPLE_SURVEY);
+      return;
+    }
     if (!supabase || !ready) return;
     let alive = true;
     void Promise.resolve(
@@ -61,7 +81,7 @@ export function SurveyCard() {
 
   if (state === "done") {
     return (
-      <section className="section install-card">
+      <section className="section install-card survey-thanks">
         <strong>답해 주셔서 고마워요!</strong>
         <div className="install-actions">
           <button className="text-button" onClick={close}>
@@ -74,6 +94,7 @@ export function SurveyCard() {
 
   const set = (id: string, value: Answers[string]) => setAnswers((current) => ({ ...current, [id]: value }));
   const send = async () => {
+    if (survey === SAMPLE_SURVEY) return setState("done");
     const anon = anonId();
     if (!supabase || !anon) return setState("error");
     setState("sending");
@@ -84,6 +105,16 @@ export function SurveyCard() {
     } else setState("error");
   };
 
+  const total = survey.questions.length;
+  const current = Math.min(step, total - 1);
+  const q = survey.questions[current];
+  const isLast = current === total - 1;
+  const stepDone = answersComplete([q], answers);
+  const go = (next: number) => {
+    setDirection(next > current ? "forward" : "back");
+    setStep(next);
+  };
+
   return (
     <section className="section survey-card">
       <div className="survey-head">
@@ -92,10 +123,22 @@ export function SurveyCard() {
           닫기
         </button>
       </div>
-      {survey.questions.map((q) => {
+      {total > 1 && (
+        <div className="survey-steps" aria-label={`${total}개 중 ${current + 1}번째 질문`}>
+          <ol aria-hidden="true">
+            {survey.questions.map((item, i) => (
+              <li key={item.id} className={i < current ? "done" : i === current ? "now" : undefined} />
+            ))}
+          </ol>
+          <span>
+            {current + 1} / {total}
+          </span>
+        </div>
+      )}
+      {[q].map((q) => {
         const value = answers[q.id];
         return (
-          <fieldset key={q.id} className="survey-question">
+          <fieldset key={q.id} className={`survey-question survey-${direction}`}>
             <legend>{q.title}</legend>
             {(q.type === "choice" || q.type === "multi") && (
               <div className="my-options">
@@ -142,9 +185,22 @@ export function SurveyCard() {
         );
       })}
       {state === "error" && <p className="nickname-note">보내지 못했어요. 잠시 뒤 다시 해 주세요.</p>}
-      <button className="button primary wide" disabled={state === "sending" || !answersComplete(survey.questions, answers)} onClick={() => void send()}>
-        {state === "sending" ? "보내는 중…" : "보내기"}
-      </button>
+      <div className="survey-nav">
+        {current > 0 && (
+          <button className="button" type="button" onClick={() => go(current - 1)}>
+            이전
+          </button>
+        )}
+        {isLast ? (
+          <button className="button primary" disabled={state === "sending" || !answersComplete(survey.questions, answers)} onClick={() => void send()}>
+            {state === "sending" ? "보내는 중…" : "보내기"}
+          </button>
+        ) : (
+          <button className="button primary" type="button" disabled={!stepDone} onClick={() => go(current + 1)}>
+            다음
+          </button>
+        )}
+      </div>
     </section>
   );
 }

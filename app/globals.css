@@ -5066,3 +5066,371 @@ button.my-pal-card {
   margin: 12px auto 0;
   color: var(--text-3);
 }
+
+/* ───────── 모션: 창 열기·닫기, 화면 전환 (lib/use-exit.ts, app/template.tsx) ───────── */
+.overlay {
+  animation: overlay-in 0.22s ease-out;
+}
+
+.sheet {
+  animation: sheet-in 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.overlay.closing {
+  animation: overlay-out 0.2s ease-in forwards;
+  pointer-events: none;
+}
+
+.sheet.closing {
+  animation: sheet-out 0.2s ease-in forwards;
+}
+
+@keyframes overlay-in {
+  from {
+    background: rgb(0 0 0 / 0%);
+  }
+}
+
+@keyframes overlay-out {
+  to {
+    background: rgb(0 0 0 / 0%);
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+}
+
+@keyframes sheet-out {
+  to {
+    opacity: 0;
+    transform: translateY(32px) scale(0.98);
+  }
+}
+
+.page-enter {
+  animation: page-enter 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* transform은 쓰지 않는다: 화면 안의 고정 위치 창이 잠깐 어긋나지 않게 */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+  }
+}
+
+.toast {
+  animation: toast-in 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 16px) scale(0.96);
+  }
+}
+
+.site-notice {
+  animation: page-enter 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 고르는 칩·버튼: 바뀔 때 색이 부드럽게, 누르면 살짝 눌림 */
+.tag-option {
+  transition: background 0.18s, color 0.18s, transform 0.1s;
+}
+
+.tag-option:active {
+  transform: scale(0.96);
+}
+
+.tag-option.on {
+  animation: chip-on 0.22s ease-out;
+}
+
+@keyframes chip-on {
+  40% {
+    transform: scale(1.05);
+  }
+}
+
+.tab svg {
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tab.active svg {
+  transform: translateY(-1px);
+}
+
+/* 목록 줄이 처음 그려질 때 차례로 나타남 (앞쪽 8줄만) */
+.rows > .row {
+  animation: row-in 0.34s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.rows > .row:nth-child(2) { animation-delay: 30ms; }
+.rows > .row:nth-child(3) { animation-delay: 60ms; }
+.rows > .row:nth-child(4) { animation-delay: 90ms; }
+.rows > .row:nth-child(5) { animation-delay: 120ms; }
+.rows > .row:nth-child(6) { animation-delay: 150ms; }
+.rows > .row:nth-child(7) { animation-delay: 180ms; }
+.rows > .row:nth-child(8) { animation-delay: 210ms; }
+
+@keyframes row-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* ───────── 문서 보기 창 (components/DocViewer.tsx) ───────── */
+.doc-viewer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgb(0 0 0 / 35%);
+  animation: overlay-in 0.22s ease-out;
+}
+
+.doc-viewer-backdrop.closing {
+  animation: overlay-out 0.2s ease-in forwards;
+  pointer-events: none;
+}
+
+.doc-viewer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 560px;
+  height: min(88dvh, 820px);
+  border-radius: 24px 24px 0 0;
+  background: var(--bg);
+  overflow: hidden;
+  animation: doc-in 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.doc-viewer.closing {
+  animation: doc-out 0.2s ease-in forwards;
+}
+
+@keyframes doc-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@keyframes doc-out {
+  to {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+.doc-viewer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 12px 20px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 1.0625rem;
+}
+
+.doc-viewer-frame {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: var(--bg);
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+}
+
+.doc-viewer-frame.loaded {
+  opacity: 1;
+}
+
+.doc-viewer-foot {
+  padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+
+@media (min-width: 640px) {
+  .doc-viewer-backdrop {
+    align-items: center;
+  }
+
+  .doc-viewer {
+    border-radius: 24px;
+  }
+}
+
+/* 창 안에 띄운 문서 화면: 문서만 보이게 (app/layout.tsx의 스크립트가 iframe 안 ?embed=1이면 html에 embedded를 붙인다) */
+html.embedded .header,
+html.embedded .footer,
+html.embedded .bottom-nav,
+html.embedded .skip-link,
+html.embedded .site-notice {
+  display: none;
+}
+
+html.embedded body {
+  padding-bottom: 24px;
+}
+
+/* 가입 동의 화면 보강 */
+.consent-all {
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.consent-all.on {
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+}
+
+.consent-summary {
+  margin: -6px 8px 6px 46px;
+  padding: 0;
+  list-style: none;
+  color: var(--text-3);
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
+.consent-sheet input[type="checkbox"]:checked {
+  animation: chip-on 0.22s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .sheet,
+  .overlay.closing,
+  .sheet.closing,
+  .page-enter,
+  .toast,
+  .site-notice,
+  .tag-option.on,
+  .rows > .row,
+  .doc-viewer-backdrop,
+  .doc-viewer,
+  .doc-viewer.closing,
+  .doc-viewer-backdrop.closing,
+  .consent-sheet input[type="checkbox"]:checked {
+    animation: none;
+  }
+
+  .tag-option,
+  .tab svg,
+  .doc-viewer-frame,
+  .consent-all {
+    transition: none;
+  }
+}
+
+/* ───────── 설문 단계 표시 (components/SurveyCard.tsx) ───────── */
+.survey-steps {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-3);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.survey-steps ol {
+  display: flex;
+  flex: 1;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.survey-steps li {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.survey-steps li::after {
+  content: "";
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.survey-steps li.done::after,
+.survey-steps li.now::after {
+  transform: scaleX(1);
+}
+
+.survey-steps li.now::after {
+  opacity: 0.55;
+}
+
+.survey-forward {
+  animation: survey-in-forward 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.survey-back {
+  animation: survey-in-back 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes survey-in-forward {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+}
+
+@keyframes survey-in-back {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+}
+
+.survey-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.survey-nav .button {
+  flex: 1;
+}
+
+.survey-nav .button.primary {
+  flex: 2;
+}
+
+.survey-nav .button:disabled {
+  opacity: 0.45;
+}
+
+.survey-thanks {
+  animation: chip-on 0.3s ease-out, page-enter 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .survey-forward,
+  .survey-back,
+  .survey-thanks {
+    animation: none;
+  }
+
+  .survey-steps li::after {
+    transition: none;
+  }
+}
