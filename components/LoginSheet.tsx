@@ -84,15 +84,15 @@ export function LoginSheet() {
           </button>
         ))}
         <p className="sheet-legal">
-          로그인하면{" "}
+          처음 로그인하면{" "}
           <Link href="/terms" onClick={() => setLoginOpen(false)}>
             이용약관
           </Link>
-          에 동의하고{" "}
+          과{" "}
           <Link href="/privacy" onClick={() => setLoginOpen(false)}>
-            개인정보처리방침
+            개인정보 수집·이용
           </Link>
-          을 확인한 것으로 봅니다. 만 14세 미만은 가입할 수 없어요.
+          에 동의를 받아요. 만 14세 미만은 가입할 수 없어요.
         </p>
       </div>
     </div>

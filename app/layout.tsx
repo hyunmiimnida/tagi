@@ -5,6 +5,7 @@ import { BottomNav } from "../components/BottomNav.tsx";
 import { Header } from "../components/Header.tsx";
 import { PwaSetup } from "../components/InstallCard.tsx";
 import { LoginSheet } from "../components/LoginSheet.tsx";
+import { ConsentSheet } from "../components/ConsentSheet.tsx";
 import { SiteNotice } from "../components/SiteNotice.tsx";
 import { StarHelper } from "../components/StarHelper.tsx";
 import { WeaponReveal } from "../components/WeaponReveal.tsx";
@@ -83,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </footer>
           <BottomNav />
           <LoginSheet />
+          <ConsentSheet />
           <StarHelper />
           <WeaponReveal />
           <KeyGiftToast />

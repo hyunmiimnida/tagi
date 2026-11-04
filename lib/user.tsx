@@ -1,7 +1,8 @@
 "use client";
 
 import { createClient } from "@supabase/supabase-js";
-import { track } from "./analytics.ts";
+import { setAnalyticsAccount, track } from "./analytics.ts";
+import { CONSENT_VERSION } from "./policy.ts";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { toDateString } from "./filter.ts";
 import { forgetPushOnThisDevice } from "./push.ts";
@@ -89,6 +90,10 @@ interface UserState {
   toggleFavorite: (programId: string) => void;
   signIn: (provider: ProviderId) => void;
   signOut: () => void;
+  // 가입 동의 (supabase/consent.sql, 화면은 components/ConsentSheet.tsx). 로그인했는데 지금 판(CONSENT_VERSION)에 동의하지 않았으면 true
+  consentNeeded: boolean;
+  agreeTerms: () => Promise<boolean>;
+  declineTerms: () => void; // 동의하지 않고 나가기 = 로그아웃
   deleteAccount: () => Promise<boolean>; // 계정과 계정에 저장된 모든 데이터를 지운다
   includeOpen: boolean; // 다른 학교도 지원할 수 있는 공고 함께 보기 (홈·공고 화면)
   setIncludeOpen: (next: boolean) => void;
@@ -234,6 +239,8 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       // 같은 계정이 다시 들어오면 이 기기에 기억해 둔 캐릭터를 먼저 보여 준다 (계정의 캐릭터는 곧 불러온다). 로그아웃하면 캐릭터가 없다
       setAvatarState(nextUser ? (nextUser === lastUser || !lastUser ? readLocalAvatar() : null) : null);
       if (nextUser) writeLocal(LAST_USER_KEY, nextUser);
+      // 이용 기록: 로그인 안 했으면 바로 보내고, 로그인했으면 동의했는지 알 때까지 모아 둔다 (아래 동의 확인)
+      setAnalyticsAccount(nextUser ? "pending" : "guest");
       setUserId(nextUser);
       setEmail(session?.user.email ?? null);
       setProvider((session?.user.app_metadata.provider as string | undefined) ?? null);
@@ -277,6 +284,39 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     return () => {
       cancelled = true;
     };
+  }, [userId]);
+
+  // 가입 동의를 확인한다. loading(확인 중)·agreed·needed(동의 화면을 보여 줌)·unavailable(consent.sql 실행 전: 화면 없이, 로그인한 사람의 이용 기록은 안 보냄)
+  const [consent, setConsent] = useState<"loading" | "agreed" | "needed" | "unavailable">("loading");
+  useEffect(() => {
+    setConsent("loading");
+    if (!supabase || !userId) return;
+    let cancelled = false;
+    void supabase
+      .from("user_consents")
+      .select("version")
+      .eq("user_id", userId)
+      .eq("version", CONSENT_VERSION)
+      .maybeSingle()
+      .then(({ data, error }) => {
+        if (!cancelled) setConsent(error ? "unavailable" : data ? "agreed" : "needed");
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [userId]);
+  // 동의 화면이 떠 있는 동안 생긴 기록(로그인 완료 등)은 모아 두었다가 동의하면 보낸다
+  useEffect(() => {
+    if (!userId) return;
+    setAnalyticsAccount(consent === "agreed" ? "agreed" : consent === "unavailable" ? "blocked" : "pending");
+  }, [userId, consent]);
+
+  const agreeTerms = useCallback(async () => {
+    if (!supabase || !userId) return false;
+    const { error } = await supabase.rpc("agree_terms", { ver: CONSENT_VERSION });
+    if (error) return false;
+    setConsent("agreed");
+    return true;
   }, [userId]);
 
   // 로그인하면 계정의 캐릭터를 불러온다. 계정에 아직 없으면(회원가입) 기본 캐릭터 하나를 무작위로 주고 계정에 저장한다
@@ -592,6 +632,12 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
           .catch(() => {})
           .then(() => client.auth.signOut());
       },
+      consentNeeded: userId !== null && consent === "needed",
+      agreeTerms,
+      declineTerms: () => {
+        setAnalyticsAccount("blocked"); // 동의 화면이 떠 있는 동안 모아 둔 기록은 버린다
+        void supabase?.auth.signOut();
+      },
       deleteAccount: async () => {
         if (!supabase || !userId) return false;
         const { error } = await supabase.rpc("delete_my_account");
@@ -623,7 +669,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       revealing,
       closeReveal,
     }),
-    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite, includeOpen, setIncludeOpen, avatar, avatarGiven, clearAvatarGiven, setAvatar, ownedWeapons, keys, legendShards, drawWeapon, refreshKeys, keyGift, clearKeyGift, grantWeapon, revealing, closeReveal],
+    [ready, userId, email, provider, schoolId, profile, setProfile, favorites, loginOpen, setSchool, toggleFavorite, consent, agreeTerms, includeOpen, setIncludeOpen, avatar, avatarGiven, clearAvatarGiven, setAvatar, ownedWeapons, keys, legendShards, drawWeapon, refreshKeys, keyGift, clearKeyGift, grantWeapon, revealing, closeReveal],
   );
 
   return <UserContext value={value}>{children}</UserContext>;

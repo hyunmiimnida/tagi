@@ -5,11 +5,12 @@ import { supabase } from "./user.tsx";
 
 // 이용 기록 보내기 (관리자 화면 "리서치"의 퍼널·히트맵·A/B). 서버는 supabase/research-data.sql의 track_event.
 // · 기기마다 무작위 값(anon_id)으로만 구분한다. IP·기기 정보·입력한 글자·검색어 원문은 보내지 않는다.
-// · 프로필에서 "이용 기록 보내기"를 끄거나 브라우저의 추적 안 함(DNT·GPC)이 켜져 있으면 아무것도 보내지 않는다.
+// · 누가 보내나: 로그인 안 한 방문자(계정 연결 없음)와, 가입 동의(supabase/consent.sql)를 마친 회원. 로그인했는데 아직 동의하지 않은
+//   사람은 보내지 않는다. 로그인 상태를 알기 전에 생긴 기록은 모아 두었다가 상태가 정해지면 보내거나 버린다 (lib/user.tsx가 setAnalyticsAccount).
+// · 브라우저의 GPC(개인정보 보호 신호)가 켜져 있으면 보내지 않는다.
 // · 보내다 실패해도(표가 아직 없음·오프라인 등) 조용히 버린다. 화면은 절대 멈추지 않는다.
 // 화면 곳곳에서는 track("이름", { ... }) 한 줄로 부른다
 
-const OPT_OUT_KEY = "tagi:no-analytics";
 const ANON_KEY = "tagi:anon";
 const SESSION_KEY = "tagi:session";
 const BATCH = 20; // 한 번에 보내는 수 (서버 한도와 같다)
@@ -40,32 +41,27 @@ function randomId(): string {
   }
 }
 
-// 브라우저의 추적 안 함 설정
+// 브라우저의 GPC(개인정보 보호 신호)
 export function browserSaysNo(): boolean {
   if (typeof navigator === "undefined") return true;
-  const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
-  return nav.doNotTrack === "1" || nav.globalPrivacyControl === true;
+  return (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl === true;
 }
 
-// 사용자가 프로필에서 고른 값 (기본 켬)
-export function analyticsChosen(): boolean {
-  return storage("local")?.getItem(OPT_OUT_KEY) !== "1";
-}
+// 지금 보내도 되는 사람인지: pending(로그인 상태를 아직 모름) · guest(로그인 안 함) · agreed(가입 동의함) · blocked(로그인했지만 동의 전)
+export type AnalyticsAccount = "pending" | "guest" | "agreed" | "blocked";
+let account: AnalyticsAccount = "pending";
 
-export function setAnalyticsChosen(on: boolean) {
-  try {
-    if (on) storage("local")?.removeItem(OPT_OUT_KEY);
-    else {
-      storage("local")?.setItem(OPT_OUT_KEY, "1");
-      queue = []; // 끄면 아직 못 보낸 것도 버린다
-    }
-  } catch {
-    // 저장소를 못 쓰면 이번 방문에만 적용
-    if (!on) queue = [];
+export function setAnalyticsAccount(next: AnalyticsAccount) {
+  if (next === account) return;
+  account = next;
+  if (next === "blocked") queue = []; // 동의 전에 쌓인 것은 버린다
+  else if (next !== "pending" && queue.length > 0) {
+    clearTimeout(timer);
+    timer = setTimeout(flush, 0);
   }
 }
 
-export const analyticsAllowed = () => Boolean(supabase) && !browserSaysNo() && analyticsChosen();
+export const analyticsAllowed = () => Boolean(supabase) && !browserSaysNo() && account !== "blocked";
 
 // 이 기기의 무작위 값 (없으면 만든다). 저장소를 못 쓰면 null → 보내지 않는다
 export function anonId(): string | null {
@@ -101,7 +97,9 @@ export function track(name: EventName, props: Props = {}) {
   try {
     if (typeof window === "undefined" || !analyticsAllowed()) return;
     if (window.self !== window.top) return; // 관리자 화면의 히트맵 미리보기(iframe) 안에서는 남기지 않는다
+    if (queue.length >= 100) return; // 로그인 상태를 모르는 채로 너무 많이 쌓이지 않게
     queue.push({ name, path: window.location.pathname, props });
+    if (account === "pending") return; // 상태가 정해지면 setAnalyticsAccount가 보낸다
     clearTimeout(timer);
     timer = setTimeout(flush, queue.length >= BATCH ? 0 : 2000);
   } catch {
@@ -111,7 +109,7 @@ export function track(name: EventName, props: Props = {}) {
 
 export function flush() {
   try {
-    if (!supabase || queue.length === 0) return;
+    if (!supabase || queue.length === 0 || account === "pending" || account === "blocked") return;
     const anon = anonId();
     if (!anon) {
       queue = [];

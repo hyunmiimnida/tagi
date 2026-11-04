@@ -71,7 +71,7 @@
   - 관리자 추가: SQL Editor에서 `insert into admins (user_id) values ('계정 번호');` (관리자가 아닌 계정으로 `/admin`을 열면 그 줄이 보인다). 관리자면 프로필에 "관리자 화면" 링크
 - 리서치(관리자 화면 "리서치" 탭 `components/admin/AdminResearch.tsx`, 서버 `supabase/research-data.sql`, 순수 계산 `lib/research.ts`): 퍼널 분석·히트맵·설문·A/B 테스트
   - 이용 기록 `analytics_events`: 넣기는 `track_event(anon, session, events)`만(이름 허용 목록 `analytics_names()` = `lib/research.ts`의 `EVENT_NAMES`, 한 번에 20개·한 기기 1분 120개, 주소의 ? 뒤는 지움), 읽기는 관리자 함수만. 기기는 브라우저가 만든 무작위 `anon_id`(이 기기 저장), IP·기기 정보·입력한 글자·검색어 원문은 남기지 않는다(검색은 글자 수만). 180일 뒤 `purge_old_events()`(docs/설정-안내.md 1-11), 탈퇴하면 계정 기록 삭제
-  - 보내기는 `lib/analytics.ts`의 `track("이름", {...})` 한 줄(모아서 2초 뒤·화면을 떠날 때 보냄, 실패는 무시). 프로필 "이용 기록 보내기"(`components/AnalyticsSwitch.tsx`, 기본 켬)를 끄거나 브라우저 DNT·GPC가 켜져 있으면 보내지 않는다. 관리자 히트맵 미리보기(iframe) 안에서는 보내지 않는다
+  - 보내기는 `lib/analytics.ts`의 `track("이름", {...})` 한 줄(모아서 2초 뒤·화면을 떠날 때 보냄, 실패는 무시). 보내는 사람은 로그인 안 한 방문자(계정 연결 없음)와 가입 동의를 마친 회원뿐이고, 끄는 스위치는 없다(2026-11-05 사용자 결정, 브라우저 GPC만 존중). 로그인 상태를 알기 전·동의 화면이 떠 있는 동안 생긴 기록은 모아 두었다가 동의하면 보내고 거부하면 버린다(`setAnalyticsAccount`, `lib/user.tsx`가 정함). 관리자 히트맵 미리보기(iframe) 안에서는 보내지 않는다
   - 기록 이름: page_view·program_open·apply_click·click(히트맵)은 `components/Analytics.tsx`, filter_change·search는 `Explorer`, favorite_on은 `FavoriteButton`, login_start·login_done·draw는 `lib/user.tsx`, review_start·review_submit은 `Comments`, exposure는 `lib/experiments.ts`, survey_view는 `SurveyCard`
   - 히트맵: 홈·공고 목록·공고 상세(`HEATMAP_PAGES`)에서 누른 위치(화면 너비 비율 x, 문서 위에서 px y, 640px 미만 m/이상 d)와 가장 가까운 `data-hm` 이름. 자주 누르는 곳에 `data-hm="이름"`을 붙인다(program-row·favorite·filter-*·search·apply·tab/…)
   - 퍼널: 같은 기기가 앞 단계 다음에 그 단계를 했는지(`admin_funnel`). 기본 퍼널은 `DEFAULT_FUNNELS`(공고 탐색→신청, 공고→관심→신청, 가입, 후기 쓰기), 화면에서 직접 만들 수도 있다
@@ -171,6 +171,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
   - 홈 안내: 학교를 안 골랐으면 머리말이 "대학교를 설정해 보세요!"와 "학교 고르기"로만 묻는다. `components/ProfileNudge.tsx`는 학교는 골랐지만 신분·관심 분야를 안 고른 사람에게 공고 화면으로 가는 안내(닫으면 다시 안 보임). "홈 화면에 추가"(`components/InstallCard.tsx`)는 두 번째 방문부터
   - 홈 머리말은 고른 학교가 오늘 올린 공고 수, 0개면 "최근 3일 동안 N개". "새로 올라온 공고"는 일정이 있는 글 먼저, 마감 임박은 같은 마감일이면 학교를 섞는다(`lib/filter.ts`의 `compareDeadlineMixed`)
 - 검색엔진 소유 확인 코드: `lib/policy.ts`의 `SITE_VERIFICATION`(공개값, 비어 있으면 안 넣음) → `app/layout.tsx` metadata
+- 가입 동의: 처음 로그인(가입)하면 `components/ConsentSheet.tsx`가 다른 서비스 가입 화면처럼 "모두 동의하기"와 (필수) 만 14세 이상·이용약관·개인정보 수집·이용(이용 기록 포함, 요약 `CONSENT_PRIVACY_SUMMARY`)을 받는다. 모두 체크해야 시작, "동의하지 않고 나가기"는 로그아웃. 기록은 `user_consents` 표(`supabase/consent.sql`, `agree_terms(ver)`만 넣고 시각은 서버, 본인은 읽기만). 약관을 크게 바꿔 다시 동의받으려면 `lib/policy.ts`의 `CONSENT_VERSION`을 올린다(기존 회원도 다음 접속 때 다시 봄). SQL 실행 전에는 화면 없이 로그인한 사람의 이용 기록만 안 보낸다
 - 약관: `/terms`(이용약관), `/privacy`(개인정보처리방침). 문의처·규칙 문구는 `lib/policy.ts`. 모으는 정보·맡기는 곳·브라우저 저장이 바뀌면 방침도 같이 고치고 `POLICY_DATE`와 문서 끝 변경 기록을 고친다. 판매 전이라 방침은 "팔지 않습니다", 유료 문장은 판매를 결정할 때 넣는다. 후기를 누가 썼는지 알 수 없는 통계·요약으로 학교 프로그램 개선에 전달할 수 있다는 안내는 처음 후기 쓸 때의 동의 상자(`REVIEW_USE_NOTICE`, 2026-10-31 사용자 결정)와 방침·약관에 있다. 만 14세 미만은 가입 불가(로그인 창 안내, 생년월일은 받지 않음)
 - 접근성: 본문 바로가기(`.skip-link`, `app/layout.tsx`), 창(`LoginSheet`·`WeaponReveal`)은 Esc로 닫고 Tab이 창 안에서 돈다, 켜진 별은 `--star-edge` 테두리
 - PWA: `app/manifest.ts`, `public/sw.js`(오프라인 때 마지막 화면), 아이콘 `public/icon-*.png`, `app/apple-icon.png`

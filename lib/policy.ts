@@ -13,7 +13,17 @@ export const SITE_VERIFICATION = { google: "", naver: "" };
 
 // 문서를 고치면 날짜도 바꾼다
 export const POLICY_DATE = "2026년 11월 5일"; // 개인정보처리방침
-export const TERMS_DATE = "2026년 11월 2일"; // 이용약관
+export const TERMS_DATE = "2026년 11월 5일"; // 이용약관
+
+// 가입 동의 판 (supabase/consent.sql). 약관·방침을 크게 바꿔 다시 동의받아야 할 때만 올린다 → 기존 회원도 다음 접속 때 동의 화면을 다시 본다
+export const CONSENT_VERSION = "2026-11-05";
+
+// 가입 동의 화면(components/ConsentSheet.tsx)의 "개인정보 수집·이용" 항목 요약. 방침 1번 표와 같은 내용으로 맞춘다
+export const CONSENT_PRIVACY_SUMMARY = [
+  "모으는 것: 카카오·구글 계정 번호와 이메일(준 경우), 학교·관심 분야 같은 설정, 관심 공고, 쓴 글, 이용 기록(연 화면·누른 기능)",
+  "쓰는 곳: 로그인, 맞춤 공고와 캘린더, 후기·대화, 서비스 개선",
+  "보관: 탈퇴할 때까지 (이용 기록은 180일)",
+];
 
 export const COMMENT_RULES = [
   "욕설, 비방, 차별, 성적인 표현은 쓰지 않아요.",
