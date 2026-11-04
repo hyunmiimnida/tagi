@@ -156,6 +156,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ id: st
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
+            data-hm={index === 0 ? "apply" : "apply-more"}
             className={`button ${index === 0 ? "primary" : ""} wide`}
           >
             {links.length > 1 ? `${sourceNames[link.sourceId] ?? link.sourceId}에서 보기` : walkIn ? "원문 보기" : "원문에서 신청하기"}

@@ -29,7 +29,7 @@ export function BottomNav() {
       {TABS.map(({ href, label, Icon, match }) => {
         const active = match(pathname);
         return (
-          <Link key={href} href={href} className={`tab ${active ? "active" : ""}`} aria-current={active ? "page" : undefined}>
+          <Link key={href} href={href} data-hm={`tab${href}`} className={`tab ${active ? "active" : ""}`} aria-current={active ? "page" : undefined}>
             <span className="tab-icon">
               {active && <MyPal pose="sit" className="tab-pal" />}
               {active && effect && <AmbientEffect key={effect} effect={effect} every={every} />}

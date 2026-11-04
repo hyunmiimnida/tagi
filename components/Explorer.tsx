@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { track } from "../lib/analytics.ts";
 import {
   ELIGIBILITY,
   addedAt,
@@ -185,6 +186,29 @@ export function Explorer({ categories, schools }: Props) {
     lastFilterKey.current = filterKey;
   }, [loaded, filterKey]);
 
+  // 이용 기록(lib/analytics.ts): 필터를 바꾸면 무엇을 몇 개 골랐는지만, 검색은 글자 수만 남긴다 (손을 멈춘 뒤 한 번)
+  const trackedFilters = useRef<string | null>(null);
+  const filterOnly = JSON.stringify([school, region, [...units], [...who], [...selected], showClosed, includeOpen, sort]);
+  useEffect(() => {
+    if (!loaded) return;
+    if (trackedFilters.current === null) {
+      trackedFilters.current = filterOnly; // 주소에서 읽은 처음 값은 세지 않는다
+      return;
+    }
+    if (trackedFilters.current === filterOnly) return;
+    const timer = setTimeout(() => {
+      trackedFilters.current = filterOnly;
+      track("filter_change", { school: Boolean(school), region: Boolean(region), units: units.size, who: who.size, tags: selected.size, closed: showClosed, open: includeOpen, sort });
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [loaded, filterOnly, school, region, units, who, selected, showClosed, includeOpen, sort]);
+  useEffect(() => {
+    const text = keyword.trim();
+    if (!loaded || !text) return;
+    const timer = setTimeout(() => track("search", { len: text.length }), 1500);
+    return () => clearTimeout(timer);
+  }, [loaded, keyword]);
+
   // 기억한 개수를 읽기(위 effect) 전에 처음 값 30으로 덮어쓰지 않게, 불러온 뒤에만 저장한다
   useEffect(() => {
     if (!loaded) return;
@@ -344,7 +368,7 @@ export function Explorer({ categories, schools }: Props) {
   return (
     <div className="explorer">
       <div className="filter-bar">
-        <label className="search">
+        <label className="search" data-hm="search">
           <SearchIcon />
           <input
             type="search"
@@ -359,6 +383,7 @@ export function Explorer({ categories, schools }: Props) {
 
         <div className="chip-scroll">
           <button
+            data-hm="filter-school"
             className={`chip ${school || region ? "active" : ""} ${openPanel === SCHOOL_PANEL ? "open" : ""}`}
             aria-expanded={openPanel === SCHOOL_PANEL}
             onClick={() => setOpenPanel(openPanel === SCHOOL_PANEL ? null : SCHOOL_PANEL)}
@@ -373,6 +398,7 @@ export function Explorer({ categories, schools }: Props) {
             return (
               <button
                 key={category.id}
+                data-hm={`filter-${category.id}`}
                 className={`chip ${count > 0 ? "active" : ""} ${isOpen ? "open" : ""}`}
                 aria-expanded={isOpen}
                 onClick={() => setOpenPanel(isOpen ? null : category.id)}

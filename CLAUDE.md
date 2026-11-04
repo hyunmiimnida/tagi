@@ -69,6 +69,14 @@
   - 의견 보내기: 프로필의 `components/FeedbackBox.tsx` → `feedback` 표(로그인 안 해도 됨, 1시간 5개). 본인은 `my_feedback` 뷰로 자기 의견과 답장만 본다(관리자 메모는 안 보임)
   - 사이트 공지: `announcements` 표의 켜진 공지 중 가장 최근 것 하나를 `components/SiteNotice.tsx`가 모든 화면 위에 띠로 보여 준다(닫으면 그 기기에서 안 보임)
   - 관리자 추가: SQL Editor에서 `insert into admins (user_id) values ('계정 번호');` (관리자가 아닌 계정으로 `/admin`을 열면 그 줄이 보인다). 관리자면 프로필에 "관리자 화면" 링크
+- 리서치(관리자 화면 "리서치" 탭 `components/admin/AdminResearch.tsx`, 서버 `supabase/research-data.sql`, 순수 계산 `lib/research.ts`): 퍼널 분석·히트맵·설문·A/B 테스트
+  - 이용 기록 `analytics_events`: 넣기는 `track_event(anon, session, events)`만(이름 허용 목록 `analytics_names()` = `lib/research.ts`의 `EVENT_NAMES`, 한 번에 20개·한 기기 1분 120개, 주소의 ? 뒤는 지움), 읽기는 관리자 함수만. 기기는 브라우저가 만든 무작위 `anon_id`(이 기기 저장), IP·기기 정보·입력한 글자·검색어 원문은 남기지 않는다(검색은 글자 수만). 180일 뒤 `purge_old_events()`(docs/설정-안내.md 1-11), 탈퇴하면 계정 기록 삭제
+  - 보내기는 `lib/analytics.ts`의 `track("이름", {...})` 한 줄(모아서 2초 뒤·화면을 떠날 때 보냄, 실패는 무시). 프로필 "이용 기록 보내기"(`components/AnalyticsSwitch.tsx`, 기본 켬)를 끄거나 브라우저 DNT·GPC가 켜져 있으면 보내지 않는다. 관리자 히트맵 미리보기(iframe) 안에서는 보내지 않는다
+  - 기록 이름: page_view·program_open·apply_click·click(히트맵)은 `components/Analytics.tsx`, filter_change·search는 `Explorer`, favorite_on은 `FavoriteButton`, login_start·login_done·draw는 `lib/user.tsx`, review_start·review_submit은 `Comments`, exposure는 `lib/experiments.ts`, survey_view는 `SurveyCard`
+  - 히트맵: 홈·공고 목록·공고 상세(`HEATMAP_PAGES`)에서 누른 위치(화면 너비 비율 x, 문서 위에서 px y, 640px 미만 m/이상 d)와 가장 가까운 `data-hm` 이름. 자주 누르는 곳에 `data-hm="이름"`을 붙인다(program-row·favorite·filter-*·search·apply·tab/…)
+  - 퍼널: 같은 기기가 앞 단계 다음에 그 단계를 했는지(`admin_funnel`). 기본 퍼널은 `DEFAULT_FUNNELS`(공고 탐색→신청, 공고→관심→신청, 가입, 후기 쓰기), 화면에서 직접 만들 수도 있다
+  - 설문 `surveys`·`survey_responses`: 관리자 화면에서 만들고 켜면 홈 `components/SurveyCard.tsx`가 대상(모두·로그인·학교)에게 한 번만 보여 준다(닫거나 답하면 이 기기에서 안 보임). 답은 `submit_survey`로만, 한 계정·기기당 한 번. 주관식 답은 관리자 화면에서만 본다
+  - **A/B 테스트** 붙이는 방법: 관리자 화면 "리서치 → A/B"에서 실험(이름·변형 `a:50, b:50`·목표 기록)을 만들고, 화면 코드에서 `const variant = useVariant("실험 이름");`(`lib/experiments.ts`) → `variant === "b" ? 새 모습 : 원래 모습`. 실험이 꺼져 있거나 없으면 null이라 원래 모습이 나온다. 같은 기기는 늘 같은 변형(anon_id 해시), 처음 보일 때 exposure 기록. 결과는 변형마다 노출·목표 달성률·두 비율 검정(변형마다 100명 넘게 노출되기 전에는 "아직 판단하기 일러요"). 실제 실험은 운영자가 정한다
 - 운영 연락처: `lib/policy.ts`의 `CONTACT_EMAIL` (개인정보 보호 책임자·문의·권리 침해 신고). 수집기 이름(`src/fetch.ts`의 USER_AGENT)에도 같은 이메일을 적는다
 - 합쳐진 공고는 `aliases`에 예전 id를 남기고, 없는 공고 주소는 `app/not-found.tsx`가 `public/api/ids.json`으로 새 주소나 보관 안내를 찾아 준다
 

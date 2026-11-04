@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { track } from "../lib/analytics.ts";
 import { reviewRewardNote } from "../lib/gacha.ts";
 import { COMMENT_RULES, REVIEW_USE_NOTICE } from "../lib/policy.ts";
 import { toValidAvatar } from "../lib/pixel-pals.ts";
@@ -71,6 +72,13 @@ export function Comments({ seriesId, rounds }: { seriesId: string; rounds: Revie
     ? review : { ...review, program_id: writableRounds[0]?.id ?? "" };
   const hasRatings = Boolean(reviews?.available && hasKinds);
   const writingReview = !hasKinds || kind === "review";
+  // 후기를 처음 쓰기 시작한 순간 한 번 기록한다 (이용 기록, lib/analytics.ts)
+  const reviewStarted = useRef(false);
+  useEffect(() => {
+    if (!writingReview || !draft || reviewStarted.current) return;
+    reviewStarted.current = true;
+    track("review_start");
+  }, [writingReview, draft]);
   const waitingForRound = hasRatings && writingReview && writableRounds.length === 0;
   const loadVersion = useRef(0);
   const text = KIND_TEXT[hasKinds ? kind : "review"];
@@ -218,6 +226,7 @@ export function Comments({ seriesId, rounds }: { seriesId: string; rounds: Revie
     if (parentId === null) { setDraft(""); setReview(emptyReview(selectedReview.program_id)); }
     else { setReplyDraft(""); setReplying(null); }
     if (parentId === null) {
+      if (writingReview) track("review_submit");
       user.refreshKeys(); // 답글에는 후기 선물이 없다
       void loadReward();
     }
