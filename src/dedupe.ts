@@ -1,5 +1,6 @@
 import type { Period, Program } from "./types.ts";
 import { sameSchool } from "./school-of.ts";
+import { cleanTitle } from "./title.ts";
 
 // 중복 제거: 같은 프로그램이 여러 출처에 올라오면 하나로 합치고 원문 링크는 모두 보관한다.
 
@@ -98,6 +99,7 @@ function mergeInto(base: Program, extra: Program): void {
   base.postedAt ??= extra.postedAt;
   if (!base.summary && extra.summary !== undefined) base.summary = extra.summary ?? base.summary ?? null;
   if (base.noApplication === undefined && extra.noApplication !== undefined) base.noApplication = extra.noApplication;
+  if (!base.digest && extra.digest !== undefined) base.digest = extra.digest ?? base.digest ?? null;
   // 주최 유형 태그는 base의 것만 남긴다
   base.tags = union(base.tags, extra.tags.filter((t) => t !== extra.organizerType || t === base.organizerType));
   base.sources = union(base.sources, extra.sources);
@@ -122,6 +124,7 @@ function keepAiFields(saved: Program, fresh: Program): Program {
     target: saved.target,
     tags: saved.tags,
     summary: saved.summary,
+    digest: saved.digest,
     noApplication: saved.noApplication,
     recruitPeriod: fillPeriod(fresh.recruitPeriod, saved.recruitPeriod),
     activityPeriod: fillPeriod(fresh.activityPeriod, saved.activityPeriod),
@@ -148,6 +151,7 @@ export function mergePrograms(existing: Program[], incoming: Program[]): Program
         }
         if (fresh.summary === undefined && saved.summary !== undefined) fresh.summary = saved.summary;
         if (fresh.noApplication === undefined && saved.noApplication !== undefined) fresh.noApplication = saved.noApplication;
+        if (fresh.digest === undefined && saved.digest !== undefined) fresh.digest = saved.digest;
         if (saved.aliases) fresh.aliases = [...new Set([...saved.aliases, ...(fresh.aliases ?? [])])];
         result[index] = fresh;
       } else {
@@ -183,8 +187,9 @@ export function stripDeadlineHead(title: string): string {
   return rest;
 }
 // "재안내"는 "안내"로 본다("모집 재안내" = "모집 안내"), 앞의 [홍보] 머리말도 지운다
+// 저장된 제목은 정리돼 있고(src/title.ts) 새로 읽은 제목은 원래 모양이라, 둘 다 정리한 제목으로 비교한다
 export const repostKey = (title: string) =>
-  normalize(stripDeadlineHead(title).replace(REPOST_MARK, "").replace(/재안내/g, "안내").replace(/^\s*\[(재)?홍보\]\s*/, "").replace(REPOST_MARK, ""));
+  normalize(stripDeadlineHead(cleanTitle(title)).replace(REPOST_MARK, "").replace(/재안내/g, "안내").replace(/^\s*\[(재)?홍보\]\s*/, "").replace(REPOST_MARK, ""));
 const REPOST_DAYS = 60;
 
 function canCollapseRepost(a: Program, b: Program): boolean {

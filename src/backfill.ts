@@ -16,6 +16,7 @@ import { cleanPeriods, notForStudentsByTitle } from "./extract.ts";
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
+import { cleanTitles } from "./title.ts";
 import type { ArchivePost, CollectContext, CollectedItem, Program, School, TagCategory } from "./types.ts";
 
 // 과거 글 수집 (내 컴퓨터에서 한 번 실행, 몇 시간 걸린다. 끊겨도 다시 실행하면 이어서 한다)
@@ -224,6 +225,7 @@ async function save() {
   all.forEach(cleanPeriods);
   const { current: programs, old } = splitByAge(all);
   const archive = mergeArchive([], old);
+  cleanTitles([...programs, ...archive]); // 제목의 이모지·재게시·마감 표시를 지운다 (src/title.ts)
   console.log(`반복 프로그램 묶음 ${await assignSeries(programs, archive)}개`);
   await writeJson(PROGRAMS_FILE, programs);
   await writeJson(ARCHIVE_FILE, archive);

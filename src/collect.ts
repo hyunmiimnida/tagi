@@ -19,6 +19,7 @@ import { cleanPeriods, looksLikeNoticeOnly, notForStudentsByTitle } from "./extr
 import { enrich } from "./extract.ts";
 import { fetchHtml, isAllowedByRobots, robotsBlocked, robotsProblemOf } from "./fetch.ts";
 import { assignSeries } from "./series.ts";
+import { cleanTitles } from "./title.ts";
 import { finishRecheck, readRechecks, recheckLimit } from "./recheck-open.ts";
 import type { CollectedItem, Program, School, Source, TagCategory } from "./types.ts";
 
@@ -206,6 +207,8 @@ const archive = mergeArchive(
   archived.filter((p) => !p.links.some((l) => listedUrls.has(l.url)) && keep(p)),
   old,
 );
+// 제목의 이모지·재게시·마감 표시를 지운다 (같은 공고 합치기가 끝난 뒤에. 합칠 때는 원래 제목의 재게시 표시를 쓴다)
+console.log(`제목 정리 ${cleanTitles([...merged, ...archive])}개`);
 const seriesCount = await assignSeries(merged, archive);
 console.log(`반복 프로그램 묶음 ${seriesCount}개`);
 
