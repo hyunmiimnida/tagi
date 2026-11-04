@@ -121930,6 +121930,48 @@
     "firstSeenAt": "2026-10-19T17:54:52.469Z"
   },
   {
+    "id": "seoultech-global-hqcsikq16dm6io",
+    "title": "[안내/중요] 외국인유학생 시간제 취업 허가제도 및 주의사항 안내(시간제취업 확인서(Part-time Work Confirmation Form)포함)",
+    "organizer": "국제교류처",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "seoultech"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "취업·채용",
+      "해외·글로벌"
+    ],
+    "links": [
+      {
+        "sourceId": "seoultech-global",
+        "url": "https://global.seoultech.ac.kr/notice/notice?do=view&bnum=58434&bidx=888966"
+      }
+    ],
+    "sources": [
+      "seoultech-global"
+    ],
+    "postedAt": "2026-06-08",
+    "extractedBy": "rules",
+    "collectedAt": "2026-11-04T15:16:19.313Z",
+    "firstSeenAt": "2026-11-04T15:16:19.313Z"
+  },
+  {
     "id": "knu-notice-1337507",
     "title": "[대구RISE사업] 2026 청년연구자 지원 사업 신청 안내",
     "organizer": "학생과",
@@ -177682,6 +177724,48 @@
     "summary": "고용노동 공공데이터와 AI를 활용하는 공모전에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-19T17:55:37.457Z"
+  },
+  {
+    "id": "seoultech-global-hgitakj1b1hpp1",
+    "title": "[안내] 외국인 유학생 대상 온라인 심리검사",
+    "organizer": "국제교류처",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "seoultech"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "해외·글로벌",
+      "상담·심리"
+    ],
+    "links": [
+      {
+        "sourceId": "seoultech-global",
+        "url": "https://global.seoultech.ac.kr/notice/notice?do=view&bnum=58434&bidx=890322"
+      }
+    ],
+    "sources": [
+      "seoultech-global"
+    ],
+    "postedAt": "2026-05-14",
+    "extractedBy": "rules",
+    "collectedAt": "2026-11-04T15:16:18.220Z",
+    "firstSeenAt": "2026-11-04T15:16:18.220Z"
   },
   {
     "id": "yu-career-2474",
@@ -242479,7 +242563,8 @@
     "collectedAt": "2026-10-01T03:58:48.140Z",
     "firstSeenAt": "2026-10-01T03:58:48.140Z",
     "summary": "설명회에서 일본·태국·미국 뉴욕의 해외인턴십 정보를 알아봐요",
-    "noApplication": false
+    "noApplication": false,
+    "seriesId": "yu-news-229332345"
   },
   {
     "id": "yu-news-229290109",
@@ -244045,7 +244130,8 @@
     "collectedAt": "2026-10-15T13:41:53.122Z",
     "summary": "금융권 채용 시장 분석과 취업 전략 특강을 들어요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T13:41:53.122Z"
+    "firstSeenAt": "2026-10-15T13:41:53.122Z",
+    "seriesId": "cnu-job-583669"
   },
   {
     "id": "jbnu-student-211595",
@@ -263978,6 +264064,46 @@
     "summary": "직무교육과 4개월 인턴십에 참여하고 취업 연계를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-18T18:29:20.218Z"
+  },
+  {
+    "id": "seoultech-global-hjkh3he1qeh2o",
+    "title": "[입학] (CIED Program) Study at SeoulTech: Admission Guide for Vietnamese Students",
+    "organizer": "국제교류처",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "seoultech"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": []
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교"
+    ],
+    "links": [
+      {
+        "sourceId": "seoultech-global",
+        "url": "https://global.seoultech.ac.kr/notice/notice?do=view&bnum=58432&bidx=888942"
+      }
+    ],
+    "sources": [
+      "seoultech-global"
+    ],
+    "postedAt": "2026-04-07",
+    "extractedBy": "rules",
+    "collectedAt": "2026-11-04T15:16:20.388Z",
+    "firstSeenAt": "2026-11-04T15:16:20.388Z"
   },
   {
     "id": "yu-news-229219787",
