@@ -61,7 +61,8 @@ interface Actor {
 }
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-const DARK_MS = 2600; // 뇌신: 화면이 어두워졌다 걷히기까지 (app/globals.css의 .star-dark)
+const DARK_MS = 3200; // 뇌신: 화면이 꺼졌다 걷히기까지 (app/globals.css의 .star-dark)
+const DARK_PAUSE = 750; // 뇌신: 화면이 꺼진 뒤 벼락이 꽂히기까지의 정적
 const BOLT_TIP = 4; // 뇌신 벼락 그림의 아래 뾰족한 끝 줄 수 (위로 이어 붙이는 조각은 잘라낸다)
 
 // 화면(머리말과 아래 탭 바 사이)에 보이는지
@@ -527,55 +528,42 @@ export function StarHelper() {
         };
 
         // ── 전설 ──
-        // 뇌신: 제자리에서 일어나 검을 치켜들면 사방의 전기가 검 끝으로 빨려 들고, 크게 휘두른다 → 화면이 깊게 어두워지고
-        //   화면 맨 위에서 굵은 노란 벼락이 별에 꽂힌다(양옆 갈래 벼락, 한 번 더 내리침) → 번쩍(1초에 3번을 넘지 않게) · 크게 흔들림 ·
+        // 뇌신: 제자리에서 일어나 검을 크게 휘두른다 → 화면이 꺼지고 잠깐 정적 →
+        //   화면 맨 위에서 굵은 노란 벼락이 별에 빡 꽂힌다(양옆 갈래 벼락, 한 번 더 내리침) → 번쩍(1초에 3번을 넘지 않게) · 크게 흔들림 ·
         //   충격파 고리 · 사방으로 튀는 전기 조각 · 별 둘레에 남는 지지직 → 어둠이 천천히 걷히면 다시 숨는다
         SKILLS["thunder-god"] = async () => {
           await standUp();
           const left = faceTo(star); // 별이 왼쪽이면 왼쪽을 본다
-          // 검 끝 (치켜든 자세에서 머리 위)
-          const bladeTop = (): Point => ({ x: at.x + (left ? ACTION_WIDTH - 20 : 20) * SCALE, y: at.y + 2 });
           const spark = SKILL_FX["thunder-spark"];
-          // 치켜들고 번개를 모은다: 사방에서 전기가 검 끝으로 빨려 들고, 몸이 떨린다
+          // 치켜들었다가 (기 모으기 없이) 바로 크게 휘두른다: 앞쪽에 큰 번개 검기
           frame("windup");
-          await sleep(120);
-          const charge = SKILL_FX["thunder-charge"];
-          for (let k = 0; k < 3; k++) {
-            const tip = bladeTop();
-            fx({ kind: "sprite", at: tip, frames: charge, frameMs: 80, ax: 0.5, ay: 0.5, flip: false, scale: 3 + Math.min(k, 1) }, charge.length * 80 + 40);
-            for (let n = 0; n < 6; n++) {
-              const a = (n / 6) * Math.PI * 2 + k;
-              const from = { x: tip.x + Math.cos(a) * 70, y: tip.y + Math.sin(a) * 60 };
-              setTimeout(() => fx({ kind: "proj", from, to: tip, frames: spark, frameMs: 60, ms: 260, arc: 6, scale: 2 }, 260), n * 30);
-            }
-            sprite.animate([{ translate: "0 0" }, { translate: "1px -1px" }, { translate: "-1px 1px" }, { translate: "1px 1px" }, { translate: "0 0" }], { duration: 320, easing: "steps(5, end)" });
-            await sleep(charge.length * 80);
-          }
-          // 제자리에서 크게 휘두른다: 앞쪽에 큰 번개 검기
+          await sleep(160);
           frame("strike");
           const slash = SKILL_FX["thunder-slash"];
           fx({ kind: "sprite", at: { x: at.x + (left ? 0 : W), y: at.y + H / 2 }, frames: slash, frameMs: 70, ax: left ? 0.75 : 0.25, ay: 0.5, flip: left, scale: 4 }, slash.length * 70 + 40);
-          await sleep(160);
-          // 화면이 깊게 어두워지고 (별 둘레만 조금 밝게) 하늘에서 벼락
+          await sleep(slash.length * 70 + 60);
+          // 화면이 꺼진다 (별 둘레만 조금 밝게) → 잠깐 정적 → 벼락이 빡 꽂힌다
           setDark({ id: ++fxId, at: star });
-          await sleep(260);
+          await sleep(DARK_PAUSE);
           // 벼락: 화면 맨 위에서부터 땅(to)까지. 맨 아래(끝이 뾰족한 그림) 위로 끝을 잘라낸 그림을 이어 붙여 끊김 없이
           const bolt = SKILL_FX["thunder-bolt"];
           const upper = bolt.map((f) => f.slice(0, -BOLT_TIP));
-          const strike = (to: Point, scale: number, frameMs: number) => {
-            const ms = bolt.length * frameMs + 40;
+          // instant: 가는 첫 줄기 없이 굵은 벼락부터 (빡 꽂히게)
+          const strike = (to: Point, scale: number, frameMs: number, instant = false) => {
+            const lower = instant ? bolt.slice(1) : bolt;
+            const top = instant ? upper.slice(1) : upper;
+            const ms = lower.length * frameMs + 40;
             const tipTop = to.y - bolt[0].length * scale;
             const piece = upper[0].length * scale;
-            fx({ kind: "sprite", at: to, frames: bolt, frameMs, ax: 0.5, ay: 1, flip: false, scale }, ms);
+            fx({ kind: "sprite", at: to, frames: lower, frameMs, ax: 0.5, ay: 1, flip: false, scale }, ms);
             for (let k = 0; tipTop - k * piece > 0; k++) {
-              fx({ kind: "sprite", at: { x: to.x, y: tipTop - k * piece }, frames: upper, frameMs, ax: 0.5, ay: 1, flip: false, scale }, ms);
+              fx({ kind: "sprite", at: { x: to.x, y: tipTop - k * piece }, frames: top, frameMs, ax: 0.5, ay: 1, flip: false, scale }, ms);
             }
           };
-          strike(star, 5, 110);
+          strike(star, 5, 120, true);
           // 양옆 갈래 벼락
           setTimeout(() => strike({ x: star.x - 58, y: star.y + 14 }, 3, 90), 90);
           setTimeout(() => strike({ x: star.x + 52, y: star.y + 6 }, 3, 90), 170);
-          await sleep(110);
           // 꽂히는 순간: 별이 켜지고 번쩍 · 크게 흔들림 · 충격 · 충격파 · 흩어지는 전기
           tap();
           fx({ kind: "flash" }, 220);
