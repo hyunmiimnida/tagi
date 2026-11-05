@@ -47,7 +47,9 @@ type Fx =
   // 날아가는 도트 그림 (마법 구슬·음표 등): from에서 to까지 ms 동안, arc만큼 위로 휘어서
   | { id: number; kind: "proj"; from: Point; to: Point; frames: string[][]; frameMs: number; ms: number; arc: number; scale?: number }
   // 한 번 재생하는 큰 도트 그림 (해일·날개·음파 등). ax·ay: 그림의 어느 비율 지점을 at에 맞출지 (0.5·0.5 = 가운데)
-  | { id: number; kind: "sprite"; at: Point; frames: string[][]; frameMs: number; ax: number; ay: number; flip: boolean; scale?: number };
+  | { id: number; kind: "sprite"; at: Point; frames: string[][]; frameMs: number; ax: number; ay: number; flip: boolean; scale?: number }
+  // 화면 전체가 하얗게 한 번 번쩍 (뇌신)
+  | { id: number; kind: "flash" };
 type FxInput = Fx extends infer T ? (T extends Fx ? Omit<T, "id"> : never) : never;
 
 interface Actor {
@@ -58,6 +60,8 @@ interface Actor {
 }
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+const DARK_MS = 1700; // 뇌신: 화면이 어두워졌다 걷히기까지 (app/globals.css의 .star-dark)
+const BOLT_TIP = 4; // 뇌신 벼락 그림의 아래 뾰족한 끝 줄 수 (위로 이어 붙이는 조각은 잘라낸다)
 
 // 화면(머리말과 아래 탭 바 사이)에 보이는지
 function onScreen(el: Element): boolean {
@@ -71,6 +75,7 @@ export function StarHelper() {
   avatarRef.current = avatar;
   const [actor, setActor] = useState<Actor | null>(null);
   const [effects, setEffects] = useState<Fx[]>([]);
+  const [dark, setDarkState] = useState<{ id: number; at: Point } | null>(null); // 뇌신: 어두워진 화면 (별 둘레만 조금 밝다)
   const busy = useRef(false);
   const actorEl = useRef<HTMLDivElement | null>(null);
   const spriteEl = useRef<HTMLDivElement | null>(null);
@@ -86,6 +91,10 @@ export function StarHelper() {
       if (layerEl.current) layerEl.current.style.transform = `translate(${-d.x}px, ${-d.y}px)`;
     };
     window.addEventListener("scroll", moveLayer, { passive: true });
+    const setDark = (next: { id: number; at: Point }) => {
+      setDarkState(next);
+      setTimeout(() => setDarkState((d) => (d?.id === next.id ? null : d)), DARK_MS);
+    };
     const fx = (effect: FxInput, ms = 650) => {
       const id = ++fxId;
       setEffects((list) => [...list, { ...effect, id } as Fx]);
@@ -516,6 +525,66 @@ export function StarHelper() {
           await hideAgain();
         };
 
+        // ── 전설 ──
+        // 뇌신: 달려가 뛰어올라 검에 번개를 모으고 크게 내려친다 → 화면이 어두워지고 하늘에서 벼락이 별에 꽂힌다
+        //   → 번쩍(1초에 3번을 넘지 않게) · 화면 흔들림 · 전기 조각이 흩어지며 별이 켜진다 → 어둠이 천천히 걷힌다
+        SKILLS["thunder-god"] = async () => {
+          await goToStar();
+          const spot = at;
+          // 검 끝 (치켜든 자세에서 머리 위)
+          const bladeTop = (): Point => ({ x: at.x + (faceLeft ? ACTION_WIDTH - 20 : 20) * SCALE, y: at.y + 2 });
+          // 뛰어올라 치켜들고 번개를 모은다 (공중에서 살짝 떨림)
+          frame("windup");
+          await move({ x: spot.x - dir * 6, y: spot.y - 18 }, 220, 0);
+          const charge = SKILL_FX["thunder-charge"];
+          for (let k = 0; k < 2; k++) {
+            fx({ kind: "sprite", at: bladeTop(), frames: charge, frameMs: 90, ax: 0.5, ay: 0.5, flip: false, scale: 3 }, charge.length * 90 + 40);
+            sprite.animate([{ translate: "0 0" }, { translate: "1px -1px" }, { translate: "-1px 1px" }, { translate: "0 0" }], { duration: 360, easing: "steps(4, end)" });
+            await sleep(charge.length * 90);
+          }
+          // 크게 내려치며 내려앉는다: 큰 번개 검기
+          frame("strike");
+          void move(spot, 120, 0);
+          const slash = SKILL_FX["thunder-slash"];
+          fx({ kind: "sprite", at: { x: at.x + (faceLeft ? 0 : W), y: spot.y + H / 2 }, frames: slash, frameMs: 70, ax: faceLeft ? 0.75 : 0.25, ay: 0.5, flip: faceLeft, scale: 3 }, slash.length * 70 + 40);
+          await sleep(140);
+          // 화면이 어두워지고 (별 둘레만 조금 밝게) 하늘에서 벼락
+          setDark({ id: ++fxId, at: star });
+          await sleep(220);
+          // 벼락은 화면 맨 위에서부터 별까지: 맨 아래(끝이 뾰족한 그림) 위로 끝을 잘라낸 그림을 이어 붙여 끊김 없이
+          const bolt = SKILL_FX["thunder-bolt"];
+          const boltMs = bolt.length * 110;
+          const upper = bolt.map((f) => f.slice(0, -BOLT_TIP));
+          const piece = upper[0].length * 4;
+          const tipTop = star.y - bolt[0].length * 4;
+          fx({ kind: "sprite", at: star, frames: bolt, frameMs: 110, ax: 0.5, ay: 1, flip: false, scale: 4 }, boltMs + 40);
+          for (let k = 0; tipTop - k * piece > 0; k++) {
+            fx({ kind: "sprite", at: { x: star.x, y: tipTop - k * piece }, frames: upper, frameMs: 110, ax: 0.5, ay: 1, flip: false, scale: 4 }, boltMs + 40);
+          }
+          await sleep(110);
+          // 꽂히는 순간: 별이 켜지고 번쩍 · 흔들림 · 충격 · 흩어지는 전기
+          tap();
+          fx({ kind: "flash" }, 200);
+          setTimeout(() => fx({ kind: "flash" }, 200), 420); // 두 번째 번쩍 (첫 번째와 0.4초 넘게 떨어져 1초에 3번을 넘지 않는다)
+          document.querySelector("main")?.animate(
+            [{ translate: "0 0" }, { translate: "-4px 2px" }, { translate: "3px -3px" }, { translate: "-2px 2px" }, { translate: "1px -1px" }, { translate: "0 0" }],
+            { duration: 360, easing: "steps(6, end)" },
+          );
+          playFx(SKILL_FX["thunder-impact"], star, 80);
+          for (let k = 0; k < 8; k++) {
+            const a = (k / 8) * Math.PI * 2 + 0.3;
+            const to = { x: star.x + Math.cos(a) * (50 + (k % 3) * 14), y: star.y + Math.sin(a) * (40 + (k % 2) * 16) };
+            fx({ kind: "proj", from: star, to, frames: SKILL_FX["thunder-spark"], frameMs: 70, ms: 420, arc: 8, scale: 3 }, 420);
+          }
+          // 검을 다시 치켜들고 잠깐 버틴다 → 어둠이 걷히는 동안 돌아간다
+          await sleep(320);
+          frame("windup");
+          await sleep(520);
+          frame("stand");
+          await sleep(200);
+          await goHome();
+        };
+
         // 대본 실행 (lib/weapons.ts의 RecipeStep). 모르는 그림 id는 건너뛴다
         const fxFrames = (id: string): string[][] | null => (SKILL_FX as Record<string, string[][]>)[id] ?? null;
         const runRecipe = async (steps: RecipeStep[]) => {
@@ -604,6 +673,7 @@ export function StarHelper() {
 
   return (
     <div ref={layerEl} className="star-layer">
+      {dark && <div key={dark.id} className="star-dark" style={{ "--x": `${dark.at.x}px`, "--y": `${dark.at.y}px` } as React.CSSProperties} aria-hidden="true" />}
       {actor && (
         <div ref={actorEl} className="star-actor" style={{ transform: `translate(${actor.start.x}px, ${actor.start.y}px)` }} aria-hidden="true">
           <div ref={spriteEl} className={`star-actor-sprite ${actor.flip ? "flip" : ""}`} style={{ transformOrigin: `${CENTER}px 100%` }}>
@@ -674,6 +744,8 @@ function Effect({ effect }: { effect: Fx }) {
       );
     case "beam":
       return <div className="fx fx-beam" style={style(effect.at)} aria-hidden="true" />;
+    case "flash":
+      return <div className="fx-flash" aria-hidden="true" />;
     case "poof":
     case "spark":
       return (

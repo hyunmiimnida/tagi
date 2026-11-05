@@ -3,8 +3,9 @@
 -- 실행하기 전에는 화면의 뽑기 칸이 "준비 중"으로 보이고 나머지는 그대로 동작한다.
 --
 -- 열쇠조각: 처음 온 사람 20개(계정마다 한 번), 하루 첫 접속 5개(한국 날짜), 후기 댓글 하나 5개(하루 3번까지, 지운 댓글도 셈). 5개 = 뽑기 한 번.
--- 확률: 일반 80% / 희귀 19% / 영웅 0.99% / 전설의 파편 0.01%. 등급 안에서는 무기마다 같은 확률.
--- 이미 가진 무기가 나오면 열쇠조각을 돌려준다: 일반 2, 희귀 5, 영웅 10. 처음부터 가진 무기는 맨손 하나뿐이다.
+-- 확률: 일반 80% / 희귀 19% / 영웅 0.99% / 전설 0.01% (그중 3분의 2는 전설의 파편, 3분의 1은 전설 무기). 등급 안에서는 무기마다 같은 확률.
+-- 전설의 파편이 3개 모이면 아직 없는 전설 무기 하나로 바뀐다 (key_ledger에 shard_exchange, 열쇠조각 변화 0). 전설을 모두 가졌으면 파편은 그대로 쌓인다.
+-- 이미 가진 무기가 나오면 열쇠조각을 돌려준다: 일반 2, 희귀 5, 영웅 10, 전설 20. 처음부터 가진 무기는 맨손 하나뿐이다.
 -- 뽑기·지급은 모두 아래 함수(security definer)만 한다. 사람은 자기 줄을 읽기만 할 수 있어 열쇠조각을 고쳐 쓸 수 없다.
 
 -- 내 열쇠조각과 전설의 파편
@@ -40,18 +41,21 @@ create table if not exists key_ledger (
 alter table key_ledger drop constraint if exists key_ledger_reason_check;
 alter table key_ledger add constraint key_ledger_reason_check
   check (reason in ('welcome', 'daily', 'review', 'review_undo', 'draw', 'refund',
-                    'admin_grant', 'admin_revoke', 'weapon_grant', 'weapon_revoke')); -- admin_*·weapon_*: 관리자 지급·회수(admin-keys.sql)
+                    'admin_grant', 'admin_revoke', 'weapon_grant', 'weapon_revoke', 'shard_exchange')); -- admin_*·weapon_*: 관리자 지급·회수(admin-keys.sql), shard_exchange: 파편 3개 → 전설 무기
 -- 후기 선물을 어느 프로그램에 줬는지 (같은 프로그램은 계정당 한 번만)
 alter table key_ledger add column if not exists series_id text;
 -- 이 후기 보상으로 갚은 양. 예전 기록은 0이라 받은 양만 회수한다.
 alter table key_ledger add column if not exists debt_paid int not null default 0;
 create index if not exists key_ledger_user_idx on key_ledger (user_id, reason, created_at desc);
 
--- 뽑기에 나오는 무기 (lib/weapons.ts의 무기와 등급. 맨손·전설 자리는 빼고). 무기를 더하면 여기에도 한 줄
+-- 뽑기에 나오는 무기 (lib/weapons.ts의 무기와 등급. 맨손은 빼고). 무기를 더하면 여기에도 한 줄
 create table if not exists gacha_pool (
   weapon_id text primary key,
-  grade text not null check (grade in ('common', 'rare', 'heroic'))
+  grade text not null
 );
+-- 전설을 더하면서 등급 목록을 따로 고친다
+alter table gacha_pool drop constraint if exists gacha_pool_grade_check;
+alter table gacha_pool add constraint gacha_pool_grade_check check (grade in ('common', 'rare', 'heroic', 'legendary'));
 insert into gacha_pool (weapon_id, grade) values
   ('wooden-sword', 'common'), ('apprentice-wand', 'common'), ('short-bow', 'common'),
   ('oak-staff', 'common'), ('pencil', 'common'), ('recorder', 'common'),
@@ -60,7 +64,8 @@ insert into gacha_pool (weapon_id, grade) values
   ('post-bow', 'rare'), ('lucky-key', 'rare'), ('correction-pen', 'rare'), ('castanets', 'rare'),
   ('blossom-blade', 'heroic'), ('tide-staff', 'heroic'), ('meteor-bow', 'heroic'), ('angel-scepter', 'heroic'),
   ('victory-quill', 'heroic'), ('grand-harp', 'heroic'), ('hour-blade', 'heroic'), ('glasshouse-staff', 'heroic'),
-  ('loom-bow', 'heroic'), ('promise-compass', 'heroic'), ('drafting-pen', 'heroic'), ('campus-xylophone', 'heroic')
+  ('loom-bow', 'heroic'), ('promise-compass', 'heroic'), ('drafting-pen', 'heroic'), ('campus-xylophone', 'heroic'),
+  ('thunder-god', 'legendary')
 on conflict (weapon_id) do update set grade = excluded.grade;
 
 alter table key_wallets enable row level security;
@@ -131,13 +136,27 @@ begin
   wallet := lock_wallet(me);
   if wallet.keys < 5 then raise exception 'gacha:not-enough'; end if;
 
-  roll := floor(random() * 10000)::int; -- 0 ~ 9999
-  picked_grade := case when roll < 8000 then 'common' when roll < 9900 then 'rare' when roll < 9999 then 'heroic' else 'shard' end;
+  roll := floor(random() * 30000)::int; -- 0 ~ 29999
+  picked_grade := case when roll < 24000 then 'common' when roll < 29700 then 'rare' when roll < 29997 then 'heroic' when roll < 29999 then 'shard' else 'legendary' end;
 
   if picked_grade = 'shard' then
     update key_wallets set keys = keys - 5, legend_shards = legend_shards + 1, updated_at = now()
       where user_id = me returning * into wallet;
     insert into key_ledger (user_id, change, reason, detail) values (me, -5, 'draw', 'shard');
+    -- 파편 3개가 모이면 아직 없는 전설 무기 하나로 바꾼다
+    if wallet.legend_shards >= 3 then
+      select g.weapon_id into picked from gacha_pool g
+        where g.grade = 'legendary' and not exists (select 1 from owned_weapons w where w.user_id = me and w.weapon_id = g.weapon_id)
+        order by random() limit 1;
+      if picked is not null then
+        update key_wallets set legend_shards = legend_shards - 3, updated_at = now() where user_id = me returning * into wallet;
+        insert into key_ledger (user_id, change, reason, detail) values (me, 0, 'shard_exchange', picked);
+        perform set_config('app.weapon_grant', 'on', true);
+        insert into owned_weapons (user_id, weapon_id) values (me, picked);
+        return json_build_object('kind', 'weapon', 'weapon', picked, 'grade', 'legendary', 'duplicate', false,
+          'refund', 0, 'from_shards', true, 'keys', wallet.keys, 'shards', wallet.legend_shards);
+      end if;
+    end if;
     return json_build_object('kind', 'shard', 'keys', wallet.keys, 'shards', wallet.legend_shards);
   end if;
 
@@ -146,7 +165,7 @@ begin
   update key_wallets set keys = keys - 5, updated_at = now() where user_id = me;
   insert into key_ledger (user_id, change, reason, detail) values (me, -5, 'draw', picked);
   if duplicate then
-    refund := case picked_grade when 'common' then 2 when 'rare' then 5 else 10 end;
+    refund := case picked_grade when 'common' then 2 when 'rare' then 5 when 'heroic' then 10 else 20 end;
     update key_wallets set keys = keys + refund where user_id = me;
     insert into key_ledger (user_id, change, reason, detail) values (me, refund, 'refund', picked);
   else

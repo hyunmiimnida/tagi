@@ -32,7 +32,8 @@ export type SkillId =
   | "letter-storm" // 깃펜: 글자 폭풍과 도장
   | "note-float" // 목동의 피리: 음표 하나
   | "note-line" // 기타: 음표 여러 개
-  | "sound-ring"; // 그랜드 하프: 무지개 음파
+  | "sound-ring" // 그랜드 하프: 무지개 음파
+  | "thunder-god"; // 뇌신: 크게 휘두르면 화면이 어두워지고 벼락이 별에 꽂힌다
 
 // 스킬 대본: 단계를 차례로 실행한다 (components/StarHelper.tsx의 runRecipe). 새 무기는 코드 없이 대본만으로 스킬을 만든다
 //   standUp(제자리에서 일어남) … hide(다시 숨음) / goToStar(별까지 달려감) … goHome(돌아옴), tap = 별이 켜지는 순간(한 번)
@@ -76,8 +77,8 @@ const BASE_WEAPONS = {
   "angel-scepter": { name: "천사의 홀", family: "relic", grade: "heroic", skill: "angel-wings", effect: "sparkle", flavor: "하늘 회랑을 지키던 수호천사가 땅으로 내려오며 남긴 홀. 머리에 달린 작은 날개는 누군가의 기도를 들을 때마다 살며시 떨린다. 이 홀 앞에서는 거짓말이 목에 걸려 나오지 않는다고 한다." },
   "victory-quill": { name: "깃펜 '필승'", family: "pen", grade: "heroic", skill: "letter-storm", effect: "coin", flavor: "전설의 서기관이 마지막 결전의 맹세문을 적었다는 깃펜. 펜대에는 끝내 승리한 이들의 이름이 금빛으로 새겨져 있다. 이것으로 다짐을 적으면 글자가 저절로 굵어진다는 소문이 돈다." },
   "grand-harp": { name: "그랜드 하프", family: "instrument", grade: "heroic", skill: "sound-ring", effect: "rainbow", flavor: "일곱 빛깔 무지개를 한 가닥씩 걷어 현으로 건 하프. 비가 갠 오후에만 조율할 수 있어, 연주자는 평생 하늘을 올려다보며 산다. 마지막 음이 사라질 때면 듣는 이의 눈가에 옅은 무지개가 걸린다." },
-  // 전설: 자리만 있다 (디자인은 나중에). 지금은 누구도 가질 수 없다
-  "legend-1": { name: "???", family: "sword", grade: "legendary", skill: "blossom-wave", effect: "sparkle", flavor: "아직 아무도 본 적 없는 무기." },
+  // 전설: 이야기는 오히려 짧게 한 문장
+  "thunder-god": { name: "뇌신", family: "sword", grade: "legendary", skill: "thunder-god", effect: "thunder", flavor: "일격에 벼락이 깃든다." },
 } satisfies Record<string, WeaponDef>;
 
 // 추가 무기 (Codex가 기획·제작, lib/weapons-extra.ts). 스킬은 대본(recipe)으로
@@ -104,5 +105,4 @@ export const upgradeWeaponId = (value: unknown): WeaponId | null =>
   isWeaponId(value) ? value : typeof value === "string" ? (LEGACY[value] ?? null) : null;
 
 // 이 무기를 가졌는지. 맨손은 누구나, 그 밖에는 얻은 무기 목록(owned)에 있어야 한다
-// legend-1은 아직 없는 전설 무기 자리라 누구도 가질 수 없다 (도감에서는 잠긴 ??? 칸, 파편 수만 보여 준다)
-export const owns = (owned: ReadonlySet<string>, id: WeaponId) => id === STARTER_WEAPON || (id !== "legend-1" && owned.has(id));
+export const owns = (owned: ReadonlySet<string>, id: WeaponId) => id === STARTER_WEAPON || owned.has(id);

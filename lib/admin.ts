@@ -224,7 +224,8 @@ export type KeyReason =
   | "admin_grant"
   | "admin_revoke"
   | "weapon_grant"
-  | "weapon_revoke";
+  | "weapon_revoke"
+  | "shard_exchange";
 
 export const KEY_REASONS: Record<KeyReason, string> = {
   welcome: "처음 온 선물",
@@ -237,9 +238,10 @@ export const KEY_REASONS: Record<KeyReason, string> = {
   admin_revoke: "관리자 회수",
   weapon_grant: "무기 지급",
   weapon_revoke: "무기 회수",
+  shard_exchange: "파편 → 전설 무기",
 };
 
-export const GRADE_NAMES: Record<DrawGrade, string> = { common: "일반", rare: "희귀", heroic: "영웅", shard: "전설의 파편" };
+export const GRADE_NAMES: Record<DrawGrade, string> = { common: "일반", rare: "희귀", heroic: "영웅", legendary: "전설", shard: "전설의 파편" };
 
 export interface KeyLedgerRow {
   id: number;

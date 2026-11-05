@@ -456,6 +456,24 @@ const DRAWN: Partial<Record<WeaponId, Partial<Record<WeaponPose, Stamp>>>> = {
       rows: ["IIIIIIIIIII", "IKKKKKKKKKI", "IKRFYNDDBKI", "IKrfGlddbKI", "IIIIIIIIIII"],
     },
   },
+  // 전설: 뇌신 (Codex)
+  "thunder-god": {
+    stand: {
+      x: 18,
+      y: 3,
+      rows: ["...KK.", "..KIWK", "..KWDK", ".dKIWK", "..KWDK", ".KIWK.", "dKWDK.", ".KIWK.", "KYGKYK", "KEYYEK", ".KhHK.", ".KUVK.", "..KYK.", "...K.."],
+    },
+    windup: {
+      x: 18,
+      y: 0,
+      rows: ["...KK.", "..KIWK", "d.KWDK", "..KIWK", "..KWDK", ".KIWK.", ".KWDKd", ".KIWK.", "KYGKYK", "KEYYEK", ".KhHK.", ".KUVK.", "..KYK.", "...K.."],
+    },
+    strike: {
+      x: 15,
+      y: 10,
+      rows: [".YEdDDd..", "KYGKKKKK.", "KHVYIWWIK", "KYGKKKKK.", ".YEhDdD.."],
+    },
+  },
 };
 
 export const WEAPON_SPRITES = Object.fromEntries(

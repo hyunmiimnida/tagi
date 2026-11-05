@@ -93,8 +93,8 @@ const EYE_ROWS = [7, 8, 9]; // 머리 지도에서 눈이 있는 줄 (깜빡일 
 // ───────── 부품 ─────────
 // 캐릭터는 머리 장식 + 얼굴 + 옷(몸) 부품을 겹쳐 그린다. 부품 그림의 아래 글자는 "고른 색"으로 바뀐다
 //   A·a: 머리 장식 색·그 어두운 색, O·o: 옷 색·그 어두운 색 (나머지 글자는 PAL_COLORS의 고정 색)
-export type Headwear = "wizard-hat" | "helmet" | "hood" | "veil" | "scholar-cap" | "feather-cap" | "headband";
-export type Outfit = "robe" | "armor" | "tunic" | "vestment" | "coat" | "bard" | "gi";
+export type Headwear = "wizard-hat" | "helmet" | "hood" | "veil" | "scholar-cap" | "feather-cap" | "headband" | "thunder-helm";
+export type Outfit = "robe" | "armor" | "tunic" | "vestment" | "coat" | "bard" | "gi" | "thunder-armor";
 // 한 사람의 캐릭터 모습. 색은 PAL_HEX의 이름(app/globals.css의 --px-*)
 // 머리 장식·옷과 그 색은 예전 저장값과 맞추려고 남겨 두지만, 그릴 때는 손에 든 무기가 정한다 (lookOf)
 export interface Avatar {
@@ -145,6 +145,8 @@ const HEADWEAR: Record<Headwear, string[]> = {
   // 아래 셋은 Codex가 그렸다 (펜·악기·맨손)
   "scholar-cap": ["..........KWK...", ".....KKKKKWBK...", "...KKAAAAAWK....", "..KAAAAAAAaAK...", "..KaaaaaaaaK....", "...KKKKKKKK.....", ...face("S")],
   "feather-cap": ["...........KWK..", "..........KWBK..", ".....KK..KWBK...", "....KAAKKBAK....", "...KAAAAAAaK....", ".KKKaaYaaaaKKK..", ...face("A")],
+  // 뇌신 전용 (Codex): 번개 장식 투구
+  "thunder-helm": ["..K...KIK...K...", ".KEYKKEWEKKYEK..", ".KYEYKHYHKYEYK..", "..KYEYVVVYEYK...", "..KVHYVYVYHVK...", ".KVVKKKKKKVVVK..", ...face("V")],
   headband: [".....KKKKKK.....", "...KKttttttKK...", "..KttttttttttK..", ".KttttttttttttK.", ".KAAAAAAAAAAAKAK", ".KttKKttttKKtKaK", ...face("t")],
 };
 
@@ -156,6 +158,7 @@ const OUTFITS: Record<Outfit, { rows: string[]; legs: string }> = {
   vestment: { rows: ["...KOOYYOOOK....", "..KSOYYYYOOSK...", "..KKOOYYOOOKK...", "...KooKKKooK....", "...KoK...KoK...."], legs: "o" },
   coat: { rows: ["...KBOYOTOBK....", "..KSOOYOTOOSK...", "..KKOOYOTOOKK...", "...KooKKKooK....", "...KoK...KoK...."], legs: "o" },
   bard: { rows: ["...KOBBYBBOK....", "..KSOOBBBOOSK...", "..KKTTTYTTTKK...", "...KooKKKooK....", "...KtK...KtK...."], legs: "t" },
+  "thunder-armor": { rows: ["...KVHYEYHVK....", "..KSVYEWEYVSK...", "..KKVHYEYHVKK...", "...KVYKKKYVK....", "...KYK...KYK...."], legs: "V" }, // 뇌신 전용 (Codex)
   gi: { rows: ["...KBOOOBOOK....", "..KSOBOBOOOSK...", "..KKTTTKTTTKK...", "...KooKKKooK....", "...KoK...KoK...."], legs: "o" },
 };
 
@@ -178,7 +181,7 @@ const WEAPON_COLORS: Record<WeaponId, [string, string]> = {
   "zip-blade": ["steel", "steel"],
   "blossom-blade": ["rose", "blush"],
   "hour-blade": ["gold", "indigo"],
-  "legend-1": ["gold", "gold"],
+  "thunder-god": ["gold", "indigo"], // 전용 옷이라 색은 쓰지 않는다 (WEAPON_LOOK)
   "apprentice-wand": ["violet", "violet"],
   "starlight-wand": ["indigo", "indigo"],
   "dalgona-wand": ["tangerine", "tangerine"],
@@ -206,9 +209,14 @@ const WEAPON_COLORS: Record<WeaponId, [string, string]> = {
   "campus-xylophone": ["gold", "tangerine"],
 };
 
+// 전설 무기는 계열 옷 대신 전용 옷을 입는다
+const WEAPON_LOOK: Partial<Record<WeaponId, { headwear: Headwear; outfit: Outfit }>> = {
+  "thunder-god": { headwear: "thunder-helm", outfit: "thunder-armor" },
+};
+
 // 이 무기를 들었을 때의 모습 (머리 장식·옷과 그 색)
 export function lookOf(weapon: WeaponId): Omit<Avatar, "weapon"> {
-  const { headwear, outfit } = FAMILY_LOOK[WEAPONS[weapon].family];
+  const { headwear, outfit } = WEAPON_LOOK[weapon] ?? FAMILY_LOOK[WEAPONS[weapon].family];
   const [headwearColor, outfitColor] = WEAPON_COLORS[weapon];
   return { headwear, headwearColor, outfit, outfitColor };
 }

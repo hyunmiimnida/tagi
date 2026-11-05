@@ -18,7 +18,7 @@ end $$;
 alter table key_ledger drop constraint if exists key_ledger_reason_check;
 alter table key_ledger add constraint key_ledger_reason_check
   check (reason in ('welcome', 'daily', 'review', 'review_undo', 'draw', 'refund',
-                    'admin_grant', 'admin_revoke', 'weapon_grant', 'weapon_revoke'));
+                    'admin_grant', 'admin_revoke', 'weapon_grant', 'weapon_revoke', 'shard_exchange'));
 create index if not exists key_ledger_time_idx on key_ledger (created_at desc);
 
 -- 열쇠조각·무기 표는 함수로만 고친다. 읽기는 RLS(자기 줄만)가 막고, 쓰기 권한은 아예 뺀다 (함수는 주인 권한으로 돌아서 그대로 된다)
@@ -49,7 +49,7 @@ insert into key_ledger (user_id, change, reason, detail, created_at)
   select w.user_id, 0, 'weapon_grant', w.weapon_id, w.obtained_at
   from owned_weapons w
   where w.user_id in (select user_id from admins)
-    and not exists (select 1 from key_ledger l where l.user_id = w.user_id and l.reason in ('draw', 'weapon_grant') and l.detail = w.weapon_id);
+    and not exists (select 1 from key_ledger l where l.user_id = w.user_id and l.reason in ('draw', 'weapon_grant', 'shard_exchange') and l.detail = w.weapon_id);
 
 -- ───────── 지급·회수 ─────────
 
@@ -260,7 +260,8 @@ begin
   with
   sums as (
     select user_id, sum(change) as total,
-      count(*) filter (where reason = 'draw' and detail = 'shard') as shard_draws
+      count(*) filter (where reason = 'draw' and detail = 'shard') as shard_draws,
+      count(*) filter (where reason = 'shard_exchange') as shard_exchanges -- 파편 3개 → 전설 무기 (gacha.sql)
     from key_ledger group by user_id
   ),
   undo_debt as ( -- 후기 삭제로 생긴 빚 (gacha.sql의 reclaim_review_keys와 같은 계산)
@@ -284,7 +285,7 @@ begin
   found as (
     -- 1. 출처 없는 무기
     select w.user_id, 'orphan_weapon' as kind, w.weapon_id as detail from owned_weapons w
-    where not exists (select 1 from key_ledger l where l.user_id = w.user_id and l.reason in ('draw', 'weapon_grant') and l.detail = w.weapon_id)
+    where not exists (select 1 from key_ledger l where l.user_id = w.user_id and l.reason in ('draw', 'weapon_grant', 'shard_exchange') and l.detail = w.weapon_id)
     union all
     -- 1-1. 처음 얻은 뽑기(돌려받기 없음)였는데 무기가 없고 회수 기록도 없음
     select d.user_id, 'missing_weapon', d.detail from key_ledger d
@@ -303,9 +304,9 @@ begin
     from key_wallets k left join undo_debt a on a.user_id = k.user_id left join paid_debt pd on pd.user_id = k.user_id
     where k.key_debt <> coalesce(a.added, 0) - coalesce(pd.paid, 0)
     union all
-    select k.user_id, 'shards', '파편 ' || k.legend_shards || '개 · 뽑기 기록 ' || coalesce(s.shard_draws, 0) || '번'
+    select k.user_id, 'shards', '파편 ' || k.legend_shards || '개 · 뽑기 기록 ' || coalesce(s.shard_draws, 0) || '번 · 전설 교환 ' || coalesce(s.shard_exchanges, 0) || '번'
     from key_wallets k left join sums s on s.user_id = k.user_id
-    where k.legend_shards <> coalesce(s.shard_draws, 0)
+    where k.legend_shards <> coalesce(s.shard_draws, 0) - 3 * coalesce(s.shard_exchanges, 0)
     union all
     -- 3. 선물을 규칙보다 많이 받음
     select user_id, 'daily_twice', d::text || ' ' || n || '번' from (

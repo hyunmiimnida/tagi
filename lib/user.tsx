@@ -8,7 +8,7 @@ import { toDateString } from "./filter.ts";
 import { forgetPushOnThisDevice } from "./push.ts";
 import { randomAvatar, toValidAvatar } from "./pixel-pals.ts";
 import type { Avatar } from "./pixel-pals.ts";
-import { DEMO_KEYS, DRAW_COST, drawOnce, keysAfter } from "./gacha.ts";
+import { DEMO_KEYS, DRAW_COST, drawOnce, keysAfter, shardsAfter } from "./gacha.ts";
 import type { DrawResult } from "./gacha.ts";
 import { STARTER_WEAPON, WEAPONS, WEAPON_IDS, isWeaponId, owns } from "./weapons.ts";
 import type { WeaponId } from "./weapons.ts";
@@ -424,20 +424,20 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       const mine = readLocalOwned();
       const wallet = readLocalWallet();
       if (wallet.keys < DRAW_COST) return "not-enough";
-      result = drawOnce(mine);
+      result = drawOnce(mine, wallet.shards);
       wallet.keys = keysAfter(wallet.keys, result);
-      if (result.kind === "shard") wallet.shards += 1;
-      else if (!result.duplicate) mine.add(result.weapon);
+      wallet.shards = shardsAfter(wallet.shards, result);
+      if (result.kind === "weapon" && !result.duplicate) mine.add(result.weapon);
       writeLocal(LOCAL_WALLET_KEY, JSON.stringify(wallet));
       writeLocal(LOCAL_OWNED_KEY, JSON.stringify([...mine]));
       after = wallet;
     } else {
       const { data, error } = await supabase.rpc("draw_weapon");
       if (error) return error.message.includes("gacha:not-enough") ? "not-enough" : "error";
-      const row = data as { kind: string; weapon?: string; grade?: string; duplicate?: boolean; refund?: number; keys: number; shards: number };
+      const row = data as { kind: string; weapon?: string; grade?: string; duplicate?: boolean; refund?: number; from_shards?: boolean; keys: number; shards: number };
       if (row.kind === "shard") result = { kind: "shard" };
-      else if (row.weapon && isWeaponId(row.weapon) && (row.grade === "common" || row.grade === "rare" || row.grade === "heroic"))
-        result = { kind: "weapon", weapon: row.weapon, grade: row.grade, duplicate: Boolean(row.duplicate), refund: row.refund ?? 0 };
+      else if (row.weapon && isWeaponId(row.weapon) && row.grade === WEAPONS[row.weapon].grade)
+        result = { kind: "weapon", weapon: row.weapon, grade: WEAPONS[row.weapon].grade, duplicate: Boolean(row.duplicate), refund: row.refund ?? 0, fromShards: Boolean(row.from_shards) };
       else return "error";
       after = row;
     }
@@ -477,7 +477,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
 
   const grantWeapon = useCallback((id: WeaponId) => {
     const grade = WEAPONS[id].grade;
-    setRevealing({ kind: "weapon", weapon: id, grade: grade === "legendary" ? "heroic" : grade, duplicate: false, refund: 0 });
+    setRevealing({ kind: "weapon", weapon: id, grade, duplicate: false, refund: 0 });
   }, []);
   const closeReveal = useCallback(() => setRevealing(null), []);
 

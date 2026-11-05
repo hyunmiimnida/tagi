@@ -3437,6 +3437,45 @@ button.stat {
   pointer-events: none;
 }
 
+/* 뇌신: 화면이 확 어두워졌다가(별 둘레만 조금 밝게) 천천히 걷힌다 (components/StarHelper.tsx의 DARK_MS와 같은 길이).
+   캐릭터(.star-actor)보다 아래, 판이 스크롤을 따라 움직여도 화면을 덮게 넉넉히 크게 */
+.star-dark {
+  position: fixed;
+  top: -100vh;
+  left: -100vw;
+  z-index: 39;
+  width: 300vw;
+  height: 300vh;
+  background: radial-gradient(circle at calc(var(--x) + 100vw) calc(var(--y) + 100vh), rgb(10 8 30 / 40%) 0 22px, rgb(6 4 20 / 88%) 90px);
+  pointer-events: none;
+  animation: star-dark 1.7s ease-out forwards;
+}
+
+@keyframes star-dark {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  42% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* 벼락이 꽂히는 순간 화면 전체가 하얗게 한 번 번쩍 */
+.fx-flash {
+  position: fixed;
+  top: -100vh;
+  left: -100vw;
+  z-index: 42;
+  width: 300vw;
+  height: 300vh;
+  background: #fff;
+  pointer-events: none;
+  animation: fx-flash 0.18s ease-out forwards;
+}
+
+@keyframes fx-flash {
+  0% { opacity: 0.75; }
+  100% { opacity: 0; }
+}
+
 .fx-slash .pal {
   position: absolute;
   top: -10px;

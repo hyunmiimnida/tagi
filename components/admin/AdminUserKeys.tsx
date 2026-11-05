@@ -6,7 +6,7 @@ import type { UserKeys } from "../../lib/admin.ts";
 import { DRAW_POOL } from "../../lib/gacha.ts";
 import { DrawLog, KEYS_SQL, KeyLedger, weaponName } from "./AdminGacha.tsx";
 
-const POOL = [...DRAW_POOL.common, ...DRAW_POOL.rare, ...DRAW_POOL.heroic];
+const POOL = [...DRAW_POOL.common, ...DRAW_POOL.rare, ...DRAW_POOL.heroic, ...DRAW_POOL.legendary];
 const SOURCES = { draw: "뽑기", admin: "관리자 지급", none: "기록 없음" } as const;
 
 // 회원 자세히 안의 열쇠조각·무기: 지급·회수(이유 필수, 확인 창), 가진 무기와 얻은 경로, 기록

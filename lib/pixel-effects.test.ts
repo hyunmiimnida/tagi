@@ -36,7 +36,7 @@ test("이펙트 전용 색 글자는 캐릭터 부품 글자(A·a·O·o)·기존
 
 test("희귀 이상 무기는 이펙트가 하나씩 딸려 있고, 모든 이펙트가 어느 무기엔가 쓰인다 (일반 무기는 이펙트 없음)", async () => {
   const { WEAPONS, WEAPON_IDS } = await import("./weapons.ts");
-  const fancy = WEAPON_IDS.filter((id) => WEAPONS[id].grade === "rare" || WEAPONS[id].grade === "heroic");
+  const fancy = WEAPON_IDS.filter((id) => WEAPONS[id].grade !== "common");
   for (const id of fancy) assert.ok(WEAPONS[id].effect && WEAPONS[id].effect in EFFECTS, id);
   const used = new Set(fancy.map((id) => WEAPONS[id].effect));
   for (const id of EFFECT_IDS) assert.ok(used.has(id), `쓰이지 않는 이펙트 ${id}`);

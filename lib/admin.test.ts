@@ -67,6 +67,7 @@ test("실제 등급 비율과 설정 확률을 나란히 (뽑기가 없으면 �
     ["rare", 19, 19, 19],
     ["heroic", 1, 1, 0.99],
     ["shard", 0, 0, 0.01],
+    ["legendary", 0, 0, 0],
   ]);
   assert.ok(gradeShares({}).every((s) => s.actual === null));
 });

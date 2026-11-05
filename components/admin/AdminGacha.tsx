@@ -163,7 +163,7 @@ function IntegrityCard({ openUser }: { openUser: (id: string) => void }) {
 }
 
 const LEDGER_FILTERS: (KeyReason | null)[] = [null, "admin_grant", "admin_revoke", "weapon_grant", "draw", "daily", "review", "review_undo", "welcome", "refund"];
-const GRADE_FILTERS: (DrawGrade | null)[] = [null, "common", "rare", "heroic", "shard"];
+const GRADE_FILTERS: (DrawGrade | null)[] = [null, "common", "rare", "heroic", "legendary", "shard"];
 
 function LogCard({ since, openUser }: { since: string | null; openUser: (id: string) => void }) {
   const [kind, setKind] = useState<"keys" | "draws">("keys");

@@ -3,7 +3,7 @@
 // 그림은 lib/pixel-pals.ts와 같은 글자 지도: 글자 하나 = 픽셀 하나, "." = 투명.
 // 이펙트 전용 색은 EFFECT_COLORS (app/globals.css의 --px-*와 같은 값). 그림은 Codex가 그리고 밝은·어두운 바탕에서 검수했다
 
-export type EffectId = "sparkle" | "petal" | "heart" | "note" | "flame" | "bolt" | "snow" | "bubble" | "leaf" | "rainbow" | "shadow" | "coin" | "zipper" | "clockwork" | "crumb" | "postmark" | "weave" | "blueprint";
+export type EffectId = "sparkle" | "petal" | "heart" | "note" | "flame" | "bolt" | "snow" | "bubble" | "leaf" | "rainbow" | "shadow" | "coin" | "zipper" | "clockwork" | "crumb" | "postmark" | "weave" | "blueprint" | "thunder";
 export type AmbientMotion = "rise" | "fall" | "drift" | "twinkle";
 
 // 글자 → [색 이름, 값]
@@ -354,6 +354,26 @@ export const EFFECTS: Record<EffectId, Effect> = {
       ["...dI..", "..dID..", "..I.D..", ".I...D.", ".d...DI", "..dDDI.", "......."],
       ["...dI..", "..dID..", "..I.D..", ".I...D.", ".d...DI", "..IDDI.", "......."],
       ["...dI..", "..dID..", "..I.D..", ".I...D.", ".I.....", "..ID...", "......."],
+    ],
+  },
+  // 뇌신 (Codex)
+  thunder: {
+    name: "뇌전",
+    motion: "twinkle",
+    burst: [
+      [".................", ".................", ".................", ".................", ".................", "......VVV.V......", ".....VDDVVDV.....", "......VDIVV......", ".....YYIIIDV.....", "......VVIVV......", ".....VDDVVDV.....", "......VVV.V......", ".................", ".................", ".................", ".................", "................."],
+      [".................", ".................", "........V........", "....VV.YDV.VV....", "...VDDVVDVVDDV...", "....VVDDVDDVV....", ".....VDVVVVV.V...", "....VDVDWYDVYDV..", "...VDDVWWWVDDV...", "..YDVYDDWDVDV....", "...V.VVVYDVV.....", "....VVDDVVDVV....", "...VDDVVDVVDDV...", "....VV.YDV.VV....", "........V........", ".................", "................."],
+      ["VddVV.VYWdV.VVddV", "dWWddVVdWdVVddWWd", "VddWWddVdVddWWddV", ".VVddWWdVdWWddVV.", "...VVdWdVdWdVV...", "...VdWdVdVVVVV..V", ".VVdVdWdWVdddVVVd", "VddWdVdWWWWYWddYW", "dWWWddWWWWWddWWWd", "WddYWWWWWWVVdWddV", "dVVVdddVWWdVVdVV.", "V..VVVVVdWdVdV...", "...VVdWdVWdVVV...", ".VVddWWdVdVWddVV.", "VddWWddVdVddWWddV", "dWWddVVdWdVVddWWd", "VddVV.VYWdV.VVddV"],
+      [".VV....VDV....VV.", "VDDVV..VDV..VVDDV", ".VVDDVV.VDVVDDVV.", "...VVDDVYVDDVV...", ".....VDVDVDV.....", "....VDVDV.VDV....", "...V.V.V...VV...V", ".VYDV...W..VDVVVD", "VDDDV..WWW..VDDDV", "DVVVDV..W...YDVV.", "V...VV.....V.V...", "....VDV..VVDV....", ".....VDVVDVV.....", "...VVDDVDVDDVV...", ".VVDDVVDV.VVDDVV.", "VDDVV..VDV..VVDDV", ".VV....VDV....VV."],
+      ["........V........", ".V.............V.", "......D..DD......", ".....dDDddDD.....", "......V..VV......", ".................", "...D.............", "..dYD...........V", "...V.........D...", "V...........dYD..", ".............V...", ".................", "......DD..D......", ".....dDDDdDD.....", "......VV..V......", ".V.............V.", "........V........"],
+      ["........Yd.......", ".Dd............Dd", ".................", ".................", ".................", ".................", ".................", "...............dY", ".................", "Yd...............", ".................", ".................", ".................", ".................", ".................", ".Dd............Dd", "........Yd......."],
+    ],
+    // 4프레임 반복 (pfx-loop-4): 가운데 프레임을 한 번 더
+    ambient: [
+      [".......", "...V...", "..dID..", "...WI..", "..ID...", "..V....", "......."],
+      ["...d...", "..DI...", "...WE..", ".dIWDd.", "..EW...", "...D...", "...V..."],
+      [".......", "..V....", "...D...", "..I....", "....d..", ".......", "......."],
+      ["...d...", "..DI...", "...WE..", ".dIWDd.", "..EW...", "...D...", "...V..."],
     ],
   },
 };
