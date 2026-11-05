@@ -13,6 +13,9 @@
   --warn: #d22636; /* 마감 빨강도 연한 빨강 바탕 위에서 대비 4.5:1 이상 */
   --warn-soft: #ffeeee;
   --star: #ffb800;
+  --star-fill: #ffc83d; /* 관심 표시 별 (components/BookmarkStar.tsx) */
+  --star-edge: #f2a900;
+  --star-off: #b8bfca;
   --radius: 20px;
   --nav-height: 64px;
   /* 도트 캐릭터 색 (lib/pixel-pals.ts). 도트 그림은 밝은·다크 모드 모두 같은 색을 쓴다 */
@@ -541,23 +544,16 @@ main {
   transition: transform 0.15s;
 }
 
-/* 도트 별 (components/BookmarkStar.tsx): 켜지는 순간 조금 큰 별이 한 번 보였다 사라진다 */
+/* 관심 표시 별 (components/BookmarkStar.tsx) */
 .bookmark-star {
-  position: relative;
-  display: inline-grid;
-  place-items: center;
-  line-height: 0;
+  display: block;
+  fill: none;
+  stroke: var(--star-off);
 }
 
-.bookmark-star-pop {
-  position: absolute;
-  inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%);
-  animation: bookmark-star-pop 0.18s steps(1, end) forwards;
-}
-
-@keyframes bookmark-star-pop {
-  to { visibility: hidden; }
+.bookmark-star.on {
+  fill: var(--star-fill);
+  stroke: var(--star-edge);
 }
 
 .skip-link {
@@ -3572,7 +3568,6 @@ button.stat {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bookmark-star-pop,
   .star-pop,
   .star-burst {
     animation: none;

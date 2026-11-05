@@ -178,7 +178,7 @@ export function AvatarEditor() {
             <PixelSprite rows={actionRows(avatar, "stand")} scale={2} />
           </div>
           <button type="button" className={`favorite avatar-try-star ${demoOn ? "on" : ""}`} aria-pressed={demoOn} aria-label="별 눌러 보기" onClick={tryStar}>
-            <BookmarkStar on={demoOn} pop={demoOn} />
+            <BookmarkStar on={demoOn} />
           </button>
         </div>
       </section>

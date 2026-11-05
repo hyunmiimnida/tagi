@@ -47,7 +47,7 @@ export function FavoriteButton({ programId, title, withLabel = false }: { progra
       }}
     >
       <span key={burst} className={`favorite-icon ${burst > 0 && lit ? "star-pop" : ""}`}>
-        <BookmarkStar on={lit} pop={burst > 0} />
+        <BookmarkStar on={lit} />
         {burst > 0 && lit && (
           <span className="star-burst" aria-hidden="true">
             {Array.from({ length: SPARKS }, (_, i) => (
