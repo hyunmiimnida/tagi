@@ -25,6 +25,7 @@ test("관리 함수 오류를 안내 문장으로 바꾼다", () => {
   assert.equal(describeError({ message: "not_admin" }), "관리자 계정이 아니에요.");
   assert.equal(describeError({ message: "cannot_self" }), "내 계정에는 할 수 없어요.");
   assert.equal(describeError({ message: "cannot_delete_admin" }), "관리자 계정은 지울 수 없어요.");
+  assert.equal(describeError({ message: "cannot_suspend_admin" }), "관리자 계정은 정지할 수 없어요.");
   // 함수·표가 아직 없음 = supabase/admin.sql을 실행하지 않음
   for (const code of ["PGRST202", "42883", "PGRST205", "42P01"]) assert.match(describeError({ message: "x", code }), /admin\.sql/);
   assert.match(describeError({ message: "timeout" }), /timeout/);
