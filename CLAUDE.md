@@ -186,6 +186,7 @@ AI 추출 결과를 바꾸면 반드시 원문과 대조해 검수한다 (날짜
 ## 배포 정보
 
 - 사이트: https://tagi-ten.vercel.app (main에 push하면 자동 배포). 주소는 `lib/filter.ts`의 `SITE_URL` 한 곳에서 정한다(사이트맵·공유 미리보기·알림 링크·수집기 USER_AGENT·앱 `API_BASE`가 따라감). 도메인을 옮기면 그 기본값 한 줄만 바꾼다
+- **호스팅 고민 중 (2026-11-04, 결정 전)**: Vercel 그대로 vs Cloudflare로 옮기기. Vercel 무료(Hobby)는 비상업용만이라 광고·수익화를 하면 Pro(사람당 월 약 20달러)가 필요하고, Cloudflare는 무료로도 상업 이용 가능·트래픽 비용이 적지만 Next.js 어댑터가 필요하고 공유 그림(`opengraph-image`)·배포 파일 개수 한도(무료 약 2만 개, 공고마다 상세·그림)를 확인해야 한다. 지금은 Vercel 유지. 수익화하거나 Vercel 무료 한도에 가까워지면 실제 사이트는 두고 Cloudflare에 시험 배포부터 해 본다
 - 저장소: https://github.com/hyunmiimnida/tagi
 - Supabase 프로젝트 id: rytvncrksqcrxhsojmpj
 
