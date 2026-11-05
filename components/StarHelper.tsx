@@ -526,27 +526,26 @@ export function StarHelper() {
         };
 
         // ── 전설 ──
-        // 뇌신: 달려가 뛰어올라 검에 번개를 모으고 크게 내려친다 → 화면이 어두워지고 하늘에서 벼락이 별에 꽂힌다
+        // 뇌신: 제자리에서 일어나 검을 치켜들어 번개를 모으고 크게 휘두른다 → 화면이 어두워지고 하늘에서 노란 벼락이 별에 꽂힌다
         //   → 번쩍(1초에 3번을 넘지 않게) · 화면 흔들림 · 전기 조각이 흩어지며 별이 켜진다 → 어둠이 천천히 걷힌다
         SKILLS["thunder-god"] = async () => {
-          await goToStar();
-          const spot = at;
+          await standUp();
+          const left = faceTo(star); // 별이 왼쪽이면 왼쪽을 본다
           // 검 끝 (치켜든 자세에서 머리 위)
-          const bladeTop = (): Point => ({ x: at.x + (faceLeft ? ACTION_WIDTH - 20 : 20) * SCALE, y: at.y + 2 });
-          // 뛰어올라 치켜들고 번개를 모은다 (공중에서 살짝 떨림)
+          const bladeTop = (): Point => ({ x: at.x + (left ? ACTION_WIDTH - 20 : 20) * SCALE, y: at.y + 2 });
+          // 치켜들고 번개를 모은다 (몸이 살짝 떨림)
           frame("windup");
-          await move({ x: spot.x - dir * 6, y: spot.y - 18 }, 220, 0);
+          await sleep(120);
           const charge = SKILL_FX["thunder-charge"];
           for (let k = 0; k < 2; k++) {
             fx({ kind: "sprite", at: bladeTop(), frames: charge, frameMs: 90, ax: 0.5, ay: 0.5, flip: false, scale: 3 }, charge.length * 90 + 40);
             sprite.animate([{ translate: "0 0" }, { translate: "1px -1px" }, { translate: "-1px 1px" }, { translate: "0 0" }], { duration: 360, easing: "steps(4, end)" });
             await sleep(charge.length * 90);
           }
-          // 크게 내려치며 내려앉는다: 큰 번개 검기
+          // 제자리에서 크게 휘두른다: 앞쪽에 큰 번개 검기
           frame("strike");
-          void move(spot, 120, 0);
           const slash = SKILL_FX["thunder-slash"];
-          fx({ kind: "sprite", at: { x: at.x + (faceLeft ? 0 : W), y: spot.y + H / 2 }, frames: slash, frameMs: 70, ax: faceLeft ? 0.75 : 0.25, ay: 0.5, flip: faceLeft, scale: 3 }, slash.length * 70 + 40);
+          fx({ kind: "sprite", at: { x: at.x + (left ? 0 : W), y: at.y + H / 2 }, frames: slash, frameMs: 70, ax: left ? 0.75 : 0.25, ay: 0.5, flip: left, scale: 3 }, slash.length * 70 + 40);
           await sleep(140);
           // 화면이 어두워지고 (별 둘레만 조금 밝게) 하늘에서 벼락
           setDark({ id: ++fxId, at: star });
@@ -576,13 +575,13 @@ export function StarHelper() {
             const to = { x: star.x + Math.cos(a) * (50 + (k % 3) * 14), y: star.y + Math.sin(a) * (40 + (k % 2) * 16) };
             fx({ kind: "proj", from: star, to, frames: SKILL_FX["thunder-spark"], frameMs: 70, ms: 420, arc: 8, scale: 3 }, 420);
           }
-          // 검을 다시 치켜들고 잠깐 버틴다 → 어둠이 걷히는 동안 돌아간다
+          // 검을 다시 치켜들고 잠깐 버틴다 → 어둠이 걷히면 다시 숨는다
           await sleep(320);
           frame("windup");
           await sleep(520);
           frame("stand");
-          await sleep(200);
-          await goHome();
+          await sleep(400);
+          await hideAgain();
         };
 
         // 대본 실행 (lib/weapons.ts의 RecipeStep). 모르는 그림 id는 건너뛴다
