@@ -3446,15 +3446,15 @@ button.stat {
   z-index: 39;
   width: 300vw;
   height: 300vh;
-  background: radial-gradient(circle at calc(var(--x) + 100vw) calc(var(--y) + 100vh), rgb(10 8 30 / 40%) 0 22px, rgb(6 4 20 / 88%) 90px);
+  background: radial-gradient(circle at calc(var(--x) + 100vw) calc(var(--y) + 100vh), rgb(40 28 0 / 30%) 0 26px, rgb(4 3 14 / 94%) 110px);
   pointer-events: none;
-  animation: star-dark 1.7s ease-out forwards;
+  animation: star-dark 2.6s ease-out forwards;
 }
 
 @keyframes star-dark {
   0% { opacity: 0; }
-  10% { opacity: 1; }
-  42% { opacity: 1; }
+  7% { opacity: 1; }
+  55% { opacity: 1; }
   100% { opacity: 0; }
 }
 
@@ -3466,14 +3466,37 @@ button.stat {
   z-index: 42;
   width: 300vw;
   height: 300vh;
-  background: #fff;
+  background: #fff8d6;
   pointer-events: none;
-  animation: fx-flash 0.18s ease-out forwards;
+  animation: fx-flash 0.2s ease-out forwards;
 }
 
 @keyframes fx-flash {
-  0% { opacity: 0.75; }
+  0% { opacity: 0.85; }
   100% { opacity: 0; }
+}
+
+/* 벼락이 꽂힌 별에서 퍼지는 노란 충격파 고리 (도트 느낌으로 계단처럼 커진다) */
+.fx-ring {
+  z-index: 42;
+}
+
+.fx-ring::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--px-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--px-gold-shadow), 0 0 18px 6px rgb(255 207 63 / 55%);
+  animation: fx-ring 0.7s steps(7, end) forwards;
+}
+
+@keyframes fx-ring {
+  0% { transform: scale(0.3); opacity: 1; }
+  100% { transform: scale(5); opacity: 0; }
 }
 
 .fx-slash .pal {

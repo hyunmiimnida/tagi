@@ -48,8 +48,9 @@ type Fx =
   | { id: number; kind: "proj"; from: Point; to: Point; frames: string[][]; frameMs: number; ms: number; arc: number; scale?: number }
   // 한 번 재생하는 큰 도트 그림 (해일·날개·음파 등). ax·ay: 그림의 어느 비율 지점을 at에 맞출지 (0.5·0.5 = 가운데)
   | { id: number; kind: "sprite"; at: Point; frames: string[][]; frameMs: number; ax: number; ay: number; flip: boolean; scale?: number }
-  // 화면 전체가 하얗게 한 번 번쩍 (뇌신)
-  | { id: number; kind: "flash" };
+  // 화면 전체가 하얗게 한 번 번쩍, 별에서 퍼지는 노란 충격파 고리 (뇌신)
+  | { id: number; kind: "flash" }
+  | { id: number; kind: "ring"; at: Point };
 type FxInput = Fx extends infer T ? (T extends Fx ? Omit<T, "id"> : never) : never;
 
 interface Actor {
@@ -60,7 +61,7 @@ interface Actor {
 }
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-const DARK_MS = 1700; // 뇌신: 화면이 어두워졌다 걷히기까지 (app/globals.css의 .star-dark)
+const DARK_MS = 2600; // 뇌신: 화면이 어두워졌다 걷히기까지 (app/globals.css의 .star-dark)
 const BOLT_TIP = 4; // 뇌신 벼락 그림의 아래 뾰족한 끝 줄 수 (위로 이어 붙이는 조각은 잘라낸다)
 
 // 화면(머리말과 아래 탭 바 사이)에 보이는지
@@ -526,61 +527,91 @@ export function StarHelper() {
         };
 
         // ── 전설 ──
-        // 뇌신: 제자리에서 일어나 검을 치켜들어 번개를 모으고 크게 휘두른다 → 화면이 어두워지고 하늘에서 노란 벼락이 별에 꽂힌다
-        //   → 번쩍(1초에 3번을 넘지 않게) · 화면 흔들림 · 전기 조각이 흩어지며 별이 켜진다 → 어둠이 천천히 걷힌다
+        // 뇌신: 제자리에서 일어나 검을 치켜들면 사방의 전기가 검 끝으로 빨려 들고, 크게 휘두른다 → 화면이 깊게 어두워지고
+        //   화면 맨 위에서 굵은 노란 벼락이 별에 꽂힌다(양옆 갈래 벼락, 한 번 더 내리침) → 번쩍(1초에 3번을 넘지 않게) · 크게 흔들림 ·
+        //   충격파 고리 · 사방으로 튀는 전기 조각 · 별 둘레에 남는 지지직 → 어둠이 천천히 걷히면 다시 숨는다
         SKILLS["thunder-god"] = async () => {
           await standUp();
           const left = faceTo(star); // 별이 왼쪽이면 왼쪽을 본다
           // 검 끝 (치켜든 자세에서 머리 위)
           const bladeTop = (): Point => ({ x: at.x + (left ? ACTION_WIDTH - 20 : 20) * SCALE, y: at.y + 2 });
-          // 치켜들고 번개를 모은다 (몸이 살짝 떨림)
+          const spark = SKILL_FX["thunder-spark"];
+          // 치켜들고 번개를 모은다: 사방에서 전기가 검 끝으로 빨려 들고, 몸이 떨린다
           frame("windup");
           await sleep(120);
           const charge = SKILL_FX["thunder-charge"];
-          for (let k = 0; k < 2; k++) {
-            fx({ kind: "sprite", at: bladeTop(), frames: charge, frameMs: 90, ax: 0.5, ay: 0.5, flip: false, scale: 3 }, charge.length * 90 + 40);
-            sprite.animate([{ translate: "0 0" }, { translate: "1px -1px" }, { translate: "-1px 1px" }, { translate: "0 0" }], { duration: 360, easing: "steps(4, end)" });
-            await sleep(charge.length * 90);
+          for (let k = 0; k < 3; k++) {
+            const tip = bladeTop();
+            fx({ kind: "sprite", at: tip, frames: charge, frameMs: 80, ax: 0.5, ay: 0.5, flip: false, scale: 3 + Math.min(k, 1) }, charge.length * 80 + 40);
+            for (let n = 0; n < 6; n++) {
+              const a = (n / 6) * Math.PI * 2 + k;
+              const from = { x: tip.x + Math.cos(a) * 70, y: tip.y + Math.sin(a) * 60 };
+              setTimeout(() => fx({ kind: "proj", from, to: tip, frames: spark, frameMs: 60, ms: 260, arc: 6, scale: 2 }, 260), n * 30);
+            }
+            sprite.animate([{ translate: "0 0" }, { translate: "1px -1px" }, { translate: "-1px 1px" }, { translate: "1px 1px" }, { translate: "0 0" }], { duration: 320, easing: "steps(5, end)" });
+            await sleep(charge.length * 80);
           }
           // 제자리에서 크게 휘두른다: 앞쪽에 큰 번개 검기
           frame("strike");
           const slash = SKILL_FX["thunder-slash"];
-          fx({ kind: "sprite", at: { x: at.x + (left ? 0 : W), y: at.y + H / 2 }, frames: slash, frameMs: 70, ax: left ? 0.75 : 0.25, ay: 0.5, flip: left, scale: 3 }, slash.length * 70 + 40);
-          await sleep(140);
-          // 화면이 어두워지고 (별 둘레만 조금 밝게) 하늘에서 벼락
+          fx({ kind: "sprite", at: { x: at.x + (left ? 0 : W), y: at.y + H / 2 }, frames: slash, frameMs: 70, ax: left ? 0.75 : 0.25, ay: 0.5, flip: left, scale: 4 }, slash.length * 70 + 40);
+          await sleep(160);
+          // 화면이 깊게 어두워지고 (별 둘레만 조금 밝게) 하늘에서 벼락
           setDark({ id: ++fxId, at: star });
-          await sleep(220);
-          // 벼락은 화면 맨 위에서부터 별까지: 맨 아래(끝이 뾰족한 그림) 위로 끝을 잘라낸 그림을 이어 붙여 끊김 없이
+          await sleep(260);
+          // 벼락: 화면 맨 위에서부터 땅(to)까지. 맨 아래(끝이 뾰족한 그림) 위로 끝을 잘라낸 그림을 이어 붙여 끊김 없이
           const bolt = SKILL_FX["thunder-bolt"];
-          const boltMs = bolt.length * 110;
           const upper = bolt.map((f) => f.slice(0, -BOLT_TIP));
-          const piece = upper[0].length * 4;
-          const tipTop = star.y - bolt[0].length * 4;
-          fx({ kind: "sprite", at: star, frames: bolt, frameMs: 110, ax: 0.5, ay: 1, flip: false, scale: 4 }, boltMs + 40);
-          for (let k = 0; tipTop - k * piece > 0; k++) {
-            fx({ kind: "sprite", at: { x: star.x, y: tipTop - k * piece }, frames: upper, frameMs: 110, ax: 0.5, ay: 1, flip: false, scale: 4 }, boltMs + 40);
-          }
+          const strike = (to: Point, scale: number, frameMs: number) => {
+            const ms = bolt.length * frameMs + 40;
+            const tipTop = to.y - bolt[0].length * scale;
+            const piece = upper[0].length * scale;
+            fx({ kind: "sprite", at: to, frames: bolt, frameMs, ax: 0.5, ay: 1, flip: false, scale }, ms);
+            for (let k = 0; tipTop - k * piece > 0; k++) {
+              fx({ kind: "sprite", at: { x: to.x, y: tipTop - k * piece }, frames: upper, frameMs, ax: 0.5, ay: 1, flip: false, scale }, ms);
+            }
+          };
+          strike(star, 5, 110);
+          // 양옆 갈래 벼락
+          setTimeout(() => strike({ x: star.x - 58, y: star.y + 14 }, 3, 90), 90);
+          setTimeout(() => strike({ x: star.x + 52, y: star.y + 6 }, 3, 90), 170);
           await sleep(110);
-          // 꽂히는 순간: 별이 켜지고 번쩍 · 흔들림 · 충격 · 흩어지는 전기
+          // 꽂히는 순간: 별이 켜지고 번쩍 · 크게 흔들림 · 충격 · 충격파 · 흩어지는 전기
           tap();
-          fx({ kind: "flash" }, 200);
-          setTimeout(() => fx({ kind: "flash" }, 200), 420); // 두 번째 번쩍 (첫 번째와 0.4초 넘게 떨어져 1초에 3번을 넘지 않는다)
+          fx({ kind: "flash" }, 220);
+          setTimeout(() => fx({ kind: "flash" }, 220), 450); // 두 번째 번쩍 (첫 번째와 0.45초 떨어져 1초에 3번을 넘지 않는다)
           document.querySelector("main")?.animate(
-            [{ translate: "0 0" }, { translate: "-4px 2px" }, { translate: "3px -3px" }, { translate: "-2px 2px" }, { translate: "1px -1px" }, { translate: "0 0" }],
-            { duration: 360, easing: "steps(6, end)" },
+            [
+              { translate: "0 0" }, { translate: "-7px 4px" }, { translate: "6px -5px" }, { translate: "-5px 3px" },
+              { translate: "4px -3px" }, { translate: "-2px 2px" }, { translate: "1px -1px" }, { translate: "0 0" },
+            ],
+            { duration: 560, easing: "steps(8, end)" },
           );
           playFx(SKILL_FX["thunder-impact"], star, 80);
-          for (let k = 0; k < 8; k++) {
-            const a = (k / 8) * Math.PI * 2 + 0.3;
-            const to = { x: star.x + Math.cos(a) * (50 + (k % 3) * 14), y: star.y + Math.sin(a) * (40 + (k % 2) * 16) };
-            fx({ kind: "proj", from: star, to, frames: SKILL_FX["thunder-spark"], frameMs: 70, ms: 420, arc: 8, scale: 3 }, 420);
+          fx({ kind: "sprite", at: star, frames: SKILL_FX["thunder-impact"], frameMs: 90, ax: 0.5, ay: 0.5, flip: false, scale: 5 }, 5 * 90 + 40);
+          fx({ kind: "ring", at: star }, 700);
+          setTimeout(() => fx({ kind: "ring", at: star }, 700), 160);
+          for (let k = 0; k < 16; k++) {
+            const a = (k / 16) * Math.PI * 2 + 0.2;
+            const r = 80 + (k % 4) * 22;
+            const to = { x: star.x + Math.cos(a) * r, y: star.y + Math.sin(a) * r * 0.8 };
+            fx({ kind: "proj", from: star, to, frames: spark, frameMs: 70, ms: 520, arc: 10, scale: 3 }, 520);
           }
-          // 검을 다시 치켜들고 잠깐 버틴다 → 어둠이 걷히면 다시 숨는다
-          await sleep(320);
+          // 한 번 더 내리치는 벼락 (번쩍임 없이)
+          setTimeout(() => strike(star, 5, 90), 330);
+          // 별 둘레에 남는 지지직
+          for (let n = 0; n < 9; n++) {
+            setTimeout(() => {
+              const a = n * 2.4;
+              fx({ kind: "burst", at: { x: star.x + Math.cos(a) * 26, y: star.y + Math.sin(a) * 20 }, effect: "thunder" }, 520);
+            }, 240 + n * 130);
+          }
+          // 검을 다시 치켜들고 버틴다 → 어둠이 걷히면 다시 숨는다
+          await sleep(360);
           frame("windup");
-          await sleep(520);
+          await sleep(900);
           frame("stand");
-          await sleep(400);
+          await sleep(500);
           await hideAgain();
         };
 
@@ -745,6 +776,8 @@ function Effect({ effect }: { effect: Fx }) {
       return <div className="fx fx-beam" style={style(effect.at)} aria-hidden="true" />;
     case "flash":
       return <div className="fx-flash" aria-hidden="true" />;
+    case "ring":
+      return <div className="fx fx-ring" style={style(effect.at)} aria-hidden="true" />;
     case "poof":
     case "spark":
       return (
