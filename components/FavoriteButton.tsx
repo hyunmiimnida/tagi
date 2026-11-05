@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { track } from "../lib/analytics.ts";
 import { useUser } from "../lib/user.tsx";
-import { StarIcon } from "./Icons.tsx";
+import { BookmarkStar } from "./BookmarkStar.tsx";
 import { requestStarHelper } from "./StarHelper.tsx";
 
 const SPARKS = 8; // 별이 켜질 때 퍼지는 도트 반짝이 수
@@ -47,7 +47,7 @@ export function FavoriteButton({ programId, title, withLabel = false }: { progra
       }}
     >
       <span key={burst} className={`favorite-icon ${burst > 0 && lit ? "star-pop" : ""}`}>
-        <StarIcon filled={lit} />
+        <BookmarkStar on={lit} pop={burst > 0} />
         {burst > 0 && lit && (
           <span className="star-burst" aria-hidden="true">
             {Array.from({ length: SPARKS }, (_, i) => (

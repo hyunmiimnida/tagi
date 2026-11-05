@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { PAL_COLORS, PAL_HEIGHT, PAL_WIDTH, palPaths, palRows } from "./pixel-pals.ts";
+import { PAL_COLORS, PAL_HEIGHT, PAL_WIDTH, actionRows, palPaths, palRows } from "./pixel-pals.ts";
 import type { PalName, PalPose } from "./pixel-pals.ts";
 
 const names: PalName[] = ["wizard", "knight", "ranger", "cleric"];
@@ -74,20 +74,22 @@ test("별 켜기 동작 그림(24×17)과 효과 그림은 정해진 색만 쓴�
   for (const rows of Object.values(EFFECT_ROWS)) for (const ch of rows.join("")) assert.ok(ch === "." || PAL_COLORS[ch], ch);
 });
 
-test("캐릭터는 부품(머리 장식·옷)과 색을 바꿔 꾸밀 수 있다", async () => {
-  const { PAL_PRESETS } = await import("./pixel-pals.ts");
-  // 기본 캐릭터 이름과 그 모습을 넘겼을 때 같은 그림
+test("머리 장식·옷과 색은 손에 든 무기가 정한다 (저장된 모습은 무시)", async () => {
+  const { PAL_PRESETS, lookOf } = await import("./pixel-pals.ts");
+  const { WEAPON_IDS } = await import("./weapons.ts");
   for (const name of names) assert.deepEqual(palRows(PAL_PRESETS[name], "sit"), palRows(name, "sit"));
-  // 마법사 모자에 기사 갑옷, 색은 초록 모자·하얀 옷
-  const mixed = palRows({ headwear: "wizard-hat", headwearColor: "green", outfit: "armor", outfitColor: "white", weapon: "apprentice-wand" }, "sit");
-  assert.equal(mixed.length, PAL_HEIGHT.sit);
-  const hat = mixed.slice(0, 6).join("");
-  const body = mixed.slice(12).join("");
-  assert.ok(hat.includes("N") && !hat.includes("H"), "모자는 초록");
-  assert.ok(body.includes("B") && body.includes("b") && !body.includes("M"), "옷은 하양과 그 어두운 색");
-  for (const ch of mixed.join("")) assert.ok(ch === "." || PAL_COLORS[ch], ch);
-  // 없는 색 이름은 바로 알린다
-  assert.throws(() => palRows({ ...PAL_PRESETS.wizard, outfitColor: "rainbow" }, "sit"), /없는 색/);
+  // 예전에 고른 모자·옷이 있어도 무기의 모습으로 그린다
+  const saved = palRows({ headwear: "wizard-hat", headwearColor: "green", outfit: "armor", outfitColor: "white", weapon: "wooden-sword" }, "sit");
+  assert.deepEqual(saved, palRows("knight", "sit"));
+  // 모든 무기가 그릴 수 있는 모습을 갖고, 모든 글자에 색이 있다
+  for (const id of WEAPON_IDS) {
+    const rows = [...palRows({ ...PAL_PRESETS.wizard, weapon: id }, "sit"), ...actionRows({ ...PAL_PRESETS.wizard, weapon: id }, "stand")];
+    for (const ch of rows.join("")) assert.ok(ch === "." || PAL_COLORS[ch], `${id}: ${ch}`);
+    assert.ok(lookOf(id).headwear && lookOf(id).outfit, id);
+  }
+  // 같은 계열이라도 무기마다 색이 다를 수 있다
+  assert.notDeepEqual(lookOf("wooden-sword"), lookOf("blossom-blade"));
+  assert.equal(lookOf("wooden-sword").outfit, lookOf("blossom-blade").outfit);
 });
 
 test("저장해 둔 캐릭터 값은 그릴 수 있는 것만 받고, 처음 온 사람은 기본 캐릭터 중 하나를 받는다", async () => {

@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AVATAR_COLORS, HEADWEAR_NAMES, OUTFIT_NAMES, actionRows, palRows } from "../lib/pixel-pals.ts";
-import type { Avatar, Headwear, Outfit } from "../lib/pixel-pals.ts";
+import { CHARACTERS, CHARACTER_SLOTS, actionRows, lookOf, palRows, palSilhouetteRows } from "../lib/pixel-pals.ts";
+import type { Avatar } from "../lib/pixel-pals.ts";
 import { useUser } from "../lib/user.tsx";
 import { WEAPON_SPRITES } from "../lib/weapon-sprites.ts";
 import { GRADES, WEAPONS, WEAPON_IDS, owns } from "../lib/weapons.ts";
 import type { WeaponDef, WeaponId } from "../lib/weapons.ts";
-import { ChevronIcon, LockIcon, StarIcon } from "./Icons.tsx";
+import { ChevronIcon, LockIcon } from "./Icons.tsx";
+import { BookmarkStar } from "./BookmarkStar.tsx";
 import { AmbientEffect, BurstEffect } from "./PixelEffect.tsx";
 import type { ActionFrame } from "../lib/pixel-pals.ts";
 import type { WeaponFamily } from "../lib/weapons.ts";
@@ -17,12 +18,10 @@ import { TreasureBox } from "./TreasureBox.tsx";
 import { PalSilhouette } from "./MyPal.tsx";
 import { DAILY_KEYS, WELCOME_KEYS } from "../lib/gacha.ts";
 
-// 내 캐릭터 꾸미기 (/my/avatar): 무기 도감에서 무기를 골라 장착하고, 머리 장식·옷과 그 색을 바꾼다. 고르면 바로 내 캐릭터에 반영된다.
+// 내 캐릭터 꾸미기 (/my/avatar): 캐릭터 칸(지금은 하나, 나머지는 ???)과 무기 도감. 무기를 장착하면 머리 장식·옷도 그 무기의 모습으로 바뀐다 (lib/pixel-pals.ts의 lookOf).
 // 등급은 글자로 쓰지 않는다: 무기를 감싼 아우라(.aura-*)와 이름 색(.grade-name-*: 일반 회색·희귀 파랑·영웅 보라·전설 호박), 아래 칸은 등급마다 한 줄 (app/globals.css)
 // 아직 얻지 못한 무기는 아우라는 그대로 두고 그림은 실루엣, 이름은 ???. 무기와 스킬의 관계는 설명하지 않는다 (써 보며 알아채는 재미)
 
-const HEADWEARS = Object.keys(HEADWEAR_NAMES) as Headwear[];
-const OUTFITS = Object.keys(OUTFIT_NAMES) as Outfit[];
 const FAMILY_ORDER = ["fist", "sword", "staff", "bow", "relic", "pen", "instrument"];
 
 // 장착 연출: 새 무기를 한 번 써 보는 자세들 [자세, 머무는 시간]
@@ -85,7 +84,7 @@ export function AvatarEditor() {
         <PalSilhouette scale={6} />
         <p className="avatar-locked-title">아직 나만의 캐릭터가 없어요</p>
         <p className="avatar-locked-text">
-          로그인하면 캐릭터가 생기고 열쇠조각 {WELCOME_KEYS + DAILY_KEYS}개로 보물상자를 바로 열 수 있어요. 무기를 모으고 머리 장식·옷을 바꿔 꾸며 보세요.
+          로그인하면 캐릭터가 생기고 열쇠조각 {WELCOME_KEYS + DAILY_KEYS}개로 보물상자를 바로 열 수 있어요. 무기를 모으면 캐릭터의 옷도 함께 바뀌어요.
         </p>
         <button type="button" className="button primary" onClick={() => user.setLoginOpen(true)}>
           로그인하고 캐릭터 받기
@@ -110,7 +109,7 @@ export function AvatarEditor() {
   };
   // 장착하면 캐릭터가 새 무기를 한 번 휘둘러 보고, 마지막 자세에서 그 무기의 이펙트가 터진다 (동작 줄이기면 바로)
   function equip(id: WeaponId) {
-    change({ weapon: id }, "장착했어요.");
+    change({ weapon: id, ...lookOf(id) }, "장착했어요.");
     timers.current.forEach(clearTimeout);
     timers.current = [];
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -139,31 +138,29 @@ export function AvatarEditor() {
     if (!coming) setDemoOn(true);
   }
 
-  const option = (key: string, label: string, on: boolean, onClick: () => void, picture: React.ReactNode) => (
-    <button key={key} type="button" className={`avatar-option ${on ? "on" : ""}`} aria-pressed={on} aria-label={label} title={label} onClick={onClick}>
-      {picture}
-    </button>
-  );
-
-  const swatches = (value: string, onPick: (color: string) => void, label: string) => (
-    <div className="avatar-swatches" role="group" aria-label={label}>
-      {AVATAR_COLORS.map(([color, name]) => (
-        <button
-          key={color}
-          type="button"
-          className={`avatar-swatch ${value === color ? "on" : ""}`}
-          style={{ background: `var(--px-${color})` }}
-          aria-pressed={value === color}
-          aria-label={name}
-          title={name}
-          onClick={() => onPick(color)}
-        />
-      ))}
-    </div>
-  );
-
   return (
     <div className="avatar-editor">
+      {/* 캐릭터 칸: 지금은 하나, 나머지는 나중에 생길 캐릭터 자리 (???) */}
+      <section className="card character-pick">
+        <h2 className="card-title">캐릭터</h2>
+        <div className="character-slots" role="list">
+          {Array.from({ length: CHARACTER_SLOTS }, (_, i) => {
+            const character = CHARACTERS[i];
+            return character ? (
+              <div key={character.id} role="listitem" className="character-slot on" aria-current="true">
+                <PixelSprite rows={palRows(avatar, "sit")} scale={3} />
+                <span>{character.name}</span>
+              </div>
+            ) : (
+              <div key={i} role="listitem" className="character-slot locked" aria-label="아직 열리지 않은 캐릭터">
+                <PixelSprite rows={palSilhouetteRows()} scale={3} />
+                <span aria-hidden="true">???</span>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* 내 캐릭터: 들고 있는 무기의 아우라가 뒤에서 빛난다 */}
       <section className="card vitrine avatar-stage-card">
         <div className={`avatar-preview aura aura-${equipped.grade}`}>
@@ -181,7 +178,7 @@ export function AvatarEditor() {
             <PixelSprite rows={actionRows(avatar, "stand")} scale={2} />
           </div>
           <button type="button" className={`favorite avatar-try-star ${demoOn ? "on" : ""}`} aria-pressed={demoOn} aria-label="별 눌러 보기" onClick={tryStar}>
-            <StarIcon filled={demoOn} />
+            <BookmarkStar on={demoOn} pop={demoOn} />
           </button>
         </div>
       </section>
@@ -280,24 +277,6 @@ export function AvatarEditor() {
         </p>
       </section>
 
-      {/* 외형 */}
-      <section className="card avatar-section">
-        <h2 className="card-title">머리 장식</h2>
-        <div className="avatar-options">
-          {HEADWEARS.map((h) =>
-            option(h, HEADWEAR_NAMES[h], avatar.headwear === h, () => change({ headwear: h }), <PixelSprite rows={palRows({ ...avatar, headwear: h }, "sit").slice(0, 12)} scale={3} />),
-          )}
-        </div>
-        {swatches(avatar.headwearColor, (color) => change({ headwearColor: color }), "머리 장식 색")}
-
-        <h2 className="card-title avatar-subtitle">옷</h2>
-        <div className="avatar-options">
-          {OUTFITS.map((o) =>
-            option(o, OUTFIT_NAMES[o], avatar.outfit === o, () => change({ outfit: o }), <PixelSprite rows={palRows({ ...avatar, outfit: o }, "sit")} scale={2} />),
-          )}
-        </div>
-        {swatches(avatar.outfitColor, (color) => change({ outfitColor: color }), "옷 색")}
-      </section>
     </div>
   );
 }

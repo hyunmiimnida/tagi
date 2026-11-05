@@ -5,7 +5,7 @@
 import { EFFECT_COLORS } from "./pixel-effects.ts";
 import { WEAPON_SPRITES, poseOf } from "./weapon-sprites.ts";
 import { WEAPONS, upgradeWeaponId } from "./weapons.ts";
-import type { WeaponId } from "./weapons.ts";
+import type { WeaponFamily, WeaponId } from "./weapons.ts";
 
 export type PalName = "wizard" | "knight" | "ranger" | "cleric";
 export type PalPose = "sit" | "peek";
@@ -93,9 +93,10 @@ const EYE_ROWS = [7, 8, 9]; // 머리 지도에서 눈이 있는 줄 (깜빡일 
 // ───────── 부품 ─────────
 // 캐릭터는 머리 장식 + 얼굴 + 옷(몸) 부품을 겹쳐 그린다. 부품 그림의 아래 글자는 "고른 색"으로 바뀐다
 //   A·a: 머리 장식 색·그 어두운 색, O·o: 옷 색·그 어두운 색 (나머지 글자는 PAL_COLORS의 고정 색)
-export type Headwear = "wizard-hat" | "helmet" | "hood" | "veil";
-export type Outfit = "robe" | "armor" | "tunic" | "vestment";
+export type Headwear = "wizard-hat" | "helmet" | "hood" | "veil" | "scholar-cap" | "feather-cap" | "headband";
+export type Outfit = "robe" | "armor" | "tunic" | "vestment" | "coat" | "bard" | "gi";
 // 한 사람의 캐릭터 모습. 색은 PAL_HEX의 이름(app/globals.css의 --px-*)
+// 머리 장식·옷과 그 색은 예전 저장값과 맞추려고 남겨 두지만, 그릴 때는 손에 든 무기가 정한다 (lookOf)
 export interface Avatar {
   headwear: Headwear;
   headwearColor: string;
@@ -141,6 +142,10 @@ const HEADWEAR: Record<Headwear, string[]> = {
     ".KAAAAAAAAAAAAK.",
     ...face("A"),
   ],
+  // 아래 셋은 Codex가 그렸다 (펜·악기·맨손)
+  "scholar-cap": ["..........KWK...", ".....KKKKKWBK...", "...KKAAAAAWK....", "..KAAAAAAAaAK...", "..KaaaaaaaaK....", "...KKKKKKKK.....", ...face("S")],
+  "feather-cap": ["...........KWK..", "..........KWBK..", ".....KK..KWBK...", "....KAAKKBAK....", "...KAAAAAAaK....", ".KKKaaYaaaaKKK..", ...face("A")],
+  headband: [".....KKKKKK.....", "...KKttttttKK...", "..KttttttttttK..", ".KttttttttttttK.", ".KAAAAAAAAAAAKAK", ".KttKKttttKKtKaK", ...face("t")],
 };
 
 // 앉은 몸: 손을 양옆에 짚고 다리를 늘어뜨린다 (마지막 2줄이 다리). legs: 서 있는 동작 그림의 다리 색 글자
@@ -149,15 +154,77 @@ const OUTFITS: Record<Outfit, { rows: string[]; legs: string }> = {
   armor: { rows: ["...KOOOYOOOK....", "..KSOOYYYOOSK...", "..KKOOOYOOOKK...", "...KooKKKooK....", "...KoK...KoK...."], legs: "o" },
   tunic: { rows: ["...KOOTTOOOK....", "..KSOOTYTOOSK...", "..KKOOOOOOOKK...", "...KTTKKKTTK....", "...KTK...KTK...."], legs: "T" },
   vestment: { rows: ["...KOOYYOOOK....", "..KSOYYYYOOSK...", "..KKOOYYOOOKK...", "...KooKKKooK....", "...KoK...KoK...."], legs: "o" },
+  coat: { rows: ["...KBOYOTOBK....", "..KSOOYOTOOSK...", "..KKOOYOTOOKK...", "...KooKKKooK....", "...KoK...KoK...."], legs: "o" },
+  bard: { rows: ["...KOBBYBBOK....", "..KSOOBBBOOSK...", "..KKTTTYTTTKK...", "...KooKKKooK....", "...KtK...KtK...."], legs: "t" },
+  gi: { rows: ["...KBOOOBOOK....", "..KSOBOBOOOSK...", "..KKTTTKTTTKK...", "...KooKKKooK....", "...KoK...KoK...."], legs: "o" },
 };
 
-// 처음부터 있던 네 모습(코드 안의 이름일 뿐, 화면에서 직업으로 나누지 않는다). 처음 온 사람이 받는 캐릭터이자 꾸미기의 출발점
-export const PAL_PRESETS: Record<PalName, Avatar> = {
-  wizard: { headwear: "wizard-hat", headwearColor: "violet", outfit: "robe", outfitColor: "violet", weapon: "apprentice-wand" },
-  knight: { headwear: "helmet", headwearColor: "steel", outfit: "armor", outfitColor: "steel", weapon: "wooden-sword" },
-  ranger: { headwear: "hood", headwearColor: "green", outfit: "tunic", outfitColor: "green", weapon: "short-bow" },
-  cleric: { headwear: "veil", headwearColor: "white", outfit: "vestment", outfitColor: "white", weapon: "oak-staff" },
+// 무기 계열이 머리 장식과 옷의 모양을 정한다
+const FAMILY_LOOK: Record<WeaponFamily, { headwear: Headwear; outfit: Outfit }> = {
+  sword: { headwear: "helmet", outfit: "armor" },
+  staff: { headwear: "wizard-hat", outfit: "robe" },
+  bow: { headwear: "hood", outfit: "tunic" },
+  relic: { headwear: "veil", outfit: "vestment" },
+  pen: { headwear: "scholar-cap", outfit: "coat" },
+  instrument: { headwear: "feather-cap", outfit: "bard" },
+  fist: { headwear: "headband", outfit: "gi" },
 };
+
+// 무기마다 [머리 장식 색, 옷 색]: 같은 계열이라도 무기마다 모습이 다르다 (무기를 더하면 여기에도 한 줄)
+const WEAPON_COLORS: Record<WeaponId, [string, string]> = {
+  "bare-hands": ["red", "white"],
+  "wooden-sword": ["steel", "leather"],
+  "azure-blade": ["steel", "sky"],
+  "zip-blade": ["steel", "steel"],
+  "blossom-blade": ["rose", "blush"],
+  "hour-blade": ["gold", "indigo"],
+  "legend-1": ["gold", "gold"],
+  "apprentice-wand": ["violet", "violet"],
+  "starlight-wand": ["indigo", "indigo"],
+  "dalgona-wand": ["tangerine", "tangerine"],
+  "tide-staff": ["sky", "sky"],
+  "glasshouse-staff": ["green", "leaf-light"],
+  "short-bow": ["green", "green"],
+  "wind-bow": ["leaf-light", "leaf-light"],
+  "post-bow": ["red", "red"],
+  "meteor-bow": ["red", "tangerine"],
+  "loom-bow": ["lavender", "violet"],
+  "oak-staff": ["white", "white"],
+  "radiant-staff": ["gold", "white"],
+  "lucky-key": ["gold", "gold"],
+  "angel-scepter": ["white", "sky"],
+  "promise-compass": ["indigo", "steel"],
+  pencil: ["leather", "leather"],
+  "fountain-pen": ["indigo", "indigo"],
+  "correction-pen": ["white", "steel"],
+  "victory-quill": ["red", "indigo"],
+  "drafting-pen": ["gold", "indigo"],
+  recorder: ["green", "leather"],
+  guitar: ["tangerine", "leather"],
+  castanets: ["red", "red"],
+  "grand-harp": ["violet", "lavender"],
+  "campus-xylophone": ["gold", "tangerine"],
+};
+
+// 이 무기를 들었을 때의 모습 (머리 장식·옷과 그 색)
+export function lookOf(weapon: WeaponId): Omit<Avatar, "weapon"> {
+  const { headwear, outfit } = FAMILY_LOOK[WEAPONS[weapon].family];
+  const [headwearColor, outfitColor] = WEAPON_COLORS[weapon];
+  return { headwear, headwearColor, outfit, outfitColor };
+}
+
+// 처음부터 있던 네 모습(코드 안의 이름일 뿐, 화면에서 직업으로 나누지 않는다). 공유 이미지·아이콘처럼 사람이 없는 곳의 캐릭터
+export const PAL_PRESETS: Record<PalName, Avatar> = {
+  wizard: { ...lookOf("apprentice-wand"), weapon: "apprentice-wand" },
+  knight: { ...lookOf("wooden-sword"), weapon: "wooden-sword" },
+  ranger: { ...lookOf("short-bow"), weapon: "short-bow" },
+  cleric: { ...lookOf("oak-staff"), weapon: "oak-staff" },
+};
+
+// 캐릭터 종류. 지금은 하나뿐이고, 남은 칸은 꾸미기 화면에서 ???로 잠겨 보인다.
+// 새 캐릭터를 더하면 여기에 한 줄 (그때 Avatar에 고른 캐릭터를 저장하는 칸을 더한다)
+export const CHARACTERS: { id: string; name: string }[] = [{ id: "adventurer", name: "모험가" }];
+export const CHARACTER_SLOTS = 4; // 꾸미기 화면의 캐릭터 칸 수
 
 // 색 이름 → 그 색의 어두운 색 (없으면 같은 색)
 const DARKER: Record<string, string> = {
@@ -177,26 +244,6 @@ const DARKER: Record<string, string> = {
   leather: "boot",
 };
 
-// 꾸미기 화면에서 고를 수 있는 머리 장식·옷 색 [색 이름, 화면에 보이는 이름]
-export const AVATAR_COLORS: [string, string][] = [
-  ["violet", "보라"],
-  ["indigo", "남색"],
-  ["sky", "하늘"],
-  ["green", "초록"],
-  ["leaf-light", "연두"],
-  ["gold", "노랑"],
-  ["tangerine", "주황"],
-  ["red", "빨강"],
-  ["rose", "장미"],
-  ["blush", "분홍"],
-  ["lavender", "연보라"],
-  ["leather", "갈색"],
-  ["steel", "은색"],
-  ["white", "하양"],
-];
-export const HEADWEAR_NAMES: Record<Headwear, string> = { "wizard-hat": "마법사 모자", helmet: "투구", hood: "두건", veil: "베일" };
-export const OUTFIT_NAMES: Record<Outfit, string> = { robe: "로브", armor: "갑옷", tunic: "튜닉", vestment: "사제복" };
-
 // 색 이름 → 그 색을 뜻하는 글자 (PAL_COLORS를 거꾸로)
 const LETTER_OF: Record<string, string> = Object.fromEntries(
   Object.entries(PAL_COLORS)
@@ -204,7 +251,11 @@ const LETTER_OF: Record<string, string> = Object.fromEntries(
     .map(([letter, color]) => [color, letter]),
 );
 
-const toAvatar = (who: PalName | Avatar): Avatar => (typeof who === "string" ? PAL_PRESETS[who] : who);
+// 그릴 모습: 머리 장식·옷과 그 색은 손에 든 무기가 정한다
+const toAvatar = (who: PalName | Avatar): Avatar => {
+  const avatar = typeof who === "string" ? PAL_PRESETS[who] : who;
+  return { ...avatar, ...lookOf(avatar.weapon) };
+};
 
 // 저장해 둔 값(브라우저·계정)이 그릴 수 있는 캐릭터 모습인지. 아니면 null
 export function toValidAvatar(value: unknown): Avatar | null {

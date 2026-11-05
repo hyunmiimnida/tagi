@@ -41,16 +41,6 @@ export const CalendarIcon = ({ size, filled }: IconProps) => (
   </Svg>
 );
 
-export const StarIcon = ({ size = 22, filled }: IconProps) => (
-  <Svg size={size}>
-    <path
-      d="m12 3.8 2.5 5.1 5.6.8-4 4 .9 5.6-5-2.7-5 2.7.9-5.6-4-4 5.6-.8z"
-      fill={filled ? "currentColor" : "none"}
-      strokeWidth={1.8}
-    />
-  </Svg>
-);
-
 export const SearchIcon = ({ size = 20 }: IconProps) => (
   <Svg size={size}>
     <circle cx="11" cy="11" r="6.5" />
