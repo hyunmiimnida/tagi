@@ -77,7 +77,7 @@ export function StarHelper() {
   avatarRef.current = avatar;
   const [actor, setActor] = useState<Actor | null>(null);
   const [effects, setEffects] = useState<Fx[]>([]);
-  const [dark, setDarkState] = useState<{ id: number; at: Point } | null>(null); // 뇌신: 어두워진 화면 (별 둘레만 조금 밝다)
+  const [dark, setDarkState] = useState<{ id: number } | null>(null); // 뇌신: 꺼진 화면
   const busy = useRef(false);
   const actorEl = useRef<HTMLDivElement | null>(null);
   const spriteEl = useRef<HTMLDivElement | null>(null);
@@ -93,7 +93,7 @@ export function StarHelper() {
       if (layerEl.current) layerEl.current.style.transform = `translate(${-d.x}px, ${-d.y}px)`;
     };
     window.addEventListener("scroll", moveLayer, { passive: true });
-    const setDark = (next: { id: number; at: Point }) => {
+    const setDark = (next: { id: number }) => {
       setDarkState(next);
       setTimeout(() => setDarkState((d) => (d?.id === next.id ? null : d)), DARK_MS);
     };
@@ -542,8 +542,8 @@ export function StarHelper() {
           const slash = SKILL_FX["thunder-slash"];
           fx({ kind: "sprite", at: { x: at.x + (left ? 0 : W), y: at.y + H / 2 }, frames: slash, frameMs: 70, ax: left ? 0.75 : 0.25, ay: 0.5, flip: left, scale: 4 }, slash.length * 70 + 40);
           await sleep(slash.length * 70 + 60);
-          // 화면이 꺼진다 (별 둘레만 조금 밝게) → 잠깐 정적 → 벼락이 빡 꽂힌다
-          setDark({ id: ++fxId, at: star });
+          // 화면이 꺼진다 (강조 없이) → 잠깐 정적 → 벼락이 빡 꽂힌다
+          setDark({ id: ++fxId });
           await sleep(DARK_PAUSE);
           // 벼락: 화면 맨 위에서부터 땅(to)까지. 맨 아래(끝이 뾰족한 그림) 위로 끝을 잘라낸 그림을 이어 붙여 끊김 없이
           const bolt = SKILL_FX["thunder-bolt"];
@@ -691,7 +691,7 @@ export function StarHelper() {
 
   return (
     <div ref={layerEl} className="star-layer">
-      {dark && <div key={dark.id} className="star-dark" style={{ "--x": `${dark.at.x}px`, "--y": `${dark.at.y}px` } as React.CSSProperties} aria-hidden="true" />}
+      {dark && <div key={dark.id} className="star-dark" aria-hidden="true" />}
       {actor && (
         <div ref={actorEl} className="star-actor" style={{ transform: `translate(${actor.start.x}px, ${actor.start.y}px)` }} aria-hidden="true">
           <div ref={spriteEl} className={`star-actor-sprite ${actor.flip ? "flip" : ""}`} style={{ transformOrigin: `${CENTER}px 100%` }}>

@@ -3437,7 +3437,7 @@ button.stat {
   pointer-events: none;
 }
 
-/* 뇌신: 화면이 확 어두워졌다가(별 둘레만 조금 밝게) 천천히 걷힌다 (components/StarHelper.tsx의 DARK_MS와 같은 길이).
+/* 뇌신: 화면이 확 꺼졌다가(강조 없이 고르게) 천천히 걷힌다 (components/StarHelper.tsx의 DARK_MS와 같은 길이).
    캐릭터(.star-actor)보다 아래, 판이 스크롤을 따라 움직여도 화면을 덮게 넉넉히 크게 */
 .star-dark {
   position: fixed;
@@ -3446,7 +3446,7 @@ button.stat {
   z-index: 39;
   width: 300vw;
   height: 300vh;
-  background: radial-gradient(circle at calc(var(--x) + 100vw) calc(var(--y) + 100vh), rgb(40 28 0 / 30%) 0 26px, rgb(4 3 14 / 94%) 110px);
+  background: rgb(4 3 14 / 94%);
   pointer-events: none;
   animation: star-dark 3.2s ease-out forwards;
 }
