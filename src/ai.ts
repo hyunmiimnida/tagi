@@ -488,8 +488,9 @@ export function applyAiResult(item: CollectedItem, data: Record<string, unknown>
   return true;
 }
 
-// 이미 추출한 글에 나중에 생긴 칸(다른 학교 지원 가능 여부, 요약, 항목별 요약)만 다시 묻는다. 확인하지 않은 칸만 채운다. 답을 받은 글 수를 돌려준다
-export async function recheckFields(items: CollectedItem[], maxText = MAX_TEXT): Promise<number> {
+// 이미 추출한 글에 나중에 생긴 칸(다른 학교 지원 가능 여부, 요약)만 다시 묻는다. 확인하지 않은 칸만 채운다. 답을 받은 글 수를 돌려준다
+// 항목별 요약(digest)은 묻지 않는다: 앞으로 수집하는 공고에만 쓴다 (2026-11-06 사용자 결정)
+export async function recheckFields(items: CollectedItem[], maxText = 1500): Promise<number> {
   const bin = findAi();
   if (!bin || items.length === 0) return 0;
   await Promise.all(items.filter(needsPoster).map((item) => readPoster(bin, item)));
@@ -499,10 +500,9 @@ export async function recheckFields(items: CollectedItem[], maxText = MAX_TEXT):
   const prompt = `너는 대학 공지에서 사실 정보만 뽑는 추출기다. 파일을 읽거나 명령을 실행하지 말고, 아래 글만 보고 JSON으로만 답해라.
 ${OPEN_TO_RULE}
 ${SUMMARY_RULE}
-${DIGEST_RULE}
 ${NO_APPLICATION_RULE}
 
-출력 형식 (게시물 수만큼, 설명 없이 JSON만): {"items":[{"id":"...","openTo":null,"summary":null,${DIGEST_SHAPE},"noApplication":false}]}
+출력 형식 (게시물 수만큼, 설명 없이 JSON만): {"items":[{"id":"...","openTo":null,"summary":null,"noApplication":false}]}
 
 게시물:
 
@@ -517,7 +517,6 @@ ${posts}`;
       const { program } = item;
       if (program.target.openTo === undefined) setOpenTo(program, openTo(data.openTo));
       if (program.summary === undefined && "summary" in data) program.summary = summary(data.summary);
-      if (program.digest === undefined && "digest" in data) program.digest = toDigest(data.digest, item.text);
       if (program.noApplication === undefined && typeof data.noApplication === "boolean") program.noApplication = data.noApplication;
       answered++;
     }
