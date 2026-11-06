@@ -147,6 +147,7 @@ export function describeError(error: PostgrestError | { message: string; code?: 
   if (message.includes("not_admin")) return "관리자 계정이 아니에요.";
   if (message.includes("cannot_self")) return "내 계정에는 할 수 없어요.";
   if (message.includes("cannot_delete_admin")) return "관리자 계정은 지울 수 없어요.";
+  if (message.includes("cannot_suspend_admin")) return "관리자 계정은 정지할 수 없어요.";
   if (error.code === "PGRST202" || error.code === "42883" || error.code === "PGRST205" || error.code === "42P01") {
     return `관리 기능이 아직 설정되지 않았어요. supabase/${setupFile}을 Supabase SQL Editor에서 실행해 주세요.`;
   }
