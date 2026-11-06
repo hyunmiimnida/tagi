@@ -139,7 +139,7 @@ begin
     'draws', (select count(*) from key_ledger where user_id = target and reason = 'draw'),
     'weapons', (select coalesce(json_agg(json_build_object('weapon_id', w.weapon_id, 'obtained_at', w.obtained_at,
         'source', case
-          when exists (select 1 from key_ledger l where l.user_id = target and l.reason = 'draw' and l.detail = w.weapon_id) then 'draw'
+          when exists (select 1 from key_ledger l where l.user_id = target and l.reason in ('draw', 'shard_exchange') and l.detail = w.weapon_id) then 'draw'
           when exists (select 1 from key_ledger l where l.user_id = target and l.reason = 'weapon_grant' and l.detail = w.weapon_id) then 'admin'
           else 'none' end) order by w.obtained_at desc), '[]'::json)
       from owned_weapons w where w.user_id = target)
