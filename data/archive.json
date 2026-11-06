@@ -127503,48 +127503,6 @@
     "firstSeenAt": "2026-10-19T17:54:52.469Z"
   },
   {
-    "id": "seoultech-global-hqcsikq16dm6io",
-    "title": "[안내/중요] 외국인유학생 시간제 취업 허가제도 및 주의사항 안내(시간제취업 확인서(Part-time Work Confirmation Form)포함)",
-    "organizer": "국제교류처",
-    "organizerType": "학교",
-    "target": {
-      "schools": [
-        "seoultech"
-      ],
-      "colleges": [],
-      "departments": [],
-      "grades": [],
-      "statuses": [],
-      "excludedStatuses": []
-    },
-    "recruitPeriod": {
-      "start": null,
-      "end": null
-    },
-    "activityPeriod": {
-      "start": null,
-      "end": null
-    },
-    "tags": [
-      "학교",
-      "취업·채용",
-      "해외·글로벌"
-    ],
-    "links": [
-      {
-        "sourceId": "seoultech-global",
-        "url": "https://global.seoultech.ac.kr/notice/notice?do=view&bnum=58434&bidx=888966"
-      }
-    ],
-    "sources": [
-      "seoultech-global"
-    ],
-    "postedAt": "2026-06-08",
-    "extractedBy": "rules",
-    "collectedAt": "2026-11-04T15:16:19.313Z",
-    "firstSeenAt": "2026-11-04T15:16:19.313Z"
-  },
-  {
     "id": "knu-notice-1337507",
     "title": "[대구RISE사업] 2026 청년연구자 지원 사업 신청 안내",
     "organizer": "학생과",
@@ -183334,7 +183292,8 @@
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": null
     },
     "recruitPeriod": {
       "start": null,
@@ -183346,7 +183305,6 @@
     },
     "tags": [
       "학교",
-      "해외·글로벌",
       "상담·심리"
     ],
     "links": [
@@ -183359,8 +183317,28 @@
       "seoultech-global"
     ],
     "postedAt": "2026-05-14",
-    "extractedBy": "rules",
-    "collectedAt": "2026-11-04T15:16:18.220Z",
+    "extractedBy": "ai",
+    "collectedAt": "2026-11-06T05:11:49.624Z",
+    "summary": "외국인 유학생이 온라인 심리검사를 받고 희망하면 상담을 신청해요",
+    "digest": {
+      "about": "외국인 유학생의 건강한 대학생활을 돕기 위해 심리검사와 희망자 상담을 제공해요",
+      "activities": [
+        "온라인 심리검사를 진행해요",
+        "희망하면 심리상담을 신청해요"
+      ],
+      "eligibility": [
+        "외국인 유학생이 대상이에요"
+      ],
+      "benefits": [],
+      "howToApply": [
+        "QR코드로 구글폼에 접속해 신청해요",
+        "온라인 심리검사를 제출해요"
+      ],
+      "chips": [
+        "온라인"
+      ]
+    },
+    "noApplication": false,
     "firstSeenAt": "2026-11-04T15:16:18.220Z"
   },
   {
@@ -269711,17 +269689,16 @@
   {
     "id": "seoultech-global-hjkh3he1qeh2o",
     "title": "[입학] (CIED Program) Study at SeoulTech: Admission Guide for Vietnamese Students",
-    "organizer": "국제교류처",
+    "organizer": "서울과학기술대학교",
     "organizerType": "학교",
     "target": {
-      "schools": [
-        "seoultech"
-      ],
+      "schools": [],
       "colleges": [],
       "departments": [],
       "grades": [],
       "statuses": [],
-      "excludedStatuses": []
+      "excludedStatuses": [],
+      "openTo": "베트남 학생"
     },
     "recruitPeriod": {
       "start": null,
@@ -269732,7 +269709,8 @@
       "end": null
     },
     "tags": [
-      "학교"
+      "학교",
+      "해외·글로벌"
     ],
     "links": [
       {
@@ -269744,8 +269722,22 @@
       "seoultech-global"
     ],
     "postedAt": "2026-04-07",
-    "extractedBy": "rules",
-    "collectedAt": "2026-11-04T15:16:20.388Z",
+    "extractedBy": "ai",
+    "collectedAt": "2026-11-06T05:11:51.805Z",
+    "summary": "베트남 학생이 서울과학기술대학교의 과정별 입학 안내를 확인해요",
+    "digest": {
+      "about": "CIED와의 협력을 바탕으로 베트남 학생에게 학부·대학원·한국어과정 지원 정보를 안내해요",
+      "activities": [],
+      "eligibility": [
+        "베트남 학생을 위한 입학 안내예요"
+      ],
+      "benefits": [],
+      "howToApply": [
+        "과정별 입학 안내 페이지에서 지원 절차를 확인해요"
+      ],
+      "chips": []
+    },
+    "noApplication": false,
     "firstSeenAt": "2026-11-04T15:16:20.388Z"
   },
   {
@@ -514292,7 +514284,8 @@
     "collectedAt": "2026-10-03T07:11:57.721Z",
     "summary": null,
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:11:57.721Z"
+    "firstSeenAt": "2026-10-03T07:11:57.721Z",
+    "seriesId": "skku-notice-132642"
   },
   {
     "id": "skku-notice-130362",
@@ -515736,7 +515729,8 @@
     "collectedAt": "2026-10-03T07:12:02.167Z",
     "summary": null,
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:12:02.167Z"
+    "firstSeenAt": "2026-10-03T07:12:02.167Z",
+    "seriesId": "skku-notice-132634"
   },
   {
     "id": "skku-notice-131985",
@@ -589926,7 +589920,8 @@
     "collectedAt": "2026-10-03T07:19:49.544Z",
     "summary": "논술시험에 필요한 물품을 포장하는 단기 아르바이트를 해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T07:19:49.544Z"
+    "firstSeenAt": "2026-10-03T07:19:49.544Z",
+    "seriesId": "skku-notice-130637"
   },
   {
     "id": "skku-notice-130652",
