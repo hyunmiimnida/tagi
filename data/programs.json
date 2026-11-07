@@ -345,7 +345,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:42.118Z",
+    "collectedAt": "2026-11-07T09:44:17.551Z",
     "firstSeenAt": "2026-09-30T18:31:28.907Z"
   },
   {
@@ -385,7 +385,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:42.118Z",
+    "collectedAt": "2026-11-07T09:44:17.551Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z"
   },
   {
@@ -425,7 +425,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:42.118Z",
+    "collectedAt": "2026-11-07T09:44:17.551Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z",
     "seriesId": "yu-career-1527"
   },
@@ -465,7 +465,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:42.118Z",
+    "collectedAt": "2026-11-07T09:44:17.551Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z",
     "seriesId": "yu-news-85874"
   },
@@ -504,7 +504,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:42.119Z",
+    "collectedAt": "2026-11-07T09:44:17.551Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z"
   },
   {
@@ -543,7 +543,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:42.119Z",
+    "collectedAt": "2026-11-07T09:44:17.552Z",
     "firstSeenAt": "2026-09-30T18:31:28.908Z",
     "seriesId": "yu-career-2092"
   },
@@ -583,7 +583,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:42.119Z",
+    "collectedAt": "2026-11-07T09:44:17.552Z",
     "firstSeenAt": "2026-09-30T18:31:28.909Z"
   },
   {
@@ -764,7 +764,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:43.610Z",
+    "collectedAt": "2026-11-07T09:44:19.019Z",
     "firstSeenAt": "2026-09-30T18:31:29.734Z",
     "seriesId": "yu-career-2480"
   },
@@ -845,7 +845,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:43.610Z",
+    "collectedAt": "2026-11-07T09:44:19.019Z",
     "firstSeenAt": "2026-09-30T18:31:29.735Z"
   },
   {
@@ -1097,7 +1097,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:43.611Z",
+    "collectedAt": "2026-11-07T09:44:19.020Z",
     "firstSeenAt": "2026-09-30T18:31:29.736Z"
   },
   {
@@ -1137,7 +1137,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:43.611Z",
+    "collectedAt": "2026-11-07T09:44:19.020Z",
     "firstSeenAt": "2026-09-30T18:31:29.736Z"
   },
   {
@@ -1215,7 +1215,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:43.611Z",
+    "collectedAt": "2026-11-07T09:44:19.020Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1254,7 +1254,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:43.611Z",
+    "collectedAt": "2026-11-07T09:44:19.020Z",
     "firstSeenAt": "2026-09-30T18:31:29.737Z"
   },
   {
@@ -1371,7 +1371,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:43.611Z",
+    "collectedAt": "2026-11-07T09:44:19.021Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z",
     "seriesId": "yu-career-2184"
   },
@@ -1450,7 +1450,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:43.611Z",
+    "collectedAt": "2026-11-07T09:44:19.021Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z"
   },
   {
@@ -1489,7 +1489,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:43.611Z",
+    "collectedAt": "2026-11-07T09:44:19.021Z",
     "firstSeenAt": "2026-09-30T18:31:29.738Z",
     "seriesId": "yu-career-2449"
   },
@@ -5750,7 +5750,9 @@
     "noApplication": false,
     "aliases": [
       "yu-news-232260873"
-    ]
+    ],
+    "contentHash": "63b76561a4f71f70",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-231611579",
@@ -6808,7 +6810,9 @@
     "collectedAt": "2026-10-01T03:34:48.350Z",
     "firstSeenAt": "2026-10-01T03:34:48.350Z",
     "seriesId": "yu-news-10339449",
-    "summary": "인터넷·스마트폰 과의존 예방 영상을 모두 시청하고 Y마일리지를 받아요"
+    "summary": "인터넷·스마트폰 과의존 예방 영상을 모두 시청하고 Y마일리지를 받아요",
+    "contentHash": "e202205788c6faa9",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-231498638",
@@ -7392,7 +7396,9 @@
     "firstSeenAt": "2026-10-01T03:35:19.674Z",
     "seriesId": "yu-news-228923738",
     "summary": "스케일링과 신체 측정 등 네 가지 체험을 하고 5천원 상당 상품권을 받아요.",
-    "noApplication": false
+    "noApplication": false,
+    "contentHash": "7115d6d0b30ab610",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-231470050",
@@ -9248,7 +9254,9 @@
     "collectedAt": "2026-10-01T03:37:11.592Z",
     "firstSeenAt": "2026-10-01T03:37:11.592Z",
     "summary": "베트남 연수 후 취업으로 이어지는 과정을 온라인 설명회에서 알아봐요",
-    "noApplication": false
+    "noApplication": false,
+    "contentHash": "47c5a3bb1366a23f",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-231118436",
@@ -9412,7 +9420,9 @@
     ],
     "seriesId": "yu-news-83707",
     "summary": "미국 기업에서 해외 인턴으로 일해요",
-    "noApplication": false
+    "noApplication": false,
+    "contentHash": "888bc52cf2430f07",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-231090324",
@@ -9963,7 +9973,8 @@
     "collectedAt": "2026-10-01T03:36:46.906Z",
     "firstSeenAt": "2026-10-01T03:36:46.906Z",
     "summary": "복학·편입·전과 후 진로와 학교 적응을 돕는 프로그램에 참여해요.",
-    "noApplication": false
+    "noApplication": false,
+    "seriesId": "yu-news-231188787"
   },
   {
     "id": "yu-news-231174712",
@@ -13905,7 +13916,9 @@
     "aliases": [
       "yu-news-230682791"
     ],
-    "summary": "인터넷·스마트폰 과의존 예방 영상 3개를 모두 시청하고 Y마일리지를 받아요."
+    "summary": "인터넷·스마트폰 과의존 예방 영상 3개를 모두 시청하고 Y마일리지를 받아요.",
+    "contentHash": "e202205788c6faa9",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-229937213",
@@ -53421,7 +53434,9 @@
     "summary": "수강한 교양 강의를 추천하는 에세이를 써서 상금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T17:34:40.063Z",
-    "seriesId": "sogang-notice-548657"
+    "seriesId": "sogang-notice-548657",
+    "contentHash": "11c8a60820a3ed76",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "sogang-notice-551479",
@@ -65667,7 +65682,9 @@
     "summary": "학교 근처 외부 임대 주택에 입주하고 매월 거주비 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:46:12.523Z",
-    "seriesId": "sogang-notice-547382"
+    "seriesId": "sogang-notice-547382",
+    "contentHash": "3788970fde0a142a",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "sogang-notice-550877",
@@ -66469,7 +66486,9 @@
     "collectedAt": "2026-10-02T18:48:09.724Z",
     "summary": "부동산 실무 지식을 배우는 무료 오픈 스터디에 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T18:48:09.724Z"
+    "firstSeenAt": "2026-10-02T18:48:09.724Z",
+    "contentHash": "9cedf4e63746e95d",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "sogang-notice-549655",
@@ -67647,7 +67666,9 @@
     "summary": "성남시 다자녀가구 대학생이 등록금 100만원을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-02T18:53:06.356Z",
-    "seriesId": "sogang-scholarship-543753"
+    "seriesId": "sogang-scholarship-543753",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "sogang-scholarship-551006",
@@ -125277,7 +125298,9 @@
     "collectedAt": "2026-10-09T05:36:06.724Z",
     "summary": "AI로 지역·기업 문제를 해결하며 멘토링과 팀 활동비를 지원받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-09T01:02:05.876Z"
+    "firstSeenAt": "2026-10-09T01:02:05.876Z",
+    "contentHash": "7b1707170913c8d6",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "dcu-scholarship-187351",
@@ -126283,7 +126306,9 @@
     "collectedAt": "2026-10-09T05:35:47.878Z",
     "summary": "대구교통공사의 청년 체험형 인턴에 지원해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-09T05:35:47.878Z"
+    "firstSeenAt": "2026-10-09T05:35:47.878Z",
+    "contentHash": "ae682e18e129b902",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-231992357",
@@ -126328,7 +126353,9 @@
     "collectedAt": "2026-10-09T05:35:50.451Z",
     "summary": "마음을 돌보는 방법을 배우는 정신건강 특강에 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-09T05:35:50.451Z"
+    "firstSeenAt": "2026-10-09T05:35:50.451Z",
+    "contentHash": "eee5d7d48ea4f77f",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-231992353",
@@ -126382,7 +126409,9 @@
     "seriesId": "yu-news-222107184",
     "aliases": [
       "yu-news-232077079"
-    ]
+    ],
+    "contentHash": "b628631f932e30ca",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-231992346",
@@ -127901,7 +127930,9 @@
     "collectedAt": "2026-10-01T04:03:43.071Z",
     "firstSeenAt": "2026-10-01T04:03:43.071Z",
     "summary": "장기 어학과정부터 집중어학캠프와 전화·화상 외국어 수업까지 수강해요",
-    "noApplication": false
+    "noApplication": false,
+    "contentHash": "f16d76dfa36d7fa1",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-229008293",
@@ -127944,7 +127975,9 @@
     "collectedAt": "2026-10-01T04:03:39.974Z",
     "firstSeenAt": "2026-10-01T04:03:39.974Z",
     "summary": "토익·토익스피킹·오픽 모의시험에 응시하고 문항 풀이 영상을 받아요",
-    "noApplication": false
+    "noApplication": false,
+    "contentHash": "c4e26f8ffb6d45d1",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-229782381",
@@ -131567,7 +131600,9 @@
     "summary": "생활과학 테크놀로지 공모전에 작품을 내고 참가해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-12T11:30:05.525Z",
-    "seriesId": "yu-col-chek-226734632"
+    "seriesId": "yu-col-chek-226734632",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232048709",
@@ -131719,7 +131754,9 @@
     "summary": "학사경고 후 성적이 오른 학생이 최대 100만원 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-12T11:30:05.439Z",
-    "seriesId": "yu-news-10261159"
+    "seriesId": "yu-news-10261159",
+    "contentHash": "a7e6335240fd682a",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232048657",
@@ -135256,7 +135293,9 @@
     "aliases": [
       "pnu-notice-1511611",
       "pnu-notice-1511721"
-    ]
+    ],
+    "contentHash": "99ea23af5e708fab",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yonsei-notice-944341",
@@ -135345,7 +135384,9 @@
     "collectedAt": "2026-10-13T04:16:42.173Z",
     "summary": "TCL 华星의 채용에 지원해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-13T04:16:42.173Z"
+    "firstSeenAt": "2026-10-13T04:16:42.173Z",
+    "contentHash": "5c7ec8aa8634129c",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "cau-notice-30249",
@@ -135390,7 +135431,9 @@
     "summary": "STX장학재단 장학생으로 선발되어 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-13T04:16:42.660Z",
-    "seriesId": "cau-notice-28259"
+    "seriesId": "cau-notice-28259",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "dongguk-notice-26766575",
@@ -135573,7 +135616,9 @@
     "summary": "동국인 한마음 페스티벌에 개인이나 단체로 참가해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-13T04:16:57.239Z",
-    "seriesId": "dongguk-notice-26757432"
+    "seriesId": "dongguk-notice-26757432",
+    "contentHash": "37deceda73729503",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "knu-event-1338546",
@@ -135766,7 +135811,9 @@
     "seriesId": "dcu-notice-171537",
     "aliases": [
       "dcu-notice-187659"
-    ]
+    ],
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "pnu-notice-1510825",
@@ -135996,7 +136043,9 @@
     "collectedAt": "2026-10-14T04:01:29.108Z",
     "summary": "부산 청년을 위한 금융 특강에 참여해요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-14T00:11:48.993Z"
+    "firstSeenAt": "2026-10-14T00:11:48.993Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "korea-startup-1154",
@@ -136085,7 +136134,9 @@
     "collectedAt": "2026-10-14T04:01:44.578Z",
     "summary": "문화특강에 참여해 알아두면 유용한 AI 기초 상식을 배워요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-14T00:11:57.443Z"
+    "firstSeenAt": "2026-10-14T00:11:57.443Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "korea-notice-000060000000061504",
@@ -136541,7 +136592,9 @@
     "collectedAt": "2026-10-14T04:01:59.424Z",
     "summary": "통계 워크숍에 참여해요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-14T00:12:23.275Z"
+    "firstSeenAt": "2026-10-14T00:12:23.275Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "skku-notice-140540",
@@ -137443,7 +137496,9 @@
     "collectedAt": "2026-10-14T04:01:52.780Z",
     "summary": "AI를 주제로 한 특강을 들어요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-14T04:01:52.780Z"
+    "firstSeenAt": "2026-10-14T04:01:52.780Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "dongguk-notice-26766583",
@@ -137485,7 +137540,9 @@
     "summary": "동국인 한마음 페스티벌의 사진 이벤트에 참여해요.",
     "noApplication": false,
     "firstSeenAt": "2026-10-14T04:02:03.729Z",
-    "seriesId": "dongguk-notice-26757432"
+    "seriesId": "dongguk-notice-26757432",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "skku-notice-140563",
@@ -137575,7 +137632,9 @@
     "collectedAt": "2026-10-14T04:02:01.653Z",
     "summary": "국립중앙과학관에서 과학특강에 참여해요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-14T04:02:01.653Z"
+    "firstSeenAt": "2026-10-14T04:02:01.653Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "skku-notice-140562",
@@ -137666,7 +137725,9 @@
     "collectedAt": "2026-10-14T04:02:03.904Z",
     "summary": "동행안심벨을 지원받는 기회예요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-14T04:02:03.904Z"
+    "firstSeenAt": "2026-10-14T04:02:03.904Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "skku-notice-140560",
@@ -137709,7 +137770,9 @@
     "collectedAt": "2026-10-14T04:02:05.047Z",
     "summary": "청년정책 공모전에 참여해요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-14T04:02:05.047Z"
+    "firstSeenAt": "2026-10-14T04:02:05.047Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "skku-notice-140558",
@@ -138020,7 +138083,9 @@
     "collectedAt": "2026-10-15T04:01:09.786Z",
     "summary": null,
     "noApplication": false,
-    "firstSeenAt": "2026-10-14T23:45:18.855Z"
+    "firstSeenAt": "2026-10-14T23:45:18.855Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "dcu-notice-187419",
@@ -138064,7 +138129,9 @@
     "collectedAt": "2026-10-15T04:01:23.086Z",
     "summary": "K-콘텐츠를 활용한 관광 영상 기획을 실습해요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-14T23:45:33.870Z"
+    "firstSeenAt": "2026-10-14T23:45:33.870Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "pknu-notice-726594",
@@ -138381,7 +138448,9 @@
     "collectedAt": "2026-10-15T04:01:39.918Z",
     "summary": "트레킹 활동을 돕는 자원봉사자로 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-14T23:45:36.384Z"
+    "firstSeenAt": "2026-10-14T23:45:36.384Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "dcu-service-187429",
@@ -138424,7 +138493,9 @@
     "summary": "대구학생과학관에서 안내와 해설 자원봉사를 해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-14T23:45:42.382Z",
-    "seriesId": "dcu-service-167517"
+    "seriesId": "dcu-service-167517",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "dcu-service-187413",
@@ -138469,7 +138540,9 @@
     "collectedAt": "2026-10-15T04:01:48.606Z",
     "summary": "해외봉사단 활동을 알아보는 설명회에 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-14T23:45:45.169Z"
+    "firstSeenAt": "2026-10-14T23:45:45.169Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "korea-notice-000060000000061512",
@@ -138556,7 +138629,9 @@
     "collectedAt": "2026-10-15T04:01:52.382Z",
     "summary": "중간고사 기간 건강 관리를 위한 비타민을 받아요",
     "noApplication": true,
-    "firstSeenAt": "2026-10-14T23:45:54.566Z"
+    "firstSeenAt": "2026-10-14T23:45:54.566Z",
+    "contentHash": "6582ff536eebae88",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "hanyang-oia-1819685",
@@ -138601,7 +138676,9 @@
     "collectedAt": "2026-10-15T04:02:00.386Z",
     "summary": "한국인 학생과 유학생이 함께 친구를 사귀는 활동에 참여해요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-14T23:46:02.676Z"
+    "firstSeenAt": "2026-10-14T23:46:02.676Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "khu-startup-556637",
@@ -139201,7 +139278,9 @@
     "collectedAt": "2026-10-15T04:00:27.286Z",
     "summary": "경상북도문화관광공사의 체험형 청년인턴으로 일할 기회에 지원해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T04:00:27.286Z"
+    "firstSeenAt": "2026-10-15T04:00:27.286Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232077082",
@@ -139444,7 +139523,9 @@
     "summary": "대구광역시 저소득주민을 위한 장학생 선발에 지원해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-15T04:01:16.239Z",
-    "seriesId": "dcu-scholarship-171138"
+    "seriesId": "dcu-scholarship-171138",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "pnu-notice-1511570",
@@ -139620,7 +139701,9 @@
     "collectedAt": "2026-10-15T04:01:32.578Z",
     "summary": "울산 모의해킹 대회에 참가해요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T04:01:32.578Z"
+    "firstSeenAt": "2026-10-15T04:01:32.578Z",
+    "contentHash": "1dd8740198ba7027",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "pnu-notice-1511559",
@@ -139856,7 +139939,9 @@
     "collectedAt": "2026-10-15T04:01:27.354Z",
     "summary": "마을배움터 나들이 활동에 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T04:01:27.354Z"
+    "firstSeenAt": "2026-10-15T04:01:27.354Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yonsei-notice-944361",
@@ -141085,7 +141170,9 @@
     "summary": "국가근로장학금을 추가로 신청해 근로장학생으로 일해요",
     "noApplication": false,
     "firstSeenAt": "2026-10-15T08:06:43.928Z",
-    "seriesId": "dcu-scholarship-167610"
+    "seriesId": "dcu-scholarship-167610",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "dcu-scholarship-187440",
@@ -141130,7 +141217,9 @@
     "summary": "경산시 대학생이 학자금대출 이자를 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-15T08:06:47.278Z",
-    "seriesId": "dcu-scholarship-171225"
+    "seriesId": "dcu-scholarship-171225",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "dcu-service-187444",
@@ -141174,7 +141263,9 @@
     "collectedAt": "2026-10-15T08:06:53.275Z",
     "summary": "안심종합복지관 가족프로그램 패밀리DAY에서 봉사해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T08:06:53.275Z"
+    "firstSeenAt": "2026-10-15T08:06:53.275Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "pnu-notice-1511595",
@@ -141265,7 +141356,9 @@
     "collectedAt": "2026-10-15T08:06:53.643Z",
     "summary": "겨울방학에 해외로 단기 파견되어 영어연수를 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T08:06:53.643Z"
+    "firstSeenAt": "2026-10-15T08:06:53.643Z",
+    "contentHash": "dfa5a72d3570bec9",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "pknu-notice-726615",
@@ -142549,7 +142642,9 @@
     "summary": "두산연강재단의 2027년도 장학생으로 선발되어 장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-15T08:07:47.594Z",
-    "seriesId": "cau-notice-28283"
+    "seriesId": "cau-notice-28283",
+    "contentHash": "8edc4ccb40e90fe6",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "skku-notice-140603",
@@ -142944,7 +143039,9 @@
     "collectedAt": "2026-10-15T08:08:09.943Z",
     "summary": "둘이서 함께 TCI 기질·성격검사 해석상담을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T08:08:09.943Z"
+    "firstSeenAt": "2026-10-15T08:08:09.943Z",
+    "contentHash": "b1906dc5a2069357",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "dongguk-notice-26766608",
@@ -144341,7 +144438,9 @@
     "collectedAt": "2026-10-15T08:07:05.050Z",
     "summary": "박두진 청록제의 시 쓰기 행사에 참여해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T08:07:05.050Z"
+    "firstSeenAt": "2026-10-15T08:07:05.050Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gnu-external-8914128",
@@ -144428,7 +144527,9 @@
     "collectedAt": "2026-10-15T08:07:15.369Z",
     "summary": "박두진 청록제 전국백일장에 참가해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-15T08:07:15.369Z"
+    "firstSeenAt": "2026-10-15T08:07:15.369Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gnu-external-8913941",
@@ -149985,7 +150086,9 @@
     "summary": "농업 리더를 꿈꾸는 학생이 등록금 전액과 농업 연수·멘토링을 지원받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-15T08:09:52.966Z",
-    "seriesId": "kangwon-scholarship-887"
+    "seriesId": "kangwon-scholarship-887",
+    "contentHash": "2542c53f036a40f7",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "jbnu-student-218437",
@@ -194629,7 +194732,9 @@
     "collectedAt": "2026-10-16T02:38:35.739Z",
     "summary": "신입생이 어학 강좌를 무제한 듣고 최대 100만원 장학금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-16T02:38:35.739Z"
+    "firstSeenAt": "2026-10-16T02:38:35.739Z",
+    "contentHash": "1569c65ebf0d2941",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "kangwon-notice-5201",
@@ -196704,7 +196809,9 @@
     "summary": "청소년에게 교과 학습과 진로 상담을 해주는 멘토로 활동하고 근로장학금을 받아요",
     "noApplication": false,
     "firstSeenAt": "2026-10-16T02:56:16.078Z",
-    "seriesId": "kangwon-scholarship-741"
+    "seriesId": "kangwon-scholarship-741",
+    "contentHash": "8bdcb89687297301",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "kangwon-scholarship-2339",
@@ -204942,7 +205049,9 @@
     "seriesId": "kangwon-notice-10710",
     "aliases": [
       "kangwon-notice-11157"
-    ]
+    ],
+    "contentHash": "e1c609df448418cf",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "kangwon-notice-10861",
@@ -266715,7 +266824,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:43.610Z",
+    "collectedAt": "2026-11-07T09:44:19.019Z",
     "summary": "실전 AI 활용 강의를 무료로 들어요",
     "noApplication": false,
     "firstSeenAt": "2026-10-20T14:01:20.371Z"
@@ -266808,7 +266917,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:42.118Z",
+    "collectedAt": "2026-11-07T09:44:17.551Z",
     "summary": "해외 인턴 설명회를 듣고 현장 면접을 봐요",
     "noApplication": false,
     "firstSeenAt": "2026-10-20T14:01:20.373Z"
@@ -272020,7 +272129,9 @@
     "collectedAt": "2026-10-20T14:19:42.234Z",
     "summary": "온라인 학습법 특강을 듣고 비교과 점수를 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-20T14:03:17.641Z"
+    "firstSeenAt": "2026-10-20T14:03:17.641Z",
+    "contentHash": "2c87028e4a020b19",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "seoultech-notice-896730",
@@ -274859,7 +274970,9 @@
     "collectedAt": "2026-10-20T14:20:22.835Z",
     "summary": "국가근로장학생으로 교내외 기관에서 근로하고 장학금을 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-20T14:04:00.927Z"
+    "firstSeenAt": "2026-10-20T14:04:00.927Z",
+    "contentHash": "d310ac6e682539f7",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "seoultech-scholarship-h12cnd62lssov8",
@@ -276480,7 +276593,9 @@
     "collectedAt": "2026-10-20T14:20:32.800Z",
     "summary": "AI로 자소서 작성, 기업분석, 면접 연습을 무료로 할 수 있어요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-20T14:04:13.223Z"
+    "firstSeenAt": "2026-10-20T14:04:13.223Z",
+    "contentHash": "3c9bf130d78b6b67",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "seoultech-career-895555",
@@ -284010,7 +284125,9 @@
     "collectedAt": "2026-10-20T14:22:22.952Z",
     "summary": "분야별 전문가에게 창업 상담을 무료로 받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-20T14:05:58.294Z"
+    "firstSeenAt": "2026-10-20T14:05:58.294Z",
+    "contentHash": "d2e5ab1190a993b1",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126202",
@@ -286000,7 +286117,9 @@
     "collectedAt": "2026-10-20T14:23:23.099Z",
     "summary": "농업 리더를 꿈꾸는 학생이 등록금 전액과 농업 연수·멘토링을 지원받아요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-20T14:06:57.874Z"
+    "firstSeenAt": "2026-10-20T14:06:57.874Z",
+    "contentHash": "ed7582a78d295b1c",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-125837",
@@ -292880,6 +292999,10 @@
       {
         "sourceId": "yu-news",
         "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=232176203"
+      },
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=232402220"
       }
     ],
     "sources": [
@@ -292892,7 +293015,25 @@
     "noApplication": false,
     "firstSeenAt": "2026-10-26T05:07:12.008Z",
     "contentHash": "5ad41bac5d146eef",
-    "checkedAt": "2026-11-03T05:12:21.756Z"
+    "checkedAt": "2026-11-03T05:12:21.756Z",
+    "aliases": [
+      "yu-news-232402220"
+    ],
+    "digest": {
+      "about": "글로벌공생 HUSS 참여학과 학생을 위한 전문가 초청 강연이에요.",
+      "activities": [
+        "한류와 한국어 교육에 관한 강연을 들어요"
+      ],
+      "eligibility": [
+        "글로벌공생 HUSS 참여학과 재학생이 대상이에요",
+        "참여학과 부전공·복수전공자도 참여할 수 있어요"
+      ],
+      "benefits": [],
+      "howToApply": [
+        "구글폼 신청서를 작성해 제출해요"
+      ],
+      "chips": []
+    }
   },
   {
     "id": "yu-news-232176189",
@@ -305089,7 +305230,9 @@
     "firstSeenAt": "2026-10-26T05:09:54.402Z",
     "aliases": [
       "gachon-notice-126428"
-    ]
+    ],
+    "contentHash": "1fcfd722ac9fbbdd",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126372",
@@ -305470,7 +305613,9 @@
     "collectedAt": "2026-10-26T05:10:05.208Z",
     "summary": "캠퍼스의 특별한 공간을 담은 지도를 만들고 상금에 도전해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-26T05:10:05.208Z"
+    "firstSeenAt": "2026-10-26T05:10:05.208Z",
+    "contentHash": "635f75f96ecff389",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126308",
@@ -307554,7 +307699,9 @@
     "summary": "아침 검도교실에서 두 달 동안 기초 이론과 실기를 배워요",
     "noApplication": false,
     "firstSeenAt": "2026-10-26T05:10:41.125Z",
-    "seriesId": "kangwon-notice-4160"
+    "seriesId": "kangwon-notice-4160",
+    "contentHash": "b4026a346f7d0452",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "jbnu-notice-218868",
@@ -340194,7 +340341,9 @@
     "collectedAt": "2026-11-03T05:11:58.046Z",
     "summary": "교수님에게 일본어 회화·작문·시험 준비를 무료로 개인 또는 그룹 지도받아요.",
     "noApplication": false,
-    "firstSeenAt": "2026-11-03T05:11:58.046Z"
+    "firstSeenAt": "2026-11-03T05:11:58.046Z",
+    "contentHash": "2634764c8fa13e6f",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "seoultech-notice-897368",
@@ -340241,7 +340390,9 @@
     "collectedAt": "2026-11-03T05:12:00.298Z",
     "summary": "교수님에게 중국어 회화·작문·시험 준비를 무료로 개인 또는 그룹 지도받아요.",
     "noApplication": false,
-    "firstSeenAt": "2026-11-03T05:12:00.298Z"
+    "firstSeenAt": "2026-11-03T05:12:00.298Z",
+    "contentHash": "4398c78d38e94f3a",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "seoultech-notice-897363",
@@ -340288,7 +340439,9 @@
     "collectedAt": "2026-11-03T05:12:02.579Z",
     "summary": "외국인 학생이 한국어 회화·작문·면접·시험 준비를 무료로 지도받아요.",
     "noApplication": false,
-    "firstSeenAt": "2026-11-03T05:12:02.579Z"
+    "firstSeenAt": "2026-11-03T05:12:02.579Z",
+    "contentHash": "2dd0bde06f82915f",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "seoultech-notice-897360",
@@ -340335,7 +340488,9 @@
     "collectedAt": "2026-11-03T05:12:03.689Z",
     "summary": "원어민 교수님에게 영어 회화·작문·발음·면접 준비를 무료로 지도받아요.",
     "noApplication": false,
-    "firstSeenAt": "2026-11-03T05:12:03.689Z"
+    "firstSeenAt": "2026-11-03T05:12:03.689Z",
+    "contentHash": "53265fccaa75e6b9",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "seoultech-notice-897428",
@@ -340878,7 +341033,7 @@
     ],
     "postedAt": null,
     "extractedBy": "ai",
-    "collectedAt": "2026-11-07T04:15:42.118Z",
+    "collectedAt": "2026-11-07T09:44:17.550Z",
     "summary": "반도체 분야 채용으로 이어지는 잡매칭 프로젝트에 참여해요",
     "noApplication": false,
     "firstSeenAt": "2026-11-04T04:15:27.051Z"
@@ -344806,7 +344961,9 @@
         "해당자는 관련 자격·경력증명서를 제출해요"
       ],
       "chips": []
-    }
+    },
+    "contentHash": "8054cd123e322248",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "knu-event-1338717",
@@ -345252,7 +345409,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-04T15:15:05.401Z",
-    "seriesId": "yu-news-2768623"
+    "seriesId": "yu-news-2768623",
+    "contentHash": "15af37e1cb7136d4",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232373955",
@@ -345320,7 +345479,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-04T15:15:10.237Z"
+    "firstSeenAt": "2026-11-04T15:15:10.237Z",
+    "contentHash": "eb0bd38020de77f8",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232373928",
@@ -345393,7 +345554,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-04T15:15:18.143Z",
-    "seriesId": "yu-news-224809557"
+    "seriesId": "yu-news-224809557",
+    "contentHash": "38c34010fd912380",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232373924",
@@ -345472,7 +345635,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-04T15:15:19.521Z",
-    "seriesId": "yu-news-222537255"
+    "seriesId": "yu-news-222537255",
+    "contentHash": "15909c4a8f223a41",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232373906",
@@ -345611,7 +345776,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-04T15:15:28.691Z",
-    "seriesId": "yu-news-232048632"
+    "seriesId": "yu-news-232048632",
+    "contentHash": "075df99e3fcdc5b4",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232359806",
@@ -345718,7 +345885,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-04T15:15:37.724Z",
-    "seriesId": "sogang-notice-541549"
+    "seriesId": "sogang-notice-541549",
+    "contentHash": "400e4dd517ea517a",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "sogang-notice-551751",
@@ -345788,7 +345957,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-04T15:15:38.819Z",
-    "seriesId": "sogang-notice-546148"
+    "seriesId": "sogang-notice-546148",
+    "contentHash": "d50ed2a00dba513f",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "sogang-notice-551736",
@@ -345860,7 +346031,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-04T15:15:39.887Z",
-    "seriesId": "sogang-notice-545399"
+    "seriesId": "sogang-notice-545399",
+    "contentHash": "c1e0164e685f6efb",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "sogang-notice-551735",
@@ -345934,7 +346107,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-04T15:15:40.986Z",
-    "seriesId": "sogang-notice-545326"
+    "seriesId": "sogang-notice-545326",
+    "contentHash": "052703c38e2524a0",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "korea-notice-000060000000061631",
@@ -347479,7 +347654,9 @@
       "chips": []
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-04T15:16:24.297Z"
+    "firstSeenAt": "2026-11-04T15:16:24.297Z",
+    "contentHash": "55c297447e96c3a0",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "seoultech-scholarship-h11k8jwsx9wnhe",
@@ -347550,7 +347727,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-04T15:16:21.017Z"
+    "firstSeenAt": "2026-11-04T15:16:21.017Z",
+    "contentHash": "cd13ce9ccb7ff6a7",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "seoultech-scholarship-h184ewk1hdviuj",
@@ -348025,7 +348204,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-04T15:16:36.260Z"
+    "firstSeenAt": "2026-11-04T15:16:36.260Z",
+    "contentHash": "387b80c7361abc3f",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "cnu-job-602677",
@@ -348230,7 +348411,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-04T15:16:33.716Z"
+    "firstSeenAt": "2026-11-04T15:16:33.716Z",
+    "contentHash": "53d3512d18668ded",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126743",
@@ -348300,7 +348483,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-04T15:16:34.847Z"
+    "firstSeenAt": "2026-11-04T15:16:34.847Z",
+    "contentHash": "2f10b6e235233b07",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126731",
@@ -348370,7 +348555,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-04T15:16:36.966Z"
+    "firstSeenAt": "2026-11-04T15:16:36.966Z",
+    "contentHash": "8f20fe478631947e",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126715",
@@ -348439,7 +348626,9 @@
       "chips": []
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-04T15:16:38.031Z"
+    "firstSeenAt": "2026-11-04T15:16:38.031Z",
+    "contentHash": "7d5a5f7c5dfc70ad",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "cnu-intl-event-602629",
@@ -348652,7 +348841,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-04T15:16:47.387Z",
-    "seriesId": "kangwon-scholarship-790"
+    "seriesId": "kangwon-scholarship-790",
+    "contentHash": "2d92ca7c106db611",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "kangwon-scholarship-2540",
@@ -348786,7 +348977,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-04T15:16:44.987Z"
+    "firstSeenAt": "2026-11-04T15:16:44.987Z",
+    "contentHash": "87ba180366c5d0e9",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "dcu-service-187750",
@@ -355446,7 +355639,9 @@
     },
     "noApplication": true,
     "firstSeenAt": "2026-11-06T05:10:49.915Z",
-    "seriesId": "yu-news-222054977"
+    "seriesId": "yu-news-222054977",
+    "contentHash": "f213eb5311be3ff3",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gnu-external-9191742",
@@ -355562,7 +355757,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:11:10.334Z"
+    "firstSeenAt": "2026-11-06T05:11:10.334Z",
+    "contentHash": "e3b477f9bcbd2256",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232388101",
@@ -355649,7 +355846,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:10:43.908Z"
+    "firstSeenAt": "2026-11-06T05:10:43.908Z",
+    "contentHash": "fc5d470aee1de223",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232388089",
@@ -355711,7 +355910,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-06T05:10:45.166Z",
-    "seriesId": "yu-news-221534045"
+    "seriesId": "yu-news-221534045",
+    "contentHash": "7859ec1442ffa574",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232388079",
@@ -355839,7 +356040,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-06T05:10:48.999Z",
-    "seriesId": "yu-news-224985823"
+    "seriesId": "yu-news-224985823",
+    "contentHash": "6a4ee96c469bfc1d",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232388069",
@@ -355911,7 +356114,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-06T05:10:50.245Z",
-    "seriesId": "yu-news-223827708"
+    "seriesId": "yu-news-223827708",
+    "contentHash": "74e5eb098eecbcd5",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yu-news-232388046",
@@ -356039,7 +356244,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:10:52.790Z"
+    "firstSeenAt": "2026-11-06T05:10:52.790Z",
+    "contentHash": "d2aa7547160aef08",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "sogang-notice-551762",
@@ -356101,7 +356308,9 @@
       ]
     },
     "noApplication": true,
-    "firstSeenAt": "2026-11-06T05:11:11.385Z"
+    "firstSeenAt": "2026-11-06T05:11:11.385Z",
+    "contentHash": "0aeaf10246f461db",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "skku-notice-141647",
@@ -356398,7 +356607,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:11:51.233Z"
+    "firstSeenAt": "2026-11-06T05:11:51.233Z",
+    "contentHash": "3837a2d3dedae30f",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "seoultech-notice-897505",
@@ -356462,7 +356673,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:11:52.333Z"
+    "firstSeenAt": "2026-11-06T05:11:52.333Z",
+    "contentHash": "785305c540c28c87",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126815",
@@ -356531,7 +356744,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:12:01.169Z"
+    "firstSeenAt": "2026-11-06T05:12:01.169Z",
+    "contentHash": "89c44471b19b997c",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126772",
@@ -356600,7 +356815,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:12:03.285Z"
+    "firstSeenAt": "2026-11-06T05:12:03.285Z",
+    "contentHash": "3a119f891c611d7b",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126771",
@@ -356668,7 +356885,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-06T05:12:04.331Z",
-    "seriesId": "gachon-notice-126302"
+    "seriesId": "gachon-notice-126302",
+    "contentHash": "52e52163019a1d57",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126768",
@@ -356739,7 +356958,9 @@
       "chips": []
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:12:05.377Z"
+    "firstSeenAt": "2026-11-06T05:12:05.377Z",
+    "contentHash": "eaef502550ecceb0",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126763",
@@ -356804,7 +357025,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:12:07.598Z"
+    "firstSeenAt": "2026-11-06T05:12:07.598Z",
+    "contentHash": "553263adc5aded1f",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126755",
@@ -356870,7 +357093,9 @@
       "chips": []
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:12:08.909Z"
+    "firstSeenAt": "2026-11-06T05:12:08.909Z",
+    "contentHash": "eb8320bcb72d1d1b",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gachon-notice-126746",
@@ -356947,7 +357172,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:12:12.175Z"
+    "firstSeenAt": "2026-11-06T05:12:12.175Z",
+    "contentHash": "7a8906d60b2de07a",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "kangwon-event-3484",
@@ -357011,7 +357238,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:12:15.341Z"
+    "firstSeenAt": "2026-11-06T05:12:15.341Z",
+    "contentHash": "4e729d6d177bb721",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "kangwon-event-3483",
@@ -357095,7 +357324,9 @@
     "aliases": [
       "kangwon-contest-4277",
       "kangwon-notice-11614"
-    ]
+    ],
+    "contentHash": "e721bce8eb62b59c",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "kangwon-notice-11624",
@@ -357222,7 +357453,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:12:16.522Z"
+    "firstSeenAt": "2026-11-06T05:12:16.522Z",
+    "contentHash": "284e60f15fa7b959",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "kangwon-notice-11616",
@@ -357303,7 +357536,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:12:23.654Z"
+    "firstSeenAt": "2026-11-06T05:12:23.654Z",
+    "contentHash": "6db4cf7603ad6d20",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "kangwon-notice-11613",
@@ -357377,7 +357612,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-06T05:12:26.298Z"
+    "firstSeenAt": "2026-11-06T05:12:26.298Z",
+    "contentHash": "9f00f5cb9f98138e",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "kangwon-notice-11623",
@@ -357439,7 +357676,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-06T05:12:31.606Z",
-    "seriesId": "kangwon-notice-4033"
+    "seriesId": "kangwon-notice-4033",
+    "contentHash": "158a5c56bddc7679",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "dcu-program-187771",
@@ -357657,7 +357896,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:11.756Z"
+    "firstSeenAt": "2026-11-07T04:16:11.756Z",
+    "contentHash": "4541f6d730a67e07",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "gnu-external-9194697",
@@ -357768,7 +358009,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:13.996Z"
+    "firstSeenAt": "2026-11-07T04:16:13.996Z",
+    "contentHash": "fea29e79c131fd0b",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "korea-startup-1171",
@@ -357831,7 +358074,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-07T04:16:15.194Z",
-    "seriesId": "korea-startup-921"
+    "seriesId": "korea-startup-921",
+    "contentHash": "e3927595fb9deeb3",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "snu-student-421",
@@ -357895,7 +358140,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:16.250Z"
+    "firstSeenAt": "2026-11-07T04:16:16.250Z",
+    "contentHash": "c6403a8f51f65a48",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "yonsei-notice-944576",
@@ -357975,7 +358222,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-07T04:16:16.529Z",
-    "seriesId": "yonsei-notice-923073"
+    "seriesId": "yonsei-notice-923073",
+    "contentHash": "eb03c3862575193e",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "pnu-notice-1512038",
@@ -358043,7 +358292,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:02.217Z"
+    "firstSeenAt": "2026-11-07T04:16:02.217Z",
+    "contentHash": "35aaa44bccfe58a9",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "pnu-notice-1512028",
@@ -358113,7 +358364,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:09.285Z"
+    "firstSeenAt": "2026-11-07T04:16:09.285Z",
+    "contentHash": "570151a3c119e4dc",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "pnu-notice-1512027",
@@ -358173,7 +358426,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:16.487Z"
+    "firstSeenAt": "2026-11-07T04:16:16.487Z",
+    "contentHash": "348555ad2b0bc6b7",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "hanyang-oia-1819941",
@@ -358241,7 +358496,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:23.707Z"
+    "firstSeenAt": "2026-11-07T04:16:23.707Z",
+    "contentHash": "e3b0c44298fc1c14",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "hanyang-oia-1819937",
@@ -358301,7 +358558,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:25.137Z"
+    "firstSeenAt": "2026-11-07T04:16:25.137Z",
+    "contentHash": "7bc41ef3d7b83e4a",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "cau-notice-30316",
@@ -358410,7 +358669,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:27.152Z"
+    "firstSeenAt": "2026-11-07T04:16:27.152Z",
+    "contentHash": "26d35b5f5fdb35e7",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "skku-notice-141677",
@@ -358478,7 +358739,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-07T04:16:29.424Z",
-    "seriesId": "skku-notice-130320"
+    "seriesId": "skku-notice-130320",
+    "contentHash": "59acbe9113a94276",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "skku-notice-141670",
@@ -358546,7 +358809,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-07T04:16:30.691Z",
-    "seriesId": "skku-notice-137021"
+    "seriesId": "skku-notice-137021",
+    "contentHash": "cf7613fa09bb61a6",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "skku-notice-141659",
@@ -358664,7 +358929,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:46.619Z"
+    "firstSeenAt": "2026-11-07T04:16:46.619Z",
+    "contentHash": "0c40fb3d1fefac68",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-notice-h1q0k0rx1wykv27",
@@ -358723,7 +358990,9 @@
     },
     "noApplication": true,
     "firstSeenAt": "2026-11-07T04:16:45.373Z",
-    "seriesId": "ssu-notice-hxgv39lh0x8gj"
+    "seriesId": "ssu-notice-hxgv39lh0x8gj",
+    "contentHash": "a59a1f7b2e4f47c9",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-c1df8cdb53b261b31b88f3bb2ae0ee1e",
@@ -358788,7 +359057,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:42.217Z"
+    "firstSeenAt": "2026-11-07T04:16:42.217Z",
+    "contentHash": "22655ed2e6735729",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-43911a00377e127ef8a261b0d6d848db",
@@ -358855,7 +359126,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:43.437Z"
+    "firstSeenAt": "2026-11-07T04:16:43.437Z",
+    "contentHash": "c30a46d8b9e17aab",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-74e0ee6ac036701a9038fcdc931d2a2d",
@@ -358921,7 +359194,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:44.653Z"
+    "firstSeenAt": "2026-11-07T04:16:44.653Z",
+    "contentHash": "1fd5abe8a873496f",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-18c9d1a5196eb5a13e36760aa240153a",
@@ -358996,7 +359271,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-07T04:16:45.869Z",
-    "seriesId": "ssu-job-etc-30726561aacc1ff00639c4274e1ac302"
+    "seriesId": "ssu-job-etc-30726561aacc1ff00639c4274e1ac302",
+    "contentHash": "14c7cce78c67ad9e",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-5f1a843c4d0999664f05bd0ca78a0ac5",
@@ -359059,7 +359336,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-07T04:16:47.070Z",
-    "seriesId": "ssu-job-etc-cfc4b50dba87ab13cbf04437a092218c"
+    "seriesId": "ssu-job-etc-cfc4b50dba87ab13cbf04437a092218c",
+    "contentHash": "4ceab108ff8b6b67",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-7e36c945e72b6e48a223a58d0736a834",
@@ -359124,7 +359403,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:48.285Z"
+    "firstSeenAt": "2026-11-07T04:16:48.285Z",
+    "contentHash": "059da90164ab11f5",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-b181ea356291f33105e0d792d0efcaa5",
@@ -359189,7 +359470,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:49.500Z"
+    "firstSeenAt": "2026-11-07T04:16:49.500Z",
+    "contentHash": "8a02486123ab7d71",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-8718b8c6b6666ac0f6ce3d561ff777ca",
@@ -359258,7 +359541,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:50.707Z"
+    "firstSeenAt": "2026-11-07T04:16:50.707Z",
+    "contentHash": "e790d5ff3090a07d",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-94f5df32d6742f990827b0cab6419f2e",
@@ -359398,7 +359683,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:54.560Z"
+    "firstSeenAt": "2026-11-07T04:16:54.560Z",
+    "contentHash": "99625b7cbd3493b5",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-50d194b53d1cccf655579974bb8727c0",
@@ -359465,7 +359752,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-07T04:16:55.779Z",
-    "seriesId": "ssu-job-etc-ff47f7d91935adf20d4aec1a2dcb6ff0"
+    "seriesId": "ssu-job-etc-ff47f7d91935adf20d4aec1a2dcb6ff0",
+    "contentHash": "a53ccabb43834a97",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-8a946a1b21f0460fbbf437954dbd198b",
@@ -359531,7 +359820,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:56.993Z"
+    "firstSeenAt": "2026-11-07T04:16:56.993Z",
+    "contentHash": "749417b9bfdbe896",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-34db1fa0bde9f8b5cec1207bc5869764",
@@ -359593,7 +359884,9 @@
       "chips": []
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:58.215Z"
+    "firstSeenAt": "2026-11-07T04:16:58.215Z",
+    "contentHash": "117942e24ac3743b",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-fd7561f2ff47c6c1c606a3575c8dc066",
@@ -359661,7 +359954,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:16:59.431Z"
+    "firstSeenAt": "2026-11-07T04:16:59.431Z",
+    "contentHash": "5f071c25b07ca7ce",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-766a0e38e6bf395cd45ef8f58e1d8e36",
@@ -359729,7 +360024,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:17:00.646Z"
+    "firstSeenAt": "2026-11-07T04:17:00.646Z",
+    "contentHash": "12f968d00e119cd0",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "ssu-job-etc-dcbb04905397a9d6888ad398bbfa8465",
@@ -359811,7 +360108,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:17:01.875Z"
+    "firstSeenAt": "2026-11-07T04:17:01.875Z",
+    "contentHash": "490ad8d857dbcf76",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "smu-notice-770085",
@@ -359888,7 +360187,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:17:06.384Z"
+    "firstSeenAt": "2026-11-07T04:17:06.384Z",
+    "contentHash": "4310a85397ec7e3e",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "smu-notice-770082",
@@ -359958,7 +360259,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-07T04:17:08.143Z",
-    "seriesId": "smu-notice-769360"
+    "seriesId": "smu-notice-769360",
+    "contentHash": "807ad139deb34eed",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "jbnu-notice-219515",
@@ -360033,7 +360336,9 @@
     },
     "noApplication": false,
     "firstSeenAt": "2026-11-07T04:17:31.661Z",
-    "seriesId": "jbnu-notice-212259"
+    "seriesId": "jbnu-notice-212259",
+    "contentHash": "f88416542979dafa",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "jbnu-notice-219511",
@@ -360099,7 +360404,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:17:33.400Z"
+    "firstSeenAt": "2026-11-07T04:17:33.400Z",
+    "contentHash": "275c3692fd357bd0",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "jbnu-notice-219510",
@@ -360163,7 +360470,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:17:35.186Z"
+    "firstSeenAt": "2026-11-07T04:17:35.186Z",
+    "contentHash": "e94479215b9cf904",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "jbnu-notice-219507",
@@ -360226,7 +360535,9 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:17:36.901Z"
+    "firstSeenAt": "2026-11-07T04:17:36.901Z",
+    "contentHash": "4eba2a4a6d770676",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
   },
   {
     "id": "jbnu-notice-219505",
@@ -360295,6 +360606,527 @@
       ]
     },
     "noApplication": false,
-    "firstSeenAt": "2026-11-07T04:17:38.279Z"
+    "firstSeenAt": "2026-11-07T04:17:38.279Z",
+    "contentHash": "8583178167f76858",
+    "checkedAt": "2026-11-07T09:45:38.122Z"
+  },
+  {
+    "id": "yu-news-232402198",
+    "title": "[교육개발센터][2026-2 학습법 특강(4)] '대학생활이 쉬워지는 Canva AI 마스터 클래스' 안내",
+    "organizer": "교육개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=232402198"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-11-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-11-07T09:44:23.250Z",
+    "summary": "대학생활에 활용할 Canva AI 특강에 참여해요",
+    "digest": {
+      "about": "학습법 특강으로 Canva AI 마스터 클래스를 진행해요.",
+      "activities": [
+        "Canva AI를 주제로 한 특강을 들어요"
+      ],
+      "eligibility": [],
+      "benefits": [],
+      "howToApply": [],
+      "chips": []
+    },
+    "noApplication": false,
+    "firstSeenAt": "2026-11-07T09:44:23.250Z"
+  },
+  {
+    "id": "yu-news-232402193",
+    "title": "복학생·편입생·전과생들을 위한 소통 프로젝트 〈복·편한 수다〉",
+    "organizer": "학생상담센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "yu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "상담·심리"
+    ],
+    "links": [
+      {
+        "sourceId": "yu-news",
+        "url": "https://www.yu.ac.kr/main/intro/yu-news.do?mode=view&articleNo=232402193"
+      }
+    ],
+    "sources": [
+      "yu-news"
+    ],
+    "postedAt": "2026-11-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-11-07T09:44:24.516Z",
+    "summary": "보물찾기와 진로 보드게임으로 친구를 만나고 진로를 탐색해요",
+    "digest": {
+      "about": "복학생·편입생·전과생이 어울리며 학교생활과 진로 고민을 나누는 소통 프로그램이에요.",
+      "activities": [
+        "캠퍼스 보물찾기에 참여해요",
+        "진로 보드게임을 해요",
+        "친구들과 학교생활과 진로 고민을 나눠요"
+      ],
+      "eligibility": [
+        "복학생·편입생·전과생을 위한 프로그램이에요"
+      ],
+      "benefits": [
+        "간식을 제공해요"
+      ],
+      "howToApply": [
+        "차시별 신청 링크에서 신청해요"
+      ],
+      "chips": []
+    },
+    "noApplication": false,
+    "firstSeenAt": "2026-11-07T09:44:24.516Z",
+    "seriesId": "yu-news-231188787"
+  },
+  {
+    "id": "seoultech-notice-897542",
+    "title": "[기록관]제1회 도봉 민간기록물 수집 공모전 안내",
+    "organizer": "도봉문화원",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [
+        "seoultech"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공공기관",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "seoultech-notice",
+        "url": "https://www.seoultech.ac.kr/service/info/notice/?do=commonview&bnum=4691&bidx=897542"
+      }
+    ],
+    "sources": [
+      "seoultech-notice"
+    ],
+    "postedAt": "2026-11-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-11-07T09:45:10.827Z",
+    "summary": "도봉구 민간기록물을 발굴하는 수집 공모전에 참여해요",
+    "digest": {
+      "about": "도봉구의 지역문화자원을 확보하기 위해 민간기록물을 찾는 공모전이에요.",
+      "activities": [
+        "도봉 민간기록물 수집 공모전에 참여해요"
+      ],
+      "eligibility": [],
+      "benefits": [],
+      "howToApply": [],
+      "chips": []
+    },
+    "noApplication": false,
+    "firstSeenAt": "2026-11-07T09:45:10.827Z"
+  },
+  {
+    "id": "gachon-notice-126826",
+    "title": "[글로벌] 2026-2학기 일반 교내 및 교외 국가근로장학생 추가 모집(2차) 안내",
+    "organizer": "학생복지처 장학복지팀",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "gachon"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생",
+        "졸업생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-11-06",
+      "end": "2026-11-11"
+    },
+    "activityPeriod": {
+      "start": "2026-11-16",
+      "end": "2027-12-31"
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "gachon-notice",
+        "url": "https://www.gachon.ac.kr/commonNotice/kor/126826/artclView.do"
+      }
+    ],
+    "sources": [
+      "gachon-notice"
+    ],
+    "postedAt": "2026-11-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-11-07T09:45:22.652Z",
+    "summary": "교내외 근로지에서 일하며 국가근로장학금을 받아요",
+    "digest": {
+      "about": "교내 5명과 교외 19명의 국가근로장학생을 추가로 선발해 근로지에 배정해요.",
+      "activities": [
+        "배정된 교내외 근로지에서 근무해요"
+      ],
+      "eligibility": [
+        "2026학년도 2학기 국가근로 신청 재학생이에요",
+        "학자금지원구간 9구간까지 선발할 수 있어요",
+        "휴학생·초과 학기자·외국인 등은 제외해요",
+        "졸업·수료생과 조기 취업자 등은 제외해요"
+      ],
+      "benefits": [
+        "국가근로장학금을 받아요"
+      ],
+      "howToApply": [
+        "구글폼을 작성해 제출해요",
+        "붙임에 적힌 근로지명으로 희망 근로지를 입력해요"
+      ],
+      "chips": [
+        "24명 선발"
+      ]
+    },
+    "noApplication": false,
+    "firstSeenAt": "2026-11-07T09:45:22.652Z"
+  },
+  {
+    "id": "gachon-notice-126824",
+    "title": "2025-2학기 학습·전공 컨설팅 신청 안내",
+    "organizer": "교수학습개발센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "gachon"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-12-06"
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "학교",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "gachon-notice",
+        "url": "https://www.gachon.ac.kr/commonNotice/kor/126824/artclView.do"
+      }
+    ],
+    "sources": [
+      "gachon-notice"
+    ],
+    "postedAt": "2026-11-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-11-07T09:45:23.706Z",
+    "summary": "학습·전공 검사를 받고 개인별 맞춤 학습상담에 참여해요",
+    "digest": {
+      "about": "검사로 학습유형과 동기를 파악하고 개인별 상담을 통해 학습의 약점을 보완해요.",
+      "activities": [
+        "MLST-Ⅱ 검사로 학습전략을 점검해요",
+        "AMT 검사로 학업동기를 살펴봐요",
+        "MOST 검사로 전공계열을 탐색해요",
+        "개인별 맞춤 학습컨설팅을 받아요"
+      ],
+      "eligibility": [
+        "2026학년도 2학기 재학생이 대상이에요",
+        "MOST 검사는 1·2학년 재학생만 가능해요"
+      ],
+      "benefits": [],
+      "howToApply": [
+        "WIND에서 원하는 검사를 신청해요"
+      ],
+      "chips": []
+    },
+    "noApplication": false,
+    "firstSeenAt": "2026-11-07T09:45:23.706Z"
+  },
+  {
+    "id": "kangwon-event-3485",
+    "title": "마음 챙김을 위한 열린 시민 특강 (1),「명상을 통한 깨어있는 생활법」",
+    "organizer": "인문대학(춘천) 철학과, 철학과 BK21교육연구팀, 철학실천연구소",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": "지역 시민"
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": "2026-11-11",
+      "end": "2026-11-11"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "kangwon-event",
+        "url": "https://www.kangwon.ac.kr/ko/bbs/715/detail.do?pstSn=3485"
+      }
+    ],
+    "sources": [
+      "kangwon-event"
+    ],
+    "postedAt": "2026-11-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-11-07T09:45:33.150Z",
+    "summary": "명상을 통한 마음 챙김과 깨어있는 생활법 특강을 들어요",
+    "digest": {
+      "about": "대학 구성원과 지역 시민이 함께 명상을 통한 생활법을 배우는 공개 특강이에요.",
+      "activities": [
+        "명상을 통한 깨어있는 생활법 강연을 들어요"
+      ],
+      "eligibility": [
+        "강원대학교 재학생·교직원이 참여할 수 있어요",
+        "지역 시민도 참여할 수 있어요"
+      ],
+      "benefits": [],
+      "howToApply": [],
+      "chips": [
+        "춘천캠퍼스"
+      ]
+    },
+    "noApplication": false,
+    "firstSeenAt": "2026-11-07T09:45:33.150Z"
+  },
+  {
+    "id": "kangwon-contest-4280",
+    "title": "2026 탄소중립 창작 그림책 공모전",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "kangwon"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kangwon-contest",
+        "url": "https://www.kangwon.ac.kr/ko/bbs/719/detail.do?pstSn=4280"
+      }
+    ],
+    "sources": [
+      "kangwon-contest"
+    ],
+    "postedAt": "2026-11-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-11-07T09:45:34.311Z",
+    "summary": "탄소중립을 주제로 그림책을 창작해 공모전에 참여해요.",
+    "digest": {
+      "about": "탄소중립을 소재로 한 창작 그림책을 공모해요.",
+      "activities": [],
+      "eligibility": [],
+      "benefits": [],
+      "howToApply": [],
+      "chips": []
+    },
+    "noApplication": false,
+    "firstSeenAt": "2026-11-07T09:45:34.311Z"
+  },
+  {
+    "id": "kangwon-contest-4279",
+    "title": "2026년 제6회 진료정보교류 사업 우수사례 공모전",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "kangwon"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kangwon-contest",
+        "url": "https://www.kangwon.ac.kr/ko/bbs/719/detail.do?pstSn=4279"
+      }
+    ],
+    "sources": [
+      "kangwon-contest"
+    ],
+    "postedAt": "2026-11-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-11-07T09:45:36.828Z",
+    "summary": "진료정보교류 사업의 우수사례를 공모전에 출품해요.",
+    "digest": {
+      "about": "진료정보교류 사업에서 나온 우수사례를 모으는 공모전이에요.",
+      "activities": [],
+      "eligibility": [],
+      "benefits": [],
+      "howToApply": [],
+      "chips": []
+    },
+    "noApplication": false,
+    "firstSeenAt": "2026-11-07T09:45:36.828Z"
+  },
+  {
+    "id": "kangwon-contest-4278",
+    "title": "제26회 윤동주 시문학상 홍보 요청",
+    "organizer": null,
+    "organizerType": null,
+    "target": {
+      "schools": [
+        "kangwon"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": null
+    },
+    "activityPeriod": {
+      "start": null,
+      "end": null
+    },
+    "tags": [
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "kangwon-contest",
+        "url": "https://www.kangwon.ac.kr/ko/bbs/719/detail.do?pstSn=4278"
+      }
+    ],
+    "sources": [
+      "kangwon-contest"
+    ],
+    "postedAt": "2026-11-06",
+    "extractedBy": "ai",
+    "collectedAt": "2026-11-07T09:45:38.119Z",
+    "summary": "윤동주 시문학상에 도전해요.",
+    "digest": {
+      "about": "제26회를 맞은 시문학상 안내예요.",
+      "activities": [],
+      "eligibility": [],
+      "benefits": [],
+      "howToApply": [],
+      "chips": []
+    },
+    "noApplication": false,
+    "firstSeenAt": "2026-11-07T09:45:38.119Z",
+    "seriesId": "kangwon-contest-2795"
   }
 ]
