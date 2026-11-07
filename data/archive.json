@@ -1,5 +1,469 @@
 [
   {
+    "id": "pknu-notice-725876",
+    "title": "(추가모집) 방학기간동안 교외활동으로 부산시장상까지!! 이공계 해양로봇 아카데미 신청자 모집 안내",
+    "organizer": "동남권역 R-WeSET 사업단",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "동남권역(부산·울산·경남) 이공계 대학생"
+    },
+    "recruitPeriod": {
+      "start": "2026-07-07",
+      "end": "2026-08-05"
+    },
+    "activityPeriod": {
+      "start": "2026-08-06",
+      "end": "2026-08-08"
+    },
+    "tags": [
+      "공공기관",
+      "교육·특강",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725876"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-08-04",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:02:18.601Z",
+    "summary": "해양로봇 교육을 받고 챌린지에 참가해 수상 기회를 얻어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:02:18.601Z",
+    "seriesId": "pknu-notice-716145"
+  },
+  {
+    "id": "pknu-notice-725756",
+    "title": "방학기간동안 교외활동으로 부산시장상까지!! 이공계 여대생 해양로봇 아카데미 신청자 모집 안내",
+    "organizer": "동남권역 R-WeSET 사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "동남권역 이공계 여대생"
+    },
+    "recruitPeriod": {
+      "start": "2026-07-07",
+      "end": "2026-07-31"
+    },
+    "activityPeriod": {
+      "start": "2026-08-06",
+      "end": "2026-08-08"
+    },
+    "tags": [
+      "학교",
+      "교육·특강",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725756"
+      },
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=725479"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-07-24",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:02:55.252Z",
+    "summary": "해양로봇 교육을 받고 로봇 챌린지에서 시상에 도전해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:02:55.252Z",
+    "seriesId": "pknu-notice-716145",
+    "aliases": [
+      "pknu-notice-725479"
+    ]
+  },
+  {
+    "id": "pknu-notice-724636",
+    "title": "<2026 빅데이터 분석 실무 역량 강화 교육 -데이터 분석 준전문가 양성과정> 모집 안내",
+    "organizer": "공학교육혁신센터",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "pknu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-04-28",
+      "end": "2026-05-13"
+    },
+    "activityPeriod": {
+      "start": "2026-05-21",
+      "end": "2026-08-08"
+    },
+    "tags": [
+      "학교",
+      "교육·특강"
+    ],
+    "links": [
+      {
+        "sourceId": "pknu-notice",
+        "url": "https://www.pknu.ac.kr/main/163?action=view&no=724636"
+      }
+    ],
+    "sources": [
+      "pknu-notice"
+    ],
+    "postedAt": "2026-04-29",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:07:57.965Z",
+    "summary": "데이터분석 준전문가(ADsP) 자격시험 대비 교육을 교육비 전액 지원으로 들어요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:07:57.965Z",
+    "seriesId": "pknu-notice-720195"
+  },
+  {
+    "id": "snu-student-232",
+    "title": "[모집] 프로네시스 나눔실천단 2026학년도 여름 나눔교실",
+    "organizer": "프로네시스 나눔실천단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "snu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-04-30",
+      "end": "2026-05-20"
+    },
+    "activityPeriod": {
+      "start": "2026-08-03",
+      "end": "2026-08-08"
+    },
+    "tags": [
+      "학교",
+      "봉사",
+      "멘토링·컨설팅"
+    ],
+    "links": [
+      {
+        "sourceId": "snu-student",
+        "url": "https://student.snu.ac.kr/%ec%86%8c%ec%8b%9d%c2%b7%ec%95%8c%eb%a6%bc/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/?mod=document&uid=232"
+      }
+    ],
+    "sources": [
+      "snu-student"
+    ],
+    "postedAt": "2026-05-12",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-02T18:43:16.769Z",
+    "summary": "교육소외지역 고등학교에서 일주일 가까이 멘토링 교육봉사를 해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-02T18:43:16.769Z"
+  },
+  {
+    "id": "skku-notice-138552",
+    "title": "[앵커사업단] MBN AI 혁신 해커톤 참가자 모집(상금 450만원)",
+    "organizer": "MBN, 성균관대학교 서울 앵커사업단, 서울 AI 허브",
+    "organizerType": "기업",
+    "target": {
+      "schools": [
+        "skku"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": null,
+      "end": "2026-07-30"
+    },
+    "activityPeriod": {
+      "start": "2026-08-07",
+      "end": "2026-08-08"
+    },
+    "tags": [
+      "기업",
+      "장학·지원금",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "skku-notice",
+        "url": "https://www.skku.edu/skku/campus/skk_comm/notice01.do?mode=view&articleNo=138552"
+      }
+    ],
+    "sources": [
+      "skku-notice"
+    ],
+    "postedAt": "2026-07-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T03:12:30.708Z",
+    "summary": "팀으로 AI 기반 K콘텐츠 커머스 해커톤에 참가하고 수상하면 상금을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T03:12:30.708Z"
+  },
+  {
+    "id": "uos-startup-274",
+    "title": "2026년 창업캠프 『바이브 코딩과 함께하는 창업 해커톤』 참여팀 모집",
+    "organizer": "창업지원단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "타 대학 학부생은 팀원으로 참여 가능"
+    },
+    "recruitPeriod": {
+      "start": "2026-07-01",
+      "end": "2026-07-13"
+    },
+    "activityPeriod": {
+      "start": "2026-08-07",
+      "end": "2026-08-08"
+    },
+    "tags": [
+      "학교",
+      "창업",
+      "장학·지원금",
+      "교육·특강",
+      "공모전·대회"
+    ],
+    "links": [
+      {
+        "sourceId": "uos-startup",
+        "url": "https://startup.uos.ac.kr/cm/cm-1.php?p_mode=view&p_idx=274"
+      }
+    ],
+    "sources": [
+      "uos-startup"
+    ],
+    "postedAt": "2026-06-30",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-03T13:42:16.261Z",
+    "summary": "바이브 코딩을 배우고 웹·앱 서비스를 만드는 창업 해커톤에 참가해요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-03T13:42:16.261Z"
+  },
+  {
+    "id": "jbnu-notice-213264",
+    "title": "[해외단기파견] 2026학년도 태국 나레수안대학 하계 프로그램 선발안내",
+    "organizer": "국제협력과",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "jbnu"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-06-01",
+      "end": "2026-06-04"
+    },
+    "activityPeriod": {
+      "start": "2026-07-26",
+      "end": "2026-08-08"
+    },
+    "tags": [
+      "학교",
+      "해외·글로벌",
+      "해외탐방"
+    ],
+    "links": [
+      {
+        "sourceId": "jbnu-notice",
+        "url": "https://www.jbnu.ac.kr/web/Board/213264/detailView.do?menu=2377"
+      }
+    ],
+    "sources": [
+      "jbnu-notice"
+    ],
+    "postedAt": "2026-05-27",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-16T12:45:22.017Z",
+    "summary": "태국 나레수안대학 여름 프로그램에 2주간 파견돼요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-16T12:45:22.017Z",
+    "seriesId": "jbnu-notice-194566"
+  },
+  {
+    "id": "inha-notice-44594",
+    "title": "[SW중심대학사업단] 2026 AI-POT 자격증 취득 지원 프로그램(3차) 참여 신청 (7/2~7/8)",
+    "organizer": "SW중심대학사업단",
+    "organizerType": "학교",
+    "target": {
+      "schools": [
+        "inha"
+      ],
+      "colleges": [],
+      "departments": [],
+      "grades": [],
+      "statuses": [
+        "재학생"
+      ],
+      "excludedStatuses": [
+        "휴학생",
+        "졸업생"
+      ],
+      "openTo": null
+    },
+    "recruitPeriod": {
+      "start": "2026-07-02",
+      "end": "2026-07-08"
+    },
+    "activityPeriod": {
+      "start": "2026-08-08",
+      "end": "2026-08-08"
+    },
+    "tags": [
+      "학교",
+      "장학·지원금"
+    ],
+    "links": [
+      {
+        "sourceId": "inha-notice",
+        "url": "https://www.inha.ac.kr/bbs/kr/8/44594/artclView.do"
+      }
+    ],
+    "sources": [
+      "inha-notice"
+    ],
+    "postedAt": "2026-07-01",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-18T04:39:02.459Z",
+    "summary": "AI-POT 자격시험에 합격하면 포상성 장학금 10만원을 받아요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-18T04:39:02.459Z"
+  },
+  {
+    "id": "ssu-notice-100571",
+    "title": "Asian Science Camp 2026 한국 대표학생 참가자 모집 안내",
+    "organizer": "기초과학연구원(IBS)",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "1학년",
+        "2학년"
+      ],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "고등학교 2·3학년 및 대학 1·2학년"
+    },
+    "recruitPeriod": {
+      "start": "2026-03-16",
+      "end": "2026-04-03"
+    },
+    "activityPeriod": {
+      "start": "2026-08-02",
+      "end": "2026-08-08"
+    },
+    "tags": [
+      "공공기관",
+      "해외·글로벌",
+      "해외탐방"
+    ],
+    "links": [
+      {
+        "sourceId": "ssu-notice",
+        "url": "https://scatch.ssu.ac.kr/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/?f&category&slug=100571&keyword"
+      }
+    ],
+    "sources": [
+      "ssu-notice"
+    ],
+    "postedAt": "2026-03-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-18T04:50:52.938Z",
+    "summary": "홍콩에서 열리는 아시아 과학캠프에 한국 대표로 참가해요",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-18T04:50:52.938Z"
+  },
+  {
+    "id": "inha-international-178460",
+    "title": "[기초과학연구원] Asian Science Camp 2026 한국 대표 학생 모집",
+    "organizer": "기초과학연구원",
+    "organizerType": "공공기관",
+    "target": {
+      "schools": [],
+      "colleges": [],
+      "departments": [],
+      "grades": [
+        "1학년",
+        "2학년"
+      ],
+      "statuses": [],
+      "excludedStatuses": [],
+      "openTo": "고등학생 및 대학생"
+    },
+    "recruitPeriod": {
+      "start": "2026-03-16",
+      "end": "2026-04-03"
+    },
+    "activityPeriod": {
+      "start": "2026-08-02",
+      "end": "2026-08-08"
+    },
+    "tags": [
+      "공공기관",
+      "해외·글로벌",
+      "해외탐방"
+    ],
+    "links": [
+      {
+        "sourceId": "inha-international",
+        "url": "https://internationalcenter.inha.ac.kr/bbs/internationalcenter/2507/178460/artclView.do"
+      }
+    ],
+    "sources": [
+      "inha-international"
+    ],
+    "postedAt": "2026-03-18",
+    "extractedBy": "ai",
+    "collectedAt": "2026-10-18T13:03:39.244Z",
+    "summary": "한국 대표 학생으로 홍콩에서 열리는 아시아 과학 캠프에 참가해요.",
+    "noApplication": false,
+    "firstSeenAt": "2026-10-18T13:03:39.244Z"
+  },
+  {
     "id": "yu-career-2580",
     "title": "[재맞고] 서류&면접 대비 미래모빌리티 소프트스킬 트레이닝",
     "organizer": "학생성공처",
@@ -95998,7 +96462,8 @@
     "collectedAt": "2026-10-18T18:19:59.047Z",
     "summary": "물환경 엔지니어링 도구 실습과 이론을 배우고 훈련지원금을 받아요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-18T18:19:59.047Z"
+    "firstSeenAt": "2026-10-18T18:19:59.047Z",
+    "seriesId": "ssu-job-etc-ff47f7d91935adf20d4aec1a2dcb6ff0"
   },
   {
     "id": "ssu-job-etc-46f84b93541d49795476d2ed98098171",
@@ -136044,7 +136509,8 @@
     "collectedAt": "2026-10-03T03:18:33.475Z",
     "summary": "바이오기업 현직 동문에게 직무 역량과 자기소개서·면접 준비 전략을 배워요.",
     "noApplication": false,
-    "firstSeenAt": "2026-10-03T03:18:33.475Z"
+    "firstSeenAt": "2026-10-03T03:18:33.475Z",
+    "seriesId": "skku-notice-137021"
   },
   {
     "id": "skku-notice-136838",
@@ -296769,7 +297235,8 @@
     "collectedAt": "2026-10-18T18:28:01.454Z",
     "summary": "의료기기 인허가 실무를 배우고 기업 연계 현장실습 기회를 얻어요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-18T18:28:01.454Z"
+    "firstSeenAt": "2026-10-18T18:28:01.454Z",
+    "seriesId": "ssu-job-etc-cfc4b50dba87ab13cbf04437a092218c"
   },
   {
     "id": "ssu-job-etc-3e4670bb0c8d28b218ae400c5320fec6",
@@ -545661,7 +546128,8 @@
     "collectedAt": "2026-10-02T19:07:43.364Z",
     "summary": "바이오·의료 오픈이노베이션 강연과 스타트업 IR 피칭을 참관해요",
     "noApplication": false,
-    "firstSeenAt": "2026-10-02T19:07:43.364Z"
+    "firstSeenAt": "2026-10-02T19:07:43.364Z",
+    "seriesId": "korea-startup-921"
   },
   {
     "id": "korea-startup-915",
@@ -558125,7 +558593,8 @@
     "firstSeenAt": "2026-10-19T13:47:30.949Z",
     "aliases": [
       "ssu-job-etc-b278d1ea78ec9b43ec2ba035cf392760"
-    ]
+    ],
+    "seriesId": "ssu-job-etc-30726561aacc1ff00639c4274e1ac302"
   },
   {
     "id": "ssu-job-etc-ffbee8776292f725c767ca18b341a5f6",
